@@ -274,7 +274,14 @@ Detailed semantics:
 
 - [`stage1b_reachability_protocol.md`](stage1b_reachability_protocol.md)
 
-The B4 family must retain one view per event and shared global IDs. Ancestor and descendant reports must be mutually dual, irreflexive, acyclic, and transitive.
+Implementation:
+
+- `src/t_search/stage1_reachability.py`
+- `experiments/stage1b_reachability_only.py`
+- `tests/test_stage1b_reachability_only.py`
+- `results/stage1b_reachability_only.md`
+
+The B4 family retains one view per event and shared global IDs. Ancestor and descendant reports must be mutually dual, irreflexive, acyclic, and transitive.
 
 Reconstruct:
 
@@ -313,6 +320,8 @@ Observed result:
 - labeled equality against the seven-edge original: false;
 - unlabeled graph isomorphism against the seven-edge original: false;
 - reachability equality: true.
+
+Focused B4 validation: **6 checks passed**.
 
 Interpretation: the complete reachability order and its unique minimal cover relation are reconstructible for the finite-DAG setting, but arbitrary redundant shortcut edges in the original encoding are not identifiable from reachability alone.
 

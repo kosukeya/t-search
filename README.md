@@ -13,11 +13,19 @@ and identify non-trivial structures that remain invariant across those transform
 
 The long-term hypothesis is that such invariants may be better candidates for the physical content of time than either "block" or "becoming" taken as an absolute description.
 
-## Stage 0 / 0.5 status
+## Current status
 
-Stage 0 fixes provisional definitions and the research roadmap. Stage 0.5 removes implementation ambiguity before Stage 1 code is written. Neither stage claims that the ontology below is established physics.
+Stage 0 / 0.5 fixed provisional definitions, the research roadmap, and the Stage 1 protocol. Stage 1A now implements the first deliberately simple global/local round trip:
 
-Current working ideas include:
+`B_1 -> {V_e} -> B_1_hat`
+
+The canonical six-event DAG is projected into one-hop local views, checked for mutual consistency, glued back into a reconstructed block, and compared using labeled adjacency, unlabeled graph isomorphism, and reachability.
+
+The Stage 1A baseline succeeds under the information-rich protocol. This is a sanity check for the machinery, not evidence for a metaphysical conclusion or a fundamental temporal invariant.
+
+See [`results/stage1a_baseline.md`](results/stage1a_baseline.md) for the recorded result.
+
+## Working ideas
 
 - objects/relata and relations may be mutually constitutive rather than ordered by ontological priority;
 - Actuality and Potentiality may be relational/modal aspects of a local configuration rather than globally absolute labels;
@@ -44,6 +52,26 @@ See:
 - [`docs/concepts.md`](docs/concepts.md)
 - [`docs/stage0_definitions.md`](docs/stage0_definitions.md)
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
+
+## Running Stage 1A
+
+Create a Python environment and install the package with development dependencies:
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+Run the tests:
+
+```bash
+pytest -q
+```
+
+Run the baseline experiment:
+
+```bash
+python experiments/stage1a_minimal.py
+```
 
 ## Methodological rule
 

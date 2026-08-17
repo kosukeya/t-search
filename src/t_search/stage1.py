@@ -1,4 +1,4 @@
-"""Stage 1A: minimal classical global/local reconstruction.
+"""Stage 1: minimal classical global/local reconstruction.
 
 The modeled temporal/causal structure lives only in the directed edges of ``Block``.
 Python execution order has no temporal meaning inside the toy model.
@@ -25,10 +25,18 @@ class Block:
 
 @dataclass(frozen=True)
 class LocalView:
-    """A one-hop local structural view V_e."""
+    """A one-hop local structural view V_e with both incoming and outgoing reports."""
 
     event_id: EventId
     predecessors: frozenset[EventId]
+    successors: frozenset[EventId]
+
+
+@dataclass(frozen=True)
+class OutgoingLocalView:
+    """Stage 1B outgoing-only view V_e^+ = (id_e, Succ_1(e))."""
+
+    event_id: EventId
     successors: frozenset[EventId]
 
 
@@ -46,7 +54,7 @@ class ViewConsistency:
 
 @dataclass(frozen=True)
 class ComparisonResult:
-    """Diagnostics used by the Stage 1A round-trip experiment."""
+    """Diagnostics used by the Stage 1 round-trip experiments."""
 
     labeled_equal: bool
     unlabeled_isomorphic: bool
@@ -61,12 +69,7 @@ def _as_graph(block: Block) -> nx.DiGraph:
 
 
 def make_block(events: Iterable[EventId], direct_edges: Iterable[Edge]) -> Block:
-    """Create and validate a finite DAG block.
-
-    Validation follows ``docs/stage1_protocol.md``: every edge endpoint must be an
-    event, self-loops are forbidden, and Stage 1 blocks must be acyclic.
-    """
-
+    """Create and validate a finite DAG block."""
     event_set = frozenset(events)
     edge_set = frozenset(tuple(edge) for edge in direct_edges)
 
@@ -86,13 +89,11 @@ def make_block(events: Iterable[EventId], direct_edges: Iterable[Edge]) -> Block
     block = Block(event_set, edge_set)
     if not nx.is_directed_acyclic_graph(_as_graph(block)):
         raise ValueError("Stage 1 block must be a directed acyclic graph")
-
     return block
 
 
 def canonical_block() -> Block:
-    """Return the canonical six-event Stage 1A graph from the protocol."""
-
+    """Return the canonical six-event Stage 1 graph from the protocol."""
     return make_block(
         events={"a", "b", "c", "d", "e", "f"},
         direct_edges={
@@ -108,7 +109,6 @@ def canonical_block() -> Block:
 
 def project_local_view(block: Block, event: EventId) -> LocalView:
     """Project B_1 onto the one-hop structural view V_e."""
-
     if event not in block.events:
         raise KeyError(f"unknown event: {event}")
 
@@ -118,18 +118,25 @@ def project_local_view(block: Block, event: EventId) -> LocalView:
 
 
 def project_all_views(block: Block) -> tuple[LocalView, ...]:
-    """Project one view per event.
-
-    Sorting is only for deterministic program output. It does not represent modeled
-    temporal order.
-    """
-
+    """Project one full Stage 1A view per event."""
     return tuple(project_local_view(block, event) for event in sorted(block.events))
+
+
+def project_outgoing_view(block: Block, event: EventId) -> OutgoingLocalView:
+    """Project B_1 onto V_e^+ = (id_e, Succ_1(e))."""
+    if event not in block.events:
+        raise KeyError(f"unknown event: {event}")
+    successors = frozenset(target for source, target in block.direct_edges if source == event)
+    return OutgoingLocalView(event, successors)
+
+
+def project_all_outgoing_views(block: Block) -> tuple[OutgoingLocalView, ...]:
+    """Project one outgoing-only Stage 1B view per event."""
+    return tuple(project_outgoing_view(block, event) for event in sorted(block.events))
 
 
 def check_view_consistency(views: Iterable[LocalView]) -> ViewConsistency:
     """Compare independently reported incoming and outgoing direct edges."""
-
     materialized = tuple(views)
     ids = [view.event_id for view in materialized]
     if len(ids) != len(set(ids)):
@@ -137,9 +144,7 @@ def check_view_consistency(views: Iterable[LocalView]) -> ViewConsistency:
 
     event_ids = frozenset(ids)
     referenced_ids = frozenset(
-        ref
-        for view in materialized
-        for ref in (*view.predecessors, *view.successors)
+        ref for view in materialized for ref in (*view.predecessors, *view.successors)
     )
     unknown = referenced_ids - event_ids
 
@@ -170,7 +175,6 @@ def check_view_consistency(views: Iterable[LocalView]) -> ViewConsistency:
 
 def glue_views(views: Iterable[LocalView]) -> Block:
     """Glue a mutually consistent Stage 1A view family into B_1_hat."""
-
     materialized = tuple(views)
     if not materialized:
         raise ValueError("cannot glue an empty view family")
@@ -188,16 +192,45 @@ def glue_views(views: Iterable[LocalView]) -> Block:
     return make_block(event_ids, consistency.outgoing_edges)
 
 
+def glue_outgoing_views(views: Iterable[OutgoingLocalView]) -> Block:
+    """Reconstruct a block from a complete family of outgoing-only views.
+
+    Stage 1B deliberately removes the redundant incoming reports. Because global
+    event IDs are still retained, all event IDs must occur as view owners; neighbor
+    references outside that set are rejected.
+    """
+    materialized = tuple(views)
+    if not materialized:
+        raise ValueError("cannot glue an empty outgoing-only view family")
+
+    ids = [view.event_id for view in materialized]
+    if len(ids) != len(set(ids)):
+        raise ValueError("outgoing-only view family contains duplicate event IDs")
+
+    event_ids = frozenset(ids)
+    referenced_ids = frozenset(
+        successor for view in materialized for successor in view.successors
+    )
+    unknown = referenced_ids - event_ids
+    if unknown:
+        raise ValueError(f"outgoing-only views reference unknown events: {sorted(unknown)}")
+
+    outgoing_edges = frozenset(
+        (view.event_id, successor)
+        for view in materialized
+        for successor in view.successors
+    )
+    return make_block(event_ids, outgoing_edges)
+
+
 def transitive_closure(block: Block) -> frozenset[Edge]:
     """Return the non-reflexive reachability relation prec = TC(C)."""
-
-    closure = nx.transitive_closure(_as_graph(block), reflexive=False)
+    closure = nx.transitive_closure(_as_graph(block))
     return frozenset((source, target) for source, target in closure.edges() if source != target)
 
 
 def compare_blocks(original: Block, reconstructed: Block) -> ComparisonResult:
     """Compare labeled adjacency, unlabeled isomorphism, and reachability separately."""
-
     labeled_equal = (
         original.events == reconstructed.events
         and original.direct_edges == reconstructed.direct_edges
@@ -212,7 +245,6 @@ def compare_blocks(original: Block, reconstructed: Block) -> ComparisonResult:
     )
 
 
-def views_by_id(views: Iterable[LocalView]) -> Mapping[EventId, LocalView]:
+def views_by_id(views: Iterable[LocalView | OutgoingLocalView]) -> Mapping[EventId, LocalView | OutgoingLocalView]:
     """Convenience helper for deterministic inspection and tests."""
-
     return {view.event_id: view for view in views}

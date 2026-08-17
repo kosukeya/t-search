@@ -164,7 +164,7 @@ This allows adjacency and reachability to be classified separately.
 
 ## 9. Stage 1A baseline result
 
-Expected and observed baseline:
+Observed baseline:
 
 `Glue(F(B_1)) = B_1`.
 
@@ -176,7 +176,7 @@ It does **not** establish a deep temporal invariant or metaphysical conclusion.
 
 ## 10. General method
 
-Stage 1B removes one source of information at a time.
+Stage 1B removes or transforms one source of information at a time.
 
 For each variant:
 
@@ -196,8 +196,8 @@ Run variants in this order:
 1. **B1 — outgoing-only** — completed
 2. **B2 — incoming-only** — completed
 3. **B3 — missing local views** — completed
-4. **B4 — reachability-only** — next
-5. **B5 — state-label collision**
+4. **B4 — reachability-only** — completed
+5. **B5 — state-label collision** — next
 6. **B6 — anonymous / global-ID-free views**
 7. optional combined restrictions, only after B1–B6 are individually understood.
 
@@ -211,26 +211,14 @@ Retain:
 
 Remove all incoming predecessor reports.
 
-For the first B1 experiment:
-
-- every event still has one local view;
-- global event IDs are still retained;
-- every successor reference must name an event that also has a view.
-
-Reconstruct:
-
-`E_hat = {id_e | V_e^+ in Views}`
-
-`C_hat = {(id_e, y) | y in Succ_1(e)}`.
-
-Observed result on the canonical graph:
+Observed canonical result:
 
 - `C` reconstructible: yes;
 - `prec` reconstructible: yes;
 - incoming/outgoing cross-report consistency: lost;
 - strict invariant: not claimed.
 
-Interpretation: predecessor reports were redundant for reconstruction under the labeled complete-family assumptions, but useful as an independent validation channel.
+Interpretation: predecessor reports were redundant for reconstruction under shared global IDs and complete coverage, but useful as an independent validation channel.
 
 ## 13. Variant B2 — incoming-only
 
@@ -238,81 +226,99 @@ Retain:
 
 `V_e^- = (id_e, Pred_1(e))`.
 
-For the first B2 experiment:
-
-- every event still has one local view;
-- global event IDs are still retained;
-- every predecessor reference must name an event that also has a view.
-
-Reconstruct:
-
-`E_hat = {id_e | V_e^- in Views}`
-
-`C_hat = {(x, id_e) | x in Pred_1(e)}`.
-
-Observed result on the canonical graph:
+Observed canonical result:
 
 - `C` reconstructible: yes;
 - `prec` reconstructible: yes;
 - incoming/outgoing cross-report consistency: lost;
 - strict invariant: not claimed.
 
-Interpretation: B2 mirrors B1. The outgoing direction was not specially privileged; under shared global IDs and complete coverage, either one coherent oriented direct-adjacency channel is sufficient for reconstruction.
+Interpretation: B2 mirrors B1. Under shared global IDs and complete coverage, either one coherent oriented direct-adjacency channel is sufficient for reconstruction.
 
 ## 14. Variant B3 — missing local views
 
 Delete one or more complete Stage 1A local views while retaining both predecessor and successor information in every surviving view.
 
-The detailed B3 semantics are fixed in:
+Detailed semantics:
 
 - [`stage1b_missing_views_protocol.md`](stage1b_missing_views_protocol.md)
 
-Distinguish two reconstruction policies:
+Distinguish:
 
-1. **strict observed-node reconstruction** — only view owners count as reconstructed events; references to missing-view IDs remain dangling references;
+1. **strict observed-node reconstruction** — only view owners count as reconstructed events;
 2. **referenced latent-node reconstruction** — IDs mentioned by surviving neighbors may introduce latent events whose own views are absent.
-
-For surviving owner-owner edges, incoming/outgoing reports must still agree. Under the latent policy, an edge touching a missing-view event may have only one surviving report and is retained as single-channel evidence.
 
 Observed canonical cases:
 
 ### Case A — remove only `V_d`
 
-- strict policy reconstructs only `{a,b,c,e,f}` with direct edges `{a->b,a->c}` and dangling reference `d`;
-- latent policy recovers `d` from surviving references;
-- all six original direct edges remain reported by at least one surviving endpoint;
-- labeled equality, unlabeled isomorphism, and reachability equality are all true under the latent policy;
-- compatible completion count: 1.
-
-Interpretation: one missing perspective can be structurally reconstructed when shared IDs remain and every incident relation has at least one surviving endpoint report.
+Under the latent policy, `d` and all six canonical edges are reconstructed exactly because every incident edge remains reported by a surviving endpoint.
 
 ### Case B — remove `V_b` and `V_d`
 
-- `b` and `d` both remain referenced and are recovered as latent event IDs;
-- the edge `b -> d` has no surviving endpoint report because both endpoint views are absent;
-- the evidence-backed graph contains five of the six original edges;
-- under the stated closed-world event universe and DAG constraint, the unresolved `b/d` relation yields exactly three labeled completions: no edge, `b -> d`, or `d -> b`;
-- the original canonical graph is one compatible completion but is not uniquely selected.
-
-Interpretation: event identity may remain reconstructible while a relation between latent events becomes ambiguous.
+`b` and `d` remain reconstructible as event IDs, but `b -> d` has no surviving endpoint report. Under the stated closed-world event universe and DAG constraint, three labeled completions remain compatible: no edge, `b -> d`, or `d -> b`.
 
 ### Case C — remove `V_d` and `V_e`
 
-- `d` remains referenced and is recovered as latent;
-- `e` is no longer a view owner and is not referenced by any surviving view;
-- `e` therefore disappears from the candidate event universe and is classified as lost.
+`d` remains referenced and is recovered as latent; `e` is no longer owned or referenced and is lost from the reconstructible event universe.
 
-B3 therefore establishes three distinct coverage outcomes: reconstructible missing perspective, ambiguous latent-latent relation, and completely lost unreferenced event.
-
-These are model-theoretic/information-loss results only. Compatible completions are **not** yet interpreted as ontic Potentiality.
+B3 therefore separates reconstructible missing perspectives, ambiguous latent-latent relations, and completely lost unreferenced events. These are information-loss results only; compatible completions are not yet interpreted as ontic Potentiality.
 
 ## 15. Variant B4 — reachability-only
 
-Replace one-hop adjacency by ancestor/descendant information.
+Replace one-hop adjacency with complete ancestor/descendant information:
 
-Question: can the original cover/direct-edge relation be recovered from the partial order?
+`R_e = (id_e, Anc(e), Desc(e))`.
 
-For finite DAGs, test whether transitive reduction recovers the canonical `C`, and state the assumptions under which that reduction is unique.
+Detailed semantics:
+
+- [`stage1b_reachability_protocol.md`](stage1b_reachability_protocol.md)
+
+The B4 family must retain one view per event and shared global IDs. Ancestor and descendant reports must be mutually dual, irreflexive, acyclic, and transitive.
+
+Reconstruct:
+
+`prec_hat = {(e,y) | y in Desc(e)}`.
+
+Then compute the finite-DAG transitive reduction:
+
+`C_cover_hat = TR(prec_hat)`.
+
+### Canonical positive case
+
+The canonical graph contains 13 non-reflexive reachability pairs. Its direct-edge set is already the cover/minimal relation, so:
+
+`TR(TC(C)) = C`.
+
+Observed result:
+
+- reachability relation reconstructible: yes;
+- reconstructed cover edges: 6;
+- labeled equality: true;
+- unlabeled isomorphism: true;
+- reachability equality: true.
+
+### Redundant-shortcut control
+
+Add the transitive shortcut:
+
+`a -> d`.
+
+This produces a seven-edge direct encoding but leaves reachability unchanged because `a` already reaches `d` through longer paths.
+
+Observed result:
+
+- reachability-only views equal canonical views: yes;
+- transitive reduction removes `a -> d`;
+- labeled equality against the seven-edge original: false;
+- unlabeled graph isomorphism against the seven-edge original: false;
+- reachability equality: true.
+
+Interpretation: the complete reachability order and its unique minimal cover relation are reconstructible for the finite-DAG setting, but arbitrary redundant shortcut edges in the original encoding are not identifiable from reachability alone.
+
+Therefore exact recovery of the input `C` requires the additional convention that `C` denotes the cover/minimal generating relation rather than an arbitrary edge list.
+
+No claim is made that physical time is therefore fundamentally a partial order.
 
 ## 16. Variant B5 — state-label collision
 

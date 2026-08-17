@@ -23,17 +23,20 @@ Stage 1A implemented the information-rich baseline:
 
 and confirmed exact reconstruction of the canonical labeled DAG.
 
-Stage 1B is now reducing local information one component at a time. The first variant, **outgoing-only**, retains:
+Stage 1B is reducing local information one component at a time.
 
-`V_e^+ = (id_e, Succ_1(e))`
+Completed variants:
 
-and removes predecessor reports. The canonical graph still reconstructs exactly when global IDs and one view per event are retained. This shows that Stage 1A predecessor reports were redundant for reconstruction, although they supplied an independent consistency check.
+- **outgoing-only** retains `V_e^+ = (id_e, Succ_1(e))` and reconstructs the canonical graph exactly;
+- **incoming-only** retains `V_e^- = (id_e, Pred_1(e))` and also reconstructs the canonical graph exactly.
+
+Together these controls show that, while global IDs and one view per event are retained, either one coherent oriented direct-adjacency channel is sufficient. The omitted opposite-direction channel was redundant for reconstruction but supplied the independent incoming/outgoing consistency check available in Stage 1A.
 
 The planned Stage 1B order is:
 
 1. outgoing-only — completed
-2. incoming-only
-3. missing local views
+2. incoming-only — completed
+3. missing local views — next
 4. reachability-only
 5. state-label collision
 6. anonymous / global-ID-free views
@@ -57,6 +60,7 @@ See:
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
 - [`results/stage1a_baseline.md`](results/stage1a_baseline.md)
 - [`results/stage1b_outgoing_only.md`](results/stage1b_outgoing_only.md)
+- [`results/stage1b_incoming_only.md`](results/stage1b_incoming_only.md)
 
 ## Methodological rule
 

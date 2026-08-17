@@ -18,44 +18,88 @@ Deliverables:
 
 Exit criterion: we can explain the six fixed questions without ambiguity severe enough to block implementation.
 
+## Stage 0.5 — Stage 1 protocol freeze
+
+Goal: remove implementation ambiguity before writing Stage 1 code.
+
+Key decisions:
+- distinguish an **event** from the state/configuration label attached to it;
+- separate direct graph edges from their transitive closure / induced partial order;
+- keep Stage 1 free of full Potentiality and record semantics;
+- define exactly what information a local view contains;
+- define whether global event identifiers are available to the gluing procedure;
+- distinguish strict invariants, reconstructible properties, and local observables;
+- state explicitly that Python execution order is not the modeled temporal order.
+
+Deliverable:
+- [`stage1_protocol.md`](stage1_protocol.md)
+
+Exit criterion: `B1`, `V_e`, projection `F_e`, `Glue`, and the equivalence relation used for `B1_hat ≅ B1` are fully specified.
+
 ## Stage 1 — Minimal classical graph model
 
-Construct a finite directed/partially ordered event structure with roughly 5–8 events.
+Use the protocol fixed in Stage 0.5.
+
+### Stage 1A — Sanity-check round trip
+
+Construct a finite directed acyclic event graph with roughly 5–8 events.
 
 Tasks:
-- define a global block-like structure `B`;
-- define a local becoming-like view `G_e` around each event;
-- implement `B -> {G_e}`;
-- attempt reconstruction `{G_e} -> B_hat`;
-- test which graph properties are preserved.
+- define a global block-like structure `B1`;
+- define a deliberately minimal local structural view `V_e` around each event;
+- implement `B1 -> {V_e}`;
+- reconstruct `{V_e} -> B1_hat` while retaining global event identifiers;
+- verify `B1_hat ≅ B1`;
+- test direct-edge and reachability preservation separately.
 
-Primary candidate invariant: reachability / causal partial order.
+Purpose: validate the projection/gluing machinery. A successful reconstruction here is expected and is not itself a non-trivial physical result.
 
-Exit criterion: a reproducible round trip and a precise account of lost vs preserved information.
+### Stage 1B — Information-loss experiments
+
+Progressively remove privileged reconstruction information, for example:
+- hide global event identifiers;
+- restrict local radius;
+- remove some local views;
+- retain only predecessor or successor information;
+- compare direct-edge reconstruction with reachability-only reconstruction.
+
+Goal: determine which global properties are reconstructible from which families of local perspectives.
+
+Primary candidate structures:
+- direct adjacency / cover relation;
+- reachability / induced causal partial order;
+- graph-isomorphism class;
+- ambiguity class when exact reconstruction fails.
+
+Exit criterion: a reproducible account of what is local, what is reconstructible only by gluing, what is genuinely lost, and what depends merely on encoding conventions.
 
 ## Stage 2 — Potentiality
 
-Introduce branching transformations.
+Introduce branching transformations only after Stage 1 is stable.
 
-Build two intentionally different ontologies:
-- epistemic potential: one complete history is fixed but hidden locally;
-- ontic potential: multiple extensions are represented as genuinely open at the model level.
+Build two intentionally different formal objects:
+- epistemic model: a branching possibility structure plus a preselected complete history that is hidden locally;
+- ontic model: the actual structure up to the current boundary plus multiple admissible extensions, with no preselected actual continuation represented in the model.
 
 Keep operational probabilities identical where possible.
 
-Goal: identify exactly where the ontological difference lives in the formalism and whether local observables distinguish it.
+Goal: identify exactly where the ontological difference lives in the formalism and whether local observables or transformation structure distinguish it.
+
+Important caution: representing an ontic model without a preselected branch is a modeling commitment, not yet evidence that physical reality is ontically open.
 
 ## Stage 3 — Records and temporal direction
 
-Add memory/environment registers and asymmetric record formation.
+Add memory/environment registers and explicitly compare controls.
 
 Tasks:
+- build a symmetric-record or reversible control model;
+- build an asymmetric-record model;
 - distinguish mere order from an arrow of time;
 - compare forward and reversed histories;
 - use information-theoretic diagnostics such as forward/reverse distinguishability when meaningful;
 - separate reversible global dynamics from locally irreversible record structure.
 
-Goal: test the working hypothesis that experienced temporal direction depends on asymmetric records, not merely on state change.
+Goal: test, rather than assume, the working hypothesis that experienced temporal direction depends on asymmetric records rather than merely on state change.
 
 ## Stage 4 — Finite Page–Wootters-style quantum model
 
@@ -127,11 +171,19 @@ Order of operations:
 ## Fixed questions for every stage
 
 1. What is the block-like description `B`?
-2. What is the becoming-like description `G`?
-3. What is the transformation `F: B -> G`?
-4. Is `F` reversible? If not, what is discarded?
-5. What is invariant under the transformation?
-6. What physical meaning, if any, can be assigned to that invariant?
+2. What is the becoming-like/local description `G` or `V`?
+3. What is the transformation from the global to the local description?
+4. Is that transformation reversible? If not, what information is discarded?
+5. What is strictly invariant, what is only reconstructible from a family of views, and what is merely locally observable?
+6. What physical meaning, if any, can be assigned to those surviving structures?
+
+## Cross-cutting methodological cautions
+
+- `simulation order != modeled temporal order`;
+- a successful software round trip does not by itself establish an ontological claim;
+- a global mathematical representation is not a physically realizable God's-eye observer;
+- mutual constitution of relata and relations is not yet implemented merely by drawing a DAG;
+- Stage 1 tests representation/gluing machinery, not the full relational ontology.
 
 ## Stop / revise conditions
 

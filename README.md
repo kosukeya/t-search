@@ -23,29 +23,31 @@ Stage 1A implemented the information-rich baseline:
 
 and confirmed exact reconstruction of the canonical labeled DAG.
 
-Stage 1B is reducing local information one component at a time.
+Stage 1B is reducing or transforming local information one component at a time.
 
 Completed variants:
 
 - **outgoing-only** retains `V_e^+ = (id_e, Succ_1(e))` and reconstructs the canonical graph exactly;
 - **incoming-only** retains `V_e^- = (id_e, Pred_1(e))` and also reconstructs the canonical graph exactly;
-- **missing local views** removes whole event-owned perspectives and compares strict observed-node versus referenced latent-node reconstruction.
+- **missing local views** removes whole event-owned perspectives and separates reconstructible latent events, ambiguous latent-latent relations, and completely lost unreferenced events;
+- **reachability-only** replaces one-hop adjacency by complete ancestor/descendant order information and reconstructs the canonical cover relation by transitive reduction.
 
-The missing-view experiment adds an important distinction:
+The reachability-only experiment adds an important representation distinction:
 
-- with only `V_d` missing, the latent policy reconstructs `d` and all six canonical edges exactly from surviving neighbor reports;
-- with `V_b` and `V_d` missing, both event IDs remain reconstructible but the direct relation between them is ambiguous, yielding three compatible labeled DAG completions under the stated closed-world assumptions;
-- with `V_d` and `V_e` missing, `e` becomes completely unreferenced and is lost from the reconstructible event universe.
+- the canonical graph has 6 direct cover edges and 13 reachability pairs;
+- `TR(TC(C)) = C` for the canonical graph because its direct-edge set is already the minimal cover relation;
+- adding a transitively redundant shortcut `a -> d` leaves all reachability-only views unchanged;
+- transitive reduction removes that shortcut, so reachability is preserved while the exact non-minimal direct-edge encoding is not identifiable.
 
-Thus Stage 1B has now separated redundant direction information from coverage loss and has produced the first explicit case where **event identity is reconstructible while a relation between latent events is not uniquely determined**.
+Thus B4 distinguishes a reconstructible partial order / cover relation from arbitrary redundant edge-list details. This is potentially relevant to the search for representation-independent temporal structure, but Stage 1 does not yet claim that reachability is a fundamental physical invariant.
 
 The planned Stage 1B order is:
 
 1. outgoing-only — completed
 2. incoming-only — completed
 3. missing local views — completed
-4. reachability-only — next
-5. state-label collision
+4. reachability-only — completed
+5. state-label collision — next
 6. anonymous / global-ID-free views
 
 ## Planned workflow
@@ -66,10 +68,12 @@ See:
 - [`docs/stage0_definitions.md`](docs/stage0_definitions.md)
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
 - [`docs/stage1b_missing_views_protocol.md`](docs/stage1b_missing_views_protocol.md)
+- [`docs/stage1b_reachability_protocol.md`](docs/stage1b_reachability_protocol.md)
 - [`results/stage1a_baseline.md`](results/stage1a_baseline.md)
 - [`results/stage1b_outgoing_only.md`](results/stage1b_outgoing_only.md)
 - [`results/stage1b_incoming_only.md`](results/stage1b_incoming_only.md)
 - [`results/stage1b_missing_views.md`](results/stage1b_missing_views.md)
+- [`results/stage1b_reachability_only.md`](results/stage1b_reachability_only.md)
 
 ## Methodological rule
 

@@ -23,6 +23,14 @@ from .stage1 import (
     transitive_closure,
     views_by_id,
 )
+from .stage1_reachability import (
+    ReachabilityConsistency,
+    ReachabilityLocalView,
+    check_reachability_consistency,
+    project_all_reachability_views,
+    project_reachability_view,
+    reconstruct_cover_from_reachability,
+)
 
 __all__ = [
     "Block",
@@ -30,8 +38,11 @@ __all__ = [
     "IncomingLocalView",
     "LocalView",
     "OutgoingLocalView",
+    "ReachabilityConsistency",
+    "ReachabilityLocalView",
     "ViewConsistency",
     "canonical_block",
+    "check_reachability_consistency",
     "check_view_consistency",
     "compare_blocks",
     "glue_incoming_views",
@@ -40,10 +51,13 @@ __all__ = [
     "make_block",
     "project_all_incoming_views",
     "project_all_outgoing_views",
+    "project_all_reachability_views",
     "project_all_views",
     "project_incoming_view",
     "project_local_view",
     "project_outgoing_view",
+    "project_reachability_view",
+    "reconstruct_cover_from_reachability",
     "transitive_closure",
     "views_by_id",
 ]

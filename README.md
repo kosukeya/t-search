@@ -30,16 +30,16 @@ Completed variants:
 - **outgoing-only** retains `V_e^+ = (id_e, Succ_1(e))` and reconstructs the canonical graph exactly;
 - **incoming-only** retains `V_e^- = (id_e, Pred_1(e))` and also reconstructs the canonical graph exactly;
 - **missing local views** removes whole event-owned perspectives and separates reconstructible latent events, ambiguous latent-latent relations, and completely lost unreferenced events;
-- **reachability-only** replaces one-hop adjacency by complete ancestor/descendant order information and reconstructs the canonical cover relation by transitive reduction.
+- **reachability-only** replaces one-hop adjacency by complete ancestor/descendant order information and reconstructs the canonical cover relation by transitive reduction;
+- **state-label collision** introduces `s: E -> Sigma` with `b != c` but `s(b)=s(c)="X"`, confirming that correct ID-based reconstruction preserves both events while a naive state-identity quotient collapses structure.
 
-The reachability-only experiment adds an important representation distinction:
+The B5 state-label result makes the distinction explicit:
 
-- the canonical graph has 6 direct cover edges and 13 reachability pairs;
-- `TR(TC(C)) = C` for the canonical graph because its direct-edge set is already the minimal cover relation;
-- adding a transitively redundant shortcut `a -> d` leaves all reachability-only views unchanged;
-- transitive reduction removes that shortcut, so reachability is preserved while the exact non-minimal direct-edge encoding is not identifiable.
+`state equality != event identity`.
 
-Thus B4 distinguishes a reconstructible partial order / cover relation from arbitrary redundant edge-list details. This is potentially relevant to the search for representation-independent temporal structure, but Stage 1 does not yet claim that reachability is a fundamental physical invariant.
+In the canonical collision, the correct reconstruction keeps 6 events and 6 edges with the full state map intact. The deliberately incorrect state-as-identity control collapses the graph to 5 state-nodes and 4 distinct state-edges, losing the separate `b` and `c` branches.
+
+This does not establish that global event IDs are fundamental. They remain a privileged encoding in B5 and will be removed in B6.
 
 The planned Stage 1B order is:
 
@@ -47,8 +47,8 @@ The planned Stage 1B order is:
 2. incoming-only — completed
 3. missing local views — completed
 4. reachability-only — completed
-5. state-label collision — next
-6. anonymous / global-ID-free views
+5. state-label collision — completed
+6. anonymous / global-ID-free views — next
 
 ## Planned workflow
 
@@ -69,14 +69,19 @@ See:
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
 - [`docs/stage1b_missing_views_protocol.md`](docs/stage1b_missing_views_protocol.md)
 - [`docs/stage1b_reachability_protocol.md`](docs/stage1b_reachability_protocol.md)
+- [`docs/stage1b_state_labels_protocol.md`](docs/stage1b_state_labels_protocol.md)
 - [`src/t_search/stage1_reachability.py`](src/t_search/stage1_reachability.py)
+- [`src/t_search/stage1_state_labels.py`](src/t_search/stage1_state_labels.py)
 - [`experiments/stage1b_reachability_only.py`](experiments/stage1b_reachability_only.py)
+- [`experiments/stage1b_state_label_collision.py`](experiments/stage1b_state_label_collision.py)
 - [`tests/test_stage1b_reachability_only.py`](tests/test_stage1b_reachability_only.py)
+- [`tests/test_stage1b_state_labels.py`](tests/test_stage1b_state_labels.py)
 - [`results/stage1a_baseline.md`](results/stage1a_baseline.md)
 - [`results/stage1b_outgoing_only.md`](results/stage1b_outgoing_only.md)
 - [`results/stage1b_incoming_only.md`](results/stage1b_incoming_only.md)
 - [`results/stage1b_missing_views.md`](results/stage1b_missing_views.md)
 - [`results/stage1b_reachability_only.md`](results/stage1b_reachability_only.md)
+- [`results/stage1b_state_label_collision.md`](results/stage1b_state_label_collision.md)
 
 ## Methodological rule
 

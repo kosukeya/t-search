@@ -195,8 +195,8 @@ Run variants in this order:
 
 1. **B1 — outgoing-only** — completed
 2. **B2 — incoming-only** — completed
-3. **B3 — missing local views** — next
-4. **B4 — reachability-only**
+3. **B3 — missing local views** — completed
+4. **B4 — reachability-only** — next
 5. **B5 — state-label collision**
 6. **B6 — anonymous / global-ID-free views**
 7. optional combined restrictions, only after B1–B6 are individually understood.
@@ -261,20 +261,50 @@ Interpretation: B2 mirrors B1. The outgoing direction was not specially privileg
 
 ## 14. Variant B3 — missing local views
 
-Delete one or more local views from an otherwise labeled family.
+Delete one or more complete Stage 1A local views while retaining both predecessor and successor information in every surviving view.
+
+The detailed B3 semantics are fixed in:
+
+- [`stage1b_missing_views_protocol.md`](stage1b_missing_views_protocol.md)
 
 Distinguish two reconstruction policies:
 
-1. **strict observed-node reconstruction** — only view owners count as events;
-2. **referenced latent-node reconstruction** — IDs mentioned as neighbors may introduce events whose own views are absent.
+1. **strict observed-node reconstruction** — only view owners count as reconstructed events; references to missing-view IDs remain dangling references;
+2. **referenced latent-node reconstruction** — IDs mentioned by surviving neighbors may introduce latent events whose own views are absent.
 
-Questions:
+For surviving owner-owner edges, incoming/outgoing reports must still agree. Under the latent policy, an edge touching a missing-view event may have only one surviving report and is retained as single-channel evidence.
 
-- which nodes and edges remain reconstructible?
-- which are merely referenced but not locally observed?
-- when does the compatible global structure cease to be unique?
+Observed canonical cases:
 
-Do not silently switch between the two policies.
+### Case A — remove only `V_d`
+
+- strict policy reconstructs only `{a,b,c,e,f}` with direct edges `{a->b,a->c}` and dangling reference `d`;
+- latent policy recovers `d` from surviving references;
+- all six original direct edges remain reported by at least one surviving endpoint;
+- labeled equality, unlabeled isomorphism, and reachability equality are all true under the latent policy;
+- compatible completion count: 1.
+
+Interpretation: one missing perspective can be structurally reconstructed when shared IDs remain and every incident relation has at least one surviving endpoint report.
+
+### Case B — remove `V_b` and `V_d`
+
+- `b` and `d` both remain referenced and are recovered as latent event IDs;
+- the edge `b -> d` has no surviving endpoint report because both endpoint views are absent;
+- the evidence-backed graph contains five of the six original edges;
+- under the stated closed-world event universe and DAG constraint, the unresolved `b/d` relation yields exactly three labeled completions: no edge, `b -> d`, or `d -> b`;
+- the original canonical graph is one compatible completion but is not uniquely selected.
+
+Interpretation: event identity may remain reconstructible while a relation between latent events becomes ambiguous.
+
+### Case C — remove `V_d` and `V_e`
+
+- `d` remains referenced and is recovered as latent;
+- `e` is no longer a view owner and is not referenced by any surviving view;
+- `e` therefore disappears from the candidate event universe and is classified as lost.
+
+B3 therefore establishes three distinct coverage outcomes: reconstructible missing perspective, ambiguous latent-latent relation, and completely lost unreferenced event.
+
+These are model-theoretic/information-loss results only. Compatible completions are **not** yet interpreted as ontic Potentiality.
 
 ## 15. Variant B4 — reachability-only
 

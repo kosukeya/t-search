@@ -28,16 +28,23 @@ Stage 1B is reducing local information one component at a time.
 Completed variants:
 
 - **outgoing-only** retains `V_e^+ = (id_e, Succ_1(e))` and reconstructs the canonical graph exactly;
-- **incoming-only** retains `V_e^- = (id_e, Pred_1(e))` and also reconstructs the canonical graph exactly.
+- **incoming-only** retains `V_e^- = (id_e, Pred_1(e))` and also reconstructs the canonical graph exactly;
+- **missing local views** removes whole event-owned perspectives and compares strict observed-node versus referenced latent-node reconstruction.
 
-Together these controls show that, while global IDs and one view per event are retained, either one coherent oriented direct-adjacency channel is sufficient. The omitted opposite-direction channel was redundant for reconstruction but supplied the independent incoming/outgoing consistency check available in Stage 1A.
+The missing-view experiment adds an important distinction:
+
+- with only `V_d` missing, the latent policy reconstructs `d` and all six canonical edges exactly from surviving neighbor reports;
+- with `V_b` and `V_d` missing, both event IDs remain reconstructible but the direct relation between them is ambiguous, yielding three compatible labeled DAG completions under the stated closed-world assumptions;
+- with `V_d` and `V_e` missing, `e` becomes completely unreferenced and is lost from the reconstructible event universe.
+
+Thus Stage 1B has now separated redundant direction information from coverage loss and has produced the first explicit case where **event identity is reconstructible while a relation between latent events is not uniquely determined**.
 
 The planned Stage 1B order is:
 
 1. outgoing-only — completed
 2. incoming-only — completed
-3. missing local views — next
-4. reachability-only
+3. missing local views — completed
+4. reachability-only — next
 5. state-label collision
 6. anonymous / global-ID-free views
 
@@ -58,9 +65,11 @@ See:
 - [`docs/concepts.md`](docs/concepts.md)
 - [`docs/stage0_definitions.md`](docs/stage0_definitions.md)
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
+- [`docs/stage1b_missing_views_protocol.md`](docs/stage1b_missing_views_protocol.md)
 - [`results/stage1a_baseline.md`](results/stage1a_baseline.md)
 - [`results/stage1b_outgoing_only.md`](results/stage1b_outgoing_only.md)
 - [`results/stage1b_incoming_only.md`](results/stage1b_incoming_only.md)
+- [`results/stage1b_missing_views.md`](results/stage1b_missing_views.md)
 
 ## Methodological rule
 

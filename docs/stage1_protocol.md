@@ -1,23 +1,23 @@
 # Stage 1 Protocol — Minimal Classical Global/Local Reconstruction
 
-Status: **protocol for the first implementation pass**.
+Status: **active implementation protocol**.
 
-This document freezes only the minimum definitions needed to write Stage 1 code. If implementation reveals a problem, revise this protocol before changing the code semantics silently.
+This document freezes the minimum definitions needed for Stage 1. If implementation reveals a semantic problem, revise this protocol before silently changing the code.
 
 ## 1. Purpose
 
-Stage 1 is not yet a model of full physical becoming. It is a controlled test of whether a global relational structure can be projected into local views and reconstructed from a family of those views.
+Stage 1 is not yet a model of full physical becoming. It is a controlled test of whether a global relational structure can be projected into local views and reconstructed from families of those views.
 
-Primary round trip:
+Primary baseline round trip:
 
 `B_1 -> {V_e} -> B_1_hat`
 
-The experiment asks:
+Stage 1 asks:
 
 1. Which structures are locally visible?
 2. Which structures are reconstructible only after gluing multiple local views?
-3. Which structures are lost when local information is restricted?
-4. Which alleged invariants are merely artifacts of labels or encoding choices?
+3. Which structures become ambiguous or lost when local information is restricted?
+4. Which apparent invariants are artifacts of labels or encoding choices?
 
 ## 2. Global object B1
 
@@ -26,18 +26,17 @@ Define:
 `B_1 = (E, C)`
 
 where:
+
 - `E` is a finite set of events;
 - `C subset E x E` is the set of direct oriented edges;
 - `(e,e)` is forbidden;
-- the directed graph `(E,C)` is acyclic in Stage 1.
+- `(E,C)` is acyclic in Stage 1.
 
-The first canonical graph is:
+Canonical graph:
 
 `E = {a,b,c,d,e,f}`
 
 `C = {(a,b), (a,c), (b,d), (c,d), (d,e), (d,f)}`
-
-ASCII form:
 
 ```text
       a
@@ -49,43 +48,43 @@ ASCII form:
     e   f
 ```
 
-This graph contains both branching and merging, so direct adjacency and transitive reachability are not identical.
+The graph contains both branching and merging, so direct adjacency and transitive reachability are distinct.
 
 ## 3. Event identity and state labels
 
-Event identity and state value are separate concepts.
+Event identity and state value are separate.
 
-Stage 1A uses event IDs directly:
+Stage 1A and the first Stage 1B variants retain global event IDs:
 
 `id(a) = "a"`, ..., `id(f) = "f"`.
 
-If state labels are introduced later, they must use a separate function:
+If state labels are introduced:
 
-`s: E -> Sigma`.
+`s: E -> Sigma`
 
 The reconstruction algorithm must never infer event identity solely from state equality.
 
 ## 4. Direct edges versus induced order
 
-Define immediate predecessor and successor sets:
+Define:
 
 `Pred_1(e) = {x in E | (x,e) in C}`
 
-`Succ_1(e) = {y in E | (e,y) in C}`.
+`Succ_1(e) = {y in E | (e,y) in C}`
 
-Define reachability:
+Define non-reflexive reachability:
 
 `x prec y`
 
-iff there exists a non-empty directed path from `x` to `y`.
+iff a non-empty directed path exists from `x` to `y`.
 
-`prec` is the transitive closure of `C`.
+`prec = TC(C)`.
 
-We will test preservation of `C` and `prec` separately.
+Direct adjacency `C` and reachability `prec` must be tested separately.
 
-## 5. Local structural view Ve
+## 5. Stage 1A local structural view
 
-For Stage 1A define:
+For Stage 1A:
 
 `V_e = (id_e, Pred_1(e), Succ_1(e))`.
 
@@ -93,43 +92,39 @@ Example:
 
 `V_d = ("d", {"b","c"}, {"e","f"})`.
 
-Important:
-- this is a one-hop structural view;
-- it is not yet `G_e = (Rec_e, Act_e, Pot_e)`;
-- it contains no records, probabilities, Potentiality, or phenomenology;
-- it is a precursor used to test projection and gluing.
+This is a one-hop structural view, not yet a full becoming-like object `G_e = (Rec_e, Act_e, Pot_e)`.
 
-## 6. Projection Fe
+It contains no records, probabilities, Potentiality, or phenomenology.
+
+## 6. Stage 1A projection
 
 Define:
 
-`F_e(B_1) = V_e`.
+`F_e(B_1) = V_e`
 
-Define the family projection:
+and
 
 `F(B_1) = {F_e(B_1) | e in E}`.
 
 Stage 1A returns one local view for every event.
 
-The projection may be implemented in any Python execution order. That order has no temporal meaning inside the model.
+Python iteration order has no modeled temporal meaning.
 
-## 7. Gluing procedure
+## 7. Stage 1A gluing
 
 Input:
 
 `Views = {V_e | e in E}`.
 
-For Stage 1A, event identifiers are available.
-
-Reconstruct:
+Because event IDs are available:
 
 `E_hat = {id_e | V_e in Views}`.
 
-Reconstruct candidate direct edges from outgoing reports:
+Reconstruct outgoing reports:
 
 `C_out = {(id_e, y) | y in Succ_1(e)}`.
 
-Independently reconstruct candidate direct edges from incoming reports:
+Reconstruct incoming reports:
 
 `C_in = {(x, id_e) | x in Pred_1(e)}`.
 
@@ -137,225 +132,292 @@ Consistency condition:
 
 `C_out = C_in`.
 
-If the equality fails, the family of views is inconsistent and gluing must report an error rather than silently choosing one source.
+If it fails, gluing must report an error instead of choosing one report.
 
-If consistent, define:
+If it holds:
 
-`C_hat = C_out = C_in`.
+`C_hat = C_out = C_in`
 
-Then:
+and
 
 `Glue(Views) = B_1_hat = (E_hat, C_hat)`.
 
-## 8. Equivalence relation
+## 8. Equivalence and diagnostics
 
-### Stage 1A primary criterion
+### Labeled equality
 
-Because IDs are deliberately retained:
+With global IDs retained, equality means equality of both event set and direct-edge set.
 
-`B_1_hat ≅ B_1`
+### Unlabeled graph isomorphism
 
-means:
+Also compute directed graph isomorphism so later ID-free variants can reuse the same comparison machinery.
 
-`E_hat = E` and `C_hat = C`.
+### Reachability equality
 
-This is labeled directed-graph equality, stronger than unlabeled isomorphism.
-
-### Secondary criterion
-
-Also compute unlabeled directed-graph isomorphism so later Stage 1B experiments can hide IDs without changing the comparison machinery.
-
-### Reachability criterion
-
-Compute transitive closures:
+Compute:
 
 `prec_hat = TC(C_hat)`
 
-`prec = TC(C)`
+and compare it independently with `prec = TC(C)`.
 
-and compare them independently.
+This allows adjacency and reachability to be classified separately.
 
-This permits outcomes such as:
-- adjacency differs but reachability is preserved;
-- both adjacency and reachability are preserved;
-- both are ambiguous/lost.
+## 9. Stage 1A baseline result
 
-## 9. Stage 1A expected outcome
-
-Expected result:
+Expected and observed baseline:
 
 `Glue(F(B_1)) = B_1`.
 
-This is a sanity check.
+Stage 1A validates the representation, projection, consistency checks, gluing, equality/isomorphism diagnostics, and transitive-closure diagnostics.
 
-It validates:
-- event representation;
-- local-view construction;
-- consistency checks;
-- gluing;
-- equality/isomorphism diagnostics;
-- transitive-closure diagnostics.
+It does **not** establish a deep temporal invariant or metaphysical conclusion.
 
-It does **not** establish a deep invariant or support a metaphysical conclusion.
+# Stage 1B — Controlled information loss
 
-## 10. Stage 1B information-loss variants
+## 10. General method
 
-Run variants one at a time so the source of ambiguity is identifiable.
+Stage 1B removes one source of information at a time.
 
-### Variant B1 — hide global IDs
+For each variant:
 
-Replace IDs by anonymous local tokens where possible.
+1. define exactly which local information is retained;
+2. construct the corresponding local views;
+3. attempt reconstruction;
+4. compare direct adjacency and reachability separately;
+5. record whether the target property is local, reconstructible, ambiguous, or lost;
+6. record which assumptions make the reconstruction possible.
 
-Question: can the set of local neighborhoods determine the global graph up to isomorphism?
+Do not combine restrictions until the individual variants are understood.
 
-### Variant B2 — remove outgoing information
+## 11. Stage 1B execution order
 
-Use:
+Run variants in this order:
 
-`V_e^- = (id_e, Pred_1(e))`.
+1. **B1 — outgoing-only**
+2. **B2 — incoming-only**
+3. **B3 — missing local views**
+4. **B4 — reachability-only**
+5. **B5 — state-label collision**
+6. **B6 — anonymous / global-ID-free views**
+7. optional combined restrictions, only after B1–B6 are individually understood.
 
-Question: is the graph still reconstructible from all predecessor reports?
+The final anonymous/global-ID-free experiment is deliberately postponed because it changes the reconstruction problem from labeled gluing to a graph-realization / ambiguity problem.
 
-### Variant B3 — remove incoming information
+## 12. Variant B1 — outgoing-only
 
-Use:
+Retain:
 
 `V_e^+ = (id_e, Succ_1(e))`.
 
-Question: is the graph still reconstructible from all successor reports?
+Remove all incoming predecessor reports.
 
-### Variant B4 — missing local views
+For the first B1 experiment:
 
-Delete one or more `V_e` from the family.
+- every event still has one local view;
+- global event IDs are still retained;
+- every successor reference must name an event that also has a view.
 
-Question: which edges/orders remain uniquely reconstructible?
+Reconstruct:
 
-### Variant B5 — reachability-only views
+`E_hat = {id_e | V_e^+ in Views}`
 
-Replace one-hop adjacency with ancestor/descendant sets.
+`C_hat = {(id_e, y) | y in Succ_1(e)}`.
 
-Question: can the original cover/direct-edge structure be recovered uniquely from the partial order?
+Questions:
 
-For a finite DAG, test whether transitive reduction restores the original `C`, and explicitly note the assumptions under which this is unique.
+1. Is the full direct-edge set `C` reconstructible?
+2. Is the reachability relation `prec` reconstructible?
+3. Was the incoming half of Stage 1A structurally necessary, or only redundant validation information?
+4. Which consistency checks are lost when predecessor reports are removed?
 
-### Variant B6 — state-label collisions
+Expected classification if the canonical graph round-trips:
 
-Introduce a state map where distinct events share the same state value.
+- `id_e` and `Succ_1(e)`: local observable;
+- `C`: reconstructible from the complete outgoing-view family;
+- `prec`: reconstructible after computing transitive closure;
+- incoming/outgoing cross-report consistency: lost because the incoming report channel was intentionally removed;
+- no strict invariant is claimed merely from this successful reconstruction.
 
-Question: does any reconstruction procedure accidentally conflate event identity with state equality?
+## 13. Variant B2 — incoming-only
 
-## 11. Classification of results
+Retain:
 
-Every tested property must be assigned to one or more of these categories.
+`V_e^- = (id_e, Pred_1(e))`.
+
+Question: is the graph reconstructible from all predecessor reports alone?
+
+This is the direction-reversed control for B1.
+
+## 14. Variant B3 — missing local views
+
+Delete one or more local views from an otherwise labeled family.
+
+Distinguish two reconstruction policies:
+
+1. **strict observed-node reconstruction** — only view owners count as events;
+2. **referenced latent-node reconstruction** — IDs mentioned as neighbors may introduce events whose own views are absent.
+
+Questions:
+
+- which nodes and edges remain reconstructible?
+- which are merely referenced but not locally observed?
+- when does the compatible global structure cease to be unique?
+
+Do not silently switch between the two policies.
+
+## 15. Variant B4 — reachability-only
+
+Replace one-hop adjacency by ancestor/descendant information.
+
+Question: can the original cover/direct-edge relation be recovered from the partial order?
+
+For finite DAGs, test whether transitive reduction recovers the canonical `C`, and state the assumptions under which that reduction is unique.
+
+## 16. Variant B5 — state-label collision
+
+Introduce a separate state map:
+
+`s: E -> Sigma`
+
+with at least two distinct events sharing one state value.
+
+Question: does any reconstruction procedure incorrectly identify event identity with state equality?
+
+This is primarily a guard against a hidden `state == event` assumption.
+
+## 17. Variant B6 — anonymous / global-ID-free views
+
+Remove shared global event names.
+
+Local descriptions should use only anonymous/local tokens where possible.
+
+Core question:
+
+> Does the multiset/family of anonymous local neighborhoods determine the global directed graph uniquely up to isomorphism?
+
+Define the compatible global candidates:
+
+`B(V) = {B^(1), B^(2), ...}`
+
+and, where computationally feasible:
+
+`N_compatible = |B(V) / ~=|`.
+
+Interpretation:
+
+- `N_compatible = 0`: local views are mutually inconsistent;
+- `N_compatible = 1`: unique reconstruction up to graph isomorphism;
+- `N_compatible > 1`: the global structure is ambiguous from the supplied local relational information.
+
+Automorphisms such as exchanging symmetric nodes are not distinct global structures when they yield isomorphic graphs.
+
+## 18. Optional combined restrictions
+
+Only after B1–B6:
+
+- hide IDs plus remove one direction;
+- hide IDs plus delete views;
+- combine state collisions with anonymous neighborhoods;
+- vary graph size/topology.
+
+These are robustness tests, not prerequisites for the first Stage 1 report.
+
+## 19. Property classification
 
 ### Local observable
-Available directly in one specified `V_e`.
 
-Examples in Stage 1A:
-- event ID;
-- immediate predecessor IDs;
-- immediate successor IDs.
+Directly available in one specified local view.
 
 ### Reconstructible property
-Not necessarily available in one local view but uniquely recoverable from a specified family of views plus stated gluing assumptions.
 
-Examples may include:
-- full direct edge set `C` from all Stage 1A views;
-- reachability `prec` after gluing.
+Not necessarily available in one view but uniquely recoverable from a stated family of views plus explicit gluing assumptions.
 
 ### Strict invariant
+
 Reserve this term for a property preserved under a genuine representation equivalence/reversible description change, up to the chosen equivalence relation.
 
 Do not call every reconstructible property an invariant.
 
 ### Ambiguous property
+
 More than one non-equivalent global structure is compatible with the same available local data.
 
 ### Lost property
+
 The property is neither directly available nor uniquely reconstructible under the stated protocol.
 
-## 12. Required diagnostics
+## 20. Required diagnostics
 
-For each run record:
+For each run, record as applicable:
 
-- number of events;
-- number of direct edges;
+- variant name;
+- retained local information;
+- number of events represented by view owners;
+- number of referenced event IDs;
+- number of direct edges reconstructed;
 - DAG check;
-- all local views;
-- consistency of incoming/outgoing edge reports;
+- local views;
+- consistency diagnostics available under that variant;
 - reconstructed edge set;
-- labeled equality result;
-- unlabeled graph-isomorphism result;
-- reachability equality result;
-- any ambiguity count or alternative compatible graphs if computable;
-- classification of tested properties as local / reconstructible / invariant / ambiguous / lost.
+- labeled equality;
+- unlabeled graph isomorphism;
+- reachability equality;
+- ambiguity count / alternative compatible graphs if computable;
+- classification as local / reconstructible / invariant / ambiguous / lost;
+- assumptions required for reconstruction.
 
-## 13. Implementation constraints
+## 21. Implementation constraints
 
-Recommended implementation language: Python.
+Recommended language: Python.
 
-A lightweight graph library such as `networkx` is acceptable, but the semantic definitions above must remain independent of that library.
+`networkx` is acceptable, but the semantic definitions above remain library-independent.
 
-The implementation should contain separate functions conceptually equivalent to:
+Keep projection and reconstruction functions separate.
 
-```python
-make_block(...)
-project_local_view(block, event)
-project_all_views(block)
-glue_views(views)
-transitive_closure(block)
-compare_blocks(original, reconstructed)
-```
+Do not encode the expected canonical answer into gluing beyond the information actually available in the variant.
 
-Do not encode the expected answer directly into `glue_views` beyond the information explicitly made available by the protocol.
-
-## 14. Simulation-order rule
-
-The Python program may loop through `a,b,c,d,e,f` in any order.
-
-That loop order is external implementation order only.
-
-Modeled temporal/causal structure is represented solely by graph relations such as `C` and `prec`.
-
-Rule:
+## 22. Simulation-order rule
 
 `simulation order != modeled temporal order`.
 
-## 15. Non-goals of Stage 1
+Python loop order is external implementation order only.
+
+Modeled temporal/causal structure is represented solely by relations such as `C` and `prec`.
+
+## 23. Non-goals of Stage 1
 
 Stage 1 does not yet test:
-- whether relata and relations are dynamically mutually constitutive;
-- whether Future Potential is ontic or epistemic;
-- whether records produce experienced time;
+
+- dynamic mutual constitution of relata and relations;
+- ontic versus epistemic Future Potential;
+- records and experienced time;
 - entropy production;
 - quantum mechanics;
 - Page–Wootters dynamics;
-- change of quantum reference frame;
+- quantum reference-frame changes;
 - general relativity;
-- metaphysical eternalism versus genuine ontic becoming.
+- eternalism versus genuine ontic becoming.
 
-Those are intentionally deferred.
-
-## 16. Stage 1 exit criteria
+## 24. Stage 1 exit criteria
 
 Stage 1 is complete when:
 
 1. Stage 1A round trip is reproducible;
-2. adjacency and reachability tests are separated;
-3. at least several Stage 1B information-loss variants have been run;
+2. adjacency and reachability are kept distinct;
+3. Stage 1B B1–B6 have been run or a documented reason is given for omitting a variant;
 4. each result is classified as local, reconstructible, invariant, ambiguous, or lost;
-5. the experiment reveals exactly which conclusions depend on event IDs or other privileged encoding choices;
-6. the results are recorded without interpreting Python execution order as physical time;
-7. we can state what Stage 1 taught us that is needed before introducing Potentiality in Stage 2.
+5. dependence on global event IDs and other privileged encodings is explicit;
+6. simulation order has not been interpreted as physical time;
+7. we can state what Stage 1 teaches us before Potentiality is introduced in Stage 2.
 
-## 17. Fixed research questions for the Stage 1 report
+## 25. Fixed research questions for the Stage 1 report
 
 1. What exactly was `B_1`?
-2. What exactly was available in each `V_e`?
-3. What did `F_e` discard?
-4. What assumptions did `Glue` require?
+2. What exactly was available in each local view?
+3. What did each projection discard?
+4. What assumptions did each reconstruction require?
 5. Which properties were directly local?
-6. Which were reconstructible only from the family of perspectives?
+6. Which were reconstructible only from a family of perspectives?
 7. Did any non-trivial strict invariant appear, or only reconstructible structure?
 8. Which conclusions disappeared when IDs or local information were removed?
 9. What should be carried forward into the Stage 2 definition of Potentiality?

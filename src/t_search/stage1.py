@@ -41,6 +41,14 @@ class OutgoingLocalView:
 
 
 @dataclass(frozen=True)
+class IncomingLocalView:
+    """Stage 1B incoming-only view V_e^- = (id_e, Pred_1(e))."""
+
+    event_id: EventId
+    predecessors: frozenset[EventId]
+
+
+@dataclass(frozen=True)
 class ViewConsistency:
     """Diagnostics comparing incoming and outgoing edge reports."""
 
@@ -135,6 +143,19 @@ def project_all_outgoing_views(block: Block) -> tuple[OutgoingLocalView, ...]:
     return tuple(project_outgoing_view(block, event) for event in sorted(block.events))
 
 
+def project_incoming_view(block: Block, event: EventId) -> IncomingLocalView:
+    """Project B_1 onto V_e^- = (id_e, Pred_1(e))."""
+    if event not in block.events:
+        raise KeyError(f"unknown event: {event}")
+    predecessors = frozenset(source for source, target in block.direct_edges if target == event)
+    return IncomingLocalView(event, predecessors)
+
+
+def project_all_incoming_views(block: Block) -> tuple[IncomingLocalView, ...]:
+    """Project one incoming-only Stage 1B view per event."""
+    return tuple(project_incoming_view(block, event) for event in sorted(block.events))
+
+
 def check_view_consistency(views: Iterable[LocalView]) -> ViewConsistency:
     """Compare independently reported incoming and outgoing direct edges."""
     materialized = tuple(views)
@@ -195,9 +216,8 @@ def glue_views(views: Iterable[LocalView]) -> Block:
 def glue_outgoing_views(views: Iterable[OutgoingLocalView]) -> Block:
     """Reconstruct a block from a complete family of outgoing-only views.
 
-    Stage 1B deliberately removes the redundant incoming reports. Because global
-    event IDs are still retained, all event IDs must occur as view owners; neighbor
-    references outside that set are rejected.
+    Because global event IDs are retained, all referenced successors must also occur
+    as view owners under this strict complete-family policy.
     """
     materialized = tuple(views)
     if not materialized:
@@ -223,6 +243,36 @@ def glue_outgoing_views(views: Iterable[OutgoingLocalView]) -> Block:
     return make_block(event_ids, outgoing_edges)
 
 
+def glue_incoming_views(views: Iterable[IncomingLocalView]) -> Block:
+    """Reconstruct a block from a complete family of incoming-only views.
+
+    Because global event IDs are retained, all referenced predecessors must also
+    occur as view owners under this strict complete-family policy.
+    """
+    materialized = tuple(views)
+    if not materialized:
+        raise ValueError("cannot glue an empty incoming-only view family")
+
+    ids = [view.event_id for view in materialized]
+    if len(ids) != len(set(ids)):
+        raise ValueError("incoming-only view family contains duplicate event IDs")
+
+    event_ids = frozenset(ids)
+    referenced_ids = frozenset(
+        predecessor for view in materialized for predecessor in view.predecessors
+    )
+    unknown = referenced_ids - event_ids
+    if unknown:
+        raise ValueError(f"incoming-only views reference unknown events: {sorted(unknown)}")
+
+    incoming_edges = frozenset(
+        (predecessor, view.event_id)
+        for view in materialized
+        for predecessor in view.predecessors
+    )
+    return make_block(event_ids, incoming_edges)
+
+
 def transitive_closure(block: Block) -> frozenset[Edge]:
     """Return the non-reflexive reachability relation prec = TC(C)."""
     closure = nx.transitive_closure(_as_graph(block))
@@ -245,6 +295,8 @@ def compare_blocks(original: Block, reconstructed: Block) -> ComparisonResult:
     )
 
 
-def views_by_id(views: Iterable[LocalView | OutgoingLocalView]) -> Mapping[EventId, LocalView | OutgoingLocalView]:
+def views_by_id(
+    views: Iterable[LocalView | OutgoingLocalView | IncomingLocalView],
+) -> Mapping[EventId, LocalView | OutgoingLocalView | IncomingLocalView]:
     """Convenience helper for deterministic inspection and tests."""
     return {view.event_id: view for view in views}

@@ -17,63 +17,90 @@ The long-term hypothesis is that such invariants may be better candidates for th
 
 Stage 0 / 0.5 fixed provisional definitions and the initial reconstruction protocol.
 
+**Stage 1 is now experimentally and conceptually complete pending PR review/merge.**
+
 Stage 1A implemented the information-rich baseline:
 
 `B_1 -> {V_e} -> B_1_hat`
 
 and confirmed exact reconstruction of the canonical labeled DAG.
 
-Stage 1B has now completed its six planned controlled information-loss / representation variants:
+Stage 1B completed six controlled information-loss / representation variants:
 
 1. **outgoing-only** — a complete shared-ID family of successor reports reconstructs the canonical graph;
 2. **incoming-only** — the direction-reversed control gives the same result;
 3. **missing local views** — reduced coverage separates reconstructible latent events, ambiguous latent-latent relations, and completely lost unreferenced events;
 4. **reachability-only** — complete order information reconstructs the canonical cover relation by transitive reduction but cannot identify arbitrary redundant shortcut edges;
-5. **state-label collision** — confirms `state equality != event identity` by keeping `b` and `c` distinct despite `s(b)=s(c)`;
-6. **anonymous / global-ID-free views** — removes shared global event IDs and performs exhaustive six-event DAG reconstruction up to directed graph isomorphism.
+5. **state-label collision** — confirms `state equality != event identity`;
+6. **anonymous / global-ID-free views** — removes shared global event IDs and tests reconstruction up to directed graph isomorphism.
 
-### B6 anonymous result
+The integrated conclusions are recorded in:
 
-B6 uses an exhaustive search over all `2^15 = 32768` forward-edge graphs on a fixed six-event topological bookkeeping order. Every six-event DAG is isomorphic to at least one graph in this search class.
+- [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 
-With the minimal anonymous one-hop signature
+## Stage 1 synthesis
 
-`A_e^(0) = (in_degree(e), out_degree(e))`,
+The strongest Stage 1 results are:
 
-the canonical local multiset admits:
+- one oriented direct-adjacency channel is sufficient when shared IDs and complete coverage remain;
+- coverage loss can move structure from reconstructible to ambiguous to completely lost;
+- reachability / minimal cover structure survives transitively redundant direct-edge encoding differences better than arbitrary edge lists;
+- equal state values do not provide a valid event-identity criterion;
+- shared global IDs are sufficient but not always necessary for global reconstruction;
+- minimal anonymous degree-only locality admits **3 non-isomorphic** compatible six-event DAGs;
+- one-step anonymous neighborhood refinement leaves **1 compatible isomorphism class**, the canonical graph, in the tested exhaustive six-event DAG class.
 
-- 5 topological-label matches;
-- **3 non-isomorphic compatible global DAGs**.
+The B6 exhaustive search scans all:
 
-Thus bare anonymous local star shapes do **not** uniquely determine the global graph.
+`2^15 = 32768`
 
-With one extra layer of anonymous relational context,
+forward-edge subsets on a fixed six-event topological bookkeeping order. Every six-event DAG has at least one representative in that search up to isomorphism.
 
-`A_e^(1) = (t_0(e), predecessor-type multiset, successor-type multiset)`,
+Stage 1 therefore supports a modest methodological conclusion:
 
-where `t_0(e)=(in_degree,out_degree)`, the same exhaustive search leaves:
+> global reconstruction depends on the amount of relational information and on the chosen equivalence assumptions, not merely on the presence of global labels.
 
-- 1 topological-label match;
-- **1 compatible isomorphism class**, which is the canonical graph.
+It does **not** establish that reachability, graph isomorphism class, or any other Stage 1 structure is the fundamental ontology of physical time.
 
-So the B6 result is not simply "IDs are necessary". In this toy model, **the amount of anonymous relational context determines whether global structure is ambiguous or uniquely reconstructible up to isomorphism**.
+## Stage 1 exit decision
 
-This remains a finite combinatorial reconstruction result, not a claim that physical time or spacetime is fundamentally reconstructed this way.
+The Stage 1 synthesis concludes that the planned exit criteria are satisfied.
+
+Optional combined restrictions such as anonymous views plus missing coverage are **not required for Stage 1 completion**. They remain valuable robustness/generalization tests if later claims depend on the Stage 1 reconstruction assumptions.
+
+The highest-value future controls are:
+
+- refined anonymous views + missing coverage;
+- refined anonymous views + repeated state labels;
+- larger and structurally different DAG families.
+
+## Next stage
+
+Stage 2 introduces Potentiality only after Stage 1 is closed.
+
+The planned comparison is between two intentionally different internal model structures:
+
+1. **epistemic-history model** — a complete history is preselected but hidden from the current/local perspective;
+2. **ontic-extension model** — only the current structure plus admissible extensions is represented, with no hidden complete future history preselected.
+
+A central guard carried forward from Stage 1 is:
+
+`compatible global completions != ontic future possibilities`.
+
+If the epistemic and ontic models remain operationally indistinguishable under the tested observables, that is the result; Stage 2 must not turn representational difference into a metaphysical proof.
 
 ## Planned workflow
 
-1. Formalize provisional definitions.
-2. Freeze the Stage 1 protocol and reconstruction assumptions.
-3. Build and stress-test the minimal finite classical graph model.
-4. Add epistemic vs ontic Potentiality.
+1. Formalize provisional definitions. — completed
+2. Freeze the Stage 1 protocol and reconstruction assumptions. — completed
+3. Build and stress-test the minimal finite classical graph model. — completed
+4. Add epistemic vs ontic Potentiality. — next
 5. Add records and an arrow-of-time diagnostic with control cases.
 6. Build a finite-dimensional Page–Wootters-style quantum model.
 7. Change clocks/reference perspectives and search for common invariants.
 8. Compare the resulting candidate structure with generally covariant and gravitational models.
 
-Before Stage 2, Stage 1 should now be synthesized into one report comparing B1–B6 and deciding whether any optional combined restrictions are worth adding.
-
-See:
+## Key documents
 
 - [`docs/roadmap.md`](docs/roadmap.md)
 - [`docs/concepts.md`](docs/concepts.md)
@@ -90,6 +117,7 @@ See:
 - [`results/stage1b_reachability_only.md`](results/stage1b_reachability_only.md)
 - [`results/stage1b_state_label_collision.md`](results/stage1b_state_label_collision.md)
 - [`results/stage1b_anonymous.md`](results/stage1b_anonymous.md)
+- [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 
 ## Methodological rule
 
@@ -102,8 +130,12 @@ At every stage, answer the same six questions:
 5. What is strictly invariant, what is only reconstructible from a family of views, and what is merely locally accessible?
 6. Does the surviving structure have physical meaning?
 
-Additional caution:
+Additional cautions:
 
 `simulation order != modeled temporal order`
+
+and:
+
+`reconstructible structure != automatically fundamental physical structure`.
 
 Failure to find an invariant, or failure to reconstruct one description from the other, is considered a valid research result rather than something to hide.

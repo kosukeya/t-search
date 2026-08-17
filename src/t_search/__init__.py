@@ -23,6 +23,18 @@ from .stage1 import (
     transitive_closure,
     views_by_id,
 )
+from .stage1_anonymous import (
+    AnonymousSearchResult,
+    AnonymousStarView,
+    RefinedAnonymousView,
+    contains_isomorphic_candidate,
+    enumerate_topological_dags,
+    find_compatible_anonymous_dags,
+    project_anonymous_family,
+    project_anonymous_star_family,
+    project_refined_anonymous_family,
+    reachability_pair_count,
+)
 from .stage1_reachability import (
     ReachabilityConsistency,
     ReachabilityLocalView,
@@ -45,6 +57,8 @@ from .stage1_state_labels import (
 )
 
 __all__ = [
+    "AnonymousSearchResult",
+    "AnonymousStarView",
     "Block",
     "ComparisonResult",
     "IncomingLocalView",
@@ -52,6 +66,7 @@ __all__ = [
     "OutgoingLocalView",
     "ReachabilityConsistency",
     "ReachabilityLocalView",
+    "RefinedAnonymousView",
     "StateLabeledView",
     "StateLabeledWorld",
     "StateReconstruction",
@@ -62,6 +77,9 @@ __all__ = [
     "check_view_consistency",
     "collapse_world_by_state",
     "compare_blocks",
+    "contains_isomorphic_candidate",
+    "enumerate_topological_dags",
+    "find_compatible_anonymous_dags",
     "glue_incoming_views",
     "glue_outgoing_views",
     "glue_state_labeled_views",
@@ -73,11 +91,15 @@ __all__ = [
     "project_all_reachability_views",
     "project_all_state_labeled_views",
     "project_all_views",
+    "project_anonymous_family",
+    "project_anonymous_star_family",
     "project_incoming_view",
     "project_local_view",
     "project_outgoing_view",
     "project_reachability_view",
+    "project_refined_anonymous_family",
     "project_state_labeled_view",
+    "reachability_pair_count",
     "reconstruct_cover_from_reachability",
     "state_collision_groups",
     "transitive_closure",

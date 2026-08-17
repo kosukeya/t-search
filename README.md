@@ -15,31 +15,34 @@ The long-term hypothesis is that such invariants may be better candidates for th
 
 ## Current status
 
-Stage 0 / 0.5 fixed provisional definitions, the research roadmap, and the Stage 1 protocol. Stage 1A now implements the first deliberately simple global/local round trip:
+Stage 0 / 0.5 fixed provisional definitions and the initial reconstruction protocol.
+
+Stage 1A implemented the information-rich baseline:
 
 `B_1 -> {V_e} -> B_1_hat`
 
-The canonical six-event DAG is projected into one-hop local views, checked for mutual consistency, glued back into a reconstructed block, and compared using labeled adjacency, unlabeled graph isomorphism, and reachability.
+and confirmed exact reconstruction of the canonical labeled DAG.
 
-The Stage 1A baseline succeeds under the information-rich protocol. This is a sanity check for the machinery, not evidence for a metaphysical conclusion or a fundamental temporal invariant.
+Stage 1B is now reducing local information one component at a time. The first variant, **outgoing-only**, retains:
 
-See [`results/stage1a_baseline.md`](results/stage1a_baseline.md) for the recorded result.
+`V_e^+ = (id_e, Succ_1(e))`
 
-## Working ideas
+and removes predecessor reports. The canonical graph still reconstructs exactly when global IDs and one view per event are retained. This shows that Stage 1A predecessor reports were redundant for reconstruction, although they supplied an independent consistency check.
 
-- objects/relata and relations may be mutually constitutive rather than ordered by ontological priority;
-- Actuality and Potentiality may be relational/modal aspects of a local configuration rather than globally absolute labels;
-- blockness and becoming may be different descriptions of one deeper relational structure;
-- temporal direction may involve asymmetric conditioning, records, and accessible transformations rather than an external universal flow;
-- the project should search for explicit maps and surviving structures before making metaphysical claims.
+The planned Stage 1B order is:
 
-Stage 1 is deliberately narrower than the full ontology. It first tests whether a finite global event graph can be projected into local structural views and reconstructed from them without confusing software execution order with modeled time.
+1. outgoing-only — completed
+2. incoming-only
+3. missing local views
+4. reachability-only
+5. state-label collision
+6. anonymous / global-ID-free views
 
 ## Planned workflow
 
 1. Formalize provisional definitions.
 2. Freeze the Stage 1 protocol and reconstruction assumptions.
-3. Build a minimal finite classical graph toy model.
+3. Build and stress-test the minimal finite classical graph model.
 4. Add epistemic vs ontic Potentiality.
 5. Add records and an arrow-of-time diagnostic with control cases.
 6. Build a finite-dimensional Page–Wootters-style quantum model.
@@ -52,26 +55,8 @@ See:
 - [`docs/concepts.md`](docs/concepts.md)
 - [`docs/stage0_definitions.md`](docs/stage0_definitions.md)
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
-
-## Running Stage 1A
-
-Create a Python environment and install the package with development dependencies:
-
-```bash
-python -m pip install -e ".[dev]"
-```
-
-Run the tests:
-
-```bash
-pytest -q
-```
-
-Run the baseline experiment:
-
-```bash
-python experiments/stage1a_minimal.py
-```
+- [`results/stage1a_baseline.md`](results/stage1a_baseline.md)
+- [`results/stage1b_outgoing_only.md`](results/stage1b_outgoing_only.md)
 
 ## Methodological rule
 

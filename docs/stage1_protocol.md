@@ -193,9 +193,9 @@ Do not combine restrictions until the individual variants are understood.
 
 Run variants in this order:
 
-1. **B1 — outgoing-only**
-2. **B2 — incoming-only**
-3. **B3 — missing local views**
+1. **B1 — outgoing-only** — completed
+2. **B2 — incoming-only** — completed
+3. **B3 — missing local views** — next
 4. **B4 — reachability-only**
 5. **B5 — state-label collision**
 6. **B6 — anonymous / global-ID-free views**
@@ -223,20 +223,14 @@ Reconstruct:
 
 `C_hat = {(id_e, y) | y in Succ_1(e)}`.
 
-Questions:
+Observed result on the canonical graph:
 
-1. Is the full direct-edge set `C` reconstructible?
-2. Is the reachability relation `prec` reconstructible?
-3. Was the incoming half of Stage 1A structurally necessary, or only redundant validation information?
-4. Which consistency checks are lost when predecessor reports are removed?
+- `C` reconstructible: yes;
+- `prec` reconstructible: yes;
+- incoming/outgoing cross-report consistency: lost;
+- strict invariant: not claimed.
 
-Expected classification if the canonical graph round-trips:
-
-- `id_e` and `Succ_1(e)`: local observable;
-- `C`: reconstructible from the complete outgoing-view family;
-- `prec`: reconstructible after computing transitive closure;
-- incoming/outgoing cross-report consistency: lost because the incoming report channel was intentionally removed;
-- no strict invariant is claimed merely from this successful reconstruction.
+Interpretation: predecessor reports were redundant for reconstruction under the labeled complete-family assumptions, but useful as an independent validation channel.
 
 ## 13. Variant B2 — incoming-only
 
@@ -244,9 +238,26 @@ Retain:
 
 `V_e^- = (id_e, Pred_1(e))`.
 
-Question: is the graph reconstructible from all predecessor reports alone?
+For the first B2 experiment:
 
-This is the direction-reversed control for B1.
+- every event still has one local view;
+- global event IDs are still retained;
+- every predecessor reference must name an event that also has a view.
+
+Reconstruct:
+
+`E_hat = {id_e | V_e^- in Views}`
+
+`C_hat = {(x, id_e) | x in Pred_1(e)}`.
+
+Observed result on the canonical graph:
+
+- `C` reconstructible: yes;
+- `prec` reconstructible: yes;
+- incoming/outgoing cross-report consistency: lost;
+- strict invariant: not claimed.
+
+Interpretation: B2 mirrors B1. The outgoing direction was not specially privileged; under shared global IDs and complete coverage, either one coherent oriented direct-adjacency channel is sufficient for reconstruction.
 
 ## 14. Variant B3 — missing local views
 

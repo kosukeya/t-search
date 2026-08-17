@@ -58,9 +58,15 @@ Stage 1A and the first Stage 1B variants retain global event IDs:
 
 `id(a) = "a"`, ..., `id(f) = "f"`.
 
-If state labels are introduced:
+B5 explicitly introduces:
 
 `s: E -> Sigma`
+
+and verifies that state equality does not imply event identity.
+
+Rule:
+
+`state equality != event identity`.
 
 The reconstruction algorithm must never infer event identity solely from state equality.
 
@@ -197,8 +203,8 @@ Run variants in this order:
 2. **B2 — incoming-only** — completed
 3. **B3 — missing local views** — completed
 4. **B4 — reachability-only** — completed
-5. **B5 — state-label collision** — next
-6. **B6 — anonymous / global-ID-free views**
+5. **B5 — state-label collision** — completed
+6. **B6 — anonymous / global-ID-free views** — next
 7. optional combined restrictions, only after B1–B6 are individually understood.
 
 The final anonymous/global-ID-free experiment is deliberately postponed because it changes the reconstruction problem from labeled gluing to a graph-realization / ambiguity problem.
@@ -208,8 +214,6 @@ The final anonymous/global-ID-free experiment is deliberately postponed because 
 Retain:
 
 `V_e^+ = (id_e, Succ_1(e))`.
-
-Remove all incoming predecessor reports.
 
 Observed canonical result:
 
@@ -274,13 +278,6 @@ Detailed semantics:
 
 - [`stage1b_reachability_protocol.md`](stage1b_reachability_protocol.md)
 
-Implementation:
-
-- `src/t_search/stage1_reachability.py`
-- `experiments/stage1b_reachability_only.py`
-- `tests/test_stage1b_reachability_only.py`
-- `results/stage1b_reachability_only.md`
-
 The B4 family retains one view per event and shared global IDs. Ancestor and descendant reports must be mutually dual, irreflexive, acyclic, and transitive.
 
 Reconstruct:
@@ -307,11 +304,7 @@ Observed result:
 
 ### Redundant-shortcut control
 
-Add the transitive shortcut:
-
-`a -> d`.
-
-This produces a seven-edge direct encoding but leaves reachability unchanged because `a` already reaches `d` through longer paths.
+Adding the transitive shortcut `a -> d` produces a seven-edge direct encoding but leaves reachability unchanged.
 
 Observed result:
 
@@ -321,11 +314,7 @@ Observed result:
 - unlabeled graph isomorphism against the seven-edge original: false;
 - reachability equality: true.
 
-Focused B4 validation: **6 checks passed**.
-
 Interpretation: the complete reachability order and its unique minimal cover relation are reconstructible for the finite-DAG setting, but arbitrary redundant shortcut edges in the original encoding are not identifiable from reachability alone.
-
-Therefore exact recovery of the input `C` requires the additional convention that `C` denotes the cover/minimal generating relation rather than an arbitrary edge list.
 
 No claim is made that physical time is therefore fundamentally a partial order.
 
@@ -335,11 +324,69 @@ Introduce a separate state map:
 
 `s: E -> Sigma`
 
-with at least two distinct events sharing one state value.
+with the canonical collision:
 
-Question: does any reconstruction procedure incorrectly identify event identity with state equality?
+`b != c`
 
-This is primarily a guard against a hidden `state == event` assumption.
+but:
+
+`s(b) = s(c) = "X"`.
+
+Detailed semantics:
+
+- [`stage1b_state_labels_protocol.md`](stage1b_state_labels_protocol.md)
+
+Use state-labeled local views:
+
+`S_e = (id_e, state_e, Pred_1(e), Succ_1(e))`.
+
+Correct reconstruction remains ID-based. State values are event attributes and are not identity keys.
+
+### Canonical ID-based reconstruction
+
+Observed result:
+
+- events: 6;
+- distinct state values: 5;
+- collision group: `X -> {b,c}`;
+- reconstructed events: 6;
+- reconstructed direct edges: 6;
+- labeled equality: true;
+- unlabeled isomorphism: true;
+- reachability equality: true;
+- state-map equality: true;
+- `b` and `c` remain distinct: true.
+
+### Naive state-identity control
+
+Treat state values themselves as node IDs.
+
+The two event paths:
+
+`a -> b -> d`
+
+and
+
+`a -> c -> d`
+
+collapse to the same state path:
+
+`A -> X -> D`.
+
+Observed result:
+
+- six events collapse to five state-nodes;
+- six event edges collapse to four distinct state-edges;
+- the collapsed graph is not isomorphic to the original;
+- event multiplicity distinguishing `b` and `c` is lost.
+
+Focused B5 tests: **8 passed**.
+
+Interpretation: B5 enforces the rule:
+
+`state equality != event identity`.
+
+It does not establish that event IDs are physically fundamental. They remain privileged in B5 and will be removed in B6.
 
 ## 17. Variant B6 — anonymous / global-ID-free views
 

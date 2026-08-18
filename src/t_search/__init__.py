@@ -99,6 +99,13 @@ from .stage2_ontic import (
     project_ontic_view,
     update_ontic_model,
 )
+from .stage2_operational import (
+    OperationalComparison,
+    OperationalView,
+    compare_operational_views,
+    operationalize_epistemic_view,
+    operationalize_ontic_view,
+)
 
 __all__ = [
     "AnonymousSearchResult",
@@ -115,6 +122,8 @@ __all__ = [
     "OnticExtensionModel",
     "OnticLocalView",
     "OnticPotentiality",
+    "OperationalComparison",
+    "OperationalView",
     "OutgoingLocalView",
     "Prefix",
     "ReachabilityConsistency",
@@ -136,6 +145,7 @@ __all__ = [
     "check_view_consistency",
     "collapse_world_by_state",
     "compare_blocks",
+    "compare_operational_views",
     "condition_epistemic_model",
     "contains_isomorphic_candidate",
     "continuations_equivalent",
@@ -162,6 +172,8 @@ __all__ = [
     "maximal_histories",
     "next_events",
     "ontic_next_probabilities",
+    "operationalize_epistemic_view",
+    "operationalize_ontic_view",
     "prefix_tip",
     "project_all_incoming_views",
     "project_all_outgoing_views",

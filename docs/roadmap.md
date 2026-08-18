@@ -10,53 +10,31 @@ Can block-like and becoming-like descriptions be treated as different perspectiv
 
 Goal: define working meanings for `block`, `becoming`, `Actuality`, `Potentiality`, `record`, `perspective`, `transformation`, and `invariant`.
 
-Deliverables:
-- README research scope
-- concepts glossary
-- provisional mathematical definitions
-- this roadmap
-
-Exit criterion: we can explain the six fixed questions without ambiguity severe enough to block implementation.
+Exit criterion: satisfied.
 
 ## Stage 0.5 — Stage 1 protocol freeze — completed
 
-Goal: remove implementation ambiguity before writing Stage 1 code.
-
 Key decisions:
-- distinguish an **event** from the state/configuration label attached to it;
-- separate direct graph edges from their transitive closure / induced partial order;
-- keep Stage 1 free of full Potentiality and record semantics;
-- define exactly what information a local view contains;
-- define whether global event identifiers are available to the gluing procedure;
+- distinguish event identity from state/configuration value;
+- distinguish direct adjacency from induced reachability;
+- keep Stage 1 free of Potentiality and records;
+- specify the information interface of every local view;
 - distinguish strict invariants, reconstructible properties, and local observables;
-- state explicitly that Python execution order is not the modeled temporal order.
-
-Deliverable:
-- [`stage1_protocol.md`](stage1_protocol.md)
+- enforce `simulation order != modeled temporal order`.
 
 Exit criterion: satisfied.
 
 ## Stage 1 — Minimal classical graph model — completed and merged
 
-Stage 1 completed the baseline, all six planned information-loss / representation variants, and the synthesis/exit review.
-
 Integrated result:
 
 - [`../results/stage1_synthesis.md`](../results/stage1_synthesis.md)
 
-### Stage 1A — Sanity-check round trip
+Stage 1A verified the information-rich round trip:
 
-Constructed the canonical finite DAG and verified:
+`B_1 -> {V_e} -> B_1_hat`.
 
-`B_1 -> {V_e} -> B_1_hat`
-
-with exact labeled reconstruction, graph-isomorphism agreement, and reachability agreement.
-
-Purpose: validate projection/gluing machinery rather than claim a physical result.
-
-### Stage 1B — Controlled information and representation variants
-
-Completed:
+Stage 1B completed six controlled variants:
 
 1. outgoing-only;
 2. incoming-only;
@@ -66,22 +44,14 @@ Completed:
 6. anonymous / global-ID-free views.
 
 Main findings:
-
-- either one oriented one-hop adjacency channel is sufficient when shared IDs and complete coverage remain;
-- coverage loss can produce reconstructible missing events, ambiguous relations, or completely lost events;
-- reachability / minimal cover structure survives transitively redundant direct-edge encoding differences;
+- reconstruction depends on the information interface and equivalence assumptions;
+- coverage loss can move structure from reconstructible to ambiguous to lost;
+- reachability/minimal cover structure survives transitively redundant edge-encoding changes better than arbitrary edge lists;
 - `state equality != event identity`;
-- anonymous degree-only local structure can admit multiple non-isomorphic global DAGs;
-- richer anonymous relational context can recover the canonical global graph up to isomorphism in the tested exhaustive six-event DAG class.
+- shared global IDs are sufficient but not always necessary for reconstruction;
+- sufficiently rich anonymous relational context can recover the canonical graph up to isomorphism in the tested six-event search class.
 
-Stage 1 does **not** claim a fundamental physical invariant. The strongest carry-forward candidates are:
-
-- reachability / cover structure under redundant-edge representation changes;
-- graph isomorphism class recoverable from sufficiently rich anonymous relational context.
-
-Optional combined restrictions are deferred to a future robustness/generalization suite rather than made prerequisites for Stage 1 completion.
-
-Exit criterion: satisfied.
+Stage 1 does not establish a fundamental physical invariant.
 
 ## Stage 2.0 — Potentiality protocol freeze — completed
 
@@ -89,12 +59,12 @@ Detailed specification:
 
 - [`stage2_protocol.md`](stage2_protocol.md)
 
-Stage 2 separates two axes that must not be conflated:
+Stage 2 separates two axes:
 
 - global versus local representation;
 - epistemic versus ontic Potentiality.
 
-The canonical Stage 2 branching substrate uses two relationally non-equivalent complete histories:
+Canonical neutral substrate:
 
 ```text
            l1 -> l2
@@ -110,41 +80,25 @@ with:
 
 `h_R = (p,n,r1)`
 
-and current prefix:
-
 `D_0 = (p,n)`.
 
-The asymmetry prevents the two alternatives from being counted as distinct merely because of arbitrary left/right event names.
-
-Core model distinction:
+The two formal model families are:
 
 ### Epistemic-history model
 
-`M_E = (T, h*, q_E)`
+`M_E = (T,h*,q_E)`
 
-where:
-
-- `T` is the common branching structure;
-- one complete history `h*` is selected in advance;
-- `q_E` represents local epistemic uncertainty about which complete history is selected;
-- the local projection intentionally hides the future portion of `h*`.
+A complete `h*` is globally selected, while the local projection intentionally hides it.
 
 ### Ontic-extension model
 
-`M_O(D) = (D, Ext_T(D), K)`
+`M_O(D) = (D,Ext_T(D),K)`
 
-where:
-
-- `D` is current Actuality;
-- `Ext_T(D)` is the set of admissible continuations;
-- `K` gives admissibility/transition weights;
-- no hidden or implicit selected complete future is permitted in the model state before update.
-
-The same numerical predictive weights may be used in the two models while preserving their different semantics.
+Current Actuality and all admissible extensions are represented, with no selected complete future stored in the model state.
 
 Core guards:
 
-`compatible global completions != ontic future possibilities`
+`compatible completions != ontic possibilities`
 
 `random sampling != evidence of ontic becoming`
 
@@ -152,142 +106,160 @@ Core guards:
 
 ## Stage 2A — Common branching substrate — completed
 
-Implemented and tested:
+Result:
 
+- [`../results/stage2a_branching.md`](../results/stage2a_branching.md)
+
+Implemented:
 - finite rooted branching structure `T`;
-- maximal histories `H`, derived from `E` and `C` rather than independently stored;
-- valid non-empty actual prefixes `D`;
+- maximal histories `H` derived from `E,C`;
+- valid actual prefixes `D`;
 - `Ext_T(D)`;
 - immediate next-event sets;
 - neutral prefix extension and terminal behavior;
 - history/continuation equivalence up to event renaming;
 - rooted branching-structure equivalence;
-- guards against invalid prefixes, inadmissible next events, disconnected structures, and non-tree baseline inputs.
+- invalid-prefix and invalid-tree guards.
 
-Result:
+For `D_0`:
 
-- [`../results/stage2a_branching.md`](../results/stage2a_branching.md)
+`Ext_T(D_0)={h_L,h_R}`
 
-For the canonical current prefix:
+`Next(D_0)={l1,r1}`.
 
-`D_0 = (p,n)`
+The two continuation classes are genuinely non-equivalent because their future path structures differ.
 
-we recover:
+Focused validation: `8 passed`.
 
-`Ext_T(D_0) = {h_L,h_R}`
-
-and:
-
-`Next(D_0) = {l1,r1}`.
-
-The two canonical extensions form **two continuation equivalence classes**. They are not merely renamed copies because their future path structures have different lengths. As a control, a pure renaming of the entire rooted substrate remains equivalent to the original.
-
-Focused Stage 2A validation: `8 passed`.
-
-Stage 2A remains ontology-neutral:
+Interpretive limit:
 
 `branching structure != evidence of ontic openness`.
 
 ## Stage 2B — Epistemic-history model — completed
 
-Implemented:
-
-`M_E = (T,h*,q_E)`.
-
 Result:
 
 - [`../results/stage2b_epistemic.md`](../results/stage2b_epistemic.md)
 
-The baseline stores one explicit selected complete history `h*` globally while keeping it out of the local projection.
+Implemented:
 
-For:
+`M_E=(T,h*,q_E)`.
 
-`D_0 = (p,n)`
+Baseline:
+- hidden `h*=h_L`;
+- `q_E(h_L)=q_E(h_R)=1/2`;
+- `EPot(D_0)={h_L,h_R}`;
+- `pi_E(l1)=pi_E(r1)=1/2`.
 
-and:
-
-`q_E(h_L)=q_E(h_R)=1/2`,
-
-the local view contains:
-
-- current Actuality/evidence prefix;
-- typed epistemic Potentiality `EPot(D_0) = {h_L,h_R}`;
-- immediate-next predictions `pi_E(l1)=pi_E(r1)=1/2`.
-
-Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged. A privileged global diagnostic still distinguishes the two models by their encoded hidden next event.
+Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged, while privileged diagnostics distinguish the global states.
 
 Thus:
 
 `F_E^D` is intentionally non-injective with respect to `h*`.
 
-For the baseline actual observation `l1`:
+After observation `l1`, beliefs condition to the left history but `h*` remains unchanged. An actual observation contradicting `h*` is rejected instead of rewriting the selected history.
 
-- evidence updates to `(p,n,l1)`;
-- beliefs condition to `q_E(h_L)=1`, `q_E(h_R)=0`;
-- `h*` remains unchanged;
-- the next local prediction becomes `l2` with probability `1`.
-
-An actual observation contradicting `h*` is rejected rather than rewriting the selected history.
-
-Focused Stage 2B validation: `10 passed`.
+Focused validation: `10 passed`.
 
 Interpretive limit:
 
 `a hidden selected future can be represented != physical reality has a fixed future`.
 
-## Stage 2C — Ontic-extension model — next
+## Stage 2C — Ontic-extension model — completed
 
-Implement:
+Result:
 
-`M_O(D) = (D, Ext_T(D), K)`.
+- [`../results/stage2c_ontic.md`](../results/stage2c_ontic.md)
 
-Tests should verify that:
+Implemented:
 
-- current Actuality and all admissible extensions are represented;
-- no field or implicit selector singles out one complete future;
-- the local ontic Potentiality type is distinct from epistemic hypothesis Potentiality;
-- update extends Actuality and prunes incompatible extensions without creating a hidden future selector.
+`M_O(D)=(D,Ext_T(D),K)`.
 
-Important caution: successfully representing this structure is not evidence that physical reality is ontically open.
+The model state contains:
+- the neutral branching substrate;
+- current Actuality/prefix;
+- typed `OnticPotentiality` containing exactly all live extensions;
+- normalized extension weights.
 
-## Stage 2D — Operational equivalence
+It contains no selected complete future field such as `selected_history` or `hidden_history`.
 
-Construct typed becoming-like views:
+At `D_0`:
 
-`G_E(D) = (A_now, EPot(D), pi_E(next|D))`
+`OPot(D_0)={h_L,h_R}`
 
-`G_O(D) = (A_now, OPot(D), pi_O(next|D))`.
+and:
 
-Then compare them through an ontology-neutral operational interface:
+`pi_O(l1)=pi_O(r1)=1/2`.
+
+After explicit observation `l1`:
+- Actuality extends to `(p,n,l1)`;
+- the incompatible right extension is removed;
+- the left extension receives normalized weight `1`;
+- the immediate-next prediction becomes `l2` with probability `1`;
+- no selected complete future is created.
+
+As a formal contrast with Stage 2B, the same unselected baseline can also accept observation `r1` when that branch has positive weight. Stage 2B's actual-run fixture with hidden `h*=h_L` rejects `r1`.
+
+Validation limitation:
+- the execution environment could not clone GitHub because DNS resolution failed;
+- a focused semantic harness passed `10 Stage 2C semantic checks`;
+- the committed Stage 2C tests must be included in a later full repository regression before merge review.
+
+Interpretive limit:
+
+`a model with no selected future != evidence that physical reality is ontically open`.
+
+## Stage 2D — Operational equivalence — next
+
+Now that both internal structures exist, construct one ontology-neutral operational representation:
 
 `O(G) = (A_now, Next(D), pi(next|D))`.
 
-With matched baseline weights, test whether:
+Compare:
+
+`O(G_E(D_0))`
+
+with:
+
+`O(G_O(D_0))`.
+
+With matched baseline weights, test rather than assume whether:
 
 `O(G_E(D_0)) = O(G_O(D_0))`.
 
-If equal, report **operational indistinguishability under the tested observables** rather than treating representational difference as empirical confirmation of either ontology.
+Expected baseline:
+- same Actuality `D_0`;
+- same immediate alternatives `{l1,r1}`;
+- same probabilities `1/2,1/2`.
+
+If equality holds, report:
+
+**operationally indistinguishable under the tested observables**.
+
+Do not infer ontological equivalence from operational equality.
 
 ## Stage 2E — Update comparison
 
-Provide an observed next event explicitly rather than using random sampling as a surrogate for becoming.
-
-Baseline observation:
+Provide a common observed next event explicitly, initially:
 
 `l1`.
 
-Compare how the two models update:
+Compare:
+- updated Actuality;
+- updated Potentiality;
+- updated next-event probabilities;
+- privileged internal diagnostics.
 
-- epistemic: evidence/prefix changes and beliefs condition, while hidden `h*` remains unchanged;
-- ontic: Actuality extends and incompatible admissible extensions are removed, with no future beyond the new prefix preselected.
+Expected formal contrast:
+- epistemic: evidence changes and beliefs condition while hidden `h*` remains unchanged;
+- ontic: Actuality extends and incompatible extensions are removed while no future beyond the new prefix is selected.
 
 ## Stage 2F — Controls and synthesis
 
-Required controls include:
-
+Required controls:
 - event-renaming / isomorphism invariance;
 - repeated state labels, preserving `state equality != event identity`;
-- weight mismatch, demonstrating that operational equivalence is not automatic;
+- weight mismatch, showing operational equivalence is not automatic;
 - terminal prefixes;
 - invalid prefixes/observations.
 
@@ -299,17 +271,9 @@ Stage 2 exit criterion: the formal difference, projection maps, update semantics
 
 ## Stage 3 — Records and temporal direction
 
-Add memory/environment registers and explicitly compare controls.
+Add memory/environment registers and compare asymmetric-record models with symmetric/reversible controls.
 
-Tasks:
-- build a symmetric-record or reversible control model;
-- build an asymmetric-record model;
-- distinguish mere order from an arrow of time;
-- compare forward and reversed histories;
-- use information-theoretic diagnostics such as forward/reverse distinguishability when meaningful;
-- separate reversible global dynamics from locally irreversible record structure.
-
-Goal: test, rather than assume, the working hypothesis that experienced temporal direction depends on asymmetric records rather than merely on state change.
+Goal: distinguish mere ordering from temporal direction and test whether asymmetric records provide an arrow-like structure.
 
 ## Stage 4 — Finite Page–Wootters-style quantum model
 
@@ -321,90 +285,63 @@ Global/block-like representation:
 
 Relational/becoming-like representation:
 
-`|psi_S(t)> proportional to <t|_C Psi>`
+`|psi_S(t)> proportional to <t|_C Psi>`.
 
-Tasks:
-- verify conditional dynamics;
-- compare observables across global and conditional descriptions;
-- identify preserved correlations and transition probabilities.
+Test conditional dynamics and preserved correlations/transition probabilities.
 
 ## Stage 5 — Change of clock / perspective
 
-Use at least three subsystems, e.g. `C, A, B`.
+Use at least three subsystems and construct explicit changes between clock-relative descriptions.
 
-Construct:
-- becoming relative to clock `C`;
-- becoming relative to clock `A`;
-- a transformation between those descriptions where the model allows it.
-
-Search for structures invariant under:
+Search for structures stable under:
 1. block -> becoming;
 2. becoming(clock C) -> becoming(clock A).
 
-This is the first stage where a genuinely interesting candidate temporal invariant may emerge.
-
 ## Stage 6 — Candidate temporal structure T
 
-Compare all surviving structures from Stages 1–5.
+Compare structures surviving Stages 1–5. Possible ingredients include causal/conditioning order, relational correlations, record accessibility, allowed-transition structure, and perspective-consistency constraints.
 
-Possible ingredients:
-- causal / conditioning order;
-- relational correlations;
-- record accessibility;
-- allowed-transition structure;
-- constraints on mutually consistent perspectives.
-
-Do not force a single invariant if the evidence supports a family of complementary invariants.
-
-Goal: formulate the weakest candidate `T` that explains the successful transformations.
+Do not force a unique invariant if the evidence supports a family of complementary structures.
 
 ## Stage 7 — Generally covariant / gravitational extension
 
-Only after the toy models are stable.
-
-Possible progression:
+Only after the toy models are stable. Possible progression:
 1. parametrized particle;
 2. simple constrained/minisuperspace model;
-3. Schwarzschild/Kantowski–Sachs or another tractable gravitational setting.
+3. tractable gravitational setting.
 
-Question: does the candidate `T` survive when external time and preferred slicing are removed?
+Question: does the candidate temporal structure survive when external time and preferred slicing are removed?
 
 ## Stage 8 — Empirical relevance (only if warranted)
 
-Ask whether the formalism predicts anything not already guaranteed by standard theories.
-
-Order of operations:
-1. derive a discriminating prediction;
-2. test against existing public data if possible;
-3. only then consider whether new observations or experiments would be needed.
+Only seek empirical tests after deriving a genuinely discriminating prediction not guaranteed by the underlying standard formalism.
 
 ## Fixed questions for every stage
 
-1. What is the block-like description `B`?
+1. What is the block-like/global description `B`?
 2. What is the becoming-like/local description `G` or `V`?
-3. What is the transformation from the global to the local description?
-4. Is that transformation reversible? If not, what information is discarded?
-5. What is strictly invariant, what is only reconstructible from a family of views, and what is merely locally observable?
-6. What physical meaning, if any, can be assigned to those surviving structures?
+3. What is the transformation from global to local?
+4. Is the transformation reversible; what information is discarded?
+5. What is invariant, reconstructible, ambiguous, lost, or locally accessible?
+6. What physical meaning, if any, can be assigned to surviving structures?
 
 ## Cross-cutting methodological cautions
 
 - `simulation order != modeled temporal order`;
 - `random sampling != evidence of ontic becoming`;
-- a successful software round trip does not by itself establish an ontological claim;
-- a global mathematical representation is not a physically realizable God's-eye observer;
-- mutual constitution of relata and relations is not implemented merely by drawing a DAG;
-- reconstructible structure is not automatically fundamental physical structure;
-- compatible alternatives are not automatically ontic possibilities;
-- formal/internal distinguishability is not automatically local/operational distinguishability.
+- successful software construction != ontological proof;
+- global mathematical description != physically realizable God's-eye observer;
+- reconstructible structure != automatically fundamental physical structure;
+- compatible alternatives != automatically ontic possibilities;
+- formal/internal distinguishability != automatically local/operational distinguishability.
 
 ## Stop / revise conditions
 
 Revise the program rather than forcing progress if:
 - `block` or `becoming` becomes definitionally circular;
-- the proposed invariant is merely notation-dependent;
-- the local descriptions cannot be consistently glued even in the simplest intended model;
-- the alleged ontic/epistemic difference has no formal representation;
+- an alleged invariant is merely notation-dependent;
+- local descriptions cannot be consistently related in the intended toy model;
 - the supposedly ontic model secretly stores a selected complete future;
-- an apparent empirical distinction is produced only by assigning different numerical parameters;
+- the epistemic `h*` has no genuine formal role;
+- an apparent operational distinction is produced only by assigning different numerical parameters;
 - a claimed novelty is already an established object under another name.

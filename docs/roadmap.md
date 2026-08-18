@@ -34,11 +34,11 @@ Key decisions:
 Deliverable:
 - [`stage1_protocol.md`](stage1_protocol.md)
 
-Exit criterion: `B1`, `V_e`, projection `F_e`, `Glue`, and the equivalence relation used for `B1_hat ≅ B1` are fully specified.
+Exit criterion: satisfied.
 
-## Stage 1 — Minimal classical graph model — completed
+## Stage 1 — Minimal classical graph model — completed and merged
 
-Stage 1 has completed the baseline, all six planned information-loss / representation variants, and the synthesis/exit review.
+Stage 1 completed the baseline, all six planned information-loss / representation variants, and the synthesis/exit review.
 
 Integrated result:
 
@@ -81,56 +81,161 @@ Stage 1 does **not** claim a fundamental physical invariant. The strongest carry
 
 Optional combined restrictions are deferred to a future robustness/generalization suite rather than made prerequisites for Stage 1 completion.
 
-Exit criterion: satisfied. We now have a reproducible account of what is local, reconstructible, ambiguous, lost, and encoding-dependent in the finite classical toy setting.
+Exit criterion: satisfied.
 
-## Stage 2 — Potentiality — next
+## Stage 2.0 — Potentiality protocol freeze — completed
 
-Introduce branching transformations only after Stage 1 is closed.
+Detailed specification:
 
-Build two intentionally different formal objects over a common branching graph family.
+- [`stage2_protocol.md`](stage2_protocol.md)
+
+Stage 2 separates two axes that must not be conflated:
+
+- global versus local representation;
+- epistemic versus ontic Potentiality.
+
+The canonical Stage 2 branching substrate uses two relationally non-equivalent complete histories:
+
+```text
+           l1 -> l2
+          /
+p -> n
+          \
+           r1
+```
+
+with:
+
+`h_L = (p,n,l1,l2)`
+
+`h_R = (p,n,r1)`
+
+and current prefix:
+
+`D_0 = (p,n)`.
+
+The asymmetry prevents the two alternatives from being counted as distinct merely because of arbitrary left/right event names.
+
+Core model distinction:
 
 ### Epistemic-history model
 
-Represent:
-
-`(T, h*)`
+`M_E = (T, h*, q_E)`
 
 where:
 
-- `T` is a possibility/branching structure;
-- `h*` is a complete actual history selected in advance;
-- current/local access hides the future part of `h*`;
-- alternative branches represent hypotheses about the hidden selected history.
+- `T` is the common branching structure;
+- one complete history `h*` is selected in advance;
+- `q_E` represents local epistemic uncertainty about which complete history is selected;
+- the local projection intentionally hides the future portion of `h*`.
 
 ### Ontic-extension model
 
-Represent:
-
-`(D_now, Ext(D_now))`
+`M_O(D) = (D, Ext_T(D), K)`
 
 where:
 
-- only current/actual structure is stored;
-- admissible extensions are represented;
-- no hidden complete future history is preselected in the model state.
+- `D` is current Actuality;
+- `Ext_T(D)` is the set of admissible continuations;
+- `K` gives admissibility/transition weights;
+- no hidden or implicit selected complete future is permitted in the model state before update.
 
-Keep operational probabilities identical where possible.
+The same numerical predictive weights may be used in the two models while preserving their different semantics.
 
-Core guard inherited from Stage 1:
+Core guards:
 
-`compatible global completions != ontic future possibilities`.
+`compatible global completions != ontic future possibilities`
 
-Goal: identify exactly where the ontological difference lives in the formalism and whether local observables or transformation structure distinguish it.
+`random sampling != evidence of ontic becoming`
 
-Important caution: representing an ontic model without a preselected branch is a modeling commitment, not evidence that physical reality is ontically open.
+`formal representational difference != empirical physical difference`.
 
-If the two models are operationally indistinguishable under the tested observables, report that result rather than treating representational difference as empirical confirmation.
+## Stage 2A — Common branching substrate — next
 
-Additional Stage 1 carry-forward rules:
+Implement and test:
 
-- preserve `state equality != event identity`;
-- compare alternatives up to the relevant relational/isomorphism equivalence rather than counting mere renamings as distinct worlds;
-- keep ambiguity due to missing information separate from ontological openness.
+- finite branching structure `T`;
+- maximal histories `H`;
+- valid actual prefixes `D`;
+- `Ext_T(D)`;
+- history/world equivalence up to the declared relational/isomorphism criterion;
+- proof that canonical `h_L` and `h_R` are genuinely non-equivalent alternatives.
+
+This stage should contain no epistemic/ontic interpretation beyond the neutral branching substrate.
+
+## Stage 2B — Epistemic-history model
+
+Implement:
+
+`M_E = (T, h*, q_E)`.
+
+Tests should verify that:
+
+- a complete `h*` exists globally;
+- the local projection does not leak `h*`;
+- different hidden `h*` values can yield the same current operational view under the same evidence and beliefs;
+- evidence updates condition the epistemic hypothesis set without changing the already-selected `h*`.
+
+## Stage 2C — Ontic-extension model
+
+Implement:
+
+`M_O(D) = (D, Ext_T(D), K)`.
+
+Tests should verify that:
+
+- current Actuality and all admissible extensions are represented;
+- no field or implicit selector singles out one complete future;
+- update extends Actuality and prunes incompatible extensions without creating a hidden future selector.
+
+Important caution: successfully representing this structure is not evidence that physical reality is ontically open.
+
+## Stage 2D — Operational equivalence
+
+Construct typed becoming-like views:
+
+`G_E(D) = (A_now, EPot(D), pi_E(next|D))`
+
+`G_O(D) = (A_now, OPot(D), pi_O(next|D))`.
+
+Then compare them through an ontology-neutral operational interface:
+
+`O(G) = (A_now, Next(D), pi(next|D))`.
+
+With matched baseline weights, test whether:
+
+`O(G_E(D_0)) = O(G_O(D_0))`.
+
+If equal, report **operational indistinguishability under the tested observables** rather than treating representational difference as empirical confirmation of either ontology.
+
+## Stage 2E — Update comparison
+
+Provide an observed next event explicitly rather than using random sampling as a surrogate for becoming.
+
+Baseline observation:
+
+`l1`.
+
+Compare how the two models update:
+
+- epistemic: evidence/prefix changes and beliefs condition, while hidden `h*` remains unchanged;
+- ontic: Actuality extends and incompatible admissible extensions are removed, with no future beyond the new prefix preselected.
+
+## Stage 2F — Controls and synthesis
+
+Required controls include:
+
+- event-renaming / isomorphism invariance;
+- repeated state labels, preserving `state equality != event identity`;
+- weight mismatch, demonstrating that operational equivalence is not automatic;
+- terminal prefixes;
+- invalid prefixes/observations.
+
+Then produce:
+
+- `results/stage2_synthesis.md`.
+
+Stage 2 exit criterion: the formal difference, projection maps, update semantics, operational comparison, and limitations can all be stated explicitly without turning representational differences into metaphysical proof.
 
 ## Stage 3 — Records and temporal direction
 
@@ -225,11 +330,13 @@ Order of operations:
 ## Cross-cutting methodological cautions
 
 - `simulation order != modeled temporal order`;
+- `random sampling != evidence of ontic becoming`;
 - a successful software round trip does not by itself establish an ontological claim;
 - a global mathematical representation is not a physically realizable God's-eye observer;
 - mutual constitution of relata and relations is not implemented merely by drawing a DAG;
 - reconstructible structure is not automatically fundamental physical structure;
-- compatible alternatives are not automatically ontic possibilities.
+- compatible alternatives are not automatically ontic possibilities;
+- formal/internal distinguishability is not automatically local/operational distinguishability.
 
 ## Stop / revise conditions
 
@@ -238,4 +345,6 @@ Revise the program rather than forcing progress if:
 - the proposed invariant is merely notation-dependent;
 - the local descriptions cannot be consistently glued even in the simplest intended model;
 - the alleged ontic/epistemic difference has no formal representation;
+- the supposedly ontic model secretly stores a selected complete future;
+- an apparent empirical distinction is produced only by assigning different numerical parameters;
 - a claimed novelty is already an established object under another name.

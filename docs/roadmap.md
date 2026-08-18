@@ -201,7 +201,6 @@ After explicit observation `l1`:
 As a formal contrast with Stage 2B, the same unselected baseline can also accept observation `r1` when that branch has positive weight. Stage 2B's actual-run fixture with hidden `h*=h_L` rejects `r1`.
 
 Validation limitation:
-- the execution environment could not clone GitHub because DNS resolution failed;
 - a focused semantic harness passed `10 Stage 2C semantic checks`;
 - the committed Stage 2C tests must be included in a later full repository regression before merge review.
 
@@ -209,46 +208,56 @@ Interpretive limit:
 
 `a model with no selected future != evidence that physical reality is ontically open`.
 
-## Stage 2D — Operational equivalence — next
+## Stage 2D — Operational equivalence — completed
 
-Now that both internal structures exist, construct one ontology-neutral operational representation:
+Result:
+
+- [`../results/stage2d_operational_equivalence.md`](../results/stage2d_operational_equivalence.md)
+
+Stage 2D introduces the ontology-neutral operational interface:
 
 `O(G) = (A_now, Next(D), pi(next|D))`.
 
-Compare:
+The typed local descriptions remain formally distinct, but their semantic Potentiality tags and privileged internal fields are erased before comparison.
 
-`O(G_E(D_0))`
+For the matched baseline:
+
+`O(G_E(D_0)) = O(G_O(D_0))`
 
 with:
+- the same Actuality `(p,n)`;
+- the same immediate alternatives `{l1,r1}`;
+- the same probabilities `1/2,1/2`.
 
-`O(G_O(D_0))`.
+Therefore the supported conclusion is:
 
-With matched baseline weights, test rather than assume whether:
+**operationally indistinguishable under the tested observables and matched baseline weights**.
 
-`O(G_E(D_0)) = O(G_O(D_0))`.
+Additional controls:
+- swapping only hidden epistemic `h*` remains operationally invisible;
+- changing only `q_E` or `K` keeps Actuality/Next fixed while breaking probability equality.
 
-Expected baseline:
-- same Actuality `D_0`;
-- same immediate alternatives `{l1,r1}`;
-- same probabilities `1/2,1/2`.
+Thus operational equality is a controlled condition, not a theorem of epistemic versus ontic semantics.
 
-If equality holds, report:
+A focused Stage 2D semantic harness passed `8/8 checks`. Full repository regression remains required before Stage 2 merge review.
 
-**operationally indistinguishable under the tested observables**.
+Interpretive limit:
 
-Do not infer ontological equivalence from operational equality.
+`operational equality != ontological equivalence`.
 
-## Stage 2E — Update comparison
+## Stage 2E — Update comparison — next
 
 Provide a common observed next event explicitly, initially:
 
 `l1`.
 
-Compare:
-- updated Actuality;
-- updated Potentiality;
-- updated next-event probabilities;
-- privileged internal diagnostics.
+Compare both updated models through the same operational interface.
+
+Questions:
+- do both models agree on updated Actuality `(p,n,l1)`?
+- do both retain only the left continuation operationally?
+- do both predict `l2` with probability `1`?
+- do privileged internal diagnostics still distinguish them after this operational agreement?
 
 Expected formal contrast:
 - epistemic: evidence changes and beliefs condition while hidden `h*` remains unchanged;
@@ -259,9 +268,10 @@ Expected formal contrast:
 Required controls:
 - event-renaming / isomorphism invariance;
 - repeated state labels, preserving `state equality != event identity`;
-- weight mismatch, showing operational equivalence is not automatic;
+- expanded weight-mismatch controls;
 - terminal prefixes;
-- invalid prefixes/observations.
+- invalid prefixes/observations;
+- full repository regression.
 
 Then produce:
 

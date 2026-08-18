@@ -1,6 +1,6 @@
 # Stage 2 Synthesis — Potentiality
 
-Status: **Stage 2 experiments and controls completed; exit criteria satisfied pending PR review/merge**.
+Status: **Stage 2 experiments, controls, and clean regression completed; exit criteria satisfied pending PR #3 review/merge**.
 
 ## 1. Purpose
 
@@ -91,8 +91,6 @@ Stage 2A implemented:
 - optional preservation of state labels during equivalence checks.
 
 The key result was that the neutral possibility structure can be specified before assigning either epistemic or ontic semantics.
-
-This prevented the Stage 2 conclusion from being built into the substrate definition.
 
 ---
 
@@ -288,8 +286,6 @@ coexisting with:
 
 ## 8. Stage 2F — controls
 
-Stage 2F tested whether the preceding conclusions survive several changes.
-
 ### 8.1 Pure event renaming
 
 The branching substrate, local operational descriptions, and common update relationship transform covariantly under a bijective event rename.
@@ -334,8 +330,6 @@ weights in both model families still gives operational equality.
 
 Therefore the Stage 2D result is not specific to uniform `1/2 / 1/2` weights.
 
-Under the current interface, matching **positive-support** predictions are the relevant condition.
-
 ### 8.4 Positive-support mismatch
 
 If the two model families have the same Actuality and same supported immediate alternatives but different probabilities, then:
@@ -371,8 +365,6 @@ This result limits the Stage 2D conclusion.
 
 It does **not** demonstrate a physical difference between fixed and open futures. The distinction is produced by a declared support convention.
 
-A later operational interface could instead remove zero-probability alternatives in both models, in which case this difference may disappear.
-
 The correct classification is:
 
 **support-semantics boundary**.
@@ -393,7 +385,7 @@ The correct classification is:
 | immediate next alternatives | derivable | yes | derivable | yes | yes |
 | immediate next probabilities | derivable | yes | derivable | yes | yes |
 
-This table shows that operational equality can coexist with substantial information loss.
+Operational equality can therefore coexist with substantial information loss.
 
 ---
 
@@ -403,7 +395,7 @@ This table shows that operational equality can coexist with substantial informat
 
 `F_E^D` is not reversible in general.
 
-The clearest lost/hidden datum is `h*`:
+The clearest hidden datum is `h*`:
 
 `M_E^L != M_E^R`
 
@@ -413,20 +405,11 @@ but:
 
 before discriminating evidence.
 
-Therefore the local view cannot reconstruct which selected complete history is stored globally.
-
 ### 10.2 Ontic projection
 
-There is no hidden selected future to recover.
+There is no hidden `h*` to recover.
 
-However `F_O` is not generally information-complete either.
-
-The local view keeps current Actuality, current complete live extensions, and immediate-next marginals, but it does not generally preserve:
-
-- the full background substrate outside current live extensions after pruning;
-- arbitrary distinctions in per-history weights that produce the same immediate marginal in more complex trees.
-
-For the tiny canonical baseline some of this structure happens to be reconstructible from the complete live histories, but that is not a general reversibility theorem.
+However `F_O` is not generally information-complete either. The local view does not in general preserve the full background substrate outside current live extensions or arbitrary per-history weight distinctions that collapse to the same immediate marginal.
 
 ### 10.3 Operational erasure
 
@@ -443,7 +426,7 @@ Thus:
 
 `operational equality`
 
-is expected to be weaker than:
+is weaker than:
 
 `model-state equality`.
 
@@ -502,16 +485,11 @@ The explicitly complete-history model is:
 
 It contains the whole branching law and one selected complete history.
 
-The comparison partner is a different internal state:
+The comparison partner is:
 
 `M_O(D)=(D,Ext_T(D),K)`.
 
 It should not simply be renamed `B`, because Stage 2 intentionally separates global/local representation from epistemic/ontic Potentiality.
-
-Thus the Stage 2 answer is plural:
-
-- `M_E` is the clear block-like/global selected-history representation;
-- `M_O(D)` is a modal internal state with current Actuality plus unselected extensions.
 
 ### ② What is the becoming-like/local description `G`?
 
@@ -523,17 +501,15 @@ and:
 
 `G_O(D)=(A_now,OPot(D),pi_O)`.
 
-They contain Actuality + Potentiality but still no record structure.
-
 For cross-model operational comparison:
 
 `O(G)=(A_now,Next(D),pi(next|D))`.
 
-This remains a proto-/minimal becoming-like description rather than the final Stage 3 `Records + Actuality + Potentiality` form.
+This is still a minimal becoming-like description without records.
 
 ### ③ What is the transformation `F`?
 
-There are now two projection maps:
+There are two projection maps:
 
 `F_E^D: M_E -> G_E(D)`
 
@@ -541,11 +517,9 @@ and:
 
 `F_O: M_O(D) -> G_O(D)`.
 
-Then both can be mapped through the ontology-neutral erasure:
+Then both pass through:
 
 `O: G -> OperationalView`.
-
-The comparison diagram is therefore:
 
 ```text
 M_E  --F_E-->  G_E  --O-->  O(G_E)
@@ -557,9 +531,9 @@ M_O  --F_O-->  G_O  --O-->  O(G_O)
 
 Not in general.
 
-For epistemic `F_E`, the answer is clearly **no** with respect to `h*`: different selected complete histories can produce the same local view.
+For epistemic `F_E`, different selected complete histories can produce the same local view.
 
-For ontic `F_O`, there is no hidden `h*`, but projection can still discard background substrate information or detailed extension-weight information beyond what the local view retains.
+For ontic `F_O`, there is no hidden `h*`, but projection can still discard background substrate information or detailed extension-weight information.
 
 The operational map `O` is even more strongly non-injective because it deliberately erases modal semantics and deeper structure.
 
@@ -586,14 +560,9 @@ The strongest current interpretation is that:
 
 form a compact operational structure shared by two different Stage 2 internal semantics under controlled conditions.
 
-This makes them plausible **candidate ingredients** for a more physical relational account of time.
+This makes them plausible candidate ingredients for a more physical relational account of time.
 
-But their status is limited because:
-
-- equality depends on the chosen operational interface;
-- probability matching matters;
-- support conventions can break equality;
-- no realistic spacetime, records, quantum clocks, or reference-frame transformations have yet been tested.
+But equality depends on the chosen interface, probability matching, and support conventions, and no realistic spacetime, record, quantum-clock, or reference-frame transformation has yet been tested.
 
 Therefore:
 
@@ -605,7 +574,7 @@ Therefore:
 
 1. **A hidden-selected-future model and a no-selected-future model can be formally distinct while sharing the same declared local operational outputs.**
 2. **The distinction between hidden information and absent information can be implemented explicitly rather than left verbal.**
-3. **Operational indistinguishability can persist through matched explicit updates, not only at one initial snapshot.**
+3. **Operational indistinguishability can persist through matched explicit updates.**
 4. **The equality is conditional, not automatic: probability mismatch breaks it.**
 5. **Uniform probabilities are not essential: matched non-uniform positive weights still preserve equality.**
 6. **Zero-support conventions expose a support-semantics boundary where operational equality can fail even with matching numerical weights.**
@@ -616,7 +585,26 @@ Therefore:
 
 ---
 
-## 15. Stage 2 exit criteria
+## 15. Full regression
+
+A minimal GitHub Actions workflow was added for clean repository testing.
+
+A Stage 2F PR merge-ref run completed successfully with:
+
+`99 passed in 2.98s`.
+
+Environment:
+
+- Ubuntu 24.04;
+- Python 3.11.15;
+- NetworkX 3.6.1;
+- pytest 9.1.1.
+
+This validates the Stage 1 suite plus all committed Stage 2A–2F tests at the control checkpoint.
+
+---
+
+## 16. Stage 2 exit criteria
 
 Stage 2 exit criteria are satisfied:
 
@@ -639,13 +627,13 @@ The remaining repository-management step is PR #3 review/merge readiness assessm
 
 ---
 
-## 16. Carry-forward to Stage 3
+## 17. Carry-forward to Stage 3
 
 Stage 2 supplied:
 
 `Actuality + Potentiality`.
 
-Stage 3 should add explicit records/memory/environment structure and ask a new question:
+Stage 3 should add explicit records/memory/environment structure and ask:
 
 > Can temporal direction be distinguished from mere branching/order by asymmetric record accessibility?
 
@@ -660,4 +648,4 @@ Stage 3 should include at least:
 - forward/reverse comparison;
 - a clear distinction between ordering, record asymmetry, and experienced temporal direction.
 
-The Stage 2 support-semantics boundary should also remain in view: future work should distinguish structural admissibility, positive probability, epistemic support, and operational accessibility rather than using one word "possible" for all four.
+The Stage 2 support-semantics boundary should remain explicit: structural admissibility, positive probability, epistemic support, and operational accessibility should not all be called simply "possible".

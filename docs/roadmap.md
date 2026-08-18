@@ -188,20 +188,54 @@ Stage 2A remains ontology-neutral:
 
 `branching structure != evidence of ontic openness`.
 
-## Stage 2B — Epistemic-history model — next
+## Stage 2B — Epistemic-history model — completed
 
-Implement:
+Implemented:
 
-`M_E = (T, h*, q_E)`.
+`M_E = (T,h*,q_E)`.
 
-Tests should verify that:
+Result:
 
-- a complete `h*` exists globally;
-- the local projection does not leak `h*`;
-- different hidden `h*` values can yield the same current operational view under the same evidence and beliefs;
-- evidence updates condition the epistemic hypothesis set without changing the already-selected `h*`.
+- [`../results/stage2b_epistemic.md`](../results/stage2b_epistemic.md)
 
-## Stage 2C — Ontic-extension model
+The baseline stores one explicit selected complete history `h*` globally while keeping it out of the local projection.
+
+For:
+
+`D_0 = (p,n)`
+
+and:
+
+`q_E(h_L)=q_E(h_R)=1/2`,
+
+the local view contains:
+
+- current Actuality/evidence prefix;
+- typed epistemic Potentiality `EPot(D_0) = {h_L,h_R}`;
+- immediate-next predictions `pi_E(l1)=pi_E(r1)=1/2`.
+
+Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged. A privileged global diagnostic still distinguishes the two models by their encoded hidden next event.
+
+Thus:
+
+`F_E^D` is intentionally non-injective with respect to `h*`.
+
+For the baseline actual observation `l1`:
+
+- evidence updates to `(p,n,l1)`;
+- beliefs condition to `q_E(h_L)=1`, `q_E(h_R)=0`;
+- `h*` remains unchanged;
+- the next local prediction becomes `l2` with probability `1`.
+
+An actual observation contradicting `h*` is rejected rather than rewriting the selected history.
+
+Focused Stage 2B validation: `10 passed`.
+
+Interpretive limit:
+
+`a hidden selected future can be represented != physical reality has a fixed future`.
+
+## Stage 2C — Ontic-extension model — next
 
 Implement:
 
@@ -211,6 +245,7 @@ Tests should verify that:
 
 - current Actuality and all admissible extensions are represented;
 - no field or implicit selector singles out one complete future;
+- the local ontic Potentiality type is distinct from epistemic hypothesis Potentiality;
 - update extends Actuality and prunes incompatible extensions without creating a hidden future selector.
 
 Important caution: successfully representing this structure is not evidence that physical reality is ontically open.

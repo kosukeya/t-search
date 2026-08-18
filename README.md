@@ -15,7 +15,7 @@ The long-term hypothesis is that such invariants may be better candidates for th
 
 ## Current status
 
-**Stage 1 is complete and merged. Stage 2.0 protocol freeze and Stage 2A common branching substrate are complete on the Stage 2 branch. Stage 2B is next.**
+**Stage 1 is complete and merged. Stage 2.0 protocol freeze, Stage 2A common branching substrate, and Stage 2B epistemic-history model are complete on the Stage 2 branch. Stage 2C is next.**
 
 Stage 1 built and stress-tested the finite classical global/local reconstruction framework:
 
@@ -119,12 +119,53 @@ Stage 2A is deliberately ontology-neutral:
 
 `branching structure != evidence of ontic openness`.
 
+## Stage 2B — Epistemic-history model — completed
+
+The result is recorded in:
+
+- [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
+
+Stage 2B implements:
+
+`M_E = (T,h*,q_E)`
+
+with an explicit globally selected complete history `h*` and a separate epistemic belief distribution `q_E`.
+
+The local projection:
+
+`F_E^D: M_E -> G_E(D)`
+
+returns only:
+
+- current Actuality/evidence prefix;
+- typed epistemic Potentiality `EPot(D)`;
+- immediate-next predictive probabilities.
+
+It does not expose or consult `h*` when producing the local view.
+
+For the canonical baseline at `D_0`:
+
+`q_E(h_L)=q_E(h_R)=1/2`.
+
+Changing only the hidden selected history from `h_L` to `h_R` leaves the local projection exactly unchanged, while a privileged test-only diagnostic reveals different hidden next events. Therefore `F_E^D` is deliberately non-injective with respect to `h*`.
+
+After an explicit observation `l1` in the baseline actual run:
+
+- the evidence prefix becomes `(p,n,l1)`;
+- beliefs condition to `q_E(h_L)=1`, `q_E(h_R)=0`;
+- the hidden `h*` remains unchanged;
+- the next local prediction becomes `l2` with probability `1`.
+
+Focused Stage 2B validation: **10 passed**.
+
+Stage 2B establishes a formal hidden-selected-future model only. It does **not** establish that physical reality has a fixed future.
+
 ## Planned Stage 2 sequence
 
 1. **Stage 2.0 — protocol freeze** — completed.
 2. **Stage 2A — common branching substrate** — completed.
-3. **Stage 2B — epistemic-history model** — next: implement explicit hidden `h*` and non-leaking local projection.
-4. **Stage 2C — ontic-extension model** — implement current Actuality + admissible extensions with no selected future.
+3. **Stage 2B — epistemic-history model** — completed.
+4. **Stage 2C — ontic-extension model** — next: implement current Actuality + admissible extensions with no selected future.
 5. **Stage 2D — operational equivalence** — compare ontology-neutral local observables under matched weights.
 6. **Stage 2E — update comparison** — compare both models after a common observed next event.
 7. **Stage 2F — controls and synthesis** — renaming, repeated-state, weight-mismatch, terminal/invalid-input controls, then Stage 2 synthesis.
@@ -161,8 +202,11 @@ A successful software construction is not by itself an ontological result.
 - [`docs/stage0_definitions.md`](docs/stage0_definitions.md)
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
 - [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
+- [`docs/stage2a_notes.md`](docs/stage2a_notes.md)
+- [`docs/stage2b_notes.md`](docs/stage2b_notes.md)
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 - [`results/stage2a_branching.md`](results/stage2a_branching.md)
+- [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
 
 ## Fixed questions for every stage
 

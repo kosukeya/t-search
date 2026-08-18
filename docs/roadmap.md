@@ -150,20 +150,45 @@ Core guards:
 
 `formal representational difference != empirical physical difference`.
 
-## Stage 2A — Common branching substrate — next
+## Stage 2A — Common branching substrate — completed
 
-Implement and test:
+Implemented and tested:
 
-- finite branching structure `T`;
-- maximal histories `H`;
-- valid actual prefixes `D`;
+- finite rooted branching structure `T`;
+- maximal histories `H`, derived from `E` and `C` rather than independently stored;
+- valid non-empty actual prefixes `D`;
 - `Ext_T(D)`;
-- history/world equivalence up to the declared relational/isomorphism criterion;
-- proof that canonical `h_L` and `h_R` are genuinely non-equivalent alternatives.
+- immediate next-event sets;
+- neutral prefix extension and terminal behavior;
+- history/continuation equivalence up to event renaming;
+- rooted branching-structure equivalence;
+- guards against invalid prefixes, inadmissible next events, disconnected structures, and non-tree baseline inputs.
 
-This stage should contain no epistemic/ontic interpretation beyond the neutral branching substrate.
+Result:
 
-## Stage 2B — Epistemic-history model
+- [`../results/stage2a_branching.md`](../results/stage2a_branching.md)
+
+For the canonical current prefix:
+
+`D_0 = (p,n)`
+
+we recover:
+
+`Ext_T(D_0) = {h_L,h_R}`
+
+and:
+
+`Next(D_0) = {l1,r1}`.
+
+The two canonical extensions form **two continuation equivalence classes**. They are not merely renamed copies because their future path structures have different lengths. As a control, a pure renaming of the entire rooted substrate remains equivalent to the original.
+
+Focused Stage 2A validation: `8 passed`.
+
+Stage 2A remains ontology-neutral:
+
+`branching structure != evidence of ontic openness`.
+
+## Stage 2B — Epistemic-history model — next
 
 Implement:
 

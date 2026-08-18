@@ -4,7 +4,7 @@ This roadmap is intentionally provisional. Each stage may revise earlier definit
 
 ## North-star question
 
-Can block-like and becoming-like descriptions be treated as different perspectives on one deeper relational temporal structure, with explicit transformations between them and non-trivial invariants across those transformations?
+Can block-like and becoming-like descriptions be treated as different perspectives on one deeper relational temporal structure, with explicit transformations between them and non-trivial structures that remain stable across those transformations?
 
 ## Stage 0 — Definitions and scope — completed
 
@@ -15,6 +15,7 @@ Exit criterion: satisfied.
 ## Stage 0.5 — Stage 1 protocol freeze — completed
 
 Key decisions:
+
 - distinguish event identity from state/configuration value;
 - distinguish direct adjacency from induced reachability;
 - keep Stage 1 free of Potentiality and records;
@@ -30,28 +31,18 @@ Integrated result:
 
 - [`../results/stage1_synthesis.md`](../results/stage1_synthesis.md)
 
-Stage 1A verified the information-rich round trip:
-
-`B_1 -> {V_e} -> B_1_hat`.
-
-Stage 1B completed six controlled variants:
-
-1. outgoing-only;
-2. incoming-only;
-3. missing local views;
-4. reachability-only;
-5. state-label collision;
-6. anonymous / global-ID-free views.
+Stage 1 established the finite classical global/local reconstruction machinery and six controlled information-loss/representation variants.
 
 Main findings:
-- reconstruction depends on the information interface and equivalence assumptions;
-- coverage loss can move structure from reconstructible to ambiguous to lost;
-- reachability/minimal cover structure survives transitively redundant edge-encoding changes better than arbitrary edge lists;
-- `state equality != event identity`;
-- shared global IDs are sufficient but not always necessary for reconstruction;
-- sufficiently rich anonymous relational context can recover the canonical graph up to isomorphism in the tested six-event search class.
 
-Stage 1 does not establish a fundamental physical invariant.
+- reconstruction depends on the information interface and equivalence assumptions;
+- coverage loss can produce reconstructible, ambiguous, or lost structure;
+- reachability/minimal cover structure survives redundant-edge encoding changes better than arbitrary direct-edge lists;
+- `state equality != event identity`;
+- shared global IDs are sufficient but not always necessary;
+- sufficiently rich anonymous relational context can reconstruct the canonical six-event graph up to isomorphism in the tested search class.
+
+No fundamental physical invariant was claimed.
 
 ## Stage 2.0 — Potentiality protocol freeze — completed
 
@@ -59,7 +50,7 @@ Detailed specification:
 
 - [`stage2_protocol.md`](stage2_protocol.md)
 
-Stage 2 separates two axes:
+Stage 2 separates two conceptual axes:
 
 - global versus local representation;
 - epistemic versus ontic Potentiality.
@@ -82,84 +73,43 @@ with:
 
 `D_0 = (p,n)`.
 
-The two formal model families are:
-
-### Epistemic-history model
-
-`M_E = (T,h*,q_E)`
-
-A complete `h*` is globally selected, while the local projection intentionally hides it.
-
-### Ontic-extension model
-
-`M_O(D) = (D,Ext_T(D),K)`
-
-Current Actuality and all admissible extensions are represented, with no selected complete future stored in the model state.
-
-Core guards:
-
-`compatible completions != ontic possibilities`
-
-`random sampling != evidence of ontic becoming`
-
-`formal representational difference != empirical physical difference`.
+The two continuations are not mere relabelings because their future relational path lengths differ.
 
 ## Stage 2A — Common branching substrate — completed
 
-Result:
-
-- [`../results/stage2a_branching.md`](../results/stage2a_branching.md)
-
 Implemented:
+
 - finite rooted branching structure `T`;
 - maximal histories `H` derived from `E,C`;
 - valid actual prefixes `D`;
 - `Ext_T(D)`;
 - immediate next-event sets;
-- neutral prefix extension and terminal behavior;
+- prefix extension and terminal behavior;
 - history/continuation equivalence up to event renaming;
 - rooted branching-structure equivalence;
-- invalid-prefix and invalid-tree guards.
-
-For `D_0`:
-
-`Ext_T(D_0)={h_L,h_R}`
-
-`Next(D_0)={l1,r1}`.
-
-The two continuation classes are genuinely non-equivalent because their future path structures differ.
-
-Focused validation: `8 passed`.
-
-Interpretive limit:
-
-`branching structure != evidence of ontic openness`.
-
-## Stage 2B — Epistemic-history model — completed
+- optional state-label-preserving equivalence.
 
 Result:
 
-- [`../results/stage2b_epistemic.md`](../results/stage2b_epistemic.md)
+- [`../results/stage2a_branching.md`](../results/stage2a_branching.md)
+
+## Stage 2B — Epistemic-history model — completed
 
 Implemented:
 
 `M_E=(T,h*,q_E)`.
 
-Baseline:
-- hidden `h*=h_L`;
-- `q_E(h_L)=q_E(h_R)=1/2`;
-- `EPot(D_0)={h_L,h_R}`;
-- `pi_E(l1)=pi_E(r1)=1/2`.
+The selected complete history `h*` exists globally but is intentionally hidden by the local projection:
 
-Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged, while privileged diagnostics distinguish the global states.
+`F_E^D: M_E -> G_E(D)`.
 
-Thus:
+Changing only `h*` while holding current evidence and beliefs fixed does not change the local view.
 
-`F_E^D` is intentionally non-injective with respect to `h*`.
+Thus `F_E^D` is deliberately non-injective with respect to `h*`.
 
-After observation `l1`, beliefs condition to the left history but `h*` remains unchanged. An actual observation contradicting `h*` is rejected instead of rewriting the selected history.
+Result:
 
-Focused validation: `10 passed`.
+- [`../results/stage2b_epistemic.md`](../results/stage2b_epistemic.md)
 
 Interpretive limit:
 
@@ -167,42 +117,17 @@ Interpretive limit:
 
 ## Stage 2C — Ontic-extension model — completed
 
-Result:
-
-- [`../results/stage2c_ontic.md`](../results/stage2c_ontic.md)
-
 Implemented:
 
 `M_O(D)=(D,Ext_T(D),K)`.
 
-The model state contains:
-- the neutral branching substrate;
-- current Actuality/prefix;
-- typed `OnticPotentiality` containing exactly all live extensions;
-- normalized extension weights.
+The model stores current Actuality, all structurally admissible extensions, and weights, but no selected complete future field.
 
-It contains no selected complete future field such as `selected_history` or `hidden_history`.
+Updates extend Actuality, prune incompatible extensions, and renormalize weights without creating a hidden future selector.
 
-At `D_0`:
+Result:
 
-`OPot(D_0)={h_L,h_R}`
-
-and:
-
-`pi_O(l1)=pi_O(r1)=1/2`.
-
-After explicit observation `l1`:
-- Actuality extends to `(p,n,l1)`;
-- the incompatible right extension is removed;
-- the left extension receives normalized weight `1`;
-- the immediate-next prediction becomes `l2` with probability `1`;
-- no selected complete future is created.
-
-As a formal contrast with Stage 2B, the same unselected baseline can also accept observation `r1` when that branch has positive weight. Stage 2B's actual-run fixture with hidden `h*=h_L` rejects `r1`.
-
-Validation limitation:
-- a focused semantic harness passed `10 Stage 2C semantic checks`;
-- the committed Stage 2C tests must be included in a later full repository regression before merge review.
+- [`../results/stage2c_ontic.md`](../results/stage2c_ontic.md)
 
 Interpretive limit:
 
@@ -210,34 +135,27 @@ Interpretive limit:
 
 ## Stage 2D — Operational equivalence — completed
 
+Introduced the ontology-neutral interface:
+
+`O(G)=(A_now,Next(D),pi(next|D))`.
+
+With matched baseline weights:
+
+`O(G_E(D_0)) = O(G_O(D_0))`.
+
+Both expose:
+
+- Actuality `(p,n)`;
+- Next `{l1,r1}`;
+- probabilities `1/2,1/2`.
+
+Thus the supported result is:
+
+**operationally indistinguishable under the tested interface and matched conditions**.
+
 Result:
 
 - [`../results/stage2d_operational_equivalence.md`](../results/stage2d_operational_equivalence.md)
-
-Stage 2D introduces the ontology-neutral operational interface:
-
-`O(G) = (A_now, Next(D), pi(next|D))`.
-
-The typed local descriptions remain formally distinct, but their semantic Potentiality tags and privileged internal fields are erased before comparison.
-
-For the matched baseline:
-
-`O(G_E(D_0)) = O(G_O(D_0))`
-
-with:
-- the same Actuality `(p,n)`;
-- the same immediate alternatives `{l1,r1}`;
-- the same probabilities `1/2,1/2`.
-
-Therefore the supported conclusion is:
-
-**operationally indistinguishable under the tested observables and matched baseline weights**.
-
-Additional controls:
-- swapping only hidden epistemic `h*` remains operationally invisible;
-- changing only `q_E` or `K` keeps Actuality/Next fixed while breaking probability equality.
-
-A focused Stage 2D semantic harness passed `8/8 checks`. Full repository regression remains required before Stage 2 merge review.
 
 Interpretive limit:
 
@@ -245,75 +163,85 @@ Interpretive limit:
 
 ## Stage 2E — Update comparison — completed
 
-Result:
+The same explicit observation `l1` was applied to both model families using their different update rules.
 
-- [`../results/stage2e_update_comparison.md`](../results/stage2e_update_comparison.md)
+After update both operationalize to:
 
-Design notes:
-
-- [`stage2e_notes.md`](stage2e_notes.md)
-
-A common explicit observation:
-
-`l1`
-
-is supplied to both model families.
-
-The epistemic model:
-- changes evidence prefix to `(p,n,l1)`;
-- conditions beliefs to `h_L`;
-- leaves the globally selected `h*=h_L` unchanged.
-
-The ontic model:
-- extends Actuality to `(p,n,l1)`;
-- removes the incompatible right extension;
-- renormalizes the left extension to weight `1`;
-- creates no selected complete future field.
-
-After these distinct updates:
-
-`O(G_E(D_1)) = O(G_O(D_1))`
-
-with:
 - Actuality `(p,n,l1)`;
 - Next `{l2}`;
 - `pi(l2)=1`.
 
-Thus the matched operational equality survives the common left-branch update while the internal semantic distinction persists.
+Therefore:
 
-A second common observation `l2` reaches the same terminal operational view in both models, again with epistemic `h*` preserved and no ontic future selector created.
+`O(G_E(D_1)) = O(G_O(D_1))`.
 
-The canonical ontic baseline can accept `r1`, while the specific epistemic fixture with `h*=h_L` rejects it. This is a formal distinction between two fixed global states, not yet an empirical family-level discriminator because an epistemic model with `h*=h_R` can represent a right-branch run.
+The same operational equality persists through the terminal `l2` update, while the internal distinction remains:
 
-Validation:
-- the committed Stage 2E test file contains `9` focused tests;
-- a compact Stage 2A–E semantic reconstruction passed `9/9 checks`;
-- full repository regression remains mandatory before merge review.
+- epistemic `h*` was already present and remains unchanged;
+- ontic selected complete future remains absent from the state schema.
 
-Interpretive limit:
+Result:
 
-`post-update operational equality != ontological equality`.
+- [`../results/stage2e_update_comparison.md`](../results/stage2e_update_comparison.md)
 
-## Stage 2F — Controls and synthesis — next
+## Stage 2F — Controls and synthesis — completed
 
-Required work:
-- event-renaming / isomorphism invariance;
-- repeated state labels, preserving `state equality != event identity`;
-- consolidate and expand weight-mismatch controls;
-- terminal prefixes and invalid prefixes/observations;
-- classify local/internal/reconstructible/ambiguous/lost structure across Stage 2;
-- answer the six fixed questions at Stage 2 resolution;
-- produce `results/stage2_synthesis.md`;
-- run full repository regression on a clean/current branch checkout;
-- perform Stage 2 exit review before changing PR #3 from draft or merging.
+Controls:
 
-Stage 2 exit criterion: the formal difference, projection maps, update semantics, operational comparison, controls, and limitations can all be stated explicitly without turning representational differences into metaphysical proof.
+- pure event-renaming covariance / isomorphism;
+- repeated state labels;
+- matched non-uniform positive weights;
+- mismatched positive-support weights;
+- zero-support boundary semantics;
+- terminal and invalid-input cases.
 
-## Stage 3 — Records and temporal direction
+Key findings:
 
-Add memory/environment registers and compare asymmetric-record models with symmetric/reversible controls.
+1. pure bookkeeping renaming preserves the relevant structures covariantly;
+2. repeated state values do not collapse distinct events or the canonical continuation classes;
+3. operational equality does not depend on uniform `1/2,1/2` weights — matched positive `0.75/0.25` also works;
+4. mismatched probabilities break operational equality without constituting an ontological discriminator;
+5. matching numerical `{1,0}` weights can still produce different `Next` sets because `EPot` removes zero-support hypotheses while `OPot=Ext_T(D)` retains structurally admissible zero-weight extensions;
+6. the zero-support result is a **support-semantics boundary**, not a physical prediction.
 
-Goal: distinguish mere ordering from temporal direction and test whether asymmetric records provide an arrow-like structure.
+Results:
+
+- [`../results/stage2f_controls.md`](../results/stage2f_controls.md)
+- [`../results/stage2_synthesis.md`](../results/stage2_synthesis.md)
+
+Full clean regression was added through GitHub Actions and passed:
+
+`99 passed in 2.98s`.
+
+### Stage 2 strongest conclusions
+
+- a hidden-selected-future model and a no-selected-future model can be formally different while producing the same tested local operational outputs under matched positive-support conditions;
+- the difference between **hidden information** and **information absent from the model state** can be represented explicitly;
+- operational equality can persist through matched updates;
+- the equality is conditional on the chosen interface, probability matching, and support conventions;
+- event labels are bookkeeping under the tested renaming control;
+- state equality remains distinct from event identity;
+- no strict physical invariant and no empirical fixed-vs-open-future discriminator has yet been established.
+
+Stage 2 exit criterion: **satisfied pending PR #3 review/merge**.
+
+## Stage 3 — Records and temporal direction — next after Stage 2 merge
+
+Add explicit memory/environment/record structure and upgrade the minimal modal view toward:
+
+`G = (Records,Actuality,Potentiality)`.
+
+Required comparisons:
+
+1. symmetric/reversible record control;
+2. asymmetric-record model;
+3. forward/reverse history comparison;
+4. distinction among mere order, record asymmetry, and experienced temporal direction;
+5. information-theoretic diagnostics only where the model makes them meaningful.
+
+Goal:
+
+Test, rather than assume, whether asymmetric records add an arrow-like structure beyond mere state change or branching order.
 
 ## Stage 4 — Finite Page–Wootters-style quantum model
 
@@ -321,7 +249,7 @@ Use a finite-dimensional clock `C` and system `S`.
 
 Global/block-like representation:
 
-`|Psi> = sum_t |t>_C |psi_t>_S`
+`|Psi> = sum_t |t>_C |psi_t>_S`.
 
 Relational/becoming-like representation:
 
@@ -334,18 +262,32 @@ Test conditional dynamics and preserved correlations/transition probabilities.
 Use at least three subsystems and construct explicit changes between clock-relative descriptions.
 
 Search for structures stable under:
+
 1. block -> becoming;
 2. becoming(clock C) -> becoming(clock A).
 
+This is the first planned stage where a genuinely physical perspective-change candidate can be tested rather than mere bookkeeping renaming.
+
 ## Stage 6 — Candidate temporal structure T
 
-Compare structures surviving Stages 1–5. Possible ingredients include causal/conditioning order, relational correlations, record accessibility, allowed-transition structure, and perspective-consistency constraints.
+Compare structures surviving Stages 1–5.
+
+Possible ingredients include:
+
+- causal/conditioning order;
+- relational correlations;
+- record accessibility;
+- allowed-transition structure;
+- consistency constraints among perspectives.
 
 Do not force a unique invariant if the evidence supports a family of complementary structures.
 
 ## Stage 7 — Generally covariant / gravitational extension
 
-Only after the toy models are stable. Possible progression:
+Only after the toy models are stable.
+
+Possible progression:
+
 1. parametrized particle;
 2. simple constrained/minisuperspace model;
 3. tractable gravitational setting.
@@ -373,15 +315,18 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - global mathematical description != physically realizable God's-eye observer;
 - reconstructible structure != automatically fundamental physical structure;
 - compatible alternatives != automatically ontic possibilities;
-- formal/internal distinguishability != automatically local/operational distinguishability.
+- formal/internal distinguishability != automatically local/operational distinguishability;
+- operational equality != ontological equivalence;
+- support semantics must be distinguished from physical possibility.
 
 ## Stop / revise conditions
 
 Revise the program rather than forcing progress if:
+
 - `block` or `becoming` becomes definitionally circular;
 - an alleged invariant is merely notation-dependent;
 - local descriptions cannot be consistently related in the intended toy model;
 - the supposedly ontic model secretly stores a selected complete future;
 - the epistemic `h*` has no genuine formal role;
-- an apparent operational distinction is produced only by assigning different numerical parameters;
+- an apparent operational distinction is produced only by assigning different numerical parameters or conventions;
 - a claimed novelty is already an established object under another name.

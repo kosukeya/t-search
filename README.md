@@ -15,13 +15,9 @@ The long-term hypothesis is that such invariants may be better candidates for th
 
 ## Current status
 
-**Stage 1 is complete and merged. Stage 2.0, Stage 2A, Stage 2B, and Stage 2C are complete on the Stage 2 branch. Stage 2D operational-equivalence comparison is next.**
+**Stage 1 is complete and merged. Stage 2.0 through Stage 2D are complete on the Stage 2 branch. Stage 2E update comparison is next.**
 
-Stage 1 built and stress-tested the finite classical global/local reconstruction framework:
-
-`B_1 -> {V_e} -> B_1_hat`.
-
-Its integrated conclusions are recorded in:
+Stage 1 built and stress-tested the finite classical global/local reconstruction framework. Its integrated conclusions are recorded in:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 
@@ -37,13 +33,13 @@ The central comparison is between two intentionally different formal objects.
 
 ### Epistemic-history model
 
-`M_E = (T, h*, q_E)`
+`M_E = (T,h*,q_E)`
 
 One complete history `h*` is selected in advance but hidden from the current/local projection.
 
 ### Ontic-extension model
 
-`M_O(D) = (D, Ext_T(D), K)`
+`M_O(D) = (D,Ext_T(D),K)`
 
 Current Actuality plus all admissible extensions are represented, but no selected complete future is stored in the model state.
 
@@ -55,7 +51,7 @@ Result:
 
 - [`results/stage2a_branching.md`](results/stage2a_branching.md)
 
-The neutral substrate is:
+Neutral substrate:
 
 ```text
            l1 -> l2
@@ -67,21 +63,11 @@ p -> n
 
 with:
 
-`h_L = (p,n,l1,l2)`
-
-`h_R = (p,n,r1)`
-
-and:
-
-`D_0 = (p,n)`.
-
-Thus:
-
-`Ext_T(D_0) = {h_L,h_R}`
-
-and:
-
-`Next(D_0) = {l1,r1}`.
+- `h_L = (p,n,l1,l2)`;
+- `h_R = (p,n,r1)`;
+- `D_0 = (p,n)`;
+- `Ext_T(D_0) = {h_L,h_R}`;
+- `Next(D_0) = {l1,r1}`.
 
 The two continuations are relationally non-equivalent because their future path lengths differ. Pure renaming of the whole substrate remains equivalent.
 
@@ -93,19 +79,14 @@ Result:
 
 - [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
 
-Stage 2B implements:
-
-`M_E = (T,h*,q_E)`.
-
-For the baseline:
+Baseline:
 
 - `h*=h_L` globally;
 - `q_E(h_L)=q_E(h_R)=1/2`;
-- `D_0=(p,n)`;
 - `EPot(D_0)={h_L,h_R}`;
 - `pi_E(l1)=pi_E(r1)=1/2`.
 
-Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged, while privileged test-only diagnostics distinguish the two global model states. Therefore `F_E^D` is deliberately non-injective with respect to `h*`.
+Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged, while privileged diagnostics distinguish the two global model states. Therefore `F_E^D` is deliberately non-injective with respect to `h*`.
 
 After explicit observation `l1`, beliefs condition to the left history while the already-selected `h*` remains unchanged.
 
@@ -125,14 +106,7 @@ Stage 2C implements:
 
 `M_O(D) = (D,Ext_T(D),K)`.
 
-The model state contains:
-
-- the neutral substrate;
-- current Actuality/prefix;
-- typed `OnticPotentiality` containing exactly all live extensions;
-- normalized weights over those extensions.
-
-It contains no `selected_history` or equivalent explicit future-selection field.
+The model contains current Actuality, type-distinct `OnticPotentiality`, and weights over all live extensions, but no selected complete future field.
 
 At `D_0`:
 
@@ -142,15 +116,54 @@ and:
 
 `pi_O(l1)=pi_O(r1)=1/2`.
 
-After explicit observation `l1`, Actuality becomes `(p,n,l1)`, the right extension is pruned, and the next prediction is `l2` with probability `1`. The update does not create a selected complete future.
+After explicit observation `l1`, Actuality becomes `(p,n,l1)`, the right extension is pruned, and the next prediction is `l2` with probability `1`. No selected complete future is created.
 
-As a contrast control, the same unselected baseline can also update through `r1` when that branch has positive weight. Stage 2B's actual-run fixture with hidden `h*=h_L` rejects that observation.
-
-The execution environment could not clone GitHub during Stage 2C, so a full repository pytest run was unavailable. A focused semantic harness passed **10 Stage 2C checks**; the committed repository test file should be included in a full regression before Stage 2 merge review.
+A focused semantic harness passed **10 Stage 2C checks**. A full repository regression remains required before Stage 2 merge review.
 
 Interpretive guard:
 
 `a model with no selected future != evidence that physical reality is ontically open`.
+
+## Stage 2D — Operational equivalence — completed
+
+Result:
+
+- [`results/stage2d_operational_equivalence.md`](results/stage2d_operational_equivalence.md)
+
+Design notes:
+
+- [`docs/stage2d_notes.md`](docs/stage2d_notes.md)
+
+Stage 2D introduces the ontology-neutral interface:
+
+`O(G) = (A_now, Next(D), pi(next|D))`.
+
+The typed modal views remain formally different:
+
+- `EpistemicLocalView` with `EpistemicPotentiality`;
+- `OnticLocalView` with `OnticPotentiality`.
+
+After operational erasure, the matched baseline gives:
+
+`O(G_E(D_0)) = O(G_O(D_0))`
+
+with:
+
+- Actuality `(p,n)`;
+- immediate alternatives `{l1,r1}`;
+- probabilities `1/2,1/2`.
+
+Thus the correct result is:
+
+**operationally indistinguishable under the tested observables and matched baseline weights**.
+
+Swapping only hidden epistemic `h*` remains operationally invisible. A weight-mismatch negative control keeps Actuality and Next equal while making only the probability component differ, proving that operational equality is a controlled condition rather than a consequence of the epistemic/ontic labels.
+
+A focused Stage 2D semantic harness passed **8/8 checks**. The committed repository tests should be included in the full regression before merge review.
+
+Interpretive guard:
+
+`operational equality != ontological equivalence`.
 
 ## Planned Stage 2 sequence
 
@@ -158,9 +171,9 @@ Interpretive guard:
 2. **Stage 2A — common branching substrate** — completed.
 3. **Stage 2B — epistemic-history model** — completed.
 4. **Stage 2C — ontic-extension model** — completed.
-5. **Stage 2D — operational equivalence** — next: compare ontology-neutral local observables under matched weights.
-6. **Stage 2E — update comparison** — compare both models after a common observed next event.
-7. **Stage 2F — controls and synthesis** — renaming, repeated-state, weight-mismatch, terminal/invalid-input controls, then Stage 2 synthesis.
+5. **Stage 2D — operational equivalence** — completed.
+6. **Stage 2E — update comparison** — next: compare both models after the same explicit observation `l1`.
+7. **Stage 2F — controls and synthesis** — renaming, repeated-state, terminal/invalid-input controls, expanded weight controls, then Stage 2 synthesis.
 
 ## Key methodological guards
 
@@ -184,9 +197,11 @@ A successful software construction is not by itself an ontological result.
 - [`docs/stage2a_notes.md`](docs/stage2a_notes.md)
 - [`docs/stage2b_notes.md`](docs/stage2b_notes.md)
 - [`docs/stage2c_notes.md`](docs/stage2c_notes.md)
+- [`docs/stage2d_notes.md`](docs/stage2d_notes.md)
 - [`results/stage2a_branching.md`](results/stage2a_branching.md)
 - [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
 - [`results/stage2c_ontic.md`](results/stage2c_ontic.md)
+- [`results/stage2d_operational_equivalence.md`](results/stage2d_operational_equivalence.md)
 
 ## Fixed questions for every stage
 

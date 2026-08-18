@@ -9,49 +9,54 @@ Can we construct explicit transformations between:
 - a **block-like description** of a whole relational history, and
 - **becoming-like descriptions** available from local/internal perspectives,
 
-and identify non-trivial structures that remain invariant across those transformations?
+and identify non-trivial structures that remain stable across those transformations?
 
-The long-term hypothesis is that such invariants may be better candidates for the physical content of time than either "block" or "becoming" taken as an absolute description.
+The long-term hypothesis is that such structures may be better candidates for the physical content of time than either "block" or "becoming" taken as an absolute description.
 
 ## Current status
 
-**Stage 1 is complete and merged. Stage 2.0 through Stage 2E are complete on the Stage 2 branch. Stage 2F controls and synthesis are next.**
+**Stage 1 is complete and merged. Stage 2 is complete on the Stage 2 branch; its exit criteria are satisfied pending PR #3 review/merge.**
 
-Stage 1 built and stress-tested the finite classical global/local reconstruction framework. Its integrated conclusions are recorded in:
+Integrated results:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
+- [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
-Stage 1 does **not** establish a fundamental physical invariant or decide eternalism versus becoming.
+A GitHub Actions clean regression on the Stage 2 PR merge ref passed:
+
+`99 passed in 2.98s`.
+
+No strict physical invariant of time and no empirical discriminator between fixed-future and ontically-open-future interpretations has yet been established.
+
+## Stage 1 — Global/local reconstruction
+
+Stage 1 built and stress-tested the finite classical reconstruction framework:
+
+`B_1 -> {V_e} -> B_1_hat`.
+
+Main lessons:
+
+- reconstruction depends on the information interface and equivalence assumptions;
+- coverage loss can move structure from reconstructible to ambiguous to lost;
+- reachability/minimal cover structure is more stable than arbitrary transitively redundant edge encodings;
+- `state equality != event identity`;
+- shared global IDs are sufficient but not always necessary for reconstruction;
+- sufficiently rich anonymous relational context can recover the canonical graph up to isomorphism in the tested six-event search class.
+
+Stage 1 did not establish a fundamental physical invariant.
 
 ## Stage 2 — Potentiality
 
-Stage 2 introduces Potentiality as an explicit model structure. The frozen protocol is:
+Protocol:
 
 - [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
 
-The central comparison is between two intentionally different formal objects.
+Stage 2 deliberately separates:
 
-### Epistemic-history model
+- global/local representation;
+- epistemic/ontic Potentiality.
 
-`M_E = (T,h*,q_E)`
-
-One complete history `h*` is selected in advance but hidden from the current/local projection.
-
-### Ontic-extension model
-
-`M_O(D) = (D,Ext_T(D),K)`
-
-Current Actuality plus all admissible extensions are represented, but no selected complete future is stored in the model state.
-
-The Stage 2 question is whether these internal/formal differences can coexist with the same ontology-neutral local operational predictions.
-
-## Stage 2A — Common branching substrate — completed
-
-Result:
-
-- [`results/stage2a_branching.md`](results/stage2a_branching.md)
-
-Neutral substrate:
+### Shared neutral substrate
 
 ```text
            l1 -> l2
@@ -65,151 +70,103 @@ with:
 
 - `h_L = (p,n,l1,l2)`;
 - `h_R = (p,n,r1)`;
-- `D_0 = (p,n)`;
-- `Ext_T(D_0) = {h_L,h_R}`;
-- `Next(D_0) = {l1,r1}`.
+- `D_0 = (p,n)`.
 
-The two continuations are relationally non-equivalent because their future path lengths differ. Pure renaming of the whole substrate remains equivalent.
+The two continuations are relationally non-equivalent because their future path lengths differ.
 
-Focused Stage 2A validation: **8 passed**.
+### Epistemic-history model
 
-## Stage 2B — Epistemic-history model — completed
+`M_E = (T,h*,q_E)`
 
-Result:
+One complete history `h*` is present globally but intentionally hidden from the local projection.
 
-- [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
+### Ontic-extension model
 
-Baseline:
+`M_O(D) = (D,Ext_T(D),K)`
 
-- `h*=h_L` globally;
-- `q_E(h_L)=q_E(h_R)=1/2`;
-- `EPot(D_0)={h_L,h_R}`;
-- `pi_E(l1)=pi_E(r1)=1/2`.
+Current Actuality and all admissible extensions are represented, with no selected complete future stored in the model state.
 
-Changing only hidden `h*` from `h_L` to `h_R` leaves the local projection exactly unchanged, while privileged diagnostics distinguish the two global model states. Therefore `F_E^D` is deliberately non-injective with respect to `h*`.
+### Minimal modal local views
 
-After explicit observation `l1`, beliefs condition to the left history while the already-selected `h*` remains unchanged.
+`G_E(D) = (A_now,EPot(D),pi_E)`
 
-Focused Stage 2B validation: **10 passed**.
+`G_O(D) = (A_now,OPot(D),pi_O)`.
 
-Interpretive guard:
+For cross-model comparison, Stage 2 uses the ontology-neutral operational erasure:
 
-`a hidden selected future can be represented != physical reality has a fixed future`.
+`O(G) = (A_now,Next(D),pi(next|D))`.
 
-## Stage 2C — Ontic-extension model — completed
+## Stage 2 results
 
-Result:
+### Formal difference
 
-- [`results/stage2c_ontic.md`](results/stage2c_ontic.md)
+The central distinction was implemented explicitly:
 
-Stage 2C implements:
+`epistemic: selected-future information exists globally and is locally hidden`
 
-`M_O(D) = (D,Ext_T(D),K)`.
+versus:
 
-The model contains current Actuality, type-distinct `OnticPotentiality`, and weights over all live extensions, but no selected complete future field.
+`ontic: selected-future information is absent from the model state`.
 
-At `D_0`:
+The epistemic projection is deliberately non-injective with respect to `h*`.
 
-`OPot(D_0)={h_L,h_R}`
+### Matched operational equality
 
-and:
+For matched positive-support predictions, the two internally different models can produce the same operational description:
 
-`pi_O(l1)=pi_O(r1)=1/2`.
+`O(G_E(D_0)) = O(G_O(D_0))`.
 
-After explicit observation `l1`, Actuality becomes `(p,n,l1)`, the right extension is pruned, and the next prediction is `l2` with probability `1`. No selected complete future is created.
-
-A focused semantic harness passed **10 Stage 2C checks**. A full repository regression remains required before Stage 2 merge review.
-
-Interpretive guard:
-
-`a model with no selected future != evidence that physical reality is ontically open`.
-
-## Stage 2D — Operational equivalence — completed
-
-Result:
-
-- [`results/stage2d_operational_equivalence.md`](results/stage2d_operational_equivalence.md)
-
-Design notes:
-
-- [`docs/stage2d_notes.md`](docs/stage2d_notes.md)
-
-Stage 2D introduces the ontology-neutral interface:
-
-`O(G) = (A_now, Next(D), pi(next|D))`.
-
-The typed modal views remain formally different, but after operational erasure the matched baseline gives:
-
-`O(G_E(D_0)) = O(G_O(D_0))`
-
-with:
+At the symmetric baseline both expose:
 
 - Actuality `(p,n)`;
-- immediate alternatives `{l1,r1}`;
+- Next `{l1,r1}`;
 - probabilities `1/2,1/2`.
 
-Thus the supported result is:
+The equality also survives the common explicit update `l1` and the terminal continuation `l2`.
 
-**operationally indistinguishable under the tested observables and matched baseline weights**.
+The supported conclusion is only:
 
-Swapping only hidden epistemic `h*` remains operationally invisible. Weight-mismatch controls break only the probability component while keeping Actuality and Next equal, so this equality is controlled rather than automatic.
-
-A focused Stage 2D semantic harness passed **8/8 checks**.
-
-Interpretive guard:
+**operationally indistinguishable under the tested interface and matched conditions**.
 
 `operational equality != ontological equivalence`.
 
-## Stage 2E — Update comparison — completed
+### Controls
 
-Result:
+Stage 2F established that:
 
+- pure event renaming preserves the relevant structure covariantly;
+- repeated state labels do not collapse event identity or the two relational continuation classes;
+- matched non-uniform positive weights such as `0.75/0.25` still preserve operational equality;
+- mismatched probabilities break only the probability component when support is otherwise the same;
+- a zero-support boundary can break operational equality because `EPot` removes zero-support hypotheses while `OPot=Ext_T(D)` retains structurally admissible zero-weight extensions;
+- terminal and invalid-input controls behave as specified.
+
+The zero-support result is a **support-semantics boundary**, not an empirical discovery about physical openness.
+
+Detailed Stage 2 results:
+
+- [`results/stage2a_branching.md`](results/stage2a_branching.md)
+- [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
+- [`results/stage2c_ontic.md`](results/stage2c_ontic.md)
+- [`results/stage2d_operational_equivalence.md`](results/stage2d_operational_equivalence.md)
 - [`results/stage2e_update_comparison.md`](results/stage2e_update_comparison.md)
+- [`results/stage2f_controls.md`](results/stage2f_controls.md)
+- [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
-Design notes:
+## Next stage — Records and temporal direction
 
-- [`docs/stage2e_notes.md`](docs/stage2e_notes.md)
+After PR #3 review/merge, Stage 3 should add explicit record/memory/environment structure:
 
-Both model families receive the same explicit observation:
+`G = (Records,Actuality,Potentiality)`.
 
-`l1`.
+The core question will be whether asymmetric record accessibility adds a genuine arrow-like structure beyond mere ordering or branching.
 
-After applying their distinct update rules, both operationalize to:
+Required controls should include:
 
-- Actuality `(p,n,l1)`;
-- Next `{l2}`;
-- `pi(l2)=1`.
-
-Therefore:
-
-`O(G_E(D_1)) = O(G_O(D_1))`.
-
-Operational equality thus persists through the matched left-branch update.
-
-The internal distinction also persists:
-
-- epistemic: the preselected complete `h*` remains unchanged while beliefs condition;
-- ontic: Actuality extends and incompatible extensions are pruned, while no selected complete future field appears.
-
-A second common update `l2` reaches the same terminal operational view in both models while preserving the same internal contrast.
-
-The canonical ontic baseline can also accept `r1`, whereas the specific epistemic actual-run fixture with `h*=h_L` rejects it. This is a formal difference between those two fixed global states, not yet an empirical discriminator between the model families because an epistemic model with `h*=h_R` can represent a right-branch run.
-
-The committed Stage 2E test file contains **9 focused tests**; a compact semantic reconstruction passed **9/9 checks**. A clean-checkout/full-repository regression remains required before merge review.
-
-Interpretive guard:
-
-`post-update operational equality != ontological equality`.
-
-## Planned Stage 2 sequence
-
-1. **Stage 2.0 — protocol freeze** — completed.
-2. **Stage 2A — common branching substrate** — completed.
-3. **Stage 2B — epistemic-history model** — completed.
-4. **Stage 2C — ontic-extension model** — completed.
-5. **Stage 2D — operational equivalence** — completed.
-6. **Stage 2E — update comparison** — completed.
-7. **Stage 2F — controls and synthesis** — next: renaming, repeated-state, expanded weight controls, terminal/invalid-input consolidation, Stage 2 synthesis, and full regression/exit review.
+- symmetric/reversible records;
+- asymmetric records;
+- forward/reverse comparison;
+- explicit separation of order, record asymmetry, and experienced temporal direction.
 
 ## Key methodological guards
 
@@ -223,23 +180,9 @@ Interpretive guard:
 
 `formal representational difference != empirical physical difference`
 
+`operational equality != ontological equivalence`
+
 A successful software construction is not by itself an ontological result.
-
-## Key documents
-
-- [`docs/roadmap.md`](docs/roadmap.md)
-- [`docs/concepts.md`](docs/concepts.md)
-- [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
-- [`docs/stage2a_notes.md`](docs/stage2a_notes.md)
-- [`docs/stage2b_notes.md`](docs/stage2b_notes.md)
-- [`docs/stage2c_notes.md`](docs/stage2c_notes.md)
-- [`docs/stage2d_notes.md`](docs/stage2d_notes.md)
-- [`docs/stage2e_notes.md`](docs/stage2e_notes.md)
-- [`results/stage2a_branching.md`](results/stage2a_branching.md)
-- [`results/stage2b_epistemic.md`](results/stage2b_epistemic.md)
-- [`results/stage2c_ontic.md`](results/stage2c_ontic.md)
-- [`results/stage2d_operational_equivalence.md`](results/stage2d_operational_equivalence.md)
-- [`results/stage2e_update_comparison.md`](results/stage2e_update_comparison.md)
 
 ## Fixed questions for every stage
 

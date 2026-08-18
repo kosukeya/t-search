@@ -15,90 +15,121 @@ The long-term hypothesis is that such invariants may be better candidates for th
 
 ## Current status
 
-Stage 0 / 0.5 fixed provisional definitions and the initial reconstruction protocol.
+**Stage 1 is complete and merged. Stage 2.0 protocol freeze is now complete on the Stage 2 branch; implementation is next.**
 
-**Stage 1 is now experimentally and conceptually complete pending PR review/merge.**
+Stage 1 built and stress-tested the finite classical global/local reconstruction framework:
 
-Stage 1A implemented the information-rich baseline:
+`B_1 -> {V_e} -> B_1_hat`.
 
-`B_1 -> {V_e} -> B_1_hat`
+Its main lessons were:
 
-and confirmed exact reconstruction of the canonical labeled DAG.
+- reconstruction depends on the information interface and equivalence assumptions;
+- coverage loss can move structure from reconstructible to ambiguous to lost;
+- reachability / minimal cover structure is more stable than arbitrary transitively redundant edge encodings;
+- `state equality != event identity`;
+- shared global IDs are sufficient but not always necessary for unique reconstruction;
+- sufficiently rich anonymous relational context can reconstruct the canonical six-event DAG up to isomorphism in the tested search class.
 
-Stage 1B completed six controlled information-loss / representation variants:
-
-1. **outgoing-only** — a complete shared-ID family of successor reports reconstructs the canonical graph;
-2. **incoming-only** — the direction-reversed control gives the same result;
-3. **missing local views** — reduced coverage separates reconstructible latent events, ambiguous latent-latent relations, and completely lost unreferenced events;
-4. **reachability-only** — complete order information reconstructs the canonical cover relation by transitive reduction but cannot identify arbitrary redundant shortcut edges;
-5. **state-label collision** — confirms `state equality != event identity`;
-6. **anonymous / global-ID-free views** — removes shared global event IDs and tests reconstruction up to directed graph isomorphism.
-
-The integrated conclusions are recorded in:
+The integrated Stage 1 conclusions are recorded in:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 
-## Stage 1 synthesis
+Stage 1 does **not** establish a fundamental physical invariant or decide eternalism versus becoming.
 
-The strongest Stage 1 results are:
+## Stage 2 — Potentiality
 
-- one oriented direct-adjacency channel is sufficient when shared IDs and complete coverage remain;
-- coverage loss can move structure from reconstructible to ambiguous to completely lost;
-- reachability / minimal cover structure survives transitively redundant direct-edge encoding differences better than arbitrary edge lists;
-- equal state values do not provide a valid event-identity criterion;
-- shared global IDs are sufficient but not always necessary for global reconstruction;
-- minimal anonymous degree-only locality admits **3 non-isomorphic** compatible six-event DAGs;
-- one-step anonymous neighborhood refinement leaves **1 compatible isomorphism class**, the canonical graph, in the tested exhaustive six-event DAG class.
+Stage 2 introduces Potentiality as an explicit model structure.
 
-The B6 exhaustive search scans all:
+The implementation protocol is frozen in:
 
-`2^15 = 32768`
+- [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
 
-forward-edge subsets on a fixed six-event topological bookkeeping order. Every six-event DAG has at least one representative in that search up to isomorphism.
+The central comparison is between two intentionally different formal objects.
 
-Stage 1 therefore supports a modest methodological conclusion:
+### Epistemic-history model
 
-> global reconstruction depends on the amount of relational information and on the chosen equivalence assumptions, not merely on the presence of global labels.
+`M_E = (T, h*, q_E)`
 
-It does **not** establish that reachability, graph isomorphism class, or any other Stage 1 structure is the fundamental ontology of physical time.
+where one complete history `h*` is selected in advance but hidden from the current/local operational perspective.
 
-## Stage 1 exit decision
+### Ontic-extension model
 
-The Stage 1 synthesis concludes that the planned exit criteria are satisfied.
+`M_O(D) = (D, Ext_T(D), K)`
 
-Optional combined restrictions such as anonymous views plus missing coverage are **not required for Stage 1 completion**. They remain valuable robustness/generalization tests if later claims depend on the Stage 1 reconstruction assumptions.
+where only current Actuality plus admissible extensions are represented. No hidden or implicit selected complete future is allowed in the model state before update.
 
-The highest-value future controls are:
+The two models use the same branching substrate and can be assigned matched local predictive weights.
 
-- refined anonymous views + missing coverage;
-- refined anonymous views + repeated state labels;
-- larger and structurally different DAG families.
+The Stage 2 baseline deliberately asks whether:
 
-## Next stage
+`formal/internal difference`
 
-Stage 2 introduces Potentiality only after Stage 1 is closed.
+can coexist with:
 
-The planned comparison is between two intentionally different internal model structures:
+`operational equality under the chosen local interface`.
 
-1. **epistemic-history model** — a complete history is preselected but hidden from the current/local perspective;
-2. **ontic-extension model** — only the current structure plus admissible extensions is represented, with no hidden complete future history preselected.
+If so, the correct result is **operational indistinguishability under the tested observables**, not proof that the two ontologies are physically equivalent.
 
-A central guard carried forward from Stage 1 is:
+## Stage 2 canonical branching substrate
 
-`compatible global completions != ontic future possibilities`.
+The baseline uses two genuinely non-equivalent continuations rather than symmetric branches that differ only by event names:
 
-If the epistemic and ontic models remain operationally indistinguishable under the tested observables, that is the result; Stage 2 must not turn representational difference into a metaphysical proof.
+```text
+           l1 -> l2
+          /
+p -> n
+          \
+           r1
+```
 
-## Planned workflow
+with:
+
+`h_L = (p,n,l1,l2)`
+
+`h_R = (p,n,r1)`
+
+and current prefix:
+
+`D_0 = (p,n)`.
+
+Thus:
+
+`Ext_T(D_0) = {h_L, h_R}`.
+
+## Planned Stage 2 sequence
+
+1. **Stage 2.0 — protocol freeze** — completed on the Stage 2 branch.
+2. **Stage 2A — common branching substrate** — implement histories, prefixes, extensions, and equivalence.
+3. **Stage 2B — epistemic-history model** — implement explicit hidden `h*` and non-leaking local projection.
+4. **Stage 2C — ontic-extension model** — implement current Actuality + admissible extensions with no selected future.
+5. **Stage 2D — operational equivalence** — compare ontology-neutral local observables under matched weights.
+6. **Stage 2E — update comparison** — compare both models after a common observed next event.
+7. **Stage 2F — controls and synthesis** — renaming, repeated-state, weight-mismatch, terminal/invalid-input controls, then Stage 2 synthesis.
+
+## Key methodological guards
+
+`compatible global completions != ontic future possibilities`
+
+`state equality != event identity`
+
+`simulation order != modeled temporal order`
+
+`random sampling != evidence of ontic becoming`
+
+`formal representational difference != empirical physical difference`
+
+A successful software construction is not by itself an ontological result.
+
+## Project workflow
 
 1. Formalize provisional definitions. — completed
-2. Freeze the Stage 1 protocol and reconstruction assumptions. — completed
-3. Build and stress-test the minimal finite classical graph model. — completed
-4. Add epistemic vs ontic Potentiality. — next
-5. Add records and an arrow-of-time diagnostic with control cases.
-6. Build a finite-dimensional Page–Wootters-style quantum model.
-7. Change clocks/reference perspectives and search for common invariants.
-8. Compare the resulting candidate structure with generally covariant and gravitational models.
+2. Freeze and test the Stage 1 classical reconstruction framework. — completed
+3. Introduce epistemic versus ontic Potentiality. — in progress
+4. Add records and an arrow-of-time diagnostic with controls.
+5. Build a finite-dimensional Page–Wootters-style quantum model.
+6. Change clocks/reference perspectives and search for common invariants.
+7. Compare candidate structures with generally covariant and gravitational models.
+8. Ask about empirical relevance only if a discriminating prediction emerges.
 
 ## Key documents
 
@@ -106,36 +137,16 @@ If the epistemic and ontic models remain operationally indistinguishable under t
 - [`docs/concepts.md`](docs/concepts.md)
 - [`docs/stage0_definitions.md`](docs/stage0_definitions.md)
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
-- [`docs/stage1b_missing_views_protocol.md`](docs/stage1b_missing_views_protocol.md)
-- [`docs/stage1b_reachability_protocol.md`](docs/stage1b_reachability_protocol.md)
-- [`docs/stage1b_state_labels_protocol.md`](docs/stage1b_state_labels_protocol.md)
-- [`docs/stage1b_anonymous_protocol.md`](docs/stage1b_anonymous_protocol.md)
-- [`results/stage1a_baseline.md`](results/stage1a_baseline.md)
-- [`results/stage1b_outgoing_only.md`](results/stage1b_outgoing_only.md)
-- [`results/stage1b_incoming_only.md`](results/stage1b_incoming_only.md)
-- [`results/stage1b_missing_views.md`](results/stage1b_missing_views.md)
-- [`results/stage1b_reachability_only.md`](results/stage1b_reachability_only.md)
-- [`results/stage1b_state_label_collision.md`](results/stage1b_state_label_collision.md)
-- [`results/stage1b_anonymous.md`](results/stage1b_anonymous.md)
+- [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 
-## Methodological rule
+## Fixed questions for every stage
 
-At every stage, answer the same six questions:
-
-1. What is the block-like description `B`?
+1. What is the block-like/global description `B`?
 2. What is the becoming-like/local description `G` or `V`?
-3. What is the map from the global to the local description?
-4. Is that map reversible, or what information does it discard?
-5. What is strictly invariant, what is only reconstructible from a family of views, and what is merely locally accessible?
-6. Does the surviving structure have physical meaning?
+3. What is the transformation from the global to the local description?
+4. Is that transformation reversible? If not, what information is discarded?
+5. What is strictly invariant, what is only reconstructible, and what is locally accessible?
+6. What physical meaning, if any, can be assigned to the surviving structures?
 
-Additional cautions:
-
-`simulation order != modeled temporal order`
-
-and:
-
-`reconstructible structure != automatically fundamental physical structure`.
-
-Failure to find an invariant, or failure to reconstruct one description from the other, is considered a valid research result rather than something to hide.
+Failure to find an invariant or operational discriminator is a valid research result rather than something to hide.

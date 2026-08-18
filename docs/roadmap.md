@@ -6,7 +6,7 @@ This roadmap is intentionally provisional. Each stage may revise earlier definit
 
 Can block-like and becoming-like descriptions be treated as different perspectives on one deeper relational temporal structure, with explicit transformations between them and non-trivial invariants across those transformations?
 
-## Stage 0 — Definitions and scope
+## Stage 0 — Definitions and scope — completed
 
 Goal: define working meanings for `block`, `becoming`, `Actuality`, `Potentiality`, `record`, `perspective`, `transformation`, and `invariant`.
 
@@ -18,7 +18,7 @@ Deliverables:
 
 Exit criterion: we can explain the six fixed questions without ambiguity severe enough to block implementation.
 
-## Stage 0.5 — Stage 1 protocol freeze
+## Stage 0.5 — Stage 1 protocol freeze — completed
 
 Goal: remove implementation ambiguity before writing Stage 1 code.
 
@@ -36,56 +36,101 @@ Deliverable:
 
 Exit criterion: `B1`, `V_e`, projection `F_e`, `Glue`, and the equivalence relation used for `B1_hat ≅ B1` are fully specified.
 
-## Stage 1 — Minimal classical graph model
+## Stage 1 — Minimal classical graph model — completed
 
-Use the protocol fixed in Stage 0.5.
+Stage 1 has completed the baseline, all six planned information-loss / representation variants, and the synthesis/exit review.
+
+Integrated result:
+
+- [`../results/stage1_synthesis.md`](../results/stage1_synthesis.md)
 
 ### Stage 1A — Sanity-check round trip
 
-Construct a finite directed acyclic event graph with roughly 5–8 events.
+Constructed the canonical finite DAG and verified:
 
-Tasks:
-- define a global block-like structure `B1`;
-- define a deliberately minimal local structural view `V_e` around each event;
-- implement `B1 -> {V_e}`;
-- reconstruct `{V_e} -> B1_hat` while retaining global event identifiers;
-- verify `B1_hat ≅ B1`;
-- test direct-edge and reachability preservation separately.
+`B_1 -> {V_e} -> B_1_hat`
 
-Purpose: validate the projection/gluing machinery. A successful reconstruction here is expected and is not itself a non-trivial physical result.
+with exact labeled reconstruction, graph-isomorphism agreement, and reachability agreement.
 
-### Stage 1B — Information-loss experiments
+Purpose: validate projection/gluing machinery rather than claim a physical result.
 
-Progressively remove privileged reconstruction information, for example:
-- hide global event identifiers;
-- restrict local radius;
-- remove some local views;
-- retain only predecessor or successor information;
-- compare direct-edge reconstruction with reachability-only reconstruction.
+### Stage 1B — Controlled information and representation variants
 
-Goal: determine which global properties are reconstructible from which families of local perspectives.
+Completed:
 
-Primary candidate structures:
-- direct adjacency / cover relation;
-- reachability / induced causal partial order;
-- graph-isomorphism class;
-- ambiguity class when exact reconstruction fails.
+1. outgoing-only;
+2. incoming-only;
+3. missing local views;
+4. reachability-only;
+5. state-label collision;
+6. anonymous / global-ID-free views.
 
-Exit criterion: a reproducible account of what is local, what is reconstructible only by gluing, what is genuinely lost, and what depends merely on encoding conventions.
+Main findings:
 
-## Stage 2 — Potentiality
+- either one oriented one-hop adjacency channel is sufficient when shared IDs and complete coverage remain;
+- coverage loss can produce reconstructible missing events, ambiguous relations, or completely lost events;
+- reachability / minimal cover structure survives transitively redundant direct-edge encoding differences;
+- `state equality != event identity`;
+- anonymous degree-only local structure can admit multiple non-isomorphic global DAGs;
+- richer anonymous relational context can recover the canonical global graph up to isomorphism in the tested exhaustive six-event DAG class.
 
-Introduce branching transformations only after Stage 1 is stable.
+Stage 1 does **not** claim a fundamental physical invariant. The strongest carry-forward candidates are:
 
-Build two intentionally different formal objects:
-- epistemic model: a branching possibility structure plus a preselected complete history that is hidden locally;
-- ontic model: the actual structure up to the current boundary plus multiple admissible extensions, with no preselected actual continuation represented in the model.
+- reachability / cover structure under redundant-edge representation changes;
+- graph isomorphism class recoverable from sufficiently rich anonymous relational context.
+
+Optional combined restrictions are deferred to a future robustness/generalization suite rather than made prerequisites for Stage 1 completion.
+
+Exit criterion: satisfied. We now have a reproducible account of what is local, reconstructible, ambiguous, lost, and encoding-dependent in the finite classical toy setting.
+
+## Stage 2 — Potentiality — next
+
+Introduce branching transformations only after Stage 1 is closed.
+
+Build two intentionally different formal objects over a common branching graph family.
+
+### Epistemic-history model
+
+Represent:
+
+`(T, h*)`
+
+where:
+
+- `T` is a possibility/branching structure;
+- `h*` is a complete actual history selected in advance;
+- current/local access hides the future part of `h*`;
+- alternative branches represent hypotheses about the hidden selected history.
+
+### Ontic-extension model
+
+Represent:
+
+`(D_now, Ext(D_now))`
+
+where:
+
+- only current/actual structure is stored;
+- admissible extensions are represented;
+- no hidden complete future history is preselected in the model state.
 
 Keep operational probabilities identical where possible.
 
+Core guard inherited from Stage 1:
+
+`compatible global completions != ontic future possibilities`.
+
 Goal: identify exactly where the ontological difference lives in the formalism and whether local observables or transformation structure distinguish it.
 
-Important caution: representing an ontic model without a preselected branch is a modeling commitment, not yet evidence that physical reality is ontically open.
+Important caution: representing an ontic model without a preselected branch is a modeling commitment, not evidence that physical reality is ontically open.
+
+If the two models are operationally indistinguishable under the tested observables, report that result rather than treating representational difference as empirical confirmation.
+
+Additional Stage 1 carry-forward rules:
+
+- preserve `state equality != event identity`;
+- compare alternatives up to the relevant relational/isomorphism equivalence rather than counting mere renamings as distinct worlds;
+- keep ambiguity due to missing information separate from ontological openness.
 
 ## Stage 3 — Records and temporal direction
 
@@ -182,8 +227,9 @@ Order of operations:
 - `simulation order != modeled temporal order`;
 - a successful software round trip does not by itself establish an ontological claim;
 - a global mathematical representation is not a physically realizable God's-eye observer;
-- mutual constitution of relata and relations is not yet implemented merely by drawing a DAG;
-- Stage 1 tests representation/gluing machinery, not the full relational ontology.
+- mutual constitution of relata and relations is not implemented merely by drawing a DAG;
+- reconstructible structure is not automatically fundamental physical structure;
+- compatible alternatives are not automatically ontic possibilities.
 
 ## Stop / revise conditions
 

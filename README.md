@@ -15,7 +15,7 @@ The long-term hypothesis is that such invariants may be better candidates for th
 
 ## Current status
 
-**Stage 1 is complete and merged. Stage 2.0 protocol freeze is now complete on the Stage 2 branch; implementation is next.**
+**Stage 1 is complete and merged. Stage 2.0 protocol freeze and Stage 2A common branching substrate are complete on the Stage 2 branch. Stage 2B is next.**
 
 Stage 1 built and stress-tested the finite classical global/local reconstruction framework:
 
@@ -70,7 +70,11 @@ can coexist with:
 
 If so, the correct result is **operational indistinguishability under the tested observables**, not proof that the two ontologies are physically equivalent.
 
-## Stage 2 canonical branching substrate
+## Stage 2A — Common branching substrate — completed
+
+The neutral substrate implementation is recorded in:
+
+- [`results/stage2a_branching.md`](results/stage2a_branching.md)
 
 The baseline uses two genuinely non-equivalent continuations rather than symmetric branches that differ only by event names:
 
@@ -96,11 +100,30 @@ Thus:
 
 `Ext_T(D_0) = {h_L, h_R}`.
 
+Stage 2A implements and tests:
+
+- a rooted finite branching structure `T`;
+- maximal histories derived from the edge structure;
+- valid actual prefixes;
+- `Ext_T(D)` and immediate next events;
+- prefix extension and terminal behavior;
+- history/continuation equivalence up to event renaming;
+- rooted branching-structure equivalence;
+- guards against invalid prefixes and invalid baseline tree structures.
+
+The canonical two extensions form **two distinct continuation equivalence classes** because their future relational path structures have different lengths. A pure renaming of the whole substrate remains equivalent to the original.
+
+Focused Stage 2A validation: **8 passed**.
+
+Stage 2A is deliberately ontology-neutral:
+
+`branching structure != evidence of ontic openness`.
+
 ## Planned Stage 2 sequence
 
-1. **Stage 2.0 — protocol freeze** — completed on the Stage 2 branch.
-2. **Stage 2A — common branching substrate** — implement histories, prefixes, extensions, and equivalence.
-3. **Stage 2B — epistemic-history model** — implement explicit hidden `h*` and non-leaking local projection.
+1. **Stage 2.0 — protocol freeze** — completed.
+2. **Stage 2A — common branching substrate** — completed.
+3. **Stage 2B — epistemic-history model** — next: implement explicit hidden `h*` and non-leaking local projection.
 4. **Stage 2C — ontic-extension model** — implement current Actuality + admissible extensions with no selected future.
 5. **Stage 2D — operational equivalence** — compare ontology-neutral local observables under matched weights.
 6. **Stage 2E — update comparison** — compare both models after a common observed next event.
@@ -139,6 +162,7 @@ A successful software construction is not by itself an ontological result.
 - [`docs/stage1_protocol.md`](docs/stage1_protocol.md)
 - [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
+- [`results/stage2a_branching.md`](results/stage2a_branching.md)
 
 ## Fixed questions for every stage
 

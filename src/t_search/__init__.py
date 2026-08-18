@@ -106,6 +106,11 @@ from .stage2_operational import (
     operationalize_epistemic_view,
     operationalize_ontic_view,
 )
+from .stage2_update import (
+    Stage2UpdateComparison,
+    compare_common_observation,
+    ontic_selected_future_fields,
+)
 
 __all__ = [
     "AnonymousSearchResult",
@@ -129,6 +134,7 @@ __all__ = [
     "ReachabilityConsistency",
     "ReachabilityLocalView",
     "RefinedAnonymousView",
+    "Stage2UpdateComparison",
     "StateLabeledView",
     "StateLabeledWorld",
     "StateReconstruction",
@@ -145,6 +151,7 @@ __all__ = [
     "check_view_consistency",
     "collapse_world_by_state",
     "compare_blocks",
+    "compare_common_observation",
     "compare_operational_views",
     "condition_epistemic_model",
     "contains_isomorphic_candidate",
@@ -172,6 +179,7 @@ __all__ = [
     "maximal_histories",
     "next_events",
     "ontic_next_probabilities",
+    "ontic_selected_future_fields",
     "operationalize_epistemic_view",
     "operationalize_ontic_view",
     "prefix_tip",

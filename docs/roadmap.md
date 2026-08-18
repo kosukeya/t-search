@@ -237,47 +237,77 @@ Additional controls:
 - swapping only hidden epistemic `h*` remains operationally invisible;
 - changing only `q_E` or `K` keeps Actuality/Next fixed while breaking probability equality.
 
-Thus operational equality is a controlled condition, not a theorem of epistemic versus ontic semantics.
-
 A focused Stage 2D semantic harness passed `8/8 checks`. Full repository regression remains required before Stage 2 merge review.
 
 Interpretive limit:
 
 `operational equality != ontological equivalence`.
 
-## Stage 2E — Update comparison — next
+## Stage 2E — Update comparison — completed
 
-Provide a common observed next event explicitly, initially:
+Result:
 
-`l1`.
+- [`../results/stage2e_update_comparison.md`](../results/stage2e_update_comparison.md)
 
-Compare both updated models through the same operational interface.
+Design notes:
 
-Questions:
-- do both models agree on updated Actuality `(p,n,l1)`?
-- do both retain only the left continuation operationally?
-- do both predict `l2` with probability `1`?
-- do privileged internal diagnostics still distinguish them after this operational agreement?
+- [`stage2e_notes.md`](stage2e_notes.md)
 
-Expected formal contrast:
-- epistemic: evidence changes and beliefs condition while hidden `h*` remains unchanged;
-- ontic: Actuality extends and incompatible extensions are removed while no future beyond the new prefix is selected.
+A common explicit observation:
 
-## Stage 2F — Controls and synthesis
+`l1`
 
-Required controls:
+is supplied to both model families.
+
+The epistemic model:
+- changes evidence prefix to `(p,n,l1)`;
+- conditions beliefs to `h_L`;
+- leaves the globally selected `h*=h_L` unchanged.
+
+The ontic model:
+- extends Actuality to `(p,n,l1)`;
+- removes the incompatible right extension;
+- renormalizes the left extension to weight `1`;
+- creates no selected complete future field.
+
+After these distinct updates:
+
+`O(G_E(D_1)) = O(G_O(D_1))`
+
+with:
+- Actuality `(p,n,l1)`;
+- Next `{l2}`;
+- `pi(l2)=1`.
+
+Thus the matched operational equality survives the common left-branch update while the internal semantic distinction persists.
+
+A second common observation `l2` reaches the same terminal operational view in both models, again with epistemic `h*` preserved and no ontic future selector created.
+
+The canonical ontic baseline can accept `r1`, while the specific epistemic fixture with `h*=h_L` rejects it. This is a formal distinction between two fixed global states, not yet an empirical family-level discriminator because an epistemic model with `h*=h_R` can represent a right-branch run.
+
+Validation:
+- the committed Stage 2E test file contains `9` focused tests;
+- a compact Stage 2A–E semantic reconstruction passed `9/9 checks`;
+- full repository regression remains mandatory before merge review.
+
+Interpretive limit:
+
+`post-update operational equality != ontological equality`.
+
+## Stage 2F — Controls and synthesis — next
+
+Required work:
 - event-renaming / isomorphism invariance;
 - repeated state labels, preserving `state equality != event identity`;
-- expanded weight-mismatch controls;
-- terminal prefixes;
-- invalid prefixes/observations;
-- full repository regression.
+- consolidate and expand weight-mismatch controls;
+- terminal prefixes and invalid prefixes/observations;
+- classify local/internal/reconstructible/ambiguous/lost structure across Stage 2;
+- answer the six fixed questions at Stage 2 resolution;
+- produce `results/stage2_synthesis.md`;
+- run full repository regression on a clean/current branch checkout;
+- perform Stage 2 exit review before changing PR #3 from draft or merging.
 
-Then produce:
-
-- `results/stage2_synthesis.md`.
-
-Stage 2 exit criterion: the formal difference, projection maps, update semantics, operational comparison, and limitations can all be stated explicitly without turning representational differences into metaphysical proof.
+Stage 2 exit criterion: the formal difference, projection maps, update semantics, operational comparison, controls, and limitations can all be stated explicitly without turning representational differences into metaphysical proof.
 
 ## Stage 3 — Records and temporal direction
 

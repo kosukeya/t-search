@@ -201,6 +201,10 @@ Important guards established in tests:
 
 Focused Stage 3B tests: **11 committed tests**.
 
+GitHub Actions clean PR merge-ref regression at the Stage 3B checkpoint:
+
+`120 passed in 2.24s`.
+
 ## Stage 3C — Asymmetric-record model — next
 
 Apply the now-fixed diagnostics to the canonical blank-memory ensemble and decide whether the narrower interpretation **record-defined orientation** is justified.

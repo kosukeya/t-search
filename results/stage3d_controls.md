@@ -1,6 +1,6 @@
 # Stage 3D — Reversal and Symmetric Controls
 
-Status: **implemented; GitHub Actions checkpoint validation to be recorded after the final Stage 3D head completes**.
+Status: **completed; GitHub Actions full regression passed**.
 
 ## Purpose
 
@@ -161,9 +161,9 @@ Stage 3D does not establish:
 
 The reversal result is covariance of this toy diagnostic under the declared modeled-history transformation. The symmetric result is a statement about an ensemble mixture, not a claim that the physical universe is a mixture of opposite arrows.
 
-## Validation scope
+## Validation
 
-The committed Stage 3D tests cover:
+The committed Stage 3D test file contains **9 focused tests** covering:
 
 - reversal sign flip and profile swap;
 - inverse-map validity of reversed histories;
@@ -175,7 +175,11 @@ The committed Stage 3D tests cover:
 - combined control classification;
 - invalid mixture weights.
 
-The clean full-repository GitHub Actions result will be recorded once the final Stage 3D checkpoint head completes.
+GitHub Actions clean PR merge-ref regression:
+
+`137 passed in 3.11s`.
+
+This includes Stage 1, Stage 2, and Stage 3A–3D tests.
 
 ## Next
 

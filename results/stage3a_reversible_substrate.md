@@ -118,7 +118,11 @@ The committed Stage 3A test file contains **10 focused tests** covering:
 9. reversed-ensemble entropy preservation;
 10. invalid ensemble weights and position indices.
 
-The Stage 3 branch will be checked by GitHub Actions after the Stage 3 tracking PR is opened.
+Draft PR #4 GitHub Actions clean merge-ref regression passed:
+
+`109 passed in 2.14s`.
+
+This includes the existing Stage 1–2 suite plus the 10 new Stage 3A tests.
 
 ## Interpretation
 

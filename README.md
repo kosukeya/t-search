@@ -15,18 +15,20 @@ The long-term hypothesis is that such structures may be better candidates for th
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3.0 and Stage 3A are complete on `agent/stage-3-records`; Stage 3B — record diagnostics — is next.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3.0, Stage 3A, and Stage 3B are complete on `agent/stage-3-records`; Stage 3C — asymmetric-record model — is next.**
 
 Integrated results:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
-Stage 3 protocol and current result:
+Stage 3 protocol and current results:
 
 - [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
 - [`docs/stage3a_notes.md`](docs/stage3a_notes.md)
+- [`docs/stage3b_notes.md`](docs/stage3b_notes.md)
 - [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
+- [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
 
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
@@ -120,25 +122,48 @@ Implemented:
 - exact full-state probability-mass preservation;
 - `H(Z_0)=H(Z_1)=H(Z_2)=2 bits` for the canonical ensemble.
 
-Stage 3A deliberately makes **no record-arrow claim**. It establishes only that the later record experiment is built on a closed finite substrate with reversible microscopic maps.
+Stage 3A establishes only a reversible substrate.
 
 Result:
 
 - [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
 
-### Stage 3B — next
+### Stage 3B — record diagnostics — completed
 
-Stage 3B will add exact record diagnostics:
+Implemented exact finite-ensemble diagnostics:
 
-- Shannon entropy for derived variables;
+- Shannon entropy;
 - mutual information;
 - conditional entropy;
 - Bayes-optimal decoder accuracy;
 - record profile `Q_R(k,j)`;
+- accessibility profile;
 - signed record score `A_R`;
 - signed accessibility score `A_Acc`.
 
-Indices remain neutral ordered positions until a diagnostic selects an orientation.
+Canonical measurement outputs include:
+
+- `H(M_0)=0`, `H(M_1)=1` bit;
+- `I(M_1;X_0)=1` bit;
+- `I(M_1;X_2)=0` bit;
+- `H(X_0|M_1)=0` bit;
+- `H(X_2|M_1)=1` bit;
+- `Acc(M_1->X_0)=1`;
+- `Acc(M_1->X_2)=1/2`;
+- `A_R(1,1)=1` bit;
+- `A_Acc(1,1)=1/2`.
+
+These are still **signed neutral-side contrasts**, not a claim that the lower-index side is physically the past. A one-trajectory value match is explicitly insufficient to establish a record relation.
+
+Result:
+
+- [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
+
+### Stage 3C — next
+
+Stage 3C applies the now-fixed diagnostics to the canonical blank-memory ensemble and asks whether the narrower phrase **record-defined orientation** is justified, while retaining:
+
+`record-defined orientation != fundamental temporal arrow`.
 
 ## Key methodological guards
 

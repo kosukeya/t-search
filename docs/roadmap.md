@@ -64,15 +64,6 @@ A hidden-selected-future model and a no-selected-future model can be formally di
 
 The difference between **hidden information** and **information absent from the model state** was represented explicitly.
 
-Controls established:
-
-- event-renaming covariance;
-- repeated state values do not collapse event identity;
-- matched non-uniform positive weights can preserve operational equality;
-- probability mismatches can break equality without supplying an ontological discriminator;
-- zero-support semantics can expose representation-dependent differences in `Next`;
-- terminal and invalid-input behavior is explicit.
-
 Full clean regression before merge:
 
 `99 passed`.
@@ -110,19 +101,15 @@ Principal guards:
 
 `simulation order != modeled temporal order`.
 
-### Canonical reversible substrate
-
-Use the closed finite microstate:
+Canonical reversible substrate:
 
 `Z=(X,M,N) in {0,1}^3`
 
-with reversible maps:
+with:
 
 `U_rec(X,M,N)=(X,M XOR X,N)`
 
 `U_scr(X,M,N)=(X XOR N,M,N)`.
-
-Both maps are self-inverse and must be verified as bijections over all eight complete microstates.
 
 Canonical boundary ensemble:
 
@@ -131,90 +118,81 @@ Canonical boundary ensemble:
 - `N_0=b`;
 - `a,b` independent uniform bits.
 
-The blank register is a special boundary condition, not an irreversible law.
+Record diagnostics are deliberately deferred until the reversible substrate is validated.
 
-### Record diagnostic
+## Stage 3A — Reversible record substrate — completed
 
-At neutral ordered position `k`, define:
+Result:
 
-`Q_R(k,j)=I(R_k;X_j)`
+- [`../results/stage3a_reversible_substrate.md`](../results/stage3a_reversible_substrate.md)
 
-and the signed directional contrast:
+Design notes:
 
-`A_R(k,Delta)=I(R_k;X_{k-Delta})-I(R_k;X_{k+Delta})`.
+- [`stage3a_notes.md`](stage3a_notes.md)
 
-Canonical choice:
+Implemented and verified:
 
-`A_R=I(M_1;X_0)-I(M_1;X_2)`.
+- complete three-bit `Microstate` representation;
+- exact enumeration of all eight complete microstates;
+- `U_rec` and `U_scr` as bijections over the full state space;
+- self-inverse behavior of both maps;
+- rejection of a non-bijective erasure-map control when reversibility is claimed;
+- exact canonical four-state boundary distribution using rational weights;
+- four equiprobable complete forward trajectories;
+- forward dynamical validity;
+- modeled history reversal `J(z0,z1,z2)=(z2,z1,z0)`;
+- reverse dynamical validity using inverse maps in reverse order;
+- involutive trajectory and ensemble reversal;
+- exact full-state probability-mass preservation;
+- full-state entropy profile `(2,2,2)` bits for the canonical forward ensemble;
+- corresponding entropy preservation in the reversed ensemble.
 
-Do not call lower indices “past” before this score selects an orientation.
+Interpretive limit:
 
-Complementary accessibility score:
+**Stage 3A establishes a reversible substrate only. It does not establish a record relation or temporal orientation.**
 
-`A_Acc=Acc(R_k->X_{k-Delta})-Acc(R_k->X_{k+Delta})`.
+The blank-memory condition `M_0=0` is carried forward as a declared boundary condition but is not interpreted as an arrow until Stage 3C after Stage 3B defines the diagnostics.
 
-### Required reversal/control behavior
+Focused Stage 3A tests: **10 committed tests**.
 
-History reversal:
+Draft tracking PR: **#4**.
 
-`J(z_0,z_1,z_2)=(z_2,z_1,z_0)`.
+## Stage 3B — Record diagnostics — next
 
-Expected canonical transformation:
+Implement exact finite-distribution diagnostics:
 
-`A_R(J_*mu)=-A_R(mu)`.
+- Shannon entropy for derived variables;
+- mutual information;
+- conditional entropy;
+- Bayes-optimal decoding/accessibility accuracy;
+- record profile `Q_R(k,j)=I(R_k;X_j)`;
+- signed record score `A_R(k,Delta)`;
+- signed accessibility score `A_Acc(k,Delta)`.
 
-Orientation-symmetric mixture:
+The diagnostics must not call lower indices “past.” Stage 3B defines measurement machinery only; the canonical asymmetric-record interpretation is reserved for Stage 3C.
 
-`mu_sym=1/2 mu_fwd + 1/2 mu_rev`
-
-should have no signed bias.
-
-Required negative controls also include:
-
-- same neutral order without record coupling;
-- independent uniform initial memory instead of `M_0=0`;
-- register/event renaming;
-- repeated values;
-- rejection of non-bijective updates when reversibility is claimed.
-
-### Entropy guard
-
-Because the complete dynamics are bijective:
-
-`H(Z_0)=H(Z_1)=H(Z_2)`
-
-must hold for the transported full-state distribution.
-
-Subsystem entropies and mutual information may change. This is correlation/entropy redistribution, not automatically thermodynamic entropy production.
-
-### Stage 3 sequence
-
-#### Stage 3A — reversible record substrate — next
-
-Implement and verify:
-
-- three-bit microstate;
-- exact finite ensemble;
-- `U_rec` / `U_scr` and inverse/bijectivity tests;
-- forward trajectories;
-- exact reversed trajectories;
-- full-state Shannon entropy preservation.
-
-No temporal arrow is claimed in Stage 3A.
-
-#### Stage 3B — record diagnostics
-
-Implement entropy, mutual information, conditional entropy, Bayes-optimal decoding, record profiles, and signed record/accessibility scores.
-
-#### Stage 3C — asymmetric-record model
+## Stage 3C — Asymmetric-record model
 
 Use the blank-memory boundary and test whether a record-defined orientation appears.
 
-#### Stage 3D — reversal and symmetric controls
+Canonical expected comparison:
 
-Test sign reversal, symmetric-mixture cancellation, order-only/no-record control, and nonblank-memory boundary control.
+`A_R=I(M_1;X_0)-I(M_1;X_2)`.
 
-#### Stage 3E — complete local view
+Strongest allowed positive conclusion: a **record-defined orientation** in the declared ensemble.
+
+## Stage 3D — Reversal and symmetric controls
+
+Test:
+
+- exact history reversal sign flip;
+- equal forward/reverse mixture cancellation;
+- order-only/no-record control;
+- independent uniform-memory boundary control.
+
+Goal: distinguish order, reversible dynamics, and record-boundary asymmetry.
+
+## Stage 3E — Complete local view
 
 Upgrade toward:
 
@@ -222,11 +200,11 @@ Upgrade toward:
 
 and define explicit global-to-local projections.
 
-#### Stage 3F — accessibility and information controls
+## Stage 3F — Accessibility and information controls
 
 Compare information and reconstructibility on both sides of the current position; add noise only after the exact baseline is established.
 
-#### Stage 3G — robustness and synthesis
+## Stage 3G — Robustness and synthesis
 
 Run relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality only if identifiable, run full regression, and produce:
 

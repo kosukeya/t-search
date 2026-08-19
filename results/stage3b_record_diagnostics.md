@@ -1,6 +1,6 @@
 # Stage 3B — Record Diagnostics
 
-Status: **completed at the measurement-definition level; GitHub Actions checkpoint validation to be recorded after the latest branch run completes**.
+Status: **completed; GitHub Actions full regression passed**.
 
 ## Purpose
 
@@ -119,7 +119,7 @@ Mutual information is symmetric and does not identify a causal arrow. Causal/pro
 
 `H(Z_0)=H(Z_1)=H(Z_2)=2 bits`.
 
-## Validation scope
+## Validation
 
 The committed Stage 3B test file contains **11 focused tests** covering:
 
@@ -135,7 +135,11 @@ The committed Stage 3B test file contains **11 focused tests** covering:
 10. the single-trajectory accidental-equality guard;
 11. invalid position/component/window rejection.
 
-The latest GitHub Actions full repository result will be added to this document after the current PR-head run completes.
+GitHub Actions clean PR merge-ref regression:
+
+`120 passed in 2.24s`.
+
+This includes Stage 1, Stage 2, Stage 3A, and Stage 3B tests.
 
 ## Strongest justified Stage 3B conclusion
 

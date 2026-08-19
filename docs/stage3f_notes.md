@@ -1,6 +1,6 @@
 # Stage 3F — Accessibility and Information Controls Notes
 
-Status: **implemented; final GitHub Actions checkpoint result to be recorded after the Stage 3F head completes**.
+Status: **completed; GitHub Actions clean PR merge-ref regression passed**.
 
 ## Purpose
 
@@ -67,7 +67,7 @@ Because `X_2` remains independent of `X_0` in the canonical ensemble:
 
 `I(M_obs;X_2)=0`.
 
-Expected control points:
+Measured control points:
 
 | `epsilon` | `I(M_obs;X_0)` | `Acc(M_obs->X_0)` | accessible `A_R` | accessible `A_Acc` |
 |---:|---:|---:|---:|---:|
@@ -177,6 +177,16 @@ Stage 3F does **not** establish:
 - thermodynamic entropy production from observation noise;
 - a fundamental temporal arrow;
 - phenomenal passage.
+
+## Validation
+
+The Stage 3F suite contains **12 focused tests**.
+
+GitHub Actions clean PR merge-ref regression after warning cleanup:
+
+`159 passed in 3.17s`.
+
+No Stage 3F test-side warnings remain.
 
 ## Next
 

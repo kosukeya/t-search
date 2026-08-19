@@ -5,6 +5,7 @@ import pytest
 from t_search.stage3 import (
     canonical_forward_ensemble,
     full_state_entropies,
+    is_bijective,
     is_reverse_dynamically_valid,
     u_scr,
 )
@@ -15,6 +16,7 @@ from t_search.stage3_controls import (
     no_record_forward_ensemble,
     stage3d_control_assessments,
     symmetric_forward_reverse_ensemble,
+    u_identity,
     uniform_memory_forward_ensemble,
     uniform_memory_initial_distribution,
 )
@@ -83,8 +85,10 @@ def test_no_record_control_keeps_order_and_scrambling_but_has_no_orientation() -
     ensemble = no_record_forward_ensemble()
     assessment = assess_control_ensemble(ensemble)
 
+    assert is_bijective(u_identity)
+    assert is_bijective(u_scr)
     assert len(ensemble.trajectories) == 4
-    assert all(z1 == z0 and z2 == u_scr(z1) for z0, z1, z2 in ensemble.trajectories)
+    assert all(z1 == u_identity(z0) and z2 == u_scr(z1) for z0, z1, z2 in ensemble.trajectories)
     assert any(z0.x != z2.x for z0, _, z2 in ensemble.trajectories)
     assert assessment.lower_information == pytest.approx(0.0)
     assert assessment.upper_information == pytest.approx(0.0)
@@ -119,7 +123,7 @@ def test_uniform_memory_control_keeps_canonical_reversible_dynamics_and_global_e
     assert full_state_entropies(ensemble) == pytest.approx((3.0, 3.0, 3.0))
 
 
-def test_control_summary_separates_orientation_from_mere_order_and_reversibility() -> None:
+def test_control_summary_separates_orientation_from_mere_order_and_boundary_choice() -> None:
     assessments = stage3d_control_assessments()
 
     assert assessments["forward"].orientation == "lower-index"
@@ -127,10 +131,9 @@ def test_control_summary_separates_orientation_from_mere_order_and_reversibility
     assert assessments["symmetric"].orientation == "none"
     assert assessments["no-record"].orientation == "none"
     assert assessments["uniform-memory"].orientation == "none"
-    assert all(
-        assessment.microscopic_maps_reversible
-        for assessment in assessments.values()
-    )
+
+    for name in ("forward", "reversed", "symmetric", "uniform-memory"):
+        assert assessments[name].microscopic_maps_reversible is True
 
 
 def test_mixture_rejects_invalid_weights() -> None:

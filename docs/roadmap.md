@@ -118,8 +118,6 @@ Canonical boundary ensemble:
 - `N_0=b`;
 - `a,b` independent uniform bits.
 
-Record diagnostics are deliberately deferred until the reversible substrate is validated.
-
 ## Stage 3A — Reversible record substrate — completed
 
 Result:
@@ -151,35 +149,75 @@ Interpretive limit:
 
 **Stage 3A establishes a reversible substrate only. It does not establish a record relation or temporal orientation.**
 
-The blank-memory condition `M_0=0` is carried forward as a declared boundary condition but is not interpreted as an arrow until Stage 3C after Stage 3B defines the diagnostics.
-
 Focused Stage 3A tests: **10 committed tests**.
 
 Draft tracking PR: **#4**.
 
-## Stage 3B — Record diagnostics — next
+## Stage 3B — Record diagnostics — completed
 
-Implement exact finite-distribution diagnostics:
+Results:
 
-- Shannon entropy for derived variables;
+- [`../results/stage3b_record_diagnostics.md`](../results/stage3b_record_diagnostics.md)
+
+Design notes:
+
+- [`stage3b_notes.md`](stage3b_notes.md)
+
+Implemented exact finite-ensemble diagnostics in a module separate from the Stage 3A dynamics:
+
+- marginal distributions;
+- joint distributions;
+- Shannon entropy;
 - mutual information;
 - conditional entropy;
 - Bayes-optimal decoding/accessibility accuracy;
 - record profile `Q_R(k,j)=I(R_k;X_j)`;
+- accessibility profile;
 - signed record score `A_R(k,Delta)`;
 - signed accessibility score `A_Acc(k,Delta)`.
 
-The diagnostics must not call lower indices “past.” Stage 3B defines measurement machinery only; the canonical asymmetric-record interpretation is reserved for Stage 3C.
+Canonical Stage 3 measurements at neutral position `k=1` are:
 
-## Stage 3C — Asymmetric-record model
+- `H(M_0)=0` bit;
+- `H(M_1)=1` bit;
+- `I(M_1;X_0)=1` bit;
+- `I(M_1;X_2)=0` bit;
+- `H(X_0|M_1)=0` bit;
+- `H(X_2|M_1)=1` bit;
+- `Acc(M_1->X_0)=1`;
+- `Acc(M_1->X_2)=1/2`;
+- `Q_R(1,j)={0:1,1:1,2:0}` bits;
+- `A_R(1,1)=1` bit;
+- `A_Acc(1,1)=1/2`.
 
-Use the blank-memory boundary and test whether a record-defined orientation appears.
+These values are **diagnostic outputs under neutral index labels**. Stage 3B does not rename the lower-index side “past” and does not yet promote the signed contrast to a physical temporal arrow.
 
-Canonical expected comparison:
+Important guards established in tests:
 
-`A_R=I(M_1;X_0)-I(M_1;X_2)`.
+- a single-trajectory value equality is insufficient to establish a record relation;
+- decoder accuracy must be interpreted alongside target uncertainty and mutual information;
+- subsystem entropy change is not global entropy production;
+- invalid position/component/directional-window specifications are rejected.
 
-Strongest allowed positive conclusion: a **record-defined orientation** in the declared ensemble.
+Focused Stage 3B tests: **11 committed tests**.
+
+## Stage 3C — Asymmetric-record model — next
+
+Apply the now-fixed diagnostics to the canonical blank-memory ensemble and decide whether the narrower interpretation **record-defined orientation** is justified.
+
+Canonical comparison:
+
+`A_R=I(M_1;X_0)-I(M_1;X_2)=1 bit`.
+
+The task is interpretive and controlled: Stage 3C must show that the nonzero score tracks the declared record structure, not merely restate the numerical index convention.
+
+Strongest allowed positive conclusion:
+
+**a record-defined orientation in the declared canonical ensemble**.
+
+Still forbidden:
+
+`record-defined orientation == fundamental temporal arrow`.
 
 ## Stage 3D — Reversal and symmetric controls
 

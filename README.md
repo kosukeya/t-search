@@ -15,7 +15,7 @@ The long-term hypothesis is that such structures may be better candidates for th
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3.0 through Stage 3E are complete on `agent/stage-3-records`; Stage 3F — accessibility and information controls — is next.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3.0 through Stage 3F are complete on `agent/stage-3-records`; Stage 3G — robustness and synthesis — is next.**
 
 Integrated results:
 
@@ -30,15 +30,17 @@ Stage 3 protocol and current results:
 - [`docs/stage3c_notes.md`](docs/stage3c_notes.md)
 - [`docs/stage3d_notes.md`](docs/stage3d_notes.md)
 - [`docs/stage3e_notes.md`](docs/stage3e_notes.md)
+- [`docs/stage3f_notes.md`](docs/stage3f_notes.md)
 - [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
 - [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
 - [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
 - [`results/stage3d_controls.md`](results/stage3d_controls.md)
 - [`results/stage3e_complete_local_view.md`](results/stage3e_complete_local_view.md)
+- [`results/stage3f_accessibility_controls.md`](results/stage3f_accessibility_controls.md)
 
-Latest Stage 3E code/test checkpoint regression:
+Latest Stage 3F clean PR merge-ref regression:
 
-`147 passed in 3.21s`.
+`159 passed in 3.17s`.
 
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
@@ -144,17 +146,12 @@ Result:
 
 ### Stage 3D — reversal and symmetric controls — completed
 
-The required controls behave as follows:
+Required controls showed:
 
-| Ensemble | `A_R` | `A_Acc` | Orientation |
-|---|---:|---:|---|
-| canonical forward | `+1` | `+0.5` | `lower-index` |
-| exact reversed | `-1` | `-0.5` | `upper-index` |
-| 50/50 forward+reverse | `0` | `0` | `none` |
-| no-record / identity first map | `0` | `0` | `none` |
-| independent uniform initial memory | `0` | `0` | `none` |
-
-The symmetric mixture retains equal nonzero MI (`≈0.188721875541` bit on each side) and equal decoder accuracy (`0.75`) while the signed bias cancels.
+- exact history reversal flips `A_R` and `A_Acc` signs;
+- an equal forward/reverse mixture cancels signed bias while equal nonzero correlations remain;
+- order-only/no-record dynamics produce no orientation;
+- independent uniform initial memory removes the canonical record contrast while reversible dynamics remain.
 
 Supported toy-model conclusion:
 
@@ -166,7 +163,7 @@ Result:
 
 ### Stage 3E — complete local view — completed
 
-Stage 3E makes the global/local information interface explicit.
+Stage 3E made the global/local information interface explicit.
 
 Global record-only object:
 
@@ -186,7 +183,7 @@ returns:
 
 without exposing `N_k`, complete trajectories, opposite-side actual microstates, or privileged initial boundary labels.
 
-For the canonical central view `(X_1,M_1)=(1,1)`, one local view is compatible with **two** complete histories because hidden `N` remains ambiguous. Adding a compatible position-2 local view reduces the compatibility class to one trajectory, so the complete history becomes reconstructible from a suitable view family.
+One canonical central view is compatible with two complete histories, while adding a compatible position-2 view makes the complete history reconstructible.
 
 Stage 2 Potentiality is then reintroduced through typed product adapters:
 
@@ -196,19 +193,51 @@ and:
 
 `G_O^complete=(Records,A_product,OPot,next probabilities)`.
 
-The same record layer is attached to both, while `EPot` and `OPot` remain distinct types and the epistemic hidden `h*` is not leaked into the complete local view.
-
-This is an explicit product construction between toy-model layers, not a derivation that the Stage 2 and Stage 3 substrates form one physical system.
+The same record layer is attached to both, while `EPot` and `OPot` remain distinct types and the epistemic hidden `h*` is not leaked.
 
 Result:
 
 - [`results/stage3e_complete_local_view.md`](results/stage3e_complete_local_view.md)
 
-### Stage 3F — next
+### Stage 3F — accessibility and information controls — completed
 
-Stage 3F will stress accessibility and reconstruction under controlled information degradation, while preserving the distinction:
+Stage 3F keeps the global block fixed and changes only the local observation interface.
 
-`inaccessible information != ontologically absent information`.
+The record readout is passed through an exact binary-symmetric channel with error probability `epsilon` and current `X` can independently be exposed or masked.
+
+For the record-only channel:
+
+- `epsilon=0`: `I(M_obs;X_0)=1`, `A_R=1`, decoder accuracy `1`;
+- `epsilon=1/4`: `I(M_obs;X_0)~=0.188721875541`, `A_R` has the same value, decoder accuracy `0.75`;
+- `epsilon=1/2`: `I(M_obs;X_0)=0`, `A_R=0`, decoder accuracy `0.5`.
+
+Throughout, the unchanged global relation remains:
+
+`I(true M_1;X_0)=1 bit`.
+
+This directly realizes the model-level distinction:
+
+`inaccessible information != information absent from the formal global state`.
+
+A second result is that current `X_1` is redundant with the lower-side target in the canonical model because `X_1=X_0`. Therefore maximally noisy `M` does not eliminate **total** local access when `X_1` remains visible. Record-specific accessibility and full-interface accessibility must be reported separately.
+
+Masking `X` and adding `epsilon=1/4` record noise expands the positive-posterior history class for `M_obs=1` from `2` to `4`; complete masking leaves all four canonical histories compatible. These are interface/epistemic ambiguity changes, not new ontic branches.
+
+Result:
+
+- [`results/stage3f_accessibility_controls.md`](results/stage3f_accessibility_controls.md)
+
+### Stage 3G — next
+
+Stage 3G will perform the remaining robustness and synthesis work:
+
+- bookkeeping relabeling;
+- repeated-value/state controls;
+- remaining useful boundary/noise variants;
+- Stage 2 integration review;
+- full regression;
+- six fixed questions;
+- `results/stage3_synthesis.md`.
 
 ## Key methodological guards
 

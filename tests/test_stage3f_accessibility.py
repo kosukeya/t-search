@@ -31,9 +31,9 @@ def _binary_entropy(probability: float) -> float:
 
 
 def test_access_policy_validates_degradation_range_and_hidden_record_noise() -> None:
-    with pytest.raises(ValueError, match="\[0, 1/2\]"):
+    with pytest.raises(ValueError, match=r"\[0, 1/2\]"):
         LocalAccessPolicy(record_error_probability=Fraction(-1, 4))
-    with pytest.raises(ValueError, match="\[0, 1/2\]"):
+    with pytest.raises(ValueError, match=r"\[0, 1/2\]"):
         LocalAccessPolicy(record_error_probability=Fraction(3, 4))
     with pytest.raises(ValueError, match="hidden"):
         LocalAccessPolicy(expose_m=False, record_error_probability=Fraction(1, 4))

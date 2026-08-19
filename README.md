@@ -32,9 +32,9 @@ Stage 3 protocol and current results:
 - [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
 - [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
 
-Latest recorded Stage 3B PR merge-ref regression:
+Latest recorded Stage 3C PR merge-ref regression:
 
-`120 passed`.
+`128 passed in 2.79s`.
 
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 

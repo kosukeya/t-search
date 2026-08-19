@@ -15,7 +15,7 @@ The long-term hypothesis is that such structures may be better candidates for th
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3.0, Stage 3A, and Stage 3B are complete on `agent/stage-3-records`; Stage 3C — asymmetric-record model — is next.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3.0 through Stage 3C are complete on `agent/stage-3-records`; Stage 3D — reversal and symmetric controls — is next.**
 
 Integrated results:
 
@@ -27,20 +27,20 @@ Stage 3 protocol and current results:
 - [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
 - [`docs/stage3a_notes.md`](docs/stage3a_notes.md)
 - [`docs/stage3b_notes.md`](docs/stage3b_notes.md)
+- [`docs/stage3c_notes.md`](docs/stage3c_notes.md)
 - [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
 - [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
+- [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
 
-Latest Stage 3B PR merge-ref regression:
+Latest recorded Stage 3B PR merge-ref regression:
 
-`120 passed in 2.24s`.
+`120 passed`.
 
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
 ## Stage 1 — Global/local reconstruction
 
-Stage 1 built and stress-tested the finite classical reconstruction framework:
-
-`B_1 -> {V_e} -> B_1_hat`.
+Stage 1 built and stress-tested the finite classical global/local reconstruction framework.
 
 Main lessons:
 
@@ -59,10 +59,7 @@ Protocol:
 
 - [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
 
-Stage 2 deliberately separates:
-
-- global/local representation;
-- epistemic/ontic Potentiality.
+Stage 2 separated global/local representation from epistemic/ontic Potentiality.
 
 Core formal comparison:
 
@@ -114,17 +111,13 @@ The blank-memory boundary `M_0=0` is a special ensemble condition, not an irreve
 
 ### Stage 3A — reversible record substrate — completed
 
-Implemented:
+Verified:
 
 - exact eight-state microstate space;
-- exhaustive full-space bijectivity checks;
-- self-inverse `U_rec` and `U_scr`;
-- exact canonical four-state boundary distribution with rational weights;
-- four equiprobable forward trajectories;
-- modeled history reversal `J(z0,z1,z2)=(z2,z1,z0)`;
-- reverse dynamical validity using inverse maps in reverse order;
-- exact full-state probability-mass preservation;
-- `H(Z_0)=H(Z_1)=H(Z_2)=2 bits` for the canonical ensemble.
+- full-space bijectivity and self-inverse behavior of `U_rec` and `U_scr`;
+- exact four-state boundary ensemble and four complete trajectories;
+- modeled history reversal;
+- full-state entropy preservation `H(Z_0)=H(Z_1)=H(Z_2)=2 bits`.
 
 Stage 3A establishes only a reversible substrate.
 
@@ -140,34 +133,63 @@ Implemented exact finite-ensemble diagnostics:
 - mutual information;
 - conditional entropy;
 - Bayes-optimal decoder accuracy;
-- record profile `Q_R(k,j)`;
-- accessibility profile;
+- record/accessibility profiles;
 - signed record score `A_R`;
 - signed accessibility score `A_Acc`.
 
 Canonical measurement outputs include:
 
-- `H(M_0)=0`, `H(M_1)=1` bit;
 - `I(M_1;X_0)=1` bit;
 - `I(M_1;X_2)=0` bit;
-- `H(X_0|M_1)=0` bit;
-- `H(X_2|M_1)=1` bit;
 - `Acc(M_1->X_0)=1`;
 - `Acc(M_1->X_2)=1/2`;
-- `A_R(1,1)=1` bit;
-- `A_Acc(1,1)=1/2`.
+- `A_R=1` bit;
+- `A_Acc=1/2`.
 
-These are still **signed neutral-side contrasts**, not a claim that the lower-index side is physically the past. A one-trajectory value match is explicitly insufficient to establish a record relation.
+These are signed neutral-side contrasts, not a physical past/future assignment.
 
 Result:
 
 - [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
 
-### Stage 3C — next
+### Stage 3C — asymmetric-record model — completed
 
-Stage 3C applies the now-fixed diagnostics to the canonical blank-memory ensemble and asks whether the narrower phrase **record-defined orientation** is justified, while retaining:
+Stage 3C adds a conservative interpretation layer without introducing a new metric. A **record-defined orientation** is assigned only when:
+
+- `A_R` is nonzero;
+- `A_Acc` is nonzero;
+- both scores select the same neutral side;
+- the selected side has nonzero mutual information with the current record register.
+
+For the canonical blank-memory ensemble:
+
+- `A_R=1` bit;
+- `A_Acc=1/2`;
+- both diagnostics select `lower-index`;
+- the microscopic maps remain reversible.
+
+Therefore the supported Stage 3C conclusion is:
+
+**the canonical reversible blank-memory ensemble contains a record-defined orientation toward the lower-index side under the declared information/accessibility interface.**
+
+Stage 3C does **not** yet establish that the blank-memory boundary causes this orientation; that requires Stage 3D controls.
 
 `record-defined orientation != fundamental temporal arrow`.
+
+Result:
+
+- [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
+
+### Stage 3D — next
+
+Stage 3D applies the required controls:
+
+- exact history reversal should flip the signed orientation;
+- equal forward/reverse mixture should cancel the signed bias;
+- order-only/no-record control should yield no orientation;
+- independent uniform initial memory should remove or weaken the canonical record.
+
+These controls are required before attributing the Stage 3C asymmetry to the record boundary rather than to order or a bookkeeping convention.
 
 ## Key methodological guards
 

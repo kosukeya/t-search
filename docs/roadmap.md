@@ -45,10 +45,7 @@ Integrated result:
 
 - [`../results/stage2_synthesis.md`](../results/stage2_synthesis.md)
 
-Stage 2 separated:
-
-- global versus local representation;
-- epistemic versus ontic Potentiality.
+Stage 2 separated global/local representation from epistemic/ontic Potentiality.
 
 Core formal comparison:
 
@@ -57,8 +54,6 @@ Core formal comparison:
 versus:
 
 `M_O(D)=(D,Ext_T(D),K)`.
-
-Strongest result:
 
 A hidden-selected-future model and a no-selected-future model can be formally different while producing the same tested local operational outputs under matched positive-support conditions.
 
@@ -137,21 +132,16 @@ Implemented and verified:
 - rejection of a non-bijective erasure-map control when reversibility is claimed;
 - exact canonical four-state boundary distribution using rational weights;
 - four equiprobable complete forward trajectories;
-- forward dynamical validity;
+- forward and reverse dynamical validity;
 - modeled history reversal `J(z0,z1,z2)=(z2,z1,z0)`;
-- reverse dynamical validity using inverse maps in reverse order;
-- involutive trajectory and ensemble reversal;
 - exact full-state probability-mass preservation;
-- full-state entropy profile `(2,2,2)` bits for the canonical forward ensemble;
-- corresponding entropy preservation in the reversed ensemble.
+- full-state entropy profile `(2,2,2)` bits.
 
 Interpretive limit:
 
 **Stage 3A establishes a reversible substrate only. It does not establish a record relation or temporal orientation.**
 
-Focused Stage 3A tests: **10 committed tests**.
-
-Draft tracking PR: **#4**.
+Focused Stage 3A tests: **10**.
 
 ## Stage 3B — Record diagnostics — completed
 
@@ -165,8 +155,7 @@ Design notes:
 
 Implemented exact finite-ensemble diagnostics in a module separate from the Stage 3A dynamics:
 
-- marginal distributions;
-- joint distributions;
+- marginal and joint distributions;
 - Shannon entropy;
 - mutual information;
 - conditional entropy;
@@ -178,52 +167,65 @@ Implemented exact finite-ensemble diagnostics in a module separate from the Stag
 
 Canonical Stage 3 measurements at neutral position `k=1` are:
 
-- `H(M_0)=0` bit;
-- `H(M_1)=1` bit;
 - `I(M_1;X_0)=1` bit;
 - `I(M_1;X_2)=0` bit;
-- `H(X_0|M_1)=0` bit;
-- `H(X_2|M_1)=1` bit;
 - `Acc(M_1->X_0)=1`;
 - `Acc(M_1->X_2)=1/2`;
-- `Q_R(1,j)={0:1,1:1,2:0}` bits;
-- `A_R(1,1)=1` bit;
-- `A_Acc(1,1)=1/2`.
+- `A_R=1` bit;
+- `A_Acc=1/2`.
 
-These values are **diagnostic outputs under neutral index labels**. Stage 3B does not rename the lower-index side “past” and does not yet promote the signed contrast to a physical temporal arrow.
+These are diagnostic outputs under neutral index labels. Stage 3B does not rename the lower-index side “past” and does not promote the signed contrast to a physical temporal arrow.
 
-Important guards established in tests:
+Focused Stage 3B tests: **11**.
 
-- a single-trajectory value equality is insufficient to establish a record relation;
-- decoder accuracy must be interpreted alongside target uncertainty and mutual information;
-- subsystem entropy change is not global entropy production;
-- invalid position/component/directional-window specifications are rejected.
+Stage 3B clean PR merge-ref regression:
 
-Focused Stage 3B tests: **11 committed tests**.
+`120 passed`.
 
-GitHub Actions clean PR merge-ref regression at the Stage 3B checkpoint:
+## Stage 3C — Asymmetric-record model — completed
 
-`120 passed in 2.24s`.
+Result:
 
-## Stage 3C — Asymmetric-record model — next
+- [`../results/stage3c_asymmetric_record.md`](../results/stage3c_asymmetric_record.md)
 
-Apply the now-fixed diagnostics to the canonical blank-memory ensemble and decide whether the narrower interpretation **record-defined orientation** is justified.
+Design notes:
 
-Canonical comparison:
+- [`stage3c_notes.md`](stage3c_notes.md)
 
-`A_R=I(M_1;X_0)-I(M_1;X_2)=1 bit`.
+Stage 3C adds no new arrow metric. It introduces a conservative interpretation criterion over the Stage 3B outputs.
 
-The task is interpretive and controlled: Stage 3C must show that the nonzero score tracks the declared record structure, not merely restate the numerical index convention.
+A **record-defined orientation** is assigned only when:
 
-Strongest allowed positive conclusion:
+1. `A_R` is nonzero;
+2. `A_Acc` is nonzero;
+3. the two signed diagnostics select the same neutral side;
+4. the selected side carries nonzero mutual information with the current record register.
 
-**a record-defined orientation in the declared canonical ensemble**.
+Canonical assessment:
+
+- `I(M_1;X_0)=1` bit;
+- `I(M_1;X_2)=0` bit;
+- `Acc(M_1->X_0)=1`;
+- `Acc(M_1->X_2)=1/2`;
+- `A_R=1` bit;
+- `A_Acc=1/2`;
+- `orientation=lower-index`;
+- `record_defined=True`;
+- microscopic maps remain reversible.
+
+Strongest supported conclusion:
+
+**the canonical reversible blank-memory ensemble contains a record-defined orientation toward the lower-index side under the declared information/accessibility interface.**
+
+Stage 3C does not yet establish that the blank-memory boundary causes, uniquely determines, or is necessary for this orientation. That isolation is deferred to Stage 3D.
+
+Focused Stage 3C tests: **8 committed tests**.
 
 Still forbidden:
 
 `record-defined orientation == fundamental temporal arrow`.
 
-## Stage 3D — Reversal and symmetric controls
+## Stage 3D — Reversal and symmetric controls — next
 
 Test:
 
@@ -232,7 +234,7 @@ Test:
 - order-only/no-record control;
 - independent uniform-memory boundary control.
 
-Goal: distinguish order, reversible dynamics, and record-boundary asymmetry.
+Goal: distinguish mere order, reversible dynamics, and asymmetric record-boundary preparation. Stage 3D is the first checkpoint allowed to make a stronger claim about whether the Stage 3C orientation depends on the special record boundary.
 
 ## Stage 3E — Complete local view
 

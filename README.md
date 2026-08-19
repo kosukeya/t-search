@@ -15,18 +15,20 @@ The long-term hypothesis is that such structures may be better candidates for th
 
 ## Current status
 
-**Stage 1 is complete and merged. Stage 2 is complete on the Stage 2 branch; its exit criteria are satisfied pending PR #3 review/merge.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3.0 — Records and temporal direction protocol freeze — is complete on `agent/stage-3-records`; Stage 3A is next.**
 
 Integrated results:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
-A GitHub Actions clean regression on the Stage 2 PR merge ref passed:
+Stage 3 protocol:
 
-`99 passed in 2.98s`.
+- [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
 
-No strict physical invariant of time and no empirical discriminator between fixed-future and ontically-open-future interpretations has yet been established.
+The Stage 2 clean regression passed `99` tests before merge.
+
+No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
 ## Stage 1 — Global/local reconstruction
 
@@ -72,8 +74,6 @@ with:
 - `h_R = (p,n,r1)`;
 - `D_0 = (p,n)`.
 
-The two continuations are relationally non-equivalent because their future path lengths differ.
-
 ### Epistemic-history model
 
 `M_E = (T,h*,q_E)`
@@ -86,62 +86,17 @@ One complete history `h*` is present globally but intentionally hidden from the 
 
 Current Actuality and all admissible extensions are represented, with no selected complete future stored in the model state.
 
-### Minimal modal local views
+### Stage 2 result
 
-`G_E(D) = (A_now,EPot(D),pi_E)`
-
-`G_O(D) = (A_now,OPot(D),pi_O)`.
-
-For cross-model comparison, Stage 2 uses the ontology-neutral operational erasure:
+Under matched positive-support conditions, formally different models can share the same ontology-neutral operational description:
 
 `O(G) = (A_now,Next(D),pi(next|D))`.
-
-## Stage 2 results
-
-### Formal difference
-
-The central distinction was implemented explicitly:
-
-`epistemic: selected-future information exists globally and is locally hidden`
-
-versus:
-
-`ontic: selected-future information is absent from the model state`.
-
-The epistemic projection is deliberately non-injective with respect to `h*`.
-
-### Matched operational equality
-
-For matched positive-support predictions, the two internally different models can produce the same operational description:
-
-`O(G_E(D_0)) = O(G_O(D_0))`.
-
-At the symmetric baseline both expose:
-
-- Actuality `(p,n)`;
-- Next `{l1,r1}`;
-- probabilities `1/2,1/2`.
-
-The equality also survives the common explicit update `l1` and the terminal continuation `l2`.
 
 The supported conclusion is only:
 
 **operationally indistinguishable under the tested interface and matched conditions**.
 
 `operational equality != ontological equivalence`.
-
-### Controls
-
-Stage 2F established that:
-
-- pure event renaming preserves the relevant structure covariantly;
-- repeated state labels do not collapse event identity or the two relational continuation classes;
-- matched non-uniform positive weights such as `0.75/0.25` still preserve operational equality;
-- mismatched probabilities break only the probability component when support is otherwise the same;
-- a zero-support boundary can break operational equality because `EPot` removes zero-support hypotheses while `OPot=Ext_T(D)` retains structurally admissible zero-weight extensions;
-- terminal and invalid-input controls behave as specified.
-
-The zero-support result is a **support-semantics boundary**, not an empirical discovery about physical openness.
 
 Detailed Stage 2 results:
 
@@ -153,20 +108,43 @@ Detailed Stage 2 results:
 - [`results/stage2f_controls.md`](results/stage2f_controls.md)
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
-## Next stage — Records and temporal direction
+## Stage 3 — Records and temporal direction
 
-After PR #3 review/merge, Stage 3 should add explicit record/memory/environment structure:
+Stage 3 adds explicit record/memory/environment structure and tests whether record asymmetry selects an orientation beyond mere ordered change.
 
-`G = (Records,Actuality,Potentiality)`.
+Protocol:
 
-The core question will be whether asymmetric record accessibility adds a genuine arrow-like structure beyond mere ordering or branching.
+- [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
 
-Required controls should include:
+Canonical reversible microstate:
 
-- symmetric/reversible records;
-- asymmetric records;
-- forward/reverse comparison;
-- explicit separation of order, record asymmetry, and experienced temporal direction.
+`Z=(X,M,N) in {0,1}^3`.
+
+Canonical reversible maps:
+
+`U_rec(X,M,N)=(X,M XOR X,N)`
+
+`U_scr(X,M,N)=(X XOR N,M,N)`.
+
+The blank-memory boundary `M_0=0` is used to create a record-bearing ensemble without making the microscopic laws irreversible.
+
+The signed record diagnostic is:
+
+`A_R(k,Delta)=I(R_k;X_{k-Delta})-I(R_k;X_{k+Delta})`.
+
+Indices remain neutral ordered positions until the record diagnostic selects an orientation.
+
+Required Stage 3 controls include:
+
+- exact microdynamical reversibility;
+- exact history reversal;
+- equal forward/reverse mixture;
+- order-only/no-record control;
+- nonblank/uniform-memory boundary control;
+- entropy/information diagnostics;
+- register/event relabeling and repeated-value controls.
+
+Stage 3A will implement only the neutral reversible substrate first. No arrow is claimed at that step.
 
 ## Key methodological guards
 
@@ -182,6 +160,12 @@ Required controls should include:
 
 `operational equality != ontological equivalence`
 
+`order != arrow`
+
+`microdynamical reversibility != record symmetry`
+
+`record asymmetry != phenomenal passage`
+
 A successful software construction is not by itself an ontological result.
 
 ## Fixed questions for every stage
@@ -193,4 +177,4 @@ A successful software construction is not by itself an ontological result.
 5. What is strictly invariant, what is only reconstructible, and what is locally accessible?
 6. What physical meaning, if any, can be assigned to the surviving structures?
 
-Failure to find an invariant or operational discriminator is a valid research result rather than something to hide.
+Failure to find an invariant, arrow, or operational discriminator is a valid research result rather than something to hide.

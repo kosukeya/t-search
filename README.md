@@ -15,18 +15,18 @@ The long-term hypothesis is that such structures may be better candidates for th
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3.0 — Records and temporal direction protocol freeze — is complete on `agent/stage-3-records`; Stage 3A is next.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3.0 and Stage 3A are complete on `agent/stage-3-records`; Stage 3B — record diagnostics — is next.**
 
 Integrated results:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
-Stage 3 protocol:
+Stage 3 protocol and current result:
 
 - [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
-
-The Stage 2 clean regression passed `99` tests before merge.
+- [`docs/stage3a_notes.md`](docs/stage3a_notes.md)
+- [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
 
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
@@ -58,35 +58,13 @@ Stage 2 deliberately separates:
 - global/local representation;
 - epistemic/ontic Potentiality.
 
-### Shared neutral substrate
-
-```text
-           l1 -> l2
-          /
-p -> n
-          \
-           r1
-```
-
-with:
-
-- `h_L = (p,n,l1,l2)`;
-- `h_R = (p,n,r1)`;
-- `D_0 = (p,n)`.
-
-### Epistemic-history model
+Core formal comparison:
 
 `M_E = (T,h*,q_E)`
 
-One complete history `h*` is present globally but intentionally hidden from the local projection.
+versus:
 
-### Ontic-extension model
-
-`M_O(D) = (D,Ext_T(D),K)`
-
-Current Actuality and all admissible extensions are represented, with no selected complete future stored in the model state.
-
-### Stage 2 result
+`M_O(D) = (D,Ext_T(D),K)`.
 
 Under matched positive-support conditions, formally different models can share the same ontology-neutral operational description:
 
@@ -116,7 +94,7 @@ Protocol:
 
 - [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
 
-Canonical reversible microstate:
+Canonical complete microstate:
 
 `Z=(X,M,N) in {0,1}^3`.
 
@@ -126,25 +104,41 @@ Canonical reversible maps:
 
 `U_scr(X,M,N)=(X XOR N,M,N)`.
 
-The blank-memory boundary `M_0=0` is used to create a record-bearing ensemble without making the microscopic laws irreversible.
+The blank-memory boundary `M_0=0` is a special ensemble condition, not an irreversible law.
 
-The signed record diagnostic is:
+### Stage 3A — reversible record substrate — completed
 
-`A_R(k,Delta)=I(R_k;X_{k-Delta})-I(R_k;X_{k+Delta})`.
+Implemented:
 
-Indices remain neutral ordered positions until the record diagnostic selects an orientation.
+- exact eight-state microstate space;
+- exhaustive full-space bijectivity checks;
+- self-inverse `U_rec` and `U_scr`;
+- exact canonical four-state boundary distribution with rational weights;
+- four equiprobable forward trajectories;
+- modeled history reversal `J(z0,z1,z2)=(z2,z1,z0)`;
+- reverse dynamical validity using inverse maps in reverse order;
+- exact full-state probability-mass preservation;
+- `H(Z_0)=H(Z_1)=H(Z_2)=2 bits` for the canonical ensemble.
 
-Required Stage 3 controls include:
+Stage 3A deliberately makes **no record-arrow claim**. It establishes only that the later record experiment is built on a closed finite substrate with reversible microscopic maps.
 
-- exact microdynamical reversibility;
-- exact history reversal;
-- equal forward/reverse mixture;
-- order-only/no-record control;
-- nonblank/uniform-memory boundary control;
-- entropy/information diagnostics;
-- register/event relabeling and repeated-value controls.
+Result:
 
-Stage 3A will implement only the neutral reversible substrate first. No arrow is claimed at that step.
+- [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
+
+### Stage 3B — next
+
+Stage 3B will add exact record diagnostics:
+
+- Shannon entropy for derived variables;
+- mutual information;
+- conditional entropy;
+- Bayes-optimal decoder accuracy;
+- record profile `Q_R(k,j)`;
+- signed record score `A_R`;
+- signed accessibility score `A_Acc`.
+
+Indices remain neutral ordered positions until a diagnostic selects an orientation.
 
 ## Key methodological guards
 
@@ -165,6 +159,8 @@ Stage 3A will implement only the neutral reversible substrate first. No arrow is
 `microdynamical reversibility != record symmetry`
 
 `record asymmetry != phenomenal passage`
+
+`subsystem entropy change != global entropy production`
 
 A successful software construction is not by itself an ontological result.
 

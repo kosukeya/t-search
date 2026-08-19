@@ -60,12 +60,12 @@ def test_position_bookkeeping_renaming_preserves_profile_and_tracks_selected_sid
     first = PositionRenaming(("alpha", "center", "omega"))
     second = PositionRenaming(("west", "pivot", "east"))
 
-    assert relabeled_record_profile(ensemble, first) == pytest.approx(
-        (("alpha", 1.0), ("center", 1.0), ("omega", 0.0))
-    )
-    assert relabeled_record_profile(ensemble, second) == pytest.approx(
-        (("west", 1.0), ("pivot", 1.0), ("east", 0.0))
-    )
+    first_profile = relabeled_record_profile(ensemble, first)
+    second_profile = relabeled_record_profile(ensemble, second)
+    assert tuple(label for label, _ in first_profile) == ("alpha", "center", "omega")
+    assert tuple(value for _, value in first_profile) == pytest.approx((1.0, 1.0, 0.0))
+    assert tuple(label for label, _ in second_profile) == ("west", "pivot", "east")
+    assert tuple(value for _, value in second_profile) == pytest.approx((1.0, 1.0, 0.0))
     assert relabeled_selected_side(assessment, first) == "alpha"
     assert relabeled_selected_side(assessment, second) == "west"
 

@@ -1,102 +1,70 @@
 # t-search
 
-`t-search` is a research workspace for exploring whether time can be understood as a perspective-invariant relational structure underlying both **block-like** and **becoming-like** descriptions.
+`t-search` is a research workspace for exploring whether time can be understood through explicit transformations between **block-like/global** and **becoming-like/local** descriptions, with careful separation between strict invariance, reconstructibility, accessibility, and interpretation.
 
 ## Research question
 
-Can we construct explicit transformations between:
-
-- a **block-like description** of a whole relational history, and
-- **becoming-like descriptions** available from local/internal perspectives,
-
-and identify non-trivial structures that remain stable across those transformations?
-
-The long-term hypothesis is that such structures may be better candidates for the physical content of time than either "block" or "becoming" taken as an absolute description.
+Can block-like and becoming-like descriptions be related explicitly, and can any non-trivial relational structure survive those transformations well enough to count as a candidate ingredient of physical time?
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3.0 through Stage 3F are complete on `agent/stage-3-records`; Stage 3G — robustness and synthesis — is next.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3A--3G substantive work is complete on `agent/stage-3-records`; final PR-head regression and merge-readiness review are the remaining closure steps.**
 
-Integrated results:
+Integrated syntheses:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
+- [`results/stage3_synthesis.md`](results/stage3_synthesis.md)
 
-Stage 3 protocol and current results:
+Stage 3 protocol / closure:
 
 - [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
-- [`docs/stage3a_notes.md`](docs/stage3a_notes.md)
-- [`docs/stage3b_notes.md`](docs/stage3b_notes.md)
-- [`docs/stage3c_notes.md`](docs/stage3c_notes.md)
-- [`docs/stage3d_notes.md`](docs/stage3d_notes.md)
-- [`docs/stage3e_notes.md`](docs/stage3e_notes.md)
-- [`docs/stage3f_notes.md`](docs/stage3f_notes.md)
-- [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
-- [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
-- [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
-- [`results/stage3d_controls.md`](results/stage3d_controls.md)
-- [`results/stage3e_complete_local_view.md`](results/stage3e_complete_local_view.md)
-- [`results/stage3f_accessibility_controls.md`](results/stage3f_accessibility_controls.md)
+- [`docs/stage3g_notes.md`](docs/stage3g_notes.md)
+- [`results/stage3g_robustness.md`](results/stage3g_robustness.md)
 
-Latest Stage 3F clean PR merge-ref regression:
+Latest Stage 3G robustness code/test checkpoint:
 
-`159 passed in 3.17s`.
+`171 passed in 3.28s`.
 
-No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
+No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, or phenomenal passage has been established.
 
 ## Stage 1 — Global/local reconstruction
 
-Stage 1 established finite classical global/local reconstruction machinery and controlled information-loss/representation variants.
+Stage 1 established finite classical reconstruction machinery and information-loss controls.
 
-Main lessons include:
+Main lessons:
 
-- reconstruction depends on the information interface and equivalence assumptions;
+- reconstruction depends on the interface and equivalence assumptions;
 - coverage loss can move structure from reconstructible to ambiguous to lost;
-- reachability/minimal-cover structure is more stable than arbitrary transitively redundant edge encodings;
+- reachability/minimal-cover structure is more stable than transitively redundant edge encoding;
 - `state equality != event identity`;
-- rich anonymous relational context can sometimes recover global structure up to isomorphism.
-
-Stage 1 did not establish a fundamental physical invariant.
+- rich anonymous relational context can sometimes recover structure up to isomorphism.
 
 ## Stage 2 — Potentiality
-
-Protocol:
-
-- [`docs/stage2_protocol.md`](docs/stage2_protocol.md)
 
 Stage 2 separated global/local representation from epistemic/ontic Potentiality.
 
 Core comparison:
 
-`M_E = (T,h*,q_E)`
+`M_E=(T,h*,q_E)`
 
 versus:
 
-`M_O(D) = (D,Ext_T(D),K)`.
+`M_O(D)=(D,Ext_T(D),K)`.
 
-Under matched positive-support conditions, formally different models can share the same ontology-neutral operational description:
+Under matched positive-support conditions, formally distinct models can share the same tested operational description:
 
-`O(G) = (A_now,Next(D),pi(next|D))`.
+`O(G)=(A_now,Next(D),pi(next|D))`.
 
 Supported conclusion:
 
-**operationally indistinguishable under the tested interface and matched conditions**.
-
 `operational equality != ontological equivalence`.
-
-Detailed result:
-
-- [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 
 ## Stage 3 — Records and temporal direction
 
-Stage 3 adds explicit record/memory/environment structure and tests whether record asymmetry selects an orientation beyond mere ordered change.
+Stage 3 asks whether record asymmetry can define an orientation beyond mere order while microscopic dynamics remain reversible.
 
-Protocol:
-
-- [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
-
-Canonical reversible substrate:
+Canonical finite substrate:
 
 `Z=(X,M,N) in {0,1}^3`
 
@@ -104,140 +72,104 @@ Canonical reversible substrate:
 
 `U_scr(X,M,N)=(X XOR N,M,N)`.
 
-The blank-memory boundary `M_0=0` is a special ensemble condition, not an irreversible law.
+Both maps are bijective/self-inverse.
 
-### Stage 3A — reversible substrate — completed
+Canonical record diagnostics at neutral position 1:
 
-Verified full-space bijectivity/self-inverse behavior, exact forward/reversed trajectory ensembles, and:
+`I(M_1;X_0)=1`
 
-`H(Z_0)=H(Z_1)=H(Z_2)=2 bits`.
+`I(M_1;X_2)=0`
 
-Result:
+`A_R=1`
 
-- [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
+`A_Acc=1/2`.
 
-### Stage 3B — record diagnostics — completed
+The resulting label is only a **record-defined orientation toward the lower-index side**; lower index is not definitionally called physical past.
 
-Implemented exact Shannon entropy, mutual information, conditional entropy, Bayes-optimal decoding, record/accessibility profiles, and signed scores.
+### Main Stage 3 controls
 
-Canonical diagnostics:
+The record-defined orientation:
 
-`I(M_1;X_0)=1`, `I(M_1;X_2)=0`, `A_R=1 bit`, `A_Acc=1/2`.
+- disappears when record coupling is removed despite ordered reversible change;
+- flips under exact modeled history reversal;
+- cancels under equal forward/reverse mixing while equal nonzero correlations remain;
+- disappears for maximally uncertain independent initial memory;
+- is robust to pure position naming and bijective bit-value relabeling;
+- does not collapse when identical state values occur at different positions.
 
-These remain neutral-side diagnostics rather than a physical past/future assignment.
+Stage 3G refines the boundary result. Let:
 
-Result:
+`p=P(M_0=0)`.
 
-- [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
+Then:
 
-### Stage 3C — asymmetric-record model — completed
+| `p` | `A_R` | `A_Acc` | orientation |
+|---:|---:|---:|---|
+| `1` | `1` | `0.5` | lower-index |
+| `3/4` | `~0.188721875541` | `0.25` | lower-index |
+| `1/2` | `0` | `0` | none |
+| `1/4` | `~0.188721875541` | `0.25` | lower-index |
+| `0` | `1` | `0.5` | lower-index |
 
-A conservative interpretation layer recognizes a **record-defined orientation** only when the MI and decoder signed diagnostics are both nonzero, agree in sign, and the selected side carries nonzero MI.
+So the literal convention `M_0=0` is not the robust ingredient. The relevant toy-model feature is **non-maximal uncertainty / nonuniform preparation of the memory boundary**.
 
-Canonical result:
+### Global versus local information
 
-`orientation=lower-index`, `record_defined=True`, while microscopic maps remain reversible.
+Stage 3E defines:
 
-`record-defined orientation != fundamental temporal arrow`.
+`B_3=(Z_space,U_1,U_2,Omega,mu)`
 
-Result:
-
-- [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
-
-### Stage 3D — reversal and symmetric controls — completed
-
-Required controls showed:
-
-- exact history reversal flips `A_R` and `A_Acc` signs;
-- an equal forward/reverse mixture cancels signed bias while equal nonzero correlations remain;
-- order-only/no-record dynamics produce no orientation;
-- independent uniform initial memory removes the canonical record contrast while reversible dynamics remain.
-
-Supported toy-model conclusion:
-
-**the tested orientation is not a consequence of mere order or microscopic irreversibility; within this construction it tracks record coupling plus asymmetric boundary preparation and reverses covariantly under modeled history reversal.**
-
-Result:
-
-- [`results/stage3d_controls.md`](results/stage3d_controls.md)
-
-### Stage 3E — complete local view — completed
-
-Stage 3E made the global/local information interface explicit.
-
-Global record-only object:
-
-`B_3=(Z_space,U_1,U_2,Omega,mu)`.
-
-Declared local Actuality deliberately omits the environment bit:
+and the reduced local Actuality:
 
 `A_k^loc=(X_k,M_k)`.
 
-The projection:
+The explicit projection:
 
 `F_k:(B_3,omega)->G_{omega,k}^rec`
 
-returns:
+omits hidden `N_k`, opposite-side actual microstates, the complete trajectory as a direct field, and privileged boundary labels.
 
-`G_k^rec=(Records_k,Actuality_k)`
+One exact central view can be ambiguous while a suitable family of exact views reconstructs the complete actual trajectory.
 
-without exposing `N_k`, complete trajectories, opposite-side actual microstates, or privileged initial boundary labels.
+Stage 3F then degrades only the local readout. The global canonical relation can remain:
 
-One canonical central view is compatible with two complete histories, while adding a compatible position-2 view makes the complete history reconstructible.
+`I(true M_1;X_0)=1 bit`
 
-Stage 2 Potentiality is then reintroduced through typed product adapters:
+while maximal readout noise gives:
 
-`G_E^complete=(Records,A_product,EPot,next probabilities)`
+`I(M_obs;X_0)=0`.
 
-and:
-
-`G_O^complete=(Records,A_product,OPot,next probabilities)`.
-
-The same record layer is attached to both, while `EPot` and `OPot` remain distinct types and the epistemic hidden `h*` is not leaked.
-
-Result:
-
-- [`results/stage3e_complete_local_view.md`](results/stage3e_complete_local_view.md)
-
-### Stage 3F — accessibility and information controls — completed
-
-Stage 3F keeps the global block fixed and changes only the local observation interface.
-
-The record readout is passed through an exact binary-symmetric channel with error probability `epsilon` and current `X` can independently be exposed or masked.
-
-For the record-only channel:
-
-- `epsilon=0`: `I(M_obs;X_0)=1`, `A_R=1`, decoder accuracy `1`;
-- `epsilon=1/4`: `I(M_obs;X_0)~=0.188721875541`, `A_R` has the same value, decoder accuracy `0.75`;
-- `epsilon=1/2`: `I(M_obs;X_0)=0`, `A_R=0`, decoder accuracy `0.5`.
-
-Throughout, the unchanged global relation remains:
-
-`I(true M_1;X_0)=1 bit`.
-
-This directly realizes the model-level distinction:
+Therefore:
 
 `inaccessible information != information absent from the formal global state`.
 
-A second result is that current `X_1` is redundant with the lower-side target in the canonical model because `X_1=X_0`. Therefore maximally noisy `M` does not eliminate **total** local access when `X_1` remains visible. Record-specific accessibility and full-interface accessibility must be reported separately.
+Stage 3G adds a second caution: the same accessible MI can arise from a genuinely weaker global boundary correlation or from local readout noise on a globally perfect record.
 
-Masking `X` and adding `epsilon=1/4` record noise expands the positive-posterior history class for `M_obs=1` from `2` to `4`; complete masking leaves all four canonical histories compatible. These are interface/epistemic ambiguity changes, not new ontic branches.
+Thus:
 
-Result:
+`same local statistic != same global information structure`.
 
-- [`results/stage3f_accessibility_controls.md`](results/stage3f_accessibility_controls.md)
+### Completing `G=(Records,Actuality,Potentiality)`
 
-### Stage 3G — next
+Stage 3E attaches the already-tested record layer to Stage 2 local Potentiality through explicit typed product adapters:
 
-Stage 3G will perform the remaining robustness and synthesis work:
+`G_E^complete=(Records,A_product,EPot,pi_E)`
 
-- bookkeeping relabeling;
-- repeated-value/state controls;
-- remaining useful boundary/noise variants;
-- Stage 2 integration review;
-- full regression;
-- six fixed questions;
-- `results/stage3_synthesis.md`.
+`G_O^complete=(Records,A_product,OPot,pi_O)`.
+
+Stage 3G rechecks that swapping hidden epistemic `h*` does not leak into the complete local view and that epistemic/ontic Potentiality types remain distinct.
+
+This is formal modularity, not a proof that Stage 2 and Stage 3 describe one physical substrate.
+
+## Strongest Stage 3 conclusion
+
+Within this finite toy construction:
+
+**ordered reversible dynamics can support a measurable record-defined orientation when record coupling acts on a non-maximally uncertain memory boundary. The orientation reverses under modeled history reversal, cancels at orientation-symmetric balance, disappears without record coupling or under maximally uncertain memory preparation, and can become locally inaccessible without being removed from the global formal state.**
+
+But the result is still boundary-, ensemble-, and interface-dependent. The canonical model also has the redundancy `X_1=X_0`, so explicit memory `M` is not the only carrier of lower-side information.
+
+Therefore the result is a **candidate relational/information-accessibility component of temporal direction**, not a completed theory of physical time.
 
 ## Key methodological guards
 
@@ -246,8 +178,6 @@ Stage 3G will perform the remaining robustness and synthesis work:
 `state equality != event identity`
 
 `simulation order != modeled temporal order`
-
-`random sampling != evidence of ontic becoming`
 
 `formal representational difference != empirical physical difference`
 
@@ -263,15 +193,19 @@ Stage 3G will perform the remaining robustness and synthesis work:
 
 `inaccessible information != ontologically absent information`
 
+`same local statistic != same global information structure`
+
 A successful software construction is not by itself an ontological result.
 
-## Fixed questions for every stage
+## Fixed questions
+
+Every stage ends by asking:
 
 1. What is the block-like/global description `B`?
 2. What is the becoming-like/local description `G` or `V`?
-3. What is the transformation from the global to the local description?
-4. Is that transformation reversible? If not, what information is discarded?
-5. What is strictly invariant, what is only reconstructible, and what is locally accessible?
+3. What is the transformation from global to local?
+4. Is that transformation reversible, and what is hidden/discarded?
+5. What is invariant, reconstructible, ambiguous, lost, or locally accessible?
 6. What physical meaning, if any, can be assigned to the surviving structures?
 
-Failure to find an invariant, arrow, or operational discriminator is a valid research result rather than something to hide.
+Stage 3 answers are in [`results/stage3_synthesis.md`](results/stage3_synthesis.md).

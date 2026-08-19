@@ -31,217 +31,210 @@ Integrated result:
 
 - [`../results/stage1_synthesis.md`](../results/stage1_synthesis.md)
 
-Stage 1 established the finite classical global/local reconstruction machinery and six controlled information-loss/representation variants.
-
-Main findings:
-
-- reconstruction depends on the information interface and equivalence assumptions;
-- coverage loss can produce reconstructible, ambiguous, or lost structure;
-- reachability/minimal cover structure survives redundant-edge encoding changes better than arbitrary direct-edge lists;
-- `state equality != event identity`;
-- shared global IDs are sufficient but not always necessary;
-- sufficiently rich anonymous relational context can reconstruct the canonical six-event graph up to isomorphism in the tested search class.
+Stage 1 established the finite classical global/local reconstruction machinery and controlled information-loss/representation variants.
 
 No fundamental physical invariant was claimed.
 
-## Stage 2.0 — Potentiality protocol freeze — completed
+## Stage 2 — Potentiality — completed and merged
 
-Detailed specification:
+Protocol:
 
 - [`stage2_protocol.md`](stage2_protocol.md)
 
-Stage 2 separates two conceptual axes:
+Integrated result:
+
+- [`../results/stage2_synthesis.md`](../results/stage2_synthesis.md)
+
+Stage 2 separated:
 
 - global versus local representation;
 - epistemic versus ontic Potentiality.
 
-Canonical neutral substrate:
+Core formal comparison:
 
-```text
-           l1 -> l2
-          /
-p -> n
-          \
-           r1
-```
+`M_E=(T,h*,q_E)`
 
-with:
-
-`h_L = (p,n,l1,l2)`
-
-`h_R = (p,n,r1)`
-
-`D_0 = (p,n)`.
-
-The two continuations are not mere relabelings because their future relational path lengths differ.
-
-## Stage 2A — Common branching substrate — completed
-
-Implemented:
-
-- finite rooted branching structure `T`;
-- maximal histories `H` derived from `E,C`;
-- valid actual prefixes `D`;
-- `Ext_T(D)`;
-- immediate next-event sets;
-- prefix extension and terminal behavior;
-- history/continuation equivalence up to event renaming;
-- rooted branching-structure equivalence;
-- optional state-label-preserving equivalence.
-
-Result:
-
-- [`../results/stage2a_branching.md`](../results/stage2a_branching.md)
-
-## Stage 2B — Epistemic-history model — completed
-
-Implemented:
-
-`M_E=(T,h*,q_E)`.
-
-The selected complete history `h*` exists globally but is intentionally hidden by the local projection:
-
-`F_E^D: M_E -> G_E(D)`.
-
-Changing only `h*` while holding current evidence and beliefs fixed does not change the local view.
-
-Thus `F_E^D` is deliberately non-injective with respect to `h*`.
-
-Result:
-
-- [`../results/stage2b_epistemic.md`](../results/stage2b_epistemic.md)
-
-Interpretive limit:
-
-`a hidden selected future can be represented != physical reality has a fixed future`.
-
-## Stage 2C — Ontic-extension model — completed
-
-Implemented:
+versus:
 
 `M_O(D)=(D,Ext_T(D),K)`.
 
-The model stores current Actuality, all structurally admissible extensions, and weights, but no selected complete future field.
+Strongest result:
 
-Updates extend Actuality, prune incompatible extensions, and renormalize weights without creating a hidden future selector.
+A hidden-selected-future model and a no-selected-future model can be formally different while producing the same tested local operational outputs under matched positive-support conditions.
 
-Result:
+The difference between **hidden information** and **information absent from the model state** was represented explicitly.
 
-- [`../results/stage2c_ontic.md`](../results/stage2c_ontic.md)
+Controls established:
 
-Interpretive limit:
+- event-renaming covariance;
+- repeated state values do not collapse event identity;
+- matched non-uniform positive weights can preserve operational equality;
+- probability mismatches can break equality without supplying an ontological discriminator;
+- zero-support semantics can expose representation-dependent differences in `Next`;
+- terminal and invalid-input behavior is explicit.
 
-`a model with no selected future != evidence that physical reality is ontically open`.
+Full clean regression before merge:
 
-## Stage 2D — Operational equivalence — completed
+`99 passed`.
 
-Introduced the ontology-neutral interface:
+Stage 2 exit criterion: **satisfied; PR #3 merged**.
 
-`O(G)=(A_now,Next(D),pi(next|D))`.
+No strict physical invariant and no empirical fixed-vs-open-future discriminator was established.
 
-With matched baseline weights:
+## Stage 3.0 — Records and temporal direction protocol freeze — completed
 
-`O(G_E(D_0)) = O(G_O(D_0))`.
+Detailed specification:
 
-Both expose:
+- [`stage3_protocol.md`](stage3_protocol.md)
 
-- Actuality `(p,n)`;
-- Next `{l1,r1}`;
-- probabilities `1/2,1/2`.
+Stage 3 separates four notions:
 
-Thus the supported result is:
+1. ordered structure;
+2. microscopic reversibility;
+3. record asymmetry;
+4. experienced temporal direction.
 
-**operationally indistinguishable under the tested interface and matched conditions**.
+None is identified with another by definition.
 
-Result:
+Principal guards:
 
-- [`../results/stage2d_operational_equivalence.md`](../results/stage2d_operational_equivalence.md)
+`order != arrow`
 
-Interpretive limit:
+`microdynamical reversibility != record symmetry`
 
-`operational equality != ontological equivalence`.
+`correlation != causation`
 
-## Stage 2E — Update comparison — completed
+`record asymmetry != phenomenal passage`
 
-The same explicit observation `l1` was applied to both model families using their different update rules.
+`subsystem entropy change != global entropy production`
 
-After update both operationalize to:
+`simulation order != modeled temporal order`.
 
-- Actuality `(p,n,l1)`;
-- Next `{l2}`;
-- `pi(l2)=1`.
+### Canonical reversible substrate
 
-Therefore:
+Use the closed finite microstate:
 
-`O(G_E(D_1)) = O(G_O(D_1))`.
+`Z=(X,M,N) in {0,1}^3`
 
-The same operational equality persists through the terminal `l2` update, while the internal distinction remains:
+with reversible maps:
 
-- epistemic `h*` was already present and remains unchanged;
-- ontic selected complete future remains absent from the state schema.
+`U_rec(X,M,N)=(X,M XOR X,N)`
 
-Result:
+`U_scr(X,M,N)=(X XOR N,M,N)`.
 
-- [`../results/stage2e_update_comparison.md`](../results/stage2e_update_comparison.md)
+Both maps are self-inverse and must be verified as bijections over all eight complete microstates.
 
-## Stage 2F — Controls and synthesis — completed
+Canonical boundary ensemble:
 
-Controls:
+- `X_0=a`;
+- `M_0=0`;
+- `N_0=b`;
+- `a,b` independent uniform bits.
 
-- pure event-renaming covariance / isomorphism;
-- repeated state labels;
-- matched non-uniform positive weights;
-- mismatched positive-support weights;
-- zero-support boundary semantics;
-- terminal and invalid-input cases.
+The blank register is a special boundary condition, not an irreversible law.
 
-Key findings:
+### Record diagnostic
 
-1. pure bookkeeping renaming preserves the relevant structures covariantly;
-2. repeated state values do not collapse distinct events or the canonical continuation classes;
-3. operational equality does not depend on uniform `1/2,1/2` weights — matched positive `0.75/0.25` also works;
-4. mismatched probabilities break operational equality without constituting an ontological discriminator;
-5. matching numerical `{1,0}` weights can still produce different `Next` sets because `EPot` removes zero-support hypotheses while `OPot=Ext_T(D)` retains structurally admissible zero-weight extensions;
-6. the zero-support result is a **support-semantics boundary**, not a physical prediction.
+At neutral ordered position `k`, define:
 
-Results:
+`Q_R(k,j)=I(R_k;X_j)`
 
-- [`../results/stage2f_controls.md`](../results/stage2f_controls.md)
-- [`../results/stage2_synthesis.md`](../results/stage2_synthesis.md)
+and the signed directional contrast:
 
-Full clean regression was added through GitHub Actions and passed:
+`A_R(k,Delta)=I(R_k;X_{k-Delta})-I(R_k;X_{k+Delta})`.
 
-`99 passed in 2.98s`.
+Canonical choice:
 
-### Stage 2 strongest conclusions
+`A_R=I(M_1;X_0)-I(M_1;X_2)`.
 
-- a hidden-selected-future model and a no-selected-future model can be formally different while producing the same tested local operational outputs under matched positive-support conditions;
-- the difference between **hidden information** and **information absent from the model state** can be represented explicitly;
-- operational equality can persist through matched updates;
-- the equality is conditional on the chosen interface, probability matching, and support conventions;
-- event labels are bookkeeping under the tested renaming control;
-- state equality remains distinct from event identity;
-- no strict physical invariant and no empirical fixed-vs-open-future discriminator has yet been established.
+Do not call lower indices “past” before this score selects an orientation.
 
-Stage 2 exit criterion: **satisfied pending PR #3 review/merge**.
+Complementary accessibility score:
 
-## Stage 3 — Records and temporal direction — next after Stage 2 merge
+`A_Acc=Acc(R_k->X_{k-Delta})-Acc(R_k->X_{k+Delta})`.
 
-Add explicit memory/environment/record structure and upgrade the minimal modal view toward:
+### Required reversal/control behavior
 
-`G = (Records,Actuality,Potentiality)`.
+History reversal:
 
-Required comparisons:
+`J(z_0,z_1,z_2)=(z_2,z_1,z_0)`.
 
-1. symmetric/reversible record control;
-2. asymmetric-record model;
-3. forward/reverse history comparison;
-4. distinction among mere order, record asymmetry, and experienced temporal direction;
-5. information-theoretic diagnostics only where the model makes them meaningful.
+Expected canonical transformation:
 
-Goal:
+`A_R(J_*mu)=-A_R(mu)`.
 
-Test, rather than assume, whether asymmetric records add an arrow-like structure beyond mere state change or branching order.
+Orientation-symmetric mixture:
+
+`mu_sym=1/2 mu_fwd + 1/2 mu_rev`
+
+should have no signed bias.
+
+Required negative controls also include:
+
+- same neutral order without record coupling;
+- independent uniform initial memory instead of `M_0=0`;
+- register/event renaming;
+- repeated values;
+- rejection of non-bijective updates when reversibility is claimed.
+
+### Entropy guard
+
+Because the complete dynamics are bijective:
+
+`H(Z_0)=H(Z_1)=H(Z_2)`
+
+must hold for the transported full-state distribution.
+
+Subsystem entropies and mutual information may change. This is correlation/entropy redistribution, not automatically thermodynamic entropy production.
+
+### Stage 3 sequence
+
+#### Stage 3A — reversible record substrate — next
+
+Implement and verify:
+
+- three-bit microstate;
+- exact finite ensemble;
+- `U_rec` / `U_scr` and inverse/bijectivity tests;
+- forward trajectories;
+- exact reversed trajectories;
+- full-state Shannon entropy preservation.
+
+No temporal arrow is claimed in Stage 3A.
+
+#### Stage 3B — record diagnostics
+
+Implement entropy, mutual information, conditional entropy, Bayes-optimal decoding, record profiles, and signed record/accessibility scores.
+
+#### Stage 3C — asymmetric-record model
+
+Use the blank-memory boundary and test whether a record-defined orientation appears.
+
+#### Stage 3D — reversal and symmetric controls
+
+Test sign reversal, symmetric-mixture cancellation, order-only/no-record control, and nonblank-memory boundary control.
+
+#### Stage 3E — complete local view
+
+Upgrade toward:
+
+`G_k=(Records_k,Actuality_k,Potentiality_k)`
+
+and define explicit global-to-local projections.
+
+#### Stage 3F — accessibility and information controls
+
+Compare information and reconstructibility on both sides of the current position; add noise only after the exact baseline is established.
+
+#### Stage 3G — robustness and synthesis
+
+Run relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality only if identifiable, run full regression, and produce:
+
+- `results/stage3_synthesis.md`.
+
+### Stage 3 exit criterion
+
+Stage 3 is complete only if the protocol’s reversible dynamics, record diagnostics, reversal/symmetric controls, no-record and boundary controls, entropy distinctions, full `Records+Actuality+Potentiality` view, projection/information classification, regression, and six fixed questions are all completed without turning a record-defined orientation into metaphysical proof.
 
 ## Stage 4 — Finite Page–Wootters-style quantum model
 
@@ -317,7 +310,10 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - compatible alternatives != automatically ontic possibilities;
 - formal/internal distinguishability != automatically local/operational distinguishability;
 - operational equality != ontological equivalence;
-- support semantics must be distinguished from physical possibility.
+- support semantics must be distinguished from physical possibility;
+- `order != arrow`;
+- `microdynamical reversibility != record symmetry`;
+- `record asymmetry != phenomenal passage`.
 
 ## Stop / revise conditions
 
@@ -325,8 +321,10 @@ Revise the program rather than forcing progress if:
 
 - `block` or `becoming` becomes definitionally circular;
 - an alleged invariant is merely notation-dependent;
-- local descriptions cannot be consistently related in the intended toy model;
-- the supposedly ontic model secretly stores a selected complete future;
-- the epistemic `h*` has no genuine formal role;
-- an apparent operational distinction is produced only by assigning different numerical parameters or conventions;
+- a Stage 3 arrow score merely restates the chosen event indices;
+- an alleged record is only a single-trajectory value coincidence;
+- a supposedly reversible update is not bijective;
+- symmetric controls retain an unexplained signed bias;
+- global entropy changes under an allegedly closed bijective update because of an implementation error;
+- a claimed physical arrow is only a boundary-condition or support convention relabeled as physics;
 - a claimed novelty is already an established object under another name.

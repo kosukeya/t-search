@@ -26,6 +26,12 @@ from .stage3_asymmetry import (
 )
 
 
+def u_identity(state: Microstate) -> Microstate:
+    """Identity update used as the reversible no-record first interaction."""
+
+    return state
+
+
 def mix_ensembles(
     weighted_ensembles: Iterable[tuple[TrajectoryEnsemble, Fraction | int]],
 ) -> TrajectoryEnsemble:
@@ -79,9 +85,9 @@ def symmetric_forward_reverse_ensemble() -> TrajectoryEnsemble:
 def no_record_forward_ensemble() -> TrajectoryEnsemble:
     """Preserve ordered positions and scrambling while omitting record coupling.
 
-    The first update is the identity rather than ``U_rec``.  The blank register
-    therefore remains independent of the system while the second reversible
-    scrambling update is retained.
+    The first update is the reversible identity ``u_identity`` rather than
+    ``U_rec``.  The blank register therefore remains independent of the system
+    while the second reversible scrambling update is retained.
     """
 
     quarter = Fraction(1, 4)
@@ -89,7 +95,7 @@ def no_record_forward_ensemble() -> TrajectoryEnsemble:
     for a in (0, 1):
         for b in (0, 1):
             z0 = Microstate(a, 0, b)
-            z1 = z0
+            z1 = u_identity(z0)
             z2 = u_scr(z1)
             weighted.append(((z0, z1, z2), quarter))
     return make_trajectory_ensemble(weighted)
@@ -123,7 +129,13 @@ def assess_control_ensemble(ensemble: TrajectoryEnsemble) -> RecordOrientationAs
 
 
 def stage3d_control_assessments() -> dict[str, RecordOrientationAssessment]:
-    """Return canonical and required Stage 3D control assessments."""
+    """Return canonical and required Stage 3D control assessments.
+
+    ``microscopic_maps_reversible`` in the returned Stage 3C assessment refers
+    to the canonical ``U_rec/U_scr`` pair.  The no-record control instead uses
+    ``u_identity/U_scr``; its reversibility must be checked against those actual
+    control maps separately.
+    """
 
     return {
         "forward": assess_control_ensemble(canonical_forward_ensemble()),

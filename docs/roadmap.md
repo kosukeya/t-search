@@ -8,20 +8,18 @@ Can block-like and becoming-like descriptions be treated as different perspectiv
 
 ## Stage 0 — Definitions and scope — completed
 
-Goal: define working meanings for `block`, `becoming`, `Actuality`, `Potentiality`, `record`, `perspective`, `transformation`, and `invariant`.
+Define working meanings for `block`, `becoming`, `Actuality`, `Potentiality`, `record`, `perspective`, `transformation`, and `invariant`.
 
 Exit criterion: satisfied.
 
 ## Stage 0.5 — Stage 1 protocol freeze — completed
 
-Key decisions:
+Key guards established:
 
-- distinguish event identity from state/configuration value;
-- distinguish direct adjacency from induced reachability;
-- keep Stage 1 free of Potentiality and records;
-- specify the information interface of every local view;
-- distinguish strict invariants, reconstructible properties, and local observables;
-- enforce `simulation order != modeled temporal order`.
+- event identity != state/configuration value;
+- direct adjacency != induced reachability;
+- strict invariant != reconstructible property != local observable;
+- simulation order != modeled temporal order.
 
 Exit criterion: satisfied.
 
@@ -31,21 +29,14 @@ Integrated result:
 
 - [`../results/stage1_synthesis.md`](../results/stage1_synthesis.md)
 
-Stage 1 established the finite classical global/local reconstruction machinery and controlled information-loss/representation variants.
-
-No fundamental physical invariant was claimed.
+Stage 1 established finite classical global/local reconstruction machinery and controlled representation/information-loss variants. No fundamental physical invariant was claimed.
 
 ## Stage 2 — Potentiality — completed and merged
 
-Protocol:
+Protocol and synthesis:
 
 - [`stage2_protocol.md`](stage2_protocol.md)
-
-Integrated result:
-
 - [`../results/stage2_synthesis.md`](../results/stage2_synthesis.md)
-
-Stage 2 separated global/local representation from epistemic/ontic Potentiality.
 
 Core formal comparison:
 
@@ -57,15 +48,11 @@ versus:
 
 A hidden-selected-future model and a no-selected-future model can be formally different while producing the same tested local operational outputs under matched positive-support conditions.
 
-The difference between **hidden information** and **information absent from the model state** was represented explicitly.
-
 Full clean regression before merge:
 
 `99 passed`.
 
-Stage 2 exit criterion: **satisfied; PR #3 merged**.
-
-No strict physical invariant and no empirical fixed-vs-open-future discriminator was established.
+Stage 2 exit criterion: satisfied; PR #3 merged.
 
 ## Stage 3.0 — Records and temporal direction protocol freeze — completed
 
@@ -73,14 +60,12 @@ Detailed specification:
 
 - [`stage3_protocol.md`](stage3_protocol.md)
 
-Stage 3 separates four notions:
+Stage 3 separates:
 
 1. ordered structure;
 2. microscopic reversibility;
 3. record asymmetry;
 4. experienced temporal direction.
-
-None is identified with another by definition.
 
 Principal guards:
 
@@ -96,167 +81,142 @@ Principal guards:
 
 `simulation order != modeled temporal order`.
 
-Canonical reversible substrate:
+Canonical substrate:
 
 `Z=(X,M,N) in {0,1}^3`
-
-with:
 
 `U_rec(X,M,N)=(X,M XOR X,N)`
 
 `U_scr(X,M,N)=(X XOR N,M,N)`.
 
-Canonical boundary ensemble:
+Canonical boundary:
 
-- `X_0=a`;
-- `M_0=0`;
-- `N_0=b`;
-- `a,b` independent uniform bits.
+`X_0=a`, `M_0=0`, `N_0=b`, with independent uniform `a,b`.
 
 ## Stage 3A — Reversible record substrate — completed
 
-Result:
+Result / notes:
 
 - [`../results/stage3a_reversible_substrate.md`](../results/stage3a_reversible_substrate.md)
-
-Design notes:
-
 - [`stage3a_notes.md`](stage3a_notes.md)
 
-Implemented and verified:
+Verified:
 
-- complete three-bit `Microstate` representation;
-- exact enumeration of all eight complete microstates;
-- `U_rec` and `U_scr` as bijections over the full state space;
-- self-inverse behavior of both maps;
-- rejection of a non-bijective erasure-map control when reversibility is claimed;
-- exact canonical four-state boundary distribution using rational weights;
-- four equiprobable complete forward trajectories;
-- forward and reverse dynamical validity;
-- modeled history reversal `J(z0,z1,z2)=(z2,z1,z0)`;
-- exact full-state probability-mass preservation;
-- full-state entropy profile `(2,2,2)` bits.
+- complete eight-state microstate space;
+- `U_rec` and `U_scr` bijective and self-inverse;
+- exact forward/reversed trajectory ensembles;
+- modeled history reversal;
+- full-state entropy preservation `(2,2,2)` bits.
 
-Interpretive limit:
-
-**Stage 3A establishes a reversible substrate only. It does not establish a record relation or temporal orientation.**
+Interpretive limit: reversible substrate only; no record relation or temporal orientation yet.
 
 Focused Stage 3A tests: **10**.
 
 ## Stage 3B — Record diagnostics — completed
 
-Results:
+Result / notes:
 
 - [`../results/stage3b_record_diagnostics.md`](../results/stage3b_record_diagnostics.md)
-
-Design notes:
-
 - [`stage3b_notes.md`](stage3b_notes.md)
 
-Implemented exact finite-ensemble diagnostics in a module separate from the Stage 3A dynamics:
+Implemented exact finite-ensemble diagnostics:
 
-- marginal and joint distributions;
 - Shannon entropy;
 - mutual information;
 - conditional entropy;
-- Bayes-optimal decoding/accessibility accuracy;
-- record profile `Q_R(k,j)=I(R_k;X_j)`;
-- accessibility profile;
-- signed record score `A_R(k,Delta)`;
-- signed accessibility score `A_Acc(k,Delta)`.
+- Bayes-optimal decoding/accessibility;
+- record/accessibility profiles;
+- signed `A_R` and `A_Acc`.
 
-Canonical Stage 3 measurements at neutral position `k=1` are:
+Canonical values:
 
-- `I(M_1;X_0)=1` bit;
-- `I(M_1;X_2)=0` bit;
-- `Acc(M_1->X_0)=1`;
-- `Acc(M_1->X_2)=1/2`;
-- `A_R=1` bit;
-- `A_Acc=1/2`.
-
-These are diagnostic outputs under neutral index labels. Stage 3B does not rename the lower-index side “past” and does not promote the signed contrast to a physical temporal arrow.
+`I(M_1;X_0)=1`, `I(M_1;X_2)=0`, `A_R=1`, `A_Acc=1/2`.
 
 Focused Stage 3B tests: **11**.
 
-Stage 3B clean PR merge-ref regression:
-
-`120 passed`.
+Stage 3B clean regression: `120 passed`.
 
 ## Stage 3C — Asymmetric-record model — completed
 
-Result:
+Result / notes:
 
 - [`../results/stage3c_asymmetric_record.md`](../results/stage3c_asymmetric_record.md)
-
-Design notes:
-
 - [`stage3c_notes.md`](stage3c_notes.md)
 
-Stage 3C adds no new arrow metric. It introduces a conservative interpretation criterion over the Stage 3B outputs.
-
-A **record-defined orientation** is assigned only when:
-
-1. `A_R` is nonzero;
-2. `A_Acc` is nonzero;
-3. the two signed diagnostics select the same neutral side;
-4. the selected side carries nonzero mutual information with the current record register.
+A record-defined orientation is recognized only when MI and decoder signed diagnostics are both nonzero, agree in sign, and the selected side carries nonzero MI.
 
 Canonical assessment:
 
-- `I(M_1;X_0)=1` bit;
-- `I(M_1;X_2)=0` bit;
-- `Acc(M_1->X_0)=1`;
-- `Acc(M_1->X_2)=1/2`;
-- `A_R=1` bit;
-- `A_Acc=1/2`;
-- `orientation=lower-index`;
-- `record_defined=True`;
-- microscopic maps remain reversible.
+`A_R=1`, `A_Acc=1/2`, `orientation=lower-index`, `record_defined=True`.
 
-Strongest supported conclusion:
+Strongest allowed statement:
 
-**the canonical reversible blank-memory ensemble contains a record-defined orientation toward the lower-index side under the declared information/accessibility interface.**
+**the canonical reversible blank-memory ensemble contains a record-defined orientation toward the lower-index side under the declared interface.**
 
-Stage 3C does not yet establish that the blank-memory boundary causes, uniquely determines, or is necessary for this orientation. That isolation is deferred to Stage 3D.
+This is not a fundamental temporal arrow.
 
-Focused Stage 3C tests: **8 committed tests**.
+Focused Stage 3C tests: **8**.
 
-Still forbidden:
+Stage 3C clean regression: `128 passed`.
 
-`record-defined orientation == fundamental temporal arrow`.
+## Stage 3D — Reversal and symmetric controls — completed
 
-## Stage 3D — Reversal and symmetric controls — next
+Result / notes:
 
-Test:
+- [`../results/stage3d_controls.md`](../results/stage3d_controls.md)
+- [`stage3d_notes.md`](stage3d_notes.md)
 
-- exact history reversal sign flip;
-- equal forward/reverse mixture cancellation;
-- order-only/no-record control;
-- independent uniform-memory boundary control.
+Required controls all passed:
 
-Goal: distinguish mere order, reversible dynamics, and asymmetric record-boundary preparation. Stage 3D is the first checkpoint allowed to make a stronger claim about whether the Stage 3C orientation depends on the special record boundary.
+- exact history reversal: `A_R=+1 -> -1`, `A_Acc=+0.5 -> -0.5`, orientation flips `lower-index -> upper-index`;
+- equal forward/reverse mixture: `A_R=A_Acc=0` while equal nonzero MI (`≈0.188721875541` bit) and accuracy (`0.75`) remain on both sides;
+- order-only/no-record control: three ordered positions and reversible system scrambling remain, but `A_R=A_Acc=0` and orientation is `none`;
+- independent uniform-memory boundary with canonical reversible maps: `I(M_1;X_0)=I(M_1;X_2)=0`, orientation `none`, and full-state entropy remains `(3,3,3)` bits.
 
-## Stage 3E — Complete local view
+Strongest supported Stage 3D conclusion:
 
-Upgrade toward:
+**within this finite toy construction, the Stage 3C orientation is not a consequence of mere order or microscopic irreversibility. It tracks the combination of record coupling and asymmetric boundary preparation, reverses covariantly under modeled history reversal, and cancels under orientation-symmetric mixing.**
 
-`G_k=(Records_k,Actuality_k,Potentiality_k)`
+This does not establish a universal physical arrow, thermodynamic irreversibility, or phenomenal passage.
 
-and define explicit global-to-local projections.
+Focused Stage 3D tests: **9**.
+
+GitHub Actions clean PR merge-ref regression:
+
+`137 passed in 3.11s`.
+
+## Stage 3E — Complete local view — next
+
+Define an explicit record-bearing local view and global-to-local projection.
+
+First reduced view:
+
+`G_k^rec=(Records_k,Actuality_k)`.
+
+Then upgrade toward:
+
+`G_k=(Records_k,Actuality_k,Potentiality_k)`.
+
+Requirements:
+
+- state exactly what the local record-bearing view receives;
+- do not silently include complete trajectories or opposite-side microstates;
+- classify locally accessible, globally hidden, reconstructible, ambiguous, and lost information;
+- keep Stage 2 epistemic/ontic Potentiality distinct when it is reintroduced.
 
 ## Stage 3F — Accessibility and information controls
 
-Compare information and reconstructibility on both sides of the current position; add noise only after the exact baseline is established.
+Compare reconstruction/accessibility on the two sides of the current position, then add noise only after the exact baseline is stable.
 
 ## Stage 3G — Robustness and synthesis
 
-Run relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality only if identifiable, run full regression, and produce:
+Run relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality where identifiable, run full regression, and produce:
 
 - `results/stage3_synthesis.md`.
 
 ### Stage 3 exit criterion
 
-Stage 3 is complete only if the protocol’s reversible dynamics, record diagnostics, reversal/symmetric controls, no-record and boundary controls, entropy distinctions, full `Records+Actuality+Potentiality` view, projection/information classification, regression, and six fixed questions are all completed without turning a record-defined orientation into metaphysical proof.
+Stage 3 is complete only if reversible dynamics, record diagnostics, reversal/symmetric/no-record/boundary controls, entropy distinctions, full `Records+Actuality+Potentiality` views, projection/information classification, regression, and six fixed questions are all completed without turning a record-defined orientation into metaphysical proof.
 
 ## Stage 4 — Finite Page–Wootters-style quantum model
 
@@ -274,40 +234,17 @@ Test conditional dynamics and preserved correlations/transition probabilities.
 
 ## Stage 5 — Change of clock / perspective
 
-Use at least three subsystems and construct explicit changes between clock-relative descriptions.
-
-Search for structures stable under:
-
-1. block -> becoming;
-2. becoming(clock C) -> becoming(clock A).
-
-This is the first planned stage where a genuinely physical perspective-change candidate can be tested rather than mere bookkeeping renaming.
+Use at least three subsystems and explicit changes between clock-relative descriptions. Search for structures stable under block -> becoming and becoming(clock C) -> becoming(clock A).
 
 ## Stage 6 — Candidate temporal structure T
 
-Compare structures surviving Stages 1–5.
+Compare structures surviving Stages 1–5, including causal/conditioning order, relational correlations, record accessibility, allowed transitions, and consistency constraints among perspectives.
 
-Possible ingredients include:
-
-- causal/conditioning order;
-- relational correlations;
-- record accessibility;
-- allowed-transition structure;
-- consistency constraints among perspectives.
-
-Do not force a unique invariant if the evidence supports a family of complementary structures.
+Do not force a unique invariant if evidence supports a family of complementary structures.
 
 ## Stage 7 — Generally covariant / gravitational extension
 
-Only after the toy models are stable.
-
-Possible progression:
-
-1. parametrized particle;
-2. simple constrained/minisuperspace model;
-3. tractable gravitational setting.
-
-Question: does the candidate temporal structure survive when external time and preferred slicing are removed?
+Only after toy models are stable. Possible progression: parametrized particle -> simple constrained/minisuperspace model -> tractable gravitational setting.
 
 ## Stage 8 — Empirical relevance (only if warranted)
 
@@ -324,29 +261,28 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 
 ## Cross-cutting methodological cautions
 
-- `simulation order != modeled temporal order`;
-- `random sampling != evidence of ontic becoming`;
+- simulation order != modeled temporal order;
+- random sampling != evidence of ontic becoming;
 - successful software construction != ontological proof;
 - global mathematical description != physically realizable God's-eye observer;
 - reconstructible structure != automatically fundamental physical structure;
-- compatible alternatives != automatically ontic possibilities;
-- formal/internal distinguishability != automatically local/operational distinguishability;
+- formal/internal distinguishability != automatically operational distinguishability;
 - operational equality != ontological equivalence;
-- support semantics must be distinguished from physical possibility;
-- `order != arrow`;
-- `microdynamical reversibility != record symmetry`;
-- `record asymmetry != phenomenal passage`.
+- support semantics != physical possibility;
+- order != arrow;
+- microdynamical reversibility != record symmetry;
+- record asymmetry != phenomenal passage.
 
 ## Stop / revise conditions
 
-Revise the program rather than forcing progress if:
+Revise rather than force progress if:
 
 - `block` or `becoming` becomes definitionally circular;
-- an alleged invariant is merely notation-dependent;
-- a Stage 3 arrow score merely restates the chosen event indices;
-- an alleged record is only a single-trajectory value coincidence;
+- an alleged invariant is notation-dependent;
+- a Stage 3 score merely restates event indices;
+- an alleged record is a single-trajectory coincidence;
 - a supposedly reversible update is not bijective;
-- symmetric controls retain an unexplained signed bias;
-- global entropy changes under an allegedly closed bijective update because of an implementation error;
-- a claimed physical arrow is only a boundary-condition or support convention relabeled as physics;
+- symmetric controls retain unexplained signed bias;
+- global entropy changes under an allegedly closed bijective update because of implementation error;
+- a claimed physical arrow is only a boundary/support convention relabeled as physics;
 - a claimed novelty is already an established object under another name.

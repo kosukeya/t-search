@@ -80,7 +80,7 @@ def relabeled_selected_side(
         return renaming.label(0)
     if assessment.orientation == "upper-index":
         return renaming.label(2)
-    if assessment.orientation is None:
+    if assessment.orientation == "none":
         return None
     raise ValueError(f"unknown orientation: {assessment.orientation!r}")
 

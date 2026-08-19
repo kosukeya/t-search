@@ -1,6 +1,6 @@
 # Stage 3C — Asymmetric Record Model Notes
 
-Status: **implemented; branch-level regression to be confirmed at the checkpoint head**.
+Status: **completed; branch-level regression passed**.
 
 Stage 3C does not introduce a new arrow metric. It interprets the already-frozen Stage 3B diagnostics conservatively.
 
@@ -58,6 +58,14 @@ Both signed diagnostics select the `lower-index` side. The Stage 3A microscopic 
 The supported Stage 3C statement is therefore:
 
 **the canonical reversible blank-memory ensemble contains a record-defined orientation toward the lower-index side under the declared record/accessibility interface.**
+
+## Validation
+
+Focused Stage 3C tests: **8**.
+
+GitHub Actions clean PR merge-ref regression at this checkpoint:
+
+`128 passed in 2.79s`.
 
 ## What this does not establish
 

@@ -100,17 +100,9 @@ Result / notes:
 - [`../results/stage3a_reversible_substrate.md`](../results/stage3a_reversible_substrate.md)
 - [`stage3a_notes.md`](stage3a_notes.md)
 
-Verified:
+Verified complete eight-state microstate space, bijective/self-inverse updates, exact forward/reversed trajectory ensembles, modeled history reversal, and full-state entropy preservation `(2,2,2)` bits.
 
-- complete eight-state microstate space;
-- `U_rec` and `U_scr` bijective and self-inverse;
-- exact forward/reversed trajectory ensembles;
-- modeled history reversal;
-- full-state entropy preservation `(2,2,2)` bits.
-
-Interpretive limit: reversible substrate only; no record relation or temporal orientation yet.
-
-Focused Stage 3A tests: **10**.
+Focused tests: **10**.
 
 ## Stage 3B — Record diagnostics — completed
 
@@ -119,20 +111,13 @@ Result / notes:
 - [`../results/stage3b_record_diagnostics.md`](../results/stage3b_record_diagnostics.md)
 - [`stage3b_notes.md`](stage3b_notes.md)
 
-Implemented exact finite-ensemble diagnostics:
-
-- Shannon entropy;
-- mutual information;
-- conditional entropy;
-- Bayes-optimal decoding/accessibility;
-- record/accessibility profiles;
-- signed `A_R` and `A_Acc`.
+Implemented exact Shannon entropy, mutual information, conditional entropy, Bayes-optimal decoding/accessibility, record/accessibility profiles, and signed `A_R` / `A_Acc` diagnostics.
 
 Canonical values:
 
 `I(M_1;X_0)=1`, `I(M_1;X_2)=0`, `A_R=1`, `A_Acc=1/2`.
 
-Focused Stage 3B tests: **11**.
+Focused tests: **11**.
 
 Stage 3B clean regression: `120 passed`.
 
@@ -153,9 +138,7 @@ Strongest allowed statement:
 
 **the canonical reversible blank-memory ensemble contains a record-defined orientation toward the lower-index side under the declared interface.**
 
-This is not a fundamental temporal arrow.
-
-Focused Stage 3C tests: **8**.
+Focused tests: **8**.
 
 Stage 3C clean regression: `128 passed`.
 
@@ -168,55 +151,92 @@ Result / notes:
 
 Required controls all passed:
 
-- exact history reversal: `A_R=+1 -> -1`, `A_Acc=+0.5 -> -0.5`, orientation flips `lower-index -> upper-index`;
-- equal forward/reverse mixture: `A_R=A_Acc=0` while equal nonzero MI (`≈0.188721875541` bit) and accuracy (`0.75`) remain on both sides;
-- order-only/no-record control: three ordered positions and reversible system scrambling remain, but `A_R=A_Acc=0` and orientation is `none`;
-- independent uniform-memory boundary with canonical reversible maps: `I(M_1;X_0)=I(M_1;X_2)=0`, orientation `none`, and full-state entropy remains `(3,3,3)` bits.
+- exact history reversal flips `A_R` and `A_Acc` signs and swaps orientation;
+- equal forward/reverse mixing cancels signed bias while equal nonzero correlations remain;
+- order-only/no-record control preserves ordered reversible change but yields no orientation;
+- independent uniform-memory boundary with canonical reversible maps removes the canonical record contrast.
 
-Strongest supported Stage 3D conclusion:
+Strongest supported statement:
 
-**within this finite toy construction, the Stage 3C orientation is not a consequence of mere order or microscopic irreversibility. It tracks the combination of record coupling and asymmetric boundary preparation, reverses covariantly under modeled history reversal, and cancels under orientation-symmetric mixing.**
+**within this finite toy construction, the Stage 3C orientation is not a consequence of mere order or microscopic irreversibility. It tracks record coupling plus asymmetric boundary preparation, reverses covariantly under modeled history reversal, and cancels under orientation-symmetric mixing.**
 
-This does not establish a universal physical arrow, thermodynamic irreversibility, or phenomenal passage.
+Focused tests: **9**.
 
-Focused Stage 3D tests: **9**.
+Stage 3D clean regression: `137 passed`.
 
-GitHub Actions clean PR merge-ref regression:
+## Stage 3E — Complete local view — completed
 
-`137 passed in 3.11s`.
+Result / notes:
 
-## Stage 3E — Complete local view — next
+- [`../results/stage3e_complete_local_view.md`](../results/stage3e_complete_local_view.md)
+- [`stage3e_notes.md`](stage3e_notes.md)
 
-Define an explicit record-bearing local view and global-to-local projection.
+Stage 3E introduces an explicit block-like record object:
 
-First reduced view:
+`B_3=(Z_space,U_1,U_2,Omega,mu)`
 
-`G_k^rec=(Records_k,Actuality_k)`.
+and a deliberately reduced local Actuality:
 
-Then upgrade toward:
+`A_k^loc=(X_k,M_k)`.
 
-`G_k=(Records_k,Actuality_k,Potentiality_k)`.
+The environment bit `N_k` is not exposed. This avoids making the local view trivially equivalent to the complete reversible microstate.
 
-Requirements:
+The explicit projection:
 
-- state exactly what the local record-bearing view receives;
-- do not silently include complete trajectories or opposite-side microstates;
-- classify locally accessible, globally hidden, reconstructible, ambiguous, and lost information;
-- keep Stage 2 epistemic/ontic Potentiality distinct when it is reintroduced.
+`F_k:(B_3,omega)->G_{omega,k}^rec`
 
-## Stage 3F — Accessibility and information controls
+returns:
 
-Compare reconstruction/accessibility on the two sides of the current position, then add noise only after the exact baseline is stable.
+`G_k^rec=(Records_k,Actuality_k)`
+
+with current record readout plus the diagnostics granted by the experiment interface, but without the complete trajectory, opposite-side actual microstates, hidden `N_k`, or privileged initial boundary labels.
+
+Canonical information result:
+
+- one central local view `(X_1,M_1)=(1,1)` is compatible with two complete global histories because hidden `N` remains ambiguous;
+- adding a compatible position-2 local view makes the global trajectory unique;
+- therefore `single-view ambiguity != multi-view reconstructibility`.
+
+Information is explicitly classified as locally accessible, globally hidden, ambiguous, reconstructible from a view family, or lost without weighted global structure.
+
+Potentiality is then reintroduced using typed product adapters rather than by identifying the Stage 2 and Stage 3 substrates:
+
+`G_E^complete=(Records,A_product,EPot,next probabilities)`
+
+`G_O^complete=(Records,A_product,OPot,next probabilities)`.
+
+The same record layer is attached to both while `EPot` and `OPot` remain distinct types. The epistemic adapter consumes an already-projected local view, so hidden `h*` does not leak into Stage 3E.
+
+Interpretive guard:
+
+**this product construction realizes the formal shape `G=(Records,Actuality,Potentiality)` but does not establish that the two toy substrates are one physical system or that this tuple is a fundamental ontology of becoming.**
+
+Focused Stage 3E tests: **10**.
+
+GitHub Actions code/test checkpoint:
+
+`147 passed in 3.21s`.
+
+## Stage 3F — Accessibility and information controls — next
+
+Stress the explicit projection under controlled information degradation.
+
+Goals:
+
+- compare what remains decodable/reconstructible as local access is reduced;
+- distinguish degraded accessibility from structural absence;
+- add noise/degradation only after the exact Stage 3E baseline;
+- preserve the guard `inaccessible information != ontologically absent information`.
 
 ## Stage 3G — Robustness and synthesis
 
-Run relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality where identifiable, run full regression, and produce:
+Run remaining relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality only where identifiable, run full regression, and produce:
 
 - `results/stage3_synthesis.md`.
 
 ### Stage 3 exit criterion
 
-Stage 3 is complete only if reversible dynamics, record diagnostics, reversal/symmetric/no-record/boundary controls, entropy distinctions, full `Records+Actuality+Potentiality` views, projection/information classification, regression, and six fixed questions are all completed without turning a record-defined orientation into metaphysical proof.
+Stage 3 is complete only if reversible dynamics, record diagnostics, reversal/symmetric/no-record/boundary controls, entropy distinctions, full `Records+Actuality+Potentiality` views, projection/information classification, accessibility robustness, full regression, and six fixed questions are all completed without turning a record-defined orientation into metaphysical proof.
 
 ## Stage 4 — Finite Page–Wootters-style quantum model
 
@@ -271,7 +291,8 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - support semantics != physical possibility;
 - order != arrow;
 - microdynamical reversibility != record symmetry;
-- record asymmetry != phenomenal passage.
+- record asymmetry != phenomenal passage;
+- inaccessible information != ontologically absent information.
 
 ## Stop / revise conditions
 
@@ -285,4 +306,5 @@ Revise rather than force progress if:
 - symmetric controls retain unexplained signed bias;
 - global entropy changes under an allegedly closed bijective update because of implementation error;
 - a claimed physical arrow is only a boundary/support convention relabeled as physics;
+- local inaccessibility is silently reinterpreted as ontological absence;
 - a claimed novelty is already an established object under another name.

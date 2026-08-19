@@ -1,6 +1,6 @@
 # Stage 3B — Record Diagnostics Notes
 
-Status: **implemented; branch-level regression pending at checkpoint creation**.
+Status: **completed; branch-level full regression passed**.
 
 Stage 3B adds exact measurement machinery to the Stage 3A reversible trajectory ensemble. It does not yet promote a nonzero signed score to a physical temporal arrow.
 
@@ -56,7 +56,7 @@ At Stage 3B, `k-delta` and `k+delta` are still only the lower-index and upper-in
 
 ## Canonical measurement outputs
 
-For the Stage 3A canonical ensemble, the diagnostics are expected to report:
+For the Stage 3A canonical ensemble, the diagnostics report:
 
 - `H(M_0)=0` bit;
 - `H(M_1)=1` bit;
@@ -87,6 +87,14 @@ Bayes-optimal accuracy must be interpreted together with target uncertainty. A c
 ## Entropy guard
 
 The increase from `H(M_0)=0` to `H(M_1)=1` is a subsystem-entropy change inside the already-verified globally reversible model. It must not be described as total entropy production.
+
+## Validation
+
+Stage 3B adds 11 focused tests. The GitHub Actions clean PR merge-ref regression after the Stage 3B implementation/status updates passed:
+
+`120 passed in 2.24s`.
+
+This includes Stage 1, Stage 2, Stage 3A, and Stage 3B tests.
 
 ## What Stage 3B does not establish
 

@@ -30,6 +30,10 @@ Stage 3 protocol and current results:
 - [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
 - [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
 
+Latest Stage 3B PR merge-ref regression:
+
+`120 passed in 2.24s`.
+
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
 ## Stage 1 — Global/local reconstruction

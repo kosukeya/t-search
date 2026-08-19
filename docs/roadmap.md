@@ -197,42 +197,72 @@ Canonical information result:
 - adding a compatible position-2 local view makes the global trajectory unique;
 - therefore `single-view ambiguity != multi-view reconstructibility`.
 
-Information is explicitly classified as locally accessible, globally hidden, ambiguous, reconstructible from a view family, or lost without weighted global structure.
-
-Potentiality is then reintroduced using typed product adapters rather than by identifying the Stage 2 and Stage 3 substrates:
+Potentiality is reintroduced using typed product adapters rather than by identifying the Stage 2 and Stage 3 substrates:
 
 `G_E^complete=(Records,A_product,EPot,next probabilities)`
 
 `G_O^complete=(Records,A_product,OPot,next probabilities)`.
 
-The same record layer is attached to both while `EPot` and `OPot` remain distinct types. The epistemic adapter consumes an already-projected local view, so hidden `h*` does not leak into Stage 3E.
-
-Interpretive guard:
-
-**this product construction realizes the formal shape `G=(Records,Actuality,Potentiality)` but does not establish that the two toy substrates are one physical system or that this tuple is a fundamental ontology of becoming.**
+The same record layer is attached to both while `EPot` and `OPot` remain distinct types. The epistemic hidden `h*` does not leak into Stage 3E.
 
 Focused Stage 3E tests: **10**.
 
-GitHub Actions code/test checkpoint:
+Stage 3E clean regression: `147 passed`.
 
-`147 passed in 3.21s`.
+## Stage 3F — Accessibility and information controls — completed
 
-## Stage 3F — Accessibility and information controls — next
+Result / notes:
 
-Stress the explicit projection under controlled information degradation.
+- [`../results/stage3f_accessibility_controls.md`](../results/stage3f_accessibility_controls.md)
+- [`stage3f_notes.md`](stage3f_notes.md)
 
-Goals:
+Stage 3F keeps the global block fixed and changes only the local observation channel.
 
-- compare what remains decodable/reconstructible as local access is reduced;
-- distinguish degraded accessibility from structural absence;
-- add noise/degradation only after the exact Stage 3E baseline;
-- preserve the guard `inaccessible information != ontologically absent information`.
+A binary-symmetric channel degrades the record readout while current `X` can independently be exposed or masked.
 
-## Stage 3G — Robustness and synthesis
+Record-only checkpoints:
 
-Run remaining relabeling/state/boundary/noise controls, integrate Stage 2 epistemic/ontic Potentiality only where identifiable, run full regression, and produce:
+- `epsilon=0`: `I(M_obs;X_0)=1`, decoder `1`, accessible `A_R=1`, `A_Acc=0.5`;
+- `epsilon=1/4`: `I(M_obs;X_0)~=0.188721875541`, decoder `0.75`, accessible `A_R` has the same MI value, `A_Acc=0.25`;
+- `epsilon=1/2`: `I(M_obs;X_0)=0`, decoder `0.5`, accessible signed contrasts vanish.
 
-- `results/stage3_synthesis.md`.
+Throughout, the unchanged global relation remains:
+
+`I(true M_1;X_0)=1 bit`.
+
+This explicitly realizes the model-level guard:
+
+`inaccessible information != information absent from the formal global state`.
+
+A second result exposes a canonical-model redundancy:
+
+`X_1=X_0`.
+
+Therefore maximally noisy `M` does not remove total local access when `X_1` is still visible. Record-specific accessibility must be distinguished from full-interface accessibility.
+
+With `X` masked, quarter-noise changes an observed `M_obs=1` outcome from two compatible global histories to four positive-posterior histories, with posterior mass `3/4` on `X_0=1`. Complete masking leaves all four histories compatible. These are interface/epistemic ambiguity changes, not ontic branching.
+
+View coverage remains an independent axis: one exact central view is ambiguous while central plus position-2 exact views reconstruct the complete history.
+
+Focused Stage 3F tests: **12**.
+
+GitHub Actions clean PR merge-ref regression after warning cleanup:
+
+`159 passed in 3.17s`.
+
+## Stage 3G — Robustness and synthesis — next
+
+Run the remaining robustness and closure work:
+
+- event/position/register relabeling;
+- repeated-value/state controls;
+- any remaining informative boundary/noise variants;
+- Stage 2 epistemic/ontic integration review;
+- final information classification;
+- full repository regression;
+- six fixed questions;
+- `results/stage3_synthesis.md`;
+- merge-readiness review for Draft PR #4.
 
 ### Stage 3 exit criterion
 

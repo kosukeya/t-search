@@ -15,7 +15,7 @@ The long-term hypothesis is that such structures may be better candidates for th
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3.0 through Stage 3D are complete on `agent/stage-3-records`; Stage 3E — complete local view — is next.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3.0 through Stage 3E are complete on `agent/stage-3-records`; Stage 3F — accessibility and information controls — is next.**
 
 Integrated results:
 
@@ -29,14 +29,16 @@ Stage 3 protocol and current results:
 - [`docs/stage3b_notes.md`](docs/stage3b_notes.md)
 - [`docs/stage3c_notes.md`](docs/stage3c_notes.md)
 - [`docs/stage3d_notes.md`](docs/stage3d_notes.md)
+- [`docs/stage3e_notes.md`](docs/stage3e_notes.md)
 - [`results/stage3a_reversible_substrate.md`](results/stage3a_reversible_substrate.md)
 - [`results/stage3b_record_diagnostics.md`](results/stage3b_record_diagnostics.md)
 - [`results/stage3c_asymmetric_record.md`](results/stage3c_asymmetric_record.md)
 - [`results/stage3d_controls.md`](results/stage3d_controls.md)
+- [`results/stage3e_complete_local_view.md`](results/stage3e_complete_local_view.md)
 
-Latest Stage 3D clean PR merge-ref regression:
+Latest Stage 3E code/test checkpoint regression:
 
-`137 passed in 3.11s`.
+`147 passed in 3.21s`.
 
 No strict physical invariant of time, no empirical discriminator between fixed-future and ontically-open-future interpretations, and no fundamental temporal arrow has yet been established.
 
@@ -152,27 +154,61 @@ The required controls behave as follows:
 | no-record / identity first map | `0` | `0` | `none` |
 | independent uniform initial memory | `0` | `0` | `none` |
 
-The symmetric mixture is especially informative: it retains equal nonzero MI (`≈0.188721875541` bit on each side) and equal decoder accuracy (`0.75`) while the signed bias cancels.
+The symmetric mixture retains equal nonzero MI (`≈0.188721875541` bit on each side) and equal decoder accuracy (`0.75`) while the signed bias cancels.
 
 Supported toy-model conclusion:
 
 **the tested orientation is not a consequence of mere order or microscopic irreversibility; within this construction it tracks record coupling plus asymmetric boundary preparation and reverses covariantly under modeled history reversal.**
 
-This is not a fundamental physical arrow, thermodynamic arrow, empirical time-reversal violation, ontological becoming, or phenomenal passage.
-
 Result:
 
 - [`results/stage3d_controls.md`](results/stage3d_controls.md)
 
-### Stage 3E — next
+### Stage 3E — complete local view — completed
 
-Stage 3E will define the explicit record-bearing local view and global-to-local projection:
+Stage 3E makes the global/local information interface explicit.
+
+Global record-only object:
+
+`B_3=(Z_space,U_1,U_2,Omega,mu)`.
+
+Declared local Actuality deliberately omits the environment bit:
+
+`A_k^loc=(X_k,M_k)`.
+
+The projection:
+
+`F_k:(B_3,omega)->G_{omega,k}^rec`
+
+returns:
 
 `G_k^rec=(Records_k,Actuality_k)`
 
-and then upgrade toward:
+without exposing `N_k`, complete trajectories, opposite-side actual microstates, or privileged initial boundary labels.
 
-`G_k=(Records_k,Actuality_k,Potentiality_k)`.
+For the canonical central view `(X_1,M_1)=(1,1)`, one local view is compatible with **two** complete histories because hidden `N` remains ambiguous. Adding a compatible position-2 local view reduces the compatibility class to one trajectory, so the complete history becomes reconstructible from a suitable view family.
+
+Stage 2 Potentiality is then reintroduced through typed product adapters:
+
+`G_E^complete=(Records,A_product,EPot,next probabilities)`
+
+and:
+
+`G_O^complete=(Records,A_product,OPot,next probabilities)`.
+
+The same record layer is attached to both, while `EPot` and `OPot` remain distinct types and the epistemic hidden `h*` is not leaked into the complete local view.
+
+This is an explicit product construction between toy-model layers, not a derivation that the Stage 2 and Stage 3 substrates form one physical system.
+
+Result:
+
+- [`results/stage3e_complete_local_view.md`](results/stage3e_complete_local_view.md)
+
+### Stage 3F — next
+
+Stage 3F will stress accessibility and reconstruction under controlled information degradation, while preserving the distinction:
+
+`inaccessible information != ontologically absent information`.
 
 ## Key methodological guards
 
@@ -195,6 +231,8 @@ and then upgrade toward:
 `record asymmetry != phenomenal passage`
 
 `subsystem entropy change != global entropy production`
+
+`inaccessible information != ontologically absent information`
 
 A successful software construction is not by itself an ontological result.
 

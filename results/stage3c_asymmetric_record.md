@@ -1,6 +1,6 @@
 # Stage 3C — Asymmetric Record Model
 
-Status: **completed at the model/interpretation level; GitHub Actions checkpoint validation to be recorded after the latest branch run completes**.
+Status: **completed; GitHub Actions full regression passed**.
 
 ## Purpose
 
@@ -97,7 +97,7 @@ The implementation also verifies:
 
 This prevents a single diagnostic from unilaterally defining the Stage 3C orientation.
 
-## Validation scope
+## Validation
 
 The committed Stage 3C test file contains **8 focused tests** covering:
 
@@ -110,7 +110,11 @@ The committed Stage 3C test file contains **8 focused tests** covering:
 7. rejection when either diagnostic is zero;
 8. tolerance validation.
 
-The latest GitHub Actions full repository result will be added after the current PR-head run completes.
+GitHub Actions clean PR merge-ref regression:
+
+`128 passed in 2.79s`.
+
+This includes Stage 1, Stage 2, and Stage 3A–3C tests.
 
 ## Interpretation hierarchy
 

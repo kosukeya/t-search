@@ -1,6 +1,6 @@
 # Stage 3F — Accessibility and Information Controls
 
-Status: **implemented; final GitHub Actions checkpoint result to be recorded after the Stage 3F head completes**.
+Status: **completed; GitHub Actions clean PR merge-ref regression passed**.
 
 ## Purpose
 
@@ -198,9 +198,9 @@ Stage 3F does not establish:
 
 The BSC is an explicit readout/interface control, not a microscopic physical noise theory.
 
-## Validation scope
+## Validation
 
-The committed Stage 3F tests cover:
+The committed Stage 3F suite contains **12 focused tests** covering:
 
 - access-policy validation;
 - exact record-only baseline recovery;
@@ -215,7 +215,11 @@ The committed Stage 3F tests cover:
 - view-coverage reconstruction control;
 - invalid/zero-probability input guards.
 
-The clean full-repository GitHub Actions result will be recorded once the final Stage 3F checkpoint head completes.
+GitHub Actions clean PR merge-ref regression after warning cleanup:
+
+`159 passed in 3.17s`.
+
+No Stage 3F test-side warnings remain.
 
 ## Next
 

@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3A--3G substantive work is complete on `agent/stage-3-records`; final PR-head regression and merge-readiness review are the remaining closure steps.**
+**Stage 1 and Stage 2 are complete and merged. Stage 3A--3G, synthesis, and full regression are complete on `agent/stage-3-records`; Draft PR #4 is intentionally left unmerged for checkpoint review.**
 
 Integrated syntheses:
 
@@ -22,9 +22,9 @@ Stage 3 protocol / closure:
 - [`docs/stage3g_notes.md`](docs/stage3g_notes.md)
 - [`results/stage3g_robustness.md`](results/stage3g_robustness.md)
 
-Latest Stage 3G robustness code/test checkpoint:
+Latest documentation-inclusive clean PR merge-ref regression before final checkpoint review:
 
-`171 passed in 3.28s`.
+`171 passed in 3.24s`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, or phenomenal passage has been established.
 

@@ -160,16 +160,28 @@ def lift_reduced_observable_to_physical(
     rates: Iterable[float] = DEFAULT_RATES,
     atol: float = DEFAULT_ATOL,
 ) -> np.ndarray:
-    """Lift a reduced support observable into the common constrained space."""
+    """Lift a reduced support observable into the common constrained space.
+
+    The reduction matrix is defined on the full kinematic space, so the lifted
+    operator must be explicitly restricted on both sides to H_phys.  Without
+    that domain restriction E_X O_X R_X can have nonzero action on kinematic
+    inputs outside the physical subspace even though its image lies in H_phys.
+    """
 
     reduced = validate_reduced_observable(
         operator, clock, dimension, rates=rates, atol=atol
     )
     reconstruction = clock_reconstruction_operator(clock, index, dimension, rates=rates)
     reduction = physical_clock_reduction_operator(clock, index, dimension, rates=rates)
-    lifted = reconstruction @ reduced @ reduction
-
     physical_projector = physical_subspace_projector(dimension, rates=rates)
+    lifted = (
+        physical_projector
+        @ reconstruction
+        @ reduced
+        @ reduction
+        @ physical_projector
+    )
+
     if np.linalg.norm(lifted - physical_projector @ lifted @ physical_projector) > atol:
         raise RuntimeError("lifted observable failed to remain in the physical subspace")
     if np.linalg.norm(lifted - lifted.conj().T) > atol:

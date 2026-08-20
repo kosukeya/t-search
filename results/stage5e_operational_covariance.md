@@ -1,6 +1,6 @@
 # Stage 5E Results — Operational Covariance and Perspective-Dependent Structure
 
-Status: **completed at the code/test checkpoint; documentation sync in progress**.
+Status: **completed**.
 
 ## Operational covariance
 
@@ -132,4 +132,6 @@ After correcting the lift to use bilateral physical projection:
 
 `315 passed in 13.45s`.
 
-A final documentation-inclusive regression will be recorded after checkpoint synchronization.
+Documentation-inclusive clean PR merge-ref checkpoint:
+
+`315 passed in 13.67s`.

@@ -1,6 +1,6 @@
 # Stage 4C — Conditional Dynamics Notes
 
-Status: **implementation and focused tests added; PR validation pending**.
+Status: **completed; PR #5 clean merge-ref regression passed**.
 
 ## Scope
 
@@ -88,9 +88,17 @@ The nonphysical state `|0>_C|1>_S` can still be formally conditioned with `condi
 
 The stronger analysis of constraint-violating clock-conditioned sequences is deferred to Stage 4F.
 
+## Validation
+
+PR #5 clean merge-ref regression:
+
+`207 passed in 3.15s`.
+
+This includes the full Stage 1--3 suite plus 12 focused tests each for Stage 4A, Stage 4B, and Stage 4C.
+
 ## Interpretation
 
-If the focused and full-regression tests pass, Stage 4C establishes:
+Stage 4C establishes:
 
 **within the ideal finite constrained model, a stationary global physical state yields normalized clock-relative system states obeying exact discrete unitary Schrödinger dynamics.**
 

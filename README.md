@@ -1,6 +1,6 @@
 # t-search
 
-`t-search` is a research workspace for exploring whether time can be understood through explicit transformations between **block-like/global** and **becoming-like/local** descriptions, with careful separation between strict invariance, reconstructibility, accessibility, and interpretation.
+`t-search` is a research workspace for exploring whether time can be understood through explicit transformations between **block-like/global** and **becoming-like/local** descriptions, with careful separation between invariance, reconstructibility, accessibility, operational equivalence, and interpretation.
 
 ## Research question
 
@@ -8,35 +8,31 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 and Stage 4A--4F are complete on `agent/stage-4-page-wootters`; Draft PR #5 tracks Stage 4 and Stage 4G — robustness and synthesis — is next.**
+**Stages 1--3 are complete and merged. Stage 4.0 and Stage 4A--4G are complete on `agent/stage-4-page-wootters`; Draft PR #5 is the Stage 4 review checkpoint and remains unmerged.**
 
 Integrated syntheses:
 
 - [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 - [`results/stage3_synthesis.md`](results/stage3_synthesis.md)
+- [`results/stage4_synthesis.md`](results/stage4_synthesis.md)
 
 Stage 4 protocol / checkpoints:
 
 - [`docs/stage4_protocol.md`](docs/stage4_protocol.md)
-- [`docs/stage4a_notes.md`](docs/stage4a_notes.md)
-- [`results/stage4a_clock_kinematics.md`](results/stage4a_clock_kinematics.md)
-- [`docs/stage4b_notes.md`](docs/stage4b_notes.md)
-- [`results/stage4b_constrained_physical_state.md`](results/stage4b_constrained_physical_state.md)
-- [`docs/stage4c_notes.md`](docs/stage4c_notes.md)
-- [`results/stage4c_conditional_dynamics.md`](results/stage4c_conditional_dynamics.md)
-- [`docs/stage4d_notes.md`](docs/stage4d_notes.md)
-- [`results/stage4d_reduction_reversibility.md`](results/stage4d_reduction_reversibility.md)
-- [`docs/stage4e_notes.md`](docs/stage4e_notes.md)
-- [`results/stage4e_relational_transition.md`](results/stage4e_relational_transition.md)
-- [`docs/stage4f_notes.md`](docs/stage4f_notes.md)
-- [`results/stage4f_operational_controls.md`](results/stage4f_operational_controls.md)
+- [`docs/stage4a_notes.md`](docs/stage4a_notes.md) / [`results/stage4a_clock_kinematics.md`](results/stage4a_clock_kinematics.md)
+- [`docs/stage4b_notes.md`](docs/stage4b_notes.md) / [`results/stage4b_constrained_physical_state.md`](results/stage4b_constrained_physical_state.md)
+- [`docs/stage4c_notes.md`](docs/stage4c_notes.md) / [`results/stage4c_conditional_dynamics.md`](results/stage4c_conditional_dynamics.md)
+- [`docs/stage4d_notes.md`](docs/stage4d_notes.md) / [`results/stage4d_reduction_reversibility.md`](results/stage4d_reduction_reversibility.md)
+- [`docs/stage4e_notes.md`](docs/stage4e_notes.md) / [`results/stage4e_relational_transition.md`](results/stage4e_relational_transition.md)
+- [`docs/stage4f_notes.md`](docs/stage4f_notes.md) / [`results/stage4f_operational_controls.md`](results/stage4f_operational_controls.md)
+- [`docs/stage4g_notes.md`](docs/stage4g_notes.md) / [`results/stage4g_robustness.md`](results/stage4g_robustness.md)
 
-Stage 4F clean PR merge-ref checkpoint:
+Stage 4G code/test checkpoint:
 
-`243 passed`.
+`255 passed`.
 
-No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum time ontology has been established.
+No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum-time ontology has been established.
 
 ## Stage 1 — Global/local reconstruction
 
@@ -66,15 +62,13 @@ Canonical record diagnostics:
 
 Controls showed that the record-defined orientation reverses under modeled history reversal, cancels under forward/reverse balance, disappears without record coupling or under maximally uncertain memory preparation, and can become locally inaccessible while remaining present in the global formal state.
 
-Stage 3 completed the local architecture:
+Stage 3 completed the typed local architecture:
 
 `G=(Records,Actuality,Potentiality)`.
 
 This remains a candidate relational/information-accessibility component of temporal direction, not a fundamental physical arrow.
 
-## Stage 4 — Finite Page–Wootters-style quantum model
-
-Stage 4 moves the global/local comparison into a finite quantum model.
+## Stage 4 — Finite Page--Wootters-style quantum model — checkpoint complete
 
 Canonical dimensions:
 
@@ -102,31 +96,15 @@ Finite clock readings use the DFT basis:
 
 `|t_j>_C=(1/sqrt(d)) sum_n exp(+i n t_j)|n>_C`, `t_j=2 pi j/d`.
 
-### Stage 4.0 — protocol freeze — completed
+### Stage 4A — finite clock kinematics
 
-Frozen distinctions include:
+Verified DFT-clock orthonormality, cyclic translation, periodicity, origin-shift covariance, and finite-dimension controls.
 
-- `history-state encoding != physical Page-Wootters state`;
-- `formal clock conditioning != physical Page-Wootters reduction`;
-- `kinematic projection != physical reduction`;
-- `constraint satisfaction != nontrivial relational change`;
-- `global stationarity != absence of internal relational dynamics`;
-- `finite periodic clock != fundamental physical periodicity`;
-- `clock-relative dynamics != proof of fundamental emergent time`.
+### Stage 4B — constrained global physical state
 
-### Stage 4A — finite clock kinematics — completed
+Implemented `H_tot`, matched the numerical zero eigenspace to the analytic matched-energy physical subspace, and verified generic complex physical states and stationarity under the constraint generator.
 
-Implemented the finite DFT clock and verified orthonormality, cyclic clock translation, origin-shift covariance, and a `d=5` control.
-
-Focused tests: **12**.
-
-### Stage 4B — constrained global physical state — completed
-
-Implemented `H_tot`, identified the matched-energy zero-eigenspace, checked numerical/analytic physical projectors, generic complex physical states, global stationarity, a nonphysical off-diagonal control, and `d=5`.
-
-Focused tests: **12**.
-
-### Stage 4C — conditional dynamics — completed
+### Stage 4C — conditional dynamics
 
 For normalized physical states:
 
@@ -136,49 +114,75 @@ and:
 
 `R_j|Psi>=exp[-i H_S(t_j-t_0)]R_0|Psi>`.
 
-Generic complex coefficients satisfy exact discrete Schrödinger dynamics, including periodic wrap-around. A nonphysical state can be formally conditioned but is rejected by the physical-reduction API.
+A nonphysical state can be formally conditioned but is not accepted as a physical Page--Wootters reduction.
 
-Focused tests: **12**.
+### Stage 4D — reduction-map reversibility
 
-### Stage 4D — reduction-map reversibility — completed
+The full kinematic projection:
 
-The full kinematic clock projection `P_j^kin=(<t_j| tensor I)` is many-to-one, while the normalized reduction `R_j=sqrt(d) P_j^kin restricted to H_phys` is unitary/isometric in physical-basis coordinates. The explicit reconstruction `E_j` satisfies `R_j E_j=I_S` and `E_j R_j=I_phys`. The full-space composition is not an inverse on unrestricted `H_kin`.
+`P_j^kin=(<t_j| tensor I)`
 
-Focused tests: **12**.
+is many-to-one. By contrast:
 
-### Stage 4E — relational transition structure — completed
+`R_j=sqrt(d) P_j^kin restricted to H_phys`
+
+is isometric/invertible in the ideal matched-energy model, with explicit reconstruction `E_j` satisfying:
+
+`R_j E_j=I_S`, `E_j R_j=I_phys`.
+
+Thus:
+
+`kinematic projection loss != physical-subspace reduction loss`.
+
+### Stage 4E — relational transition structure
 
 Defined:
 
 `T_{k<-j}=R_k E_j`.
 
-For all canonical ordered pairs:
+For all canonical pairs:
 
 `T_{k<-j}=exp[-i H_S(t_k-t_j)]`.
 
-The family is unitary and obeys identity, inverse, and composition consistency. A common non-grid clock-origin shift changes local representatives but leaves the transition family unchanged. The same structure is checked at `d=5`.
+The family is unitary and satisfies identity, inverse, and composition consistency:
 
-Focused tests: **12**.
+`T_{l<-k} T_{k<-j}=T_{l<-j}`.
 
-### Stage 4F — operational and negative controls — completed
+A common clock-origin shift changes local vector representatives but leaves the transition family unchanged.
 
-For the noncommuting projector `Pi_+=|+><+|`, the canonical equal-amplitude `d=4` global conditional probability and local Born probability both give:
+### Stage 4F — operational and negative controls
 
-`[1/2, 1/4, 0, 1/4]`.
+For the noncommuting projector `Pi_+=|+><+|`, the canonical equal-amplitude `d=4` global conditional and local Born probabilities both give:
 
-A constraint-violating kinematic state can be formally conditioned but fails the expected conditional Schrödinger relation. A single-energy constrained state changes only by global phase: vector representatives differ while ray fidelity is `1` and density matrices are identical. Conditioning on the clock energy basis is rank `1` with nullity `d-1` on physical coefficient space, so it is non-injective even on `H_phys`.
+`[1/2,1/4,0,1/4]`.
 
-Focused tests: **12**.
+Controls show:
 
-Stage 4F clean PR merge-ref regression: **243 passed**.
+- constraint violation can leave formal conditioning defined while breaking the expected conditional Schrödinger structure;
+- a single-energy constrained state changes only by global phase at the ray/density-matrix level;
+- clock-energy-basis conditioning is rank one and non-injective even on `H_phys`.
 
-Strongest Stage 4F statement:
+### Stage 4G — robustness and synthesis
 
-**within the ideal finite matched-energy model, global and local conditional Born predictions agree for a nontrivial reading-dependent observable, while constraint violation, single-energy phase-only evolution, and wrong-clock-basis conditioning mark clear limits of the ideal relational-time construction.**
+A joint Stage 4 residual suite passes for generic normalized complex physical states at:
 
-### Stage 4G — robustness and synthesis — next
+`d=3,4,5,6`,
 
-Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and answer the six fixed questions.
+for multiple generic/sparse coefficient families, and for multiple common clock origins.
+
+Additional controls verify:
+
+- global phase changes ket representatives but not physicality, clock probabilities, local density matrices, or tested Born probabilities;
+- arbitrary pure bookkeeping labels preserve the transition matrices and composition law;
+- a coherent two-sector state already gives nontrivial ray change, while a single-sector state remains phase-only.
+
+Strongest Stage 4 result:
+
+**within the tested finite matched-energy Page--Wootters-style family, a stationary constrained global quantum state and its ideal clock-relative local descriptions are connected by an explicitly reversible physical reduction, an origin- and bookkeeping-stable unitary transition family satisfying identity/inverse/composition consistency, and matching tested global/local conditional Born predictions. These structures survive modest finite-dimension, coefficient, global-phase, and origin changes, while targeted controls show that they do not extend to arbitrary kinematic states or arbitrary clock bases.**
+
+The strongest surviving candidate is therefore **perspective-consistent transition structure**, not an absolute clock value or particular ket representative.
+
+Changing the physical clock subsystem itself is deferred to Stage 5.
 
 ## Key methodological guards
 
@@ -202,9 +206,9 @@ Test generic complex coefficient vectors, alternative finite dimension where tra
 
 `same local statistic != same global information structure`
 
-`history-state encoding != physical Page-Wootters state`
+`history-state encoding != physical Page--Wootters state`
 
-`formal clock conditioning != physical Page-Wootters reduction`
+`formal clock conditioning != physical Page--Wootters reduction`
 
 `kinematic projection != physical reduction`
 
@@ -217,6 +221,8 @@ Test generic complex coefficient vectors, alternative finite dimension where tra
 `vector change != ray/density-matrix change`
 
 `arbitrary clock basis != ideal relational time basis`
+
+`bookkeeping covariance != physical clock-choice invariance`
 
 `clock-relative dynamics != fundamental emergent time`
 
@@ -233,4 +239,4 @@ Every stage ends by asking:
 5. What is invariant, reconstructible, ambiguous, lost, or locally accessible?
 6. What physical meaning, if any, can be assigned to the surviving structures?
 
-Stage 3 answers are in [`results/stage3_synthesis.md`](results/stage3_synthesis.md). Stage 4 will answer the same questions for the finite constrained quantum model.
+Stage 4 answers are in [`results/stage4_synthesis.md`](results/stage4_synthesis.md).

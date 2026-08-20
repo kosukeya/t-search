@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stages 1--4 are complete and merged. Stage 5.0, Stage 5A, and Stage 5B are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5C is next.**
+**Stages 1--4 are complete and merged. Stage 5.0 through Stage 5C are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5D is next.**
 
 Integrated syntheses:
 
@@ -34,6 +34,7 @@ Stage 5 protocol / checkpoints:
 - [`docs/stage5_concepts.md`](docs/stage5_concepts.md)
 - [`docs/stage5a_notes.md`](docs/stage5a_notes.md) / [`results/stage5a_three_subsystem.md`](results/stage5a_three_subsystem.md)
 - [`docs/stage5b_notes.md`](docs/stage5b_notes.md) / [`results/stage5b_per_clock_reductions.md`](results/stage5b_per_clock_reductions.md)
+- [`docs/stage5c_notes.md`](docs/stage5c_notes.md) / [`results/stage5c_genuine_clock_change.md`](results/stage5c_genuine_clock_change.md)
 
 Stage 4 final merge-ref regression:
 
@@ -47,9 +48,13 @@ Stage 5A documentation-inclusive clean PR merge-ref regression:
 
 `267 passed in 3.10s`.
 
-Stage 5B code/test clean PR merge-ref checkpoint:
+Stage 5B final roadmap-inclusive clean PR merge-ref regression:
 
-`279 passed in 4.82s`.
+`279 passed in 4.88s`.
+
+Stage 5C code/test clean PR merge-ref checkpoint:
+
+`291 passed in 5.64s`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum-time ontology has been established.
 
@@ -262,13 +267,34 @@ This is still an intra-clock result:
 
 `per-clock reversibility != genuine cross-clock covariance`.
 
-### Stage 5C — next
+### Stage 5C — genuine clock-change maps — completed
 
-Implement the genuine physical clock-change maps:
+For distinct physical clocks:
 
-`S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`
+`S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`.
 
-for distinct clock subsystems. Verify direct-global route consistency, support-space isometry/unitarity, and two-way clock-change round trips. Cross-clock three-frame composition remains Stage 5D.
+Across all six ordered distinct clock pairs and all canonical reading pairs:
+
+- the `7 x 7` support-coordinate map is unitary/isometric;
+- ambiently, `S^dagger S=P_KX` and `S S^dagger=P_KY`;
+- `S_{Y<-X}(k,j)R_X(j)|Psi>=R_Y(k)|Psi>` for generic physical states and every analytic physical basis vector;
+- the reverse clock change returns the source support state;
+- norms and inner products are preserved;
+- equal numeric source/target readings do not make the genuine clock change an ambient identity.
+
+Focused Stage 5C tests: **12**.
+
+This establishes pairwise reversible genuine clock changes, but not yet the three-clock composition law:
+
+`pairwise reversible clock changes != full cross-clock perspective consistency`.
+
+### Stage 5D — next
+
+Test the central cross-clock composition law across all three physical clock choices and all canonical readings:
+
+`S_{Z<-Y}(l,k) S_{Y<-X}(k,j)=S_{Z<-X}(l,j)`.
+
+Operational covariance of transformed observables remains Stage 5E.
 
 ## Key methodological guards
 

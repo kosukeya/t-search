@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0, Stage 4A, and Stage 4B are complete on `agent/stage-4-page-wootters`; Stage 4C — conditional dynamics — is next.**
+**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 and Stage 4A--4C are complete on `agent/stage-4-page-wootters`; Draft PR #5 tracks Stage 4 and Stage 4D — reduction-map reversibility — is next.**
 
 Integrated syntheses:
 
@@ -23,10 +23,12 @@ Stage 4 protocol / checkpoints:
 - [`results/stage4a_clock_kinematics.md`](results/stage4a_clock_kinematics.md)
 - [`docs/stage4b_notes.md`](docs/stage4b_notes.md)
 - [`results/stage4b_constrained_physical_state.md`](results/stage4b_constrained_physical_state.md)
+- [`docs/stage4c_notes.md`](docs/stage4c_notes.md)
+- [`results/stage4c_conditional_dynamics.md`](results/stage4c_conditional_dynamics.md)
 
-Latest merged Stage 3 full regression checkpoint:
+Latest Stage 4C documentation-inclusive clean PR merge-ref regression:
 
-`171 passed`.
+`207 passed`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum time ontology has been established.
 
@@ -217,11 +219,47 @@ The same matched-energy kernel structure is checked at `d=5`.
 
 Focused Stage 4B tests: **12**.
 
-### Stage 4C — conditional dynamics — next
+### Stage 4C — conditional dynamics — completed
 
-Implement ideal clock conditioning, normalized reductions, uniform ideal clock probabilities, and exact discrete Schrödinger evolution.
+Formal clock conditioning is kept distinct from the physical Page--Wootters reduction:
 
-### Stage 4D — reduction-map reversibility
+`|tilde_psi_j>=(<t_j| tensor I)|Phi>`
+
+versus:
+
+`R_j=sqrt(d)(<t_j| tensor I)` restricted to `H_phys`.
+
+For every normalized physical state in the canonical matched-energy family:
+
+`p_j=||tilde_psi_j||^2=1/d`.
+
+For `d=4`, every ideal clock reading therefore has probability `1/4`.
+
+Generic complex physical coefficient states satisfy:
+
+`R_j|Psi>=exp[-i H_S(t_j-t_0)]R_0|Psi>`
+
+and the one-step relation:
+
+`psi_{j+1}=exp(-i H_S Delta)psi_j`
+
+including periodic wrap-around.
+
+The equal-amplitude baseline has nontrivial relative ray change; `psi_0` and `psi_1` are orthogonal within numerical tolerance.
+
+A nonphysical kinematic state can still be formally conditioned, but the `physical_reduction` API rejects it.
+
+Focused Stage 4C tests: **12**.
+
+Clean Stage 4C PR merge-ref regression: **207 passed**.
+
+Strongest Stage 4C statement:
+
+**within the ideal finite constrained model, a stationary global physical state yields normalized clock-relative system states obeying exact discrete unitary Schrödinger dynamics.**
+
+This is a finite Page--Wootters-style realization, not proof of fundamental emergent time.
+
+### Stage 4D — reduction-map reversibility — next
 
 Implement explicit reconstruction `E_j`, inner-product preservation, physical round trips, and the contrast with non-injective kinematic projection.
 
@@ -241,7 +279,7 @@ Test global/local Born conditional probabilities, constraint violation, single-e
 
 Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and the six fixed questions.
 
-The central Stage 4 comparison will eventually be between the generally lossy kinematic projection:
+The central Stage 4 comparison is between the generally lossy kinematic projection:
 
 `P_j^kin=(<t_j| tensor I_S): H_kin -> H_S`
 
@@ -249,7 +287,7 @@ and the normalized physical reduction:
 
 `R_j=sqrt(d) P_j^kin restricted to H_phys`.
 
-The ideal model will test whether `R_j` is an isometric/invertible global-to-clock-relative map, and whether local-to-local dynamics can be written as:
+Stage 4D will test whether `R_j` is an isometric/invertible global-to-clock-relative map, and Stage 4E will test whether local-to-local dynamics can be written as:
 
 `T_{k<-j}=R_k R_j^{-1}`
 
@@ -280,6 +318,8 @@ with the expected unitary composition law.
 `same local statistic != same global information structure`
 
 `history-state encoding != physical Page-Wootters state`
+
+`formal clock conditioning != physical Page-Wootters reduction`
 
 `kinematic projection != physical reduction`
 

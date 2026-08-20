@@ -1,6 +1,6 @@
 # Stage 4A — Finite Clock Kinematics Notes
 
-Status: **implementation and focused tests added; Stage 4B is next after checkpoint validation**.
+Status: **completed; Stage 4B — constrained global physical state — is next**.
 
 ## Scope
 
@@ -47,6 +47,8 @@ The focused tests require:
 - the same construction at `d=5` as a noncanonical robustness check;
 - unitary exponentiation of a generic Hermitian test matrix;
 - rejection of invalid dimensions, indices, state shapes, and non-Hermitian generators.
+
+`tests/test_stage4a_clock_kinematics.py` contains **12 focused tests**.
 
 ## Numerical checkpoint
 

@@ -1,6 +1,6 @@
 # Stage 5G Results — Robustness
 
-Status: **robustness code/test checkpoint completed; final Stage 5 synthesis and documentation-inclusive regression pending.**
+Status: **completed; final Stage 5 robustness and pre-finalization documentation checkpoint passed.**
 
 ## Joint robustness suite
 
@@ -125,4 +125,20 @@ Code/test clean PR merge-ref checkpoint:
 
 `339 passed in 14.91s`.
 
-A final documentation/synthesis-inclusive clean regression will be recorded after Stage 5 synthesis and merge-readiness review are complete.
+Documentation/synthesis/README/roadmap-inclusive clean PR merge-ref checkpoint before the final status-only commits:
+
+`339 passed in 9.89s`.
+
+## Merge-readiness review checkpoint
+
+At the documentation-inclusive review point:
+
+- branch status versus `main`: `67 commits ahead / 0 behind`;
+- changed files: `40`;
+- changed-file scope: Stage 5 code/tests/experiments/docs/results plus the expected README/roadmap synchronization only;
+- PR state: open, Draft, unmerged, `mergeable=true`;
+- unresolved review threads: `0`;
+- submitted reviews: `0`;
+- PR conversation comments: `0`.
+
+A final regression is run after the status-only result/synthesis commits so the reported merge-ready state refers to the actual final head.

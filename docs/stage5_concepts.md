@@ -275,3 +275,23 @@ For tested generic reduced observables/projectors and physical states, Stage 5E 
 This establishes operational covariance for the declared finite ideal family while retaining genuinely perspective-dependent reduced structure.
 
 `operational covariance != invariance of every representation-dependent quantity`.
+
+## Stage 5F negative-control checkpoint
+
+Stage 5F identifies the boundaries of the positive Stage 5B--5E results:
+
+- every embedded `9 x 9` cross-clock matrix has rank `7`, so unrestricted rest-space unitarity fails and a two-dimensional off-support kernel remains;
+- energy-basis clock conditioning has physical-space rank pattern `(2,3,2)` for energy labels `(-1,0,+1)` instead of the ideal DFT rank `7`;
+- `|+1,+1,+1>` can be formally conditioned but is rejected by the physical reduction API;
+- the same bare rank-one projector can be support-valid in two perspectives while producing expectations `0.8` and `0.2` if left untransformed; proper observable transport restores `0.8`;
+- equal numeric reading labels do not identify the reduced tensor-factor semantics or define an absolute synchronization rule.
+
+Thus the successful clock-change structure is explicitly domain- and correspondence-dependent:
+
+`support-space covariance != unrestricted ambient covariance`,
+
+`formal conditioning != physical clock perspective`,
+
+`same valid bare matrix != same physical observable`,
+
+`equal numeric readings != same physical event`.

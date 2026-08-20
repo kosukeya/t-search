@@ -22,36 +22,6 @@ The term `perspective-neutral` describes its formal role only.
 
 `perspective-neutral mathematical representation != physical God's-eye observer`.
 
-## Centered energy labels
-
-For the canonical Stage 5A qutrits, each subsystem uses physical energy labels:
-
-`m in {-1,0,+1}`
-
-rather than raw array indices.
-
-With the symmetric rates `(1,1,1)`, physical product-energy triples satisfy:
-
-`a+b+c=0`.
-
-Stage 5A verifies that this gives a seven-dimensional physical sector inside the 27-dimensional kinematic space.
-
-## Per-subsystem finite clock kinematics
-
-Each subsystem can be equipped with its own finite DFT clock-reading basis:
-
-`|t_j>_X=(1/sqrt(d)) sum_m exp[-i(lambda_X m)t_j^(X)]|m>_X`.
-
-with:
-
-`Delta_X=2*pi/(d lambda_X)`.
-
-The declared clock Hamiltonian translates its own reading basis cyclically:
-
-`exp(-i H_X Delta_X)|t_j>_X=|t_{j+1 mod d}>_X`.
-
-The A/B/C clock coordinate matrices are identical in the symmetric Stage 5A baseline because their spectra/rates are identical, but they belong to distinct subsystem Hilbert spaces and are not one physical clock.
-
 ## Clock-relative support space
 
 For clock choice `X`, the image of the physical reduction:
@@ -66,6 +36,8 @@ In the canonical qutrit model:
 
 while the unrestricted rest tensor product has dimension `9`.
 
+Stage 5B verifies that the support is independent of the discrete reading label in the canonical construction and that the support basis is orthonormal.
+
 ## Physical clock reduction
 
 `R_X(j): H_phys -> K_X`
@@ -73,6 +45,12 @@ while the unrestricted rest tensor product has dimension `9`.
 is the normalized conditioning map for clock subsystem `X` at clock coordinate `j`, restricted to the physical constrained space.
 
 It must be distinguished from unrestricted kinematic conditioning.
+
+For the canonical ideal model, Stage 5B verifies:
+
+`p_X(j)=1/3`
+
+for normalized physical states and that `R_X(j)` preserves norms and inner products between `H_phys` and `K_X`.
 
 ## Clock reconstruction
 
@@ -82,6 +60,20 @@ is the explicit inverse candidate for `R_X(j)` on the declared physical support.
 
 Reconstruction assumes the constraint, clock model, support basis, and phase convention are known.
 
+Stage 5B distinguishes the ambient rest-space identity:
+
+`R_X(j)E_X(j)=P_KX`
+
+from the support-space statement:
+
+`R_X(j)E_X(j)=I_KX`.
+
+Likewise:
+
+`E_X(j)R_X(j)=I_phys`
+
+is asserted only on the common physical constrained space.
+
 ## Same-clock transition
 
 `T_X(k<-j)=R_X(k)E_X(j)`
@@ -90,6 +82,12 @@ changes the reading of one fixed physical clock.
 
 It is an internal Stage 4-style consistency check and is not a genuine change of clock subsystem.
 
+Stage 5B verifies on `K_X`:
+
+`T_X(k<-j)=exp[-i H_rest^(X)(t_k^(X)-t_j^(X))]`
+
+with identity, inverse, and composition consistency for each of A, B, and C.
+
 ## Genuine clock-change map
 
 For distinct clock choices `X` and `Y`:
@@ -97,6 +95,8 @@ For distinct clock choices `X` and `Y`:
 `S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`.
 
 It changes which subsystem is treated as clock and generally changes the reduced tensor-product decomposition.
+
+Stage 5C is the first stage that tests this map directly.
 
 ## Cross-clock perspective consistency
 
@@ -144,6 +144,10 @@ They do not by themselves define synchronization or one absolute event.
 
 A clock-change map may be unitary/isometric between `K_X` and `K_Y` while failing to be unitary on the full ambient rest tensor-product spaces.
 
+Stage 5B already exhibits the corresponding one-clock distinction:
+
+`R_X E_X=P_KX`, not `I_rest`.
+
 `support-subspace isometry != full-rest-space unitarity`.
 
 ## Clock-rate scale
@@ -160,17 +164,28 @@ The symmetric baseline uses `(1,1,1)`; Stage 5G reserves `(1,1,2)` as an asymmet
 
 A clock-rate scale in this toy model is not automatically a physical time-dilation model.
 
-## Stage 5A boundary
+## Stage 5A substrate checkpoint
 
-Stage 5A establishes only the common constrained substrate and three available finite clock kinematics:
+The symmetric qutrit implementation verifies:
 
-- `H_A`, `H_B`, `H_C`;
-- `H_tot`;
-- the seven-dimensional zero-sum `H_phys`;
-- one cyclic DFT clock basis for each subsystem.
+- `dim(H_kin)=27`;
+- `dim(H_phys)=7`;
+- the analytic zero-sum basis and numerical kernel projector agree;
+- each of A/B/C has an orthonormal cyclic qutrit DFT clock basis.
 
-Stage 5A does not yet implement `K_X`, `R_X`, `E_X`, or `S_{Y<-X}`.
+This establishes three candidate physical clock subsystems but does not yet establish cross-clock consistency.
 
-Therefore:
+## Stage 5B per-clock checkpoint
 
-`three available clock kinematics != cross-clock perspective consistency`.
+For each `X in {A,B,C}`, the implementation verifies:
+
+- `dim(K_X)=7 < 9`;
+- ideal normalized clock probabilities `p_X(j)=1/3`;
+- `R_X(j)` is an isometry between `H_phys` and `K_X`;
+- `R_X(j)E_X(j)=P_KX` on the ambient rest space and identity on `K_X`;
+- `E_X(j)R_X(j)=I_phys` on the constrained physical space;
+- same-clock transitions reproduce the expected rest-Hamiltonian evolution and satisfy identity/inverse/composition on the support.
+
+This remains an intra-clock result:
+
+`per-clock reversibility != genuine cross-clock covariance`.

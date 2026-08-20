@@ -320,27 +320,50 @@ Formal conditioning remains defined for nonphysical states, while the physical r
 
 Focused tests: **12**.
 
-Latest Stage 5B checkpoint regression:
+Final Stage 5B checkpoint regression:
 
-`279 passed in 3.96s`.
+`279 passed in 4.88s`.
 
 This remains an intra-clock result:
 
 `per-clock reversibility != genuine cross-clock covariance`.
 
-### Stage 5C — genuine clock-change maps — next
+### Stage 5C — genuine clock-change maps — completed
 
-Implement:
+Notes / result:
 
-`S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`
+- [`stage5c_notes.md`](stage5c_notes.md)
+- [`../results/stage5c_genuine_clock_change.md`](../results/stage5c_genuine_clock_change.md)
 
-for distinct physical clock choices and verify direct-global route consistency, support-space isometry/unitarity, and two-way clock-change round trips.
+For every ordered pair of distinct clocks and every canonical source/target reading pair:
 
-### Stage 5D — cross-clock composition
+- `S_{Y<-X}(k,j)=R_Y(k)E_X(j)` maps `K_X` into `K_Y`;
+- its `7 x 7` support-coordinate representation is unitary/isometric;
+- ambiently, `S^dagger S=P_KX` and `S S^dagger=P_KY`;
+- the source-perspective route `H_phys -> K_X -> K_Y` equals direct reduction `H_phys -> K_Y`;
+- the reverse clock change returns the original source support state;
+- norms and inner products are preserved;
+- equal numeric source/target readings do not make the genuine clock change an ambient identity.
 
-Verify identity/inverse/composition across all three clock choices and all canonical readings:
+Focused tests: **12**.
 
-`S_{Z<-Y} S_{Y<-X}=S_{Z<-X}`.
+Documentation-inclusive Stage 5C merge-ref regression:
+
+`291 passed in 5.60s`.
+
+This establishes pairwise reversible genuine clock changes, but not yet the three-clock composition law:
+
+`pairwise reversible clock changes != full cross-clock perspective consistency`.
+
+### Stage 5D — cross-clock composition — next
+
+Verify the central three-clock composition law across all distinct physical clock choices and all canonical readings:
+
+`S_{Z<-Y}(l,k) S_{Y<-X}(k,j)=S_{Z<-X}(l,j)`.
+
+The primary decisive instance is:
+
+`S_{B<-A}(l,k) S_{A<-C}(k,j)=S_{B<-C}(l,j)`.
 
 ### Stage 5E — operational covariance and perspective-dependent structure
 

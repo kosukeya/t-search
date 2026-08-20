@@ -124,4 +124,6 @@ The supported distinction is narrower:
 
 **within this matched-energy toy model, the DFT clock-reading basis supports a reversible physical reduction and operationally consistent conditional dynamics, whereas clock-energy-basis conditioning discards physical coefficient sectors and constraint-violating histories do not satisfy the same relational Schrödinger structure.**
 
+Stage 4G will perform the final documentation-inclusive regression, robustness review, six-question synthesis, and merge-readiness check.
+
 Next: Stage 4G — robustness and synthesis.

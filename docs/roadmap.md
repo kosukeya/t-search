@@ -347,29 +347,78 @@ For every ordered pair of distinct clocks and every canonical source/target read
 
 Focused tests: **12**.
 
-Documentation-inclusive Stage 5C merge-ref regression:
+Final Stage 5C checkpoint regression:
 
-`291 passed in 5.60s`.
+`291 passed in 5.56s`.
 
-This establishes pairwise reversible genuine clock changes, but not yet the three-clock composition law:
+### Stage 5D — cross-clock composition — completed
 
-`pairwise reversible clock changes != full cross-clock perspective consistency`.
+Notes / result:
 
-### Stage 5D — cross-clock composition — next
+- [`stage5d_notes.md`](stage5d_notes.md)
+- [`../results/stage5d_cross_clock_composition.md`](../results/stage5d_cross_clock_composition.md)
 
-Verify the central three-clock composition law across all distinct physical clock choices and all canonical readings:
+Across all `6 * 3^3 = 162` ordered distinct-clock routes:
 
-`S_{Z<-Y}(l,k) S_{Y<-X}(k,j)=S_{Z<-X}(l,j)`.
+- `S_{Z<-Y}S_{Y<-X}=S_{Z<-X}` in ambient and support coordinates;
+- generic-state and every-physical-basis path independence;
+- cancellation of the intermediate clock-reading coordinate;
+- three-clock closed loops return `P_KX` ambiently and `I_KX` on support coordinates.
 
-The primary decisive instance is:
+Focused tests: **12**.
 
-`S_{B<-A}(l,k) S_{A<-C}(k,j)=S_{B<-C}(l,j)`.
+Final Stage 5D checkpoint regression:
 
-### Stage 5E — operational covariance and perspective-dependent structure
+`303 passed in 10.19s`.
 
-Transform reduced observables with the frame map and verify expectation/Born equality. Add the explicit perspective-dependent entanglement control.
+This is the first checkpoint where the project-level `perspective-consistent transition structure` survives genuine changes of the physical clock subsystem itself.
 
-### Stage 5F — negative controls
+### Stage 5E — operational covariance and perspective-dependent structure — completed
+
+Notes / result:
+
+- [`stage5e_notes.md`](stage5e_notes.md)
+- [`../results/stage5e_operational_covariance.md`](../results/stage5e_operational_covariance.md)
+
+For reduced support observables:
+
+`O_Y=S_{Y<-X} O_X S_{Y<-X}^dagger`.
+
+Stage 5E verifies:
+
+- corresponding generic expectation values across all ordered clock pairs/readings;
+- matching transformed rank-one Born probabilities;
+- density-matrix covariance;
+- independent observable transport through the common physical space;
+- observable composition and inverse consistency.
+
+The physical-space observable representative is explicitly bilateral:
+
+`O_phys=P_phys E_X O_X R_X P_phys`.
+
+The first Stage 5E CI exposed why the right physical-domain projector is necessary; after correcting the domain semantics the full suite passed.
+
+The explicit entanglement control:
+
+`|Psi_*>= (|+1,-1,0> + |+1,0,-1>)/sqrt(2)`
+
+has, at every canonical reading:
+
+- A-clock perspective: `S(B:C)=1 bit`;
+- B-clock perspective: `S(A:C)=0`;
+- C-clock perspective: `S(A:B)=0`.
+
+Thus:
+
+`perspective-dependent reduced tensor-factor structure != operational inconsistency`.
+
+Focused tests: **12**.
+
+Corrected code/test regression:
+
+`315 passed in 13.45s`.
+
+### Stage 5F — negative controls — next
 
 Test full-rest-space overextension, wrong clock basis, nonphysical state conditioning, naive untransformed observable comparison, and support/synchronization mistakes.
 
@@ -427,8 +476,10 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - clock reading change != physical clock subsystem change;
 - equal numerical clock readings != same physical event;
 - support-subspace isometry != full-rest-space unitarity;
+- physical observable lift requires physical domain and codomain restriction;
 - state transformation without observable transformation != operational frame covariance;
 - perspective-dependent entanglement != inconsistent physics;
+- operational covariance != invariance of every representation-dependent quantity;
 - clock-relative transition consistency != fundamental temporal ontology;
 - vector change != ray/density-matrix change;
 - arbitrary clock basis != ideal relational time basis;
@@ -451,6 +502,7 @@ Revise rather than force progress if:
 - bookkeeping/origin covariance is silently reinterpreted as genuine clock-choice invariance;
 - cross-clock maps only work after silently identifying unrelated rest tensor factors;
 - equal clock coordinates are silently treated as one absolute instant;
+- a reduced observable is lifted without restricting both its physical domain and codomain;
 - observable covariance is claimed while leaving the observable untransformed;
 - perspective-dependent entanglement is mislabeled as inconsistent physics;
 - symmetric subsystem permutation is mistaken for the entire content of clock-change covariance;

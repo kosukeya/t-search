@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 and Stage 4A--4D are complete on `agent/stage-4-page-wootters`; Draft PR #5 tracks Stage 4 and Stage 4E — relational transition structure — is next.**
+**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 and Stage 4A--4E are complete on `agent/stage-4-page-wootters`; Draft PR #5 tracks Stage 4 and Stage 4F — operational and negative controls — is next.**
 
 Integrated syntheses:
 
@@ -27,10 +27,12 @@ Stage 4 protocol / checkpoints:
 - [`results/stage4c_conditional_dynamics.md`](results/stage4c_conditional_dynamics.md)
 - [`docs/stage4d_notes.md`](docs/stage4d_notes.md)
 - [`results/stage4d_reduction_reversibility.md`](results/stage4d_reduction_reversibility.md)
+- [`docs/stage4e_notes.md`](docs/stage4e_notes.md)
+- [`results/stage4e_relational_transition.md`](results/stage4e_relational_transition.md)
 
-Latest Stage 4D clean PR merge-ref checkpoint:
+Latest Stage 4E clean PR merge-ref checkpoint:
 
-`219 passed`.
+`231 passed`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum time ontology has been established.
 
@@ -164,23 +166,51 @@ Inner products and norms are preserved for generic complex physical vectors. The
 
 Focused Stage 4D tests: **12**.
 
-Clean Stage 4D PR merge-ref regression: **219 passed**.
-
 Strongest Stage 4D statement:
 
 **within the ideal finite matched-energy model, clock conditioning is lossy on the unrestricted kinematic space but becomes information-preserving and explicitly reversible when restricted and normalized on the zero-constraint physical subspace.**
 
-This is a constrained representation result, not proof that arbitrary physical projections are reversible or that time fundamentally emerges.
+### Stage 4E — relational transition structure — completed
 
-### Stage 4E — relational transition structure — next
+Defined the local-to-local transition:
 
-Test:
+`T_{k<-j}=R_k E_j`.
 
-`T_{k<-j}=R_k E_j=exp[-i H_S(t_k-t_j)]`
+For all canonical ordered pairs:
 
-plus identity, inverse, composition, clock-origin covariance, and periodic wrap-around.
+`T_{k<-j}=exp[-i H_S(t_k-t_j)]`.
 
-### Stage 4F — operational and negative controls
+The transition family is unitary and satisfies:
+
+`T_{j<-j}=I`,
+
+`T_{j<-k} T_{k<-j}=I`,
+
+and:
+
+`T_{l<-k} T_{k<-j}=T_{l<-j}`.
+
+The composition identity is checked for all `64` canonical ordered triples. For generic complex physical states, the same map transports the actual clock-relative states:
+
+`T_{k<-j} R_j|Psi>=R_k|Psi>`.
+
+The finite wrap-around closes with the same one-step unitary. A common non-grid clock-origin shift changes the local representatives but leaves the transition family unchanged:
+
+`T_{k<-j}^(alpha)=T_{k<-j}`.
+
+The expected-unitary, composition, and origin-covariance structure is also checked at `d=5`.
+
+Focused Stage 4E tests: **12**.
+
+Clean Stage 4E PR merge-ref regression: **231 passed**.
+
+Strongest Stage 4E statement:
+
+**within the ideal finite constrained model, clock-relative descriptions are linked by an origin-independent unitary transition family with identity, inverse, and composition consistency.**
+
+This family is a candidate surviving relational structure, not yet a fundamental invariant of time. The physical clock subsystem itself is not changed until Stage 5.
+
+### Stage 4F — operational and negative controls — next
 
 Test global/local Born conditional probabilities, constraint violation, single-energy trivial evolution, wrong clock basis, and vector/ray distinctions.
 
@@ -217,6 +247,10 @@ Test generic complex coefficient vectors, alternative finite dimension where tra
 `kinematic projection != physical reduction`
 
 `physical-subspace reversibility != unrestricted kinematic reversibility`
+
+`clock-relative transition consistency != fundamental temporal ontology`
+
+`common clock-origin shift != change of physical clock`
 
 `clock-relative dynamics != fundamental emergent time`
 

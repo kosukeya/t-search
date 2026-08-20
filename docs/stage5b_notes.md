@@ -107,3 +107,13 @@ Stage 5B establishes that each physical clock choice individually supports a rev
 It does **not** yet establish that two different clock perspectives are mutually consistent.
 
 `three individually valid reduced perspectives != genuine cross-clock perspective consistency`.
+
+## Validation
+
+Focused Stage 5B tests: **12**.
+
+Code/test clean PR merge-ref checkpoint:
+
+`279 passed in 4.82s`.
+
+A documentation-inclusive clean PR merge-ref regression is run after the Stage 5B checkpoint files and PR metadata are synchronized.

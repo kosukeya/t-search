@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1 and Stage 2 are complete and merged. Stage 3A--3G, synthesis, and full regression are complete on `agent/stage-3-records`; Draft PR #4 is intentionally left unmerged for checkpoint review.**
+**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 — finite Page–Wootters-style quantum protocol freeze — is complete on `agent/stage-4-page-wootters`; Stage 4A — finite clock kinematics — is next.**
 
 Integrated syntheses:
 
@@ -16,17 +16,15 @@ Integrated syntheses:
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 - [`results/stage3_synthesis.md`](results/stage3_synthesis.md)
 
-Stage 3 protocol / closure:
+Stage 4 protocol:
 
-- [`docs/stage3_protocol.md`](docs/stage3_protocol.md)
-- [`docs/stage3g_notes.md`](docs/stage3g_notes.md)
-- [`results/stage3g_robustness.md`](results/stage3g_robustness.md)
+- [`docs/stage4_protocol.md`](docs/stage4_protocol.md)
 
-Latest documentation-inclusive clean PR merge-ref regression before final checkpoint review:
+Latest merged Stage 3 full regression checkpoint:
 
-`171 passed in 3.24s`.
+`171 passed`.
 
-No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, or phenomenal passage has been established.
+No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum time ontology has been established.
 
 ## Stage 1 — Global/local reconstruction
 
@@ -62,7 +60,7 @@ Supported conclusion:
 
 ## Stage 3 — Records and temporal direction
 
-Stage 3 asks whether record asymmetry can define an orientation beyond mere order while microscopic dynamics remain reversible.
+Stage 3 tested whether record asymmetry can define an orientation beyond mere order while microscopic dynamics remain reversible.
 
 Canonical finite substrate:
 
@@ -86,9 +84,7 @@ Canonical record diagnostics at neutral position 1:
 
 The resulting label is only a **record-defined orientation toward the lower-index side**; lower index is not definitionally called physical past.
 
-### Main Stage 3 controls
-
-The record-defined orientation:
+Main controls showed that the orientation:
 
 - disappears when record coupling is removed despite ordered reversible change;
 - flips under exact modeled history reversal;
@@ -97,79 +93,112 @@ The record-defined orientation:
 - is robust to pure position naming and bijective bit-value relabeling;
 - does not collapse when identical state values occur at different positions.
 
-Stage 3G refines the boundary result. Let:
+Stage 3G refined the boundary result using `p=P(M_0=0)`: the literal convention `M_0=0` is not the robust ingredient. The relevant toy-model feature is **non-maximal uncertainty / nonuniform preparation of the memory boundary**.
 
-`p=P(M_0=0)`.
-
-Then:
-
-| `p` | `A_R` | `A_Acc` | orientation |
-|---:|---:|---:|---|
-| `1` | `1` | `0.5` | lower-index |
-| `3/4` | `~0.188721875541` | `0.25` | lower-index |
-| `1/2` | `0` | `0` | none |
-| `1/4` | `~0.188721875541` | `0.25` | lower-index |
-| `0` | `1` | `0.5` | lower-index |
-
-So the literal convention `M_0=0` is not the robust ingredient. The relevant toy-model feature is **non-maximal uncertainty / nonuniform preparation of the memory boundary**.
-
-### Global versus local information
-
-Stage 3E defines:
+Stage 3 also made the global/local information distinction explicit:
 
 `B_3=(Z_space,U_1,U_2,Omega,mu)`
 
-and the reduced local Actuality:
+and:
 
-`A_k^loc=(X_k,M_k)`.
+`F_k:(B_3,omega)->G_{omega,k}^rec`.
 
-The explicit projection:
-
-`F_k:(B_3,omega)->G_{omega,k}^rec`
-
-omits hidden `N_k`, opposite-side actual microstates, the complete trajectory as a direct field, and privileged boundary labels.
-
-One exact central view can be ambiguous while a suitable family of exact views reconstructs the complete actual trajectory.
-
-Stage 3F then degrades only the local readout. The global canonical relation can remain:
-
-`I(true M_1;X_0)=1 bit`
-
-while maximal readout noise gives:
-
-`I(M_obs;X_0)=0`.
-
-Therefore:
+A local view can be ambiguous while a suitable family of views reconstructs the complete actual trajectory. Local readout noise can remove accessible record information while the true global record relation remains unchanged, so:
 
 `inaccessible information != information absent from the formal global state`.
 
-Stage 3G adds a second caution: the same accessible MI can arise from a genuinely weaker global boundary correlation or from local readout noise on a globally perfect record.
-
-Thus:
+The same accessible MI can also arise from a genuinely weaker global record or from noisy local access to a stronger global record, so:
 
 `same local statistic != same global information structure`.
 
-### Completing `G=(Records,Actuality,Potentiality)`
+Stage 3 completed the formal local architecture:
 
-Stage 3E attaches the already-tested record layer to Stage 2 local Potentiality through explicit typed product adapters:
+`G=(Records,Actuality,Potentiality)`
 
-`G_E^complete=(Records,A_product,EPot,pi_E)`
+through typed adapters that preserve the Stage 2 epistemic/ontic Potentiality distinction.
 
-`G_O^complete=(Records,A_product,OPot,pi_O)`.
+Strongest Stage 3 conclusion:
 
-Stage 3G rechecks that swapping hidden epistemic `h*` does not leak into the complete local view and that epistemic/ontic Potentiality types remain distinct.
+**within the tested finite construction, ordered reversible dynamics can support a record-defined orientation when record coupling acts on a non-maximally uncertain memory boundary. The orientation reverses under modeled history reversal, cancels at orientation-symmetric balance, disappears without record coupling or under maximally uncertain memory preparation, and can become locally inaccessible without being removed from the global formal state.**
 
-This is formal modularity, not a proof that Stage 2 and Stage 3 describe one physical substrate.
+This remains a candidate relational/information-accessibility component of temporal direction, not a fundamental physical arrow.
 
-## Strongest Stage 3 conclusion
+## Stage 4 — Finite Page–Wootters-style quantum model
 
-Within this finite toy construction:
+Stage 4 moves the global/local comparison into a finite quantum model.
 
-**ordered reversible dynamics can support a measurable record-defined orientation when record coupling acts on a non-maximally uncertain memory boundary. The orientation reverses under modeled history reversal, cancels at orientation-symmetric balance, disappears without record coupling or under maximally uncertain memory preparation, and can become locally inaccessible without being removed from the global formal state.**
+Protocol:
 
-But the result is still boundary-, ensemble-, and interface-dependent. The canonical model also has the redundancy `X_1=X_0`, so explicit memory `M` is not the only carrier of lower-side information.
+- [`docs/stage4_protocol.md`](docs/stage4_protocol.md)
 
-Therefore the result is a **candidate relational/information-accessibility component of temporal direction**, not a completed theory of physical time.
+Canonical dimensions:
+
+`d_C=d_S=4`.
+
+Kinematic space:
+
+`H_kin=H_C tensor H_S`.
+
+Canonical Hamiltonians:
+
+`H_S|n>_S=n|n>_S`
+
+`H_C|n>_C=-n|n>_C`.
+
+Constraint generator:
+
+`H_tot=H_C tensor I_S + I_C tensor H_S`.
+
+Physical subspace:
+
+`H_phys=ker(H_tot)=span{|n>_C|n>_S}`.
+
+Finite clock readings are defined by the DFT basis:
+
+`|t_j>_C=(1/sqrt(d)) sum_n exp(+i n t_j)|n>_C`,
+
+with:
+
+`t_j=2 pi j/d`.
+
+The central Stage 4 comparison is between the generally lossy kinematic projection:
+
+`P_j^kin=(<t_j| tensor I_S): H_kin -> H_S`
+
+and the normalized physical reduction:
+
+`R_j=sqrt(d) P_j^kin restricted to H_phys`.
+
+The ideal canonical model will test whether `R_j` is an isometric/invertible global-to-clock-relative map, and whether local-to-local dynamics can be written as:
+
+`T_{k<-j}=R_k R_j^{-1}`
+
+with the expected unitary composition law.
+
+Stage 4.0 freezes the distinctions:
+
+`history-state encoding != physical Page-Wootters state`
+
+`kinematic projection != physical reduction`
+
+`constraint satisfaction != nontrivial relational change`
+
+`global stationarity != absence of internal relational dynamics`
+
+`finite periodic clock != claim that physical time is fundamentally periodic`
+
+`exact clock-relative dynamics != proof of fundamental emergent time`.
+
+### Stage 4 sequence
+
+- **Stage 4.0 — protocol freeze — completed**
+- **Stage 4A — finite clock kinematics — next**
+- Stage 4B — constrained global physical state
+- Stage 4C — conditional dynamics
+- Stage 4D — reduction-map reversibility
+- Stage 4E — relational transition structure
+- Stage 4F — operational and negative controls
+- Stage 4G — robustness and synthesis
 
 ## Key methodological guards
 
@@ -195,6 +224,12 @@ Therefore the result is a **candidate relational/information-accessibility compo
 
 `same local statistic != same global information structure`
 
+`history-state encoding != physical Page-Wootters state`
+
+`kinematic projection != physical reduction`
+
+`clock-relative dynamics != fundamental emergent time`
+
 A successful software construction is not by itself an ontological result.
 
 ## Fixed questions
@@ -208,4 +243,4 @@ Every stage ends by asking:
 5. What is invariant, reconstructible, ambiguous, lost, or locally accessible?
 6. What physical meaning, if any, can be assigned to the surviving structures?
 
-Stage 3 answers are in [`results/stage3_synthesis.md`](results/stage3_synthesis.md).
+Stage 3 answers are in [`results/stage3_synthesis.md`](results/stage3_synthesis.md). Stage 4 will answer the same questions for the finite constrained quantum model.

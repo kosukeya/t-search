@@ -273,11 +273,33 @@ Protocol-only final clean PR merge-ref regression:
 
 `255 passed in 3.94s`.
 
-### Stage 5A — symmetric three-subsystem constrained model — next
+### Stage 5A — symmetric three-subsystem constrained model — completed
 
-Implement qutrit A/B/C spaces, Hamiltonians, total constraint, analytic zero-sum physical basis, numerical kernel verification, DFT clock bases, and the seven-dimensional physical baseline. Do not implement cross-clock reductions or perspective changes until this substrate passes.
+Notes / result:
 
-### Stage 5B — per-clock reductions and supports
+- [`stage5a_notes.md`](stage5a_notes.md)
+- [`../results/stage5a_three_subsystem.md`](../results/stage5a_three_subsystem.md)
+
+Implemented the qutrit A/B/C substrate, centered subsystem Hamiltonians, the 27-dimensional total constraint, analytic seven-state zero-sum physical basis, independent numerical kernel verification, generic complex physical-state embedding, and one ideal finite DFT clock basis per subsystem.
+
+Canonical checks:
+
+- `dim(H_kin)=27`;
+- `dim(H_phys)=7`;
+- analytic and numerical physical projectors agree at machine precision;
+- each subsystem clock basis is orthonormal;
+- `exp(-i H_X Delta)|t_j>_X=|t_{j+1 mod 3}>_X`;
+- three clock steps return the identity.
+
+Focused tests: **12**.
+
+Code/test PR merge-ref checkpoint:
+
+`267 passed in 4.58s`.
+
+This establishes only the constrained substrate and three available ideal clock kinematics. It does not yet establish cross-clock perspective consistency.
+
+### Stage 5B — per-clock reductions and supports — next
 
 Implement `K_A`, `K_B`, `K_C`, `R_X(j)`, `E_X(j)`, clock probabilities, isometry/round-trip tests, and same-clock transition checks.
 

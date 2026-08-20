@@ -88,4 +88,6 @@ These are representation/operational controls inside the toy model. They do not 
 
 Focused Stage 4F tests: **12**.
 
+The Stage 4F-specific checks remain part of the full Stage 4 suite; Stage 4G will perform the final documentation-inclusive regression and synthesis.
+
 Next: Stage 4G — robustness and synthesis.

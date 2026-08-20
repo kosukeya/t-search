@@ -1,6 +1,6 @@
 # Stage 4C — Conditional Dynamics
 
-Status: **implementation/focused-test checkpoint complete; PR validation pending**.
+Status: **completed**.
 
 Canonical model:
 
@@ -49,6 +49,10 @@ The same conditional-dynamics identities are tested at `d=5` for generic complex
 A nonphysical kinematic state can be formally clock-conditioned, but the Stage 4C `physical_reduction` API rejects it. Therefore:
 
 `formal clock conditioning != physical Page-Wootters reduction`.
+
+PR #5 clean merge-ref regression at this checkpoint:
+
+`207 passed in 3.15s`.
 
 Strongest allowed Stage 4C statement:
 

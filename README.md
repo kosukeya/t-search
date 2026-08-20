@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stages 1--4 are complete and merged. Stage 5.0 and Stage 5A are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5B is next.**
+**Stages 1--4 are complete and merged. Stage 5.0, Stage 5A, and Stage 5B are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5C is next.**
 
 Integrated syntheses:
 
@@ -33,6 +33,7 @@ Stage 5 protocol / checkpoints:
 - [`docs/stage5_protocol.md`](docs/stage5_protocol.md)
 - [`docs/stage5_concepts.md`](docs/stage5_concepts.md)
 - [`docs/stage5a_notes.md`](docs/stage5a_notes.md) / [`results/stage5a_three_subsystem.md`](results/stage5a_three_subsystem.md)
+- [`docs/stage5b_notes.md`](docs/stage5b_notes.md) / [`results/stage5b_per_clock_reductions.md`](results/stage5b_per_clock_reductions.md)
 
 Stage 4 final merge-ref regression:
 
@@ -42,9 +43,13 @@ Stage 5.0 protocol-only clean PR merge-ref regression:
 
 `255 passed in 3.94s`.
 
-Stage 5A code/test checkpoint:
+Stage 5A documentation-inclusive clean PR merge-ref regression:
 
-`267 passed in 4.58s`.
+`267 passed in 3.10s`.
+
+Stage 5B code/test clean PR merge-ref checkpoint:
+
+`279 passed in 4.82s`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum-time ontology has been established.
 
@@ -210,7 +215,7 @@ The physical space is the seven-dimensional zero-sum sector:
 
 `H_phys=ker(H_tot)`.
 
-For each clock choice `X`, the physical reduction is planned to map onto a seven-dimensional constraint-compatible support:
+For each clock choice `X`, the physical reduction maps onto a seven-dimensional constraint-compatible support:
 
 `R_X(j): H_phys -> K_X`,
 
@@ -230,28 +235,40 @@ Reserved robustness controls include symmetric `d=5`, subsystem permutation cova
 
 ### Stage 5A — symmetric three-subsystem constrained model — completed
 
-The implemented substrate verifies:
+Implemented and verified:
 
 - `dim(H_kin)=27`;
 - `dim(H_phys)=7`;
-- the seven zero-sum product-energy triples;
-- equality of analytic and independently computed numerical zero-eigenspace projectors;
-- generic complex physical-state embedding with zero constraint residual;
-- a nonphysical `|+1,+1,+1>` control with residual `3`;
-- one orthonormal finite qutrit DFT clock basis for each of A/B/C;
-- exact cyclic one-step clock translation and three-step periodic return within numerical tolerance.
+- the analytic zero-sum basis equals the independently diagonalized numerical kernel projector;
+- generic complex physical coefficients satisfy the constraint;
+- all three subsystems support orthonormal cyclic qutrit DFT clock bases.
 
-Focused tests: **12**.
+Focused Stage 5A tests: **12**.
 
-Code/test PR merge-ref checkpoint:
+### Stage 5B — per-clock reductions and supports — completed
 
-`267 passed in 4.58s`.
+For each `X in {A,B,C}`:
 
-Stage 5A establishes the shared constrained substrate and three available clock kinematics only. It does not yet establish that changing physical clock preserves the Stage 4 perspective-consistency structure.
+- `K_X` is a seven-dimensional proper subspace of the nine-dimensional rest tensor product;
+- normalized physical states give `p_X(j)=1/3`;
+- `R_X(j)` is isometric from `H_phys` to `K_X`;
+- `R_X(j)E_X(j)=P_KX` on the ambient rest space and identity on `K_X`;
+- `E_X(j)R_X(j)=I_phys` on the physical constrained space;
+- `T_X(k<-j)=R_X(k)E_X(j)` reproduces the expected rest-Hamiltonian evolution on the support and satisfies identity/inverse/composition.
 
-### Stage 5B — next
+Focused Stage 5B tests: **12**.
 
-Implement the three constraint-compatible reduced supports `K_A`, `K_B`, `K_C`, physical reductions `R_X(j)`, reconstructions `E_X(j)`, uniform ideal clock probabilities, support-space isometry/round trips, and same-clock transition checks. Genuine cross-clock maps remain Stage 5C.
+This is still an intra-clock result:
+
+`per-clock reversibility != genuine cross-clock covariance`.
+
+### Stage 5C — next
+
+Implement the genuine physical clock-change maps:
+
+`S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`
+
+for distinct clock subsystems. Verify direct-global route consistency, support-space isometry/unitarity, and two-way clock-change round trips. Cross-clock three-frame composition remains Stage 5D.
 
 ## Key methodological guards
 

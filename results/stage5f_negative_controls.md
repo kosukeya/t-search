@@ -1,6 +1,6 @@
 # Stage 5F Results — Negative Controls
 
-Status: **completed at the code/test checkpoint; final documentation-inclusive regression pending.**
+Status: **completed**.
 
 ## Full-rest-space overextension fails
 
@@ -125,4 +125,4 @@ Code/test clean PR merge-ref checkpoint:
 
 `327 passed in 13.78s`.
 
-A final documentation-inclusive clean regression will be recorded after status synchronization.
+Final documentation-inclusive clean PR merge-ref result is tracked in Draft PR #6.

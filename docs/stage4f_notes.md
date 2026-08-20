@@ -1,6 +1,10 @@
 # Stage 4F — Operational and Negative Controls
 
-Status: **implementation complete; final CI checkpoint pending documentation-inclusive head**.
+Status: **completed**.
+
+Clean PR merge-ref checkpoint including Stage 4F code/tests/experiment/notes/results:
+
+`243 passed in 3.33s`.
 
 ## Purpose
 
@@ -40,7 +44,7 @@ For the equal-amplitude `d=4` physical state, the analytic profile is:
 
 `[1/2, 1/4, 0, 1/4]`.
 
-Both the global conditional formula and the local Born rule must reproduce this profile.
+Both the global conditional formula and the local Born rule reproduce this profile.
 
 The equality is also checked for a generic complex physical coefficient vector and in `d=5`.
 

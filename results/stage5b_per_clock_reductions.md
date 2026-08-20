@@ -125,3 +125,5 @@ Focused Stage 5B tests: **12**.
 Code/test clean PR merge-ref checkpoint:
 
 `279 passed in 4.82s`.
+
+A documentation-inclusive clean PR merge-ref regression is run again after the Stage 5B notes/concepts/PR metadata are synchronized.

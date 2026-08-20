@@ -1,15 +1,17 @@
 # Stage 4 Protocol — Finite Page--Wootters-Style Quantum Model
 
+Status: **Stage 4.0 and Stage 4A--4G completed on Draft PR #5.**
+
 ## 1. Purpose
 
 Stage 4 is the first explicitly quantum global/local stage of `t-search`.
 
-The target is not to prove that time fundamentally emerges from entanglement or constraint. The target is to construct a finite exact Page--Wootters-style model in which a stationary constrained global quantum state and clock-relative local system descriptions are connected by explicit maps, then test which structures survive those transformations.
+The goal is not to prove that time fundamentally emerges from entanglement or constraint. The goal is to construct a finite exact Page--Wootters-style model in which a stationary constrained global quantum state and clock-relative local system descriptions are connected by explicit maps, then test which structures survive those transformations.
 
-Stage 4 keeps the six fixed questions:
+Every Stage 4 result is interpreted through the six fixed questions:
 
 1. What is the block-like/global description `B`?
-2. What is the becoming-like/local description `G`?
+2. What is the local / becoming-like description `G`?
 3. What is the transformation from global to local?
 4. Is it reversible; what is hidden/discarded?
 5. What is invariant, reconstructible, ambiguous, lost, or locally accessible?
@@ -23,11 +25,11 @@ Stage 4 keeps the six fixed questions:
 
 `kinematic projection != physical reduction`
 
-`constraint satisfaction != nontrivial relational change`
+`constraint satisfaction != nontrivial relational ray change`
 
 `global stationarity != absence of internal relational dynamics`
 
-`finite periodic clock != claim that physical time is fundamentally periodic`
+`finite periodic clock != fundamental physical periodicity`
 
 `clock-relative dynamics != proof of fundamental emergent time`
 
@@ -37,9 +39,13 @@ Stage 4 keeps the six fixed questions:
 
 `common clock-origin shift != change of physical clock`
 
+`bookkeeping covariance != physical clock-choice invariance`
+
 `vector change != ray/density-matrix change`
 
 `arbitrary clock basis != ideal relational time basis`
+
+`operational equality != ontological equivalence`
 
 ## 3. Canonical finite model
 
@@ -49,11 +55,11 @@ Use:
 
 Kinematic space:
 
-`H_kin=H_C tensor H_S`, `dim(H_kin)=d^2=16`.
+`H_kin=H_C tensor H_S`, `dim(H_kin)=d^2`.
 
 System Hamiltonian:
 
-`H_S|n>_S=n|n>_S`, `n=0,...,d-1`.
+`H_S|n>_S=n|n>_S`.
 
 Clock Hamiltonian:
 
@@ -63,29 +69,23 @@ Total constraint generator:
 
 `H_tot=H_C tensor I_S + I_C tensor H_S`.
 
-Canonical physical subspace:
+Physical subspace:
 
 `H_phys=ker(H_tot)=span{|n>_C|n>_S}`.
 
-Thus `dim(H_phys)=d=4`.
+Thus `dim(H_phys)=d`.
 
-## 4. Physical state family
-
-General canonical physical vector:
+General physical vector:
 
 `|Psi_c>=sum_n c_n |n>_C|n>_S`.
 
-The coefficient vector may be any nonzero complex vector. Normalized physical states satisfy:
+Normalized physical states satisfy:
 
 `sum_n |c_n|^2=1`.
 
-The equal-amplitude baseline uses:
+The equal-amplitude state is only a baseline. Generic complex and sparse multi-sector coefficients are required as controls.
 
-`c_n=1/sqrt(d)`.
-
-A successful result must not depend only on the equal-amplitude choice; generic complex coefficients are required in Stage 4B onward.
-
-## 5. Constraint and stationarity
+## 4. Constraint and global stationarity
 
 Physicality means:
 
@@ -97,45 +97,35 @@ For a physical state:
 
 for every real external parameter `tau`.
 
-This is called **stationarity under the declared constraint generator**.
+This is stationarity under the declared constraint generator, not evidence that the universe literally has no change.
 
-Do not reinterpret this as evidence that the physical universe literally has no change.
-
-## 6. Finite DFT clock readings
+## 5. Finite DFT clock
 
 Define:
 
 `t_j=2 pi j/d`, `j=0,...,d-1`.
 
-Clock reading states:
+Clock states:
 
 `|t_j>_C=(1/sqrt(d)) sum_n exp(+i n t_j)|n>_C`.
 
-These form an orthonormal DFT basis:
+They satisfy:
 
 `<t_j|t_k>=delta_jk`.
 
-With:
-
-`Delta=2 pi/d`,
-
-the clock Hamiltonian translates the states cyclically:
+With `Delta=2 pi/d`:
 
 `exp(-i H_C Delta)|t_j>=|t_{j+1 mod d}>`.
 
-The clock is finite and periodic:
+The finite clock is periodic:
 
 `|t_{j+d}>=|t_j>`.
 
-The project must never generalize this finite-model periodicity into a claim that physical time is fundamentally periodic.
+This finite-model periodicity must not be generalized into a claim that physical time is fundamentally periodic.
 
-## 7. Formal kinematic clock conditioning
+## 6. Kinematic conditioning versus physical reduction
 
-For arbitrary:
-
-`|Phi> in H_kin`,
-
-define:
+For arbitrary `|Phi> in H_kin`, define:
 
 `P_j^kin=(<t_j|_C tensor I_S)`.
 
@@ -143,112 +133,107 @@ Then:
 
 `|tilde_psi_j>=P_j^kin|Phi>`.
 
-This map is defined even for vectors violating the physical constraint.
+This formal conditioning is defined even for nonphysical kinematic vectors.
 
-Therefore:
+For canonical `d=4`, `P_j^kin:C^16->C^4` has rank `4` and nullity `12`; it is many-to-one.
 
-`being conditionable on clock readings != being a physical Page--Wootters state`.
-
-## 8. Kinematic information loss
-
-`P_j^kin:H_kin -> H_S`.
-
-For canonical `d=4`:
-
-- domain dimension `16`;
-- codomain dimension `4`;
-- rank `4`;
-- nullity `12`.
-
-Thus the unrestricted kinematic projection is non-injective and generally lossy.
-
-## 9. Normalized physical reduction
-
-Restrict to the physical subspace and define:
+On the physical subspace define:
 
 `R_j=sqrt(d) P_j^kin restricted to H_phys`.
 
-For:
-
-`|Psi_c>=sum_n c_n |n,n>`,
+For `|Psi_c>=sum_n c_n |n,n>`:
 
 `R_j|Psi_c>=sum_n c_n exp(-i n t_j)|n>_S`.
 
-For normalized physical states, the ideal clock-reading probability is:
+For normalized physical states:
 
 `p_j=||P_j^kin|Psi>||^2=1/d`.
 
-## 10. Conditional Schrödinger relation
+Thus:
 
-The system-relative state must satisfy:
+`formal conditioning != physical reduction`
+
+and:
+
+`kinematic projection loss != physical-subspace reduction loss`.
+
+## 7. Conditional dynamics
+
+The physical reduction satisfies:
 
 `R_j|Psi>=exp[-i H_S(t_j-t_0)]R_0|Psi>`.
 
 Equivalently:
 
-`psi_{j+1}=exp(-i H_S Delta)psi_j`.
+`psi_{j+1}=exp(-i H_S Delta)psi_j`,
 
-This includes the finite periodic wrap-around.
+including finite wrap-around.
 
-A successful conditional-state sequence is called **clock-relative unitary dynamics**, not ontological becoming.
+This is called clock-relative unitary dynamics, not ontological becoming.
 
-## 11. Explicit reconstruction
+## 8. Explicit reconstruction and physical-subspace reversibility
 
 Define:
 
 `E_j|phi>=sum_n exp(+i n t_j) phi_n |n>_C|n>_S`.
 
-Stage 4D requires:
+In the ideal matched-energy model:
 
 `R_j E_j=I_S`,
 
-and:
-
 `E_j R_j=I_phys`.
 
-Norms and inner products must be preserved on `H_phys`.
+Norms and inner products are preserved on `H_phys`.
 
-This reversibility is restricted to the ideal physical subspace and must not be extended to the full kinematic space.
+This inverse does not extend to unrestricted `H_kin`.
 
-## 12. Relational transition maps
+Mathematical reconstructibility also does not imply automatic operational access by an internal observer.
+
+## 9. Relational transition structure
 
 Define:
 
 `T_{k<-j}=R_k E_j`.
 
-The expected result is:
+Then:
 
 `T_{k<-j}=exp[-i H_S(t_k-t_j)]`.
 
-Stage 4E verifies:
+The family satisfies:
 
 `T_{j<-j}=I`,
 
 `T_{j<-k}=T_{k<-j}^{-1}`,
 
-and:
-
 `T_{l<-k} T_{k<-j}=T_{l<-j}`.
 
-The family is called a **clock-relative transition structure**, not yet a fundamental invariant of time.
+This identity/inverse/composition family is the principal Stage 4 candidate surviving structure.
 
-## 13. Clock-origin covariance
+It is not yet a fundamental invariant of time because the physical clock subsystem itself remains fixed throughout Stage 4.
 
-For an arbitrary common origin shift `alpha`:
+## 10. Origin, phase, and bookkeeping covariance
 
-`|t_j^(alpha)>=(1/sqrt(d)) sum_n exp[i n(t_j+alpha)]|n>_C`.
-
-Then:
+For a common origin shift `alpha`:
 
 `R_j^(alpha)|Psi>=exp(-i H_S alpha)R_j|Psi>`.
 
-Individual local vector representatives change, but:
+Individual local ket representatives change while:
 
 `T_{k<-j}^(alpha)=T_{k<-j}`.
 
-This is only an origin-convention control. Changing the physical clock subsystem is deferred to Stage 5.
+For a global phase:
 
-## 14. Operational conditional probabilities
+`|Psi'>=exp(i theta)|Psi>`,
+
+physicality, clock probabilities, local density matrices, and tested Born predictions remain unchanged.
+
+Pure renaming of clock labels also leaves the transition matrices and composition law unchanged when applied consistently.
+
+These are representation/bookkeeping controls only:
+
+`origin / phase / label covariance != genuine change of physical clock subsystem`.
+
+## 11. Operational conditional probabilities
 
 For a system projector `Pi_a`:
 
@@ -258,126 +243,116 @@ The local conditional state predicts:
 
 `P_local(a|t_j)=<psi_j|Pi_a|psi_j>`.
 
-Stage 4F verifies equality for multiple readings and for a projector that does not commute with `H_S`, so nontrivial reading dependence is visible.
-
-Canonical operational control:
+Stage 4 uses the noncommuting projector:
 
 `Pi_+=|+><+|`, `|+>=(|0>+|1>)/sqrt(2)`.
 
-For the equal-amplitude `d=4` physical state, both global and local descriptions must yield:
+For the equal-amplitude `d=4` state both descriptions give:
 
 `[1/2,1/4,0,1/4]`.
 
-This equality is an operational consistency check inside the chosen representation, not a proof of ontological equivalence.
+The equality is also tested for generic complex coefficients and other finite dimensions.
 
-## 15. Constraint-violating negative control
+This is operational consistency inside the chosen representation, not proof of a unique ontology.
+
+## 12. Negative controls
+
+### Constraint violation
 
 Use:
 
 `|Phi_bad>=(|0>_C|0>_S+|0>_C|1>_S)/sqrt(2)`.
 
-It satisfies:
-
-`||H_tot|Phi_bad>||>0`.
-
-Formal clock conditioning is still possible, but the normalized formal conditional family must fail the expected Schrödinger relation for at least one nonzero clock step.
+Formal conditioning remains possible, but the normalized conditional sequence fails the expected Schrödinger relation for nonzero clock steps.
 
 Therefore:
 
-`formal clock conditioning != physical Page--Wootters dynamics`.
+`history-like clock decomposition != physical Page--Wootters dynamics`.
 
-## 16. Trivial single-energy physical control
+### Single-energy physical state
 
 Use:
 
 `|Psi_triv>=|1>_C|1>_S`.
 
-It satisfies the constraint, but:
+The local vectors differ only by global phase:
 
 `|psi_j>=exp(-i t_j)|1>_S`.
 
-Thus vector representatives vary while all density matrices are equal:
-
-`rho_j=|1><1|`.
+All density matrices are equal.
 
 Therefore:
 
 `constraint satisfaction != nontrivial relational ray change`.
 
-## 17. Wrong-clock-basis control
+### Sparse multi-sector control
 
-Conditioning on the clock energy basis gives:
+A coherent two-sector physical state already gives nontrivial ray variation over the cycle. Therefore equal-amplitude full-spectrum support is not necessary for the tested relative dynamics.
+
+This pure toy-family result must not be generalized into the claim that entanglement universally creates time.
+
+### Wrong clock basis
+
+Conditioning on a clock energy state gives:
 
 `(<m|_C tensor I)|Psi_c>=c_m|m>_S`.
 
-On physical coefficient coordinates this is:
+On physical coefficient coordinates:
 
-`Q_m=|m><m|`.
+`Q_m=|m><m|`,
 
-For dimension `d`:
+with rank `1` and nullity `d-1`.
 
-`rank(Q_m)=1`,
+Thus arbitrary clock-basis conditioning need not be reversible even on `H_phys`.
 
-`nullity(Q_m)=d-1`.
+## 13. Vector, ray, density-matrix distinction
 
-Thus energy-basis clock conditioning is generally non-injective even on `H_phys` and is not equivalent to the ideal DFT time-basis reduction.
-
-This does not establish a unique physically correct clock basis in general.
-
-## 18. Vector, ray, density-matrix distinction
-
-The implementation must distinguish:
+The implementation distinguishes:
 
 - exact vector equality;
 - equality up to global phase;
-- density-matrix/ray equality;
+- ray/density-matrix equality;
 - equality of observable probabilities.
 
-For linear isometry/reconstruction tests, use vectors.
+For linear reconstruction/isometry tests use vectors. For claims of observable change quotient global phase using fidelity or density matrices.
 
-For claims of observable local change, quotient global phase using pure-state fidelity or density matrices.
+## 14. Robustness scope
 
-## 19. Numerical discipline
+Stage 4G applies a joint residual suite combining:
 
-Stage 4 uses deterministic finite linear algebra.
+- zero-constraint residual;
+- ideal clock probability `1/d`;
+- physical reduction/reconstruction round trip;
+- expected unitary transition residual;
+- transition composition residual;
+- global/local Born consistency residual.
 
-Canonical tolerance:
+The suite passes within `atol=1e-10` for generic normalized physical states at:
 
-`atol=1e-10`.
+`d=3,4,5,6`,
 
-Tests should compare matrix/vector identities rather than rounded printed values. Analytic expected values should be stated where simple.
+for multiple generic/sparse coefficient families, and for multiple common clock origins.
 
-## 20. Execution sequence
+Additional tests cover global phase and arbitrary pure bookkeeping labels.
 
-### Stage 4A — finite clock kinematics — completed
+This is modest finite-family robustness, not a continuum limit or realistic clock-quality analysis.
 
-Clock/system finite dimensions, DFT clock basis, orthonormality, translation, periodicity.
+## 15. Execution sequence
 
-### Stage 4B — constrained global physical state — completed
+- Stage 4.0 — protocol freeze — completed.
+- Stage 4A — finite clock kinematics — completed.
+- Stage 4B — constrained global physical state — completed.
+- Stage 4C — conditional dynamics — completed.
+- Stage 4D — reduction-map reversibility — completed.
+- Stage 4E — relational transition structure — completed.
+- Stage 4F — operational and negative controls — completed.
+- Stage 4G — robustness and synthesis — completed.
 
-Total constraint, physical kernel, generic complex physical states, global stationarity.
+Synthesis:
 
-### Stage 4C — conditional dynamics — completed
+- [`../results/stage4_synthesis.md`](../results/stage4_synthesis.md)
 
-Clock probabilities, normalized physical reductions, exact discrete Schrödinger relation.
-
-### Stage 4D — reduction-map reversibility — completed
-
-Explicit `E_j`, round trips, isometry, kinematic-vs-physical injectivity contrast.
-
-### Stage 4E — relational transition structure — completed
-
-`T_{k<-j}`, unitary identity/inverse/composition, state transport, origin covariance, periodic wrap-around.
-
-### Stage 4F — operational and negative controls — completed
-
-Global/local Born consistency, constraint violation, single-energy phase-only control, clock-energy-basis noninjectivity, vector/ray/density-matrix distinctions.
-
-### Stage 4G — robustness and synthesis — next
-
-Consolidate remaining dimension/coefficient/relabeling robustness, answer the six fixed questions, run final full regression, and prepare the Stage 4 synthesis / merge-readiness checkpoint.
-
-## 21. Stage 4 exit criteria
+## 16. Stage 4 exit criteria
 
 Stage 4 may be considered complete only if all of the following hold:
 
@@ -402,10 +377,14 @@ Stage 4 may be considered complete only if all of the following hold:
 19. Clock-energy-basis conditioning is shown non-injective on the physical coefficient space.
 20. Final robustness/synthesis and full repository regression are complete.
 
-## 22. Allowed Stage 4 conclusion
+Criteria 1--19 are implemented and covered by focused tests. Criterion 20 is closed by the Stage 4G robustness suite, synthesis, and final PR merge-ref regression recorded in the Stage 4 review checkpoint.
 
-The strongest allowed conclusion before Stage 4G synthesis is:
+## 17. Allowed Stage 4 conclusion
 
-**the ideal finite matched-energy Page--Wootters-style construction supports stationary constrained global states, reversible DFT-clock-relative reductions on the physical subspace, exact unitary local-to-local transition consistency, and operationally matching global/local conditional Born predictions; targeted negative controls show that these properties depend on the physical constraint, nontrivial multi-sector coherence for ray change, and the selected ideal clock-reading basis.**
+**within the tested finite matched-energy Page--Wootters-style family, a stationary constrained global quantum state and its ideal clock-relative local descriptions are connected by an explicitly reversible physical reduction, an origin- and bookkeeping-stable unitary transition family satisfying identity/inverse/composition consistency, and matching tested global/local conditional Born predictions. These structures survive modest finite-dimension, coefficient, global-phase, and origin changes, while targeted controls show that they do not extend to arbitrary kinematic states or arbitrary clock bases.**
+
+The strongest surviving project-level candidate is **perspective-consistent transition structure**.
 
 Do not call this a proof that time fundamentally emerges, that eternalism is true, that becoming is false, that entanglement universally creates time, or that the finite periodic clock describes fundamental physical periodicity.
+
+The decisive next test is Stage 5: change the physical clock subsystem itself and ask whether an analogous perspective-consistency structure survives.

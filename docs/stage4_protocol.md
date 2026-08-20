@@ -84,7 +84,7 @@ with dimension:
 
 `dim(H_kin)=16`.
 
-Dimension four is chosen because it is the smallest nontrivial finite model that gives a useful cyclic time basis while retaining several distinct energy sectors.
+Dimension four is chosen as a convenient first nontrivial model with a simple four-step cyclic DFT clock and several distinct energy sectors. It is not claimed to be the minimum possible finite Page--Wootters dimension.
 
 Stage 4G may vary `d`, but the canonical protocol is fixed at `d=4`.
 
@@ -360,7 +360,7 @@ Define the unscaled kinematic clock projection:
 
 On the full 16-dimensional kinematic space this map is many-to-one and non-injective.
 
-For `d=4` its rank is at most 4 and its kernel has dimension 12.
+For `d=4` it has rank `4` and kernel dimension `12`.
 
 Thus:
 
@@ -726,7 +726,7 @@ Revise the protocol rather than forcing a positive result if:
 - conditional dynamics only works for the equal-amplitude state but fails for generic physical coefficients;
 - `R_j` fails to be isometric on the declared physical subspace;
 - reconstruction uses hidden coefficients not contained in the local state plus declared theory data;
-- transition-map composition fails without a understood finite-periodic reason;
+- transition-map composition fails without an understood finite-periodic reason;
 - a constraint-violating state accidentally passes the same physical-dynamics criterion because the criterion is too weak;
 - a single-energy global phase is misreported as observable system change;
 - a basis-dependent artifact is labeled a physical invariant;
@@ -792,3 +792,9 @@ The candidate structure of interest is not the literal clock label, but the cons
 Even if every Stage 4 test succeeds:
 
 `exact clock-relative dynamics != proof of fundamental emergent time`.
+
+## 35. Reference anchors
+
+- Don N. Page and William K. Wootters, *Evolution without evolution: Dynamics described by stationary observables*, Phys. Rev. D 27, 2885 (1983), DOI `10.1103/PhysRevD.27.2885`.
+- Philipp A. Höhn, Alexander R. H. Smith, and Maximilian P. E. Lock, *The Trinity of Relational Quantum Dynamics*, arXiv:`1912.00033`, later Phys. Rev. D 104, 066001 (2021).
+- Leonardo Chataignier, Philipp A. Höhn, Maximilian P. E. Lock, and Fabio M. Mele, *Relational Dynamics with Periodic Clocks*, arXiv:`2409.06479` (2024).

@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stages 1--4 are complete and merged. Stage 5.0 through Stage 5C are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5D is next.**
+**Stages 1--4 are complete and merged. Stage 5.0 through Stage 5E are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5F is next.**
 
 Integrated syntheses:
 
@@ -35,6 +35,8 @@ Stage 5 protocol / checkpoints:
 - [`docs/stage5a_notes.md`](docs/stage5a_notes.md) / [`results/stage5a_three_subsystem.md`](results/stage5a_three_subsystem.md)
 - [`docs/stage5b_notes.md`](docs/stage5b_notes.md) / [`results/stage5b_per_clock_reductions.md`](results/stage5b_per_clock_reductions.md)
 - [`docs/stage5c_notes.md`](docs/stage5c_notes.md) / [`results/stage5c_genuine_clock_change.md`](results/stage5c_genuine_clock_change.md)
+- [`docs/stage5d_notes.md`](docs/stage5d_notes.md) / [`results/stage5d_cross_clock_composition.md`](results/stage5d_cross_clock_composition.md)
+- [`docs/stage5e_notes.md`](docs/stage5e_notes.md) / [`results/stage5e_operational_covariance.md`](results/stage5e_operational_covariance.md)
 
 Stage 4 final merge-ref regression:
 
@@ -52,9 +54,17 @@ Stage 5B final roadmap-inclusive clean PR merge-ref regression:
 
 `279 passed in 4.88s`.
 
-Stage 5C code/test clean PR merge-ref checkpoint:
+Stage 5C final clean PR merge-ref checkpoint:
 
-`291 passed in 5.64s`.
+`291 passed in 5.56s`.
+
+Stage 5D final clean PR merge-ref checkpoint:
+
+`303 passed in 10.19s`.
+
+Stage 5E corrected code/test checkpoint:
+
+`315 passed in 13.45s`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum-time ontology has been established.
 
@@ -284,17 +294,58 @@ Across all six ordered distinct clock pairs and all canonical reading pairs:
 
 Focused Stage 5C tests: **12**.
 
-This establishes pairwise reversible genuine clock changes, but not yet the three-clock composition law:
+### Stage 5D — cross-clock composition — completed
 
-`pairwise reversible clock changes != full cross-clock perspective consistency`.
+Across all `6 * 3^3 = 162` ordered distinct-clock routes:
 
-### Stage 5D — next
+- `S_{Z<-Y}S_{Y<-X}=S_{Z<-X}` in ambient and support coordinates;
+- generic-state and all physical-basis paths are independent of the chosen intermediate clock route;
+- the intermediate clock-reading coordinate cancels from the final source-to-target map;
+- three-clock closed loops return `P_KX` ambiently and `I_KX` on support coordinates.
 
-Test the central cross-clock composition law across all three physical clock choices and all canonical readings:
+Focused Stage 5D tests: **12**.
 
-`S_{Z<-Y}(l,k) S_{Y<-X}(k,j)=S_{Z<-X}(l,j)`.
+This is the first Stage 5 checkpoint where the project-level **perspective-consistent transition structure** survives changes of the physical clock subsystem itself.
 
-Operational covariance of transformed observables remains Stage 5E.
+### Stage 5E — operational covariance and perspective-dependent structure — completed
+
+For reduced support observables:
+
+`O_Y=S_{Y<-X} O_X S_{Y<-X}^dagger`.
+
+Stage 5E verifies across all ordered distinct clock pairs and canonical reading pairs that:
+
+- generic expectation values agree between source and target perspectives;
+- transformed rank-one projectors give matching Born probabilities;
+- reduced density matrices transform covariantly;
+- lifting `O_X` to `H_phys` and reducing independently to the target perspective agrees with direct clock-change conjugation;
+- observable transformations satisfy cross-clock composition and inverse consistency.
+
+The physical observable lift is explicitly restricted on both sides:
+
+`O_phys=P_phys E_X O_X R_X P_phys`.
+
+The first Stage 5E CI exposed this domain requirement; after correcting it, all tests passed.
+
+Perspective-dependent structure is explicit for:
+
+`|Psi_*>= (|+1,-1,0> + |+1,0,-1>)/sqrt(2)`.
+
+Across all canonical readings:
+
+- A-clock perspective: one bit of B:C entanglement;
+- B-clock perspective: zero A:C entanglement;
+- C-clock perspective: zero A:B entanglement.
+
+Thus:
+
+`perspective-dependent reduced structure != operational inconsistency`.
+
+Focused Stage 5E tests: **12**.
+
+### Stage 5F — next
+
+Run the declared negative controls: full-rest-space overextension, wrong clock basis, nonphysical-state conditioning, naive untransformed-observable comparison, and support/synchronization mistakes.
 
 ## Key methodological guards
 
@@ -338,9 +389,13 @@ Operational covariance of transformed observables remains Stage 5E.
 
 `support-subspace isometry != full-rest-space unitarity`
 
+`physical observable lift requires physical domain and codomain restriction`
+
 `state transformation without observable transformation != operational frame covariance`
 
 `perspective-dependent entanglement != inconsistent physics`
+
+`operational covariance != invariance of every representation-dependent quantity`
 
 `clock-relative dynamics != fundamental emergent time`
 

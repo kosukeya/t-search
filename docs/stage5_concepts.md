@@ -114,9 +114,11 @@ The composition rule:
 
 This is the central Stage 5 candidate structure.
 
-If it holds, it establishes consistency of the tested finite frame-change maps, not a fundamental law of time.
+Stage 5D verifies this law across all 162 canonical three-clock reading routes, together with generic-state and physical-basis path independence, cancellation of the intermediate reading coordinate, and closed three-clock loops.
 
-Stage 5C does not yet test this three-clock composition law; that remains Stage 5D.
+The result establishes consistency of the tested finite frame-change maps, not a fundamental law of time.
+
+`cross-clock perspective consistency != quantum general covariance`.
 
 ## Operational frame covariance
 
@@ -130,15 +132,39 @@ then the corresponding reduced observable is:
 
 `O_Y=S_{Y<-X} O_X S_{Y<-X}^dagger`.
 
-Operational covariance means corresponding expectation values / Born probabilities agree.
+Stage 5E verifies that corresponding expectation values and rank-one Born probabilities agree across all ordered distinct clock pairs and canonical reading pairs for the tested generic physical state and support operators.
+
+It also verifies density-matrix covariance and observable composition/round-trip consistency.
 
 `state transformation without observable transformation != operational frame covariance`.
+
+## Physical observable lift
+
+A reduced support observable can be represented on the common constrained space as:
+
+`O_phys=P_phys E_X O_X R_X P_phys`.
+
+The bilateral physical projector is required because the matrix representation of `R_X` has a full kinematic domain even though its physical interpretation is restricted to `H_phys`.
+
+Stage 5E compares target reduction of this physical observable against direct clock-change conjugation.
+
+`physical observable lift requires physical domain and codomain restriction`.
 
 ## Perspective-dependent reduced entanglement
 
 Entanglement defined relative to the tensor factors present in one reduced clock perspective may differ from that in another clock perspective.
 
-This is allowed provided the compared operational quantities are transformed consistently.
+Stage 5E verifies the explicit control:
+
+`|Psi_*>= (|+1,-1,0> + |+1,0,-1>)/sqrt(2)`.
+
+Across all canonical readings:
+
+- A-clock perspective: `S(B:C)=1 bit`;
+- B-clock perspective: `S(A:C)=0`;
+- C-clock perspective: `S(A:B)=0`.
+
+This is allowed because the reduced tensor-factor decomposition itself changes while corresponding transformed operational predictions remain consistent.
 
 `perspective-dependent entanglement != inconsistent physics`.
 
@@ -220,3 +246,32 @@ For every ordered pair of distinct clocks and every canonical source/target read
 This establishes pairwise reversible clock changes only:
 
 `pairwise reversible clock changes != full cross-clock perspective consistency`.
+
+## Stage 5D cross-clock composition checkpoint
+
+Across all `6 * 3^3 = 162` ordered distinct-clock routes, Stage 5D verifies:
+
+- `S_{Z<-Y}S_{Y<-X}=S_{Z<-X}` in ambient and support coordinates;
+- generic-state and every-physical-basis path independence;
+- cancellation of the intermediate clock-reading coordinate;
+- three-clock closed loops return `P_KX` ambiently and `I_KX` on support coordinates.
+
+This establishes the central finite-model cross-clock perspective-consistency structure.
+
+`composition consistency != operational frame covariance`.
+
+## Stage 5E operational checkpoint
+
+For tested generic reduced observables/projectors and physical states, Stage 5E verifies:
+
+- transformed observables are Hermitian target-support operators;
+- expectation values agree across clock perspectives;
+- rank-one Born probabilities agree across clock perspectives;
+- density matrices transform consistently;
+- source-observable lift to `H_phys` and target reduction agrees with direct clock-change conjugation;
+- observable changes satisfy the same cross-clock composition and inverse structure as states;
+- the explicit reduced-entanglement control changes from zero to one bit depending on clock perspective.
+
+This establishes operational covariance for the declared finite ideal family while retaining genuinely perspective-dependent reduced structure.
+
+`operational covariance != invariance of every representation-dependent quantity`.

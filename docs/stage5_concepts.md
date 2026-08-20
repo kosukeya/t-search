@@ -22,6 +22,36 @@ The term `perspective-neutral` describes its formal role only.
 
 `perspective-neutral mathematical representation != physical God's-eye observer`.
 
+## Centered energy labels
+
+For the canonical Stage 5A qutrits, each subsystem uses physical energy labels:
+
+`m in {-1,0,+1}`
+
+rather than raw array indices.
+
+With the symmetric rates `(1,1,1)`, physical product-energy triples satisfy:
+
+`a+b+c=0`.
+
+Stage 5A verifies that this gives a seven-dimensional physical sector inside the 27-dimensional kinematic space.
+
+## Per-subsystem finite clock kinematics
+
+Each subsystem can be equipped with its own finite DFT clock-reading basis:
+
+`|t_j>_X=(1/sqrt(d)) sum_m exp[-i(lambda_X m)t_j^(X)]|m>_X`.
+
+with:
+
+`Delta_X=2*pi/(d lambda_X)`.
+
+The declared clock Hamiltonian translates its own reading basis cyclically:
+
+`exp(-i H_X Delta_X)|t_j>_X=|t_{j+1 mod d}>_X`.
+
+The A/B/C clock coordinate matrices are identical in the symmetric Stage 5A baseline because their spectra/rates are identical, but they belong to distinct subsystem Hilbert spaces and are not one physical clock.
+
 ## Clock-relative support space
 
 For clock choice `X`, the image of the physical reduction:
@@ -129,3 +159,18 @@ It controls the discrete clock-coordinate spacing:
 The symmetric baseline uses `(1,1,1)`; Stage 5G reserves `(1,1,2)` as an asymmetric robustness control.
 
 A clock-rate scale in this toy model is not automatically a physical time-dilation model.
+
+## Stage 5A boundary
+
+Stage 5A establishes only the common constrained substrate and three available finite clock kinematics:
+
+- `H_A`, `H_B`, `H_C`;
+- `H_tot`;
+- the seven-dimensional zero-sum `H_phys`;
+- one cyclic DFT clock basis for each subsystem.
+
+Stage 5A does not yet implement `K_X`, `R_X`, `E_X`, or `S_{Y<-X}`.
+
+Therefore:
+
+`three available clock kinematics != cross-clock perspective consistency`.

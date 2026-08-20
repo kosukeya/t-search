@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 and Stage 4A--4E are complete on `agent/stage-4-page-wootters`; Draft PR #5 tracks Stage 4 and Stage 4F — operational and negative controls — is next.**
+**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 and Stage 4A--4F are complete on `agent/stage-4-page-wootters`; Draft PR #5 tracks Stage 4 and Stage 4G — robustness and synthesis — is next.**
 
 Integrated syntheses:
 
@@ -29,10 +29,12 @@ Stage 4 protocol / checkpoints:
 - [`results/stage4d_reduction_reversibility.md`](results/stage4d_reduction_reversibility.md)
 - [`docs/stage4e_notes.md`](docs/stage4e_notes.md)
 - [`results/stage4e_relational_transition.md`](results/stage4e_relational_transition.md)
+- [`docs/stage4f_notes.md`](docs/stage4f_notes.md)
+- [`results/stage4f_operational_controls.md`](results/stage4f_operational_controls.md)
 
-Stage 4E code/test merge-ref checkpoint:
+Stage 4F clean PR merge-ref checkpoint:
 
-`231 passed`.
+`243 passed`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum time ontology has been established.
 
@@ -140,39 +142,13 @@ Focused tests: **12**.
 
 ### Stage 4D — reduction-map reversibility — completed
 
-The full kinematic clock projection:
+The full kinematic clock projection `P_j^kin=(<t_j| tensor I)` is many-to-one, while the normalized reduction `R_j=sqrt(d) P_j^kin restricted to H_phys` is unitary/isometric in physical-basis coordinates. The explicit reconstruction `E_j` satisfies `R_j E_j=I_S` and `E_j R_j=I_phys`. The full-space composition is not an inverse on unrestricted `H_kin`.
 
-`P_j^kin=(<t_j| tensor I): H_kin -> H_S`
-
-has canonical shape `4 x 16`, rank `4`, and nullity `12`, so it is many-to-one. An explicit nonzero kernel vector provides a constructive witness that distinct global kinematic vectors can share the same clock projection.
-
-By contrast, the normalized physical reduction:
-
-`R_j=sqrt(d) P_j^kin restricted to H_phys`
-
-is unitary/isometric in orthonormal physical-basis coordinates. The explicit reconstruction:
-
-`E_j|phi>=sum_n exp(+i n t_j) phi_n |n>_C|n>_S`
-
-satisfies:
-
-`R_j E_j=I_S`
-
-and:
-
-`E_j R_j=I_phys`.
-
-Inner products and norms are preserved for generic complex physical vectors. The full-space composition `E_j sqrt(d) P_j^kin` has rank `d`, not `d^2`, so it is not an inverse on unrestricted `H_kin`. The same contrast is checked at `d=5`.
-
-Focused Stage 4D tests: **12**.
-
-Strongest Stage 4D statement:
-
-**within the ideal finite matched-energy model, clock conditioning is lossy on the unrestricted kinematic space but becomes information-preserving and explicitly reversible when restricted and normalized on the zero-constraint physical subspace.**
+Focused tests: **12**.
 
 ### Stage 4E — relational transition structure — completed
 
-Defined the local-to-local transition:
+Defined:
 
 `T_{k<-j}=R_k E_j`.
 
@@ -180,43 +156,29 @@ For all canonical ordered pairs:
 
 `T_{k<-j}=exp[-i H_S(t_k-t_j)]`.
 
-The transition family is unitary and satisfies:
+The family is unitary and obeys identity, inverse, and composition consistency. A common non-grid clock-origin shift changes local representatives but leaves the transition family unchanged. The same structure is checked at `d=5`.
 
-`T_{j<-j}=I`,
+Focused tests: **12**.
 
-`T_{j<-k} T_{k<-j}=I`,
+### Stage 4F — operational and negative controls — completed
 
-and:
+For the noncommuting projector `Pi_+=|+><+|`, the canonical equal-amplitude `d=4` global conditional probability and local Born probability both give:
 
-`T_{l<-k} T_{k<-j}=T_{l<-j}`.
+`[1/2, 1/4, 0, 1/4]`.
 
-The composition identity is checked for all `64` canonical ordered triples. For generic complex physical states, the same map transports the actual clock-relative states:
+A constraint-violating kinematic state can be formally conditioned but fails the expected conditional Schrödinger relation. A single-energy constrained state changes only by global phase: vector representatives differ while ray fidelity is `1` and density matrices are identical. Conditioning on the clock energy basis is rank `1` with nullity `d-1` on physical coefficient space, so it is non-injective even on `H_phys`.
 
-`T_{k<-j} R_j|Psi>=R_k|Psi>`.
+Focused tests: **12**.
 
-The finite wrap-around closes with the same one-step unitary. A common non-grid clock-origin shift changes the local representatives but leaves the transition family unchanged:
+Stage 4F clean PR merge-ref regression: **243 passed**.
 
-`T_{k<-j}^(alpha)=T_{k<-j}`.
+Strongest Stage 4F statement:
 
-The expected-unitary, composition, and origin-covariance structure is also checked at `d=5`.
+**within the ideal finite matched-energy model, global and local conditional Born predictions agree for a nontrivial reading-dependent observable, while constraint violation, single-energy phase-only evolution, and wrong-clock-basis conditioning mark clear limits of the ideal relational-time construction.**
 
-Focused Stage 4E tests: **12**.
+### Stage 4G — robustness and synthesis — next
 
-Stage 4E code/test clean PR merge-ref regression: **231 passed**.
-
-Strongest Stage 4E statement:
-
-**within the ideal finite constrained model, clock-relative descriptions are linked by an origin-independent unitary transition family with identity, inverse, and composition consistency.**
-
-This family is a candidate surviving relational structure, not yet a fundamental invariant of time. The physical clock subsystem itself is not changed until Stage 5.
-
-### Stage 4F — operational and negative controls — next
-
-Test global/local Born conditional probabilities, constraint violation, single-energy trivial evolution, wrong clock basis, and vector/ray distinctions.
-
-### Stage 4G — robustness and synthesis
-
-Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and the six fixed questions.
+Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and answer the six fixed questions.
 
 ## Key methodological guards
 
@@ -251,6 +213,10 @@ Test generic complex coefficient vectors, alternative finite dimension where tra
 `clock-relative transition consistency != fundamental temporal ontology`
 
 `common clock-origin shift != change of physical clock`
+
+`vector change != ray/density-matrix change`
+
+`arbitrary clock basis != ideal relational time basis`
 
 `clock-relative dynamics != fundamental emergent time`
 

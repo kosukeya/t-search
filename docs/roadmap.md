@@ -48,14 +48,14 @@ Full clean regression before merge:
 
 `99 passed`.
 
-## Stage 3 — Records and temporal direction — substantive work completed on Draft PR #4
+## Stage 3 — Records and temporal direction — completed and merged
 
 Protocol / synthesis:
 
 - [`stage3_protocol.md`](stage3_protocol.md)
 - [`../results/stage3_synthesis.md`](../results/stage3_synthesis.md)
 
-Stage 3 separates:
+Stage 3 separated:
 
 1. neutral order;
 2. microscopic reversibility;
@@ -147,7 +147,7 @@ Thus:
 
 Focused tests: **12**.
 
-### Stage 3G — robustness and synthesis — completed substantively
+### Stage 3G — robustness and synthesis — completed
 
 Robustness result / notes:
 
@@ -164,29 +164,15 @@ Controls include:
 - distinction between global boundary uncertainty and local readout uncertainty;
 - Stage 2 hidden-`h*` leakage control and epistemic/ontic typed-product review.
 
-Boundary refinement:
-
-- `p=1` or `0`: full record orientation;
-- `p=3/4` or `1/4`: reduced but nonzero orientation;
-- `p=1/2`: no orientation.
-
-So the robust toy-model ingredient is not the literal blank value `0`; it is non-maximal uncertainty / nonuniform memory preparation.
-
-Forward/reverse imbalance gives corresponding orientation signs and exact balance gives zero signed bias.
+The robust toy-model ingredient was not the literal blank value `0`; it was non-maximal uncertainty / nonuniform memory preparation.
 
 The same reduced local MI can arise either because the global record itself is weaker or because a globally perfect record is observed through a noisy local channel. Therefore:
 
 `same local statistic != same global information structure`.
 
-Focused Stage 3G tests: **12**.
+Final Stage 3 suite before merge:
 
-Robustness code/test checkpoint:
-
-`171 passed in 3.28s`.
-
-### Stage 3 exit review
-
-All 16 substantive Stage 3 exit criteria are satisfied in the implementation/synthesis, with final PR-head regression and merge-readiness review performed after documentation closure.
+`171 passed`.
 
 Strongest supported Stage 3 statement:
 
@@ -194,25 +180,111 @@ Strongest supported Stage 3 statement:
 
 This remains a candidate relational/information-accessibility component of temporal direction, not a fundamental physical arrow.
 
-## Stage 4 — Finite Page–Wootters-style quantum model — next after Stage 3 merge
+## Stage 4 — Finite Page–Wootters-style quantum model — in progress
 
-Use a finite-dimensional clock `C` and system `S`.
+Protocol:
 
-Global/block-like representation:
+- [`stage4_protocol.md`](stage4_protocol.md)
 
-`|Psi> = sum_t |t>_C |psi_t>_S`.
+Stage 4 is the first explicitly quantum global/local stage.
 
-Relational/local representation:
+Canonical finite dimensions:
 
-`|psi_S(t)> proportional to <t|_C Psi>`.
+`d_C=d_S=4`.
 
-Goals:
+Kinematic space:
 
-- implement a finite exact conditional-time model;
-- verify conditional dynamics;
-- compare global entangled description with clock-relative descriptions;
-- test which correlations/transition structures survive projection;
-- avoid assuming the classical Stage 3 record arrow is fundamental or automatically quantum-generalizable.
+`H_kin=H_C tensor H_S`.
+
+Canonical spectra:
+
+`H_S|n>_S=n|n>_S`
+
+`H_C|n>_C=-n|n>_C`.
+
+Constraint generator:
+
+`H_tot=H_C tensor I_S + I_C tensor H_S`.
+
+Canonical physical subspace:
+
+`H_phys=ker(H_tot)=span{|n>_C|n>_S}`.
+
+Clock readings:
+
+`t_j=2 pi j/d`
+
+with DFT states:
+
+`|t_j>_C=(1/sqrt(d)) sum_n exp(+i n t_j)|n>_C`.
+
+The principal global/local comparison is:
+
+`P_j^kin=(<t_j| tensor I): H_kin -> H_S`
+
+versus the normalized physical reduction:
+
+`R_j=sqrt(d) P_j^kin restricted to H_phys`.
+
+The canonical identification test is whether:
+
+- `P_j^kin` is non-injective on the full kinematic space;
+- `R_j` is isometric/invertible on the ideal physical subspace;
+- local-to-local dynamics is recovered as `T_{k<-j}=R_k R_j^{-1}`;
+- these maps satisfy the expected unitary composition laws.
+
+### Stage 4.0 — protocol freeze — completed
+
+Frozen distinctions include:
+
+- `history-state encoding != physical Page-Wootters state`;
+- `kinematic projection != physical reduction`;
+- `constraint satisfaction != nontrivial relational change`;
+- `global stationarity != absence of internal relational dynamics`;
+- `finite periodic clock != claim that physical time is fundamentally periodic`;
+- `clock-relative dynamics != proof of fundamental emergent time`.
+
+No Stage 4 quantum implementation has been added yet.
+
+### Stage 4A — finite clock kinematics — next
+
+Implement and test:
+
+- finite clock/system dimensions and energy bases;
+- DFT clock-reading basis;
+- orthonormality;
+- one-step clock translation;
+- cyclic periodicity.
+
+No Page--Wootters physical-dynamics claim is made at Stage 4A.
+
+### Stage 4B — constrained global physical state
+
+Implement `H_tot`, identify `H_phys`, build canonical physical states, and verify exact constraint satisfaction/global stationarity.
+
+### Stage 4C — conditional dynamics
+
+Implement clock conditioning, normalized reductions, uniform ideal clock probabilities, and exact discrete Schrödinger evolution.
+
+### Stage 4D — reduction-map reversibility
+
+Implement explicit reconstruction `E_j`, inner-product preservation, physical round trips, and the contrast with non-injective kinematic projection.
+
+### Stage 4E — relational transition structure
+
+Test:
+
+`T_{k<-j}=R_k E_j=exp[-i H_S(t_k-t_j)]`
+
+plus identity, inverse, composition, clock-origin covariance, and periodic wrap-around.
+
+### Stage 4F — operational and negative controls
+
+Test global/local Born conditional probabilities, constraint violation, single-energy trivial evolution, wrong clock basis, and vector/ray distinctions.
+
+### Stage 4G — robustness and synthesis
+
+Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and the six fixed questions.
 
 ## Stage 5 — Change of clock / perspective
 
@@ -257,7 +329,11 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - microdynamical reversibility != record symmetry;
 - record asymmetry != phenomenal passage;
 - inaccessible information != ontologically absent information;
-- same local statistic != same global information structure.
+- same local statistic != same global information structure;
+- history-state encoding != physical Page-Wootters state;
+- kinematic projection != physical reduction;
+- finite-clock periodicity != fundamental physical periodicity;
+- clock-relative dynamics != proof of fundamental emergent time.
 
 ## Stop / revise conditions
 
@@ -265,11 +341,11 @@ Revise rather than force progress if:
 
 - `block` or `becoming` becomes definitionally circular;
 - an alleged invariant is notation-dependent;
-- an arrow score merely restates event indices;
-- an alleged record is only a single-trajectory coincidence;
-- a supposedly reversible update is not bijective;
-- symmetric controls retain unexplained signed bias;
-- global entropy changes under an allegedly closed bijective update because of implementation error;
-- a claimed physical arrow is only a boundary/support convention relabeled as physics;
+- a supposedly physical Page--Wootters state fails the constraint;
+- conditional dynamics only works for one specially tuned coefficient vector;
+- a claimed physical reduction is actually a lossy kinematic projection;
+- a single-energy global phase is misreported as observable local change;
+- transition-map composition fails without an understood finite-periodic reason;
+- finite-clock periodicity is silently generalized to physical time;
 - local inaccessibility is silently reinterpreted as ontological absence;
-- a claimed novelty is already an established object under another name.
+- a standard Page--Wootters identity is presented as a novel physical discovery.

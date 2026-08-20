@@ -55,14 +55,9 @@ Protocol / synthesis:
 - [`stage3_protocol.md`](stage3_protocol.md)
 - [`../results/stage3_synthesis.md`](../results/stage3_synthesis.md)
 
-Stage 3 separated:
+Stage 3 separated neutral order, microscopic reversibility, record/information asymmetry, and experienced temporal direction.
 
-1. neutral order;
-2. microscopic reversibility;
-3. record/information asymmetry;
-4. experienced temporal direction.
-
-Canonical substrate:
+Canonical reversible substrate:
 
 `Z=(X,M,N) in {0,1}^3`
 
@@ -70,105 +65,15 @@ Canonical substrate:
 
 `U_scr(X,M,N)=(X XOR N,M,N)`.
 
-Both updates are bijective/self-inverse.
-
-### Stage 3A — reversible substrate — completed
-
-Verified complete eight-state space, exact forward/reversed trajectories, inverse dynamics, and full-state entropy preservation.
-
-Focused tests: **10**.
-
-### Stage 3B — record diagnostics — completed
-
-Implemented exact entropy, mutual information, conditional entropy, Bayes-optimal decoding, record/accessibility profiles, and signed diagnostics.
-
-Canonical values:
+Canonical record diagnostics:
 
 `I(M_1;X_0)=1`, `I(M_1;X_2)=0`, `A_R=1`, `A_Acc=1/2`.
 
-Focused tests: **11**.
+Controls showed that the record-defined orientation reverses under modeled history reversal, cancels at forward/reverse balance, disappears without record coupling or under maximally uncertain memory preparation, and can become locally inaccessible without being removed from the global formal state.
 
-### Stage 3C — asymmetric-record model — completed
+Stage 3 completed the typed local architecture:
 
-A record-defined orientation is recognized only when MI and decoder contrasts are both nonzero and agree in sign.
-
-Canonical result:
-
-`orientation=lower-index`, `record_defined=True`.
-
-Focused tests: **8**.
-
-### Stage 3D — reversal and symmetric controls — completed
-
-Verified:
-
-- exact history reversal flips the signed orientation;
-- equal forward/reverse mixing cancels signed bias while equal nonzero correlations remain;
-- order-only/no-record control has no orientation;
-- independent uniform initial memory removes the canonical record contrast.
-
-Focused tests: **9**.
-
-### Stage 3E — complete local view — completed
-
-Defined:
-
-`B_3=(Z_space,U_1,U_2,Omega,mu)`
-
-`A_k^loc=(X_k,M_k)`
-
-`F_k:(B_3,omega)->G_{omega,k}^rec`.
-
-A single exact central view can be ambiguous while a suitable family of local views reconstructs the complete actual trajectory.
-
-Stage 2 Potentiality is reintroduced through typed product adapters:
-
-`G_E^complete=(Records,A_product,EPot,pi_E)`
-
-`G_O^complete=(Records,A_product,OPot,pi_O)`.
-
-Focused tests: **10**.
-
-### Stage 3F — accessibility and information controls — completed
-
-Kept the global block fixed while degrading only the local observation interface.
-
-For a record-only BSC readout:
-
-- `epsilon=0`: accessible record MI `1`;
-- `epsilon=1/4`: accessible record MI `~0.188721875541`;
-- `epsilon=1/2`: accessible record MI `0`.
-
-The unchanged global canonical relation remains `I(true M_1;X_0)=1` bit.
-
-Thus:
-
-`inaccessible information != information absent from the formal global state`.
-
-Focused tests: **12**.
-
-### Stage 3G — robustness and synthesis — completed
-
-Robustness result / notes:
-
-- [`../results/stage3g_robustness.md`](../results/stage3g_robustness.md)
-- [`stage3g_notes.md`](stage3g_notes.md)
-
-Controls include:
-
-- arbitrary bookkeeping relabeling of neutral positions;
-- bijective bit-value relabeling of record/target variables;
-- repeated complete/local state values without occurrence collapse;
-- continuous memory-boundary sweep `p=P(M_0=0)`;
-- forward/reverse mixture balance sweep;
-- distinction between global boundary uncertainty and local readout uncertainty;
-- Stage 2 hidden-`h*` leakage control and epistemic/ontic typed-product review.
-
-The robust toy-model ingredient was not the literal blank value `0`; it was non-maximal uncertainty / nonuniform memory preparation.
-
-The same reduced local MI can arise either because the global record itself is weaker or because a globally perfect record is observed through a noisy local channel. Therefore:
-
-`same local statistic != same global information structure`.
+`G=(Records,Actuality,Potentiality)`.
 
 Final Stage 3 suite before merge:
 
@@ -222,7 +127,7 @@ The principal global/local comparison is:
 
 `P_j^kin=(<t_j| tensor I): H_kin -> H_S`
 
-versus the normalized physical reduction:
+versus:
 
 `R_j=sqrt(d) P_j^kin restricted to H_phys`.
 
@@ -235,71 +140,42 @@ Frozen distinctions include:
 - `kinematic projection != physical reduction`;
 - `constraint satisfaction != nontrivial relational change`;
 - `global stationarity != absence of internal relational dynamics`;
-- `finite periodic clock != claim that physical time is fundamentally periodic`;
+- `finite periodic clock != fundamental physical periodicity`;
 - `clock-relative dynamics != proof of fundamental emergent time`.
 
 ### Stage 4A — finite clock kinematics — completed
 
-Implemented and tested finite clock/system dimensions and energy bases, the DFT clock-reading basis, orthonormality, one-step and multi-step translation, cyclic periodicity, origin-shift covariance, and a `d=5` control.
+Implemented and tested finite clock/system dimensions and energy bases, DFT clock-reading states, orthonormality, cyclic translation, origin-shift covariance, and a `d=5` control.
 
 Focused tests: **12**.
 
 ### Stage 4B — constrained global physical state — completed
 
-Implemented `H_tot`, identified `H_phys`, built generic canonical physical states, and verified exact constraint satisfaction/global stationarity. The numerical zero-eigenspace projector agrees with the analytic matched-energy projector. The off-diagonal state `|0>_C|1>_S` has nonzero constraint residual and is not stationary.
+Implemented `H_tot`, identified the matched-energy zero eigenspace, built generic complex physical states, and verified exact constraint satisfaction/global stationarity. A nonphysical off-diagonal control is rejected by the constraint.
 
 Focused tests: **12**.
 
 ### Stage 4C — conditional dynamics — completed
 
-Implemented formal clock conditioning and a separate physical reduction API. For every normalized state in the canonical matched-energy family:
+For normalized physical states:
 
-`p_j=1/d`.
-
-For generic complex coefficients:
-
-`R_j|Psi>=exp[-i H_S(t_j-t_0)]R_0|Psi>`
+`p_j=1/d`,
 
 and:
 
-`psi_{j+1}=exp(-i H_S Delta)psi_j`
+`R_j|Psi>=exp[-i H_S(t_j-t_0)]R_0|Psi>`.
 
-including periodic wrap-around.
-
-The equal-amplitude baseline exhibits nontrivial relative ray change, and a nonphysical state can be formally conditioned but is rejected by `physical_reduction`.
+Generic complex coefficients satisfy exact discrete Schrödinger dynamics including wrap-around.
 
 Focused tests: **12**.
 
 ### Stage 4D — reduction-map reversibility — completed
 
-Implemented the explicit reconstruction:
-
-`E_j|phi>=sum_n exp(+i n t_j) phi_n |n>_C|n>_S`.
-
-For the full kinematic projection in canonical `d=4`:
-
-- shape `4 x 16`;
-- rank `4`;
-- nullity `12`;
-- explicit nonzero kernel vectors exist, so distinct kinematic global vectors can have the same clock projection.
-
-For the normalized physical reduction:
-
-`R_j=sqrt(d) P_j^kin restricted to H_phys`,
-
-Stage 4D verifies:
-
-`R_j^dagger R_j=R_j R_j^dagger=I`,
+The unrestricted kinematic projection is many-to-one. The normalized physical reduction is unitary/isometric on `H_phys`; the explicit reconstruction `E_j` satisfies:
 
 `R_j E_j=I_S`,
 
-`E_j R_j=I_phys`,
-
-plus norm and inner-product preservation for generic complex physical vectors.
-
-The full-space composition `E_j sqrt(d) P_j^kin` has rank `d`, not `d^2`, and is not identity on unrestricted `H_kin`; it becomes identity only on `H_phys`.
-
-The same contrast is checked at `d=5`.
+`E_j R_j=I_phys`.
 
 Focused tests: **12**.
 
@@ -309,49 +185,55 @@ Defined:
 
 `T_{k<-j}=R_k E_j`.
 
-For all canonical ordered pairs:
+For all canonical pairs:
 
 `T_{k<-j}=exp[-i H_S(t_k-t_j)]`.
 
-The family is unitary and obeys:
-
-`T_{j<-j}=I`,
-
-`T_{j<-k} T_{k<-j}=I`,
-
-and:
-
-`T_{l<-k} T_{k<-j}=T_{l<-j}`.
-
-The composition law is tested for all `64` canonical ordered triples. For generic complex physical states:
-
-`T_{k<-j} R_j|Psi>=R_k|Psi>`.
-
-Finite periodic wrap-around gives the same one-step system unitary. A common non-grid origin shift changes the local vector representatives but leaves the transition family invariant:
-
-`T_{k<-j}^(alpha)=T_{k<-j}`.
-
-The expected-unitary, composition, and origin-covariance structure is also checked at `d=5`.
+The family is unitary and satisfies identity, inverse, and composition consistency. A common clock-origin shift changes local representatives but leaves `T_{k<-j}` unchanged. The structure is also checked at `d=5`.
 
 Focused tests: **12**.
 
-Stage 4E clean PR merge-ref checkpoint:
+### Stage 4F — operational and negative controls — completed
 
-`231 passed`.
+Global and local conditional Born predictions are compared using the noncommuting projector:
 
-Strongest supported Stage 4E statement:
+`Pi_+=|+><+|`, `|+>=(|0>+|1>)/sqrt(2)`.
 
-**within the ideal finite constrained model, clock-relative descriptions form a unitary local-to-local transition family determined by relative clock separation and satisfying identity, inverse, composition, and common-origin covariance.**
+For the equal-amplitude `d=4` physical state both descriptions give:
 
-This is a candidate surviving relational structure, not yet a fundamental invariant of time. A change of the physical clock subsystem is deferred to Stage 5.
+`[1/2, 1/4, 0, 1/4]`.
 
-### Stage 4F — operational and negative controls — next
+The equality is also tested for generic complex physical coefficients and at `d=5`.
 
-Test global/local Born conditional probabilities, constraint violation, single-energy trivial evolution, wrong clock basis, and vector/ray distinctions.
+Negative controls establish:
 
-### Stage 4G — robustness and synthesis
+- a constraint-violating kinematic state can be formally conditioned but fails the expected relational Schrödinger relation;
+- a single-energy physical product state changes only by global phase, so vector change does not imply ray/density-matrix change;
+- conditioning on the clock energy basis acts as a rank-one projection on physical coefficient space and is therefore non-injective even on `H_phys`.
 
-Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and the six fixed questions.
+Thus:
+
+`formal clock conditioning != physical Page--Wootters dynamics`,
+
+`constraint satisfaction != nontrivial relational ray change`,
+
+and:
+
+`arbitrary clock basis != ideal relational time basis`.
+
+Focused tests: **12**.
+
+Stage 4F clean PR merge-ref checkpoint:
+
+`243 passed in 3.33s`.
+
+Strongest supported Stage 4F statement:
+
+**within the ideal finite matched-energy model, global and clock-relative conditional Born predictions agree for a nontrivial reading-dependent observable, while constraint violation, phase-only single-energy evolution, and wrong-clock-basis conditioning identify clear limits of the construction.**
+
+### Stage 4G — robustness and synthesis — next
+
+Test remaining generic-coefficient/dimension/relabeling robustness, consolidate the surviving relational structures, answer the six fixed questions, run final full regression, and prepare the Stage 4 synthesis / merge-readiness checkpoint.
 
 ## Stage 5 — Change of clock / perspective
 
@@ -404,6 +286,8 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - finite-clock periodicity != fundamental physical periodicity;
 - common clock-origin shift != change of physical clock;
 - clock-relative transition consistency != fundamental temporal ontology;
+- vector change != ray/density-matrix change;
+- arbitrary clock basis != ideal relational time basis;
 - clock-relative dynamics != proof of fundamental emergent time.
 
 ## Stop / revise conditions
@@ -419,5 +303,6 @@ Revise rather than force progress if:
 - a single-energy global phase is misreported as observable local change;
 - transition-map composition fails without an understood finite-periodic reason;
 - finite-clock periodicity is silently generalized to physical time;
+- an arbitrary clock basis is silently assumed to be an ideal time basis;
 - local inaccessibility is silently reinterpreted as ontological absence;
 - a standard Page--Wootters identity is presented as a novel physical discovery.

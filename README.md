@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0 — finite Page–Wootters-style quantum protocol freeze — is complete on `agent/stage-4-page-wootters`; Stage 4A — finite clock kinematics — is next.**
+**Stage 1, Stage 2, and Stage 3 are complete and merged. Stage 4.0, Stage 4A, and Stage 4B are complete on `agent/stage-4-page-wootters`; Stage 4C — conditional dynamics — is next.**
 
 Integrated syntheses:
 
@@ -16,9 +16,13 @@ Integrated syntheses:
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 - [`results/stage3_synthesis.md`](results/stage3_synthesis.md)
 
-Stage 4 protocol:
+Stage 4 protocol / checkpoints:
 
 - [`docs/stage4_protocol.md`](docs/stage4_protocol.md)
+- [`docs/stage4a_notes.md`](docs/stage4a_notes.md)
+- [`results/stage4a_clock_kinematics.md`](results/stage4a_clock_kinematics.md)
+- [`docs/stage4b_notes.md`](docs/stage4b_notes.md)
+- [`results/stage4b_constrained_physical_state.md`](results/stage4b_constrained_physical_state.md)
 
 Latest merged Stage 3 full regression checkpoint:
 
@@ -137,7 +141,7 @@ Canonical dimensions:
 
 Kinematic space:
 
-`H_kin=H_C tensor H_S`.
+`H_kin=H_C tensor H_S`, with `dim(H_kin)=16`.
 
 Canonical Hamiltonians:
 
@@ -145,37 +149,15 @@ Canonical Hamiltonians:
 
 `H_C|n>_C=-n|n>_C`.
 
-Constraint generator:
-
-`H_tot=H_C tensor I_S + I_C tensor H_S`.
-
-Physical subspace:
-
-`H_phys=ker(H_tot)=span{|n>_C|n>_S}`.
-
 Finite clock readings are defined by the DFT basis:
 
 `|t_j>_C=(1/sqrt(d)) sum_n exp(+i n t_j)|n>_C`,
 
-with:
+with `t_j=2 pi j/d`.
 
-`t_j=2 pi j/d`.
+### Stage 4.0 — protocol freeze — completed
 
-The central Stage 4 comparison is between the generally lossy kinematic projection:
-
-`P_j^kin=(<t_j| tensor I_S): H_kin -> H_S`
-
-and the normalized physical reduction:
-
-`R_j=sqrt(d) P_j^kin restricted to H_phys`.
-
-The ideal canonical model will test whether `R_j` is an isometric/invertible global-to-clock-relative map, and whether local-to-local dynamics can be written as:
-
-`T_{k<-j}=R_k R_j^{-1}`
-
-with the expected unitary composition law.
-
-Stage 4.0 freezes the distinctions:
+Frozen distinctions include:
 
 `history-state encoding != physical Page-Wootters state`
 
@@ -187,18 +169,91 @@ Stage 4.0 freezes the distinctions:
 
 `finite periodic clock != claim that physical time is fundamentally periodic`
 
-`exact clock-relative dynamics != proof of fundamental emergent time`.
+`clock-relative dynamics != proof of fundamental emergent time`.
 
-### Stage 4 sequence
+### Stage 4A — finite clock kinematics — completed
 
-- **Stage 4.0 — protocol freeze — completed**
-- **Stage 4A — finite clock kinematics — next**
-- Stage 4B — constrained global physical state
-- Stage 4C — conditional dynamics
-- Stage 4D — reduction-map reversibility
-- Stage 4E — relational transition structure
-- Stage 4F — operational and negative controls
-- Stage 4G — robustness and synthesis
+Implemented the finite clock/system Hilbert-space kinematics, DFT clock basis, and cyclic clock translation.
+
+Canonical checks include:
+
+`<t_j|t_k>=delta_jk`
+
+and:
+
+`exp(-i H_C Delta)|t_j>=|t_{j+1 mod d}>`.
+
+The construction also passes an origin-shift control and a `d=5` finite-dimension check.
+
+Focused Stage 4A tests: **12**.
+
+### Stage 4B — constrained global physical state — completed
+
+Implemented:
+
+`H_tot=H_C tensor I_S + I_C tensor H_S`.
+
+For the frozen spectra:
+
+`H_phys=ker(H_tot)=span{|n>_C|n>_S}`.
+
+The canonical dimensions are:
+
+`dim(H_kin)=16`, `dim(H_phys)=4`.
+
+The zero-eigenspace is extracted independently by numerical diagonalization and its projector agrees with the analytic matched-energy projector.
+
+Both equal-amplitude and generic complex matched-energy states satisfy:
+
+`||H_tot|Psi_phys>||=0`
+
+and are stationary under:
+
+`exp(-i H_tot tau)`.
+
+The off-diagonal control `|0>_C|1>_S` has constraint residual `1` and is not stationary, so stationarity is not built into arbitrary kinematic states.
+
+The same matched-energy kernel structure is checked at `d=5`.
+
+Focused Stage 4B tests: **12**.
+
+### Stage 4C — conditional dynamics — next
+
+Implement ideal clock conditioning, normalized reductions, uniform ideal clock probabilities, and exact discrete Schrödinger evolution.
+
+### Stage 4D — reduction-map reversibility
+
+Implement explicit reconstruction `E_j`, inner-product preservation, physical round trips, and the contrast with non-injective kinematic projection.
+
+### Stage 4E — relational transition structure
+
+Test:
+
+`T_{k<-j}=R_k E_j=exp[-i H_S(t_k-t_j)]`
+
+plus identity, inverse, composition, clock-origin covariance, and periodic wrap-around.
+
+### Stage 4F — operational and negative controls
+
+Test global/local Born conditional probabilities, constraint violation, single-energy trivial evolution, wrong clock basis, and vector/ray distinctions.
+
+### Stage 4G — robustness and synthesis
+
+Test generic complex coefficient vectors, alternative finite dimension where tractable, relabelings/origin shifts, full regression, and the six fixed questions.
+
+The central Stage 4 comparison will eventually be between the generally lossy kinematic projection:
+
+`P_j^kin=(<t_j| tensor I_S): H_kin -> H_S`
+
+and the normalized physical reduction:
+
+`R_j=sqrt(d) P_j^kin restricted to H_phys`.
+
+The ideal model will test whether `R_j` is an isometric/invertible global-to-clock-relative map, and whether local-to-local dynamics can be written as:
+
+`T_{k<-j}=R_k R_j^{-1}`
+
+with the expected unitary composition law.
 
 ## Key methodological guards
 

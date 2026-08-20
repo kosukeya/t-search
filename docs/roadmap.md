@@ -293,23 +293,48 @@ Canonical checks:
 
 Focused tests: **12**.
 
-Code/test PR merge-ref checkpoint:
+Documentation-inclusive PR merge-ref regression:
 
-`267 passed in 4.58s`.
+`267 passed in 3.10s`.
 
 This establishes only the constrained substrate and three available ideal clock kinematics. It does not yet establish cross-clock perspective consistency.
 
-### Stage 5B — per-clock reductions and supports — next
+### Stage 5B — per-clock reductions and supports — completed
 
-Implement `K_A`, `K_B`, `K_C`, `R_X(j)`, `E_X(j)`, clock probabilities, isometry/round-trip tests, and same-clock transition checks.
+Notes / result:
 
-### Stage 5C — genuine clock-change maps
+- [`stage5b_notes.md`](stage5b_notes.md)
+- [`../results/stage5b_per_clock_reductions.md`](../results/stage5b_per_clock_reductions.md)
+
+For every clock choice `X in {A,B,C}`:
+
+- `dim(K_X)=7 < 9`;
+- normalized physical states give `p_X(j)=1/3`;
+- `R_X(j)` is an isometry from `H_phys` onto `K_X`;
+- `R_X(j)E_X(j)=P_KX` on the ambient rest space and identity on the support;
+- `E_X(j)R_X(j)=I_phys` on the constrained physical space;
+- `T_X(k<-j)=R_X(k)E_X(j)` reproduces `P_KX exp[-i H_rest^(X)(t_k-t_j)] P_KX`;
+- same-clock identity, inverse, and composition hold on support coordinates.
+
+Formal conditioning remains defined for nonphysical states, while the physical reduction/probability APIs reject states outside the constraint.
+
+Focused tests: **12**.
+
+Latest Stage 5B checkpoint regression:
+
+`279 passed in 3.96s`.
+
+This remains an intra-clock result:
+
+`per-clock reversibility != genuine cross-clock covariance`.
+
+### Stage 5C — genuine clock-change maps — next
 
 Implement:
 
-`S_{Y<-X}(k,j)=R_Y(k)E_X(j)`
+`S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`
 
-and verify direct-global route consistency, support unitarity/isometry, and two-way clock-change round trips.
+for distinct physical clock choices and verify direct-global route consistency, support-space isometry/unitarity, and two-way clock-change round trips.
 
 ### Stage 5D — cross-clock composition
 

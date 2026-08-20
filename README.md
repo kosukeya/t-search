@@ -30,7 +30,7 @@ Stage 4 protocol / checkpoints:
 - [`docs/stage4e_notes.md`](docs/stage4e_notes.md)
 - [`results/stage4e_relational_transition.md`](results/stage4e_relational_transition.md)
 
-Latest Stage 4E clean PR merge-ref checkpoint:
+Stage 4E code/test merge-ref checkpoint:
 
 `231 passed`.
 
@@ -202,7 +202,7 @@ The expected-unitary, composition, and origin-covariance structure is also check
 
 Focused Stage 4E tests: **12**.
 
-Clean Stage 4E PR merge-ref regression: **231 passed**.
+Stage 4E code/test clean PR merge-ref regression: **231 passed**.
 
 Strongest Stage 4E statement:
 

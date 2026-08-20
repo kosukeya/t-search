@@ -244,25 +244,67 @@ Frozen distinctions include:
 - `finite periodic clock != claim that physical time is fundamentally periodic`;
 - `clock-relative dynamics != proof of fundamental emergent time`.
 
-No Stage 4 quantum implementation has been added yet.
+### Stage 4A — finite clock kinematics — completed
 
-### Stage 4A — finite clock kinematics — next
+Implementation / notes / result:
 
-Implement and test:
+- [`stage4a_notes.md`](stage4a_notes.md)
+- [`../results/stage4a_clock_kinematics.md`](../results/stage4a_clock_kinematics.md)
+
+Implemented and tested:
 
 - finite clock/system dimensions and energy bases;
 - DFT clock-reading basis;
 - orthonormality;
-- one-step clock translation;
-- cyclic periodicity.
+- one-step and multi-step clock translation;
+- cyclic periodicity;
+- non-grid origin shift;
+- `d=5` finite-dimension control.
 
-No Page--Wootters physical-dynamics claim is made at Stage 4A.
+Focused tests: **12**.
 
-### Stage 4B — constrained global physical state
+Stage 4A establishes finite periodic quantum clock kinematics only; no constrained physical state or relational dynamics is inferred from it.
 
-Implement `H_tot`, identify `H_phys`, build canonical physical states, and verify exact constraint satisfaction/global stationarity.
+### Stage 4B — constrained global physical state — completed
 
-### Stage 4C — conditional dynamics
+Implementation / notes / result:
+
+- [`stage4b_notes.md`](stage4b_notes.md)
+- [`../results/stage4b_constrained_physical_state.md`](../results/stage4b_constrained_physical_state.md)
+
+Implemented:
+
+`H_tot=H_C tensor I_S + I_C tensor H_S`.
+
+For canonical `d=4`:
+
+`dim(H_kin)=16`, `dim(H_phys)=4`.
+
+The analytic matched-energy basis:
+
+`{|n>_C|n>_S}`
+
+is annihilated by `H_tot`. An independently extracted numerical zero-eigenspace has the same projector.
+
+Equal-amplitude and generic normalized complex matched-energy states satisfy:
+
+`||H_tot|Psi_phys>||=0`
+
+and:
+
+`exp(-i H_tot tau)|Psi_phys>=|Psi_phys>`
+
+for the tested external parameters.
+
+Negative control `|0>_C|1>_S` has constraint residual `1` and is not stationary.
+
+The same kernel structure is also checked at `d=5`.
+
+Focused tests: **12**.
+
+Stage 4B establishes constrained global stationarity only. It does not yet establish conditional clock-relative dynamics.
+
+### Stage 4C — conditional dynamics — next
 
 Implement clock conditioning, normalized reductions, uniform ideal clock probabilities, and exact discrete Schrödinger evolution.
 

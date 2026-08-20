@@ -1,6 +1,6 @@
 # Stage 5 Synthesis — Change of Clock / Perspective
 
-Status: **Stage 5A--5G scientific implementation complete; final documentation-inclusive CI and merge-readiness review pending.**
+Status: **Stage 5A--5G scientific implementation complete; pre-finalization documentation CI and merge-readiness review passed. A final status-only-head regression is run before declaring the PR merge-ready.**
 
 ## 1. Stage 5 question
 
@@ -356,4 +356,14 @@ The 28 protocol exit criteria are scientifically satisfied by Stages 5A--5G:
 - criterion 27: Stage 5G higher-dimension/asymmetric-rate robustness;
 - criterion 28: this synthesis and the interpretation discipline above.
 
-Final repository regression and PR merge-readiness review are recorded separately before Stage 5 is declared merge-ready.
+Pre-finalization repository checkpoint:
+
+- documentation/synthesis/README/roadmap-inclusive merge-ref: `339 passed in 9.89s`;
+- branch versus `main`: `67 commits ahead / 0 behind`;
+- changed files: `40`, all within the expected Stage 5 + README/roadmap scope;
+- unresolved review threads: `0`;
+- submitted reviews: `0`;
+- conversation comments: `0`;
+- PR open, Draft, unmerged, `mergeable=true`.
+
+A final regression is run after this status-only synthesis/result update. If that final head remains green and the PR remains mergeable/undrifted, Stage 5 is merge-ready as a checkpoint while remaining Draft for user review.

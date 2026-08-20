@@ -303,23 +303,49 @@ The same contrast is checked at `d=5`.
 
 Focused tests: **12**.
 
-Stage 4D clean PR merge-ref checkpoint:
+### Stage 4E — relational transition structure — completed
 
-`219 passed`.
+Defined:
 
-Strongest supported Stage 4D statement:
+`T_{k<-j}=R_k E_j`.
 
-**within the ideal finite matched-energy model, clock conditioning is lossy on the unrestricted kinematic space but becomes information-preserving and explicitly reversible when restricted and normalized on the zero-constraint physical subspace.**
+For all canonical ordered pairs:
 
-### Stage 4E — relational transition structure — next
+`T_{k<-j}=exp[-i H_S(t_k-t_j)]`.
 
-Test:
+The family is unitary and obeys:
 
-`T_{k<-j}=R_k E_j=exp[-i H_S(t_k-t_j)]`
+`T_{j<-j}=I`,
 
-plus identity, inverse, composition, clock-origin covariance, and periodic wrap-around.
+`T_{j<-k} T_{k<-j}=I`,
 
-### Stage 4F — operational and negative controls
+and:
+
+`T_{l<-k} T_{k<-j}=T_{l<-j}`.
+
+The composition law is tested for all `64` canonical ordered triples. For generic complex physical states:
+
+`T_{k<-j} R_j|Psi>=R_k|Psi>`.
+
+Finite periodic wrap-around gives the same one-step system unitary. A common non-grid origin shift changes the local vector representatives but leaves the transition family invariant:
+
+`T_{k<-j}^(alpha)=T_{k<-j}`.
+
+The expected-unitary, composition, and origin-covariance structure is also checked at `d=5`.
+
+Focused tests: **12**.
+
+Stage 4E clean PR merge-ref checkpoint:
+
+`231 passed`.
+
+Strongest supported Stage 4E statement:
+
+**within the ideal finite constrained model, clock-relative descriptions form a unitary local-to-local transition family determined by relative clock separation and satisfying identity, inverse, composition, and common-origin covariance.**
+
+This is a candidate surviving relational structure, not yet a fundamental invariant of time. A change of the physical clock subsystem is deferred to Stage 5.
+
+### Stage 4F — operational and negative controls — next
 
 Test global/local Born conditional probabilities, constraint violation, single-energy trivial evolution, wrong clock basis, and vector/ray distinctions.
 
@@ -376,6 +402,8 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - kinematic projection != physical reduction;
 - physical-subspace reversibility != unrestricted kinematic reversibility;
 - finite-clock periodicity != fundamental physical periodicity;
+- common clock-origin shift != change of physical clock;
+- clock-relative transition consistency != fundamental temporal ontology;
 - clock-relative dynamics != proof of fundamental emergent time.
 
 ## Stop / revise conditions

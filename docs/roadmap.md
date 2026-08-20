@@ -226,18 +226,12 @@ versus the normalized physical reduction:
 
 `R_j=sqrt(d) P_j^kin restricted to H_phys`.
 
-The canonical identification test is whether:
-
-- `P_j^kin` is non-injective on the full kinematic space;
-- `R_j` is isometric/invertible on the ideal physical subspace;
-- local-to-local dynamics is recovered as `T_{k<-j}=R_k R_j^{-1}`;
-- these maps satisfy the expected unitary composition laws.
-
 ### Stage 4.0 — protocol freeze — completed
 
 Frozen distinctions include:
 
 - `history-state encoding != physical Page-Wootters state`;
+- `formal clock conditioning != physical Page-Wootters reduction`;
 - `kinematic projection != physical reduction`;
 - `constraint satisfaction != nontrivial relational change`;
 - `global stationarity != absence of internal relational dynamics`;
@@ -246,37 +240,19 @@ Frozen distinctions include:
 
 ### Stage 4A — finite clock kinematics — completed
 
-Implemented and tested:
-
-- finite clock/system dimensions and energy bases;
-- DFT clock-reading basis;
-- orthonormality;
-- one-step and multi-step clock translation;
-- cyclic periodicity;
-- origin-shift covariance;
-- a `d=5` finite-dimension control.
+Implemented and tested finite clock/system dimensions and energy bases, the DFT clock-reading basis, orthonormality, one-step and multi-step translation, cyclic periodicity, origin-shift covariance, and a `d=5` control.
 
 Focused tests: **12**.
 
 ### Stage 4B — constrained global physical state — completed
 
-Implemented `H_tot`, identified `H_phys`, built generic canonical physical states, and verified exact constraint satisfaction and global stationarity.
-
-The numerical zero-eigenspace projector agrees with the analytic matched-energy projector. The off-diagonal state `|0>_C|1>_S` has nonzero constraint residual and is not stationary.
+Implemented `H_tot`, identified `H_phys`, built generic canonical physical states, and verified exact constraint satisfaction/global stationarity. The numerical zero-eigenspace projector agrees with the analytic matched-energy projector. The off-diagonal state `|0>_C|1>_S` has nonzero constraint residual and is not stationary.
 
 Focused tests: **12**.
 
 ### Stage 4C — conditional dynamics — completed
 
-Implemented formal clock conditioning and a separate physical reduction API:
-
-`|tilde_psi_j>=(<t_j| tensor I)|Phi>`
-
-and:
-
-`R_j=sqrt(d)(<t_j| tensor I)` restricted to `H_phys`.
-
-For every normalized state in the canonical matched-energy family:
+Implemented formal clock conditioning and a separate physical reduction API. For every normalized state in the canonical matched-energy family:
 
 `p_j=1/d`.
 
@@ -294,21 +270,48 @@ The equal-amplitude baseline exhibits nontrivial relative ray change, and a nonp
 
 Focused tests: **12**.
 
-Stage 4C clean PR merge-ref regression:
+### Stage 4D — reduction-map reversibility — completed
 
-`207 passed`.
+Implemented the explicit reconstruction:
 
-Strongest supported Stage 4C statement:
+`E_j|phi>=sum_n exp(+i n t_j) phi_n |n>_C|n>_S`.
 
-**within the ideal finite constrained model, a stationary global physical state yields normalized clock-relative system states obeying exact discrete unitary Schrödinger dynamics.**
+For the full kinematic projection in canonical `d=4`:
 
-This remains a finite Page--Wootters-style representation result, not proof of fundamental emergent time.
+- shape `4 x 16`;
+- rank `4`;
+- nullity `12`;
+- explicit nonzero kernel vectors exist, so distinct kinematic global vectors can have the same clock projection.
 
-### Stage 4D — reduction-map reversibility — next
+For the normalized physical reduction:
 
-Implement explicit reconstruction `E_j`, inner-product preservation, physical round trips, and the contrast with non-injective kinematic projection.
+`R_j=sqrt(d) P_j^kin restricted to H_phys`,
 
-### Stage 4E — relational transition structure
+Stage 4D verifies:
+
+`R_j^dagger R_j=R_j R_j^dagger=I`,
+
+`R_j E_j=I_S`,
+
+`E_j R_j=I_phys`,
+
+plus norm and inner-product preservation for generic complex physical vectors.
+
+The full-space composition `E_j sqrt(d) P_j^kin` has rank `d`, not `d^2`, and is not identity on unrestricted `H_kin`; it becomes identity only on `H_phys`.
+
+The same contrast is checked at `d=5`.
+
+Focused tests: **12**.
+
+Stage 4D clean PR merge-ref checkpoint:
+
+`219 passed`.
+
+Strongest supported Stage 4D statement:
+
+**within the ideal finite matched-energy model, clock conditioning is lossy on the unrestricted kinematic space but becomes information-preserving and explicitly reversible when restricted and normalized on the zero-constraint physical subspace.**
+
+### Stage 4E — relational transition structure — next
 
 Test:
 
@@ -371,6 +374,7 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - history-state encoding != physical Page-Wootters state;
 - formal clock conditioning != physical Page-Wootters reduction;
 - kinematic projection != physical reduction;
+- physical-subspace reversibility != unrestricted kinematic reversibility;
 - finite-clock periodicity != fundamental physical periodicity;
 - clock-relative dynamics != proof of fundamental emergent time.
 
@@ -383,6 +387,7 @@ Revise rather than force progress if:
 - a supposedly physical Page--Wootters state fails the constraint;
 - conditional dynamics only works for one specially tuned coefficient vector;
 - a claimed physical reduction is actually a lossy kinematic projection;
+- an inverse is claimed on the full kinematic space when it only exists on `H_phys`;
 - a single-energy global phase is misreported as observable local change;
 - transition-map composition fails without an understood finite-periodic reason;
 - finite-clock periodicity is silently generalized to physical time;

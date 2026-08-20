@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stages 1--3 are complete and merged. Stage 4.0 and Stage 4A--4G are complete on `agent/stage-4-page-wootters`; Draft PR #5 is the Stage 4 review checkpoint and remains unmerged.**
+**Stages 1--4 are complete and merged. Stage 5.0 through Stage 5G are scientifically complete on `agent/stage-5-clock-change`; Draft PR #6 tracks the final Stage 5 documentation/regression/merge-readiness checkpoint.**
 
 Integrated syntheses:
 
@@ -16,6 +16,7 @@ Integrated syntheses:
 - [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
 - [`results/stage3_synthesis.md`](results/stage3_synthesis.md)
 - [`results/stage4_synthesis.md`](results/stage4_synthesis.md)
+- [`results/stage5_synthesis.md`](results/stage5_synthesis.md)
 
 Stage 4 protocol / checkpoints:
 
@@ -28,9 +29,53 @@ Stage 4 protocol / checkpoints:
 - [`docs/stage4f_notes.md`](docs/stage4f_notes.md) / [`results/stage4f_operational_controls.md`](results/stage4f_operational_controls.md)
 - [`docs/stage4g_notes.md`](docs/stage4g_notes.md) / [`results/stage4g_robustness.md`](results/stage4g_robustness.md)
 
-Stage 4G code/test checkpoint:
+Stage 5 protocol / checkpoints:
 
-`255 passed`.
+- [`docs/stage5_protocol.md`](docs/stage5_protocol.md)
+- [`docs/stage5_concepts.md`](docs/stage5_concepts.md)
+- [`docs/stage5a_notes.md`](docs/stage5a_notes.md) / [`results/stage5a_three_subsystem.md`](results/stage5a_three_subsystem.md)
+- [`docs/stage5b_notes.md`](docs/stage5b_notes.md) / [`results/stage5b_per_clock_reductions.md`](results/stage5b_per_clock_reductions.md)
+- [`docs/stage5c_notes.md`](docs/stage5c_notes.md) / [`results/stage5c_genuine_clock_change.md`](results/stage5c_genuine_clock_change.md)
+- [`docs/stage5d_notes.md`](docs/stage5d_notes.md) / [`results/stage5d_cross_clock_composition.md`](results/stage5d_cross_clock_composition.md)
+- [`docs/stage5e_notes.md`](docs/stage5e_notes.md) / [`results/stage5e_operational_covariance.md`](results/stage5e_operational_covariance.md)
+- [`docs/stage5f_notes.md`](docs/stage5f_notes.md) / [`results/stage5f_negative_controls.md`](results/stage5f_negative_controls.md)
+- [`docs/stage5g_notes.md`](docs/stage5g_notes.md) / [`results/stage5g_robustness.md`](results/stage5g_robustness.md)
+
+Stage 4 final merge-ref regression:
+
+`255 passed in 3.96s`.
+
+Stage 5.0 protocol-only clean PR merge-ref regression:
+
+`255 passed in 3.94s`.
+
+Stage 5A documentation-inclusive clean PR merge-ref regression:
+
+`267 passed in 3.10s`.
+
+Stage 5B final roadmap-inclusive clean PR merge-ref regression:
+
+`279 passed in 4.88s`.
+
+Stage 5C final clean PR merge-ref checkpoint:
+
+`291 passed in 5.56s`.
+
+Stage 5D final clean PR merge-ref checkpoint:
+
+`303 passed in 10.19s`.
+
+Stage 5E corrected code/test checkpoint:
+
+`315 passed in 13.45s`.
+
+Stage 5F documentation-inclusive checkpoint:
+
+`327 passed in 8.98s`.
+
+Stage 5G code/test checkpoint:
+
+`339 passed in 14.91s`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum-time ontology has been established.
 
@@ -68,7 +113,7 @@ Stage 3 completed the typed local architecture:
 
 This remains a candidate relational/information-accessibility component of temporal direction, not a fundamental physical arrow.
 
-## Stage 4 — Finite Page--Wootters-style quantum model — checkpoint complete
+## Stage 4 — Finite Page--Wootters-style quantum model — completed and merged
 
 Canonical dimensions:
 
@@ -182,7 +227,156 @@ Strongest Stage 4 result:
 
 The strongest surviving candidate is therefore **perspective-consistent transition structure**, not an absolute clock value or particular ket representative.
 
-Changing the physical clock subsystem itself is deferred to Stage 5.
+Changing the physical clock subsystem itself is tested in Stage 5.
+
+## Stage 5 — Change of clock / perspective — scientifically completed on Draft PR #6
+
+### Stage 5.0 — protocol freeze — completed
+
+The canonical baseline uses three qutrit subsystems `A`, `B`, `C` with energy labels `{-1,0,+1}` and no unique global clock.
+
+`H_tot=H_A+H_B+H_C`.
+
+The physical space is the seven-dimensional zero-sum sector:
+
+`H_phys=ker(H_tot)`.
+
+For each clock choice `X`, the physical reduction maps onto a seven-dimensional constraint-compatible support:
+
+`R_X(j): H_phys -> K_X`,
+
+where `K_X` is embedded in the corresponding nine-dimensional rest tensor-product space.
+
+The genuine cross-clock map is:
+
+`S_{Y<-X}(k,j)=R_Y(k) E_X(j): K_X -> K_Y`.
+
+The central Stage 5 consistency condition is:
+
+`S_{Z<-Y}(l,k) S_{Y<-X}(k,j)=S_{Z<-X}(l,j)`.
+
+The protocol also requires states and reduced observables to transform together for operational comparisons, rejects full-rest-space unitarity when only support-space isometry exists, and does not identify equal numeric readings with one absolute event.
+
+### Stage 5A — symmetric three-subsystem constrained model — completed
+
+Implemented and verified:
+
+- `dim(H_kin)=27`;
+- `dim(H_phys)=7`;
+- the analytic zero-sum basis equals the independently diagonalized numerical kernel projector;
+- generic complex physical coefficients satisfy the constraint;
+- all three subsystems support orthonormal cyclic qutrit DFT clock bases.
+
+Focused Stage 5A tests: **12**.
+
+### Stage 5B — per-clock reductions and supports — completed
+
+For each `X in {A,B,C}`:
+
+- `K_X` is a seven-dimensional proper subspace of the nine-dimensional rest tensor product;
+- normalized physical states give `p_X(j)=1/3`;
+- `R_X(j)` is isometric from `H_phys` to `K_X`;
+- `R_X(j)E_X(j)=P_KX` on the ambient rest space and identity on `K_X`;
+- `E_X(j)R_X(j)=I_phys` on the physical constrained space;
+- `T_X(k<-j)=R_X(k)E_X(j)` reproduces the expected rest-Hamiltonian evolution on the support and satisfies identity/inverse/composition.
+
+Focused Stage 5B tests: **12**.
+
+### Stage 5C — genuine clock-change maps — completed
+
+For distinct physical clocks:
+
+`S_{Y<-X}(k,j)=R_Y(k)E_X(j): K_X -> K_Y`.
+
+Across all six ordered distinct clock pairs and all canonical reading pairs:
+
+- the support-coordinate map is unitary/isometric;
+- ambiently, `S^dagger S=P_KX` and `S S^dagger=P_KY`;
+- source-perspective transformation agrees with direct target reduction from the same physical state;
+- reverse clock change reconstructs the source support state;
+- norms and inner products are preserved;
+- equal numeric source/target readings do not make the genuine clock change an ambient identity.
+
+Focused Stage 5C tests: **12**.
+
+### Stage 5D — cross-clock composition — completed
+
+Across all `6 * 3^3 = 162` ordered distinct-clock routes:
+
+- `S_{Z<-Y}S_{Y<-X}=S_{Z<-X}` in ambient and support coordinates;
+- generic-state and all physical-basis paths are independent of the chosen intermediate clock route;
+- the intermediate clock-reading coordinate cancels from the final source-to-target map;
+- three-clock closed loops return `P_KX` ambiently and `I_KX` on support coordinates.
+
+Focused Stage 5D tests: **12**.
+
+This is the first Stage 5 checkpoint where the project-level **perspective-consistent transition structure** survives changes of the physical clock subsystem itself.
+
+### Stage 5E — operational covariance and perspective-dependent structure — completed
+
+For reduced support observables:
+
+`O_Y=S_{Y<-X} O_X S_{Y<-X}^dagger`.
+
+Stage 5E verifies that:
+
+- generic corresponding expectation values agree;
+- transformed rank-one projectors give matching Born probabilities;
+- reduced density matrices transform covariantly;
+- lifting `O_X` to `H_phys` and independently reducing to the target agrees with direct clock-change conjugation;
+- observable transformations satisfy cross-clock composition and inverse consistency.
+
+The physical observable lift is explicitly restricted on both sides:
+
+`O_phys=P_phys E_X O_X R_X P_phys`.
+
+Perspective-dependent structure is explicit for:
+
+`|Psi_*>= (|+1,-1,0> + |+1,0,-1>)/sqrt(2)`.
+
+Across all canonical readings:
+
+- A-clock perspective: one bit of B:C entanglement;
+- B-clock perspective: zero A:C entanglement;
+- C-clock perspective: zero A:B entanglement.
+
+Thus:
+
+`perspective-dependent reduced structure != operational inconsistency`.
+
+Focused Stage 5E tests: **12**.
+
+### Stage 5F — negative controls — completed
+
+The declared positive results fail or cease to apply outside their domains:
+
+- embedded `9 x 9` clock-change maps have rank `7`, not `9`;
+- ambient round trips return `P_KX`, not `I_9`;
+- energy-basis clock conditioning has physical-space rank pattern `(2,3,2)` and is non-injective;
+- nonphysical `|+1,+1,+1>` is formally conditionable but rejected as a physical perspective;
+- the same support-valid bare projector gives expectations `0.8` and `0.2` across C/A perspectives if left untransformed, while proper observable transport restores `0.8`;
+- equal numeric clock labels do not define synchronization or one absolute event.
+
+Focused Stage 5F tests: **12**.
+
+### Stage 5G — robustness and synthesis — completed
+
+The joint constraint/reduction/clock-change/composition/Born suite passes for:
+
+- three distinct canonical physical coefficient families;
+- symmetric `d=5`, where `dim(H_phys)=dim(K_X)=19` inside `25`-dimensional rest spaces;
+- asymmetric qutrit rates `(1,1,2)`, where `dim(H_phys)=dim(K_X)=5` and `Delta_C=pi/3` while `Delta_A=Delta_B=2*pi/3`;
+- global-phase controls at canonical `d=3`, symmetric `d=5`, and asymmetric rates.
+
+For the symmetric qutrit baseline, all six explicit subsystem tensor permutations preserve `H_tot`, `P_phys`, the per-clock reduction diagrams, and genuine clock-change diagrams. Holding asymmetric rates `(1,1,2)` fixed while swapping A and C breaks Hamiltonian invariance, so this permutation result is not generalized beyond its symmetric domain.
+
+Focused Stage 5G tests: **12**.
+
+Strongest Stage 5 result:
+
+**within the declared finite noninteracting constrained family, multiple internal physical clock perspectives are connected by reversible support-space maps satisfying identity/inverse/composition consistency and preserving tested corresponding operational predictions when states and observables are transformed together. This structure survives multiple coefficient families, a higher symmetric odd dimension, explicit symmetric subsystem permutations, and an asymmetric clock-rate control, while negative controls sharply delimit the physical/support/basis domains on which the claims apply.**
+
+The strongest surviving project-level candidate is a **groupoid-like atlas of admissible perspectives, invertible perspective maps, composition rules, and preserved operational correspondences**. This is a finite-model structural description, not a claim that time is fundamentally a groupoid or that quantum/gravitational general covariance has been established.
 
 ## Key methodological guards
 
@@ -216,13 +410,27 @@ Changing the physical clock subsystem itself is deferred to Stage 5.
 
 `clock-relative transition consistency != fundamental temporal ontology`
 
-`common clock-origin shift != change of physical clock`
-
-`vector change != ray/density-matrix change`
-
-`arbitrary clock basis != ideal relational time basis`
+`common clock-origin shift != physical clock change`
 
 `bookkeeping covariance != physical clock-choice invariance`
+
+`clock reading change != physical clock subsystem change`
+
+`equal numerical clock readings != same physical event`
+
+`support-subspace isometry != full-rest-space unitarity`
+
+`physical observable lift requires physical domain and codomain restriction`
+
+`state transformation without observable transformation != operational frame covariance`
+
+`same valid bare matrix != same physical observable across perspectives`
+
+`perspective-dependent entanglement != inconsistent physics`
+
+`operational covariance != invariance of every representation-dependent quantity`
+
+`robust across declared finite controls != universal physical invariance`
 
 `clock-relative dynamics != fundamental emergent time`
 
@@ -236,7 +444,7 @@ Every stage ends by asking:
 2. What is the becoming-like/local description `G` or `V`?
 3. What is the transformation from global to local?
 4. Is that transformation reversible, and what is hidden/discarded?
-5. What is invariant, reconstructible, ambiguous, lost, or locally accessible?
+5. What is invariant, reconstructible, ambiguous, lost, perspective-dependent, or operationally preserved?
 6. What physical meaning, if any, can be assigned to the surviving structures?
 
-Stage 4 answers are in [`results/stage4_synthesis.md`](results/stage4_synthesis.md).
+Stage 4 answers are in [`results/stage4_synthesis.md`](results/stage4_synthesis.md). Stage 5 answers are in [`results/stage5_synthesis.md`](results/stage5_synthesis.md).

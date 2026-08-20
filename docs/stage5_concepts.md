@@ -96,7 +96,15 @@ For distinct clock choices `X` and `Y`:
 
 It changes which subsystem is treated as clock and generally changes the reduced tensor-product decomposition.
 
-Stage 5C is the first stage that tests this map directly.
+Stage 5C verifies that this map is unitary/isometric between the declared support spaces, agrees with direct reduction through the common physical state, and is pairwise reversible.
+
+In ambient rest coordinates it is a partial isometry:
+
+`S^dagger S=P_KX`,
+
+`S S^dagger=P_KY`,
+
+not an unrestricted rest-space unitary.
 
 ## Cross-clock perspective consistency
 
@@ -107,6 +115,8 @@ The composition rule:
 This is the central Stage 5 candidate structure.
 
 If it holds, it establishes consistency of the tested finite frame-change maps, not a fundamental law of time.
+
+Stage 5C does not yet test this three-clock composition law; that remains Stage 5D.
 
 ## Operational frame covariance
 
@@ -140,13 +150,19 @@ They do not by themselves define synchronization or one absolute event.
 
 `equal numerical clock readings != same physical event`.
 
+Stage 5C strengthens this guard constructively: `S_{A<-C}(0,0)` is not the ambient identity even though both numeric reading labels are zero.
+
 ## Support-space isometry
 
 A clock-change map may be unitary/isometric between `K_X` and `K_Y` while failing to be unitary on the full ambient rest tensor-product spaces.
 
-Stage 5B already exhibits the corresponding one-clock distinction:
+Stage 5C verifies exactly this distinction:
 
-`R_X E_X=P_KX`, not `I_rest`.
+`S^dagger S=P_KX`,
+
+`S S^dagger=P_KY`
+
+ambiently, while the support-coordinate map is unitary.
 
 `support-subspace isometry != full-rest-space unitarity`.
 
@@ -189,3 +205,18 @@ For each `X in {A,B,C}`, the implementation verifies:
 This remains an intra-clock result:
 
 `per-clock reversibility != genuine cross-clock covariance`.
+
+## Stage 5C genuine clock-change checkpoint
+
+For every ordered pair of distinct clocks and every canonical source/target reading pair, Stage 5C verifies:
+
+- `S_{Y<-X}=R_YE_X` maps `K_X` into `K_Y`;
+- the `7 x 7` support-coordinate matrix is unitary;
+- ambiently, `S^dagger S=P_KX` and `S S^dagger=P_KY`;
+- `S_{Y<-X}R_X|Psi>=R_Y|Psi>` for generic physical states and every analytic physical basis vector;
+- the reverse clock change returns the source support state exactly within numerical tolerance;
+- equal numeric readings do not make the genuine clock change an ambient identity.
+
+This establishes pairwise reversible clock changes only:
+
+`pairwise reversible clock changes != full cross-clock perspective consistency`.

@@ -141,3 +141,7 @@ Focused Stage 5C tests: **12**.
 Code/test clean PR merge-ref checkpoint:
 
 `291 passed in 5.64s`.
+
+Documentation-inclusive clean PR merge-ref checkpoint:
+
+`291 passed in 5.60s`.

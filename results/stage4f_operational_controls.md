@@ -1,6 +1,10 @@
 # Stage 4F — Operational and Negative Controls
 
-Status: **completed at the implementation/focused-test checkpoint; documentation-inclusive CI pending final head**.
+Status: **completed**.
+
+Clean PR merge-ref checkpoint including Stage 4F code/tests/experiment/notes/results:
+
+`243 passed in 3.33s`.
 
 ## Operational Born consistency
 

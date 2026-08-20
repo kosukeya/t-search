@@ -180,7 +180,7 @@ Strongest supported Stage 3 statement:
 
 This remains a candidate relational/information-accessibility component of temporal direction, not a fundamental physical arrow.
 
-## Stage 4 — Finite Page–Wootters-style quantum model — in progress
+## Stage 4 — Finite Page–Wootters-style quantum model — in progress on Draft PR #5
 
 Protocol:
 
@@ -246,11 +246,6 @@ Frozen distinctions include:
 
 ### Stage 4A — finite clock kinematics — completed
 
-Implementation / notes / result:
-
-- [`stage4a_notes.md`](stage4a_notes.md)
-- [`../results/stage4a_clock_kinematics.md`](../results/stage4a_clock_kinematics.md)
-
 Implemented and tested:
 
 - finite clock/system dimensions and energy bases;
@@ -258,57 +253,58 @@ Implemented and tested:
 - orthonormality;
 - one-step and multi-step clock translation;
 - cyclic periodicity;
-- non-grid origin shift;
-- `d=5` finite-dimension control.
+- origin-shift covariance;
+- a `d=5` finite-dimension control.
 
 Focused tests: **12**.
-
-Stage 4A establishes finite periodic quantum clock kinematics only; no constrained physical state or relational dynamics is inferred from it.
 
 ### Stage 4B — constrained global physical state — completed
 
-Implementation / notes / result:
+Implemented `H_tot`, identified `H_phys`, built generic canonical physical states, and verified exact constraint satisfaction and global stationarity.
 
-- [`stage4b_notes.md`](stage4b_notes.md)
-- [`../results/stage4b_constrained_physical_state.md`](../results/stage4b_constrained_physical_state.md)
-
-Implemented:
-
-`H_tot=H_C tensor I_S + I_C tensor H_S`.
-
-For canonical `d=4`:
-
-`dim(H_kin)=16`, `dim(H_phys)=4`.
-
-The analytic matched-energy basis:
-
-`{|n>_C|n>_S}`
-
-is annihilated by `H_tot`. An independently extracted numerical zero-eigenspace has the same projector.
-
-Equal-amplitude and generic normalized complex matched-energy states satisfy:
-
-`||H_tot|Psi_phys>||=0`
-
-and:
-
-`exp(-i H_tot tau)|Psi_phys>=|Psi_phys>`
-
-for the tested external parameters.
-
-Negative control `|0>_C|1>_S` has constraint residual `1` and is not stationary.
-
-The same kernel structure is also checked at `d=5`.
+The numerical zero-eigenspace projector agrees with the analytic matched-energy projector. The off-diagonal state `|0>_C|1>_S` has nonzero constraint residual and is not stationary.
 
 Focused tests: **12**.
 
-Stage 4B establishes constrained global stationarity only. It does not yet establish conditional clock-relative dynamics.
+### Stage 4C — conditional dynamics — completed
 
-### Stage 4C — conditional dynamics — next
+Implemented formal clock conditioning and a separate physical reduction API:
 
-Implement clock conditioning, normalized reductions, uniform ideal clock probabilities, and exact discrete Schrödinger evolution.
+`|tilde_psi_j>=(<t_j| tensor I)|Phi>`
 
-### Stage 4D — reduction-map reversibility
+and:
+
+`R_j=sqrt(d)(<t_j| tensor I)` restricted to `H_phys`.
+
+For every normalized state in the canonical matched-energy family:
+
+`p_j=1/d`.
+
+For generic complex coefficients:
+
+`R_j|Psi>=exp[-i H_S(t_j-t_0)]R_0|Psi>`
+
+and:
+
+`psi_{j+1}=exp(-i H_S Delta)psi_j`
+
+including periodic wrap-around.
+
+The equal-amplitude baseline exhibits nontrivial relative ray change, and a nonphysical state can be formally conditioned but is rejected by `physical_reduction`.
+
+Focused tests: **12**.
+
+Stage 4C clean PR merge-ref regression:
+
+`207 passed`.
+
+Strongest supported Stage 4C statement:
+
+**within the ideal finite constrained model, a stationary global physical state yields normalized clock-relative system states obeying exact discrete unitary Schrödinger dynamics.**
+
+This remains a finite Page--Wootters-style representation result, not proof of fundamental emergent time.
+
+### Stage 4D — reduction-map reversibility — next
 
 Implement explicit reconstruction `E_j`, inner-product preservation, physical round trips, and the contrast with non-injective kinematic projection.
 
@@ -373,6 +369,7 @@ Only seek empirical tests after deriving a genuinely discriminating prediction n
 - inaccessible information != ontologically absent information;
 - same local statistic != same global information structure;
 - history-state encoding != physical Page-Wootters state;
+- formal clock conditioning != physical Page-Wootters reduction;
 - kinematic projection != physical reduction;
 - finite-clock periodicity != fundamental physical periodicity;
 - clock-relative dynamics != proof of fundamental emergent time.

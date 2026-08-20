@@ -8,7 +8,7 @@ Can block-like and becoming-like descriptions be related explicitly, and can any
 
 ## Current status
 
-**Stages 1--4 are complete and merged. Stage 5.0 — change-of-clock protocol freeze — is complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5A is next.**
+**Stages 1--4 are complete and merged. Stage 5.0 and Stage 5A are complete on `agent/stage-5-clock-change`; Draft PR #6 tracks Stage 5 and Stage 5B is next.**
 
 Integrated syntheses:
 
@@ -28,10 +28,11 @@ Stage 4 protocol / checkpoints:
 - [`docs/stage4f_notes.md`](docs/stage4f_notes.md) / [`results/stage4f_operational_controls.md`](results/stage4f_operational_controls.md)
 - [`docs/stage4g_notes.md`](docs/stage4g_notes.md) / [`results/stage4g_robustness.md`](results/stage4g_robustness.md)
 
-Stage 5 protocol / concepts:
+Stage 5 protocol / checkpoints:
 
 - [`docs/stage5_protocol.md`](docs/stage5_protocol.md)
 - [`docs/stage5_concepts.md`](docs/stage5_concepts.md)
+- [`docs/stage5a_notes.md`](docs/stage5a_notes.md) / [`results/stage5a_three_subsystem.md`](results/stage5a_three_subsystem.md)
 
 Stage 4 final merge-ref regression:
 
@@ -40,6 +41,10 @@ Stage 4 final merge-ref regression:
 Stage 5.0 protocol-only clean PR merge-ref regression:
 
 `255 passed in 3.94s`.
+
+Stage 5A code/test checkpoint:
+
+`267 passed in 4.58s`.
 
 No strict fundamental invariant of time, empirical discriminator between fixed/open-future interpretations, thermodynamic arrow, phenomenal passage, or fundamental quantum-time ontology has been established.
 
@@ -205,7 +210,7 @@ The physical space is the seven-dimensional zero-sum sector:
 
 `H_phys=ker(H_tot)`.
 
-For each clock choice `X`, the physical reduction maps onto a seven-dimensional constraint-compatible support:
+For each clock choice `X`, the physical reduction is planned to map onto a seven-dimensional constraint-compatible support:
 
 `R_X(j): H_phys -> K_X`,
 
@@ -223,9 +228,30 @@ The protocol also requires states and reduced observables to transform together 
 
 Reserved robustness controls include symmetric `d=5`, subsystem permutation covariance, and asymmetric qutrit clock rates `(lambda_A,lambda_B,lambda_C)=(1,1,2)`.
 
-### Stage 5A — next
+### Stage 5A — symmetric three-subsystem constrained model — completed
 
-Implement only the symmetric three-qutrit constrained substrate: subsystem Hamiltonians, total constraint, analytic seven-state physical basis, numerical kernel verification, and all three finite DFT clock bases. Cross-clock reductions and frame changes remain deferred until Stage 5B/C.
+The implemented substrate verifies:
+
+- `dim(H_kin)=27`;
+- `dim(H_phys)=7`;
+- the seven zero-sum product-energy triples;
+- equality of analytic and independently computed numerical zero-eigenspace projectors;
+- generic complex physical-state embedding with zero constraint residual;
+- a nonphysical `|+1,+1,+1>` control with residual `3`;
+- one orthonormal finite qutrit DFT clock basis for each of A/B/C;
+- exact cyclic one-step clock translation and three-step periodic return within numerical tolerance.
+
+Focused tests: **12**.
+
+Code/test PR merge-ref checkpoint:
+
+`267 passed in 4.58s`.
+
+Stage 5A establishes the shared constrained substrate and three available clock kinematics only. It does not yet establish that changing physical clock preserves the Stage 4 perspective-consistency structure.
+
+### Stage 5B — next
+
+Implement the three constraint-compatible reduced supports `K_A`, `K_B`, `K_C`, physical reductions `R_X(j)`, reconstructions `E_X(j)`, uniform ideal clock probabilities, support-space isometry/round trips, and same-clock transition checks. Genuine cross-clock maps remain Stage 5C.
 
 ## Key methodological guards
 

@@ -1,166 +1,155 @@
 # Stage 8 Concepts — Quantum Potentiality
 
-Status: **Stage 8.0 vocabulary frozen before implementation.**
+Status: **Stage 8.0 vocabulary frozen; Stage 8A provides the first executable `QExt` realization.**
 
 This document fixes the meanings used by Stage 8. It supplements `stage8_protocol.md` and does not establish an ontology of time.
 
 ## Quantum Actuality
 
-`A_Q(D)` denotes the currently declared quantum actuality: the common current event/history anchor `D`, the constrained physical information declared actual at that anchor, and the current operational interface needed to specify the present situation.
+`A_Q(D)` denotes the currently declared quantum actuality: the current relational anchor `D`, constrained physical information declared actual there, and the operational interface needed to specify that current situation.
 
-It is **not** a complete future history.
-
-Guard:
+It is not a complete future history.
 
 `same current quantum Actuality != same complete continuation`.
 
 ## QuantumContinuation
 
-A `QuantumContinuation` is a physically admissible completion of the declared current quantum Actuality beyond the current anchor.
+A `QuantumContinuation` is a physically admissible executable completion of the current quantum Actuality beyond the current anchor.
 
-It must contain executable future physical structure: a continuation-specific schedule, physical map, constrained completion, or equivalent construction acting on the Stage 7 carrier.
+It must contain future physical structure acting on the constrained carrier. It is not merely a string label, Python branch, random seed, unused metadata object, or event renaming.
 
-It is not merely:
-
-- a string label;
-- a Python branch;
-- a random seed;
-- an unused metadata object;
-- an event renaming.
-
-Guard:
-
-`different continuation labels != different physical continuations`.
+`different continuation labels != physically different continuations`.
 
 ## Continuation equivalence
 
-Two continuation descriptions count as the same Stage 8 physical continuation when they differ only by a declared representational equivalence while preserving the designated physical observables and continuation diagnostics.
+Two continuation descriptions are equivalent when they differ only by declared representational changes while preserving their executable physical schedule and designated continuation diagnostics.
 
-Pure renaming must therefore preserve the continuation equivalence class.
+Cosmetic renaming therefore preserves the continuation-equivalence class.
 
 ## QExt(D)
 
-`QExt(D)` is the set of equivalence classes of physically admissible quantum continuations of the current quantum Actuality.
+`QExt(D)` is the set of equivalence classes of physically admissible quantum continuations of the current Actuality.
 
-`QExt(D)` is a modal carrier. It is not itself a declaration that every represented extension is ontically real.
+It is a modal carrier, not a declaration that every represented extension is ontically real.
 
-Guard:
+`QExt represented != ontically real futures by definition`.
 
-`represented extension != ontically real future by definition`.
+## Stage 8A canonical realization
+
+The first executable substrate is:
+
+`QExt(e1) = {h_L, h_R}`.
+
+Both continuations share the same current prefix:
+
+- `V0=I`;
+- `V1=U_rec`.
+
+They therefore share the same constrained current state and the same one-bit target-specific record at `e1`.
+
+Their only canonical difference is future-side at `e2`:
+
+- `h_L`: `V2=U_rec`;
+- `h_R`: `V2=Z_C U_rec`.
+
+`Z_C` is a reversible phase on the A-clock rest-pair sector `C energy label == +1`. It is identity on memory and commutes with the Stage 7 B-based record-target projector.
+
+The future distinction is therefore memory neutral and record-target neutral in the declared baseline.
+
+The two futures are physically inequivalent: their normalized `e2` reduced states are orthogonal in the canonical source run, while a pure renamed copy of `h_L` remains equivalent to `h_L`.
+
+The finite terminal convention is:
+
+`QExt(e2)=empty`.
+
+Stage 8A does not yet instantiate either modal semantics below.
+
+`future physical inequivalence != modal semantics by itself`.
 
 ## Epistemic quantum Potentiality
 
 `EPot_Q(D)` is a typed set of live continuation hypotheses in a model that already contains one selected complete continuation `h*`.
 
-The epistemic weight `q_E(h|D)` represents uncertainty about which already-selected continuation is actual.
+`M_E^Q=(QCarrier,D,h*,q_E)`.
 
-The hidden `h*` is a privileged internal datum and must not enter the pre-discriminating operational interface.
+The epistemic weight `q_E(h|D)` represents uncertainty about which already-selected continuation is actual. The hidden `h*` is privileged model data and must not enter the pre-discriminating operational interface.
 
 ## Ontic-extension quantum Potentiality
 
-`OPot_Q(D)` is a typed set of admissible continuations in a model that contains no selected complete future datum before update.
+`OPot_Q(D)` is the typed extension structure of a model that contains no selected complete future datum before update.
 
-The ontic-extension model may contain continuation weights `K`, but it must not contain a hidden selector, seed-equivalent selector, precomputed outcome, or any other state that singles out a complete continuation.
+`M_O^Q(D)=(QCarrier,D,QExt(D),K)`.
 
-Guard:
+The model may contain continuation weights `K`, but no hidden selector, seed-equivalent selector, precomputed outcome, or other datum may single out a complete continuation.
 
 `no selected continuation field != proof that nature is ontically open`.
 
 ## Selected continuation
 
-A selected continuation `h*` is a global model datum that singles out one complete member of `QExt(D)` before discriminating evidence arrives.
+A selected continuation `h*` is a global model datum that singles out one complete member of `QExt(D)` before discriminating evidence arrives. Its presence defines the Stage 8 epistemic role.
 
-Its presence defines the Stage 8 epistemic-history model role.
-
-Its absence from the ontic-extension model is a formal difference, not an empirical conclusion.
+Its formal absence from the ontic-extension model is not itself an empirical result.
 
 ## Operational quantum interface
 
-`O_Q` is an ontology-neutral interface exposing only declared current physical/record/next-outcome data.
+`O_Q` is an ontology-neutral interface exposing declared current physical, record, accessible-observable, and next-outcome information.
 
-It must not expose:
-
-- model class names;
-- `h*`;
-- hidden selectors;
-- privileged modal diagnostics.
-
-Matched equality under `O_Q` means only operational underdetermination relative to that interface.
-
-Guard:
+It must not expose class names, `h*`, hidden selectors, or privileged modal diagnostics.
 
 `O_Q equality != modal identity`.
 
 ## Privileged modal diagnostic
 
-A privileged modal diagnostic is a test-only capability that may inspect structural facts such as whether `h*` exists.
-
-It is not a local observable unless a later protocol explicitly embeds such access physically.
-
-Guard:
+A privileged diagnostic is a test-only inspection of structural facts such as whether `h*` exists. It is not automatically a local physical observable.
 
 `internal distinguishability != operational accessibility`.
 
-## Quantum continuation weight
+## Quantum continuation weights
 
-Stage 8 distinguishes two numerically similar but semantically different weights:
+Stage 8 distinguishes:
 
 - `q_E`: epistemic belief over an already-selected continuation;
-- `K`: weight over admissible no-selected-future continuations.
-
-Guard:
+- `K`: weight over admissible continuations in the no-selected-future model.
 
 `same numerical weights != same probability semantics`.
 
 ## Actualization / update
 
-An update extends the declared Actuality after explicitly supplied evidence.
+An update extends declared Actuality after explicitly supplied evidence.
 
 Epistemic update retains the pre-existing `h*` and conditions beliefs.
 
 Ontic-extension update grows Actuality and prunes `QExt` without introducing a hidden complete future.
 
-Stage 8 does not identify this API update with collapse, ontological becoming, or phenomenal passage.
+`actualization API update != ontological becoming`.
 
 ## P-V covariance
 
-`P-V covariance` means that corresponding quantum continuation families and their modal semantics can be represented consistently under genuine Stage 7/8 clock-perspective transformations with explicit continuation/event correspondence.
+P-V covariance means corresponding continuation families and their modal semantics can be represented consistently under genuine Stage 7/8 clock-perspective transformations with explicit continuation/event correspondence.
 
-It does not mean:
+`P-V covariance != P=V`.
 
-`P=V`.
-
-Nor does it imply:
-
-`perspective consistency => modal equivalence`.
+`perspective consistency != modal equivalence`.
 
 ## R-V compatibility
 
-`R-V compatibility` means that a declared record-bearing physical construction and a declared V semantics can coexist consistently.
+R-V compatibility means one record-bearing physical construction and one declared V semantics coexist consistently.
 
-Stage 8 will test whether the same record-defined orientation can coexist with both epistemic and ontic-extension semantics.
+Stage 8A deliberately makes the continuation difference memory and record-target neutral so V is not definitionally constructed from R.
 
-If so, this is a finite-model counterexample to:
+Later stages will test whether the same record-defined orientation can coexist with both epistemic and ontic-extension semantics.
 
-`record-defined direction => unique ontic-future semantics`.
-
-It is not a proof about the ontology of the real future.
+`R-V compatibility != R=V`.
 
 ## O-V compatibility
 
-`O-V compatibility` means that the same internal order/history anchor can support the declared V semantics.
-
-Stage 8 must not define one modal semantics from the existence of `e0<e1<e2` alone.
-
-Guard:
+O-V compatibility means the same internal order/history anchor can support the declared V semantics.
 
 `internal order != ontic openness`.
 
-## Quantum-randomness guards
+## Quantum-randomness and superposition controls
 
 Stage 8 does not define V through generic quantum uncertainty.
-
-Guards:
 
 `Potentiality != quantum randomness by definition`.
 
@@ -168,19 +157,13 @@ Guards:
 
 `Potentiality != Born probability by definition`.
 
-## Superposition control
-
-A coherent superposition over branch/continuation labels may be used as a physical control but is not, by itself, an `OPot_Q` witness.
-
-Guard:
-
 `superposition != ontic Potentiality by definition`.
+
+A coherent superposition over continuation labels may later be used as a physical control, but it is not by itself an `OPot_Q` witness.
 
 ## Density-matrix ambiguity
 
-A density matrix can admit multiple decompositions and does not, by itself, specify whether one complete continuation is globally selected.
-
-Guard:
+A density matrix may admit multiple decompositions and does not by itself specify whether a complete continuation is globally selected.
 
 `density matrix decomposition != unique modal semantics`.
 
@@ -192,15 +175,15 @@ Stage 8 counts V as integrated only if:
 - both typed modal semantics use that same continuation substrate;
 - operational comparison is executable;
 - update semantics are executable;
-- genuine clock-perspective transport is eventually executable.
+- genuine clock-perspective transport is executable.
+
+Stage 8A establishes only the first item for the canonical family.
 
 ## Integration failure
 
-Stage 8 is not considered integrated if the strongest construction is merely:
+The following is not sufficient:
 
 `Stage 7 quantum model + unrelated Stage 2 modal metadata`.
-
-Guard:
 
 `product decoration != integrated layer`.
 
@@ -214,8 +197,6 @@ Stage 8 uses:
 - `inaccessible`;
 - `not_established`;
 - `not_applicable`.
-
-The philosophical cautions remain:
 
 `lost != metaphysically irreducible`.
 

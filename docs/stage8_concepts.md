@@ -1,6 +1,6 @@
 # Stage 8 Concepts — Quantum Potentiality
 
-Status: **Stage 8A provides executable `QExt`; Stage 8B realizes two typed modal models on that same carrier; Stage 8C is next.**
+Status: **Stage 8A provides executable `QExt`; Stage 8B realizes two typed modal models on that carrier; Stage 8C establishes the declared operational/update comparison. Stage 8D is next.**
 
 ## Quantum Actuality / continuation
 
@@ -22,9 +22,9 @@ The two continuations share the same current constrained state and one-bit recor
 
 One `QuantumContinuationCarrier` containing `{h_L,h_R}` is passed to both model types.
 
-Epistemic `M_E^Q=(QCarrier,D,h*,q_E)` stores privileged selected continuation `h*`. Concrete wrapper: `EpistemicQuantumPotentiality`.
+Epistemic `M_E^Q=(QCarrier,D,h*,q_E)` stores privileged selected continuation `h*`; wrapper: `EpistemicQuantumPotentiality`.
 
-Ontic-extension `M_O^Q(D)=(QCarrier,D,QExt(D),K)` uses a frozen/slots schema with carrier and weights only. Concrete wrapper: `OnticExtensionQuantumPotentiality`.
+Ontic-extension `M_O^Q(D)=(QCarrier,D,QExt(D),K)` uses a frozen/slots schema with carrier and weights only; wrapper: `OnticExtensionQuantumPotentiality`.
 
 The ontic schema has no selected continuation, selected history, selector, seed, precomputed outcome, latent branch selector, singleton continuation field, or arbitrary instance dictionary.
 
@@ -32,23 +32,69 @@ The ontic schema has no selected continuation, selected history, selector, seed,
 
 `no selected continuation field != proof that nature is ontically open`.
 
-## Matched weights / public projection
+## Stage 8C operational interface
 
-Canonical q_E and K are `(0.5,0.5)` and are generated without consulting `h*`.
+The full declared ontology-neutral interface is:
 
-Swapping epistemic h_L/h_R as selected `h*` changes privileged structure while leaving the Stage 8B pre-discriminating projection unchanged. That projection excludes h* and model type.
+`O_Q=(D,rho_now,R_now,Next_Q(D),pi_Q(next|D),observed_outcome)`.
 
-`same numerical weights != same probability semantics`.
+It exposes current physical/record information and physically defined future-outcome predictions, but excludes `h*`, model type, typed Potentiality, selectors, and raw `q_E` / `K` bookkeeping.
+
+A privileged modal diagnostic remains outside `O_Q`.
+
+`operational quantum equality != modal/ontological identity`.
 
 `hidden h* diagnostic != operational access to h*`.
 
-`Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
+## Physical future-signature measurement
 
-## Stage 8C / D / E boundaries
+The two orthogonal canonical `e2` continuation states define two projectors; a third projector closes the measurement on the ambient reduced space.
 
-Stage 8C defines full ontology-neutral O_Q operational comparison and explicit update. Stage 8D tests genuine P-V clock-perspective transport. Stage 8E tests R-V and O-V compatibility without defining V by records or order.
+Canonical signatures are deterministic:
 
-`actualization API update != ontological becoming`.
+- `h_L -> future_signature_0`;
+- `h_R -> future_signature_1`;
+- the remainder has zero support for both retained continuations.
+
+Stage 8C predictions marginalize those Born likelihoods with `q_E` or `K` rather than exposing the weights themselves.
+
+With matched `(0.5,0.5)` weights, both typed models predict `(0.5,0.5)`. With the controlled ontic mismatch `K=(0.75,0.25)`, the current Actuality remains fixed while the next-outcome prediction changes to `(0.75,0.25)`.
+
+`same numerical weights != same probability semantics`.
+
+## Explicit evidence update
+
+An update receives explicit `QuantumEvidence`; it never samples a branch internally.
+
+For canonical evidence `future_signature_0`:
+
+- epistemic `h*=h_L` is retained while `q_E` conditions to `(1,0)`;
+- contradictory deterministic evidence is rejected rather than replacing `h*`;
+- ontic `K` conditions to `(1,0)` without adding a selected/selector field;
+- both descriptions advance to terminal `e2`;
+- the declared future extension set after the update is `QExt(e2)=empty`.
+
+`explicit evidence update != ontological becoming`.
+
+`random sampling != ontic actualization evidence`.
+
+`evidence-conditioned singleton support != pre-existing hidden selector`.
+
+## Superposition / density / Born underdetermination
+
+The common current `e1` state contains multiple coherent amplitudes. Nevertheless the two modal structures have the same current density matrix and matched Born prediction under the declared interface while privileged diagnostics distinguish their selected-vs-unselected structure.
+
+Thus, in this finite family:
+
+`superposition != ontic Potentiality by definition`.
+
+`same density/Born data != unique modal semantics in this family`.
+
+`density matrix decomposition != unique modal semantics`.
+
+## Stage 8D / E boundaries
+
+Stage 8D tests genuine P-V clock-perspective transport using interacting clock maps and explicit continuation/event correspondence. Stage 8E tests R-V and O-V compatibility without defining V by records or order.
 
 `P-V covariance != P=V`.
 
@@ -64,11 +110,9 @@ Stage 8C defines full ontology-neutral O_Q operational comparison and explicit u
 
 `Potentiality != Born probability by definition`.
 
-`density matrix decomposition != unique modal semantics`.
-
 ## Integration / evidence boundary
 
-Stage 8A establishes executable QExt; Stage 8B establishes shared typed modal models. Operational/update and perspective transport remain future work.
+Stage 8A establishes executable QExt; Stage 8B establishes shared typed modal models; Stage 8C establishes the declared full operational comparison and one explicit update. Genuine perspective transport remains Stage 8D work.
 
 `typed modal wrapper beside quantum model != quantum-modal integration`.
 

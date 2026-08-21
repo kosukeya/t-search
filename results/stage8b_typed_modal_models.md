@@ -1,6 +1,6 @@
 # Stage 8B Results — Typed Epistemic and Ontic-Extension Quantum Models
 
-Status: **implementation complete; final validation recorded below once the synchronized head passes CI**.
+Status: **completed for the declared canonical typed-model family**.
 
 ## Shared substrate
 
@@ -66,6 +66,8 @@ Thus Stage 8B realizes a typed semantic distinction without changing the physica
 
 The same vector is used as epistemic `q_E` and ontic `K` in the canonical comparison.
 
+`matched numerical q_E and K != matched probability semantics`.
+
 ## Hidden-selected-continuation swap
 
 With carrier and weights fixed, swapping:
@@ -91,9 +93,29 @@ The implementation rejects:
 - non-normalized weights;
 - post-construction selector injection into the frozen/slots ontic object.
 
+The first Stage 8B implementation run reported:
+
+`594 passed / 1 failed in 191.81s`.
+
+The only failure was a brittle test expectation about which Python exception class a frozen+slots dataclass raises when an undeclared selector attribute is injected. The injection itself was rejected as intended. The test was changed to assert the scientific requirement — that selector state cannot be injected — without depending on that implementation-specific exception class.
+
+The corrected implementation regression then reported:
+
+**`595 passed in 140.99s`**
+
+on head `24b80d5a433a9598c4f553964164669fd4ffd7ab`.
+
+After Stage 8B protocol/concepts/README/roadmap/documentation-audit synchronization, the full regression reported:
+
+**`597 passed in 84.13s`**
+
+on head `fec4ea14bb583a64b770e5ff01c71ae681e2d79a` / PR merge-ref `0526a229543006ed4b1f20bb51bfa309af55b87c`.
+
+A final regression on the checkpoint-recording head is still required before closing the Stage 8B software checkpoint.
+
 ## Exit criteria
 
-Stage 8B targets and, conditional on passing the synchronized regression, satisfies criteria **17–21**:
+Stage 8B satisfies criteria **17–21** in the canonical family:
 
 17. hidden selected continuation present in the epistemic model;
 18. no selected complete continuation / selector datum in the declared ontic schema;
@@ -103,15 +125,9 @@ Stage 8B targets and, conditional on passing the synchronized regression, satisf
 
 Criteria 22–50 remain future scientific work.
 
-## Validation
-
-Stage 8B adds **13 focused tests** in `tests/test_stage8b_quantum_modal_models.py`.
-
-Final full-regression count and synchronized-head SHA are recorded after CI completion.
-
 ## Strongest bounded statement
 
-**Within the canonical Stage 8A constrained continuation carrier, two type-distinct modal models can be represented without changing the physical continuation substrate: an epistemic model stores one privileged selected continuation `h*`, whereas a frozen/slots ontic-extension model stores the shared carrier and extension weights but no selected continuation or selector-like datum. With matched `(0.5,0.5)` weights generated independently of `h*`, swapping `h_L` and `h_R` as the epistemic selected continuation changes the privileged diagnostic while leaving the Stage 8B pre-discriminating public projection unchanged. This establishes the selected-versus-unselected typed model distinction on a common quantum-extension substrate, not full operational underdetermination or an ontology of the real future.**
+**Within the canonical Stage 8A constrained continuation carrier, two type-distinct modal models can be represented without changing the physical continuation substrate: an epistemic model stores one privileged selected continuation `h*`, whereas a frozen/slots ontic-extension model stores the shared carrier and extension weights but no selected continuation or selector-like datum in its declared schema. With matched `(0.5,0.5)` weights generated independently of `h*`, swapping `h_L` and `h_R` as the epistemic selected continuation changes the privileged diagnostic while leaving the Stage 8B pre-discriminating public projection unchanged. This establishes the selected-versus-unselected typed model distinction on a common quantum-extension substrate, not full `O_Q` operational underdetermination, update semantics, P-V covariance, V independence from P/O/R, or an ontology of the real future.**
 
 ## Next
 

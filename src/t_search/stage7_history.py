@@ -58,11 +58,8 @@ from .stage5_clock_change import (
 from .stage5_reductions import clock_relative_support_pairs
 from .stage7_record import (
     CANONICAL_CLOCK,
-    TARGET_LABEL,
-    TARGET_POSITION,
     canonical_target_pair_projector,
     controlled_record_write_ambient_operator,
-    controlled_record_write_support_matrix,
 )
 from .stage7_spectator import (
     MEMORY_DIMENSION,
@@ -135,34 +132,28 @@ def canonical_history_model(kind: HistoryKind = "forward") -> RelationalHistoryM
     )
 
 
-def _canonical_rates(rates: tuple[float, float, float] = DEFAULT_RATES) -> tuple[float, float, float]:
-    values = tuple(float(value) for value in rates)
-    if len(values) != 3 or not np.allclose(values, DEFAULT_RATES, atol=0.0, rtol=0.0):
-        raise ValueError("Stage 7C canonical history is frozen to rates=(1,1,1)")
-    return values  # type: ignore[return-value]
-
-
-def _validate_canonical(dimension: int = DEFAULT_DIMENSION) -> None:
-    if dimension != 3:
-        raise ValueError("Stage 7C canonical history is frozen to qutrit clocks")
-
-
 def pair_scrambler_support_matrix() -> np.ndarray:
-    """Reversible target scrambler X -> X XOR N on the four source pairs.
+    """Reversible nuisance-controlled target scrambler X -> X XOR N.
 
-    Here X=1 iff B=-1 and N=1 iff C=+1 on the declared four-pair source
-    subspace.  The remaining three support pairs are left unchanged.
+    On the canonical four-pair source subspace, X=1 iff B=-1 and N=1 iff
+    C=+1.  Therefore only the N=1 sector is flipped:
+
+        (-1,+1) <-> (0,+1)
+
+    while the N=0 pairs (-1,0) and (0,0) remain fixed.  This makes the final
+    target bit X XOR N independent of the original X for the balanced source.
+    The remaining support pairs are also left unchanged.
     """
 
     pairs = clock_relative_support_pairs(CANONICAL_CLOCK)
     permutation = np.eye(len(pairs), dtype=np.complex128)
-    for first, second in (((-1, 0), (0, 0)), ((-1, 1), (0, 1))):
-        i = pairs.index(first)
-        j = pairs.index(second)
-        permutation[i, i] = 0.0
-        permutation[j, j] = 0.0
-        permutation[i, j] = 1.0
-        permutation[j, i] = 1.0
+    first, second = (-1, 1), (0, 1)
+    i = pairs.index(first)
+    j = pairs.index(second)
+    permutation[i, i] = 0.0
+    permutation[j, j] = 0.0
+    permutation[i, j] = 1.0
+    permutation[j, i] = 1.0
     return np.kron(permutation, memory_identity())
 
 

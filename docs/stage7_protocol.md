@@ -1,6 +1,6 @@
 # Stage 7 Protocol — Quantum Records in a Constrained Multi-Clock Model
 
-Status: **Stage 7.0 protocol frozen; Stage 7A spectator-memory baseline completed.**
+Status: **Stage 7.0 protocol frozen; Stage 7A spectator-memory baseline and Stage 7B reversible record witness completed.**
 
 Stage 7 follows the Stage 6G evidence-selected gate. It does not begin with the older roadmap assumption that Stage 7 should immediately be a generally covariant / gravitational extension. The immediate pressure test is narrower and more discriminating:
 
@@ -106,6 +106,8 @@ Stage 7A executable checkpoint:
 - 18 explicit target-memory no-record diagnostics remain within tolerance of zero;
 - full regression: `451 passed in 142.35s`.
 
+Stage 7B adds a target-specific reversible record witness on the A-clock support without changing the spectator constraint.  The canonical target is `Q=[B energy label == -1]`, the wrong-target control is `W=[C energy label == +1]`, and the memory readout is computational `Z_M`.  The intended write raises `I(Q;M)` from `0` to `1 bit`, while the identity/no-record control and wrong-target information remain zero within tolerance.  The write is reversible and lifts to an automorphism of the common Stage 7A physical subspace.  It does not yet define a directional score or an internally anchored history.
+
 ## 5. Record semantics
 
 A Stage 7 quantum record claim requires all of the following:
@@ -136,6 +138,8 @@ On a declared reduced support, a minimal reversible record-writing gate may take
 
 for a binary projector `Q`.
 
+Stage 7B implements this construction explicitly on the canonical A-clock qutrit support.  The support-coordinate gate is unitary and involutory, its ambient completion is unitary and support preserving, and applying the write twice recovers the source state.
+
 This is a useful correlation witness and negative-control substrate.
 
 It does **not** by itself prove that a record was formed at one physical time.
@@ -149,6 +153,8 @@ A schematic physical representative is:
 `U_phys = E_p^M U_rec R_p^M`
 
 with all support/domain projectors made explicit in implementation.
+
+Stage 7B verifies this induced map as a unitary automorphism in the 14-dimensional common physical-basis coordinates and confirms that a transformed canonical physical state remains constraint satisfying and reduces to the directly written support state.
 
 Frozen guard:
 
@@ -255,6 +261,8 @@ Stage 7 must include at least the following controls when the relevant construct
 - perturbed perspective edge/path where covariance should fail locally;
 - constraint-violating candidate interaction/state rejected from the physical API.
 
+Stage 7B has run the explicit identity/no-record and independently balanced wrong-target controls.  The uncertain-memory, reversal, and balanced-orientation controls remain for Stage 7C because Stage 7B intentionally defines no directional history score.
+
 A control may be classified `not_applicable` if the relevant positive construction was not achieved, but it may not be silently omitted.
 
 ## 11. Evidence taxonomy
@@ -280,13 +288,15 @@ Add `M` without record coupling and verify the inherited physical subspace, redu
 
 Result: the canonical spectator extension preserves the tested Stage 5 perspective atlas and gives a strict executable no-record baseline. See `stage7a_notes.md` and `../results/stage7a_spectator_memory.md`.
 
-### Stage 7B — reversible quantum record witness — next
+### Stage 7B — reversible quantum record witness — completed
 
 Implement the minimal reversible record-writing construction on a declared support/physical subspace, declare the target variable and memory readout, and verify that record information appears only under the intended coupling.
 
+Result: the canonical A-clock witness records one bit about `Q=[B energy label == -1]`, leaves the independently balanced wrong target `W=[C energy label == +1]` at zero mutual information, is exactly reversible, and lifts to a physical-subspace automorphism.  No directional score is defined.  See `stage7b_notes.md` and `../results/stage7b_reversible_record.md`.
+
 Purpose: distinguish `memory present` from `record present` and `entangled` from `records Q`.
 
-### Stage 7C — relational record formation and orientation controls
+### Stage 7C — relational record formation and orientation controls — next
 
 Construct an internally anchored record-forming history/constraint if physically admissible, then test forward, reversed, balanced, no-record, and uncertain-memory controls.
 
@@ -402,12 +412,16 @@ Stage 7A satisfies criteria 6–9 in the declared canonical spectator family.
 13. wrong-target and/or no-record controls distinguish generic correlation from the intended record semantics;
 14. any claimed directional score is attached to an explicit internally modeled history/event structure.
 
+Stage 7B satisfies criteria 10–13 in the declared canonical witness. Criterion 14 is not yet activated because Stage 7B deliberately defines no directional score; Stage 7C must supply an internally modeled history before any such score is interpreted.
+
 ### Reversal / controls
 
 15. a no-record coupling control is run;
 16. an uncertain/mixed-memory control is run where applicable;
 17. an orientation reversal uses an explicit inverse/reversed construction rather than sign relabeling;
 18. a balanced forward/reverse control cancels the directional score where the score is defined.
+
+Stage 7B already satisfies criterion 15 through the explicit identity/no-record control. Criteria 16–18 remain for Stage 7C where directional history structure is introduced.
 
 ### Cross-perspective transport
 

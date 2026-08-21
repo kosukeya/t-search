@@ -68,17 +68,7 @@ Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gr
 
 Stage 7 removed the former model-separation objection for P and R by placing P/O/R in one constrained finite quantum construction with memory.
 
-Main results:
-
-- reversible target-specific record formation;
-- internally anchored `e0<e1<e2` history and reversal/balance/no-record controls;
-- genuine A/B/C perspective changes in the interacting model;
-- induced-metric-preserving nonideal perspective atlas;
-- record covariance under corresponding state/observable/event transport;
-- global record representation distinct from local accessibility;
-- partial-atlas indirect reconstruction;
-- no-record countermodel retaining tested `P + internal O` while `R` vanishes;
-- explicit perspective edge matrices reconstructible from the common carrier plus per-perspective reductions.
+Main results include reversible record formation, internally anchored `e0<e1<e2` history and controls, genuine interacting A/B/C perspectives, induced-metric-preserving clock changes, record covariance, accessibility controls, partial-atlas reconstruction, and a no-record countermodel retaining tested `P + internal O` while `R` vanishes.
 
 Stage 7G synthesis outcome:
 
@@ -120,20 +110,13 @@ The canonical current anchor is `e1` and:
 
 `QExt(e1) = {h_L, h_R}`.
 
-Both continuations share the same constrained Actuality through `e1` and one-bit current record:
+Both continuations share the same constrained Actuality through `e1` and one-bit current record: `V0=I`, `V1=U_rec`.
 
-`V0=I`, `V1=U_rec`.
-
-They differ only at `e2`:
-
-- `h_L`: `V2=U_rec`;
-- `h_R`: `V2=Z_C U_rec`.
-
-`Z_C` is a reversible C-sector phase that acts as identity on memory and commutes with the Stage 7 B-based record target. The future distinction therefore does not define V through R.
+They differ only at `e2` by a reversible C-sector phase that acts as identity on memory and commutes with the Stage 7 B-based record target. The future distinction therefore does not define V through R.
 
 Executable evidence includes future-operator residual `4`, canonical normalized `e2` overlap squared `0`, physical dimension `14` for both continuations, rank `14` at all nine A/B/C clock/readout reductions, renaming invariance, invalid-current-prefix rejection, and terminal `QExt(e2)=empty`.
 
-Stage 8A satisfies exit criteria 11–16.
+Stage 8A satisfies exit criteria 11–16. Its final documentation-synchronized regression reported `582 passed in 122.49s`.
 
 ### Stage 8B — typed epistemic and ontic-extension quantum models — completed
 
@@ -164,6 +147,8 @@ The typed Potentialities contain the same physical continuation members while re
 
 With carrier and weights fixed, swapping epistemic `h*=h_L` to `h*=h_R` changes a privileged diagnostic but leaves the Stage 8B minimal pre-discriminating public projection unchanged. That projection deliberately excludes `h*` and model-type names.
 
+The corrected implementation regression reported `595 passed in 140.99s`; the planning/documentation-synchronized regression reported `597 passed in 84.13s`.
+
 Stage 8B therefore satisfies exit criteria 17–21 in the canonical family. It does **not** yet establish the full Stage 8C `O_Q` equality/update result or an ontology of the real future.
 
 ### Stage 8 sequence
@@ -181,11 +166,7 @@ Criteria 22–50 remain future scientific work after Stage 8B.
 
 ### Post-Stage 8 re-ranking candidates
 
-After Stage 8, evidence should re-rank at least:
-
-- richer causal/order structure replacing the deliberately minimal O layer;
-- interacting/nonideal/POVM clocks;
-- parametrized/generally-covariant precursor if the finite architecture is sufficiently stable.
+After Stage 8, evidence should re-rank at least richer causal/order structure, interacting/nonideal/POVM clocks, and a parametrized/generally-covariant precursor if the finite architecture is sufficiently stable.
 
 Do not assign these by chronology alone.
 

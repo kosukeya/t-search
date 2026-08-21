@@ -134,7 +134,3 @@ Documentation-inclusive PR merge-ref checkpoint:
 Result-inclusive PR merge-ref checkpoint:
 
 `352 passed in 18.76s`.
-
-Final branch-head PR merge-ref checkpoint:
-
-`352 passed in 18.36s`.

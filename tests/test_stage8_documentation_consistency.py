@@ -53,24 +53,43 @@ def test_stage8_integration_requires_executable_quantum_continuations() -> None:
     assert "product decoration != integrated layer" in concepts
 
 
-def test_stage8_sequence_and_checkpoint_agree() -> None:
+def test_stage8_current_sequence_and_stage80_historical_checkpoint_agree() -> None:
     protocol = _read("docs/stage8_protocol.md")
     checkpoint = _read("results/stage8_0_protocol_freeze.md")
 
     assert "Stage 8.0 — Quantum Potentiality protocol freeze — completed" in protocol
-    assert "Stage 8A — common quantum-extension substrate — next" in protocol
+    assert "Stage 8A — common quantum-extension substrate — completed" in protocol
+    assert "Stage 8B — typed epistemic and ontic-extension quantum models — next" in protocol
+
+    # The Stage 8.0 checkpoint remains an immutable historical record of what was next then.
     assert "Stage 8.0 — Quantum Potentiality protocol freeze — completed" in checkpoint
     assert "Stage 8A — common quantum-extension substrate — next" in checkpoint
 
 
-def test_stage8_exit_criteria_do_not_premark_future_science_complete() -> None:
+def test_stage8_exit_criteria_advance_only_through_stage8a() -> None:
     protocol = _read("docs/stage8_protocol.md")
     checkpoint = _read("results/stage8_0_protocol_freeze.md")
+    stage8a = _read("results/stage8a_quantum_extensions.md")
 
     assert "Stage 8 defines 50 exit criteria" in checkpoint
     assert "criteria 1–10 only" in checkpoint
     assert "Criteria 11–50 remain future scientific work" in checkpoint
-    assert "Criteria 11–50 remain future scientific work" in protocol
+    assert "Stage 8A satisfies criteria 11–16" in protocol
+    assert "Criteria 17–50 remain future scientific work" in protocol
+    assert "criteria **11–16**" in stage8a
+
+
+def test_stage8a_checkpoint_has_real_qext_not_only_labels() -> None:
+    protocol = _read("docs/stage8_protocol.md")
+    notes = _read("docs/stage8a_notes.md")
+    results = _read("results/stage8a_quantum_extensions.md")
+
+    for text in (protocol, notes, results):
+        assert "QExt(e1) = {h_L, h_R}" in text
+        assert "memory" in text
+        assert "record" in text
+    assert "future-operator Frobenius residual = `4`" in results
+    assert "normalized `e2` state overlap squared = `0`" in results
 
 
 def test_roadmap_keeps_selected_stage8_and_deferred_stage9_gravity() -> None:

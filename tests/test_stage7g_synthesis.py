@@ -7,7 +7,7 @@ from t_search.stage7_synthesis import (
     evidence_snapshot,
     pre_merge_exit_criteria,
     select_synthesis_choice,
-    stage7_gate_candidates if False else stage8_gate_candidates,
+    stage8_gate_candidates,
     stage7g_rows,
     unresolved_implications,
 )

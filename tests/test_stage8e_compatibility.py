@@ -1,6 +1,7 @@
 import numpy as np
 import pytest
 
+import t_search.stage8_compatibility as compatibility_module
 from t_search.stage7_history import CURRENT_EVENT, UPPER_EVENT
 from t_search.stage8_compatibility import (
     continuation_record_joint_distribution,
@@ -20,12 +21,8 @@ from t_search.stage8_continuations import (
 ATOL = 1e-9
 
 # Stage 8E diagnostics traverse continuation-specific A/B/C atlases and are
-# intentionally exhaustive.  Compute the canonical result once for this module
-# rather than repeating the same pure diagnostics in every assertion-focused
-# test.
+# intentionally exhaustive. Compute the canonical result once for this module.
 DIAGNOSTICS = stage8e_compatibility_diagnostics()
-MATRIX = {entry.relation: entry.status for entry in stage8e_compatibility_matrix()}
-SUMMARY = stage8e_summary()
 
 
 def test_stage8e_p_o_event_effect_family_is_covariant_in_continuation_aware_atlas():
@@ -143,8 +140,13 @@ def test_stage8e_does_not_overclaim_full_directional_porv_or_measurement_covaria
     assert diagnostics.full_directional_porv_integration_established is False
 
 
-def test_stage8e_compatibility_matrix_keeps_positive_underdetermined_and_partial_rows_distinct():
-    matrix = MATRIX
+def test_stage8e_compatibility_matrix_keeps_positive_underdetermined_and_partial_rows_distinct(monkeypatch):
+    monkeypatch.setattr(
+        compatibility_module,
+        "stage8e_compatibility_diagnostics",
+        lambda **_: DIAGNOSTICS,
+    )
+    matrix = {entry.relation: entry.status for entry in stage8e_compatibility_matrix()}
     assert matrix["P-O(event effects)"] == "compatible"
     assert matrix["P-R(current record)"] == "compatible"
     assert matrix["P-V(class/weights)"] == "compatible"
@@ -155,8 +157,13 @@ def test_stage8e_compatibility_matrix_keeps_positive_underdetermined_and_partial
     assert matrix["full P/O/directional-R/V"] == "partial"
 
 
-def test_stage8e_summary_closes_current_execution_criteria_36_to_41_only():
-    summary = SUMMARY
+def test_stage8e_summary_closes_current_execution_criteria_36_to_41_only(monkeypatch):
+    monkeypatch.setattr(
+        compatibility_module,
+        "stage8e_compatibility_diagnostics",
+        lambda **_: DIAGNOSTICS,
+    )
+    summary = stage8e_summary()
     assert tuple(summary["current_execution_criteria"].keys()) == (
         "36",
         "37",

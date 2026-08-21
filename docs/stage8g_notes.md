@@ -1,6 +1,6 @@
 # Stage 8G Notes — Synthesis and Evidence-Selected Stage 9 Gate
 
-Status: **Stage 8G synthesis implemented; final Stage 8 validation is pending the documentation-synchronized CI/review pass.**
+Status: **Stage 8G synthesis and final Stage 8 external validation are completed.**
 
 ## Synthesis choice
 
@@ -125,9 +125,13 @@ The generally covariant / gravitational precursor is not abandoned. It is ranked
 
 - criterion 48: synthesis choice and refined candidate derived from executable Stage 8A–F evidence;
 - criterion 49: Stage 9 candidates ranked and a uniquely top-scoring gate selected;
-- criterion 50: external final full-repository regression and merge-readiness review.
+- criterion 50: external final full-repository regression and merge-readiness review, completed after the documentation-synchronized Stage 8 head passed CI and the PR had no merge/review blocker.
 
-Criteria 48–49 are executable Stage 8G targets. Criterion 50 is deliberately not hard-coded into the synthesis.
+Criteria 48–49 are executable Stage 8G targets. Criterion 50 remains deliberately outside the hard-coded synthesis.
+
+## Final validation interpretation
+
+Closing criterion 50 does not add a new scientific claim. It records that the already-synthesized Stage 8 evidence is documentation-synchronized, regression-clean, mergeable, and free of unresolved review threads at the reviewed head.
 
 ## Evidence boundary
 

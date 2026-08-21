@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–7 are completed and merged. Stage 8.0 and Stages 8A–8G synthesis are completed on Draft PR #9; criteria 48–49 are closed and criterion 50 awaits final full-repository regression / merge-readiness review.**
+**Stages 1–7 are completed and merged. Stage 8.0 and Stages 8A–8G are completed on Draft PR #9; criteria 48–50 are closed, with criterion 50 satisfied by the final external full-repository CI and merge-readiness review.**
 
 Current refined finite-model candidate:
 
@@ -82,7 +82,7 @@ Final Stage 8F regression before Stage 8G: **`663 passed in 257.59s`**.
 
 Stage 8F closes criteria **42–47**.
 
-### Stage 8G — synthesis completed; criterion 50 pending final validation
+### Stage 8G — completed
 
 The executable synthesis selects:
 
@@ -90,7 +90,7 @@ The executable synthesis selects:
 
 The top-level `O/P/R/V` architecture is retained, while R and V are internally refined according to their tested roles. Explicit P-V edge matrices remain reconstructible from per-node continuation coordinates; event/class correspondence remains an explicit typing resource.
 
-Criteria **48–49** are executable Stage 8G results. Criterion **50** is external final CI / merge-readiness review.
+Criteria **48–49** are executable Stage 8G results. Criterion **50** is the external final CI / merge-readiness review and is closed by the final Stage 8 validation pass.
 
 Selected Stage 9 gate:
 
@@ -107,7 +107,7 @@ The gate ranking puts `directional_record_potentiality` ahead of full measuremen
 - Stage 8D — completed
 - Stage 8E — completed
 - Stage 8F — completed
-- Stage 8G — synthesis/gate selection completed; criterion 50 pending final validation
+- Stage 8G — completed; criterion 50 closed by external validation
 - **Stage 9 — directional records with nontrivial quantum Potentiality — selected next gate**
 
 ## Roadmap

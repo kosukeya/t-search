@@ -1,6 +1,6 @@
 # Stage 8 Protocol — Quantum Potentiality in the Shared Constrained Construction
 
-Status: **Stage 8.0 protocol frozen; Stages 8A–8G synthesis are completed in the declared finite family. Criteria 48–49 are closed; criterion 50 awaits the final documentation-synchronized regression and merge-readiness review.**
+Status: **Stage 8.0 protocol frozen; Stages 8A–8G are completed in the declared finite family. Criteria 48–50 are closed; criterion 50 is satisfied by the final external documentation-synchronized regression and merge-readiness review.**
 
 Selected Stage 8 gate:
 
@@ -192,7 +192,7 @@ Stage 8F closes criteria **42–47**.
 
 Final Stage 8F regression before Stage 8G: `663 passed in 257.59s`.
 
-## Stage 8G — synthesis and evidence-selected next gate — completed pending final criterion 50
+## Stage 8G — synthesis and evidence-selected next gate — completed
 
 The executable synthesis selects:
 
@@ -227,7 +227,7 @@ The selected gate directly targets the strongest remaining partial row: the cano
 
 Gravity/general covariance is deferred again, not discarded.
 
-Stage 8G closes criteria **48–49** through executable synthesis/gate selection. Criterion **50** is external final CI and merge-readiness review.
+Stage 8G closes criteria **48–49** through executable synthesis/gate selection. Criterion **50** is external final CI and merge-readiness review; the final Stage 8 validation pass closes it without changing the executable synthesis semantics.
 
 ## Exit criteria status
 
@@ -239,7 +239,7 @@ Stage 8G closes criteria **48–49** through executable synthesis/gate selection
 - criteria 36–41: Stage 8E completed;
 - criteria 42–47: Stage 8F completed;
 - criteria 48–49: Stage 8G executable synthesis/gate selection completed;
-- criterion 50: pending final full-repository regression and merge-readiness review.
+- criterion 50: completed externally by the final full-repository regression and merge-readiness review.
 
 ## Sequence
 
@@ -250,8 +250,12 @@ Stage 8G closes criteria **48–49** through executable synthesis/gate selection
 - Stage 8D — genuine clock-change modal transport — completed
 - Stage 8E — P/O/R/V compatibility and underdetermination — completed
 - Stage 8F — ablation / reconstruction / mismatch matrix — completed
-- Stage 8G — synthesis and evidence-selected next gate — completed pending criterion 50
+- Stage 8G — synthesis and evidence-selected next gate — completed
 - **Stage 9 — directional records with nontrivial quantum Potentiality — selected next gate**
+
+## Final Stage 8 validation
+
+Criterion 50 remains external to the executable synthesis itself. It is closed only after a documentation-synchronized full-repository regression succeeds and the PR is checked for mergeability and unresolved review blockers.
 
 ## Strongest allowed Stage 8G statement
 

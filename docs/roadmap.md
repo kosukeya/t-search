@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G now selects the next finite-model gate before any generally covariant/gravitational extension.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selects the next finite-model gate before any generally covariant/gravitational extension.
 
 ## Stages 0–6 — completed and merged
 
@@ -24,7 +24,7 @@ Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gr
 
 Stage 7 placed P/O/R in one constrained quantum construction and ended with a strengthened finite-model P/O/R core.
 
-## Stage 8 — Quantum Potentiality inside the shared constrained construction — synthesis complete, criterion 50 pending final validation
+## Stage 8 — Quantum Potentiality inside the shared constrained construction — completed
 
 Selected Stage 8 gate:
 
@@ -95,7 +95,7 @@ Final Stage 8F regression before Stage 8G: **`663 passed in 257.59s`**.
 
 Stage 8F closes criteria **42–47**.
 
-### Stage 8G — synthesis and next-gate selection — completed pending criterion 50
+### Stage 8G — synthesis and next-gate selection — completed
 
 Executable synthesis choice:
 
@@ -106,7 +106,7 @@ The top-level `T=(O,P,R,V;Xi)` candidate is retained, with internal bookkeeping 
 - `R=(R_content,R_direction,R_access)`;
 - `V=(V_extension,V_semantics,V_weights)`.
 
-Criteria **48–49** are executable synthesis/gate-selection criteria. Criterion **50** is the final external full-repository regression and merge-readiness review.
+Criteria **48–49** are executable synthesis/gate-selection criteria. Criterion **50** is the external final full-repository regression and merge-readiness review; it is closed by the final Stage 8 validation pass.
 
 Selected next gate:
 

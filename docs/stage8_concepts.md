@@ -1,6 +1,6 @@
 # Stage 8 Concepts — Quantum Potentiality
 
-Status: **Stages 8A–8G synthesis are completed in the declared finite family. Criteria 48–49 are closed; criterion 50 awaits final full-repository regression and merge-readiness review.**
+Status: **Stages 8A–8G are completed in the declared finite family. Criteria 48–50 are closed; criterion 50 is satisfied by the final external full-repository regression and merge-readiness review.**
 
 ## Quantum Actuality / continuation
 
@@ -243,7 +243,7 @@ Stage 8F closes criteria **42–47**.
 
 Stage 8G executable synthesis/gate selection closes criteria **48–49**.
 
-Criterion **50** remains external final full-repository regression and merge-readiness review.
+Criterion **50** is external final full-repository regression and merge-readiness review; the final Stage 8 validation pass satisfies it without hard-coding it into the executable synthesis.
 
 ## Evidence boundary
 

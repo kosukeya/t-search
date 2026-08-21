@@ -1,6 +1,6 @@
 # Stage 8G Results — Synthesis and Evidence-Selected Stage 9 Gate
 
-Status: **synthesis implemented; final documentation-synchronized regression and merge-readiness review pending.**
+Status: **synthesis implemented; final documentation-synchronized regression and merge-readiness review completed.**
 
 ## Synthesis result
 
@@ -126,7 +126,7 @@ Still not established:
 
 Criteria 48–49 are the Stage 8G executable synthesis/gate targets.
 
-Criterion 50 is external and requires the final full repository regression plus merge-readiness review. It is not marked satisfied in code.
+Criterion 50 is external and requires the final full repository regression plus merge-readiness review. It is satisfied externally and is not marked satisfied in code.
 
 ## Validation
 
@@ -145,6 +145,16 @@ source head `234b74559821ec5662d58f546e9d1ecd00507a17`
 PR merge-ref `d392db357dfe68c221bbd3752910577af22d0c18`
 
 The first documentation-synchronized Stage 8G run reached **671 passing tests / 2 documentation failures**. The scientific suite remained green; the failures were a historical Stage 7 roadmap assertion that still fixed gravity at Stage 9 and one missing exact openness guard. Both documentation issues were corrected before the final regression.
+
+The corrected documentation-synchronized head then passed the complete repository suite in GitHub Actions run #918:
+
+**`673 passed in 312.61s (0:05:12)`**
+
+validated head `1adc43e03537dd050e5de4028db4277cae20bfc0`
+
+validated PR merge-ref `f9c8d9d3c2bef845ac0f9f79c2d1da92513e9e99`
+
+At that reviewed head, PR #9 was mergeable and had no unresolved review threads or submitted reviews. Criterion 50 is therefore closed as an external merge-readiness condition, not as an additional executable scientific criterion.
 
 ## Strongest bounded statement
 

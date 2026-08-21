@@ -34,7 +34,8 @@ from .stage2_operational import (
     operationalize_ontic_view,
 )
 from .stage2_update import ontic_selected_future_fields
-from .stage3_controls import stage3d_control_assessments
+from .stage3 import is_bijective, u_scr
+from .stage3_controls import stage3d_control_assessments, u_identity
 from .stage4_transition import (
     transition_composition_residual,
     transition_expected_residual,
@@ -209,6 +210,12 @@ def stage3_order_record_witness() -> WitnessRecord:
     measurements: list[Measurement] = []
     for name in order:
         assessment = assessments[name]
+        if name == "no-record":
+            declared_reversible = is_bijective(u_identity) and is_bijective(u_scr)
+        else:
+            # These controls retain the canonical U_rec/U_scr microscopic maps;
+            # the assessment computes their bijectivity through the Stage 3 API.
+            declared_reversible = assessment.microscopic_maps_reversible
         measurements.extend(
             (
                 _measurement(f"{name}_orientation", assessment.orientation),
@@ -218,8 +225,8 @@ def stage3_order_record_witness() -> WitnessRecord:
                     f"{name}_accessibility_score", assessment.accessibility_score
                 ),
                 _measurement(
-                    f"{name}_microscopic_maps_reversible",
-                    assessment.microscopic_maps_reversible,
+                    f"{name}_declared_microdynamics_reversible",
+                    declared_reversible,
                 ),
                 _measurement(
                     f"{name}_declared_position_count",

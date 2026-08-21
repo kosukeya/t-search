@@ -39,7 +39,7 @@ Ontic-extension:
 
 ## Genuine integration
 
-A Stage 8 continuation must contain executable physical structure acting on the Stage 7 carrier; string labels or unrelated metadata are insufficient.
+A **physically admissible quantum continuation** must contain executable physical structure acting on the Stage 7 carrier; string labels or unrelated metadata are insufficient.
 
 `typed modal wrapper beside quantum model != quantum-modal integration`.
 

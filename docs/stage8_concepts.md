@@ -110,15 +110,7 @@ Stage 8B constructs the canonical matched vector `(0.5,0.5)` from the shared car
 
 Stage 8B defines only a minimal public projection used to test selector non-leakage before the full Stage 8C operational interface is implemented.
 
-It contains:
-
-- current anchor;
-- shared current constrained reduced state;
-- current record information;
-- `QExt` size;
-- continuation weights.
-
-It contains neither `h*` nor model-type names.
+It contains current anchor, shared current constrained reduced state, current record information, `QExt` size, and continuation weights. It contains neither `h*` nor model-type names.
 
 With carrier and weights fixed, swapping epistemic `h*=h_L` to `h*=h_R` changes the privileged diagnostic while leaving this projection unchanged.
 
@@ -214,14 +206,7 @@ The following is not sufficient:
 
 ## Evidence statuses
 
-Stage 8 uses:
-
-- `preserved`;
-- `lost`;
-- `reconstructible`;
-- `inaccessible`;
-- `not_established`;
-- `not_applicable`.
+Stage 8 uses `preserved`, `lost`, `reconstructible`, `inaccessible`, `not_established`, and `not_applicable`.
 
 `lost != metaphysically irreducible`.
 

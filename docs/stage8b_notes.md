@@ -2,122 +2,70 @@
 
 Status: **completed for the declared canonical typed-model family**.
 
-## Question
+## Shared carrier
 
-Can the executable Stage 8A continuation substrate
+Stage 8B uses the Stage 8A substrate:
 
-`QExt(e1) = {h_L, h_R}`
+`QExt(e1) = {h_L, h_R}`.
 
-support two genuinely type-distinct modal model roles without changing the physical continuation carrier itself?
+The canonical epistemic and ontic-extension models receive the **same `QuantumContinuationCarrier` object**. Modal difference is therefore not produced by changing continuation schedules, constraints, physical spaces, or current Actuality.
 
-Stage 8B tests only the selected-versus-unselected global model structure. It deliberately does **not** claim the full Stage 8C operational interface or update semantics yet.
+## Epistemic model
 
-## Shared physical carrier
+`M_E^Q=(QCarrier,e1,h*,q_E)` stores one privileged selected continuation `h*`. Canonical `q_E=(1/2,1/2)`.
 
-Stage 8B introduces a validated `QuantumContinuationCarrier` whose members are the Stage 8A physical continuation-equivalence representatives.
+The selected continuation must belong to one `QExt(e1)` equivalence class and retain positive epistemic support. The typed wrapper is `EpistemicQuantumPotentiality`.
 
-The canonical epistemic and ontic-extension models are constructed from the **same carrier object**, not two separately decorated copies:
+## Ontic-extension model
 
-`QCarrier(e1) = {h_L, h_R}`.
+`M_O^Q(e1)=(QCarrier,e1,QExt(e1),K)` uses canonical `K=(1/2,1/2)`.
 
-Thus any semantic difference between the two Stage 8B models is not produced by changing continuation schedules, constraints, physical spaces, or current Actuality.
+Its frozen/slots schema stores only `carrier` and `extension_weights`. The selector audit finds no selected/selector/seed/precomputed-outcome/latent-branch field, direct singleton `QuantumContinuation`, or arbitrary instance `__dict__`, while all QExt members remain represented.
 
-## Epistemic quantum model
-
-`M_E^Q = (QCarrier, e1, h*, q_E)`
-
-stores one privileged selected continuation `h*`. Canonical `q_E=(1/2,1/2)`.
-
-The selected continuation must belong to exactly one physical continuation-equivalence class in `QExt(e1)` and retain positive epistemic support.
-
-The typed Potentiality object is `EpistemicQuantumPotentiality`. `selected_quantum_continuation()` is explicitly privileged and not part of the public projection.
-
-## Ontic-extension quantum model
-
-`M_O^Q(e1) = (QCarrier, e1, QExt(e1), K)`
-
-uses a frozen/slots schema storing only the shared `carrier` and `extension_weights`. Canonical `K=(1/2,1/2)`.
-
-The typed Potentiality object is `OnticExtensionQuantumPotentiality` and contains all represented admissible continuation classes.
-
-The structural selector audit checks:
-
-- no selected/selector/seed/precomputed-outcome/latent-branch field;
-- no direct `QuantumContinuation` singleton field;
-- no arbitrary instance `__dict__`;
-- all `QExt` members represented;
-- positive canonical support for both continuations.
-
-This is a bounded software/model-schema audit.
+The typed wrapper is `OnticExtensionQuantumPotentiality`.
 
 `no selected continuation field != proof of ontic openness in nature`.
 
-## Same members, different typed meaning
+## Matched weights and h* swap
 
-The canonical typed Potentialities contain the same physical members `{h_L,h_R}` but have different types and semantic roles.
+`matched_uniform_weights(carrier)` generates `(0.5,0.5)` from the carrier alone and accepts no selected continuation.
 
-`same physical continuation carrier != same modal type`.
-
-The type distinction is privileged structure, not a local operational observable.
-
-## Matched weights without consulting h*
-
-`matched_uniform_weights(carrier)` depends only on the shared carrier and accepts no selected continuation.
-
-Thus `q_E(h_L)=K(h_L)=1/2` and `q_E(h_R)=K(h_R)=1/2` without using `h*` to construct those numbers.
+With carrier and weights fixed, swapping epistemic `h*=h_L` to `h*=h_R` changes the privileged selected-continuation diagnostic but leaves the Stage 8B minimal pre-discriminating projection unchanged. That projection includes current anchor, current constrained state, current record information, QExt size, and weights; it never reads `h*`.
 
 `matched numerical q_E and K != matched probability semantics`.
-
-## h* swap control
-
-Two epistemic models share carrier and weights:
-
-- `M_E^L` with `h*=h_L`;
-- `M_E^R` with `h*=h_R`.
-
-A privileged diagnostic distinguishes them by reading `h*`.
-
-Their Stage 8B minimal pre-discriminating views are nevertheless equal because the projection includes only current anchor, current constrained reduced state, current record information, `QExt` size, and continuation weights. It never reads `selected_continuation`.
 
 `hidden h* diagnostic != operational access to h*`.
 
 `Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
 
-## Invalid controls
+## Controls
 
-The implementation rejects selected continuations outside `QExt(e1)`, zero epistemic support for the selected continuation, wrong-length/negative/nonfinite/non-normalized weights, and post-construction injection of `selected_continuation` into the frozen/slots ontic object.
+The implementation rejects selected continuations outside QExt, zero epistemic support for selected `h*`, malformed weights, and post-construction selector injection into the frozen/slots ontic object.
 
-## Exit-criteria checkpoint
+## Exit criteria
 
 Stage 8B satisfies criteria **17–21**:
 
-17. epistemic model contains one selected continuation `h*`;
-18. ontic-extension model contains no selected complete continuation or equivalent selector field in the declared schema;
-19. both use the same Stage 8A quantum continuation carrier;
-20. matched `q_E` and `K` are declared without consulting `h*`;
-21. swapping `h*` alone leaves the Stage 8B pre-discriminating public projection unchanged.
+17. epistemic model contains selected `h*`;
+18. declared ontic schema contains no selected complete continuation or equivalent selector;
+19. both use the same quantum continuation carrier;
+20. matched q_E/K are declared without consulting `h*`;
+21. changing `h*` alone leaves the Stage 8B pre-discriminating projection unchanged.
 
 Criteria 22–50 remain Stage 8C–G work.
 
 ## Validation
 
-Stage 8B adds 13 focused tests. After correcting one implementation-specific exception-type assertion in the selector-injection control, the implementation regression reported `595 passed in 140.99s`. After Stage 8B planning/documentation synchronization, the full regression reported `597 passed in 84.13s`.
+Corrected implementation regression: `595 passed in 140.99s`.
 
-The latest PR-head regression is used as the final software-close check.
+Planning/documentation-synchronized regression: `597 passed in 84.13s`.
+
+The latest PR-head regression is the final software-close check.
 
 ## Interpretation boundary
 
-Stage 8B establishes a formal selected-versus-unselected model distinction on a shared physical continuation substrate.
-
-It does **not** establish a hidden selected future in nature, an ontically open future in nature, full operational underdetermination under `O_Q`, update/actualization semantics, P-V covariance, V independence from P/O/R, phenomenal passage, or ontological becoming.
-
-Frozen guards:
-
-- `formal selected-vs-unselected difference != empirical physical difference`;
-- `no selected continuation field != proof of ontic openness in nature`;
-- `hidden h* diagnostic != operational access to h*`;
-- `Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
+Stage 8B establishes a formal selected-versus-unselected typed-model distinction on a shared physical continuation substrate. It does not establish a hidden selected future in nature, an ontically open future, full `O_Q` operational underdetermination, update semantics, P-V covariance, V independence from P/O/R, or phenomenal passage.
 
 ## Next
 
-Stage 8C should define the complete ontology-neutral `O_Q` interface, verify matched operational underdetermination, introduce weight-mismatch controls, and implement explicit common-evidence updates for both typed models.
+Stage 8C — operational underdetermination and explicit update.

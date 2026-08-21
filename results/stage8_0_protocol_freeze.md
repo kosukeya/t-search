@@ -107,6 +107,26 @@ Stage 8 defines 50 exit criteria.
 
 Stage 8.0 freezes criteria 1–10 only. Criteria 11–50 remain future scientific work and must not be marked satisfied by documentation alone.
 
+## Documentation and regression validation
+
+Stage 8.0 adds **7 documentation-consistency tests** checking:
+
+- agreement with the Stage 7G gate;
+- preservation of the selected-versus-unselected Stage 2 distinction;
+- explicit anti-randomness / anti-superposition guards;
+- executable quantum-continuation integration requirements;
+- Stage 8.0 / Stage 8A sequence agreement;
+- prohibition on pre-marking criteria 11–50 complete;
+- roadmap consistency with the selected Stage 8 gate and deferred Stage 9 gravity gate.
+
+The first documentation-synchronized CI run reported `565 passed / 3 failed`; all three failures were brittle exact-string assertions in the newly added documentation tests, not scientific or numerical failures. The checks were corrected to test the intended semantics, and the concepts document was strengthened to repeat the quantum-randomness / superposition / Born-probability guards explicitly.
+
+Corrected full PR merge-ref regression:
+
+**`568 passed in 195.58s`**.
+
+A final documentation-head regression is required after recording this checkpoint.
+
 ## Strongest bounded statement
 
 **Stage 7 justifies a single-model pressure test of Potentiality alongside P/O/R. Stage 8.0 defines quantum Potentiality not as quantum randomness, superposition, or Born probability, but as typed semantics over physically admissible future quantum continuations of a shared current constrained state: an epistemic model contains one hidden selected complete continuation, while an ontic-extension model contains admissible continuations but no selected complete future datum. Stage 8.0 does not yet establish that such a nontrivial continuation family can be embedded in the Stage 7 constrained construction, transported under genuine clock changes, operationally underdetermined, or irreducible to P/O/R.**

@@ -1,6 +1,6 @@
 # Stage 8 Concepts — Quantum Potentiality
 
-Status: **Stage 8.0 vocabulary frozen; Stage 8A provides the first executable `QExt` realization.**
+Status: **Stage 8.0 vocabulary frozen; Stage 8A provides executable `QExt`; Stage 8B realizes two typed modal models on that same carrier.**
 
 This document fixes the meanings used by Stage 8. It supplements `stage8_protocol.md` and does not establish an ontology of time.
 
@@ -40,31 +40,26 @@ The first executable substrate is:
 
 `QExt(e1) = {h_L, h_R}`.
 
-Both continuations share the same current prefix:
+Both continuations share `V0=I` and `V1=U_rec`, hence the same constrained current state and one-bit target-specific record at `e1`.
 
-- `V0=I`;
-- `V1=U_rec`.
-
-They therefore share the same constrained current state and the same one-bit target-specific record at `e1`.
-
-Their only canonical difference is future-side at `e2`:
+They differ only at `e2`:
 
 - `h_L`: `V2=U_rec`;
 - `h_R`: `V2=Z_C U_rec`.
 
-`Z_C` is a reversible phase on the A-clock rest-pair sector `C energy label == +1`. It is identity on memory and commutes with the Stage 7 B-based record-target projector.
+`Z_C` is a reversible C-sector phase, identity on memory and commuting with the Stage 7 B-based record-target projector. The baseline future distinction is therefore memory neutral and record-target neutral.
 
-The future distinction is therefore memory neutral and record-target neutral in the declared baseline.
-
-The two futures are physically inequivalent: their normalized `e2` reduced states are orthogonal in the canonical source run, while a pure renamed copy of `h_L` remains equivalent to `h_L`.
-
-The finite terminal convention is:
-
-`QExt(e2)=empty`.
-
-Stage 8A does not yet instantiate either modal semantics below.
+The canonical `e2` reduced states are physically inequivalent, while a renamed copy of `h_L` remains the same continuation class. The finite terminal convention is `QExt(e2)=empty`.
 
 `future physical inequivalence != modal semantics by itself`.
+
+## QuantumContinuationCarrier
+
+A `QuantumContinuationCarrier` is the validated tuple of physical continuation-equivalence representatives at a declared current anchor.
+
+Stage 8B uses one canonical carrier object containing `{h_L,h_R}` and passes that same object into both typed modal models.
+
+`same physical continuation carrier != same modal type`.
 
 ## Epistemic quantum Potentiality
 
@@ -72,7 +67,11 @@ Stage 8A does not yet instantiate either modal semantics below.
 
 `M_E^Q=(QCarrier,D,h*,q_E)`.
 
-The epistemic weight `q_E(h|D)` represents uncertainty about which already-selected continuation is actual. The hidden `h*` is privileged model data and must not enter the pre-discriminating operational interface.
+The Stage 8B concrete type is `EpistemicQuantumPotentiality`.
+
+The epistemic weight `q_E(h|D)` represents uncertainty about which already-selected continuation is actual. The hidden `h*` is privileged model data and must not enter the pre-discriminating public interface.
+
+The selected continuation must belong to one `QExt` equivalence class and retain positive epistemic support.
 
 ## Ontic-extension quantum Potentiality
 
@@ -80,19 +79,54 @@ The epistemic weight `q_E(h|D)` represents uncertainty about which already-selec
 
 `M_O^Q(D)=(QCarrier,D,QExt(D),K)`.
 
-The model may contain continuation weights `K`, but no hidden selector, seed-equivalent selector, precomputed outcome, or other datum may single out a complete continuation.
+The Stage 8B concrete type is `OnticExtensionQuantumPotentiality`.
+
+The frozen/slots Stage 8B ontic model stores only the shared carrier and extension weights. Its schema contains no selected continuation, selected history, selector, seed, precomputed outcome, latent branch selector, or direct singleton continuation field.
+
+A structural selector audit checks this bounded software fact. It does not prove that nature is ontically open.
 
 `no selected continuation field != proof that nature is ontically open`.
 
 ## Selected continuation
 
-A selected continuation `h*` is a global model datum that singles out one complete member of `QExt(D)` before discriminating evidence arrives. Its presence defines the Stage 8 epistemic role.
+A selected continuation `h*` is a privileged global model datum that singles out one complete member of `QExt(D)` before discriminating evidence arrives. Its presence defines the Stage 8 epistemic role.
 
 Its formal absence from the ontic-extension model is not itself an empirical result.
 
+`hidden h* diagnostic != operational access to h*`.
+
+## Matched continuation weights
+
+Stage 8 distinguishes:
+
+- `q_E`: epistemic belief over an already-selected continuation;
+- `K`: weight over admissible continuations in the no-selected-future model.
+
+Stage 8B constructs the canonical matched vector `(0.5,0.5)` from the shared carrier alone. The weight constructor receives no selected continuation.
+
+`same numerical weights != same probability semantics`.
+
+## Stage 8B pre-discriminating projection
+
+Stage 8B defines only a minimal public projection used to test selector non-leakage before the full Stage 8C operational interface is implemented.
+
+It contains:
+
+- current anchor;
+- shared current constrained reduced state;
+- current record information;
+- `QExt` size;
+- continuation weights.
+
+It contains neither `h*` nor model-type names.
+
+With carrier and weights fixed, swapping epistemic `h*=h_L` to `h*=h_R` changes the privileged diagnostic while leaving this projection unchanged.
+
+`Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
+
 ## Operational quantum interface
 
-`O_Q` is an ontology-neutral interface exposing declared current physical, record, accessible-observable, and next-outcome information.
+`O_Q` is the Stage 8C+ ontology-neutral interface exposing declared current physical, record, accessible-observable, and next-outcome information.
 
 It must not expose class names, `h*`, hidden selectors, or privileged modal diagnostics.
 
@@ -104,15 +138,6 @@ A privileged diagnostic is a test-only inspection of structural facts such as wh
 
 `internal distinguishability != operational accessibility`.
 
-## Quantum continuation weights
-
-Stage 8 distinguishes:
-
-- `q_E`: epistemic belief over an already-selected continuation;
-- `K`: weight over admissible continuations in the no-selected-future model.
-
-`same numerical weights != same probability semantics`.
-
 ## Actualization / update
 
 An update extends declared Actuality after explicitly supplied evidence.
@@ -120,6 +145,8 @@ An update extends declared Actuality after explicitly supplied evidence.
 Epistemic update retains the pre-existing `h*` and conditions beliefs.
 
 Ontic-extension update grows Actuality and prunes `QExt` without introducing a hidden complete future.
+
+Stage 8B does not implement this update yet.
 
 `actualization API update != ontological becoming`.
 
@@ -135,9 +162,7 @@ P-V covariance means corresponding continuation families and their modal semanti
 
 R-V compatibility means one record-bearing physical construction and one declared V semantics coexist consistently.
 
-Stage 8A deliberately makes the continuation difference memory and record-target neutral so V is not definitionally constructed from R.
-
-Later stages will test whether the same record-defined orientation can coexist with both epistemic and ontic-extension semantics.
+Stage 8A deliberately makes the continuation difference memory and record-target neutral, and Stage 8B places both modal types on that same carrier. Stage 8E will perform the explicit R-V pressure test.
 
 `R-V compatibility != R=V`.
 
@@ -177,7 +202,7 @@ Stage 8 counts V as integrated only if:
 - update semantics are executable;
 - genuine clock-perspective transport is executable.
 
-Stage 8A establishes only the first item for the canonical family.
+Stage 8A establishes the first item. Stage 8B establishes the second for the canonical family. The remaining items are Stage 8C/D work.
 
 ## Integration failure
 

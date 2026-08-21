@@ -1,6 +1,6 @@
 # Stage 8 Concepts — Quantum Potentiality
 
-Status: **Stages 8A–8E are completed in the canonical finite family. Stage 8F — ablation / reconstruction / mismatch matrix — is next.**
+Status: **Stages 8A–8F are completed in the declared finite family. Stage 8G — synthesis and evidence-selected next gate — is next.**
 
 ## Quantum Actuality / continuation
 
@@ -90,17 +90,91 @@ The last row is intentionally not upgraded: directional R is absent in the canon
 
 `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`.
 
-## Order versus directional record
+## Stage 8F ablation typing
 
-The canonical `h_L/h_R` family has lower/current/upper record information of 1 bit and directional record score `0`. The Stage 7C record-scramble contrast shares the same `e0<e1<e2` skeleton and A/e1 current state but has record score `+1`.
+Stage 8F freezes seven functional roles:
 
-`order != directional record arrow`.
+- `V_physical_multiplicity`;
+- `V_selected_vs_unselected_semantics`;
+- `V_weights`;
+- `P_V_class_transport`;
+- `O_V_extension_relation`;
+- `current_record_content`;
+- `local_record_access`.
 
-## Modal underdetermination with fixed P/O/current-R
+It uses six non-metaphysical statuses:
 
-The same physical continuation carrier, event/order structure, current-record structure, and public transported modal data can support both selected-`h*` and no-selected-continuation semantics under matched weights.
+`preserved`, `reconstructible`, `inaccessible`, `lost`, `underdetermined`, `not_established`.
 
-`same P/O/current-R public data != modal identity`.
+`lost != metaphysically irreducible`.
+
+`reconstructible != universally redundant`.
+
+`underdetermined != ontically open`.
+
+`inaccessible != globally absent`.
+
+## Record-neutral continuation family
+
+Stage 8F deliberately neutralizes the e1 record write in both future continuations and re-derives the ablated constrained family rather than reusing the canonical Stage 8A prefix validator.
+
+The resulting pair keeps:
+
+- two physically inequivalent future continuations;
+- common e1 current state;
+- physical dimension 14;
+- rank-14 A/B/C reductions;
+- 108 genuine clock transports;
+- selected-vs-unselected modal underdetermination;
+- nontrivial weight-sensitive prediction.
+
+Current target-memory mutual information is zero.
+
+Therefore the declared family contains nontrivial P/O/V without current target-specific R.
+
+`record-neutral V witness != universal R-V independence theorem`.
+
+## Physical multiplicity versus modal typing
+
+A singleton continuation carrier removes physical future multiplicity but does not erase the formal distinction between:
+
+- a model carrying one selected complete continuation datum;
+- a model with no selected complete continuation datum.
+
+Its only normalized weight is reconstructible as `1`.
+
+`singleton support != absence of a formal selected-vs-unselected type distinction`.
+
+## Weight and semantic non-reconstruction
+
+For two continuation classes, carrier structure alone does not select between `(0.5,0.5)` and `(0.75,0.25)`; the assignments give different predictions. Thus nontrivial weights are `underdetermined` when left unspecified.
+
+Likewise selected-vs-unselected semantic typing is not uniquely reconstructed from retained public P/O/current-R structure because the same public carrier supports both model types.
+
+## Perspective reconstruction versus correspondence
+
+Explicit Stage 8D edge matrices are reconstructed from retained node coordinates via:
+
+`S^h_{Y<-X}=C_{h,Y}C_{h,X}^{-1}`.
+
+All 108 canonical maps are recovered with state/inverse/metric consistency.
+
+By contrast, removing event/class `chi` does not yield a failed correspondence; it makes the cross-perspective P-V claim `not_established` because the source-target event/class relation is no longer declared.
+
+`P-V map reconstruction != P=V`.
+
+## Record access
+
+If the local readout interface is hidden while the global one-bit record remains represented:
+
+- `current_record_content = preserved`;
+- `local_record_access = inaccessible`.
+
+## Mismatch controls
+
+Stage 8F keeps wrong continuation map, wrong class correspondence, wrong event correspondence, weight mismatch, and wrong observable coordinates as separate executable controls.
+
+`covariance of a wrongly typed observable != semantic correctness`.
 
 ## Quantum uncertainty guards
 
@@ -114,14 +188,18 @@ The same physical continuation carrier, event/order structure, current-record st
 
 ## Current execution ledger
 
-Stage 8E closes criteria **36–41**. Criteria **42–50** remain Stage 8F–G work.
+Stage 8E closes criteria **36–41**.
+
+Stage 8F closes criteria **42–47**.
+
+Criteria **48–50** remain Stage 8G work.
 
 ## Evidence boundary
 
-Stages 8A–8E support a layered compatibility/underdetermination picture in the canonical finite family. Independence/minimality are not yet settled: Stage 8F must ablate and reconstruct the declared ingredients before Stage 8G synthesis.
+Stages 8A–8F now provide one finite constrained family in which physical continuation multiplicity, modal selected-vs-unselected typing, nontrivial weights, explicit perspective maps, event/class correspondence, current record content, and local record access show different ablation behavior.
 
-`lost != metaphysically irreducible`.
+This supports a layered-role interpretation in the declared toy family. It does not establish fundamental ontology, universal irreducibility, ontic openness, thermodynamic time direction, or full Stage 8C measurement-family covariance.
 
-`reconstructible != universally redundant`.
+`full Stage 8C measurement covariance remains not_established`.
 
 `not_established != false`.

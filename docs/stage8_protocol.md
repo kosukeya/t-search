@@ -93,23 +93,11 @@ The canonical current anchor is `e1` and:
 
 `QExt(e1) = {h_L, h_R}`.
 
-Both continuations share:
+Both continuations share `V0 = I` and `V1 = U_rec`, hence the same constrained Actuality through `e1` and the same current target-memory information `I(Q;M)=1 bit`.
 
-- `V0 = I`;
-- `V1 = U_rec`.
+They differ only at `e2` by a reversible C-sector phase `Z_C` that acts as identity on memory and commutes with the Stage 7 B-based record-target projector.
 
-They therefore share the same constrained Actuality through `e1` and the same current target-memory information `I(Q;M)=1 bit`.
-
-They differ only at `e2`:
-
-- `h_L`: `V2 = U_rec`;
-- `h_R`: `V2 = Z_C U_rec`.
-
-`Z_C` is a reversible phase on the A-clock rest-pair sector with `C energy label == +1`. It acts as identity on memory and commutes with the Stage 7 B-based record-target projector.
-
-Each continuation defines `H_h=W_h H_0 W_h^dagger`, retains physical dimension 14, and has rank-14 reductions at all nine A/B/C clock/readout nodes.
-
-Executable inequivalence diagnostics include future-operator Frobenius residual `4`, normalized `e2` overlap squared `0`, and a memory-identity coherence probe.
+Each continuation defines `H_h=W_h H_0 W_h^dagger`, retains physical dimension 14, and has rank-14 reductions at all nine A/B/C clock/readout nodes. Executable inequivalence includes future-operator residual `4` and canonical normalized `e2` overlap squared `0`.
 
 Pure renaming does not enlarge `QExt`; current-prefix-incompatible candidates are rejected; canonical terminal behavior is `QExt(e2)=empty`.
 
@@ -119,11 +107,11 @@ Frozen guards:
 - `future physical inequivalence != modal semantics by itself`;
 - `different continuation labels != physically different continuations`.
 
+Stage 8A satisfies criteria 11–16. Its final documentation-synchronized regression reported `582 passed in 122.49s`.
+
 ## 7. Two typed Potentiality semantics — Stage 8B completed
 
-Stage 8B uses one validated `QuantumContinuationCarrier` containing the Stage 8A classes `{h_L,h_R}`.
-
-The canonical epistemic and ontic-extension models receive the exact same carrier object.
+Stage 8B uses one validated `QuantumContinuationCarrier` containing `{h_L,h_R}`. The canonical epistemic and ontic-extension models receive the exact same carrier object.
 
 ### 7.1 Epistemic model
 
@@ -159,13 +147,11 @@ The canonical matched weights are:
 
 They are generated from the carrier alone by a function that receives no `h*`.
 
-Two epistemic controls keep carrier and weights fixed while swapping:
+Two epistemic controls keep carrier and weights fixed while swapping `h*=h_L` versus `h*=h_R`.
 
-`h*=h_L` versus `h*=h_R`.
+The privileged selected-continuation diagnostic distinguishes them, while the Stage 8B minimal pre-discriminating public projection is unchanged. That projection contains current anchor, shared current constrained reduced state, current record information, `QExt` size, and continuation weights. It contains neither `h*` nor model-type names.
 
-The privileged selected-continuation diagnostic distinguishes them, while the Stage 8B minimal pre-discriminating public projection is unchanged.
-
-That projection contains current anchor, shared current constrained reduced state, current record information, `QExt` size, and continuation weights. It contains neither `h*` nor model-type names.
+The corrected Stage 8B implementation regression reported `595 passed in 140.99s`; after planning/documentation synchronization the full regression reported `597 passed in 84.13s`.
 
 Frozen guards:
 
@@ -175,6 +161,8 @@ Frozen guards:
 - `matched numerical q_E and K != matched probability semantics`;
 - `hidden h* diagnostic != operational access to h*`;
 - `Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
+
+Stage 8B satisfies criteria 17–21 in the canonical family.
 
 ## 8. Operational interface — Stage 8C target
 
@@ -231,11 +219,7 @@ Frozen guards:
 
 Stage 8E will test whether the same P/O/R physical construction can host both typed V semantics without defining V by record or order structure.
 
-Possible implications to pressure-test include:
-
-- `record-defined direction => ontic no-selected-future semantics`;
-- `internal order/history anchor => unique modal semantics`;
-- `perspective covariance => modal identity`.
+Possible implications to pressure-test include `record-defined direction => ontic no-selected-future semantics`, `internal order/history anchor => unique modal semantics`, and `perspective covariance => modal identity`.
 
 ## 12. Required controls
 

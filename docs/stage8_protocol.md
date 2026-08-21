@@ -1,6 +1,6 @@
 # Stage 8 Protocol — Quantum Potentiality in the Shared Constrained Construction
 
-Status: **Stage 8.0 protocol frozen; Stages 8A–8E completed in the canonical finite family. Stage 8F is next.**
+Status: **Stage 8.0 protocol frozen; Stages 8A–8F completed in the declared finite family. Stage 8G is next.**
 
 Selected Stage 8 gate:
 
@@ -129,9 +129,58 @@ Thus:
 - `same P/O/current-R public data != modal identity`;
 - `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`.
 
-After the coordinate correction, workflow run #838 had **650 passing scientific tests**. Its only failure was a Stage 8D documentation guard, repaired during this synchronization pass.
-
 Stage 8E closes criteria **36–41**.
+
+## Stage 8F — ablation / reconstruction / mismatch matrix — completed
+
+Stage 8F freezes seven tested roles:
+
+- `V_physical_multiplicity`;
+- `V_selected_vs_unselected_semantics`;
+- `V_weights`;
+- `P_V_class_transport`;
+- `O_V_extension_relation`;
+- `current_record_content`;
+- `local_record_access`.
+
+Functional statuses are kept distinct:
+
+`preserved`, `reconstructible`, `inaccessible`, `lost`, `underdetermined`, `not_established`.
+
+### Record-neutral V witness
+
+Ablation continuations `h_L^0/h_R^0` replace the canonical e1 record write by identity while retaining the same two future-action choices. Because this intentionally violates the canonical Stage 8A one-bit-record prefix contract, the pair is not declared canonical `QExt`; Stage 8F re-derives the ablated constrained family directly.
+
+The ablated pair retains physical dimension 14, rank-14 A/B/C reductions, two physically inequivalent future completions sharing the same e1 current state, **108** genuine clock transports, selected-vs-unselected modal underdetermination, and weight-sensitive future prediction. Current target-memory mutual information is zero for both members.
+
+Thus the declared finite family contains a witness with nontrivial P/O/V roles while current target-specific R is absent.
+
+`record-neutral V witness != universal R-V independence theorem`.
+
+### Other ablations
+
+- singleton `QExt`: physical multiplicity `lost`, selected-vs-unselected typing `preserved`, sole weight `reconstructible` as 1;
+- modal semantics removed: selected-vs-unselected semantic role `lost` and not uniquely reconstructed from retained public P/O/current-R structure;
+- weights unfixed: nontrivial weights `underdetermined` because the same carrier admits `(0.5,0.5)` and `(0.75,0.25)` with different predictions;
+- explicit perspective maps removed: `P_V_class_transport` is `reconstructible` from `S^h_{Y<-X}=C_{h,Y} C_{h,X}^{-1}` over all 108 canonical comparisons;
+- event/class correspondence removed: cross-perspective `P_V_class_transport` is `not_established`, not false;
+- current record access hidden: global record `preserved`, local record access `inaccessible`.
+
+Five mismatch controls remain executable: wrong continuation map, wrong class correspondence, wrong event correspondence, weight mismatch, and wrong observable coordinates.
+
+Guards:
+
+- `lost != metaphysically irreducible`;
+- `reconstructible != universally redundant`;
+- `underdetermined != ontically open`;
+- `inaccessible != globally absent`;
+- `singleton support != absence of a formal selected-vs-unselected type distinction`;
+- `P-V map reconstruction != P=V`;
+- `full Stage 8C measurement covariance remains not_established`.
+
+Stage 8F closes criteria **42–47**.
+
+Implementation-inclusive regression: `662 passed in 139.81s`.
 
 ## Exit criteria status
 
@@ -141,7 +190,8 @@ Stage 8E closes criteria **36–41**.
 - criteria 22–29: Stage 8C completed;
 - criteria 30–35: Stage 8D completed;
 - criteria 36–41: Stage 8E completed;
-- criteria 42–50: Stage 8F–G pending.
+- criteria 42–47: Stage 8F completed;
+- criteria 48–50: Stage 8G pending.
 
 ## Sequence
 
@@ -151,9 +201,9 @@ Stage 8E closes criteria **36–41**.
 - Stage 8C — operational underdetermination and explicit update — completed
 - Stage 8D — genuine clock-change modal transport — completed
 - Stage 8E — P/O/R/V compatibility and underdetermination — completed
-- **Stage 8F — ablation / reconstruction / mismatch matrix — next**
-- Stage 8G — synthesis and evidence-selected next gate
+- Stage 8F — ablation / reconstruction / mismatch matrix — completed
+- **Stage 8G — synthesis and evidence-selected next gate — next**
 
-## Strongest allowed Stage 8E statement
+## Strongest allowed Stage 8F statement
 
-**Within the declared canonical finite continuation family, P is compatible with the tested event effects, current target-specific records, and continuation-class/weight V structure; O is compatible with the future-only extension structure; physically inequivalent V continuations can share the same current record; and the same P/O/current-R public carrier supports distinct selected-vs-unselected modal semantics. Order does not force directional R in this family, the canonical V carrier has record content but no directional record arrow, and full Stage 8C measurement-family covariance remains not established. These results support layered compatibility and underdetermination, not identity, metaphysical fundamentality, ontic openness, or a complete P/O/directional-R/V unification.**
+**Within the declared finite Stage 8 family, neutralizing the current record write leaves a two-continuation constrained P/O/V witness with genuine clock transport, physically inequivalent future completions, selected-vs-unselected modal underdetermination, and nontrivial weight-sensitive prediction while target-specific current record information vanishes. Separately, physical continuation multiplicity, modal semantic typing, nontrivial continuation weights, explicit perspective-edge matrices, event/class correspondence, and local record accessibility show different ablation statuses. This strengthens a layered-role candidate but does not establish metaphysical irreducibility, universal R-V independence, ontic openness, or complete measurement-family covariance.**

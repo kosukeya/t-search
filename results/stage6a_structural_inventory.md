@@ -1,6 +1,6 @@
 # Stage 6A Results — Structural Inventory and Executable Adapters
 
-Status: **completed pending final documentation-inclusive regression**.
+Status: **completed**.
 
 ## Purpose
 
@@ -122,3 +122,7 @@ Focused Stage 6A tests: **13**.
 Initial code/test PR merge-ref checkpoint:
 
 `352 passed in 18.57s`.
+
+Final code checkpoint after the control-specific reversibility correction:
+
+`352 passed in 16.12s`.

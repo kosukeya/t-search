@@ -1,6 +1,6 @@
 # Stage 7E Results — Accessibility and Partial-Atlas Record Consistency
 
-Status: **scientific implementation complete for the declared canonical Stage 7D forward record family; corrected implementation regression passed; final documentation-head regression pending.**
+Status: **scientific implementation complete for the declared canonical Stage 7D forward record family; corrected implementation regression passed; project documentation synchronized through Stage 7E.**
 
 ## Accessibility result
 
@@ -45,11 +45,7 @@ The same physical record-bearing construction supports full, degraded, and inacc
 
 ## Partial-atlas result
 
-The primitive edge
-
-`A/e1 -> B/e0`
-
-is deliberately unavailable.
+The primitive edge `A/e1 -> B/e0` is deliberately unavailable.
 
 Three indirect paths remain:
 
@@ -71,18 +67,7 @@ Thus the target record remains indirectly reconstructible even though the direct
 
 Only `C/e1 -> B/e0` is perturbed.
 
-The affected path develops detectable nonzero:
-
-- map residual;
-- state residual;
-- induced-metric covariance residual;
-- record-score residual.
-
-The first implementation regression measured a record-score residual of approximately:
-
-`0.0350432330`.
-
-The unaffected `C/e0` and `C/e2` paths remain consistent.
+The affected path develops detectable nonzero map, state, induced-metric covariance, and record-score residuals. The first implementation regression measured a record-score residual of approximately `0.0350432330`. The unaffected `C/e0` and `C/e2` paths remain consistent.
 
 An initially over-strong negative-control expectation required the corresponding-observable residual to fail as well. That expectation was falsified: the chosen target-sector perturbation commutes with the tested projector algebra, so its observable similarity residual remains at numerical zero (`~8.3e-16`) even while map/state/metric/statistical consistency fails.
 
@@ -117,7 +102,7 @@ Corrected implementation-inclusive PR merge-ref regression on head `c638326e64e0
 
 `536 passed in 170.07s`.
 
-A final documentation-head regression is required after the Stage 7E checkpoint updates.
+After this implementation checkpoint, `stage7_protocol.md`, `stage7_concepts.md`, `README.md`, and `docs/roadmap.md` were synchronized so that Stage 7A–7E are completed and Stage 7F is next. The final post-synchronization CI result is recorded in Draft PR #8 without introducing another documentation-only head change.
 
 ## Next
 

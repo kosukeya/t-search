@@ -42,6 +42,8 @@ Equivalently, current R is not required for the represented nontrivial V/P/O rol
 
 This is a finite-model counterexample, not a universal irreducibility theorem.
 
+`record-neutral V witness != universal R-V independence theorem`.
+
 ## Singleton result
 
 With one continuation class retained:
@@ -79,6 +81,8 @@ All 108 canonical continuation-specific explicit maps are reconstructed from ret
 The reconstruction matches the reference maps and preserves state transport, inverse structure, and induced-metric covariance to tolerance.
 
 Result: explicit P-V edge matrices are `reconstructible` in the declared atlas.
+
+`P-V map reconstruction != P=V`.
 
 ## Event correspondence
 

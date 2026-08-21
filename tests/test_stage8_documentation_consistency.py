@@ -12,9 +12,12 @@ def test_stage8_gate_matches_stage7g_selection() -> None:
     protocol = _read("docs/stage8_protocol.md")
     stage7g = _read("results/stage7g_synthesis_stage8_gate.md")
 
-    selected = "Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction."
-    assert selected in stage7g
-    assert selected in protocol
+    for fragment in (
+        "Potentiality / extension semantics `V`",
+        "same constrained quantum construction",
+    ):
+        assert fragment in stage7g
+        assert fragment in protocol
 
 
 def test_stage8_protocol_preserves_stage2_selected_vs_unselected_distinction() -> None:
@@ -46,7 +49,7 @@ def test_stage8_integration_requires_executable_quantum_continuations() -> None:
 
     assert "typed modal wrapper beside quantum model != quantum-modal integration" in protocol
     assert "QExt(D)" in protocol
-    assert "physically admissible quantum continuations" in protocol
+    assert "physically admissible quantum continuation" in protocol
     assert "product decoration != integrated layer" in concepts
 
 

@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T_candidate=(O,P,R,V;Xi)`.
 
-Stage 7 strengthens P/O/R inside one constrained quantum construction. Stage 8 pressure-tests V in that same family. Stage 8A supplies an executable continuation carrier; Stage 8B realizes two modal types on the exact same carrier; Stage 8C next tests full operational/update underdetermination.
+Stage 7 strengthens P/O/R inside one constrained quantum construction. Stage 8 pressure-tests V in that same family. Stage 8A supplies an executable continuation carrier, Stage 8B realizes two modal types on the exact same carrier, and Stage 8C establishes their declared operational/update underdetermination. Stage 8D next tests genuine P-V perspective transport.
 
 ## Stages 0–6 — completed and merged
 
@@ -32,40 +32,40 @@ Key documents:
 - [`stage8_concepts.md`](stage8_concepts.md)
 - [`stage8a_notes.md`](stage8a_notes.md)
 - [`stage8b_notes.md`](stage8b_notes.md)
+- [`stage8c_notes.md`](stage8c_notes.md)
 - [`../results/stage8a_quantum_extensions.md`](../results/stage8a_quantum_extensions.md)
 - [`../results/stage8b_typed_modal_models.md`](../results/stage8b_typed_modal_models.md)
+- [`../results/stage8c_operational_update.md`](../results/stage8c_operational_update.md)
 
 ### Stage 8A — completed
 
-`QExt(e1) = {h_L, h_R}` contains two physically inequivalent continuations sharing the same current constrained Actuality and one-bit record through `e1`. Stage 8A satisfies criteria 11–16. Final synchronized regression: `582 passed in 122.49s`.
+`QExt(e1)={h_L,h_R}` contains two physically inequivalent continuations sharing the same current constrained Actuality and one-bit record through `e1`. Stage 8A satisfies criteria 11–16.
 
 ### Stage 8B — completed
 
-Both typed models use the **same `QuantumContinuationCarrier` object** with `{h_L,h_R}`.
+The same `QuantumContinuationCarrier` object hosts epistemic selected-`h*` and ontic no-selected-continuation model types. Canonical matched `q_E=K=(0.5,0.5)` is independent of `h*`; swapping `h*` changes privileged structure but not the pre-discriminating public projection.
 
-Epistemic `M_E^Q=(QCarrier,e1,h*,q_E)` stores privileged selected `h*`.
+Stage 8B satisfies criteria 17–21.
 
-Ontic-extension `M_O^Q(e1)=(QCarrier,e1,QExt(e1),K)` uses a frozen/slots schema with carrier and weights only and no selected/selector/seed/precomputed-outcome/latent-branch/singleton-continuation datum in the declared schema.
+### Stage 8C — completed
 
-Canonical matched weights `q_E=K=(0.5,0.5)` are generated without consulting `h*`. The Potentiality wrappers contain the same physical continuations but remain distinct types. Swapping `h_L`/`h_R` as epistemic `h*` changes the privileged diagnostic while leaving the Stage 8B pre-discriminating projection unchanged.
+A full ontology-neutral `O_Q` now exposes current density/record information and predictions for a physical future-signature measurement derived from the orthogonal canonical `e2` states.
 
-Corrected implementation regression: `595 passed in 140.99s`. Planning/documentation-synchronized regression: `597 passed in 84.13s`.
+With matched `q_E=K=(0.5,0.5)`, the two modal types have equal `O_Q` views and predict `(0.5,0.5)` while privileged diagnostics remain distinct. Changing only ontic `K` to `(0.75,0.25)` changes only the future prediction, providing a positive mismatch control.
 
-Stage 8B satisfies criteria 17–21. Criteria 22–50 remain future scientific work.
+Explicit evidence `future_signature_0` advances both models from `e1` to terminal `e2`. Epistemic `h*=h_L` is preserved with `q_E'=(1,0)`; ontic `K'=(1,0)` is obtained without adding a selected/selector field and `QExt(e2)=empty`.
 
-`formal selected-vs-unselected difference != empirical physical difference`.
+The same current superposition, density matrix, and matched Born prediction occur in both modal types, so those data do not uniquely select the modal semantics in the canonical family.
 
-`no selected continuation field != proof of ontic openness in nature`.
-
-`Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
+Stage 8C satisfies criteria 22–29. Implementation/full regression: `612 passed in 203.50s`. Criteria 30–50 remain future scientific work.
 
 ### Sequence
 
 - Stage 8.0 — completed
 - Stage 8A — completed
 - Stage 8B — completed
-- **Stage 8C — operational underdetermination and explicit update — next**
-- Stage 8D — genuine clock-change modal transport
+- Stage 8C — completed
+- **Stage 8D — genuine clock-change modal transport — next**
 - Stage 8E — P/O/R/V compatibility and underdetermination
 - Stage 8F — ablation / reconstruction / mismatch matrix
 - Stage 8G — synthesis and evidence-selected next gate
@@ -80,13 +80,15 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 
 ## Cautions
 
-- `operational equality != modal/ontological equivalence`;
+- `operational quantum equality != modal/ontological identity`;
 - `Potentiality != quantum randomness by definition`;
 - `QExt represented != ontically real futures by definition`;
 - `future physical inequivalence != modal semantics by itself`;
 - `formal selected-vs-unselected difference != empirical physical difference`;
 - `no selected continuation field != proof of ontic openness in nature`;
-- `Stage 8B pre-discriminating view != full Stage 8C O_Q interface`;
+- `explicit evidence update != ontological becoming`;
+- `evidence-conditioned singleton support != pre-existing hidden selector`;
+- `same density/Born data != unique modal semantics in this family`;
 - `partial-atlas consistency != general covariance`;
 - `not_established != false`;
 - `finite-model success != empirical discovery`.

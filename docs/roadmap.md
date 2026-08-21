@@ -125,7 +125,7 @@ Protocol / concepts / synthesis:
 - [`stage7g_notes.md`](stage7g_notes.md)
 - [`../results/stage7g_synthesis_stage8_gate.md`](../results/stage7g_synthesis_stage8_gate.md)
 
-Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. That chronology was superseded by the Stage 6G evidence-selected gate because P and R had not yet been placed in the same constrained quantum model.
+Earlier roadmap versions assigned Stage 7 directly to a **generally covariant / gravitational extension**. That chronology was superseded by the Stage 6G evidence-selected gate because P and R had not yet been placed in the same constrained quantum model.
 
 Stage 7 added a qubit memory subsystem, target-specific reversible record formation, an internally anchored `e0<e1<e2` history, genuine A/B/C clock changes, accessibility controls, partial-atlas reconstruction, and ingredient-wise ablations.
 
@@ -209,22 +209,20 @@ Stage 8 must not define Potentiality as any of the following merely by terminolo
 
 The detailed Stage 8 protocol should be frozen before implementation, following the Stage 7 pattern.
 
----
+### Post-Stage 8 re-ranking candidates
 
-## Stage 9 — Richer causal/order or clock-robustness gate — provisional
+Two high-value finite-model pressure tests remain and should be re-ranked from Stage 8 evidence rather than assigned a fixed new stage prematurely:
 
-After Stage 8, unresolved high-value finite-model gates include:
+- replace the deliberately minimal three-event `O` layer with richer causal/order structure;
+- test interacting/nonideal/POVM clocks beyond the current projective finite-clock family.
 
-- replacing the deliberately minimal three-event O layer with richer causal/order structure;
-- interacting/nonideal/POVM clocks beyond the current projective finite-clock family.
-
-Their ordering should be re-ranked from Stage 8 evidence rather than fixed now.
+Either may be selected before the deferred gravitational program if Stage 8 evidence makes it more discriminating.
 
 ---
 
-## Stage 10 — Generally covariant / gravitational precursor — deferred
+## Stage 9 — Generally covariant / gravitational extension — deferred gate
 
-The former Stage 7 gravitational program remains deferred.
+The former Stage 7 gravitational program remains deferred here, preserving the Stage 7.0 roadmap freeze while allowing evidence-selected finite-model gates to intervene if warranted.
 
 Possible progression, only after the finite constrained architecture is sufficiently stable:
 
@@ -236,7 +234,7 @@ No gravitational terminology should be projected backward onto finite toy-model 
 
 ---
 
-## Stage 11 — Empirical relevance — only if warranted
+## Stage 10 — Empirical relevance — only if warranted
 
 Seek empirical relevance only after deriving a genuinely discriminating physical prediction that is not already guaranteed by the underlying standard formalism.
 

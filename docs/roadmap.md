@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T_candidate=(O,P,R,V;Xi)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrates and pressure-tests V in that same family. Stages 8A–8E now establish executable continuations, typed selected-vs-unselected semantics, operational underdetermination/update, genuine continuation-aware clock transport, and a joint compatibility/underdetermination matrix. Stage 8F next tests ablation, reconstruction, and mismatches before Stage 8G synthesis.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrates and pressure-tests V in that same family. Stages 8A–8F now establish executable continuations, typed selected-vs-unselected semantics, operational underdetermination/update, genuine continuation-aware clock transport, joint compatibility/underdetermination, and a role-wise ablation/reconstruction/mismatch matrix. Stage 8G is now the final Stage 8 synthesis and next-gate selection.
 
 ## Stages 0–6 — completed and merged
 
@@ -40,8 +40,6 @@ Stage 8D closes criteria 30–35.
 
 Stage 8E tests joint P/O/R/V compatibility while distinguishing record content from record-defined temporal direction.
 
-Current compatibility matrix:
-
 - `P-O(event effects) = compatible`;
 - `P-R(current record) = compatible`;
 - `P-V(class/weights) = compatible`;
@@ -57,9 +55,50 @@ The Stage 8E implementation also exposed and corrected a fixed-support/QR-coordi
 
 `covariance of a wrongly typed observable != semantic correctness`.
 
-After correction, workflow run #838 had 650 passing scientific tests; its sole remaining failure was a Stage 8D documentation guard that has since been repaired.
+Stage 8E closes criteria **36–41**.
 
-Stage 8E closes criteria **36–41**. Criteria **42–50** remain Stage 8F–G work.
+### Stage 8F — completed
+
+Stage 8F applies seven ablations to seven typed roles and keeps six functional statuses distinct:
+
+`preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
+
+The strongest new countermodel neutralizes the current record write in both continuation branches and then re-derives the ablated constrained family. It retains:
+
+- two physically inequivalent future completions;
+- physical dimension 14 and rank-14 reductions;
+- a common e1 current state;
+- 108 genuine continuation-specific clock transports;
+- selected-vs-unselected modal underdetermination;
+- nontrivial weight-sensitive prediction;
+
+while current target-memory information vanishes.
+
+Thus nontrivial P/O/V structure does not require current target-specific R in the declared ablated family.
+
+Additional ablation outcomes:
+
+- singleton QExt: physical multiplicity `lost`, modal typing `preserved`, sole normalized weight `reconstructible`;
+- modal semantics removed: semantic role `lost` and not uniquely reconstructed from public P/O/current-R;
+- weights unfixed: nontrivial V weights `underdetermined`;
+- explicit perspective maps removed: `P_V_class_transport = reconstructible` from per-node coordinates over 108 comparisons;
+- event/class correspondence removed: cross-perspective P-V identification `not_established`;
+- current record access hidden: global record `preserved`, local access `inaccessible`;
+- wrong continuation map, wrong class, wrong event, weight mismatch, and wrong observable coordinates remain detectable.
+
+Implementation-inclusive regression: **`662 passed in 139.81s`**.
+
+Stage 8F closes criteria **42–47**. Criteria **48–50** remain Stage 8G work.
+
+`record-neutral V witness != universal R-V independence theorem`.
+
+`lost != metaphysically irreducible`.
+
+`reconstructible != universally redundant`.
+
+`underdetermined != ontically open`.
+
+`inaccessible != globally absent`.
 
 ### Sequence
 
@@ -69,8 +108,8 @@ Stage 8E closes criteria **36–41**. Criteria **42–50** remain Stage 8F–G w
 - Stage 8C — completed
 - Stage 8D — completed
 - Stage 8E — completed
-- **Stage 8F — ablation / reconstruction / mismatch matrix — next**
-- Stage 8G — synthesis and evidence-selected next gate
+- Stage 8F — completed
+- **Stage 8G — synthesis and evidence-selected next gate — next**
 
 ## Stage 9 — Generally covariant / gravitational extension — deferred gate
 
@@ -94,7 +133,12 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `same P/O/current-R public data != modal identity`;
 - `covariance of a wrongly typed observable != semantic correctness`;
 - `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`;
-- `full Stage 8C measurement covariance not established != false P-V class transport`;
+- `record-neutral V witness != universal R-V independence theorem`;
+- `lost != metaphysically irreducible`;
+- `reconstructible != universally redundant`;
+- `underdetermined != ontically open`;
+- `inaccessible != globally absent`;
+- `full Stage 8C measurement covariance remains not_established`;
 - `partial-atlas consistency != general covariance`;
 - `not_established != false`;
 - `finite-model success != empirical discovery`.

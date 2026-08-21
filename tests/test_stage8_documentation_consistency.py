@@ -75,7 +75,7 @@ def test_stage8_exit_criteria_advance_only_through_stage8c() -> None:
     assert "criteria **17–21**" in stage8b
     assert "Criteria 22–50 remain future scientific work" in stage8b
     assert "criteria **22–29**" in stage8c
-    assert "criteria **30–50**" in stage8c
+    assert "Criteria **30–50**" in stage8c
 
 
 def test_stage8a_checkpoint_has_real_qext_not_only_labels() -> None:

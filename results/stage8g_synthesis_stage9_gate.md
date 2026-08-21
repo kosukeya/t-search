@@ -102,6 +102,8 @@ The selection is unique under the declared score function.
 
 Stage 8's strongest remaining structural gap is not current-record/V compatibility but directional-record/V compatibility. The canonical V carrier has current record content with directional score 0; the Stage 7C control has directional score `+1` on the same current prefix. Stage 9 should bring these structures into one nontrivial continuation family and test the combined R_direction–V relation directly.
 
+`directional record arrow != ontological future openness`.
+
 The generally covariant/gravitational precursor remains deferred because introducing it before resolving the directional-R/V and measurement-family boundaries would add confounds rather than maximize discrimination.
 
 ## Unresolved implications
@@ -134,7 +136,15 @@ Stage 8F final head before Stage 8G:
 
 head `f97b89100859a8f61483bbd969898befbbec4261`
 
-Stage 8G implementation-inclusive and final documentation-synchronized validation will be appended after those runs complete.
+Stage 8G source-level synthesis / exit-audit regression:
+
+**`672 passed in 192.16s`**
+
+source head `234b74559821ec5662d58f546e9d1ecd00507a17`
+
+PR merge-ref `d392db357dfe68c221bbd3752910577af22d0c18`
+
+The first documentation-synchronized Stage 8G run reached **671 passing tests / 2 documentation failures**. The scientific suite remained green; the failures were a historical Stage 7 roadmap assertion that still fixed gravity at Stage 9 and one missing exact openness guard. Both documentation issues were corrected before the final regression.
 
 ## Strongest bounded statement
 

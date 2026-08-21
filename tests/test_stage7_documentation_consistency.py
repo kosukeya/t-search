@@ -18,13 +18,14 @@ def test_stage7_gate_matches_stage6g_selection() -> None:
     assert "genuine clock changes" in protocol
 
 
-def test_roadmap_no_longer_assigns_gravity_to_stage7() -> None:
+def test_roadmap_no_longer_assigns_gravity_to_stage7_and_tracks_later_reranking() -> None:
     roadmap = _read("docs/roadmap.md")
 
     assert "## Stage 7 — Quantum records inside a constrained multi-clock model" in roadmap
     assert "## Stage 7 — Generally covariant / gravitational extension" not in roadmap
-    assert "## Stage 9 — Generally covariant / gravitational extension" in roadmap
+    assert "## Stage 10 — Generally covariant / gravitational extension — deferred gate" in roadmap
     assert "Earlier roadmap versions assigned Stage 7 directly" in roadmap
+    assert "Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9" in roadmap
 
 
 def test_stage7_protocol_marks_old_roadmap_as_superseded() -> None:

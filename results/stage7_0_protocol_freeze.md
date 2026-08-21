@@ -99,6 +99,25 @@ The protocol requires, when applicable:
 
 Stage 7 has **36 exit criteria** covering typing, spectator-memory baseline, record witness, reversal controls, genuine clock-change transport, accessibility/partial-atlas consistency, minimality, synthesis, and final regression/merge-readiness.
 
+## Documentation alignment
+
+Core planning documents are aligned to the Stage 6G gate:
+
+- `docs/roadmap.md` now assigns Stage 7 to the quantum-record pressure test;
+- the former generally covariant / gravitational Stage 7 is provisionally moved to Stage 9;
+- README current status now records Stage 6 as merged and Stage 7 as current;
+- executable documentation-consistency tests guard against reintroducing the old Stage 7 header or a mismatch with the Stage 6G selected gate.
+
+## Validation
+
+Stage 7.0 adds **4 documentation-consistency tests** and changes no Stage 1–6 scientific implementation.
+
+Initial documentation-inclusive PR merge-ref regression:
+
+`439 passed in 142.43s`.
+
+A final documentation-head regression is required after this checkpoint update.
+
 ## Strongest allowed Stage 7.0 statement
 
 **Stage 6 justifies testing `P`, `O`, and `R` inside one constrained finite quantum construction. An explicit memory subsystem and reversible record-writing operation can be specified as candidate ingredients, but Stage 7.0 does not yet establish that directional records can be physically formed inside the multi-clock constrained model, that such records transform covariantly under genuine clock changes, or that the Stage 6 layered temporal candidate survives this stronger single-model test.**

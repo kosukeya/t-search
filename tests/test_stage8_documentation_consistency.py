@@ -59,24 +59,29 @@ def test_stage8_current_sequence_and_stage80_historical_checkpoint_agree() -> No
 
     assert "Stage 8.0 — Quantum Potentiality protocol freeze — completed" in protocol
     assert "Stage 8A — common quantum-extension substrate — completed" in protocol
-    assert "Stage 8B — typed epistemic and ontic-extension quantum models — next" in protocol
+    assert "Stage 8B — typed epistemic and ontic-extension quantum models — completed" in protocol
+    assert "Stage 8C — operational underdetermination and explicit update — next" in protocol
 
     # The Stage 8.0 checkpoint remains an immutable historical record of what was next then.
     assert "Stage 8.0 — Quantum Potentiality protocol freeze — completed" in checkpoint
     assert "Stage 8A — common quantum-extension substrate — next" in checkpoint
 
 
-def test_stage8_exit_criteria_advance_only_through_stage8a() -> None:
+def test_stage8_exit_criteria_advance_only_through_stage8b() -> None:
     protocol = _read("docs/stage8_protocol.md")
     checkpoint = _read("results/stage8_0_protocol_freeze.md")
     stage8a = _read("results/stage8a_quantum_extensions.md")
+    stage8b = _read("results/stage8b_typed_modal_models.md")
 
     assert "Stage 8 defines 50 exit criteria" in checkpoint
     assert "criteria 1–10 only" in checkpoint
     assert "Criteria 11–50 remain future scientific work" in checkpoint
     assert "Stage 8A satisfies criteria 11–16" in protocol
-    assert "Criteria 17–50 remain future scientific work" in protocol
+    assert "Stage 8B satisfies criteria 17–21" in protocol
+    assert "Criteria 22–50 remain future scientific work" in protocol
     assert "criteria **11–16**" in stage8a
+    assert "criteria **17–21**" in stage8b
+    assert "Criteria 22–50 remain future scientific work" in stage8b
 
 
 def test_stage8a_checkpoint_has_real_qext_not_only_labels() -> None:
@@ -92,9 +97,39 @@ def test_stage8a_checkpoint_has_real_qext_not_only_labels() -> None:
     assert "normalized `e2` state overlap squared = `0`" in results
 
 
+def test_stage8b_checkpoint_uses_same_qext_with_distinct_selected_semantics() -> None:
+    protocol = _read("docs/stage8_protocol.md")
+    concepts = _read("docs/stage8_concepts.md")
+    notes = _read("docs/stage8b_notes.md")
+    results = _read("results/stage8b_typed_modal_models.md")
+
+    for text in (protocol, concepts, notes, results):
+        assert "h_L" in text and "h_R" in text
+        assert "Epistemic" in text
+        assert "Ontic" in text
+    assert "same carrier object" in protocol
+    assert "EpistemicQuantumPotentiality" in notes
+    assert "OnticExtensionQuantumPotentiality" in notes
+    assert "no selected continuation field != proof of ontic openness in nature" in protocol
+    assert "Stage 8B pre-discriminating view != full Stage 8C O_Q interface" in protocol
+
+
+def test_stage8b_planning_documents_point_to_stage8c_next() -> None:
+    readme = _read("README.md")
+    roadmap = _read("docs/roadmap.md")
+
+    for text in (readme, roadmap):
+        assert "Stage 8B" in text
+        assert "completed" in text
+        assert "Stage 8C" in text
+        assert "next" in text
+        assert "criteria 17–21" in text
+
+
 def test_roadmap_keeps_selected_stage8_and_deferred_stage9_gravity() -> None:
     roadmap = _read("docs/roadmap.md")
 
     assert "## Stage 8 — Quantum Potentiality inside the shared constrained construction" in roadmap
     assert "## Stage 9 — Generally covariant / gravitational extension — deferred gate" in roadmap
     assert "Potentiality != quantum randomness by definition" in roadmap
+    assert "Earlier roadmap versions assigned Stage 7 directly" in roadmap

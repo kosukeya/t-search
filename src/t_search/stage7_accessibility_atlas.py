@@ -446,11 +446,17 @@ def stage7e_partial_atlas_diagnostics() -> Stage7EAtlasDiagnostics:
     ideal = [partial_atlas_path_assessment(index) for index in range(3)]
     perturbed = partial_atlas_path_assessment(1, perturb_local_edge=True)
     unaffected = [item for item in ideal if item.intermediate != _PERTURBED_INTERMEDIATE.label]
+    # The canonical perturbation commutes with the tested record projector algebra,
+    # so observable similarity transport can remain exact even though the edge no
+    # longer preserves the target metric/state and the resulting record statistic
+    # shifts.  Criterion 29 therefore detects the localized inconsistency from the
+    # independently failing map/state/metric/statistical witnesses rather than
+    # requiring every diagnostic to fail simultaneously.
     perturbation_detected = bool(
         perturbed.map_residual > 1e-3
         and perturbed.state_residual > 1e-3
         and perturbed.metric_covariance_residual > 1e-3
-        and perturbed.max_observable_residual > 1e-3
+        and perturbed.record_score_residual > 1e-4
     )
     localized = bool(
         perturbation_detected
@@ -496,6 +502,7 @@ def stage7e_summary() -> dict[str, object]:
             "indirect reconstructibility != direct local edge availability",
             "partial atlas path consistency != universal frame availability",
             "localized path inconsistency != spacetime curvature",
+            "observable-algebra correspondence != full state/metric path consistency",
             "record covariance != P=R",
         ],
     }

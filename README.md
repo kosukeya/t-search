@@ -4,9 +4,17 @@
 
 ## Current status
 
-**Stages 1–7 are completed and merged. Stage 8.0 protocol freeze and Stages 8A–8F are completed on Draft PR #9. Stage 8G — synthesis and evidence-selected next gate — is next.**
+**Stages 1–7 are completed and merged. Stage 8.0 and Stages 8A–8G synthesis are completed on Draft PR #9; criteria 48–49 are closed and criterion 50 awaits final full-repository regression / merge-readiness review.**
 
-Current finite-model candidate: `T_candidate=(O,P,R,V;Xi)`.
+Current refined finite-model candidate:
+
+`T8_candidate=(O,P,R,V;Xi)`
+
+with internal bookkeeping:
+
+`R=(R_content,R_direction,R_access)`
+
+`V=(V_extension,V_semantics,V_weights)`.
 
 ## Stage 8
 
@@ -20,12 +28,14 @@ Key documents:
 - [`docs/stage8d_notes.md`](docs/stage8d_notes.md)
 - [`docs/stage8e_notes.md`](docs/stage8e_notes.md)
 - [`docs/stage8f_notes.md`](docs/stage8f_notes.md)
+- [`docs/stage8g_notes.md`](docs/stage8g_notes.md)
 - [`results/stage8a_quantum_extensions.md`](results/stage8a_quantum_extensions.md)
 - [`results/stage8b_typed_modal_models.md`](results/stage8b_typed_modal_models.md)
 - [`results/stage8c_operational_update.md`](results/stage8c_operational_update.md)
 - [`results/stage8d_modal_transport.md`](results/stage8d_modal_transport.md)
 - [`results/stage8e_compatibility.md`](results/stage8e_compatibility.md)
 - [`results/stage8f_ablation.md`](results/stage8f_ablation.md)
+- [`results/stage8g_synthesis_stage9_gate.md`](results/stage8g_synthesis_stage9_gate.md)
 
 ### Stage 8A–8C — completed
 
@@ -60,36 +70,35 @@ Stage 8E closes criteria **36–41**.
 
 ### Stage 8F — completed
 
-Stage 8F applies seven one-ingredient ablations to seven typed roles using the status vocabulary:
+Stage 8F applies seven one-ingredient ablations to seven typed roles using:
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
 
-The strongest new witness neutralizes the e1 record write in both future continuations. The re-derived ablation family still has:
+Its strongest new witness neutralizes the e1 record write while preserving a two-continuation constrained P/O/V family with physical dimension 14, rank-14 reductions, 108 genuine clock transports, selected-vs-unselected modal underdetermination, and weight-sensitive prediction. Current target-memory information becomes zero.
 
-- physical dimension 14 and rank-14 reductions;
-- two physically inequivalent future completions sharing e1;
-- 108 genuine clock transports with inverse/metric consistency;
-- selected-vs-unselected modal underdetermination;
-- nontrivial weight-sensitive prediction;
-- **zero current target-memory information**.
+Other results separate continuation multiplicity, modal semantics, nontrivial weights, explicit P-V edge matrices, event/class correspondence, current record content, and local record accessibility by distinct ablation outcomes.
 
-Thus nontrivial `P/O/V` remains represented while current target-specific `R` is absent in this declared ablated family.
+Final Stage 8F regression before Stage 8G: **`663 passed in 257.59s`**.
 
-Other Stage 8F results:
+Stage 8F closes criteria **42–47**.
 
-- singleton QExt: V physical multiplicity `lost`, modal typing `preserved`, sole weight `reconstructible`;
-- modal semantics removed: semantic role `lost` and not uniquely reconstructed from public P/O/current-R;
-- weights unfixed: nontrivial V weights `underdetermined`;
-- explicit perspective maps removed: `P_V_class_transport = reconstructible` from per-node coordinates over 108 comparisons;
-- event/class correspondence removed: cross-perspective P-V claim `not_established`;
-- current record access hidden: global record `preserved`, local access `inaccessible`;
-- wrong map/class/event/weight/observable controls remain detectable.
+### Stage 8G — synthesis completed; criterion 50 pending final validation
 
-Implementation-inclusive regression: **`662 passed in 139.81s`**.
+The executable synthesis selects:
 
-Stage 8F closes criteria **42–47**. Criteria **48–50** remain Stage 8G work.
+`refined_layered`.
 
-### Sequence
+The top-level `O/P/R/V` architecture is retained, while R and V are internally refined according to their tested roles. Explicit P-V edge matrices remain reconstructible from per-node continuation coordinates; event/class correspondence remains an explicit typing resource.
+
+Criteria **48–49** are executable Stage 8G results. Criterion **50** is external final CI / merge-readiness review.
+
+Selected Stage 9 gate:
+
+> **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
+
+The gate ranking puts `directional_record_potentiality` ahead of full measurement-family covariance, richer causal order, nonideal/POVM clocks, and the parametrized/generally-covariant precursor.
+
+## Sequence
 
 - Stage 8.0 — completed
 - Stage 8A — completed
@@ -98,11 +107,12 @@ Stage 8F closes criteria **42–47**. Criteria **48–50** remain Stage 8G work.
 - Stage 8D — completed
 - Stage 8E — completed
 - Stage 8F — completed
-- **Stage 8G — synthesis and evidence-selected next gate — next**
+- Stage 8G — synthesis/gate selection completed; criterion 50 pending final validation
+- **Stage 9 — directional records with nontrivial quantum Potentiality — selected next gate**
 
 ## Roadmap
 
-See [`docs/roadmap.md`](docs/roadmap.md). Stage 9 remains the deferred generally covariant / gravitational gate.
+See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitational extension remains deferred rather than abandoned; Stage 8G re-ranks the directional-R/V finite-model test ahead of it.
 
 ## Guards
 
@@ -122,5 +132,7 @@ See [`docs/roadmap.md`](docs/roadmap.md). Stage 9 remains the deferred generally
 - `underdetermined != ontically open`;
 - `inaccessible != globally absent`;
 - `record-neutral V witness != universal R-V independence theorem`;
+- `V internal role separation != fundamental primitive decomposition`;
+- `directional record arrow != ontological future openness`;
 - `full Stage 8C measurement covariance remains not_established`;
 - `not_established != false`.

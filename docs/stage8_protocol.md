@@ -223,6 +223,8 @@ Current score order:
 
 The selected gate directly targets the strongest remaining partial row: the canonical nontrivial V carrier has current record content but no directional record arrow, while the Stage 7C/8E control supplies directional record structure on the same current prefix.
 
+`directional record arrow != ontological future openness`.
+
 Gravity/general covariance is deferred again, not discarded.
 
 Stage 8G closes criteria **48–49** through executable synthesis/gate selection. Criterion **50** is external final CI and merge-readiness review.

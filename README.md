@@ -62,18 +62,7 @@ Stage 6 separated provisional roles `O`, `P`, `R`, `V`, and `Xi`. The bounded st
 
 Stage 7 placed `P`, internal `O`, and target-specific `R` in one constrained quantum construction with qubit memory.
 
-Main results:
-
-- reversible target-specific record formation;
-- internally anchored `e0<e1<e2` history with reversal/balance/no-record controls;
-- genuine A/B/C clock perspectives for the record-bearing construction;
-- deformation from an ideal Euclidean-unitary atlas to an induced-metric-preserving nonideal atlas;
-- record covariance under corresponding state/observable/event transport;
-- global record representation distinct from local accessibility;
-- partial-atlas indirect reconstruction;
-- no-record countermodel retaining tested `P + internal O` while `R` vanishes;
-- therefore `P + internal O => R` is refuted in the declared Stage 7 family;
-- explicit cross-clock edge matrices are reconstructible from the common physical carrier plus per-perspective reductions.
+Main results include internally anchored record formation, genuine interacting A/B/C clock perspectives, induced-metric-preserving clock changes, record covariance, accessibility controls, partial-atlas reconstruction, and a no-record countermodel retaining tested `P + internal O` while `R` vanishes.
 
 Stage 7G synthesis outcome:
 
@@ -109,28 +98,15 @@ Potentiality is not defined as quantum randomness, superposition, Born probabili
 
 ### Stage 8A — completed
 
-Stage 8A constructs the first executable common extension substrate:
+Stage 8A constructs:
 
 `QExt(e1) = {h_L, h_R}`.
 
-Both continuations share the same constrained current prefix through `e1`:
+Both continuations share `V0=I`, `V1=U_rec`, the same constrained Actuality through `e1`, and current target-memory information `I(Q;M)=1 bit`.
 
-- `V0=I`;
-- `V1=U_rec`;
-- current target-memory information `I(Q;M)=1 bit`.
+They differ only at `e2` by a memory-neutral, record-target-neutral reversible C-sector phase. Both continuation-specific constrained constructions retain physical dimension 14 and rank-14 reductions at all nine A/B/C clock/readout nodes. Renaming/current-prefix/terminal controls pass.
 
-They differ only at `e2`:
-
-- `h_L`: `V2=U_rec`;
-- `h_R`: `V2=Z_C U_rec`.
-
-`Z_C` is a memory-neutral, record-target-neutral reversible phase on a C-sector of the A-clock rest support.
-
-The two canonical `e2` reduced states are orthogonal for the declared source run, while both continuation-specific constrained constructions retain physical dimension 14 and rank-14 reductions at all nine A/B/C clock/readout nodes.
-
-Pure renaming does not create another continuation class, a current-prefix-incompatible continuation is rejected, and the finite terminal convention is `QExt(e2)=empty`.
-
-Stage 8A satisfies exit criteria 11–16.
+Stage 8A satisfies exit criteria 11–16. Its final documentation-synchronized regression reported **`582 passed in 122.49s`**.
 
 ### Stage 8B — completed
 
@@ -160,6 +136,8 @@ Under the canonical matched baseline both contain the same physical continuation
 These weights are generated from the carrier alone, without consulting `h*`.
 
 A hidden-selector swap control keeps the carrier and weights fixed while changing epistemic `h*=h_L` to `h*=h_R`. The privileged selected-continuation diagnostic changes, while the Stage 8B minimal pre-discriminating public projection remains unchanged. That projection deliberately contains no `h*` or model-type field.
+
+The corrected Stage 8B implementation regression reported **`595 passed in 140.99s`**. After Stage 8B planning/documentation synchronization the full regression reported **`597 passed in 84.13s`**.
 
 This establishes a formal selected-versus-unselected typed model distinction on a common quantum continuation carrier. It is **not yet** the full Stage 8C `O_Q` operational-underdetermination result and does not establish an ontically open future in nature.
 

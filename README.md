@@ -8,7 +8,7 @@ Can global and perspective-relative descriptions be related explicitly, and can 
 
 ## Current status
 
-**Stages 1–6 are completed and merged. Stage 7.0 freezes the next pressure test: explicit quantum records/memory inside the constrained multi-clock model.**
+**Stages 1–6 are completed and merged. Stage 7.0–7E are scientifically completed on Draft PR #8; Stage 7F — ablation / reconstruction / mismatch matrix — is next.**
 
 Stage 6 was merged by PR #7. Its synthesis selected:
 
@@ -32,17 +32,22 @@ This is a structural candidate inside finite toy models, not a fundamental ontol
 
 ## Current Stage 7 gate
 
-Stage 6G selected the following next pressure test:
+Stage 6G selected:
 
 > **Add explicit memory/record subsystems to the constrained multi-clock quantum model.**
 
-The reason is that the current perspective layer `P` and record layer `R` were established in different toy constructions. Stage 7 asks whether they remain distinct yet compatible when they inhabit one constrained quantum model.
+The goal is to test whether perspective structure `P`, neutral order/history `O`, and record structure `R` remain distinct yet compatible when they inhabit one constrained quantum construction.
 
-Stage 7.0 documents:
+Stage 7 planning and checkpoints:
 
 - [`docs/stage7_protocol.md`](docs/stage7_protocol.md)
 - [`docs/stage7_concepts.md`](docs/stage7_concepts.md)
 - [`results/stage7_0_protocol_freeze.md`](results/stage7_0_protocol_freeze.md)
+- [`results/stage7a_spectator_memory.md`](results/stage7a_spectator_memory.md)
+- [`results/stage7b_reversible_record.md`](results/stage7b_reversible_record.md)
+- [`results/stage7c_relational_history.md`](results/stage7c_relational_history.md)
+- [`results/stage7d_record_transport.md`](results/stage7d_record_transport.md)
+- [`results/stage7e_accessibility_atlas.md`](results/stage7e_accessibility_atlas.md)
 
 The earlier roadmap assignment of Stage 7 to a generally covariant / gravitational extension has been superseded by this evidence-selected gate. The gravitational direction is deferred rather than abandoned; see [`docs/roadmap.md`](docs/roadmap.md).
 
@@ -117,32 +122,40 @@ The resulting bounded structural candidate is layered:
 
 `(O,P,R,V;Xi)`.
 
-### Stage 7 — quantum records in the multi-clock constrained model
+### Stage 7 — quantum records in the multi-clock constrained model — in progress
 
-Stage 7 is the current pressure test.
+The minimal carrier is
 
-The minimal baseline adds an explicit memory subsystem:
+`H_kin^7=H_A tensor H_B tensor H_C tensor H_M`,
 
-`H_kin^7=H_A tensor H_B tensor H_C tensor H_M`
+with a qubit memory `H_M=C^2`.
 
-with spectator-memory control:
+Stage 7A established a spectator-memory no-record baseline. Stage 7B constructed a reversible target-specific quantum record witness. Stage 7C embedded record formation into an internally A-clock-anchored modified constraint and obtained a reversible record-defined orientation with explicit reversal/balance/no-record/uncertain-memory controls.
 
-`H_M=C^2`, `H_M^(0)=0`.
+Stage 7D then re-derived the record-bearing model in all nine A/B/C clock/readout charts. Record interaction deforms the ideal Euclidean-unitary Stage 5/7A atlas into an **induced-metric-preserving nonideal atlas**, but genuine cross-clock state transport and corresponding record-observable covariance survive. Orientation-preserving `chi` gives `A_R=+1`, `A_acc=+1/2`; orientation-reversing `chi` gives the opposite signs.
 
-The spectator memory is **not** itself a record. Stage 7 requires an explicit target observable, memory readout, target-specific information diagnostic, physical admissibility, negative controls, and explicit event correspondence before directional language is used.
+Stage 7E separates global record representation from local accessibility. With the common physical record held fixed:
 
-The key question is whether record-defined structure `R` survives as a distinct but covariant role under genuine clock changes `P` inside one constrained quantum construction.
+- full access reproduces `A_R=+1`, `A_acc=+1/2`;
+- hidden or maximally noisy access gives local `A_R=0`, `A_acc=0` while the global record remains represented;
+- a `1/4`-flip coarse channel degrades but preserves the lower-index orientation.
+
+Stage 7E also removes the primitive `A/e1 -> B/e0` edge. Three indirect paths through `C/e0,e1,e2` reproduce the same target state/metric/record profile. Perturbing only `C/e1 -> B/e0` creates a localized map/state/metric/record-statistic inconsistency while the other two paths remain consistent. The tested projector-algebra similarity can remain intact, so:
+
+`observable-algebra correspondence != full state/metric path consistency`.
+
+The current single-model evidence therefore supports non-trivial `P-R` compatibility while preserving the distinction between perspective, record representation, reconstructibility, and accessibility. It does not establish `P=R`.
 
 ## Stage 7 sequence
 
-- Stage 7.0 — protocol freeze;
-- Stage 7A — spectator-memory constrained baseline;
-- Stage 7B — reversible quantum record witness;
-- Stage 7C — relational record formation and orientation controls;
-- Stage 7D — genuine clock-change record transport;
-- Stage 7E — accessibility and partial-atlas record consistency;
-- Stage 7F — ablation / reconstruction / mismatch matrix;
-- Stage 7G — synthesis and evidence-selected Stage 8 gate.
+- Stage 7.0 — protocol freeze — **completed**;
+- Stage 7A — spectator-memory constrained baseline — **completed**;
+- Stage 7B — reversible quantum record witness — **completed**;
+- Stage 7C — relational record formation and orientation controls — **completed**;
+- Stage 7D — genuine clock-change record transport — **completed**;
+- Stage 7E — accessibility and partial-atlas record consistency — **completed**;
+- Stage 7F — ablation / reconstruction / mismatch matrix — **next**;
+- Stage 7G — synthesis and evidence-selected Stage 8 gate — planned.
 
 ## Methodological guards
 
@@ -165,6 +178,13 @@ The project deliberately keeps the following distinctions explicit:
 - `record correlation != record-defined orientation`;
 - `support-local unitary != autonomous constrained interaction`;
 - `physical-subspace automorphism != time-localized dynamical interaction`;
+- `interacting clock change != inherited spectator clock change`;
+- `non-Euclidean-unitary map != failed perspective map when the induced physical metric is preserved`;
+- `locally inaccessible record != globally absent record`;
+- `indirect reconstructibility != direct local edge availability`;
+- `partial atlas path consistency != universal frame availability`;
+- `localized path inconsistency != spacetime curvature`;
+- `observable-algebra correspondence != full state/metric path consistency`;
 - `P-R covariance != P=R`;
 - `record orientation != ontological becoming`;
 - `record orientation != phenomenal passage`;

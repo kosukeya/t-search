@@ -126,3 +126,7 @@ Initial code/test PR merge-ref checkpoint:
 Final code checkpoint after the control-specific reversibility correction:
 
 `352 passed in 16.12s`.
+
+Documentation-inclusive PR merge-ref checkpoint:
+
+`352 passed in 19.13s`.

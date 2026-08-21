@@ -64,6 +64,8 @@ The tested quantum `Omega` role is reconstructible from P plus declared observab
 
 ## Stage 7 — Quantum records inside a constrained multi-clock model — completed and merged
 
+Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. Stage 6G superseded that chronology with the more discriminating quantum-record gate; the gravitational direction was deferred rather than discarded.
+
 Stage 7 removed the former model-separation objection for P and R by placing P/O/R in one constrained finite quantum construction with memory.
 
 Main results:

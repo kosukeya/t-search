@@ -1,6 +1,6 @@
 # Stage 7E Results — Accessibility and Partial-Atlas Record Consistency
 
-Status: **scientific implementation complete for the declared canonical Stage 7D forward record family; final documentation-head regression pending.**
+Status: **scientific implementation complete for the declared canonical Stage 7D forward record family; corrected implementation regression passed; final documentation-head regression pending.**
 
 ## Accessibility result
 
@@ -94,7 +94,7 @@ New guard:
 
 ## Exit-criteria consequence
 
-Stage 7E is designed to satisfy criteria 26–29 in the declared canonical family:
+Stage 7E satisfies criteria 26–29 in the declared canonical family:
 
 26. global record representation and local memory accessibility are separately represented and diagnosed;
 27. hidden and maximally noisy memory controls are explicit, with a coarse degraded-access control in addition;
@@ -113,7 +113,11 @@ Stage 7E adds **23 focused tests**.
 
 The first implementation run reached `534 passed / 2 failed`; both failures came from the deliberately over-strong assumption that the chosen local perturbation must also break observable similarity transport. The run itself showed the intended map/state/metric/record-statistic inconsistency and motivated the corrected diagnostic separation.
 
-A corrected implementation regression and final documentation-head regression are required before this checkpoint is closed.
+Corrected implementation-inclusive PR merge-ref regression on head `c638326e64e0bd031596d32880a5648a778f06da` / merge-ref `548f91c2736bd71e2cbe973b05cdbe22e3beb4d9`:
+
+`536 passed in 170.07s`.
+
+A final documentation-head regression is required after the Stage 7E checkpoint updates.
 
 ## Next
 

@@ -1,6 +1,6 @@
 # Stage 7 Protocol — Quantum Records in a Constrained Multi-Clock Model
 
-Status: **Stage 7.0 protocol freeze**.
+Status: **Stage 7.0 protocol frozen; Stage 7A spectator-memory baseline completed.**
 
 Stage 7 follows the Stage 6G evidence-selected gate. It does not begin with the older roadmap assumption that Stage 7 should immediately be a generally covariant / gravitational extension. The immediate pressure test is narrower and more discriminating:
 
@@ -89,68 +89,40 @@ For the spectator-memory baseline only:
 
 so that:
 
-`H_tot^(0)=H_A+H_B+H_C+H_M^(0)`
+`H_tot^(0)=H_tot^(5) tensor I_M`.
 
-and:
+The corresponding spectator physical space is expected and now verified in Stage 7A to be:
 
 `H_phys^(0)=H_phys^(5) tensor H_M`.
 
-This baseline is a control. It proves only that an unused memory register can be carried through the existing constrained model. It is **not** a record-forming result.
+The spectator case is a strict no-record control. It does not count as record formation merely because a memory tensor factor exists.
 
-For each physical clock choice `X` the spectator-memory reductions are expected to factor only in this baseline:
+Stage 7A executable checkpoint:
 
-`R_X^M(j)=R_X(j) tensor I_M`
+- `dim(H_kin^7A)=54`;
+- `dim(H_phys^7A)=14`;
+- `dim(K_X^7A)=14` inside each 18-dimensional reduced ambient space;
+- all 54 distinct-clock state/observable comparisons and all 162 three-clock composition cases pass within tolerance;
+- 18 explicit target-memory no-record diagnostics remain within tolerance of zero;
+- full regression: `451 passed in 142.35s`.
 
-`E_X^M(j)=E_X(j) tensor I_M`
+## 5. Record semantics
 
-`S^M_{Y<-X}(k,j)=S_{Y<-X}(k,j) tensor I_M`.
+A Stage 7 quantum record claim requires all of the following:
 
-Once a nontrivial record interaction is introduced, these factorizations must be re-derived rather than assumed.
+1. an explicit target observable or variable `Q`;
+2. an explicit memory readout observable `Z_M` or POVM;
+3. a declared state/process in which `M` carries target-specific information about `Q`;
+4. a diagnostic such as mutual information, Holevo information, discrimination success, or another explicitly justified target-specific score;
+5. no-record and wrong-target controls where applicable;
+6. an explicit history/event correspondence before any directional record score is interpreted as past/future asymmetry.
 
-## 5. What counts as a quantum record
+Frozen guards:
 
-Entanglement or nonzero mutual information by itself is insufficient.
-
-A Stage 7 record requires all of:
-
-1. an explicitly declared target variable/event observable `Q`;
-2. an explicitly declared memory observable or readout channel on `M`;
-3. a physical state or ensemble in which the memory readout carries information about `Q`;
-4. a declared event/history correspondence whenever “past”, “future”, or orientation is used;
-5. a comparison against no-record / wrong-record controls.
-
-The project may use both classicalized and quantum diagnostics.
-
-### 5.1 Classicalized record information
-
-For a declared joint measurement:
-
-`I(M_readout ; Q_e)`
-
-is an admissible record-information diagnostic.
-
-### 5.2 Quantum record information
-
-Where useful, Stage 7 may also use quantities derived from conditional memory states, including:
-
-- Holevo information;
-- trace-distance distinguishability;
-- fidelity / discrimination error;
-- quantum mutual information when its target semantics are explicit.
-
-No scalar is called a temporal arrow merely because it is nonzero.
-
-### 5.3 Directional record score
-
-Only after an explicit ordered event family and a physically admissible record-forming construction are present may Stage 7 define a directional contrast such as:
-
-`A_R = I(M ; Q_past) - I(M ; Q_future)`.
-
-The exact quantum/classical information functional must be declared before the comparison.
-
-Frozen guard:
-
-`record correlation != record-defined temporal orientation`.
+- `memory present != record present`;
+- `entanglement != record`;
+- `mutual information != directional record by itself`;
+- `record correlation != record-defined temporal orientation`.
 
 ## 6. Record-forming transformations
 
@@ -230,6 +202,8 @@ In the spectator-memory baseline the candidate map is:
 
 `S^M_{q<-p}=S_{q<-p} tensor I_M`.
 
+Stage 7A has verified this identity extension and its state/Born/composition consequences in the canonical spectator family. It is still only a no-record baseline.
+
 For an interacting model, the actual map must be re-derived from the common physical space.
 
 A corresponding record observable is transported schematically by:
@@ -296,17 +270,17 @@ Hand-written verdict booleans copied from prose are not executable evidence.
 
 ## 12. Stage 7 substage sequence
 
-### Stage 7.0 — protocol freeze
+### Stage 7.0 — protocol freeze — completed
 
 Freeze the carrier, record semantics, physical-admissibility requirements, arrow typing, covariance rules, controls, evidence taxonomy, interpretation guards, and exit criteria.
 
-### Stage 7A — spectator-memory constrained baseline
+### Stage 7A — spectator-memory constrained baseline — completed
 
 Add `M` without record coupling and verify the inherited physical subspace, reductions, supports, clock-change composition, and operational covariance with the spectator memory attached.
 
-Purpose: establish the least-invasive common `P + M` carrier and a strict no-record control.
+Result: the canonical spectator extension preserves the tested Stage 5 perspective atlas and gives a strict executable no-record baseline. See `stage7a_notes.md` and `../results/stage7a_spectator_memory.md`.
 
-### Stage 7B — reversible quantum record witness
+### Stage 7B — reversible quantum record witness — next
 
 Implement the minimal reversible record-writing construction on a declared support/physical subspace, declare the target variable and memory readout, and verify that record information appears only under the intended coupling.
 
@@ -418,6 +392,8 @@ Stage 7 is complete only when all applicable criteria are satisfied.
 8. spectator-memory clock-change maps satisfy the inherited inverse/composition tests;
 9. spectator memory alone does not create a positive record witness.
 
+Stage 7A satisfies criteria 6–9 in the declared canonical spectator family.
+
 ### Record witness
 
 10. at least one target variable and memory readout are explicit;
@@ -428,40 +404,34 @@ Stage 7 is complete only when all applicable criteria are satisfied.
 
 ### Reversal / controls
 
-15. reversibility of the declared record construction is tested;
-16. no-record and uncertain-memory controls are tested;
-17. orientation reversal is tested when a directional history witness exists;
-18. balanced orientation cancellation is tested when a directional history witness exists;
-19. no phenomenal/ontological conclusion is inferred from the record score.
+15. a no-record coupling control is run;
+16. an uncertain/mixed-memory control is run where applicable;
+17. an orientation reversal uses an explicit inverse/reversed construction rather than sign relabeling;
+18. a balanced forward/reverse control cancels the directional score where the score is defined.
 
 ### Cross-perspective transport
 
-20. a record-bearing physical construction is represented in at least two genuine physical clock perspectives;
-21. the cross-perspective event correspondence `chi` is explicit;
-22. corresponding record target and memory observables are explicit;
-23. at least one orientation-preserving record-covariance test succeeds or an explicit physical obstruction is documented;
-24. a deliberate wrong-observable or wrong-`chi` control is detected;
-25. the project does not infer temporal succession from the clock-change map itself.
+19. one common physical record-bearing construction is represented in at least two genuine clock perspectives;
+20. source and target record observables are explicitly corresponded and transported;
+21. event correspondence `chi` is explicit;
+22. record statistics/information agree under orientation-preserving transport where expected;
+23. orientation-reversing transport follows the predeclared sign/covariance rule where applicable;
+24. leaving the same bare observable untransported is tested as a negative control;
+25. wrong/misdeclared `chi` is tested where applicable.
 
 ### Accessibility / atlas
 
-26. global record existence and local memory accessibility are tested separately;
-27. at least one hidden/noisy access control is included;
-28. if a partial atlas is applicable, an indirect path is tested for record-statistic consistency;
-29. if alternate paths exist, path independence is tested;
-30. a deliberate perspective/path perturbation is detected when the partial-atlas test is applicable.
+26. global record representation is distinguished from local memory access;
+27. hidden/noisy memory access controls are tested;
+28. an indirect perspective path is tested if the Stage 7 positive model admits the partial-atlas construction;
+29. a perturbed path/local edge produces the expected localized inconsistency if applicable.
 
 ### Minimality / synthesis
 
-31. memory/record, perspective, and access ablations are represented separately;
-32. `lost`, `reconstructible`, `inaccessible`, `not_applicable`, and `not_established` remain distinct where applicable;
-33. Stage 7G states whether single-model evidence strengthens, reduces, breaks, or fails to decide the Stage 6 layered candidate;
-34. the strongest result is separated into finite-model evidence, structural interpretation, and unsupported metaphysical claims;
-35. Stage 8 is selected from the unresolved pressure tests;
-36. full repository regression passes on the final Stage 7 head and merge-readiness review finds no unresolved blocker.
-
-## 17. Strongest statement allowed at Stage 7.0
-
-At protocol freeze, the strongest permitted statement is:
-
-> Stage 6 justifies testing `P`, `O`, and `R` inside one constrained finite quantum construction. An explicit memory subsystem and reversible record-writing operation can be specified as candidate ingredients, but Stage 7.0 does not yet establish that directional records can be physically formed inside the multi-clock constrained model, that such records transform covariantly under genuine clock changes, or that the Stage 6 layered temporal candidate survives this stronger single-model test.
+30. memory/record/perspective/access ingredients are ablated or neutralized one at a time where applicable;
+31. `lost`, `reconstructible`, `inaccessible`, and `not_established` are distinguished;
+32. Stage 7G explicitly decides whether the Stage 6 layered candidate is strengthened, reduced, broken, or remains inconclusive;
+33. unresolved implications remain `not_established` unless a Stage 7 witness directly decides them;
+34. the Stage 8 gate is selected by discriminating power rather than inherited roadmap numbering;
+35. interpretation guards are preserved in the synthesis;
+36. final full regression and PR merge-readiness review have no unresolved blocker.

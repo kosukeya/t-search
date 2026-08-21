@@ -124,7 +124,10 @@ def test_perturbation_is_attached_to_one_declared_local_edge():
     assert assessment.map_residual > 1e-3
     assert assessment.state_residual > 1e-3
     assert assessment.metric_covariance_residual > 1e-3
-    assert assessment.max_observable_residual > 1e-3
+    # The chosen sector-scaling perturbation commutes with the tested record
+    # projector algebra.  Observable similarity transport therefore survives
+    # even though the map/state/metric/statistics no longer match the atlas.
+    assert assessment.max_observable_residual <= ATOL
     assert assessment.record_score_residual > 1e-4
     assert not assessment.consistent
 
@@ -150,7 +153,7 @@ def test_partial_atlas_diagnostic_localizes_failure_to_perturbed_path():
     assert diagnostic.perturbed_map_residual > 1e-3
     assert diagnostic.perturbed_state_residual > 1e-3
     assert diagnostic.perturbed_metric_residual > 1e-3
-    assert diagnostic.perturbed_observable_residual > 1e-3
+    assert diagnostic.perturbed_observable_residual <= ATOL
     assert diagnostic.perturbed_record_score_residual > 1e-4
     assert diagnostic.ideal_paths_consistent
     assert diagnostic.perturbation_detected
@@ -165,6 +168,7 @@ def test_stage7e_summary_preserves_typing_guards():
     assert "indirect reconstructibility != direct local edge availability" in guards
     assert "partial atlas path consistency != universal frame availability" in guards
     assert "localized path inconsistency != spacetime curvature" in guards
+    assert "observable-algebra correspondence != full state/metric path consistency" in guards
     assert "record covariance != P=R" in guards
     assert summary["canonical_missing_edge"] == "A/e1 -> B/e0"
     assert summary["perturbed_edge"] == "C/e1 -> B/e0"

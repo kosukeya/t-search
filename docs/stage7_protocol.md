@@ -1,6 +1,6 @@
 # Stage 7 Protocol — Quantum Records in a Constrained Multi-Clock Model
 
-Status: **Stage 7.0 protocol frozen; Stage 7A spectator-memory baseline and Stage 7B reversible record witness completed.**
+Status: **Stage 7.0 protocol frozen; Stage 7A, Stage 7B, and Stage 7C completed.**
 
 Stage 7 follows the Stage 6G evidence-selected gate. It does not begin with the older roadmap assumption that Stage 7 should immediately be a generally covariant / gravitational extension. The immediate pressure test is narrower and more discriminating:
 
@@ -91,7 +91,7 @@ so that:
 
 `H_tot^(0)=H_tot^(5) tensor I_M`.
 
-The corresponding spectator physical space is expected and now verified in Stage 7A to be:
+The corresponding spectator physical space is expected and verified in Stage 7A to be:
 
 `H_phys^(0)=H_phys^(5) tensor H_M`.
 
@@ -103,10 +103,25 @@ Stage 7A executable checkpoint:
 - `dim(H_phys^7A)=14`;
 - `dim(K_X^7A)=14` inside each 18-dimensional reduced ambient space;
 - all 54 distinct-clock state/observable comparisons and all 162 three-clock composition cases pass within tolerance;
-- 18 explicit target-memory no-record diagnostics remain within tolerance of zero;
-- full regression: `451 passed in 142.35s`.
+- 18 explicit target-memory no-record diagnostics remain within tolerance of zero.
 
-Stage 7B adds a target-specific reversible record witness on the A-clock support without changing the spectator constraint.  The canonical target is `Q=[B energy label == -1]`, the wrong-target control is `W=[C energy label == +1]`, and the memory readout is computational `Z_M`.  The intended write raises `I(Q;M)` from `0` to `1 bit`, while the identity/no-record control and wrong-target information remain zero within tolerance.  The write is reversible and lifts to an automorphism of the common Stage 7A physical subspace.  It does not yet define a directional score or an internally anchored history.
+Stage 7B adds a target-specific reversible record witness on the A-clock support without changing the spectator constraint. The canonical target is `Q=[B energy label == -1]`, the wrong-target control is `W=[C energy label == +1]`, and the memory readout is computational `Z_M`. The intended write raises `I(Q;M)` from `0` to `1 bit`, while the identity/no-record control and wrong-target information remain zero within tolerance. The write is reversible and lifts to an automorphism of the common Stage 7A physical subspace. It does not itself define a directional score or an internally anchored history.
+
+Stage 7C strengthens the construction by embedding a three-event A-clock-conditioned schedule into a modified constrained family. With cumulative rest-memory unitaries `V_j`, define
+
+`W_hist = sum_j |t_j><t_j|_A tensor V_j`
+
+and
+
+`H_hist = W_hist H_tot^(0) W_hist^dagger`.
+
+For the canonical forward family:
+
+- `V_0=I`;
+- `V_1=U_rec`;
+- `V_2=U_scr U_rec`.
+
+The nuisance-controlled scrambler implements `X -> X XOR N`, with `X=1 iff B=-1` and `N=1 iff C=+1` on the balanced four-pair source sector. Because the constraint is modified, Stage 7C re-derives the physical basis, A-clock reductions/reconstructions, and same-clock transitions from `H_hist` instead of reusing inherited interacting maps.
 
 ## 5. Record semantics
 
@@ -138,7 +153,7 @@ On a declared reduced support, a minimal reversible record-writing gate may take
 
 for a binary projector `Q`.
 
-Stage 7B implements this construction explicitly on the canonical A-clock qutrit support.  The support-coordinate gate is unitary and involutory, its ambient completion is unitary and support preserving, and applying the write twice recovers the source state.
+Stage 7B implements this construction explicitly on the canonical A-clock qutrit support. The support-coordinate gate is unitary and involutory, its ambient completion is unitary and support preserving, and applying the write twice recovers the source state.
 
 This is a useful correlation witness and negative-control substrate.
 
@@ -164,24 +179,26 @@ Frozen guard:
 
 A genuine claim of record **formation along a modeled relational history** requires more than applying a gate in Python order.
 
-An admissible Stage 7 construction must encode the interaction inside the model, for example by:
+Stage 7C implements the internally anchored finite construction
 
-- a relationally anchored interaction in a modified constraint; or
-- another explicit constrained propagation construction whose event anchor is internal to the model.
+`W_hist = sum_j |t_j><t_j|_A tensor V_j`
 
-If a modified constraint is used:
+and
 
-`H_tot^(rec)=H_tot^(0)+H_int`,
+`H_hist = W_hist H_tot^(0) W_hist^dagger`.
 
-then Stage 5 physical spaces, reductions, supports, and clock-change maps are invalidated until recomputed for `H_tot^(rec)`.
+The event anchors are the orthogonal A-clock reading projectors inside the constrained model. The code verifies that `W_hist` applies the declared `V_j` at each internal clock reading.
+
+The modified physical basis is re-derived as `W_hist B_0` and independently checked against the numerical kernel of `H_hist`. A-clock reduction-coordinate maps, reconstructions, and relational transitions are re-derived from the modified physical space and satisfy the declared isometry/round-trip/direct-conditioning checks.
+
+This establishes an internally clock-anchored constrained-history witness in the declared finite family. Because `H_hist` is related to the spectator constraint by a clock-conditioned unitary conjugation, it is **not** presented as a unique autonomous interaction Hamiltonian.
 
 Frozen guards:
 
 - `simulation/intervention order != modeled temporal order`;
 - `support-local gate != autonomous constrained dynamics`;
-- `old Stage 5 map formula != valid interacting Stage 7 map unless re-derived`.
-
-Stage 7 may discover that the least-invasive interaction family cannot simultaneously support directional records and the previous ideal perspective atlas. That outcome is a valid pressure-test result, not an implementation failure to hide.
+- `old Stage 5 map formula != valid interacting Stage 7 map unless re-derived`;
+- `clock-conditioned conjugated constraint != unique autonomous interaction Hamiltonian`.
 
 ## 7. Event and history typing
 
@@ -193,7 +210,23 @@ Stage 7 inherits the Stage 6 distinction between:
 
 Equal numeric clock labels do not identify events across perspectives.
 
-A record profile transported from `p` to `q` must declare:
+Stage 7C declares the internally A-clock-anchored history events
+
+`e0 < e1 < e2`
+
+with current event `e1`.
+
+The signed record-information diagnostic is
+
+`A_R = I(M_e1;Q_e0) - I(M_e1;Q_e2)`
+
+and the independent accessibility diagnostic is
+
+`A_acc = Acc(Q_e0|M_e1) - Acc(Q_e2|M_e1)`.
+
+Following the Stage 3 conservative criterion, a record-defined orientation is accepted only when both diagnostics are nonzero and select the same neutral side. Positive values are called `lower-index`, negative values `upper-index`, and zero/disagreement `none`.
+
+A record profile transported from one physical clock perspective `p` to another `q` in later substages must additionally declare:
 
 - which source event corresponds to which target event;
 - whether the correspondence preserves or reverses the modeled history orientation;
@@ -208,9 +241,9 @@ In the spectator-memory baseline the candidate map is:
 
 `S^M_{q<-p}=S_{q<-p} tensor I_M`.
 
-Stage 7A has verified this identity extension and its state/Born/composition consequences in the canonical spectator family. It is still only a no-record baseline.
+Stage 7A verified this identity extension and its state/Born/composition consequences in the canonical spectator family. It is only a no-record baseline.
 
-For an interacting model, the actual map must be re-derived from the common physical space.
+Stage 7C changes the constrained construction. Therefore the Stage 7A spectator identity-extension formula is not assumed to remain valid for the record-bearing family. The actual interacting reductions, supports, and cross-clock maps must be re-derived from the common modified physical space in Stage 7D.
 
 A corresponding record observable is transported schematically by:
 
@@ -226,13 +259,13 @@ Frozen guard:
 
 ## 9. Accessibility
 
-Stage 7 retains the three-way distinction:
+Stage 7 retains the three-way distinction between:
 
 1. globally represented record structure;
 2. reconstructible record structure given theory plus admissible perspectives;
 3. locally accessible record information through a declared interface.
 
-The memory subsystem may be globally present while a local perspective is denied direct access to its readout algebra.
+The memory subsystem may be globally present while a local perspective is denied access to its readout algebra.
 
 Required controls include where feasible:
 
@@ -261,9 +294,24 @@ Stage 7 must include at least the following controls when the relevant construct
 - perturbed perspective edge/path where covariance should fail locally;
 - constraint-violating candidate interaction/state rejected from the physical API.
 
-Stage 7B has run the explicit identity/no-record and independently balanced wrong-target controls.  The uncertain-memory, reversal, and balanced-orientation controls remain for Stage 7C because Stage 7B intentionally defines no directional history score.
+Stage 7B ran the explicit identity/no-record and independently balanced wrong-target controls.
 
-A control may be classified `not_applicable` if the relevant positive construction was not achieved, but it may not be silently omitted.
+Stage 7C adds:
+
+- an internally anchored no-record history retaining event order and nuisance scrambling;
+- a maximally mixed-memory control represented by an equal mixture of the `|0>` and `|1>` physical-history preparations under the same forward modified constraint;
+- a separately constructed reversed cumulative schedule starting from the forward final event state;
+- an equal forward/reverse **meta-ensemble**, with joint distributions mixed before evaluating the nonlinear information diagnostic.
+
+Executable results in the declared canonical family are:
+
+- forward: `A_R=+1`, `A_acc=+1/2`, `lower-index`;
+- reversed: `A_R=-1`, `A_acc=-1/2`, `upper-index`;
+- balanced: both signed scores zero;
+- no-record: both signed scores zero;
+- uncertain-memory: both signed scores zero.
+
+The balanced control is explicitly a meta-ensemble across the two declared constrained-history families, not one pure state under one constraint.
 
 ## 11. Evidence taxonomy
 
@@ -292,21 +340,19 @@ Result: the canonical spectator extension preserves the tested Stage 5 perspecti
 
 Implement the minimal reversible record-writing construction on a declared support/physical subspace, declare the target variable and memory readout, and verify that record information appears only under the intended coupling.
 
-Result: the canonical A-clock witness records one bit about `Q=[B energy label == -1]`, leaves the independently balanced wrong target `W=[C energy label == +1]` at zero mutual information, is exactly reversible, and lifts to a physical-subspace automorphism.  No directional score is defined.  See `stage7b_notes.md` and `../results/stage7b_reversible_record.md`.
+Result: the canonical A-clock witness records one bit about `Q=[B energy label == -1]`, leaves the independently balanced wrong target `W=[C energy label == +1]` at zero mutual information, is exactly reversible, and lifts to a physical-subspace automorphism. No directional score is defined at this level. See `stage7b_notes.md` and `../results/stage7b_reversible_record.md`.
 
-Purpose: distinguish `memory present` from `record present` and `entangled` from `records Q`.
+### Stage 7C — relational record formation and orientation controls — completed
 
-### Stage 7C — relational record formation and orientation controls — next
+Construct an internally anchored record-bearing constrained history and test the predeclared forward, reversed, balanced, no-record, and uncertain-memory controls.
 
-Construct an internally anchored record-forming history/constraint if physically admissible, then test forward, reversed, balanced, no-record, and uncertain-memory controls.
+Result: in the declared A-clock-anchored qutrit family, the forward history gives `A_R=+1` and `A_acc=+1/2`; the explicit reversed history gives the opposite signs; balanced, no-record, and maximally mixed-memory controls cancel the signed diagnostics. The modified physical space and A-clock maps are re-derived and independently validated. See `stage7c_notes.md` and `../results/stage7c_relational_history.md`.
 
-A directional `A_R` is not required to be nonzero by fiat. If no admissible construction produces a directional profile, report that result.
+### Stage 7D — genuine clock-change record transport — next
 
-### Stage 7D — genuine clock-change record transport
+Reduce one common physical record-bearing construction into multiple genuine physical clock perspectives. Re-derive the interacting per-clock reductions/supports/maps, transport corresponding state/record observables, declare `chi`, and test record covariance including orientation-preserving/reversing cases where applicable.
 
-Reduce one common physical record-bearing state/process into multiple clock perspectives, transport corresponding state/record observables, declare `chi`, and test record covariance including orientation-preserving/reversing cases where applicable.
-
-This is the central `P-R` pressure test.
+This is the central `P-R` pressure test. The Stage 7A spectator identity-extension formula must not be assumed for the modified constraint.
 
 ### Stage 7E — accessibility and partial-atlas record consistency
 
@@ -360,6 +406,9 @@ Stage 7 inherits all prior guards and adds:
 - `physical-subspace automorphism != time-localized interaction`;
 - `simulation/intervention order != modeled temporal order`;
 - `constraint preservation != nontrivial record formation`;
+- `clock-conditioned conjugated constraint != unique autonomous interaction Hamiltonian`;
+- `modeled history reversal != fundamental time-reversal symmetry`;
+- `balanced forward/reverse meta-ensemble != one pure physical state under one constraint`;
 - `success with ideal finite clocks != general covariance`;
 - `failure of one record interaction family != universal impossibility of quantum records`;
 - `failure of the inherited Stage 5 map after interaction != physical inconsistency until the interacting reductions are re-derived`;
@@ -412,7 +461,7 @@ Stage 7A satisfies criteria 6–9 in the declared canonical spectator family.
 13. wrong-target and/or no-record controls distinguish generic correlation from the intended record semantics;
 14. any claimed directional score is attached to an explicit internally modeled history/event structure.
 
-Stage 7B satisfies criteria 10–13 in the declared canonical witness. Criterion 14 is not yet activated because Stage 7B deliberately defines no directional score; Stage 7C must supply an internally modeled history before any such score is interpreted.
+Stage 7B satisfies criteria 10–13. Stage 7C satisfies criterion 14 by attaching the signed diagnostics to the explicit internally A-clock-anchored `e0<e1<e2` constrained history.
 
 ### Reversal / controls
 
@@ -421,7 +470,7 @@ Stage 7B satisfies criteria 10–13 in the declared canonical witness. Criterion
 17. an orientation reversal uses an explicit inverse/reversed construction rather than sign relabeling;
 18. a balanced forward/reverse control cancels the directional score where the score is defined.
 
-Stage 7B already satisfies criterion 15 through the explicit identity/no-record control. Criteria 16–18 remain for Stage 7C where directional history structure is introduced.
+Stage 7B already satisfies criterion 15 through the identity/no-record witness. Stage 7C additionally satisfies criteria 15–18 in the relational-history family: the internally anchored no-record history cancels, the maximally mixed-memory control cancels, the separately constructed reversed schedule flips the signed diagnostics, and the equal forward/reverse meta-ensemble cancels them.
 
 ### Cross-perspective transport
 
@@ -432,6 +481,8 @@ Stage 7B already satisfies criterion 15 through the explicit identity/no-record 
 23. orientation-reversing transport follows the predeclared sign/covariance rule where applicable;
 24. leaving the same bare observable untransported is tested as a negative control;
 25. wrong/misdeclared `chi` is tested where applicable.
+
+Criteria 19–25 remain for Stage 7D.
 
 ### Accessibility / atlas
 

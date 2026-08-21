@@ -3,17 +3,17 @@
 Stage 8A--F integrated executable quantum continuations V into the constrained
 P/O/R construction, typed selected-vs-unselected semantics, tested operational
 underdetermination and genuine clock transport, and then ablated the resulting
-roles.  Stage 8G synthesizes those executable diagnostics without upgrading a
+roles. Stage 8G synthesizes those executable diagnostics without upgrading a
 finite-model result into a metaphysical claim.
 
 The synthesis keeps the top-level candidate T=(O,P,R,V;Xi), but asks whether R
-and V should be refined internally.  The current evidence supports the typed
+and V should be refined internally. The current evidence supports the typed
 refinements
 
     R = (R_content, R_direction, R_access)
     V = (V_extension, V_semantics, V_weights)
 
-as a candidate bookkeeping structure.  These component labels describe roles
+as a candidate bookkeeping structure. These component labels describe roles
 that showed different compatibility/ablation behavior; they are not asserted to
 be fundamental primitives.
 """
@@ -27,13 +27,12 @@ from typing import Any
 
 from .stage5_clock_change import DEFAULT_ATOL
 from .stage8_ablation import (
-    RoleStatus,
+    mismatch_diagnostics,
     no_record_v_family_diagnostics,
     perspective_map_reconstruction_diagnostics,
     semantic_weight_reconstruction_diagnostics,
     singleton_qext_diagnostics,
     stage8f_ablation_matrix,
-    stage8f_mismatch_matrix,
 )
 from .stage8_compatibility import stage8e_compatibility_diagnostics
 from .stage8_continuations import stage8a_substrate_diagnostics
@@ -139,7 +138,7 @@ def evidence_snapshot() -> Stage8EvidenceSnapshot:
         semantic_weight=semantic_weight_reconstruction_diagnostics(),
         p_map_reconstruction=perspective_map_reconstruction_diagnostics(),
         ablation_matrix=stage8f_ablation_matrix(),
-        mismatch_matrix=stage8f_mismatch_matrix(),
+        mismatch_matrix=mismatch_diagnostics(),
     )
 
 

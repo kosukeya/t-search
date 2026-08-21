@@ -111,7 +111,7 @@ After Stage 8B protocol/concepts/README/roadmap/documentation-audit synchronizat
 
 on head `fec4ea14bb583a64b770e5ff01c71ae681e2d79a` / PR merge-ref `0526a229543006ed4b1f20bb51bfa309af55b87c`.
 
-The checkpoint-recording commits only update documentation/checkpoint text. A final full regression on the resulting PR head is used as the software-close check and is reported in the PR/final Stage 8B summary.
+Subsequent checkpoint-recording commits only update documentation/checkpoint text; the latest PR-head regression is the software-close check reported in the PR and final Stage 8B summary.
 
 ## Exit criteria
 

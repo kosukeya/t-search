@@ -65,7 +65,7 @@ A nontrivial refinement also appears: the two continuations share the A/e1 norma
 
 The stronger transport of the full Stage 8C cross-continuation future-signature measurement family remains **`not_established`**; this is not a negative result about class-level `P-V` covariance.
 
-Stage 8.0 did not historically assign exact meanings to criteria 30–50. In the current execution ledger, Stage 8D closes criteria **30–35** and leaves criteria 36–50 for Stage 8E–G.
+Stage 8.0 did not historically assign exact meanings to criteria 30–50. In the current execution ledger, Stage 8D closes criteria 30–35 and leaves criteria 36–50 for Stage 8E–G.
 
 Scientific regression including renaming, perspective-relative pure-ray, and transported weight-mismatch controls: **`634 passed in 131.34s`**.
 

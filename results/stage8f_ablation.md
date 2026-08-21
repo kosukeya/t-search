@@ -1,6 +1,6 @@
 # Stage 8F Results — Ablation / Reconstruction / Mismatch Matrix
 
-Status: **completed for the declared finite Stage 8 continuation family, pending final documentation-synchronized regression.**
+Status: **completed for the declared finite Stage 8 continuation family.**
 
 ## Status vocabulary
 
@@ -141,7 +141,15 @@ implementation head `123b552f91ab42c8d33465a8ef48978adc46839c`
 
 PR merge-ref `ecaadaac42cdec1d091b3e521bc07335ac4236e0`
 
-A final documentation-synchronized regression follows.
+Documentation-synchronized regression, workflow run #884:
+
+**`663 passed in 260.98s`**
+
+head `847fce675ee1aca6af097a44a74c54464aecdc05`
+
+PR merge-ref `b9be2b9040c0ca0ce369b5c746b93d3a12a9725c`
+
+The Node.js 20 deprecation remains a workflow-only warning.
 
 ## Strongest bounded statement
 

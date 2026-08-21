@@ -43,32 +43,36 @@ def test_stage8_randomness_and_integration_guards_remain_explicit() -> None:
 def test_stage8_current_sequence_and_stage80_historical_checkpoint_agree() -> None:
     protocol = _read("docs/stage8_protocol.md")
     checkpoint = _read("results/stage8_0_protocol_freeze.md")
-    for stage in ("8A", "8B", "8C", "8D", "8E"):
+    for stage in ("8A", "8B", "8C", "8D", "8E", "8F"):
         assert f"Stage {stage}" in protocol and "completed" in protocol
-    assert "Stage 8F — ablation / reconstruction / mismatch matrix — next" in protocol
+    assert "Stage 8G — synthesis and evidence-selected next gate — next" in protocol
+    # Stage 8.0 remains an immutable historical checkpoint.
     assert "Stage 8A — common quantum-extension substrate — next" in checkpoint
 
 
-def test_stage8_exit_criteria_advance_only_through_stage8e() -> None:
+def test_stage8_exit_criteria_advance_only_through_stage8f() -> None:
     protocol = _read("docs/stage8_protocol.md")
     stage8a = _read("results/stage8a_quantum_extensions.md")
     stage8b = _read("results/stage8b_typed_modal_models.md")
     stage8c = _read("results/stage8c_operational_update.md")
     stage8d = _read("results/stage8d_modal_transport.md")
     stage8e = _read("results/stage8e_compatibility.md")
+    stage8f = _read("results/stage8f_ablation.md")
 
     assert "Stage 8A satisfies criteria 11–16" in protocol
     assert "Stage 8B satisfies criteria 17–21" in protocol
     assert "Stage 8C satisfies criteria 22–29" in protocol
     assert "Stage 8D closes criteria **30–35**" in protocol
     assert "Stage 8E closes criteria **36–41**" in protocol
-    assert "criteria 42–50: Stage 8F–G pending" in protocol
+    assert "Stage 8F closes criteria **42–47**" in protocol
+    assert "criteria 48–50: Stage 8G pending" in protocol
     assert "criteria **11–16**" in stage8a
     assert "criteria **17–21**" in stage8b
     assert "criteria **22–29**" in stage8c
     assert "criteria **30–35**" in stage8d
     assert "criteria **36–41**" in stage8e
-    assert "Criteria **42–50** remain Stage 8F–G work" in stage8e
+    assert "criteria **42–47**" in stage8f
+    assert "Criteria **48–50** remain Stage 8G work" in stage8f
 
 
 def test_stage8a_checkpoint_has_real_qext_not_only_labels() -> None:
@@ -137,21 +141,44 @@ def test_stage8e_checkpoint_records_compatibility_and_underdetermination() -> No
         assert "P/O/current-R=>V semantics" in text
         assert "full P/O/directional-R/V" in text
         assert "covariance of a wrongly typed observable != semantic correctness" in text
-        assert "Stage 8F" in text
     assert "650 passed / 1 failed" in results
-    assert "directional record score = 0" in notes
+    assert "record score = 0" in notes
     assert "record score `+1`" in notes
 
 
-def test_stage8e_planning_documents_point_to_stage8f_next() -> None:
+def test_stage8f_checkpoint_records_ablation_reconstruction_and_mismatch_results() -> None:
+    protocol = _read("docs/stage8_protocol.md")
+    notes = _read("docs/stage8f_notes.md")
+    results = _read("results/stage8f_ablation.md")
+    for text in (protocol, notes, results):
+        assert "record-neutral" in text.lower()
+        assert "reconstructible" in text
+        assert "underdetermined" in text
+        assert "inaccessible" in text
+        assert "lost" in text
+        assert "not_established" in text
+        assert "108" in text
+        assert "record-neutral V witness != universal R-V independence theorem" in text
+        assert "P-V map reconstruction != P=V" in text
+        assert "full Stage 8C measurement covariance" in text
+    assert "record coupling neutralized" in results
+    assert "QExt collapsed to singleton" in results
+    assert "weights unfixed" in results
+    assert "event/class correspondence removed" in results
+    assert "current record access hidden" in results
+    assert "662 passed in 139.81s" in results
+
+
+def test_stage8f_planning_documents_point_to_stage8g_next() -> None:
     readme = _read("README.md")
     roadmap = _read("docs/roadmap.md")
     concepts = _read("docs/stage8_concepts.md")
-    for text in (readme, roadmap, concepts):
-        assert "Stage 8E" in text and "completed" in text
-        assert "Stage 8F" in text and "next" in text
-        assert "36–41" in text
-        assert "42–50" in text
+    protocol = _read("docs/stage8_protocol.md")
+    for text in (readme, roadmap, concepts, protocol):
+        assert "Stage 8F" in text and "completed" in text
+        assert "Stage 8G" in text and "next" in text
+        assert "42–47" in text
+        assert "48–50" in text
 
 
 def test_roadmap_keeps_selected_stage8_and_deferred_stage9_gravity() -> None:

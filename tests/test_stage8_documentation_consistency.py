@@ -43,14 +43,13 @@ def test_stage8_randomness_and_integration_guards_remain_explicit() -> None:
 def test_stage8_current_sequence_and_stage80_historical_checkpoint_agree() -> None:
     protocol = _read("docs/stage8_protocol.md")
     checkpoint = _read("results/stage8_0_protocol_freeze.md")
-    for stage in ("8A", "8B", "8C", "8D", "8E", "8F"):
+    for stage in ("8A", "8B", "8C", "8D", "8E", "8F", "8G"):
         assert f"Stage {stage}" in protocol and "completed" in protocol
-    assert "Stage 8G — synthesis and evidence-selected next gate — next" in protocol
-    # Stage 8.0 remains an immutable historical checkpoint.
+    assert "Stage 9 — directional records with nontrivial quantum Potentiality — selected next gate" in protocol
     assert "Stage 8A — common quantum-extension substrate — next" in checkpoint
 
 
-def test_stage8_exit_criteria_advance_only_through_stage8f() -> None:
+def test_stage8_exit_criteria_advance_through_stage8g_but_keep_50_external() -> None:
     protocol = _read("docs/stage8_protocol.md")
     stage8a = _read("results/stage8a_quantum_extensions.md")
     stage8b = _read("results/stage8b_typed_modal_models.md")
@@ -58,6 +57,7 @@ def test_stage8_exit_criteria_advance_only_through_stage8f() -> None:
     stage8d = _read("results/stage8d_modal_transport.md")
     stage8e = _read("results/stage8e_compatibility.md")
     stage8f = _read("results/stage8f_ablation.md")
+    stage8g = _read("results/stage8g_synthesis_stage9_gate.md")
 
     assert "Stage 8A satisfies criteria 11–16" in protocol
     assert "Stage 8B satisfies criteria 17–21" in protocol
@@ -65,14 +65,16 @@ def test_stage8_exit_criteria_advance_only_through_stage8f() -> None:
     assert "Stage 8D closes criteria **30–35**" in protocol
     assert "Stage 8E closes criteria **36–41**" in protocol
     assert "Stage 8F closes criteria **42–47**" in protocol
-    assert "criteria 48–50: Stage 8G pending" in protocol
+    assert "Stage 8G closes criteria **48–49**" in protocol
+    assert "Criterion **50** is external" in protocol
     assert "criteria **11–16**" in stage8a
     assert "criteria **17–21**" in stage8b
     assert "criteria **22–29**" in stage8c
     assert "criteria **30–35**" in stage8d
     assert "criteria **36–41**" in stage8e
     assert "criteria **42–47**" in stage8f
-    assert "Criteria **48–50** remain Stage 8G work" in stage8f
+    assert "Criteria 48–49" in stage8g
+    assert "Criterion 50 is external" in stage8g
 
 
 def test_stage8a_checkpoint_has_real_qext_not_only_labels() -> None:
@@ -169,21 +171,41 @@ def test_stage8f_checkpoint_records_ablation_reconstruction_and_mismatch_results
     assert "662 passed in 139.81s" in results
 
 
-def test_stage8f_planning_documents_point_to_stage8g_next() -> None:
+def test_stage8g_checkpoint_records_refined_candidate_and_unique_stage9_gate() -> None:
+    protocol = _read("docs/stage8_protocol.md")
+    notes = _read("docs/stage8g_notes.md")
+    results = _read("results/stage8g_synthesis_stage9_gate.md")
+    for text in (protocol, notes, results):
+        assert "refined_layered" in text
+        assert "R=(R_content,R_direction,R_access)" in text
+        assert "V=(V_extension,V_semantics,V_weights)" in text
+        assert "directional_record_potentiality" in text
+        assert "full_measurement_covariance" in text
+        assert "parametrized_covariance_precursor" in text
+        assert "directional record" in text.lower()
+        assert "ontological future openness" in text
+    assert "score 9" in results
+    assert "score 6" in results
+    assert "selected as the next finite-model gate" in results.lower() or "Selected Stage 9 gate" in results
+
+
+def test_stage8g_planning_documents_point_to_stage9_and_defer_gravity() -> None:
     readme = _read("README.md")
     roadmap = _read("docs/roadmap.md")
     concepts = _read("docs/stage8_concepts.md")
     protocol = _read("docs/stage8_protocol.md")
     for text in (readme, roadmap, concepts, protocol):
-        assert "Stage 8F" in text and "completed" in text
-        assert "Stage 8G" in text and "next" in text
-        assert "42–47" in text
-        assert "48–50" in text
+        assert "Stage 8G" in text
+        assert "48–49" in text
+        assert "50" in text
+        assert "directional" in text.lower()
+    assert "## Stage 9 — Directional records with nontrivial quantum Potentiality — selected next gate" in roadmap
+    assert "## Stage 10 — Generally covariant / gravitational extension — deferred gate" in roadmap
+    assert "Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9" in roadmap
 
 
-def test_roadmap_keeps_selected_stage8_and_deferred_stage9_gravity() -> None:
+def test_roadmap_keeps_stage7_historical_deferral_and_stage8_selected_gate() -> None:
     roadmap = _read("docs/roadmap.md")
     assert "## Stage 8 — Quantum Potentiality inside the shared constrained construction" in roadmap
-    assert "## Stage 9 — Generally covariant / gravitational extension — deferred gate" in roadmap
     assert "Potentiality != quantum randomness by definition" in roadmap
     assert "Earlier roadmap versions assigned Stage 7 directly" in roadmap

@@ -156,6 +156,18 @@ Guard:
 
 `internal order != ontic openness`.
 
+## Quantum-randomness guards
+
+Stage 8 does not define V through generic quantum uncertainty.
+
+Guards:
+
+`Potentiality != quantum randomness by definition`.
+
+`Potentiality != superposition by definition`.
+
+`Potentiality != Born probability by definition`.
+
 ## Superposition control
 
 A coherent superposition over branch/continuation labels may be used as a physical control but is not, by itself, an `OPot_Q` witness.

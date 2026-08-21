@@ -1,6 +1,6 @@
 # Stage 7 Concepts — Quantum Record / Perspective Vocabulary
 
-Status: **frozen at Stage 7.0 and extended through Stage 7F; provisional at the project level**.
+Status: **frozen at Stage 7.0 and extended through Stage 7G; provisional at the project level**.
 
 This note fixes the vocabulary needed to place physical clock perspectives and quantum record structure inside one constrained model without identifying distinct roles by notation.
 
@@ -236,18 +236,65 @@ Stage 7 distinguishes:
 3. internally anchored record-bearing modified constraint;
 4. re-derived interacting multi-clock metric atlas;
 5. local access channels and partial-atlas reconstruction;
-6. ablation / reconstruction / mismatch classification.
+6. ablation / reconstruction / mismatch classification;
+7. synthesis and evidence-selected gate ranking.
 
 A result at a lower level is not silently promoted to a stronger level.
 
-## 25. Relationship to the Stage 6 layered candidate
+## 25. Strengthened layered core
 
-Stage 7 does not assume the Stage 6 candidate is correct.
+A **strengthened layered core** is the Stage 7G synthesis classification for the P/O/R portion of the Stage 6 candidate.
 
-The hypothesis under pressure is:
+It requires both:
 
-`P`, `O`, and `R` remain distinct represented roles in one finite constrained quantum construction and are connected by nontrivial `Xi` compatibility conditions.
+- positive compatibility in one common construction, especially `Xi_PR`; and
+- a separating countermodel/ablation where retained P plus internal O do not reconstruct R.
 
-Stage 7F strengthens the functional separation of `R`: a no-record family retains tested P plus internal O while R disappears. At the same time, Stage 7F refines `P` by showing that explicit edge matrices are reconstructible from retained lower-level perspective data.
+Stage 7G therefore uses `strengthened` rather than `reduced`, `broken`, or `inconclusive`.
 
-Stage 7G must decide whether these results strengthen, reduce, break, or leave inconclusive the Stage 6 layered candidate.
+This is a structural classification inside the declared finite-model family:
+
+`strengthened finite-model candidate != fundamental ontology`.
+
+## 26. Derived representation inside P
+
+Stage 7 does not treat every piece of a retained layer as equally primitive.
+
+The explicit cross-clock edge matrices are reconstructed from the common physical carrier and the per-perspective reduction data. Therefore one can simultaneously say:
+
+- P remains a separate represented role;
+- explicit P edge matrices are derived in the current implementation.
+
+`derived edge representation != derived/redundant perspective layer`.
+
+## 27. Unintegrated V
+
+`V` denotes the Stage 2/6 Potentiality / extension-semantics layer.
+
+After Stage 7, V is the only explicit Stage 6 layer not yet integrated into the shared constrained quantum construction. Stage 6E supports typed P-V extension transport, but Stage 7 does not identify V with:
+
+- Born probability;
+- quantum randomness;
+- superposition;
+- sampling;
+- measurement outcome selection;
+- ignorance about an already selected history.
+
+Stage 8 must preserve the distinction between epistemic selected-history uncertainty and ontic no-selected-future extension structure unless an executable witness collapses that distinction.
+
+`Potentiality != quantum randomness by definition`.
+
+## 28. Relationship to the Stage 6 layered candidate
+
+The project-level candidate remains provisionally:
+
+`T_candidate=(O,P,R,V;Xi)`.
+
+After Stage 7 the evidence is asymmetric:
+
+- P/O/R and especially `Xi_PR` are strengthened by single-model constrained-quantum evidence;
+- explicit edge matrices inside P are reconstructible;
+- V remains explicit but separately modeled;
+- the tested Omega role remains derived in the Stage 5/6 operator interface.
+
+Stage 7G selects V integration as the next evidence gate because it is the cleanest remaining model-separation weakness.

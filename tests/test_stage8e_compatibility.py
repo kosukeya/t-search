@@ -19,9 +19,17 @@ from t_search.stage8_continuations import (
 
 ATOL = 1e-9
 
+# Stage 8E diagnostics traverse continuation-specific A/B/C atlases and are
+# intentionally exhaustive.  Compute the canonical result once for this module
+# rather than repeating the same pure diagnostics in every assertion-focused
+# test.
+DIAGNOSTICS = stage8e_compatibility_diagnostics()
+MATRIX = {entry.relation: entry.status for entry in stage8e_compatibility_matrix()}
+SUMMARY = stage8e_summary()
+
 
 def test_stage8e_p_o_event_effect_family_is_covariant_in_continuation_aware_atlas():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.p_o_event_effect_covariance is True
     assert diagnostics.max_p_o_operator_transport_residual <= ATOL
     assert diagnostics.max_p_o_probability_residual <= ATOL
@@ -30,7 +38,7 @@ def test_stage8e_p_o_event_effect_family_is_covariant_in_continuation_aware_atla
 
 
 def test_stage8e_p_r_current_record_statistics_are_covariant_with_corresponding_observables():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.p_r_current_record_covariance is True
     assert diagnostics.max_current_record_joint_residual <= ATOL
     assert diagnostics.max_current_record_information_residual <= ATOL
@@ -56,14 +64,14 @@ def test_stage8e_canonical_v_classes_keep_one_bit_current_target_record(continua
 
 
 def test_stage8e_wrong_target_and_bare_observable_controls_prevent_fake_p_r_covariance():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.max_wrong_target_information <= ATOL
     assert diagnostics.bare_record_metric_self_adjoint_residual > ATOL
     assert diagnostics.bare_record_observable_rejected is True
 
 
 def test_stage8e_o_v_alternatives_first_differ_only_after_current_anchor():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.o_v_first_difference_event == UPPER_EVENT
     assert diagnostics.o_v_first_difference_event > CURRENT_EVENT
     assert diagnostics.o_v_difference_after_current_anchor is True
@@ -84,7 +92,7 @@ def test_stage8e_current_prefix_control_still_rejects_changed_actuality():
 
 
 def test_stage8e_physically_distinct_v_classes_share_the_same_current_record():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.current_record_shared_across_v_classes is True
     assert diagnostics.current_record_class_joint_residual <= ATOL
     assert diagnostics.distinct_v_classes_with_same_current_record is True
@@ -104,12 +112,11 @@ def test_stage8e_canonical_record_neutral_v_family_has_no_directional_record_arr
         assert profile.current_record_present is True
         assert profile.directional_record_defined is False
 
-    diagnostics = stage8e_compatibility_diagnostics()
-    assert diagnostics.baseline_directional_r_absent is True
+    assert DIAGNOSTICS.baseline_directional_r_absent is True
 
 
 def test_stage8e_same_order_and_current_state_do_not_force_directional_r():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.record_scramble_control_current_state_residual <= ATOL
     assert diagnostics.record_scramble_control_record_score == pytest.approx(1.0, abs=ATOL)
     assert diagnostics.record_scramble_control_directional_r_present is True
@@ -117,13 +124,13 @@ def test_stage8e_same_order_and_current_state_do_not_force_directional_r():
 
 
 def test_stage8e_p_v_class_weight_covariance_survives_integrated_compatibility_check():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.p_v_class_weight_covariance is True
     assert diagnostics.matched_public_modal_views_all_nodes is True
 
 
 def test_stage8e_same_p_o_current_r_carrier_remains_modally_underdetermined():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.privileged_modal_structures_distinct is True
     assert diagnostics.same_por_carrier_distinct_v_semantics is True
     assert diagnostics.transported_weight_mismatch_density_residual > ATOL
@@ -131,13 +138,13 @@ def test_stage8e_same_p_o_current_r_carrier_remains_modally_underdetermined():
 
 
 def test_stage8e_does_not_overclaim_full_directional_porv_or_measurement_covariance():
-    diagnostics = stage8e_compatibility_diagnostics()
+    diagnostics = DIAGNOSTICS
     assert diagnostics.full_stage8c_measurement_covariance_established is False
     assert diagnostics.full_directional_porv_integration_established is False
 
 
 def test_stage8e_compatibility_matrix_keeps_positive_underdetermined_and_partial_rows_distinct():
-    matrix = {entry.relation: entry.status for entry in stage8e_compatibility_matrix()}
+    matrix = MATRIX
     assert matrix["P-O(event effects)"] == "compatible"
     assert matrix["P-R(current record)"] == "compatible"
     assert matrix["P-V(class/weights)"] == "compatible"
@@ -149,7 +156,7 @@ def test_stage8e_compatibility_matrix_keeps_positive_underdetermined_and_partial
 
 
 def test_stage8e_summary_closes_current_execution_criteria_36_to_41_only():
-    summary = stage8e_summary()
+    summary = SUMMARY
     assert tuple(summary["current_execution_criteria"].keys()) == (
         "36",
         "37",

@@ -113,6 +113,8 @@ Accordingly:
 
 This is intentionally not reported as false. Continuation-level physical covariance and class/weight `P-V` covariance are both positive while the stronger measurement-family claim remains open.
 
+`P-V covariance != P=V`.
+
 ## Exit-criteria ledger
 
 Stage 8.0 originally recorded only that criteria 30–50 remained future work; it did not freeze their detailed substage allocation. In the current execution ledger, Stage 8D closes criteria **30–35**:

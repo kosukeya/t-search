@@ -82,22 +82,24 @@ The canonical finite family declares:
 
 Stage 8A satisfies Stage 8 criteria **11–16** in this canonical family.
 
-Criteria 17–50 remain future scientific work.
+Criteria 17–50 were future scientific work at the Stage 8A checkpoint; Stage 8B subsequently addresses criteria 17–21.
 
 ## Validation
 
-Stage 8A adds 13 focused scientific tests. The Stage 8 documentation-consistency suite is also advanced to audit the Stage 8A checkpoint.
-
-Implementation-inclusive regression with the canonical numerical diagnostics pinned:
+Stage 8A adds 13 focused scientific tests. The implementation-inclusive regression with canonical numerical diagnostics pinned reported:
 
 **`581 passed in 193.93s`**.
 
-The final documentation-synchronized head is validated separately after protocol/concepts/README/roadmap synchronization.
+After protocol/concepts/README/roadmap synchronization and restoration of the Stage 7 roadmap-history guard, the final Stage 8A documentation-synchronized regression reported:
+
+**`582 passed in 122.49s`**
+
+on head `3b311221ef34ff1818560a55742daaabdb73894b`.
 
 ## Strongest bounded statement
 
-**Within the canonical finite Stage 7 carrier, there exists a nontrivial executable `QExt(e1)` with two physically inequivalent continuation classes that share the same `e0/e1` constrained Actuality and one-bit current record, differ only by a memory- and record-target-neutral future C-sector phase at `e2`, preserve 14-dimensional physical information and all nine full-rank clock/readout reductions, and pass renaming, current-incompatibility, and terminal controls. This establishes a common quantum-extension substrate, not epistemic or ontic Potentiality semantics yet.**
+**Within the canonical finite Stage 7 carrier, there exists a nontrivial executable `QExt(e1)` with two physically inequivalent continuation classes that share the same `e0/e1` constrained Actuality and one-bit current record, differ only by a memory- and record-target-neutral future C-sector phase at `e2`, preserve 14-dimensional physical information and all nine full-rank clock/readout reductions, and pass renaming, current-incompatibility, and terminal controls. This establishes a common quantum-extension substrate, not epistemic or ontic Potentiality semantics by itself.**
 
-## Next
+## Next checkpoint
 
-Stage 8B — typed epistemic and ontic-extension quantum models on the same `QExt(e1)` substrate.
+Stage 8B places two type-distinct modal semantics on this same `QExt(e1)` substrate.

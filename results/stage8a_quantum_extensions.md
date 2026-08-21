@@ -86,11 +86,13 @@ Criteria 17–50 remain future scientific work.
 
 ## Validation
 
-Stage 8A adds 13 focused tests.
+Stage 8A adds 13 focused scientific tests. The Stage 8 documentation-consistency suite is also advanced to audit the Stage 8A checkpoint.
 
 Implementation-inclusive regression with the canonical numerical diagnostics pinned:
 
 **`581 passed in 193.93s`**.
+
+The final documentation-synchronized head is validated separately after protocol/concepts/README/roadmap synchronization.
 
 ## Strongest bounded statement
 

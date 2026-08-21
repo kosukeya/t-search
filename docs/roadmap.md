@@ -2,11 +2,17 @@
 
 This roadmap is provisional and evidence-selected.
 
-## Current candidate
+## Current refined candidate
 
-`T_candidate=(O,P,R,V;Xi)`.
+`T8_candidate=(O,P,R,V;Xi)`
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrates and pressure-tests V in that same family. Stages 8A–8F now establish executable continuations, typed selected-vs-unselected semantics, operational underdetermination/update, genuine continuation-aware clock transport, joint compatibility/underdetermination, and a role-wise ablation/reconstruction/mismatch matrix. Stage 8G is now the final Stage 8 synthesis and next-gate selection.
+with candidate internal role typing:
+
+`R=(R_content,R_direction,R_access)`
+
+`V=(V_extension,V_semantics,V_weights)`.
+
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G now selects the next finite-model gate before any generally covariant/gravitational extension.
 
 ## Stages 0–6 — completed and merged
 
@@ -16,11 +22,11 @@ Stages 0–6 established definitions, classical reconstruction/accessibility con
 
 Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. Stage 6G superseded that chronology with the more discriminating quantum-record gate; gravity was deferred rather than discarded.
 
-Stage 7 placed P/O/R in one constrained quantum construction and ended with a `strengthened` finite-model P/O/R core.
+Stage 7 placed P/O/R in one constrained quantum construction and ended with a strengthened finite-model P/O/R core.
 
-## Stage 8 — Quantum Potentiality inside the shared constrained construction — current
+## Stage 8 — Quantum Potentiality inside the shared constrained construction — synthesis complete, criterion 50 pending final validation
 
-Selected gate:
+Selected Stage 8 gate:
 
 > **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
 
@@ -49,9 +55,9 @@ Stage 8E tests joint P/O/R/V compatibility while distinguishing record content f
 - `P/O/current-R=>V semantics = underdetermined`;
 - `full P/O/directional-R/V = partial`.
 
-The canonical V continuations retain one-bit lower/current/upper record information but have zero directional record score. A Stage 7C record-scramble completion on the same order/current-state prefix has score `+1`, so order does not force directional R in this finite family.
+The canonical V continuations retain one-bit record content but have zero directional record score. A Stage 7C record-scramble completion on the same order/current-state prefix has score `+1`, so order does not force directional R in this finite family.
 
-The Stage 8E implementation also exposed and corrected a fixed-support/QR-coordinate mismatch. The resulting guard is:
+The Stage 8E implementation also exposed and corrected a fixed-support/QR-coordinate mismatch.
 
 `covariance of a wrongly typed observable != semantic correctness`.
 
@@ -63,7 +69,7 @@ Stage 8F applies seven ablations to seven typed roles and keeps six functional s
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
 
-The strongest new countermodel neutralizes the current record write in both continuation branches and then re-derives the ablated constrained family. It retains:
+Its strongest countermodel neutralizes the current record write while retaining:
 
 - two physically inequivalent future completions;
 - physical dimension 14 and rank-14 reductions;
@@ -76,46 +82,67 @@ while current target-memory information vanishes.
 
 Thus nontrivial P/O/V structure does not require current target-specific R in the declared ablated family.
 
-Additional ablation outcomes:
+Additional Stage 8F outcomes:
 
 - singleton QExt: physical multiplicity `lost`, modal typing `preserved`, sole normalized weight `reconstructible`;
 - modal semantics removed: semantic role `lost` and not uniquely reconstructed from public P/O/current-R;
 - weights unfixed: nontrivial V weights `underdetermined`;
 - explicit perspective maps removed: `P_V_class_transport = reconstructible` from per-node coordinates over 108 comparisons;
 - event/class correspondence removed: cross-perspective P-V identification `not_established`;
-- current record access hidden: global record `preserved`, local access `inaccessible`;
-- wrong continuation map, wrong class, wrong event, weight mismatch, and wrong observable coordinates remain detectable.
+- current record access hidden: global record `preserved`, local access `inaccessible`.
 
-Implementation-inclusive regression: **`662 passed in 139.81s`**.
+Final Stage 8F regression before Stage 8G: **`663 passed in 257.59s`**.
 
-Stage 8F closes criteria **42–47**. Criteria **48–50** remain Stage 8G work.
+Stage 8F closes criteria **42–47**.
 
-`record-neutral V witness != universal R-V independence theorem`.
+### Stage 8G — synthesis and next-gate selection — completed pending criterion 50
 
-`lost != metaphysically irreducible`.
+Executable synthesis choice:
 
-`reconstructible != universally redundant`.
+`refined_layered`.
 
-`underdetermined != ontically open`.
+The top-level `T=(O,P,R,V;Xi)` candidate is retained, with internal bookkeeping refined to:
 
-`inaccessible != globally absent`.
+- `R=(R_content,R_direction,R_access)`;
+- `V=(V_extension,V_semantics,V_weights)`.
 
-### Sequence
+Criteria **48–49** are executable synthesis/gate-selection criteria. Criterion **50** is the final external full-repository regression and merge-readiness review.
 
-- Stage 8.0 — completed
-- Stage 8A — completed
-- Stage 8B — completed
-- Stage 8C — completed
-- Stage 8D — completed
-- Stage 8E — completed
-- Stage 8F — completed
-- **Stage 8G — synthesis and evidence-selected next gate — next**
+Selected next gate:
 
-## Stage 9 — Generally covariant / gravitational extension — deferred gate
+> **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
 
-Gravity remains deferred rather than discarded. A future progression may use parametrized systems and tractable generally covariant models only after the finite architecture is sufficiently stable and Stage 8G re-ranks the next gates.
+Current Stage 9 gate ranking:
 
-## Stage 10 — Empirical relevance — only if warranted
+1. `directional_record_potentiality` — score 9;
+2. `full_measurement_covariance` — score 6;
+3. `richer_causal_order` — score 5;
+4. `nonideal_povm_clocks` — score 3;
+5. `parametrized_covariance_precursor` — score 2.
+
+## Stage 9 — Directional records with nontrivial quantum Potentiality — selected next gate
+
+Stage 9 should construct a nontrivial continuation family whose members share the declared current Actuality while later internally anchored dynamics generate a directional record relation. The central pressure test is whether `R_direction` and nontrivial V coexist and transform consistently under genuine continuation-aware clock changes without assuming that record direction means ontological future openness.
+
+Required pressure points should include:
+
+- nontrivial `QExt` with directional record formation after the common current anchor;
+- genuine continuation-specific P transport;
+- explicit event/class correspondence;
+- forward / reversed / balanced / no-record controls;
+- selected-vs-unselected modal underdetermination with directional R present;
+- checks of whether record direction constrains continuation classes or weights;
+- continued separation of record direction from thermodynamic, ontological, and phenomenal arrows.
+
+`directional record arrow != ontological future openness`.
+
+## Stage 10 — Generally covariant / gravitational extension — deferred gate
+
+Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9. Stage 8G supersedes that placement with the more discriminating directional-R/V gate. Gravity remains deferred rather than discarded.
+
+A future progression may use parametrized systems and tractable generally covariant models only after the remaining finite-model R_direction/V and measurement-family boundaries are sufficiently isolated.
+
+## Stage 11 — Empirical relevance — only if warranted
 
 Seek empirical relevance only after deriving a genuinely discriminating prediction not already guaranteed by the underlying formalism.
 
@@ -134,6 +161,7 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `covariance of a wrongly typed observable != semantic correctness`;
 - `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`;
 - `record-neutral V witness != universal R-V independence theorem`;
+- `V internal role separation != fundamental primitive decomposition`;
 - `lost != metaphysically irreducible`;
 - `reconstructible != universally redundant`;
 - `underdetermined != ontically open`;

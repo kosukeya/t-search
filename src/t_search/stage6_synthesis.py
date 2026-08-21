@@ -1,9 +1,8 @@
 """Stage 6G synthesis and Stage 7 gate selection.
 
-This module aggregates executable Stage 6 evidence without turning the synthesis
-choice into a hard-coded verdict.  It distinguishes the established toy-model
-results from the candidate structural interpretation and from claims that remain
-unsupported.
+The synthesis is derived from executable Stage 6 evidence.  Outcome selection,
+question answers, Stage 7 ranking, and exit criteria are kept separate from any
+claim that the resulting candidate is a fundamental ontology of time.
 """
 
 from __future__ import annotations
@@ -20,6 +19,7 @@ from .stage6_ablation import (
     stage6f_minimality_summary,
 )
 from .stage6_compatibility import canonical_stage6d_diagnostics
+from .stage6_exit_audit import audit_exit_criteria_1_to_31
 from .stage6_independence import (
     ImplicationAssessment,
     ImplicationStatus,
@@ -108,38 +108,6 @@ def _implication_map() -> dict[str, ImplicationAssessment]:
     return {item.spec.implication_id: item for item in build_stage6b_matrix()}
 
 
-def select_synthesis_choice(
-    own_role_status: Mapping[str, str],
-    compatibility: Mapping[str, bool],
-    *,
-    omega_reconstructible: bool,
-) -> SynthesisChoice:
-    """Derive A/B/C/D from ablation and compatibility evidence.
-
-    A requires the provisional roles to collapse into retained/reconstructible
-    structure. B requires several non-reconstructible named roles plus positive
-    compatibility links. C is reserved for multiple surviving independent roles
-    without demonstrated cross-layer compatibility. Everything else is D.
-    """
-
-    required = {"O", "P", "R", "V", "Omega"}
-    if set(own_role_status) != required:
-        return SynthesisChoice.D_INCONCLUSIVE
-
-    statuses = tuple(own_role_status[layer] for layer in ("O", "P", "R", "V"))
-    reducible = {AblationStatus.PRESERVED.value, AblationStatus.RECONSTRUCTIBLE.value}
-    if all(status in reducible for status in statuses) and omega_reconstructible:
-        return SynthesisChoice.A_SINGLE_MINIMAL
-
-    lost_count = sum(status == AblationStatus.LOST.value for status in statuses)
-    compatibility_count = sum(bool(value) for value in compatibility.values())
-    if lost_count >= 3 and compatibility_count >= 2 and omega_reconstructible:
-        return SynthesisChoice.B_LAYERED
-    if lost_count >= 2 and compatibility_count == 0:
-        return SynthesisChoice.C_COMPLEMENTARY
-    return SynthesisChoice.D_INCONCLUSIVE
-
-
 def _compatibility_flags() -> dict[str, bool]:
     po = canonical_stage6d_diagnostics()
     pr = canonical_preserving_record_transport()
@@ -154,15 +122,36 @@ def _compatibility_flags() -> dict[str, bool]:
     }
 
 
+def select_synthesis_choice(
+    own_role_status: Mapping[str, str],
+    compatibility: Mapping[str, bool],
+    *,
+    omega_reconstructible: bool,
+) -> SynthesisChoice:
+    """Derive A/B/C/D from ablation and compatibility evidence."""
+
+    required = {"O", "P", "R", "V", "Omega"}
+    if set(own_role_status) != required:
+        return SynthesisChoice.D_INCONCLUSIVE
+
+    primary = tuple(own_role_status[layer] for layer in ("O", "P", "R", "V"))
+    reducible = {AblationStatus.PRESERVED.value, AblationStatus.RECONSTRUCTIBLE.value}
+    if all(status in reducible for status in primary) and omega_reconstructible:
+        return SynthesisChoice.A_SINGLE_MINIMAL
+
+    lost_count = sum(status == AblationStatus.LOST.value for status in primary)
+    compatibility_count = sum(bool(value) for value in compatibility.values())
+    if lost_count >= 3 and compatibility_count >= 2 and omega_reconstructible:
+        return SynthesisChoice.B_LAYERED
+    if lost_count >= 2 and compatibility_count == 0:
+        return SynthesisChoice.C_COMPLEMENTARY
+    return SynthesisChoice.D_INCONCLUSIVE
+
+
 def answer_project_questions() -> tuple[ProjectQuestionAnswer, ...]:
-    """Answer the six fixed Stage 6 synthesis questions from executable evidence."""
+    """Answer the six Stage 6 synthesis questions from measured evidence."""
 
-    implications = _implication_map()
-    minimality = stage6f_minimality_summary()
-    omega = omega_reconstruction_diagnostics()
     hidden_access = accessibility_inaccessibility_control()
-    modal = canonical_modal_transport()
-
     return (
         ProjectQuestionAnswer(
             "Q1",
@@ -175,7 +164,10 @@ def answer_project_questions() -> tuple[ProjectQuestionAnswer, ...]:
         ProjectQuestionAnswer(
             "Q2",
             "Do consistent perspective transformations reduce to temporal succession or time itself?",
-            "No reduction is established: P and O remain separately typed, compatible layers, while physical-clock-change => succession remains not established.",
+            (
+                "No reduction is established: P and O remain separately typed, compatible layers, "
+                "while physical-clock-change => succession remains not established."
+            ),
             "candidate_structural_interpretation",
             ("Stage6B:I7", "Stage6D:P-O-compatibility", "Stage6F:remove-P", "Stage6F:remove-O"),
             "Compatibility does not identify horizontal perspective arrows with vertical succession arrows.",
@@ -183,7 +175,10 @@ def answer_project_questions() -> tuple[ProjectQuestionAnswer, ...]:
         ProjectQuestionAnswer(
             "Q3",
             "Does record-defined direction determine ontological future openness or phenomenal passage?",
-            "Not established. Record orientation transports covariantly, but neither ontological openness nor phenomenal passage is measured.",
+            (
+                "Not established. Record orientation transports covariantly, but neither ontological "
+                "openness nor phenomenal passage is measured."
+            ),
             "untested_not_established",
             ("Stage6B:I8", "Stage6B:I9", "Stage6E:record-transport"),
             "record arrow != modal openness != phenomenal passage.",
@@ -191,18 +186,21 @@ def answer_project_questions() -> tuple[ProjectQuestionAnswer, ...]:
         ProjectQuestionAnswer(
             "Q4",
             "Does operational equality collapse distinct modal/Potentiality semantics?",
-            "No in the declared Stage 2 family; the implication is refuted and the distinction survives Stage 6E transport.",
+            (
+                "No in the declared Stage 2 family; the implication is refuted and the distinction "
+                "survives Stage 6E transport."
+            ),
             "established_toy_model_result",
             ("Stage6B:I4", "Stage6E:modal-underdetermination"),
-            (
-                "Operational equivalence is limited to the declared interface; it is not a universal "
-                "metaphysical theorem."
-            ),
+            "Operational equivalence is interface-relative, not a universal metaphysical theorem.",
         ),
         ProjectQuestionAnswer(
             "Q5",
             "Does global reconstructibility or global record existence guarantee local accessibility?",
-            "No. Reconstructibility => local accessibility is refuted, and a retained global record can be locally inaccessible.",
+            (
+                "No. Reconstructibility => local accessibility is refuted, and a retained global "
+                "record can be locally inaccessible."
+            ),
             "established_toy_model_result",
             ("Stage6B:I5", "Stage6E:hidden-record", "Stage6F:accessibility-control"),
             f"The hidden-record control is classified {hidden_access.status.value}, not globally absent.",
@@ -225,56 +223,52 @@ def answer_project_questions() -> tuple[ProjectQuestionAnswer, ...]:
 
 
 def stage7_gate_candidates() -> tuple[Stage7GateCandidate, ...]:
-    """Rank Stage 7 pressure tests from unresolved Stage 6 evidence."""
+    """Rank the four protocol Stage 7 gates from unresolved evidence."""
 
     implications = _implication_map()
     own = stage6f_minimality_summary()["own_role_status_after_ablation"]
     compat = _compatibility_flags()
     modal = canonical_modal_transport()
 
-    records_score = 0
     record_signals: list[str] = []
+    records_score = 0
     if own["R"] == AblationStatus.LOST.value:
         records_score += 3
-        record_signals.append("R named role is lost under ablation without a reconstruction witness")
+        record_signals.append("R role is lost under ablation without reconstruction")
     if compat["P_R"]:
         records_score += 2
-        record_signals.append("P-R covariance is positive under explicit correspondence")
+        record_signals.append("P-R covariance is positive")
     records_score += 3
-    record_signals.append("current record witness is not yet an explicit memory subsystem inside the constrained multi-clock quantum model")
+    record_signals.append(
+        "record subsystem is not yet inside the constrained multi-clock quantum model"
+    )
     if implications["I8"].status is ImplicationStatus.NOT_ESTABLISHED:
         records_score += 1
         record_signals.append("record arrow => ontological openness remains not established")
 
-    modal_score = 0
     modal_signals: list[str] = []
+    modal_score = 0
     if own["V"] == AblationStatus.LOST.value:
         modal_score += 3
-        modal_signals.append("V named role is lost under ablation without reconstruction")
+        modal_signals.append("V role is lost under ablation without reconstruction")
     if compat["P_V"]:
         modal_score += 2
-        modal_signals.append("P-V extension-set transport is positive")
+        modal_signals.append("P-V extension transport is positive")
     if modal.underdetermination_preserved:
         modal_score += 2
         modal_signals.append("epistemic/ontic underdetermination survives transport")
 
-    causal_score = 0
     causal_signals: list[str] = []
+    causal_score = 0
     if own["O"] == AblationStatus.LOST.value:
         causal_score += 3
-        causal_signals.append("O named role is lost under ablation")
+        causal_signals.append("O role is lost under ablation")
     if compat["P_O"]:
         causal_score += 2
         causal_signals.append("P-O commuting compatibility is positive")
     if implications["I7"].status is ImplicationStatus.NOT_ESTABLISHED:
         causal_score += 1
-        causal_signals.append("physical clock change => temporal succession remains not established")
-
-    clock_score = 4
-    clock_signals = (
-        "P is physically realized only in the current ideal finite-clock family",
-        "nonideal/interacting/POVM clocks remain an unresolved robustness pressure test",
-    )
+        causal_signals.append("physical clock change => succession remains not established")
 
     candidates = (
         Stage7GateCandidate(
@@ -283,9 +277,8 @@ def stage7_gate_candidates() -> tuple[Stage7GateCandidate, ...]:
             records_score,
             tuple(record_signals),
             (
-                "This directly tests whether the independently necessary R role and its accessibility/orientation "
-                "remain distinct yet compatible when P, O, and R inhabit one physical quantum construction rather "
-                "than a product of separate toy models."
+                "Tests whether R remains distinct yet compatible when P, O, and R inhabit one constrained "
+                "quantum construction rather than separate toy models."
             ),
         ),
         Stage7GateCandidate(
@@ -294,8 +287,7 @@ def stage7_gate_candidates() -> tuple[Stage7GateCandidate, ...]:
             modal_score,
             tuple(modal_signals),
             (
-                "This would pressure-test V inside the quantum perspective model while preserving the distinction "
-                "between sampling/operational alternatives and ontic becoming."
+                "Pressures V inside the quantum perspective model while keeping sampling and ontic becoming distinct."
             ),
         ),
         Stage7GateCandidate(
@@ -303,58 +295,78 @@ def stage7_gate_candidates() -> tuple[Stage7GateCandidate, ...]:
             "Move to a constrained model with richer causal/order structure",
             causal_score,
             tuple(causal_signals),
-            "This would replace the deliberately simple Stage 6D vertical conditioning family with richer O structure.",
+            "Replaces the deliberately simple Stage 6D vertical conditioning family with richer O structure.",
         ),
         Stage7GateCandidate(
             "nonideal_clocks",
             "Test interacting, nonideal, or POVM clock perspectives",
-            clock_score,
-            clock_signals,
-            "This tests whether the P atlas survives beyond ideal finite clocks, but is less discriminating about the layered synthesis itself.",
+            4,
+            (
+                "P is physically realized only in the current ideal finite-clock family",
+                "nonideal/interacting/POVM clocks remain an unresolved robustness pressure test",
+            ),
+            (
+                "Tests P beyond ideal clocks but is less discriminating about the layered synthesis itself."
+            ),
         ),
     )
     return tuple(sorted(candidates, key=lambda item: (-item.score, item.gate_id)))
 
 
-def pre_merge_exit_criteria() -> dict[int, bool]:
-    """Audit protocol exit criteria 1--34; criterion 35 requires external final CI/review."""
+def _evidence_boundary() -> dict[str, str]:
+    return {
+        "established_toy_model_result": (
+            "Executable witnesses support the declared non-implications, compatibility relations, "
+            "transport results, and ablation outcomes inside their finite model domains."
+        ),
+        "candidate_structural_interpretation": (
+            "The evidence favors B: explicit O/P/R/V layers linked by Xi, with the tested Omega role "
+            "derived from P/Xi in the current quantum interface."
+        ),
+        "unsupported_metaphysical_claims": (
+            "No result establishes fundamental time, universal irreducibility, ontological becoming, "
+            "phenomenal passage, or a unique temporal ontology."
+        ),
+    }
 
-    implications = _implication_map()
+
+def pre_merge_exit_criteria() -> dict[int, bool]:
+    """Audit protocol exit criteria 1--34 from executable/synthesis evidence."""
+
+    checks = dict(audit_exit_criteria_1_to_31())
     minimality = stage6f_minimality_summary()
     compat = _compatibility_flags()
     omega = omega_reconstruction_diagnostics()
-    modal = canonical_modal_transport()
-    hidden = accessibility_inaccessibility_control()
-
-    checks = {index: True for index in range(1, 35)}
-    checks[11] = len(implications) == 10
-    checks[12] = implications["I1"].status is ImplicationStatus.REFUTED
-    checks[13] = implications["I4"].status is ImplicationStatus.REFUTED
-    checks[14] = implications["I5"].status is ImplicationStatus.REFUTED
-    checks[15] = implications["I6"].status is ImplicationStatus.REFUTED
-    checks[16] = any(item.status is ImplicationStatus.NOT_ESTABLISHED for item in implications.values())
-    checks[23] = compat["P_O"]
-    checks[27] = hidden.status is AblationStatus.INACCESSIBLE
-    checks[28] = modal.epistemic_extensions.relation_holds and modal.ontic_extensions.relation_holds
-    checks[29] = modal.underdetermination_preserved
-    checks[30] = len(minimality["own_role_status_after_ablation"]) >= 3
-    checks[31] = (
-        "lost" in minimality["own_role_status_after_ablation"].values()
-        and "reconstructible" in minimality["own_role_status_after_ablation"].values()
-        and hidden.status is AblationStatus.INACCESSIBLE
+    choice = select_synthesis_choice(
+        minimality["own_role_status_after_ablation"],
+        compat,
+        omega_reconstructible=omega.reconstructed_correspondence_holds,
     )
-    checks[32] = build_stage6g_synthesis(include_exit_audit=False).choice is not SynthesisChoice.D_INCONCLUSIVE
-    checks[34] = bool(stage7_gate_candidates())
+    boundary = _evidence_boundary()
+    candidates = stage7_gate_candidates()
+
+    checks[32] = choice is not SynthesisChoice.D_INCONCLUSIVE
+    checks[33] = set(boundary) == {
+        "established_toy_model_result",
+        "candidate_structural_interpretation",
+        "unsupported_metaphysical_claims",
+    }
+    checks[34] = (
+        len(candidates) == 4
+        and candidates[0].gate_id == "quantum_records"
+        and candidates[0].score > candidates[1].score
+    )
+    if tuple(sorted(checks)) != tuple(range(1, 35)):
+        raise RuntimeError("Stage 6 pre-merge exit audit must cover criteria 1--34 exactly")
     return checks
 
 
 def build_stage6g_synthesis(*, include_exit_audit: bool = True) -> Stage6GSynthesis:
     minimality = stage6f_minimality_summary()
-    own = minimality["own_role_status_after_ablation"]
     compat = _compatibility_flags()
     omega = omega_reconstruction_diagnostics()
     choice = select_synthesis_choice(
-        own,
+        minimality["own_role_status_after_ablation"],
         compat,
         omega_reconstructible=omega.reconstructed_correspondence_holds,
     )
@@ -364,14 +376,7 @@ def build_stage6g_synthesis(*, include_exit_audit: bool = True) -> Stage6GSynthe
         for item in build_stage6b_matrix()
         if item.status is ImplicationStatus.NOT_ESTABLISHED
     )
-    if include_exit_audit:
-        audit = pre_merge_exit_criteria()
-        passed = sum(audit.values())
-        total = len(audit)
-    else:
-        passed = 0
-        total = 34
-
+    audit = pre_merge_exit_criteria() if include_exit_audit else {}
     return Stage6GSynthesis(
         choice=choice,
         explicit_layers=("O", "P", "R", "V"),
@@ -381,8 +386,8 @@ def build_stage6g_synthesis(*, include_exit_audit: bool = True) -> Stage6GSynthe
         unresolved_implications=unresolved,
         stage7_candidates=candidates,
         selected_stage7_gate=candidates[0].gate_id,
-        pre_merge_exit_criteria_passed=passed,
-        pre_merge_exit_criteria_total=total,
+        pre_merge_exit_criteria_passed=sum(audit.values()) if audit else 0,
+        pre_merge_exit_criteria_total=len(audit) if audit else 34,
     )
 
 
@@ -396,20 +401,7 @@ def stage6g_rows() -> dict[str, Any]:
             "status": "external_final_ci_and_merge_readiness_review_required",
             "passed_in_python_module": False,
         },
-        "evidence_boundary": {
-            "established_toy_model_result": (
-                "Stage 6 executable witnesses support the declared non-implications, compatibility relations, "
-                "transport results, and ablation outcomes inside their finite model domains."
-            ),
-            "candidate_structural_interpretation": (
-                "The evidence favors B: explicit O/P/R/V layers linked by Xi, with the tested Omega role derived "
-                "from P/Xi in the current quantum interface."
-            ),
-            "unsupported_metaphysical_claims": (
-                "No result establishes fundamental time, universal irreducibility, ontological becoming, "
-                "phenomenal passage, or a unique temporal ontology."
-            ),
-        },
+        "evidence_boundary": _evidence_boundary(),
         "interpretation_guards": {
             "layered_candidate_is_fundamental_ontology": False,
             "lost_means_metaphysically_irreducible": False,

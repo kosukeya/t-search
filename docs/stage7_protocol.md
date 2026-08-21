@@ -1,6 +1,6 @@
 # Stage 7 Protocol — Quantum Records in a Constrained Multi-Clock Model
 
-Status: **Stage 7.0 protocol frozen; Stage 7A–7F completed; Stage 7G is next.**
+Status: **Stage 7.0 protocol frozen; Stage 7A–7G scientifically completed. Criteria 1–35 are satisfied; criterion 36 remains the external final-CI / merge-readiness check.**
 
 Stage 7 follows the Stage 6G evidence-selected gate. The earlier roadmap chronology is **superseded by the Stage 6G gate selection**: before attempting a generally covariant / gravitational extension, place an explicit memory degree of freedom and record semantics inside the constrained multi-clock quantum construction and pressure-test them under genuine clock changes.
 
@@ -8,13 +8,13 @@ The Stage 6 candidate entering Stage 7 is:
 
 `T6_candidate=(O,P,R,V;Xi)`.
 
-Stage 7 primarily pressure-tests `P`, `O`, and `R`. It does not yet integrate `V` into the same quantum construction.
+Stage 7 primarily pressure-tests `P`, `O`, and `R`. It does not integrate `V` into the same quantum construction; Stage 7G selects that missing integration as the next Stage 8 gate.
 
 ## 1. Central question
 
 > In one constrained finite quantum model containing multiple admissible internal clock perspectives and an explicit memory degree of freedom, does record-defined temporal structure remain distinct from perspective transformation and neutral order while transforming consistently under genuine clock changes?
 
-A positive result strengthens the Stage 6 layered candidate by removing the former product-model separation between Stage 5 `P` and Stage 3/6E `R`. A negative result must revise that candidate if record structure reduces to retained `P/O/Xi`, fails covariance, or destroys the perspective structure required for the comparison.
+Stage 7 answers this positively in a bounded sense: the P/O/R layered core is strengthened by single-model evidence. Record structure coexists covariantly with genuine clock changes, while an internally anchored no-record family retains tested P and O without reconstructing R. This does not establish universal irreducibility or a fundamental ontology of time.
 
 ## 2. Scope and non-goals
 
@@ -252,13 +252,26 @@ Wrong/misdeclared `chi` gives record-score residual `2` and accessibility residu
 
 The perturbed `C/e1 -> B/e0` edge remains a localized path mismatch with nonzero map/state/metric/record-score residuals while unaffected paths remain consistent.
 
-## 10. Stage 7F structural consequence
+## 10. Stage 7G — synthesis — completed
 
-The strongest bounded result before Stage 7G is:
+The executable Stage 7G synthesis selects:
 
-> Within the declared Stage 7 finite constrained family, the record-defined role R is not reconstructed from the retained tested perspective structure plus internal neutral event anchoring when record coupling is neutralized, whereas explicit cross-clock edge matrices are reconstructed from the common physical carrier and per-perspective reductions.
+**`strengthened`**.
 
-This strengthens the functional layered interpretation of P/O/R while refining what is primitive inside P. It does not establish metaphysical irreducibility of R or universal redundancy of P.
+This is a bounded strengthening of the Stage 6 layered candidate, specifically the P/O/R core. The decisive combination is:
+
+- positive single-model `P-R` covariance under genuine physical clock changes;
+- preserved internal O and P in a no-record countermodel where R is absent;
+- explicit separation of global record representation, reconstructibility, and local accessibility;
+- reconstruction of explicit P edge matrices from retained common-carrier/per-perspective reduction data.
+
+The resulting provisional interpretation is:
+
+`P != O`, `P != R`, `O != R`
+
+as represented roles in the declared family, linked by nontrivial compatibility conditions. The explicit edge matrices inside P are derived in the current representation.
+
+`V` remains explicit but is not yet integrated into this shared constrained quantum construction.
 
 ## 11. Evidence taxonomy
 
@@ -280,16 +293,22 @@ Hand-written verdict booleans copied from prose are not executable evidence.
 - **Stage 7D — genuine clock-change record transport — completed**
 - **Stage 7E — accessibility and partial-atlas record consistency — completed**
 - **Stage 7F — ablation / reconstruction / mismatch matrix — completed**
-- **Stage 7G — synthesis and Stage 8 gate — next**
+- **Stage 7G — synthesis and Stage 8 gate — completed**
 
-## 13. Candidate Stage 8 gates
+## 13. Evidence-selected Stage 8 gate
 
-Stage 7G must rank at least:
+Stage 7G ranks the frozen candidates by discriminating power:
 
-- integrate explicit `V` / extension semantics into the same relational quantum construction;
-- move to richer causal/order structure;
-- test interacting, nonideal, or POVM clocks;
-- if the finite layered architecture is stable enough, begin a parametrized / generally covariant precursor.
+1. **`quantum_potentiality` — score 10**: integrate explicit `V` / Potentiality-extension semantics into the same constrained quantum construction;
+2. **`richer_causal_order` — score 7**: replace the deliberately simple three-event O layer with richer causal/order structure;
+3. **`nonideal_povm_clocks` — score 5**: test genuinely nonideal / POVM clock perspectives;
+4. **`parametrized_covariance_precursor` — score 3**: begin a parametrized / generally covariant precursor.
+
+Selected Stage 8 gate:
+
+> **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
+
+This is selected because V is the only explicit Stage 6 layer not yet tested inside the common Stage 7 quantum construction. Stage 8 must preserve the Stage 2 distinction between epistemic selected-history uncertainty and ontic no-selected-future extension semantics, rather than identifying V with quantum randomness, superposition, sampling, or ignorance by definition.
 
 ## 14. Frozen interpretation guards
 
@@ -314,19 +333,21 @@ Stage 7 inherits prior guards and includes:
 - `missing chi != false covariance`;
 - `wrong chi mismatch != destruction of P or R`;
 - `explicit perspective-map reconstruction != elimination of the perspective layer`;
+- `Potentiality != quantum randomness by definition`;
+- `perspective consistency != modal equivalence`;
 - `not_established != false`;
 - `success with finite clocks != general covariance`;
 - `Stage 7 synthesis != empirical discovery unless a new discriminating prediction is independently derived`.
 
 ## 15. Stop / revise conditions
 
-Revise rather than force a positive conclusion if record is inferred only from entanglement; target/event correspondence is undeclared; Python execution order is used as physical temporal order; a modified constraint silently reuses old maps; local hiding is described as global destruction; `not_established` is converted to `false`; or an ablation is interpreted as metaphysical fundamentality.
+Revise rather than force a positive conclusion if record is inferred only from entanglement; target/event correspondence is undeclared; Python execution order is used as physical temporal order; a modified constraint silently reuses old maps; local hiding is described as global destruction; `not_established` is converted to `false`; an ablation is interpreted as metaphysical fundamentality; or Stage 8 identifies Potentiality with quantum randomness/measurement by fiat.
 
 ## 16. Stage 7 exit criteria
 
 ### Protocol / typing — 1–5
 
-Satisfied by Stage 7.0 and maintained through Stage 7F.
+Satisfied by Stage 7.0 and maintained through Stage 7G.
 
 ### Baseline — 6–9
 
@@ -352,10 +373,10 @@ Satisfied by Stage 7E in the declared canonical family.
 
 30. memory / record / perspective / access / correspondence ingredients are ablated or neutralized one at a time where applicable — **satisfied by Stage 7F**;
 31. `lost`, `reconstructible`, `inaccessible`, and `not_established` are distinguished — **satisfied by Stage 7F**;
-32. Stage 7G explicitly decides whether the Stage 6 layered candidate is strengthened, reduced, broken, or inconclusive — pending;
-33. unresolved implications remain `not_established` unless directly decided — pending final synthesis audit;
-34. Stage 8 gate selected by discriminating power — pending;
-35. interpretation guards preserved in synthesis — pending;
-36. final full regression and PR merge-readiness review have no unresolved blocker — pending.
+32. Stage 7G explicitly decides whether the Stage 6 layered candidate is strengthened, reduced, broken, or inconclusive — **satisfied: `strengthened`**;
+33. unresolved implications remain `not_established` unless directly decided — **satisfied by executable synthesis audit**;
+34. Stage 8 gate selected by discriminating power — **satisfied: `quantum_potentiality` uniquely top-ranked**;
+35. interpretation guards preserved in synthesis — **satisfied by executable synthesis audit**;
+36. final full regression and PR merge-readiness review have no unresolved blocker — **external final check pending after documentation synchronization**.
 
-Thus Stage 7F closes criteria **30–31**. Stage 7G and final merge-readiness review remain.
+`src/t_search/stage7_synthesis.py` recomputes criteria 1–35 from Stage 7A–F APIs and Stage 7G synthesis/gate logic. Criterion 36 is intentionally not hard-coded in the Python module.

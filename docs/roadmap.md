@@ -22,7 +22,7 @@ with:
 - `V`: Potentiality / extension semantics;
 - `Xi`: compatibility conditions among the typed layers.
 
-Stage 7 strengthens the P/O/R core with single-model constrained-quantum evidence while refining explicit cross-perspective edge matrices as derived from the common physical carrier plus per-perspective reductions. V remains the only explicit Stage 6 layer not yet integrated into that shared quantum construction.
+Stage 7 strengthens the P/O/R core with single-model constrained-quantum evidence while refining explicit cross-perspective edge matrices as derived from the common physical carrier plus per-perspective reductions. V remains the only explicit Stage 6 layer not yet integrated into that shared quantum construction, so Stage 8 now pressure-tests V directly.
 
 The tested quantum operational-correspondence role `Omega` remains reconstructible from retained perspective transport in the declared Stage 5/6 operator interface and is therefore not currently required as a separate primitive in that interface.
 
@@ -116,7 +116,7 @@ Stage 6G selected **B — layered temporal structure** with candidate `T6_candid
 
 ---
 
-## Stage 7 — Quantum records inside a constrained multi-clock model — scientifically completed on PR #8
+## Stage 7 — Quantum records inside a constrained multi-clock model — completed and merged
 
 Protocol / concepts / synthesis:
 
@@ -158,9 +158,9 @@ Stage 7 also refines P: explicit edge matrices are derived in the current repres
 
 ---
 
-## Stage 8 — Quantum Potentiality inside the shared constrained construction — selected next gate
+## Stage 8 — Quantum Potentiality inside the shared constrained construction — current
 
-Stage 7G ranks the candidate gates:
+Stage 7G ranked the candidate gates:
 
 1. `quantum_potentiality` — **10**;
 2. `richer_causal_order` — **7**;
@@ -171,6 +171,12 @@ Selected Stage 8 gate:
 
 > **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
 
+Protocol / concepts / current checkpoint:
+
+- [`stage8_protocol.md`](stage8_protocol.md)
+- [`stage8_concepts.md`](stage8_concepts.md)
+- [`../results/stage8_0_protocol_freeze.md`](../results/stage8_0_protocol_freeze.md)
+
 ### Why this gate is selected
 
 V is now the only explicit Stage 6 layer that has not undergone the same single-model pressure test as P/O/R.
@@ -180,7 +186,7 @@ Stage 2/6 already provide two typed modal interpretations that can be operationa
 - epistemic selected-history uncertainty;
 - ontic no-selected-future extension structure.
 
-Stage 8 should ask whether that distinction can survive when embedded alongside:
+Stage 8 asks whether that distinction can survive when embedded alongside:
 
 - genuine internal clock perspectives;
 - the Stage 7 record/history construction;
@@ -188,6 +194,33 @@ Stage 8 should ask whether that distinction can survive when embedded alongside:
 - corresponding observable and event transport.
 
 The core discriminating question is not whether quantum theory is probabilistic. It is whether two differently typed Potentiality structures can remain operationally equivalent under a declared quantum interface without being identified by fiat.
+
+### Stage 8.0 protocol freeze — completed
+
+Stage 8.0 defines:
+
+- current quantum Actuality `A_Q(D)` as distinct from a complete future continuation;
+- `QuantumContinuation` as an executable physically admissible future completion of the shared constrained carrier;
+- `QExt(D)` as equivalence classes of such continuations, not branch labels;
+- epistemic quantum Potentiality with a hidden selected continuation `h*`;
+- ontic-extension quantum Potentiality with no selected complete continuation datum or equivalent hidden selector;
+- an ontology-neutral operational interface that cannot inspect `h*`;
+- explicit update semantics without treating Python sampling as becoming;
+- genuine clock-perspective transport requirements for V;
+- P/O/R/V compatibility questions, negative controls, stop conditions, and 50 Stage 8 exit criteria.
+
+Only criteria 1–10 are frozen by Stage 8.0. Criteria 11–50 remain future scientific work.
+
+### Stage 8 sequence
+
+- **Stage 8.0 — Quantum Potentiality protocol freeze — completed**
+- **Stage 8A — common quantum-extension substrate — next**
+- Stage 8B — typed epistemic and ontic-extension quantum models
+- Stage 8C — operational underdetermination and explicit update
+- Stage 8D — genuine clock-change modal transport
+- Stage 8E — P/O/R/V compatibility and underdetermination
+- Stage 8F — ablation / reconstruction / mismatch matrix
+- Stage 8G — synthesis and evidence-selected next gate
 
 ### Stage 8 guards
 
@@ -203,11 +236,13 @@ Stage 8 must not define Potentiality as any of the following merely by terminolo
 
 `Potentiality != quantum randomness by definition`.
 
+`Potentiality != superposition by definition`.
+
+`density matrix decomposition != unique modal semantics`.
+
 `operational quantum equivalence != modal/ontological equivalence by definition`.
 
 `perspective consistency != modal equivalence`.
-
-The detailed Stage 8 protocol should be frozen before implementation, following the Stage 7 pattern.
 
 ### Post-Stage 8 re-ranking candidates
 

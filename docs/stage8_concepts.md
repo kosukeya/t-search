@@ -22,9 +22,7 @@ Ontic-extension `M_O^Q(D)=(QCarrier,D,QExt(D),K)` contains no selected complete 
 
 ## Operational underdetermination
 
-The declared ontology-neutral interface is:
-
-`O_Q=(D,rho_now,R_now,Next_Q(D),pi_Q(next|D),observed_outcome)`.
+The declared ontology-neutral interface is `O_Q=(D,rho_now,R_now,Next_Q(D),pi_Q(next|D),observed_outcome)`.
 
 Matched `(0.5,0.5)` epistemic/ontic models have equal full `O_Q`; changing hidden `h*` alone is invisible; a `(0.75,0.25)` weight mismatch is detectable; explicit evidence updates both models without turning the ontic schema into a hidden-selector model.
 
@@ -50,14 +48,14 @@ Stage 8D checks 108 distinct-clock state transports and 324 three-clock composit
 
 ## Stage 8E compatibility typing
 
-Stage 8E distinguishes four different objects that can otherwise be conflated:
+Stage 8E distinguishes:
 
-- `O`: the declared relational event/order skeleton and its event-effect family;
-- `R_current`: target-specific record content available at the current event;
-- `R_direction`: lower-vs-upper record asymmetry defining a directional diagnostic;
-- `V`: represented continuation classes plus selected-vs-unselected modal semantics.
+- `O`: declared relational event/order structure and event-effect family;
+- `R_current`: target-specific record content at the current event;
+- `R_direction`: lower-vs-upper record asymmetry;
+- `V`: continuation classes plus selected-vs-unselected modal semantics.
 
-This distinction matters because the canonical Stage 8 continuation family has one-bit record content but zero directional record score.
+The canonical Stage 8 continuation family has one-bit record content but directional record score `0`.
 
 `current record covariance != directional record arrow`.
 
@@ -67,17 +65,15 @@ This distinction matters because the canonical Stage 8 continuation family has o
 
 Stage 8E exposed a coordinate-typing error: the record projector is defined in a fixed A-rest support basis, while Stage 8D uses continuation-specific QR support coordinates.
 
-The correction explicitly changes basis before lifting/transport:
+The correction changes basis explicitly before lifting/transport:
 
 `T_{h,e}=Q_{h,A,e}^dagger K_A`,
 
 `O_QR=T_{h,e} O_fixed T_{h,e}^{-1}`.
 
-This yields a general guard:
-
 `covariance of a wrongly typed observable != semantic correctness`.
 
-A transported observable must preserve the declared physical meaning, not merely satisfy a similarity relation in some coordinates.
+A transported observable must preserve declared physical meaning, not merely satisfy a similarity relation.
 
 ## Compatibility matrix after Stage 8E
 
@@ -86,32 +82,23 @@ A transported observable must preserve the declared physical meaning, not merely
 - `P-V(class/weights) = compatible`;
 - `O-V(extension) = compatible`;
 - `R(current)-V = underdetermined`;
-- `O=>R(direction) = implication_refuted` in the declared finite family;
+- `O=>R(direction) = implication_refuted`;
 - `P/O/current-R=>V semantics = underdetermined`;
 - `full P/O/directional-R/V = partial`.
 
-The last row is intentionally not upgraded to `compatible`: directional R is absent in the canonical V carrier, and full Stage 8C measurement-family covariance remains `not_established`.
+The last row is intentionally not upgraded: directional R is absent in the canonical V carrier and full Stage 8C measurement-family covariance remains `not_established`.
 
 `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`.
 
 ## Order versus directional record
 
-The canonical `h_L/h_R` family has:
-
-- lower record information = 1 bit;
-- current record information = 1 bit;
-- upper record information = 1 bit;
-- directional record score = 0.
-
-The Stage 7C record-scramble contrast shares the same `e0<e1<e2` skeleton and A/e1 current state but has record score `+1`.
-
-Thus:
+The canonical `h_L/h_R` family has lower/current/upper record information of 1 bit and directional record score `0`. The Stage 7C record-scramble contrast shares the same `e0<e1<e2` skeleton and A/e1 current state but has record score `+1`.
 
 `order != directional record arrow`.
 
 ## Modal underdetermination with fixed P/O/current-R
 
-The same physical continuation carrier, order/event structure, current-record structure, and public transported modal data can support both selected-`h*` and no-selected-continuation semantics under matched weights.
+The same physical continuation carrier, event/order structure, current-record structure, and public transported modal data can support both selected-`h*` and no-selected-continuation semantics under matched weights.
 
 `same P/O/current-R public data != modal identity`.
 
@@ -124,6 +111,10 @@ The same physical continuation carrier, order/event structure, current-record st
 `Potentiality != Born probability by definition`.
 
 `density matrix decomposition != unique modal semantics`.
+
+## Current execution ledger
+
+Stage 8E closes criteria **36–41**. Criteria **42–50** remain Stage 8F–G work.
 
 ## Evidence boundary
 

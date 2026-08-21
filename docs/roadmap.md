@@ -20,7 +20,7 @@ with:
 - `V`: Potentiality / extension semantics;
 - `Xi`: compatibility conditions among typed layers.
 
-Stage 7 strengthens the P/O/R core with single-model constrained-quantum evidence. Stage 8 now pressure-tests V on the same family. This remains a structural candidate, not a fundamental ontology of time.
+Stage 7 strengthens the P/O/R core with single-model constrained-quantum evidence. Stage 8 now pressure-tests V on the same family. Stage 8A supplies an executable continuation carrier and Stage 8B realizes two modal types on that same carrier; operational/update and perspective-transport tests remain ahead. This remains a structural candidate, not a fundamental ontology of time.
 
 ---
 
@@ -99,20 +99,14 @@ Protocol and checkpoints:
 - [`stage8_protocol.md`](stage8_protocol.md)
 - [`stage8_concepts.md`](stage8_concepts.md)
 - [`stage8a_notes.md`](stage8a_notes.md)
+- [`stage8b_notes.md`](stage8b_notes.md)
 - [`../results/stage8_0_protocol_freeze.md`](../results/stage8_0_protocol_freeze.md)
 - [`../results/stage8a_quantum_extensions.md`](../results/stage8a_quantum_extensions.md)
+- [`../results/stage8b_typed_modal_models.md`](../results/stage8b_typed_modal_models.md)
 
 ### Stage 8.0 — Quantum Potentiality protocol freeze — completed
 
-Frozen distinctions include:
-
-- current quantum Actuality vs complete continuation;
-- executable `QuantumContinuation` and `QExt(D)`;
-- epistemic selected-continuation semantics vs ontic no-selected-continuation semantics;
-- ontology-neutral operational interface;
-- explicit update semantics;
-- genuine clock-perspective modal transport requirements;
-- negative controls and 50 exit criteria.
+Frozen distinctions include current quantum Actuality vs complete continuation, executable `QuantumContinuation`/`QExt(D)`, selected-vs-unselected modal semantics, ontology-neutral operational comparison, explicit update semantics, genuine clock-perspective modal transport requirements, negative controls, and 50 exit criteria.
 
 `Potentiality != quantum randomness by definition`.
 
@@ -126,7 +120,7 @@ The canonical current anchor is `e1` and:
 
 `QExt(e1) = {h_L, h_R}`.
 
-Both continuations share the same constrained Actuality through `e1` and the same one-bit current record:
+Both continuations share the same constrained Actuality through `e1` and one-bit current record:
 
 `V0=I`, `V1=U_rec`.
 
@@ -137,30 +131,53 @@ They differ only at `e2`:
 
 `Z_C` is a reversible C-sector phase that acts as identity on memory and commutes with the Stage 7 B-based record target. The future distinction therefore does not define V through R.
 
-Executable evidence:
+Executable evidence includes future-operator residual `4`, canonical normalized `e2` overlap squared `0`, physical dimension `14` for both continuations, rank `14` at all nine A/B/C clock/readout reductions, renaming invariance, invalid-current-prefix rejection, and terminal `QExt(e2)=empty`.
 
-- future-operator residual `4`;
-- canonical normalized `e2` state overlap squared `0`;
-- both continuation constructions retain physical dimension `14`;
-- all nine A/B/C clock/readout reductions remain rank `14`;
-- pure renaming does not enlarge QExt;
-- current-prefix-incompatible candidates are rejected;
-- canonical terminal behavior is `QExt(e2)=empty`.
+Stage 8A satisfies exit criteria 11–16.
 
-This establishes a physical continuation substrate but does not yet instantiate the epistemic/ontic modal distinction.
+### Stage 8B — typed epistemic and ontic-extension quantum models — completed
 
-Stage 8A satisfies exit criteria 11–16. Criteria 17–50 remain future scientific work.
+Stage 8B uses one validated `QuantumContinuationCarrier` with `{h_L,h_R}` and passes the **same carrier object** to both modal model types.
+
+Epistemic:
+
+`M_E^Q=(QCarrier,e1,h*,q_E)`
+
+stores one privileged selected continuation `h*`.
+
+Ontic-extension:
+
+`M_O^Q(e1)=(QCarrier,e1,QExt(e1),K)`
+
+uses a frozen/slots schema storing only the carrier and extension weights. The declared schema has no selected/selector/seed/precomputed-outcome/latent-branch field, no singleton continuation datum, and no arbitrary instance dictionary.
+
+Canonical matched weights are:
+
+`q_E = K = (0.5,0.5)`.
+
+They are generated from the shared carrier without consulting `h*`.
+
+The typed Potentialities contain the same physical continuation members while remaining distinct types:
+
+- `EpistemicQuantumPotentiality`;
+- `OnticExtensionQuantumPotentiality`.
+
+With carrier and weights fixed, swapping epistemic `h*=h_L` to `h*=h_R` changes a privileged diagnostic but leaves the Stage 8B minimal pre-discriminating public projection unchanged. That projection deliberately excludes `h*` and model-type names.
+
+Stage 8B therefore satisfies exit criteria 17–21 in the canonical family. It does **not** yet establish the full Stage 8C `O_Q` equality/update result or an ontology of the real future.
 
 ### Stage 8 sequence
 
 - **Stage 8.0 — Quantum Potentiality protocol freeze — completed**
 - **Stage 8A — common quantum-extension substrate — completed**
-- **Stage 8B — typed epistemic and ontic-extension quantum models — next**
-- Stage 8C — operational underdetermination and explicit update
+- **Stage 8B — typed epistemic and ontic-extension quantum models — completed**
+- **Stage 8C — operational underdetermination and explicit update — next**
 - Stage 8D — genuine clock-change modal transport
 - Stage 8E — P/O/R/V compatibility and underdetermination
 - Stage 8F — ablation / reconstruction / mismatch matrix
 - Stage 8G — synthesis and evidence-selected next gate
+
+Criteria 22–50 remain future scientific work after Stage 8B.
 
 ### Post-Stage 8 re-ranking candidates
 
@@ -219,6 +236,9 @@ A useful structural synthesis with no novel empirical prediction remains an acce
 - `Potentiality != quantum randomness by definition`;
 - `QExt represented != ontically real futures by definition`;
 - `future physical inequivalence != modal semantics by itself`;
+- `formal selected-vs-unselected difference != empirical physical difference`;
+- `no selected continuation field != proof of ontic openness in nature`;
+- `Stage 8B pre-discriminating view != full Stage 8C O_Q interface`;
 - `perspective consistency != modal equivalence`;
 - `partial-atlas consistency != general covariance`;
 - `not_established != false`;

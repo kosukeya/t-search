@@ -7,11 +7,8 @@ from t_search.stage7_record_transport import (
     event_correspondence,
     history_clock_change_support_matrix,
     history_clock_probability,
-    history_clock_reconstruction_operator,
     history_clock_reduction_matrix,
-    history_clock_reduction_operator,
     history_clock_support_basis,
-    history_clock_support_projector,
     history_support_metric,
     perspective_record_assessment,
     perspective_record_joint_distribution,
@@ -22,6 +19,12 @@ from t_search.stage7_record_transport import (
 )
 
 ATOL = 1e-9
+
+# The exhaustive diagnostics are pure functions of the frozen canonical model.
+# Compute each once for this test module rather than repeating all 54 clock-change
+# comparisons in every assertion-focused test.
+REDUCTION_DIAGNOSTIC = stage7d_reduction_diagnostics()
+TRANSPORT_DIAGNOSTIC = stage7d_transport_diagnostics()
 
 
 def test_event_correspondences_are_explicit_and_typed():
@@ -50,7 +53,7 @@ def test_all_nine_interacting_clock_nodes_remain_full_rank_with_proper_supports(
 
 
 def test_a_clock_stays_isometric_but_b_c_become_nonisometric():
-    diagnostic = stage7d_reduction_diagnostics()
+    diagnostic = REDUCTION_DIAGNOSTIC
     assert diagnostic.nodes == 9
     assert diagnostic.min_rank == 14
     assert diagnostic.max_a_isometry_residual <= ATOL
@@ -60,7 +63,7 @@ def test_a_clock_stays_isometric_but_b_c_become_nonisometric():
 
 
 def test_rederived_reconstruction_roundtrips_all_clock_nodes():
-    diagnostic = stage7d_reduction_diagnostics()
+    diagnostic = REDUCTION_DIAGNOSTIC
     assert diagnostic.max_support_roundtrip_residual <= ATOL
     assert diagnostic.max_physical_roundtrip_residual <= ATOL
 
@@ -96,14 +99,14 @@ def test_induced_support_metrics_are_positive_and_recover_physical_norm():
 
 
 def test_rederived_genuine_clock_changes_transport_same_physical_state():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.distinct_clock_comparisons == 54
     assert diagnostic.max_state_transport_residual <= ATOL
     assert diagnostic.max_inverse_residual <= ATOL
 
 
 def test_nonunitary_interacting_maps_preserve_induced_physical_metric():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.max_metric_covariance_residual <= ATOL
     assert diagnostic.max_euclidean_unitarity_residual > 1e-3
 
@@ -121,7 +124,7 @@ def test_direct_metric_covariance_for_one_a_to_b_map():
 
 
 def test_record_projectors_are_metric_self_adjoint_idempotent_and_commuting():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.max_metric_self_adjoint_residual <= ATOL
     assert diagnostic.max_projector_residual <= ATOL
     assert diagnostic.max_record_memory_commutator_residual <= ATOL
@@ -155,7 +158,7 @@ def test_orientation_reversing_chi_flips_signed_record_profile(clock, index):
 
 
 def test_transporting_corresponding_record_observables_preserves_statistics():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.max_observable_transport_residual <= ATOL
     assert diagnostic.max_preserving_record_score_residual <= ATOL
     assert diagnostic.max_preserving_accessibility_residual <= ATOL
@@ -163,27 +166,27 @@ def test_transporting_corresponding_record_observables_preserves_statistics():
 
 
 def test_orientation_reversing_correspondence_obeys_predeclared_sign_rule():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.max_reversing_record_sign_residual <= ATOL
     assert diagnostic.max_reversing_accessibility_sign_residual <= ATOL
     assert diagnostic.reversing_covariance
 
 
 def test_stage7a_spectator_map_is_not_reused_as_interacting_clock_change():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.legacy_spectator_map_state_residual > 1e-3
     assert diagnostic.legacy_map_rejected
 
 
 def test_leaving_source_bare_observable_untransported_is_rejected():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.bare_observable_residual > 1e-3
     assert diagnostic.bare_metric_self_adjoint_residual > 1e-3
     assert diagnostic.bare_observable_rejected
 
 
 def test_misdeclared_reversing_chi_fails_preserving_covariance_rule():
-    diagnostic = stage7d_transport_diagnostics()
+    diagnostic = TRANSPORT_DIAGNOSTIC
     assert diagnostic.wrong_chi_record_score_residual == pytest.approx(2.0, abs=ATOL)
     assert diagnostic.wrong_chi_accessibility_residual == pytest.approx(1.0, abs=ATOL)
     assert diagnostic.wrong_chi_rejected

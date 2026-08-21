@@ -10,7 +10,7 @@ Can block-like/global and becoming-like/local descriptions be related by explici
 
 ## Current project-level candidate
 
-After Stage 6, the most economical structural candidate is:
+After Stage 7, the provisional structural candidate remains:
 
 `T_candidate=(O,P,R,V;Xi)`
 
@@ -22,7 +22,9 @@ with:
 - `V`: Potentiality / extension semantics;
 - `Xi`: compatibility conditions among the typed layers.
 
-The tested quantum operational-correspondence role `Omega` is reconstructible from retained perspective transport in the declared Stage 5/6 operator interface and is therefore not currently required as a separate primitive in that interface.
+Stage 7 strengthens the P/O/R core with single-model constrained-quantum evidence while refining explicit cross-perspective edge matrices as derived from the common physical carrier plus per-perspective reductions. V remains the only explicit Stage 6 layer not yet integrated into that shared quantum construction.
+
+The tested quantum operational-correspondence role `Omega` remains reconstructible from retained perspective transport in the declared Stage 5/6 operator interface and is therefore not currently required as a separate primitive in that interface.
 
 This is a finite-model structural candidate, not a fundamental ontology of time.
 
@@ -110,125 +112,131 @@ Main results:
 - one-layer ablations leave `O`, `P`, `R`, and `V` functionally non-reconstructible in the declared interfaces;
 - the tested quantum `Omega` role is reconstructible from `P` plus declared observable transport.
 
-Stage 6G selected **B — layered temporal structure** with current candidate `T6_candidate=(O,P,R,V;Xi)`.
-
-Remaining `not_established` questions include perspective consistency => temporal arrow, physical clock change => temporal succession, record arrow => ontologically open future, Potentiality => phenomenal passage, and perspective consistency => modal equivalence.
+Stage 6G selected **B — layered temporal structure** with candidate `T6_candidate=(O,P,R,V;Xi)`.
 
 ---
 
-## Stage 7 — Quantum records inside a constrained multi-clock model — current
+## Stage 7 — Quantum records inside a constrained multi-clock model — scientifically completed on PR #8
 
-Protocol / concepts:
+Protocol / concepts / synthesis:
 
 - [`stage7_protocol.md`](stage7_protocol.md)
 - [`stage7_concepts.md`](stage7_concepts.md)
+- [`stage7g_notes.md`](stage7g_notes.md)
+- [`../results/stage7g_synthesis_stage8_gate.md`](../results/stage7g_synthesis_stage8_gate.md)
 
-Checkpoints through the current substage:
+Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. That chronology was superseded by the Stage 6G evidence-selected gate because P and R had not yet been placed in the same constrained quantum model.
 
-- [`../results/stage7_0_protocol_freeze.md`](../results/stage7_0_protocol_freeze.md)
-- [`../results/stage7a_spectator_memory.md`](../results/stage7a_spectator_memory.md)
-- [`../results/stage7b_reversible_record.md`](../results/stage7b_reversible_record.md)
-- [`../results/stage7c_relational_history.md`](../results/stage7c_relational_history.md)
-- [`../results/stage7d_record_transport.md`](../results/stage7d_record_transport.md)
-- [`../results/stage7e_accessibility_atlas.md`](../results/stage7e_accessibility_atlas.md)
-- [`../results/stage7f_ablation.md`](../results/stage7f_ablation.md)
+Stage 7 added a qubit memory subsystem, target-specific reversible record formation, an internally anchored `e0<e1<e2` history, genuine A/B/C clock changes, accessibility controls, partial-atlas reconstruction, and ingredient-wise ablations.
 
-### Why Stage 7 has this scope
+### Stage 7 main results
 
-Earlier roadmap versions assigned Stage 7 directly to a **generally covariant / gravitational extension**.
+- target-specific quantum record correlation can be produced reversibly without equating it with temporal direction;
+- an internally anchored forward record history gives `A_R=+1`, `A_acc=+1/2`; the explicit reversed construction gives opposite signs; balanced/no-record/uncertain-memory controls cancel;
+- the same record-bearing modified physical construction admits nine full-rank A/B/C clock/readout charts;
+- the ideal Euclidean-unitary atlas deforms into a nonideal induced-metric-preserving atlas rather than disappearing;
+- corresponding record statistics are covariant under correctly declared perspective/event/observable transport;
+- global record representation, reconstructibility, and local accessibility are distinct;
+- an omitted direct atlas edge is reconstructed consistently along three indirect paths;
+- neutralizing record coupling preserves the tested multi-clock perspective structure plus internal `e0<e1<e2` anchoring while giving `A_R=A_acc=0`;
+- therefore `P + internal O => R` is refuted in the declared Stage 7 family;
+- explicit cross-clock edge matrices are reconstructible as `S_{Y<-X}=C_Y @ inv(C_X)` from the common physical carrier and per-perspective reductions;
+- missing `chi` yields `not_established`, whereas wrong/misdeclared `chi` yields an executable mismatch;
+- hidden/noisy access is `inaccessible`, not `lost`.
 
-That chronology is superseded by the Stage 6G evidence-selected gate. Stage 6 showed that the most discriminating next question is whether `P`, `O`, and `R` remain distinct yet compatible when placed in one constrained quantum construction rather than in separate toy models.
+### Stage 7G synthesis
 
-The gravitational/general-covariant direction is deferred, not abandoned.
+The executable Stage 7G outcome is:
 
-### Stage 7 central question
+**`strengthened`**.
 
-> In one constrained finite quantum model containing multiple admissible internal clock perspectives and an explicit memory degree of freedom, does record-defined temporal structure remain distinct from perspective transformation and neutral order while transforming consistently under genuine clock changes?
+This strengthening is bounded to the P/O/R core and tested compatibility structure. It removes the former product-model separation between P and R and supplies a no-record countermodel retaining P plus internal O.
 
-### Evidence through Stage 7F
+It does **not** establish metaphysical irreducibility, fundamental time, thermodynamic time asymmetry, ontological becoming, phenomenal passage, general covariance, or empirical novelty.
 
-Stage 7A established the spectator-memory no-record baseline. Stage 7B added a reversible target-specific record witness. Stage 7C embedded record formation into an internally anchored constrained history and recovered forward/reversed/balanced/no-record/uncertain-memory orientation controls.
-
-Stage 7D re-derived all interacting A/B/C clock charts from the modified physical space. The ideal Stage 5/7A Euclidean-unitary atlas is deformed into an induced-metric-preserving nonideal atlas, while exact reconstruction, genuine clock-change state transport, corresponding record-observable transport, and preserving/reversing record covariance survive.
-
-Stage 7E separates global record representation from local access and establishes path-consistent record transport on a partial interacting atlas. Hidden/noisy readout can destroy local accessibility without deleting the global record, and a perturbation of one primitive path remains localized by independent map/state/metric/statistical diagnostics.
-
-Stage 7F then ablates memory, record coupling, internal history anchoring, explicit perspective edges, event correspondence, and local access one ingredient at a time. The central new result is a no-record constrained family that retains the tested multi-clock perspective structure plus the internal `e0<e1<e2` anchor while giving `A_R=A_acc=0`. Thus:
-
-`P + internal O => R`
-
-is refuted in the declared Stage 7 family.
-
-Conversely, the explicit cross-clock edge matrices themselves are reconstructible from the retained common physical carrier and per-node reductions as
-
-`S_{Y<-X}=C_Y @ inv(C_X)`.
-
-All 54 reconstructed comparisons preserve the tested state/inverse/metric/record covariance within `1e-9`.
-
-Further Stage 7F distinctions:
-
-- removing the history anchor preserves target-specific record correlation but makes record-defined direction `not_established`;
-- withholding `chi` leaves local P and R intact but makes cross-perspective P-R covariance `not_established`;
-- hidden/maximally-noisy local access is `inaccessible`, not `lost`;
-- wrong `chi` is an executable mismatch rather than absence of evidence.
-
-These results strengthen functional separation of `R` while refining what is primitive inside `P`. They do not establish metaphysical irreducibility of `R` or universal redundancy of `P`.
-
-### Stage 7 sequence
-
-- **Stage 7.0 — protocol freeze — completed**
-- **Stage 7A — spectator-memory constrained baseline — completed**
-- **Stage 7B — reversible quantum record witness — completed**
-- **Stage 7C — relational record formation and orientation controls — completed**
-- **Stage 7D — genuine clock-change record transport — completed**
-- **Stage 7E — accessibility and partial-atlas record consistency — completed**
-- **Stage 7F — ablation / reconstruction / mismatch matrix — completed**
-- **Stage 7G — synthesis and Stage 8 gate — next**
-
-### Stage 7 key guards
-
-- `memory present != record present`;
-- `entanglement != record`;
-- `target-specific record correlation != record-defined direction`;
-- `physical-subspace automorphism != time-localized interaction`;
-- `simulation/intervention order != modeled temporal order`;
-- `P-R covariance != P=R`;
-- `lost != metaphysically irreducible`;
-- `reconstructible != universally redundant`;
-- `P + O retained without R != proof that P/O can never generate records in another model`;
-- `missing chi != false covariance`;
-- `explicit perspective-map reconstruction != elimination of the perspective layer`;
-- `record orientation != ontological becoming`;
-- `record orientation != phenomenal passage`.
+Stage 7 also refines P: explicit edge matrices are derived in the current representation, but the perspective layer is not eliminated because the reconstruction still requires the common carrier and per-perspective reductions.
 
 ---
 
-## Stage 8 — Evidence-selected next finite quantum / causal pressure test
+## Stage 8 — Quantum Potentiality inside the shared constrained construction — selected next gate
 
-Stage 8 is intentionally **not fixed in advance**. Stage 7G must rank unresolved pressure points.
+Stage 7G ranks the candidate gates:
 
-Candidate gates include:
+1. `quantum_potentiality` — **10**;
+2. `richer_causal_order` — **7**;
+3. `nonideal_povm_clocks` — **5**;
+4. `parametrized_covariance_precursor` — **3**.
 
-1. integrate explicit `V` / extension semantics into the same relational quantum construction;
-2. move from the deliberately simple `O` layer to richer causal/order structure;
-3. test interacting, nonideal, or POVM clocks;
-4. if the finite layered architecture is sufficiently stable, begin a parametrized generally covariant precursor.
+Selected Stage 8 gate:
 
-The aim is to choose the experiment with highest discriminating power, not merely the next topic in a historical list.
+> **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
 
-## Stage 9 — Generally covariant / gravitational extension — deferred gate
+### Why this gate is selected
 
-The former Stage 7 gravitational program is moved here provisionally.
+V is now the only explicit Stage 6 layer that has not undergone the same single-model pressure test as P/O/R.
+
+Stage 2/6 already provide two typed modal interpretations that can be operationally underdetermined:
+
+- epistemic selected-history uncertainty;
+- ontic no-selected-future extension structure.
+
+Stage 8 should ask whether that distinction can survive when embedded alongside:
+
+- genuine internal clock perspectives;
+- the Stage 7 record/history construction;
+- explicit accessibility interfaces;
+- corresponding observable and event transport.
+
+The core discriminating question is not whether quantum theory is probabilistic. It is whether two differently typed Potentiality structures can remain operationally equivalent under a declared quantum interface without being identified by fiat.
+
+### Stage 8 guards
+
+Stage 8 must not define Potentiality as any of the following merely by terminology:
+
+- quantum randomness;
+- Born probability;
+- superposition;
+- absence of measurement;
+- sampling order;
+- Python branching;
+- ignorance about a preselected future.
+
+`Potentiality != quantum randomness by definition`.
+
+`operational quantum equivalence != modal/ontological equivalence by definition`.
+
+`perspective consistency != modal equivalence`.
+
+The detailed Stage 8 protocol should be frozen before implementation, following the Stage 7 pattern.
+
+---
+
+## Stage 9 — Richer causal/order or clock-robustness gate — provisional
+
+After Stage 8, unresolved high-value finite-model gates include:
+
+- replacing the deliberately minimal three-event O layer with richer causal/order structure;
+- interacting/nonideal/POVM clocks beyond the current projective finite-clock family.
+
+Their ordering should be re-ranked from Stage 8 evidence rather than fixed now.
+
+---
+
+## Stage 10 — Generally covariant / gravitational precursor — deferred
+
+The former Stage 7 gravitational program remains deferred.
 
 Possible progression, only after the finite constrained architecture is sufficiently stable:
 
 `parametrized particle -> simple generally covariant constrained model -> minisuperspace / other tractable gravitational setting`.
 
-Entry conditions include clarity about which Stage 6/7 layers remain independently needed, a non-cheating treatment of interactions/constraints, explicit control of clock/reference-perspective domains, and a reason to expect the gravitational model to discriminate among surviving structural candidates.
+Entry conditions include clarity about which layers remain independently needed, a non-cheating treatment of interactions/constraints, explicit control of clock/reference-perspective domains, and a reason to expect the covariant model to discriminate among surviving structural candidates.
 
 No gravitational terminology should be projected backward onto finite toy-model loop residuals, clock-rate controls, or algebraic constraints.
 
-## Stage 10 — Empirical relevance — only if warranted
+---
+
+## Stage 11 — Empirical relevance — only if warranted
 
 Seek empirical relevance only after deriving a genuinely discriminating physical prediction that is not already guaranteed by the underlying standard formalism.
 
@@ -257,6 +265,8 @@ A useful structural/mathematical synthesis with no novel empirical prediction re
 - `operational equality != modal/ontological equivalence`;
 - `record asymmetry != phenomenal passage`;
 - `perspective consistency != temporal succession by definition`;
+- `Potentiality != quantum randomness by definition`;
+- `perspective consistency != modal equivalence`;
 - `partial-atlas consistency != general covariance`;
 - `not_established != false`;
 - `finite-model success != empirical discovery`.

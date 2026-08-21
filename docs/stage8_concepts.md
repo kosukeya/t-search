@@ -1,6 +1,6 @@
 # Stage 8 Concepts — Quantum Potentiality
 
-Status: **Stages 8A–8F are completed in the declared finite family. Stage 8G — synthesis and evidence-selected next gate — is next.**
+Status: **Stages 8A–8G synthesis are completed in the declared finite family. Criteria 48–49 are closed; criterion 50 awaits final full-repository regression and merge-readiness review.**
 
 ## Quantum Actuality / continuation
 
@@ -170,11 +170,60 @@ If the local readout interface is hidden while the global one-bit record remains
 - `current_record_content = preserved`;
 - `local_record_access = inaccessible`.
 
-## Mismatch controls
+## Stage 8G refined candidate
 
-Stage 8F keeps wrong continuation map, wrong class correspondence, wrong event correspondence, weight mismatch, and wrong observable coordinates as separate executable controls.
+Stage 8G keeps the top-level candidate:
 
-`covariance of a wrongly typed observable != semantic correctness`.
+`T8_candidate=(O,P,R,V;Xi)`
+
+but refines two layers internally because their tested roles behave differently:
+
+`R=(R_content,R_direction,R_access)`
+
+`V=(V_extension,V_semantics,V_weights)`.
+
+This is the executable synthesis choice `refined_layered`.
+
+### Why R is internally typed
+
+- current record content can be present while directional record score is zero;
+- directional-record controls exist separately;
+- local record access can be hidden while global record content remains represented.
+
+Thus:
+
+`record content != directional record arrow != local record accessibility`.
+
+### Why V is internally typed
+
+- physical continuation multiplicity can be removed while formal modal typing remains;
+- singleton normalization reconstructs the sole weight as 1;
+- a two-class carrier admits distinct nontrivial weights with distinct predictions;
+- selected-vs-unselected semantics are not uniquely reconstructed from the public P/O/current-R carrier.
+
+Thus continuation multiplicity, modal selection semantics, and continuation weights are retained as different internal V roles.
+
+`V internal role separation != fundamental primitive decomposition`.
+
+## Evidence-selected Stage 9 gate
+
+Stage 8G uniquely selects:
+
+> **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
+
+Score order:
+
+1. `directional_record_potentiality` — 9;
+2. `full_measurement_covariance` — 6;
+3. `richer_causal_order` — 5;
+4. `nonideal_povm_clocks` — 3;
+5. `parametrized_covariance_precursor` — 2.
+
+This gate targets the strongest remaining partial relation: the canonical V carrier has current record content but no directional record arrow, while Stage 7C/8E supplies a directional-record control on the same current prefix.
+
+`directional record arrow != ontological future openness`.
+
+The generally covariant / gravitational precursor remains deferred rather than discarded.
 
 ## Quantum uncertainty guards
 
@@ -192,14 +241,16 @@ Stage 8E closes criteria **36–41**.
 
 Stage 8F closes criteria **42–47**.
 
-Criteria **48–50** remain Stage 8G work.
+Stage 8G executable synthesis/gate selection closes criteria **48–49**.
+
+Criterion **50** remains external final full-repository regression and merge-readiness review.
 
 ## Evidence boundary
 
-Stages 8A–8F now provide one finite constrained family in which physical continuation multiplicity, modal selected-vs-unselected typing, nontrivial weights, explicit perspective maps, event/class correspondence, current record content, and local record access show different ablation behavior.
-
-This supports a layered-role interpretation in the declared toy family. It does not establish fundamental ontology, universal irreducibility, ontic openness, thermodynamic time direction, or full Stage 8C measurement-family covariance.
+Stages 8A–8G support a refined layered finite-model candidate. They do not establish fundamental ontology, universal irreducibility, ontic openness, thermodynamic time direction, phenomenal passage, full Stage 8C measurement-family covariance, or a general-covariant/gravitational realization.
 
 `full Stage 8C measurement covariance remains not_established`.
+
+`refined layered candidate != fundamental ontology`.
 
 `not_established != false`.

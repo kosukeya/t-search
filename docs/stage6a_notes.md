@@ -1,6 +1,6 @@
 # Stage 6A Notes — Structural Inventory and Executable Adapters
 
-Status: **completed pending final documentation-inclusive regression**.
+Status: **completed**.
 
 Stage 6A converts selected results from Stages 1--5 into a common executable witness interface. It deliberately does not classify the Stage 6B implication matrix yet.
 
@@ -140,6 +140,7 @@ Stage 6A adds **13 focused tests** checking:
 
 - each W1--W5 adapter against direct existing-stage API calls;
 - expected discrete witness properties;
+- control-specific Stage 3 reversibility metadata;
 - numerical transition/composition/Born residuals remain below declared tolerances;
 - exact W1--W5 inventory coverage;
 - machine-readable JSON serialization;
@@ -148,3 +149,7 @@ Stage 6A adds **13 focused tests** checking:
 Initial code/test checkpoint:
 
 `352 passed in 18.57s`.
+
+Final code checkpoint after the control-specific reversibility correction:
+
+`352 passed in 16.12s`.

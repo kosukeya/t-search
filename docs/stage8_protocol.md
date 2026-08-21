@@ -1,12 +1,22 @@
 # Stage 8 Protocol — Quantum Potentiality in the Shared Constrained Construction
 
-Status: **Stage 8.0 protocol frozen; Stages 8A–8F completed in the declared finite family. Stage 8G is next.**
+Status: **Stage 8.0 protocol frozen; Stages 8A–8G synthesis are completed in the declared finite family. Criteria 48–49 are closed; criterion 50 awaits the final documentation-synchronized regression and merge-readiness review.**
 
 Selected Stage 8 gate:
 
 > **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
 
-Current candidate: `T_candidate=(O,P,R,V;Xi)`.
+Current refined candidate:
+
+`T8_candidate=(O,P,R,V;Xi)`
+
+with candidate internal typing:
+
+`R=(R_content,R_direction,R_access)`
+
+`V=(V_extension,V_semantics,V_weights)`.
+
+These internal labels are tested finite-model roles, not claims of fundamental metaphysical primitives.
 
 ## Central question
 
@@ -180,7 +190,42 @@ Guards:
 
 Stage 8F closes criteria **42–47**.
 
-Implementation-inclusive regression: `662 passed in 139.81s`.
+Final Stage 8F regression before Stage 8G: `663 passed in 257.59s`.
+
+## Stage 8G — synthesis and evidence-selected next gate — completed pending final criterion 50
+
+The executable synthesis selects:
+
+`refined_layered`.
+
+The top-level candidate remains `T8_candidate=(O,P,R,V;Xi)`, while the tested internal roles are refined as:
+
+- `R=(R_content,R_direction,R_access)`;
+- `V=(V_extension,V_semantics,V_weights)`.
+
+This is selected rather than `reduced` because modal semantics and nontrivial weights are not uniquely reconstructed from the retained public carrier; rather than `broken` because P/O/current-R/V compatibility remains positive where tested; and rather than `inconclusive` because Stage 8F ablations distinguish the named roles.
+
+Explicit P-V edge matrices remain a reconstructible representation when per-node continuation coordinates are retained. Explicit event/class correspondence remains a typing resource: removing it makes P-V identification `not_established` rather than false.
+
+### Evidence-selected Stage 9 gate
+
+The unique top-ranked next gate is:
+
+> **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
+
+Current score order:
+
+1. `directional_record_potentiality` — 9;
+2. `full_measurement_covariance` — 6;
+3. `richer_causal_order` — 5;
+4. `nonideal_povm_clocks` — 3;
+5. `parametrized_covariance_precursor` — 2.
+
+The selected gate directly targets the strongest remaining partial row: the canonical nontrivial V carrier has current record content but no directional record arrow, while the Stage 7C/8E control supplies directional record structure on the same current prefix.
+
+Gravity/general covariance is deferred again, not discarded.
+
+Stage 8G closes criteria **48–49** through executable synthesis/gate selection. Criterion **50** is external final CI and merge-readiness review.
 
 ## Exit criteria status
 
@@ -191,7 +236,8 @@ Implementation-inclusive regression: `662 passed in 139.81s`.
 - criteria 30–35: Stage 8D completed;
 - criteria 36–41: Stage 8E completed;
 - criteria 42–47: Stage 8F completed;
-- criteria 48–50: Stage 8G pending.
+- criteria 48–49: Stage 8G executable synthesis/gate selection completed;
+- criterion 50: pending final full-repository regression and merge-readiness review.
 
 ## Sequence
 
@@ -202,8 +248,9 @@ Implementation-inclusive regression: `662 passed in 139.81s`.
 - Stage 8D — genuine clock-change modal transport — completed
 - Stage 8E — P/O/R/V compatibility and underdetermination — completed
 - Stage 8F — ablation / reconstruction / mismatch matrix — completed
-- **Stage 8G — synthesis and evidence-selected next gate — next**
+- Stage 8G — synthesis and evidence-selected next gate — completed pending criterion 50
+- **Stage 9 — directional records with nontrivial quantum Potentiality — selected next gate**
 
-## Strongest allowed Stage 8F statement
+## Strongest allowed Stage 8G statement
 
-**Within the declared finite Stage 8 family, neutralizing the current record write leaves a two-continuation constrained P/O/V witness with genuine clock transport, physically inequivalent future completions, selected-vs-unselected modal underdetermination, and nontrivial weight-sensitive prediction while target-specific current record information vanishes. Separately, physical continuation multiplicity, modal semantic typing, nontrivial continuation weights, explicit perspective-edge matrices, event/class correspondence, and local record accessibility show different ablation statuses. This strengthens a layered-role candidate but does not establish metaphysical irreducibility, universal R-V independence, ontic openness, or complete measurement-family covariance.**
+**Within the declared finite Stage 8 family, the evidence favors retaining the top-level layered candidate `T=(O,P,R,V;Xi)` while refining R into record-content/direction/access roles and V into continuation-extension/modal-semantics/weight roles. Current target-specific record content can be removed while nontrivial constrained P/O/V structure remains; selected-vs-unselected semantics and nontrivial weights are not uniquely reconstructed from retained public structure; and explicit P-V edge matrices are reconstructible from per-node coordinates. The strongest unresolved compatibility link is directional R with nontrivial V, so that link is selected as the next finite-model gate ahead of generally covariant/gravitational extension. These finite-model results do not establish ontic openness, metaphysical irreducibility, phenomenal passage, or a fundamental/unique ontology of time.**

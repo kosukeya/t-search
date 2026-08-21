@@ -1,4 +1,4 @@
-from dataclasses import FrozenInstanceError, fields
+from dataclasses import fields
 
 import pytest
 
@@ -124,8 +124,12 @@ def test_stage8b_ontic_model_schema_has_no_selected_or_selector_like_stored_datu
 
 def test_stage8b_ontic_slots_and_frozen_schema_reject_injected_selector_state():
     _, ontic = canonical_stage8b_models()
-    with pytest.raises((FrozenInstanceError, AttributeError)):
+    # CPython's frozen+slots dataclass implementation may raise TypeError,
+    # AttributeError, or FrozenInstanceError depending on version. The scientific
+    # requirement is simply that the selector cannot be injected.
+    with pytest.raises((TypeError, AttributeError)):
         setattr(ontic, "selected_continuation", canonical_continuation_left())
+    assert not hasattr(ontic, "selected_continuation")
 
 
 def test_stage8b_epistemic_selected_continuation_must_belong_to_qext():

@@ -8,13 +8,9 @@ Can global and perspective-relative descriptions be related explicitly, and can 
 
 ## Current status
 
-**Stages 1–6 are completed and merged. Stage 7.0–7E are scientifically completed on Draft PR #8; Stage 7F — ablation / reconstruction / mismatch matrix — is next.**
+**Stages 1–6 are completed and merged. Stage 7.0–7F are scientifically completed on Draft PR #8; Stage 7G synthesis and the evidence-selected Stage 8 gate are next.**
 
-Stage 6 was merged by PR #7. Its synthesis selected:
-
-**B — layered temporal structure**
-
-with the current finite-model candidate:
+Stage 6 selected the current finite-model candidate:
 
 `T_candidate=(O,P,R,V;Xi)`
 
@@ -26,7 +22,7 @@ where:
 - `V`: Potentiality / extension semantics;
 - `Xi`: compatibility conditions among the layers.
 
-The tested quantum operational-correspondence role `Omega` is reconstructible from `P` plus the declared observable transport in the Stage 5/6 operator interface.
+The tested quantum operational-correspondence role `Omega` is reconstructible from `P` plus declared observable transport in the Stage 5/6 interface.
 
 This is a structural candidate inside finite toy models, not a fundamental ontology of time.
 
@@ -36,7 +32,7 @@ Stage 6G selected:
 
 > **Add explicit memory/record subsystems to the constrained multi-clock quantum model.**
 
-The goal is to test whether perspective structure `P`, neutral order/history `O`, and record structure `R` remain distinct yet compatible when they inhabit one constrained quantum construction.
+The goal is to test whether perspective structure `P`, internal neutral order/history `O`, and record structure `R` remain distinct yet compatible inside one constrained quantum construction.
 
 Stage 7 planning and checkpoints:
 
@@ -48,22 +44,9 @@ Stage 7 planning and checkpoints:
 - [`results/stage7c_relational_history.md`](results/stage7c_relational_history.md)
 - [`results/stage7d_record_transport.md`](results/stage7d_record_transport.md)
 - [`results/stage7e_accessibility_atlas.md`](results/stage7e_accessibility_atlas.md)
+- [`results/stage7f_ablation.md`](results/stage7f_ablation.md)
 
 The earlier roadmap assignment of Stage 7 to a generally covariant / gravitational extension has been superseded by this evidence-selected gate. The gravitational direction is deferred rather than abandoned; see [`docs/roadmap.md`](docs/roadmap.md).
-
-## Integrated stage syntheses
-
-- [`results/stage1_synthesis.md`](results/stage1_synthesis.md)
-- [`results/stage2_synthesis.md`](results/stage2_synthesis.md)
-- [`results/stage3_synthesis.md`](results/stage3_synthesis.md)
-- [`results/stage4_synthesis.md`](results/stage4_synthesis.md)
-- [`results/stage5_synthesis.md`](results/stage5_synthesis.md)
-- [`results/stage6g_synthesis_stage7_gate.md`](results/stage6g_synthesis_stage7_gate.md)
-
-Project-level planning:
-
-- [`docs/roadmap.md`](docs/roadmap.md)
-- [`docs/concepts.md`](docs/concepts.md)
 
 ## Stage summaries
 
@@ -71,15 +54,11 @@ Project-level planning:
 
 Finite classical graph experiments established reconstruction and information-loss controls.
 
-Key distinction:
-
 `global reconstructibility != local accessibility`.
 
 ### Stage 2 — Potentiality
 
 Formally distinct hidden-selected-future and no-selected-future models can share the tested operational outputs.
-
-Key distinction:
 
 `operational equality != modal/ontological equivalence`.
 
@@ -124,27 +103,31 @@ The resulting bounded structural candidate is layered:
 
 ### Stage 7 — quantum records in the multi-clock constrained model — in progress
 
-The minimal carrier is
+The carrier is
 
 `H_kin^7=H_A tensor H_B tensor H_C tensor H_M`,
 
-with a qubit memory `H_M=C^2`.
+with qubit memory `H_M=C^2`.
 
-Stage 7A established a spectator-memory no-record baseline. Stage 7B constructed a reversible target-specific quantum record witness. Stage 7C embedded record formation into an internally A-clock-anchored modified constraint and obtained a reversible record-defined orientation with explicit reversal/balance/no-record/uncertain-memory controls.
+Stage 7A established a spectator-memory no-record baseline. Stage 7B constructed a reversible target-specific record witness. Stage 7C embedded record formation into an internally A-clock-anchored modified constraint and obtained a reversible record-defined orientation with explicit reversal/balance/no-record/uncertain-memory controls.
 
-Stage 7D then re-derived the record-bearing model in all nine A/B/C clock/readout charts. Record interaction deforms the ideal Euclidean-unitary Stage 5/7A atlas into an **induced-metric-preserving nonideal atlas**, but genuine cross-clock state transport and corresponding record-observable covariance survive. Orientation-preserving `chi` gives `A_R=+1`, `A_acc=+1/2`; orientation-reversing `chi` gives the opposite signs.
+Stage 7D re-derived the record-bearing model in all nine A/B/C clock/readout charts. Record interaction deforms the ideal Euclidean-unitary Stage 5/7A atlas into an **induced-metric-preserving nonideal atlas**, but genuine cross-clock state transport and corresponding record-observable covariance survive. Orientation-preserving `chi` gives `A_R=+1`, `A_acc=+1/2`; orientation-reversing `chi` gives the opposite signs.
 
-Stage 7E separates global record representation from local accessibility. With the common physical record held fixed:
+Stage 7E separates global record representation from local accessibility. Hidden or maximally noisy local access gives local `A_R=0`, `A_acc=0` while the global record remains represented. A partial interacting atlas also remains path-consistent through three indirect routes when one requested direct edge is unavailable; one perturbed primitive edge creates a localized map/state/metric/record-statistic inconsistency.
 
-- full access reproduces `A_R=+1`, `A_acc=+1/2`;
-- hidden or maximally noisy access gives local `A_R=0`, `A_acc=0` while the global record remains represented;
-- a `1/4`-flip coarse channel degrades but preserves the lower-index orientation.
+Stage 7F then performs a role-level ablation / reconstruction / mismatch matrix. Its main results are:
 
-Stage 7E also removes the primitive `A/e1 -> B/e0` edge. Three indirect paths through `C/e0,e1,e2` reproduce the same target state/metric/record profile. Perturbing only `C/e1 -> B/e0` creates a localized map/state/metric/record-statistic inconsistency while the other two paths remain consistent. The tested projector-algebra similarity can remain intact, so:
+- removing the memory record carrier loses target-specific record, direction, and local record readout while leaving the A/B/C clock carrier available;
+- neutralizing record coupling preserves the tested multi-clock perspective structure and internal `e0<e1<e2` anchor but gives `A_R=A_acc=0`;
+- therefore `P + internal O => R` is **refuted in the declared Stage 7 family**;
+- removing the internal history anchor leaves the Stage 7B target-specific `I(Q;M)=1 bit` record witness but makes directional R `not_established`;
+- removing explicit cross-clock edge matrices does **not** lose the transport role: all 54 maps are reconstructed from the retained per-node reductions as `C_Y @ inv(C_X)` with state/inverse/metric/record covariance residuals within `1e-9`;
+- withholding `chi` preserves local P and local R but makes cross-perspective `P_R_covariance` `not_established`;
+- hidden/maximally-noisy access is classified `inaccessible`, not `lost`.
 
-`observable-algebra correspondence != full state/metric path consistency`.
+Thus Stage 7F strengthens the functional separation of `R` while refining what is primitive inside `P`: the explicit edge matrices are derived from the common physical carrier plus per-perspective reductions in the current interface.
 
-The current single-model evidence therefore supports non-trivial `P-R` compatibility while preserving the distinction between perspective, record representation, reconstructibility, and accessibility. It does not establish `P=R`.
+This does **not** establish metaphysical irreducibility of `R` or universal redundancy of `P`.
 
 ## Stage 7 sequence
 
@@ -154,8 +137,8 @@ The current single-model evidence therefore supports non-trivial `P-R` compatibi
 - Stage 7C — relational record formation and orientation controls — **completed**;
 - Stage 7D — genuine clock-change record transport — **completed**;
 - Stage 7E — accessibility and partial-atlas record consistency — **completed**;
-- Stage 7F — ablation / reconstruction / mismatch matrix — **next**;
-- Stage 7G — synthesis and evidence-selected Stage 8 gate — planned.
+- Stage 7F — ablation / reconstruction / mismatch matrix — **completed**;
+- Stage 7G — synthesis and evidence-selected Stage 8 gate — **next**.
 
 ## Methodological guards
 
@@ -169,23 +152,22 @@ The project deliberately keeps the following distinctions explicit:
 - `record asymmetry != phenomenal passage`;
 - `perspective-change arrow != temporal-succession arrow`;
 - `equal clock labels != same physical event`;
-- `support-space isometry != unrestricted ambient unitarity`;
-- `state transport without observable transport != operational covariance`;
-- `perspective-dependent entanglement != operational inconsistency`;
-- `algebraic loop residual != gravitational curvature/holonomy without an independent physical derivation`;
 - `memory present != record present`;
 - `entanglement != target-specific record`;
-- `record correlation != record-defined orientation`;
-- `support-local unitary != autonomous constrained interaction`;
+- `target-specific record correlation != record-defined direction`;
 - `physical-subspace automorphism != time-localized dynamical interaction`;
-- `interacting clock change != inherited spectator clock change`;
 - `non-Euclidean-unitary map != failed perspective map when the induced physical metric is preserved`;
 - `locally inaccessible record != globally absent record`;
 - `indirect reconstructibility != direct local edge availability`;
-- `partial atlas path consistency != universal frame availability`;
 - `localized path inconsistency != spacetime curvature`;
 - `observable-algebra correspondence != full state/metric path consistency`;
 - `P-R covariance != P=R`;
+- `lost != metaphysically irreducible`;
+- `reconstructible != universally redundant`;
+- `P + O retained without R != proof that P/O can never generate records in another model`;
+- `missing chi != false covariance`;
+- `wrong chi mismatch != destruction of P or R`;
+- `explicit perspective-map reconstruction != elimination of the perspective layer`;
 - `record orientation != ontological becoming`;
 - `record orientation != phenomenal passage`;
 - `not_established != false`;

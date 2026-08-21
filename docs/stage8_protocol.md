@@ -1,6 +1,6 @@
 # Stage 8 Protocol — Quantum Potentiality in the Shared Constrained Construction
 
-Status: **Stage 8.0 protocol frozen; Stages 8A–8C completed in the canonical finite family. Stage 8D is next.**
+Status: **Stage 8.0 protocol frozen; Stages 8A–8D completed in the canonical finite family. Stage 8E is next.**
 
 Selected Stage 8 gate:
 
@@ -20,7 +20,9 @@ Can epistemic uncertainty about an already-selected quantum continuation and ont
 - `random sampling != ontic actualization evidence`;
 - `density matrix decomposition != unique modal semantics`;
 - `operational quantum equivalence != modal/ontological equivalence`;
-- `explicit evidence update != ontological becoming`.
+- `explicit evidence update != ontological becoming`;
+- `P-V covariance != P=V`;
+- `not_established != false`.
 
 ## Selected-vs-unselected model roles
 
@@ -64,8 +66,6 @@ Canonical matched weights are `q_E = K = (0.5,0.5)` and are generated from the c
 
 With carrier and weights fixed, swapping epistemic `h*=h_L` to `h*=h_R` changes the privileged selected-continuation diagnostic while leaving the Stage 8B minimal pre-discriminating projection unchanged.
 
-Corrected implementation regression: `595 passed in 140.99s`. Planning/documentation-synchronized regression: `597 passed in 84.13s`.
-
 Stage 8B satisfies criteria 17–21.
 
 Frozen guards:
@@ -84,36 +84,18 @@ Stage 8C implements the full declared ontology-neutral interface:
 
 The concrete operational view exposes the current reduced density matrix, target-memory record channel, physically defined next outcomes and their predictions, and explicit observed evidence after update. It contains no `h*`, model type, typed Potentiality object, selector, raw `q_E`, or raw `K` field.
 
-### Physical future-signature measurement
+The two orthogonal canonical Stage 8A `e2` reduced states define deterministic future-signature outcomes:
 
-The two orthogonal canonical Stage 8A `e2` reduced states define two projectors, with a third remainder projector closing the ambient measurement. The canonical Born signatures are:
+- `h_L -> future_signature_0`;
+- `h_R -> future_signature_1`.
 
-- `h_L -> future_signature_0` with probability 1;
-- `h_R -> future_signature_1` with probability 1;
-- the remainder outcome has zero support for both retained continuations.
+With matched `q_E=K=(0.5,0.5)`, the two typed models have equal full declared `O_Q` views and predict `(0.5,0.5)`. Swapping only `h*` leaves full `O_Q` unchanged. Changing only ontic `K` to `(0.75,0.25)` leaves current Actuality fixed but changes the prediction to `(0.75,0.25)`.
 
-With matched `q_E=K=(0.5,0.5)`, both typed models therefore predict `(0.5,0.5)` under the same physical measurement and their complete declared `O_Q` views agree within tolerance. A privileged modal diagnostic still distinguishes selected-vs-unselected structure outside `O_Q`.
+For explicit evidence `future_signature_0`, epistemic `h*=h_L` is preserved with `q_E'=(1,0)`; ontic `K'=(1,0)` is obtained without adding a selected/selector field; both anchors advance `e1 -> e2`; and terminal `QExt(e2)=empty`.
 
-Changing epistemic `h*` alone leaves full `O_Q` unchanged. Changing only the ontic weights to `K=(0.75,0.25)` leaves current Actuality/record data unchanged but changes the next-outcome prediction to `(0.75,0.25)`.
+The same current superposition, density matrix, and matched Born prediction occur in both modal types while privileged structures remain different.
 
-### Explicit common-evidence update
-
-The update receives an explicit `QuantumEvidence` value; it never samples a branch internally. For canonical evidence `future_signature_0`:
-
-- epistemic `h*=h_L` is preserved and `q_E'=(1,0)`;
-- contradictory deterministic evidence is rejected rather than replacing `h*`;
-- ontic `K'=(1,0)` with no selected/selector/seed/singleton-continuation field added;
-- both current anchors advance from `e1` to terminal `e2`;
-- both post-update `O_Q` views agree;
-- the declared future extension set is `QExt(e2)=empty`.
-
-The evidence-conditioned singleton posterior support is not treated as a hidden selector that existed before evidence.
-
-### Superposition / state controls
-
-The common current `e1` state has multiple coherent amplitudes. The two modal types nevertheless share the same current density matrix and matched Born prediction while their privileged structures differ. Thus, in this declared finite family, superposition, the current state/density representation, and matched Born output do not uniquely select the selected-vs-unselected modal semantics.
-
-Stage 8C satisfies criteria 22–29. Implementation/full regression before final planning-document synchronization: `612 passed in 203.50s`.
+Stage 8C satisfies criteria 22–29. Final documentation-synchronized regression: `613 passed in 201.82s`.
 
 Frozen guards:
 
@@ -124,11 +106,81 @@ Frozen guards:
 - `same density/Born data != unique modal semantics in this family`;
 - `evidence-conditioned singleton support != pre-existing hidden selector`.
 
-## Stage 8D/E/F/G targets
+## Stage 8D — genuine clock-change modal transport — completed
 
-Stage 8D: genuine P-V transport using interacting clock maps and explicit continuation/event correspondence.
+Because `h_L` and `h_R` define different continuation-specific modified constraints, Stage 8D does not assume one inherited physical-clock map applies to the whole continuation carrier.
 
-Stage 8E: P/O/R/V compatibility and underdetermination.
+For each continuation `h` and physical-clock chart `(X,j)` it re-derives:
+
+`D_X(j)B_h = Q_{h,X,j} C_{h,X,j}`,
+
+`G_{h,X,j}=C_{h,X,j}^{-dagger}C_{h,X,j}^{-1}`,
+
+`S^h_{Y,k<-X,j}=C_{h,Y,k}C_{h,X,j}^{-1}`.
+
+All 18 continuation/perspective charts have rank 14. Across 108 distinct-clock state transports and 324 three-clock compositions, the maximum residuals are:
+
+- state transport `7.406835737661463e-16`;
+- inverse `8.865498249943151e-16`;
+- induced-metric covariance `3.627704160496353e-15`;
+- three-clock composition `7.676816844782384e-16`.
+
+The positive modal correspondence is explicit:
+
+`e1 -> e1`, `h_L -> h_L`, `h_R -> h_R`.
+
+It is audited as a bijection of physical continuation-equivalence classes rather than a match of string labels. Renaming a representative therefore does not change its physical class.
+
+With matched `q_E=K=(0.5,0.5)`, all nine transported public modal views agree; swapping only hidden `h*` leaves those views unchanged; and maximum weight residual is `0`. A transported `K=(0.75,0.25)` mismatch remains detectable in B/C predictive densities.
+
+Negative controls pass:
+
+- applying an `h_L`-derived map to `h_R` gives state residual `1.0000000000000002`;
+- swapping the two physical continuation classes is rejected;
+- misdeclaring current `e1` as terminal `e2` is rejected because target `QExt(e2)=empty`;
+- renamed representatives are accepted only through physical continuation equivalence.
+
+### Perspective-relative refinement of current Actuality
+
+The Stage 8A shared A/e1 pure-state density remains equal to tolerance:
+
+`||rho_L^(A,e1)-rho_R^(A,e1)|| = 7.099525387436241e-16`.
+
+But across the six B/C same-readout charts, the normalized `h_L/h_R` conditional pure-state density residual lies in:
+
+`[0.9128709291752769, 1.1547005383792515]`.
+
+Thus:
+
+`shared Actuality at one declared perspective/event != identical conditional pure ray in every perspective`.
+
+This is not a failure of continuation-specific covariance. Each continuation still transports its own state consistently. It instead shows that Stage 8A's shared-current-ray statement is perspective/event typed in this continuation family.
+
+### Full Stage 8C measurement covariance remains not established
+
+Stage 8D establishes per-continuation physical covariance and continuation-class/weight `P-V` covariance. It does not construct one declared `h`-independent transport for the Stage 8C cross-continuation future-signature measurement family.
+
+Accordingly:
+
+`full Stage 8C measurement covariance = not_established`.
+
+This is an evidence boundary, not a refutation.
+
+Stage 8D scientific regression including renaming, B/C pure-ray, and transported weight-mismatch controls: `634 passed in 131.34s`.
+
+Frozen guards:
+
+- `equal numeric clock readings != event identity`;
+- `continuation-aware P-V transport != one universal h-independent linear map`;
+- `branch-specific perspective map != hidden branch selection`;
+- `P-V covariance != P=V`;
+- `QExt represented != ontically real futures by definition`;
+- `full Stage 8C measurement covariance not established != false P-V class transport`;
+- `not_established != false`.
+
+## Stage 8E/F/G targets
+
+Stage 8E: P/O/R/V compatibility and underdetermination, including the distinction exposed by Stage 8D between continuation/class covariance, perspective-relative pure conditional rays, record/order compatibility, and the still-open full measurement-family transport question.
 
 Stage 8F: ablation/reconstruction/mismatch matrix.
 
@@ -139,8 +191,18 @@ Stage 8G: synthesis and evidence-selected next gate.
 - criteria 1–10: Stage 8.0 protocol/typing completed;
 - criteria 11–16: Stage 8A completed;
 - criteria 17–21: Stage 8B completed;
-- criteria 22–29: Stage 8C completed;
-- Criteria 30–50 remain future scientific work.
+- criteria 22–29: Stage 8C completed.
+
+Stage 8.0 historically froze only that criteria 30–50 remained future work; it did not assign detailed substage meanings in the checkpoint text. For the current execution ledger, Stage 8D allocates and closes criteria **30–35**:
+
+30. continuation-specific full-rank supports and induced metrics;
+31. genuine state/inverse/metric/composition covariance;
+32. explicit event/class correspondence and weight preservation;
+33. matched transported modal equality plus hidden-`h*` swap invariance;
+34. wrong-map / wrong-class / wrong-event / renaming controls;
+35. explicit separation of established class transport from not-established full Stage 8C measurement covariance.
+
+Criteria 36–50 remain future scientific work for Stage 8E–G.
 
 ## Sequence
 
@@ -148,11 +210,11 @@ Stage 8G: synthesis and evidence-selected next gate.
 - Stage 8A — common quantum-extension substrate — completed
 - Stage 8B — typed epistemic and ontic-extension quantum models — completed
 - Stage 8C — operational underdetermination and explicit update — completed
-- **Stage 8D — genuine clock-change modal transport — next**
-- Stage 8E — P/O/R/V compatibility and underdetermination
+- Stage 8D — genuine clock-change modal transport — completed
+- **Stage 8E — P/O/R/V compatibility and underdetermination — next**
 - Stage 8F — ablation / reconstruction / mismatch matrix
 - Stage 8G — synthesis and evidence-selected next gate
 
-## Strongest allowed Stage 8C statement
+## Strongest allowed Stage 8D statement
 
-**Within the canonical finite constrained continuation family, two privileged-structure-distinct modal models share the same executable continuation carrier and have equal full declared `O_Q` views under matched weights; a controlled weight mismatch changes the future prediction; and one explicit deterministic common-evidence update preserves the epistemic `h*` while the ontic updated schema adds no selector and advances to terminal `QExt(e2)=empty`. The same current superposition, density matrix, and matched Born prediction occur in both modal types. This establishes finite-interface operational underdetermination and update compatibility, not ontic openness of the real future, hidden futurity in nature, collapse-as-becoming, P-V covariance, or V independence from P/O/R.**
+**Within the canonical finite continuation family, each represented continuation admits its own re-derived full-rank A/B/C physical-clock atlas whose state transport, inverse structure, induced metric, and three-clock composition are consistent to about `1e-15`. Under an explicit `e1->e1` physical continuation-class correspondence, matched epistemic and ontic-extension weights give equal public transported modal views at all nine perspective nodes, while changing the hidden epistemic `h*` alone remains invisible and controlled map/class/event mismatches fail. The shared A/e1 current pure ray does not remain an identical normalized pure conditional ray across B/C perspectives, and a single transport of the Stage 8C cross-continuation measurement family remains not established. This supports continuation/class-level `P-V` covariance in the declared finite model, not `P=V`, ontic openness, universal quantum covariance, a perspective-independent ontology of the future, or V independence from P/O/R.**

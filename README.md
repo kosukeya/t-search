@@ -8,7 +8,7 @@ Can global and perspective-relative descriptions be related explicitly, and can 
 
 ## Current status
 
-**Stages 1–6 are completed and merged. Stage 7.0–7G are scientifically completed on PR #8. The Stage 7 synthesis strengthens the finite-model P/O/R layered core, and the evidence-selected Stage 8 gate is to integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
+**Stages 1–7 are completed and merged. Stage 8.0 — Quantum Potentiality protocol freeze — is completed on Draft PR #9, and Stage 8A — common quantum-extension substrate — is next.**
 
 The current project-level finite-model candidate remains:
 
@@ -22,7 +22,7 @@ where:
 - `V`: Potentiality / extension semantics;
 - `Xi`: compatibility conditions among the layers.
 
-Evidence strength is now asymmetric: Stage 7 gives stronger single-model support to the P/O/R core, whereas V remains separately modeled and is the next pressure point. The tested quantum operational-correspondence role `Omega` remains reconstructible from `P` plus declared observable transport in the Stage 5/6 interface.
+Evidence strength is asymmetric: Stage 7 gives stronger single-model support to the P/O/R core, whereas Stage 8 now begins the first single-model pressure test of V. The tested quantum operational-correspondence role `Omega` remains reconstructible from `P` plus declared observable transport in the Stage 5/6 interface.
 
 This is a structural candidate inside finite models, not a fundamental ontology of time.
 
@@ -103,7 +103,7 @@ The resulting bounded structural candidate is layered:
 
 `(O,P,R,V;Xi)`.
 
-### Stage 7 — quantum records in the multi-clock constrained model — scientifically completed
+### Stage 7 — quantum records in the multi-clock constrained model — completed and merged
 
 The carrier is
 
@@ -133,35 +133,36 @@ Stage 7G integrates these results and selects the synthesis outcome:
 
 The strengthening is specifically the finite-model P/O/R core and tested compatibility structure, especially `Xi_PR`. It does not establish metaphysical irreducibility. Stage 7 also refines P: explicit edge matrices are derived from the common physical carrier plus per-perspective reductions in the current representation.
 
-`V` remains the one explicit Stage 6 layer not yet placed inside the same constrained quantum construction.
+## Stage 8 — quantum Potentiality in the shared constrained construction — current
 
-## Stage 7 sequence
-
-- Stage 7.0 — protocol freeze — **completed**;
-- Stage 7A — spectator-memory constrained baseline — **completed**;
-- Stage 7B — reversible quantum record witness — **completed**;
-- Stage 7C — relational record formation and orientation controls — **completed**;
-- Stage 7D — genuine clock-change record transport — **completed**;
-- Stage 7E — accessibility and partial-atlas record consistency — **completed**;
-- Stage 7F — ablation / reconstruction / mismatch matrix — **completed**;
-- Stage 7G — synthesis and evidence-selected Stage 8 gate — **completed**.
-
-## Selected Stage 8 gate
-
-The Stage 7G executable ranking is:
-
-1. `quantum_potentiality` — score 10;
-2. `richer_causal_order` — score 7;
-3. `nonideal_povm_clocks` — score 5;
-4. `parametrized_covariance_precursor` — score 3.
-
-Selected Stage 8 direction:
+Stage 7G selected:
 
 > **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
 
-The goal is to test whether Stage 2/6 epistemic selected-history uncertainty and ontic no-selected-future extension semantics remain distinct when genuine clock perspectives, record structure, accessibility, and relational history all coexist in one quantum construction.
+Stage 8 documents and current checkpoint:
 
-Stage 8 must not identify Potentiality with quantum randomness, Born probability, superposition, sampling, or measurement outcome selection by definition.
+- [`docs/stage8_protocol.md`](docs/stage8_protocol.md)
+- [`docs/stage8_concepts.md`](docs/stage8_concepts.md)
+- [`results/stage8_0_protocol_freeze.md`](results/stage8_0_protocol_freeze.md)
+
+Stage 8.0 freezes `QuantumContinuation`, `QExt(D)`, typed epistemic/ontic-extension Potentiality, an ontology-neutral operational interface, explicit update semantics, genuine clock-perspective modal transport requirements, P/O/R/V compatibility tests, negative controls, stop conditions, and 50 Stage 8 exit criteria.
+
+The epistemic model contains one globally selected complete continuation `h*` hidden from the operational interface. The ontic-extension model represents physically admissible continuations but contains no selected complete continuation datum or equivalent hidden selector before update.
+
+The quantum continuation substrate must act on the Stage 7 constrained carrier. Merely attaching Stage 2 modal metadata or branch labels to the quantum model does not count as integration.
+
+### Stage 8 sequence
+
+- Stage 8.0 — Quantum Potentiality protocol freeze — **completed**;
+- Stage 8A — common quantum-extension substrate — **next**;
+- Stage 8B — typed epistemic and ontic-extension quantum models;
+- Stage 8C — operational underdetermination and explicit update;
+- Stage 8D — genuine clock-change modal transport;
+- Stage 8E — P/O/R/V compatibility and underdetermination;
+- Stage 8F — ablation / reconstruction / mismatch matrix;
+- Stage 8G — synthesis and evidence-selected next gate.
+
+Only Stage 8 exit criteria 1–10 are frozen by Stage 8.0. Criteria 11–50 remain future scientific work.
 
 ## Methodological guards
 
@@ -192,6 +193,10 @@ The project deliberately keeps the following distinctions explicit:
 - `wrong chi mismatch != destruction of P or R`;
 - `explicit perspective-map reconstruction != elimination of the perspective layer`;
 - `Potentiality != quantum randomness by definition`;
+- `Potentiality != superposition by definition`;
+- `Potentiality != Born probability by definition`;
+- `density matrix decomposition != unique modal semantics`;
+- `typed modal wrapper beside quantum model != quantum-modal integration`;
 - `perspective consistency != modal equivalence`;
 - `record orientation != ontological becoming`;
 - `record orientation != phenomenal passage`;

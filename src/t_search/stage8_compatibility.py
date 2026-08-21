@@ -1,43 +1,29 @@
-"""Stage 8E compatibility and underdetermination for P/O/R/V.
+"""Stage 8E P/O/R/V compatibility and underdetermination.
 
-Stage 8D established continuation-aware P-V class/weight transport, but it also
-showed that a shared A/e1 current ray need not remain one identical conditional
-pure ray in B/C perspectives.  Stage 8E therefore keeps the layers typed and
-asks which compatibility claims can actually be witnessed on the same finite
-constrained carrier.
+Stage 8D established continuation-aware P-V class/weight transport. Stage 8E
+keeps P, O, R, and V typed and tests their compatibility on the same finite
+constrained continuation carrier.
 
-The executable checks are deliberately split into:
+A crucial coordinate guard is enforced here. The Stage 7/8 target-memory record
+observable is defined in the fixed A-rest support basis, whereas Stage 8D clock
+maps use continuation-specific QR support coordinates. A fixed-support operator
+must therefore be changed into the QR basis before it is converted to physical
+coefficients and transported. Merely inserting the fixed-support matrix into QR
+coordinates can be perfectly covariant while representing the wrong observable.
 
-* P-O: covariance of the A-clock event-effect family under each continuation's
-  re-derived physical-clock atlas;
-* P-R(current): covariance of the declared target-memory record readout with
-  transported observables, plus wrong-target and bare-observable controls;
-* P-V: the continuation-class/weight covariance already established by Stage
-  8D;
-* O-V: canonical continuation classes agree through e1 and first differ only at
-  the later e2 event; current-prefix and terminal controls remain explicit;
-* R(current)-V: h_L/h_R have the same current target-specific record while
-  remaining physically inequivalent future continuations;
-* O-R(direction): a contrast with the Stage 7C record-scrambling completion
-  keeps the same e0<e1<e2 event skeleton and the same A/e1 current state but
-  changes the directional record score.  Thus order does not force directional
-  R in this declared family;
-* modal underdetermination: the same P/O/current-R physical carrier hosts the
-  epistemic selected-h* and ontic no-selected-continuation semantics while
-  their public transported views remain matched under equal weights.
+The canonical h_L/h_R continuations preserve the recorded target through e2, so
+they carry a one-bit current record but no directional lower-vs-upper record
+contrast. A Stage 7C record-scrambling completion with the same e0<e1<e2 event
+skeleton and the same A/e1 current state supplies the directional contrast
+control. Thus current record content and record-defined direction remain distinct.
 
-The canonical Stage 8 h_L/h_R future operations preserve the recorded target,
-so their lower and upper record information are equal and directional R is not
-present.  This is a result, not a software failure.  Stage 8E therefore does
-not claim full P/O/directional-R/V co-realization.
-
-Compatibility here is finite-model compatibility, not metaphysical identity or
-fundamentality.
+All conclusions are bounded to the declared finite model family.
 """
 
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from functools import lru_cache
 from itertools import permutations, product
 from typing import Literal
 
@@ -58,12 +44,17 @@ from .stage7_record import (
     canonical_target_pair_projector,
     canonical_wrong_target_pair_projector,
 )
-from .stage7_spectator import MEMORY_DIMENSION, memory_identity
+from .stage7_spectator import (
+    MEMORY_DIMENSION,
+    memory_identity,
+    spectator_support_basis,
+)
 from .stage8_continuations import (
     QuantumContinuation,
     assess_continuation_admissibility,
     canonical_continuation_left,
     canonical_continuation_right,
+    continuation_current_record_information,
     continuation_physical_basis,
     continuation_schedule_rest_operators,
     quantum_extension_set,
@@ -77,6 +68,7 @@ from .stage8_modal import (
 from .stage8_modal_transport import (
     continuation_clock_change_support_matrix,
     continuation_clock_coordinates,
+    continuation_clock_support_basis,
     continuation_reduced_support_coordinates,
     continuation_support_metric,
     perspective_modal_view,
@@ -128,6 +120,8 @@ class Stage8ECompatibilityDiagnostics:
     p_r_current_record_covariance: bool
     max_current_record_joint_residual: float
     max_current_record_information_residual: float
+    max_current_record_direct_interface_residual: float
+    max_a_fixed_to_qr_unitarity_residual: float
     max_wrong_target_information: float
     bare_record_metric_self_adjoint_residual: float
     bare_record_observable_rejected: bool
@@ -173,15 +167,46 @@ def _memory_support_projector(bit: int) -> np.ndarray:
     return np.kron(np.eye(pair_dimension, dtype=np.complex128), memory)
 
 
+def _fixed_a_to_qr_change(
+    continuation: QuantumContinuation,
+    event_index: int,
+) -> np.ndarray:
+    """Map fixed A-support coordinates into continuation QR coordinates."""
+
+    fixed = spectator_support_basis("A")
+    qr = continuation_clock_support_basis(continuation, "A", event_index)
+    change = qr.conj().T @ fixed
+    if np.linalg.matrix_rank(change, tol=DEFAULT_ATOL) != change.shape[0]:
+        raise RuntimeError("fixed A support and continuation QR support do not match")
+    return change
+
+
+def _fixed_a_change_unitarity_residual(
+    continuation: QuantumContinuation,
+    event_index: int,
+) -> float:
+    change = _fixed_a_to_qr_change(continuation, event_index)
+    return float(
+        np.linalg.norm(change.conj().T @ change - np.eye(change.shape[0]))
+    )
+
+
 def _physical_from_a_support(
     continuation: QuantumContinuation,
     event_index: int,
     support_operator: np.ndarray,
 ) -> np.ndarray:
-    coordinates = continuation_clock_coordinates(
-        continuation, "A", event_index
-    )
-    return np.linalg.inv(coordinates) @ support_operator @ coordinates
+    """Convert a fixed A-support operator into physical coefficient space.
+
+    ``support_operator`` is expressed in the fixed Stage 7 A-rest support basis,
+    not the Stage 8D QR basis. The explicit similarity through ``change`` is the
+    semantic coordinate bridge that Stage 8E must not omit.
+    """
+
+    change = _fixed_a_to_qr_change(continuation, event_index)
+    qr_operator = change @ support_operator @ np.linalg.inv(change)
+    coordinates = continuation_clock_coordinates(continuation, "A", event_index)
+    return np.linalg.inv(coordinates) @ qr_operator @ coordinates
 
 
 def _represent_physical_operator(
@@ -194,10 +219,7 @@ def _represent_physical_operator(
     return coordinates @ physical_operator @ np.linalg.inv(coordinates)
 
 
-def _metric_self_adjoint_residual(
-    operator: np.ndarray,
-    metric: np.ndarray,
-) -> float:
+def _metric_self_adjoint_residual(operator: np.ndarray, metric: np.ndarray) -> float:
     return float(np.linalg.norm(metric @ operator - operator.conj().T @ metric))
 
 
@@ -241,12 +263,7 @@ def continuation_record_joint_distribution(
     *,
     wrong_target: bool = False,
 ) -> tuple[np.ndarray, float, float, float]:
-    """Read the e1 memory against a declared target event in one perspective.
-
-    The target operator is anchored at the declared A-clock event and the memory
-    readout at current e1.  Both are converted to physical coefficients and then
-    represented in the requested continuation-specific perspective chart.
-    """
+    """Read current e1 memory against a declared target event in one chart."""
 
     if target_event not in (LOWER_EVENT, CURRENT_EVENT, UPPER_EVENT):
         raise ValueError("target event must be e0, e1, or e2")
@@ -315,7 +332,10 @@ def continuation_record_joint_distribution(
     if np.min(joint) < -1e-9:
         raise RuntimeError("record joint distribution acquired a negative probability")
     joint = np.clip(joint, 0.0, None)
-    joint = joint / np.sum(joint)
+    total = float(np.sum(joint))
+    if total <= DEFAULT_ATOL:
+        raise RuntimeError("record joint distribution has zero mass")
+    joint = joint / total
     return joint, max_self_adjoint, max_projector, max_commutator
 
 
@@ -403,7 +423,11 @@ def _event_effect_diagnostics(
                 continuation, effect, "A", CURRENT_EVENT
             )
             reference_probabilities.append(
-                float(_metric_expectation(reference_state, reference_metric, local).real)
+                float(
+                    _metric_expectation(
+                        reference_state, reference_metric, local
+                    ).real
+                )
             )
 
         for clock in SUBSYSTEMS:
@@ -426,7 +450,7 @@ def _event_effect_diagnostics(
                         )
                     ),
                 )
-                for event, local in enumerate(locals_):
+                for event_number, local in enumerate(locals_):
                     max_self_adjoint = max(
                         max_self_adjoint,
                         _metric_self_adjoint_residual(local, metric),
@@ -436,7 +460,10 @@ def _event_effect_diagnostics(
                     )
                     max_probability = max(
                         max_probability,
-                        abs(probability - reference_probabilities[event]),
+                        abs(
+                            probability
+                            - reference_probabilities[event_number]
+                        ),
                     )
 
         for source_clock, target_clock in permutations(SUBSYSTEMS, 2):
@@ -464,7 +491,11 @@ def _event_effect_diagnostics(
                     )
                     max_operator_transport = max(
                         max_operator_transport,
-                        float(np.linalg.norm(transform @ source @ inverse - target)),
+                        float(
+                            np.linalg.norm(
+                                transform @ source @ inverse - target
+                            )
+                        ),
                     )
 
     return (
@@ -477,9 +508,11 @@ def _event_effect_diagnostics(
 
 def _record_covariance_diagnostics(
     continuations: tuple[QuantumContinuation, ...],
-) -> tuple[float, float, float, float]:
+) -> tuple[float, float, float, float, float, float]:
     max_joint = 0.0
     max_information = 0.0
+    max_direct_interface = 0.0
+    max_basis_change_unitarity = 0.0
     max_wrong_target_information = 0.0
     max_bare_self_adjoint = 0.0
     bare_target = _target_support_projector()
@@ -490,12 +523,25 @@ def _record_covariance_diagnostics(
             continuation, "A", CURRENT_EVENT, CURRENT_EVENT
         )
         reference_information = _mutual_information(reference_joint)
+        direct_information = continuation_current_record_information(continuation)
+        max_direct_interface = max(
+            max_direct_interface,
+            abs(reference_information - direct_information),
+        )
+        for event in (LOWER_EVENT, CURRENT_EVENT, UPPER_EVENT):
+            max_basis_change_unitarity = max(
+                max_basis_change_unitarity,
+                _fixed_a_change_unitarity_residual(continuation, event),
+            )
+
         for clock in SUBSYSTEMS:
             for index in range(3):
                 joint, *_ = continuation_record_joint_distribution(
                     continuation, clock, index, CURRENT_EVENT
                 )
-                max_joint = max(max_joint, float(np.linalg.norm(joint - reference_joint)))
+                max_joint = max(
+                    max_joint, float(np.linalg.norm(joint - reference_joint))
+                )
                 max_information = max(
                     max_information,
                     abs(_mutual_information(joint) - reference_information),
@@ -525,6 +571,8 @@ def _record_covariance_diagnostics(
     return (
         max_joint,
         max_information,
+        max_direct_interface,
+        max_basis_change_unitarity,
         max_wrong_target_information,
         max_bare_self_adjoint,
     )
@@ -561,14 +609,21 @@ def _transported_weight_mismatch_residual() -> float:
             residuals.append(
                 float(
                     np.linalg.norm(
-                        np.asarray(baseline.predictive_density, dtype=np.complex128)
-                        - np.asarray(changed.predictive_density, dtype=np.complex128)
+                        np.asarray(
+                            baseline.predictive_density,
+                            dtype=np.complex128,
+                        )
+                        - np.asarray(
+                            changed.predictive_density,
+                            dtype=np.complex128,
+                        )
                     )
                 )
             )
     return max(residuals)
 
 
+@lru_cache(maxsize=4)
 def stage8e_compatibility_diagnostics(
     *,
     atol: float = DEFAULT_ATOL,
@@ -595,12 +650,16 @@ def stage8e_compatibility_diagnostics(
     (
         max_record_joint,
         max_record_information,
+        max_record_direct,
+        max_basis_change_unitarity,
         max_wrong_target_information,
         bare_record_self_adjoint,
     ) = _record_covariance_diagnostics(continuations)
     p_r = bool(
         max_record_joint <= atol
         and max_record_information <= atol
+        and max_record_direct <= atol
+        and max_basis_change_unitarity <= atol
         and max_wrong_target_information <= atol
         and bare_record_self_adjoint > atol
     )
@@ -614,7 +673,9 @@ def stage8e_compatibility_diagnostics(
         future_action="identity",
         current_action="identity",
     )
-    invalid_rejected = not assess_continuation_admissibility(invalid, atol=atol).admissible
+    invalid_rejected = not assess_continuation_admissibility(
+        invalid, atol=atol
+    ).admissible
     terminal_empty = len(quantum_extension_set(UPPER_EVENT)) == 0
 
     left_current_joint, *_ = continuation_record_joint_distribution(
@@ -648,7 +709,9 @@ def stage8e_compatibility_diagnostics(
         CURRENT_EVENT,
     )
     left_current = reduced_continuation_state(left, CURRENT_EVENT)
-    scramble_current_residual = float(np.linalg.norm(scramble_current - left_current))
+    scramble_current_residual = float(
+        np.linalg.norm(scramble_current - left_current)
+    )
     scramble_direction_present = bool(
         scramble_assessment.record_defined
         and scramble_assessment.orientation != "none"
@@ -674,6 +737,9 @@ def stage8e_compatibility_diagnostics(
     )
     weight_mismatch = _transported_weight_mismatch_residual()
 
+    # The canonical V carrier lacks directional R and Stage 8D also leaves the
+    # full cross-continuation measurement covariance not_established. Therefore
+    # the stronger all-layer claim must remain false at this checkpoint.
     full_directional = bool(
         same_por_distinct_v
         and not baseline_direction_absent
@@ -689,6 +755,8 @@ def stage8e_compatibility_diagnostics(
         p_r_current_record_covariance=p_r,
         max_current_record_joint_residual=max_record_joint,
         max_current_record_information_residual=max_record_information,
+        max_current_record_direct_interface_residual=max_record_direct,
+        max_a_fixed_to_qr_unitarity_residual=max_basis_change_unitarity,
         max_wrong_target_information=max_wrong_target_information,
         bare_record_metric_self_adjoint_residual=bare_record_self_adjoint,
         bare_record_observable_rejected=bare_record_self_adjoint > atol,
@@ -735,12 +803,12 @@ def stage8e_compatibility_matrix(
         CompatibilityEntry(
             "P-O(event effects)",
             "compatible" if d.p_o_event_effect_covariance else "not_established",
-            "ordered A-event effect family is transported covariantly through continuation-specific clock atlases",
+            "ordered A-event effect family transports covariantly through continuation-specific clock atlases",
         ),
         CompatibilityEntry(
             "P-R(current record)",
             "compatible" if d.p_r_current_record_covariance else "not_established",
-            "target-memory statistics agree only with corresponding observable transport; bare local reuse is rejected",
+            "fixed-support target/memory semantics are changed into QR coordinates before physical transport",
         ),
         CompatibilityEntry(
             "P-V(class/weights)",
@@ -777,7 +845,7 @@ def stage8e_compatibility_matrix(
                 if d.same_por_carrier_distinct_v_semantics
                 else "not_established"
             ),
-            "same physical carrier/public P-O-R data hosts selected-h* and no-selected-continuation semantics",
+            "same physical carrier/public P-O-current-R data hosts selected-h* and no-selected-continuation semantics",
         ),
         CompatibilityEntry(
             "full P/O/directional-R/V",
@@ -801,13 +869,14 @@ def stage8e_summary() -> dict[str, object]:
         ],
         "current_execution_criteria": {
             "36": "P-O event-effect covariance in continuation-aware physical-clock atlases",
-            "37": "P-R current target-specific record covariance with wrong-target and bare-observable controls",
+            "37": "P-R current target-specific record covariance with explicit fixed-support/QR basis bridge and controls",
             "38": "O-V future-only extension compatibility with prefix and terminal controls",
             "39": "R(current)-V underdetermination across physically inequivalent continuation classes",
             "40": "O does not force directional R: canonical zero-direction baseline versus record-scramble contrast",
             "41": "same P/O/current-R carrier supports distinct V semantics while stronger directional/full-measurement integration remains explicit",
         },
         "guards": [
+            "covariance of a wrongly typed observable != semantic correctness",
             "event-effect covariance != temporal succession",
             "current record covariance != directional record arrow",
             "record content != unique future continuation",

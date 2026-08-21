@@ -60,9 +60,9 @@ Stage 8E does not establish P=O=R=V, universal irreducibility, ontic openness, d
 
 ## Validation history
 
-After the coordinate correction, workflow run #838 had **650 passing scientific tests** and one documentation-only failure from the Stage 8D historical guard. The first Stage 8E documentation-synchronized run then found two wording/ledger-only assertions.
+After the coordinate correction, workflow run #838 reported **`650 passed / 1 failed`**; all Stage 8E scientific tests passed and the sole failure was documentation-only. The first Stage 8E documentation-synchronized run then found two wording/ledger-only assertions.
 
-After those repairs, final documentation-synchronized workflow run **#858** succeeded:
+After those repairs, documentation-synchronized workflow run **#858** succeeded:
 
 **`650 passed in 239.74s (0:03:59)`**
 

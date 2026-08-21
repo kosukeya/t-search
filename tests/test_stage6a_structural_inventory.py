@@ -84,6 +84,8 @@ def test_w3_recomputes_forward_reverse_and_neutral_record_controls():
     for name in ("symmetric", "no-record", "uniform-memory"):
         assert witness.measurement(f"{name}_orientation") == "none"
         assert witness.measurement(f"{name}_record_defined") is False
+    for name in ("forward", "reversed", "symmetric", "no-record", "uniform-memory"):
+        assert witness.measurement(f"{name}_declared_microdynamics_reversible") is True
 
 
 def test_w3_signed_scores_match_direct_stage3_control_assessments():

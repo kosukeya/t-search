@@ -58,9 +58,9 @@ def test_stage8a_current_actuality_states_are_equal_through_e1():
 def test_stage8a_future_states_are_physically_inequivalent():
     diagnostics = stage8a_substrate_diagnostics()
     assert diagnostics.physically_inequivalent is True
-    assert diagnostics.future_operator_residual > ATOL
-    assert diagnostics.future_state_overlap_squared < 1.0 - ATOL
-    assert diagnostics.future_state_distance > ATOL
+    assert np.isclose(diagnostics.future_operator_residual, 4.0, atol=ATOL, rtol=0.0)
+    assert np.isclose(diagnostics.future_state_overlap_squared, 0.0, atol=ATOL, rtol=0.0)
+    assert np.isclose(diagnostics.future_state_distance, np.sqrt(2.0), atol=ATOL, rtol=0.0)
     assert diagnostics.future_probe_difference > ATOL
 
 
@@ -69,7 +69,7 @@ def test_stage8a_future_difference_is_memory_and_record_target_neutral():
     assert diagnostics.memory_neutral_future is True
     assert diagnostics.record_target_neutral_future is True
     assert diagnostics.common_current_record_information_residual <= ATOL
-    assert diagnostics.current_record_information > ATOL
+    assert np.isclose(diagnostics.current_record_information, 1.0, atol=ATOL, rtol=0.0)
 
 
 def test_stage8a_pair_phase_is_reversible_unitary_and_nontrivial():

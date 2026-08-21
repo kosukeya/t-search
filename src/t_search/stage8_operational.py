@@ -1,23 +1,22 @@
 """Stage 8C operational underdetermination and explicit quantum update.
 
 Stage 8B placed two type-distinct modal models on the same executable
-continuation carrier.  Stage 8C now freezes an ontology-neutral operational
+continuation carrier. Stage 8C freezes an ontology-neutral operational
 interface and applies one explicit piece of future evidence to both models.
 
-The canonical e1 prediction is not obtained by exposing q_E/K directly.  A
-fixed projective future-signature measurement is constructed from the two
-physically orthogonal Stage 8A e2 reduced states.  Each continuation supplies a
-Born likelihood for that measurement, and q_E or K is used only as the outer
-mixture weight.  The hidden epistemic selected continuation h* is never read by
-the operational projection.
+A fixed future-signature projective measurement is built from the two
+physically orthogonal Stage 8A e2 reduced states. Each continuation supplies a
+Born likelihood, while q_E or K enters only as an outer mixture weight. The
+hidden epistemic selected continuation h* is never read by the operational
+projection.
 
-The update takes an explicit observed outcome.  It does not sample or choose a
-branch internally.  The epistemic update preserves h* and conditions q_E; the
-ontic-extension update conditions K and advances to the declared terminal e2
-Actuality without adding a selected-continuation field.
+The update receives explicit evidence and never samples a branch internally.
+The epistemic update preserves h* and conditions q_E. The ontic-extension
+update conditions K and advances to terminal e2 without adding a hidden
+selected-continuation field.
 
-Operational equality in this finite interface is evidence of underdetermination
-under the declared interface, not modal or ontological identity.
+Operational equality under this declared finite interface is underdetermination,
+not modal or ontological identity.
 """
 
 from __future__ import annotations
@@ -30,7 +29,11 @@ import numpy as np
 
 from .stage5_clock_change import DEFAULT_ATOL
 from .stage7_history import UPPER_EVENT
-from .stage7_record import target_memory_joint_distribution
+from .stage7_record import (
+    TARGET_LABEL,
+    TARGET_POSITION,
+    target_memory_joint_distribution,
+)
 from .stage8_continuations import (
     QuantumContinuation,
     continuation_equivalent,
@@ -49,7 +52,6 @@ from .stage8_modal import (
     selected_quantum_continuation,
 )
 
-
 FUTURE_SIGNATURE_0 = "future_signature_0"
 FUTURE_SIGNATURE_1 = "future_signature_1"
 FUTURE_SIGNATURE_REMAINDER = "future_signature_remainder"
@@ -57,8 +59,6 @@ FUTURE_SIGNATURE_REMAINDER = "future_signature_remainder"
 
 @dataclass(frozen=True, slots=True)
 class FutureSignatureMeasurement:
-    """Canonical projective measurement distinguishing the two Stage 8A futures."""
-
     outcome_names: tuple[str, str, str]
     effects: tuple[np.ndarray, np.ndarray, np.ndarray]
     completeness_residual: float
@@ -68,13 +68,7 @@ class FutureSignatureMeasurement:
 
 @dataclass(frozen=True, slots=True)
 class QuantumOperationalView:
-    """Ontology-neutral Stage 8C interface O_Q.
-
-    The interface exposes current reduced physical information, the declared
-    target-memory record channel, and probabilities for physically defined next
-    measurement outcomes.  It contains no h*, model type, selector, q_E, K, or
-    typed Potentiality object.
-    """
+    """Full Stage 8C ontology-neutral interface O_Q."""
 
     current_anchor: int
     current_density_matrix: tuple[complex, ...]
@@ -106,7 +100,7 @@ class PrivilegedQuantumModalDiagnostic:
 
 @dataclass(frozen=True, slots=True)
 class QuantumEvidence:
-    """Explicit externally supplied evidence; no sampling occurs in the update API."""
+    """Explicit externally supplied evidence; this object performs no sampling."""
 
     outcome: str
 
@@ -122,7 +116,7 @@ class UpdatedEpistemicQuantumState:
 
 @dataclass(frozen=True, slots=True)
 class UpdatedOnticQuantumState:
-    """Evidence-conditioned ontic-extension state with no selected future field."""
+    """Evidence-conditioned ontic state with no selected-future field."""
 
     source_carrier: QuantumContinuationCarrier
     current_anchor: int
@@ -205,14 +199,7 @@ def canonical_future_signature_measurement(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> FutureSignatureMeasurement:
-    """Build a fixed three-effect projective measurement from physical e2 states.
-
-    The first two effects project onto the two canonical physically inequivalent
-    future reduced states.  The third effect closes the POVM on the ambient
-    reduced space.  Only the first two outcomes belong to Next_Q(e1) for the
-    canonical QExt because the remainder has zero Born support for every retained
-    continuation.
-    """
+    """Project onto the two canonical physical e2 rays plus their complement."""
 
     if len(carrier.continuations) != 2:
         raise ValueError("canonical Stage 8C measurement requires exactly two QExt members")
@@ -220,8 +207,7 @@ def canonical_future_signature_measurement(
         _normalized_state(reduced_continuation_state(item, UPPER_EVENT))
         for item in carrier.continuations
     )
-    overlap = abs(np.vdot(states[0], states[1]))
-    if overlap > atol:
+    if abs(np.vdot(states[0], states[1])) > atol:
         raise ValueError("canonical Stage 8C future states must be orthogonal")
 
     p0 = np.outer(states[0], states[0].conj())
@@ -236,7 +222,7 @@ def canonical_future_signature_measurement(
         for effect in effects
     )
     if completeness > atol or orthogonality > atol or minimum_eigenvalue < -atol:
-        raise ValueError("future-signature effects do not define the declared projective measurement")
+        raise ValueError("future-signature effects do not define the declared measurement")
     return FutureSignatureMeasurement(
         outcome_names=(
             FUTURE_SIGNATURE_0,
@@ -256,8 +242,6 @@ def continuation_future_signature_probabilities(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> tuple[tuple[str, float], ...]:
-    """Return Born probabilities for the canonical future-signature measurement."""
-
     if not any(
         continuation_equivalent(continuation, member, atol=atol)
         for member in carrier.continuations
@@ -288,9 +272,7 @@ def _active_next_outcomes(
     )
     names = canonical_future_signature_measurement(carrier, atol=atol).outcome_names
     return tuple(
-        name
-        for name in names
-        if any(distribution[name] > atol for distribution in distributions)
+        name for name in names if any(dist[name] > atol for dist in distributions)
     )
 
 
@@ -307,29 +289,31 @@ def _predict_next_probabilities(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> tuple[tuple[str, float], ...]:
-    carrier = model.carrier
-    active = _active_next_outcomes(carrier, atol=atol)
-    per_continuation = tuple(
-        dict(continuation_future_signature_probabilities(carrier, item, atol=atol))
-        for item in carrier.continuations
+    active = _active_next_outcomes(model.carrier, atol=atol)
+    likelihoods = tuple(
+        dict(continuation_future_signature_probabilities(model.carrier, item, atol=atol))
+        for item in model.carrier.continuations
     )
     weights = _model_weights(model)
-    predictions = []
-    for outcome in active:
-        probability = sum(
-            weight * distribution[outcome]
-            for weight, distribution in zip(weights, per_continuation, strict=True)
+    prediction = tuple(
+        (
+            outcome,
+            float(
+                sum(
+                    weight * likelihood[outcome]
+                    for weight, likelihood in zip(weights, likelihoods, strict=True)
+                )
+            ),
         )
-        predictions.append((outcome, float(probability)))
-    total = sum(value for _, value in predictions)
-    if not isclose(total, 1.0, rel_tol=0.0, abs_tol=10 * atol):
+        for outcome in active
+    )
+    if not isclose(sum(p for _, p in prediction), 1.0, rel_tol=0.0, abs_tol=10 * atol):
         raise ValueError("active future-outcome probabilities must sum to one")
-    return tuple(predictions)
+    return prediction
 
 
 def _density_from_ensemble(
-    states: Sequence[np.ndarray],
-    weights: Sequence[float],
+    states: Sequence[np.ndarray], weights: Sequence[float]
 ) -> np.ndarray:
     if len(states) != len(weights) or not states:
         raise ValueError("ensemble states and weights must be nonempty and aligned")
@@ -344,12 +328,17 @@ def _density_from_ensemble(
 
 
 def _record_joint_from_ensemble(
-    states: Sequence[np.ndarray],
-    weights: Sequence[float],
+    states: Sequence[np.ndarray], weights: Sequence[float]
 ) -> np.ndarray:
+    """Use the explicitly frozen Stage 7 target Q, never an unspecified record."""
+
     joint = np.zeros((2, 2), dtype=float)
     for weight, state in zip(weights, states, strict=True):
-        joint += float(weight) * target_memory_joint_distribution(_normalized_state(state))
+        joint += float(weight) * target_memory_joint_distribution(
+            _normalized_state(state),
+            position=TARGET_POSITION,
+            label=TARGET_LABEL,
+        )
     total = float(np.sum(joint))
     if total <= DEFAULT_ATOL:
         raise ValueError("record joint distribution must have positive mass")
@@ -364,28 +353,19 @@ def _classical_mutual_information(joint: np.ndarray) -> float:
     independent = px @ pm
     mask = probabilities > 0.0
     return float(
-        np.sum(
-            probabilities[mask]
-            * np.log2(probabilities[mask] / independent[mask])
-        )
+        np.sum(probabilities[mask] * np.log2(probabilities[mask] / independent[mask]))
     )
 
 
-def _current_ensemble(model: AnyStage8CModel) -> tuple[tuple[np.ndarray, ...], tuple[float, ...]]:
-    """Return operational current ensemble without reading h*.
-
-    Before update all carrier continuations share the same e1 state, so the first
-    representative supplies the common Actuality independently of q_E/K and h*.
-    After update both model families use evidence-conditioned posterior weights
-    over the same source carrier.  The epistemic selected continuation remains a
-    privileged field but is not consulted by this operational helper.
-    """
+def _current_ensemble(
+    model: AnyStage8CModel,
+) -> tuple[tuple[np.ndarray, ...], tuple[float, ...]]:
+    """Return current physical ensemble without consulting epistemic h*."""
 
     if isinstance(model, (EpistemicQuantumModel, OnticQuantumExtensionModel)):
-        carrier = model.carrier
         states = tuple(
-            reduced_continuation_state(item, carrier.current_anchor)
-            for item in carrier.continuations
+            reduced_continuation_state(item, model.carrier.current_anchor)
+            for item in model.carrier.continuations
         )
         reference = states[0]
         for state in states[1:]:
@@ -407,8 +387,6 @@ def quantum_operational_view(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> QuantumOperationalView:
-    """Project a model to the full Stage 8C ontology-neutral O_Q interface."""
-
     states, current_weights = _current_ensemble(model)
     density = _density_from_ensemble(states, current_weights)
     joint = _record_joint_from_ensemble(states, current_weights)
@@ -442,15 +420,8 @@ def _arrays_close(
     *,
     atol: float,
 ) -> bool:
-    if len(left) != len(right):
-        return False
-    return bool(
-        np.allclose(
-            np.asarray(left),
-            np.asarray(right),
-            atol=atol,
-            rtol=0.0,
-        )
+    return len(left) == len(right) and bool(
+        np.allclose(np.asarray(left), np.asarray(right), atol=atol, rtol=0.0)
     )
 
 
@@ -460,18 +431,13 @@ def compare_quantum_operational_views(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> QuantumOperationalComparison:
-    left_probabilities = dict(left.next_probabilities)
-    right_probabilities = dict(right.next_probabilities)
-    probability_equal = bool(
-        set(left_probabilities) == set(right_probabilities)
+    left_prob = dict(left.next_probabilities)
+    right_prob = dict(right.next_probabilities)
+    probabilities_equal = bool(
+        set(left_prob) == set(right_prob)
         and all(
-            isclose(
-                left_probabilities[name],
-                right_probabilities[name],
-                rel_tol=0.0,
-                abs_tol=atol,
-            )
-            for name in left_probabilities
+            isclose(left_prob[name], right_prob[name], rel_tol=0.0, abs_tol=atol)
+            for name in left_prob
         )
     )
     current_anchor_equal = left.current_anchor == right.current_anchor
@@ -495,7 +461,7 @@ def compare_quantum_operational_views(
         and record_joint_equal
         and record_information_equal
         and next_outcomes_equal
-        and probability_equal
+        and probabilities_equal
         and observed_outcome_equal
     )
     return QuantumOperationalComparison(
@@ -505,7 +471,7 @@ def compare_quantum_operational_views(
         record_joint_equal=record_joint_equal,
         record_information_equal=record_information_equal,
         next_outcomes_equal=next_outcomes_equal,
-        next_probabilities_equal=probability_equal,
+        next_probabilities_equal=probabilities_equal,
         observed_outcome_equal=observed_outcome_equal,
     )
 
@@ -569,7 +535,7 @@ def update_epistemic_quantum_model(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> UpdatedEpistemicQuantumState:
-    """Condition q_E on explicit evidence while preserving the pre-existing h*."""
+    """Condition q_E on explicit evidence while preserving pre-existing h*."""
 
     likelihoods = _outcome_likelihoods(model.carrier, evidence, atol=atol)
     selected = selected_quantum_continuation(model)
@@ -596,7 +562,7 @@ def update_ontic_quantum_model(
     *,
     atol: float = DEFAULT_ATOL,
 ) -> UpdatedOnticQuantumState:
-    """Condition K on explicit evidence without creating a selected future field."""
+    """Condition K on explicit evidence without adding a selected-future field."""
 
     likelihoods = _outcome_likelihoods(model.carrier, evidence, atol=atol)
     posterior = _bayes_condition(model.extension_weights, likelihoods, atol=atol)
@@ -612,22 +578,14 @@ def updated_ontic_selector_audit(
     model: UpdatedOnticQuantumState,
 ) -> UpdatedOnticSelectorAudit:
     names = tuple(field.name for field in fields(model))
-    forbidden_tokens = (
-        "selected",
-        "selector",
-        "seed",
-        "precomputed",
-        "latent_branch",
-    )
+    forbidden_tokens = ("selected", "selector", "seed", "precomputed", "latent_branch")
     forbidden = tuple(
         name
         for name in names
         if any(token in name.lower() for token in forbidden_tokens)
     )
     direct = tuple(
-        name
-        for name in names
-        if isinstance(getattr(model, name), QuantumContinuation)
+        name for name in names if isinstance(getattr(model, name), QuantumContinuation)
     )
     arbitrary_dict = hasattr(model, "__dict__")
     no_selector = bool(
@@ -650,8 +608,6 @@ def updated_ontic_selector_audit(
 def updated_ontic_remaining_qext(
     model: UpdatedOnticQuantumState,
 ) -> tuple[QuantumContinuation, ...]:
-    """Return the declared terminal future-extension set after the e2 update."""
-
     if model.current_anchor != UPPER_EVENT:
         raise ValueError("Stage 8C updated ontic state must be anchored at terminal e2")
     return quantum_extension_set(UPPER_EVENT)
@@ -669,9 +625,7 @@ def compare_common_quantum_evidence(
 
     epistemic_before = quantum_operational_view(epistemic_model, atol=atol)
     ontic_before = quantum_operational_view(ontic_model, atol=atol)
-    before = compare_quantum_operational_views(
-        epistemic_before, ontic_before, atol=atol
-    )
+    before = compare_quantum_operational_views(epistemic_before, ontic_before, atol=atol)
 
     selected_before = selected_quantum_continuation(epistemic_model)
     updated_epistemic = update_epistemic_quantum_model(
@@ -684,7 +638,6 @@ def compare_common_quantum_evidence(
     ontic_after = quantum_operational_view(updated_ontic, atol=atol)
     after = compare_quantum_operational_views(epistemic_after, ontic_after, atol=atol)
     audit = updated_ontic_selector_audit(updated_ontic)
-    remaining = updated_ontic_remaining_qext(updated_ontic)
 
     return Stage8CUpdateComparison(
         evidence=evidence,
@@ -701,7 +654,7 @@ def compare_common_quantum_evidence(
         ),
         epistemic_posterior_weights=updated_epistemic.posterior_weights,
         ontic_posterior_weights=updated_ontic.posterior_weights,
-        ontic_remaining_qext_size=len(remaining),
+        ontic_remaining_qext_size=len(updated_ontic_remaining_qext(updated_ontic)),
         ontic_no_selected_complete_continuation_datum=(
             audit.no_selected_complete_continuation_datum
         ),
@@ -716,76 +669,58 @@ def stage8c_operational_diagnostics(
     carrier = epistemic.carrier
     baseline_e = quantum_operational_view(epistemic, atol=atol)
     baseline_o = quantum_operational_view(ontic, atol=atol)
-    baseline_comparison = compare_quantum_operational_views(
-        baseline_e, baseline_o, atol=atol
-    )
+    baseline = compare_quantum_operational_views(baseline_e, baseline_o, atol=atol)
 
     weights = matched_uniform_weights(carrier)
-    epistemic_swapped = make_epistemic_quantum_model(
-        carrier,
-        continuation_by_id(carrier, "h_R"),
-        weights,
-        atol=atol,
+    swapped = make_epistemic_quantum_model(
+        carrier, continuation_by_id(carrier, "h_R"), weights, atol=atol
     )
-    swap_view = quantum_operational_view(epistemic_swapped, atol=atol)
     selected_swap_equal = compare_quantum_operational_views(
-        baseline_e, swap_view, atol=atol
+        baseline_e, quantum_operational_view(swapped, atol=atol), atol=atol
     ).equal
 
-    mismatch_ontic = make_ontic_quantum_extension_model(carrier, (0.75, 0.25))
-    mismatch_view = quantum_operational_view(mismatch_ontic, atol=atol)
+    mismatch = make_ontic_quantum_extension_model(carrier, (0.75, 0.25))
+    mismatch_view = quantum_operational_view(mismatch, atol=atol)
     mismatch_comparison = compare_quantum_operational_views(
         baseline_e, mismatch_view, atol=atol
     )
 
-    privileged_e = privileged_quantum_modal_diagnostic(epistemic)
-    privileged_o = privileged_quantum_modal_diagnostic(ontic)
-    privileged_distinct = privileged_e != privileged_o
-
+    privileged_distinct = bool(
+        privileged_quantum_modal_diagnostic(epistemic)
+        != privileged_quantum_modal_diagnostic(ontic)
+    )
     schema_names = {field.name for field in fields(QuantumOperationalView)}
-    hidden_absent = bool(
-        "selected_continuation" not in schema_names
-        and "selected_history" not in schema_names
-        and "selector" not in schema_names
-        and "model_type" not in schema_names
-        and "belief_weights" not in schema_names
-        and "extension_weights" not in schema_names
+    hidden_absent = all(
+        forbidden not in schema_names
+        for forbidden in (
+            "selected_continuation",
+            "selected_history",
+            "selector",
+            "model_type",
+            "belief_weights",
+            "extension_weights",
+        )
     )
 
     evidence = QuantumEvidence(FUTURE_SIGNATURE_0)
-    update = compare_common_quantum_evidence(
-        epistemic, ontic, evidence, atol=atol
-    )
+    update = compare_common_quantum_evidence(epistemic, ontic, evidence, atol=atol)
     measurement = canonical_future_signature_measurement(carrier, atol=atol)
-
     current_state = _normalized_state(
         reduced_continuation_state(carrier.continuations[0], carrier.current_anchor)
     )
-    nonzero_amplitudes = int(np.count_nonzero(np.abs(current_state) > atol))
-    same_density_distinct = bool(
-        baseline_comparison.density_equal and privileged_distinct
-    )
-    same_born_distinct = bool(
-        baseline_comparison.next_probabilities_equal and privileged_distinct
-    )
-    superposition_control = bool(
-        nonzero_amplitudes > 1
-        and baseline_comparison.equal
-        and privileged_distinct
-    )
-    state_born_control = bool(
-        same_density_distinct
-        and same_born_distinct
-        and baseline_comparison.equal
-    )
-
+    multiple_amplitudes = int(np.count_nonzero(np.abs(current_state) > atol)) > 1
+    same_density_distinct = bool(baseline.density_equal and privileged_distinct)
+    same_born_distinct = bool(baseline.next_probabilities_equal and privileged_distinct)
+    state_born_control = bool(same_density_distinct and same_born_distinct and baseline.equal)
+    superposition_control = bool(multiple_amplitudes and baseline.equal and privileged_distinct)
     ontic_pruned = bool(
         sum(weight > atol for weight in ontic.extension_weights)
         > sum(weight > atol for weight in update.ontic_posterior_weights)
     )
+
     return Stage8COperationalDiagnostics(
         qext_size=len(carrier.continuations),
-        matched_operational_equal=baseline_comparison.equal,
+        matched_operational_equal=baseline.equal,
         selected_swap_operational_equal=selected_swap_equal,
         privileged_structures_distinct=privileged_distinct,
         hidden_selected_absent_from_operational_schema=hidden_absent,
@@ -806,7 +741,7 @@ def stage8c_operational_diagnostics(
             and update.epistemic_after.current_anchor == UPPER_EVENT
             and update.ontic_after.current_anchor == UPPER_EVENT
         ),
-        update_outcome_equal=(
+        update_outcome_equal=bool(
             update.epistemic_after.observed_outcome
             == update.ontic_after.observed_outcome
             == evidence.outcome
@@ -821,7 +756,7 @@ def stage8c_operational_diagnostics(
         ),
         same_density_with_distinct_modal_structure=same_density_distinct,
         same_born_prediction_with_distinct_modal_structure=same_born_distinct,
-        current_state_has_multiple_coherent_amplitudes=nonzero_amplitudes > 1,
+        current_state_has_multiple_coherent_amplitudes=multiple_amplitudes,
         superposition_does_not_select_modal_semantics=superposition_control,
         state_and_born_data_do_not_select_modal_semantics=state_born_control,
         measurement_completeness_residual=measurement.completeness_residual,

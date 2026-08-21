@@ -14,26 +14,15 @@ The canonical factory passes the exact same `QuantumContinuationCarrier` object 
 
 `M_E^Q = (QCarrier, e1, h*, q_E)`
 
-with one privileged selected continuation `h*`.
+with one privileged selected continuation `h*` and canonical `q_E=(0.5,0.5)`.
 
-Canonical weights:
-
-`q_E = (0.5, 0.5)`.
-
-Two canonical epistemic controls are used:
-
-- selected `h_L`;
-- selected `h_R`.
-
-The privileged selected-continuation diagnostic distinguishes these models.
+Two canonical epistemic controls select `h_L` and `h_R`. The privileged selected-continuation diagnostic distinguishes them.
 
 ## Ontic-extension model
 
 `M_O^Q(e1) = (QCarrier, e1, QExt(e1), K)`
 
-with canonical:
-
-`K = (0.5, 0.5)`.
+with canonical `K=(0.5,0.5)`.
 
 The frozen/slots ontic schema stores only `carrier` and `extension_weights`.
 
@@ -47,7 +36,7 @@ Its selector audit verifies:
 
 Therefore the declared ontic-extension model contains no selected complete continuation datum under this schema.
 
-This is a formal model fact, not evidence that nature is ontically open.
+`no selected continuation field != proof of ontic openness in nature`.
 
 ## Typed Potentiality distinction
 
@@ -64,7 +53,7 @@ Thus Stage 8B realizes a typed semantic distinction without changing the physica
 
 `matched_uniform_weights(carrier)` returns `(0.5,0.5)` from the carrier alone. It accepts no `h*` argument.
 
-The same vector is used as epistemic `q_E` and ontic `K` in the canonical comparison.
+The same vector is used as epistemic `q_E` and ontic `K`.
 
 `matched numerical q_E and K != matched probability semantics`.
 
@@ -76,30 +65,19 @@ With carrier and weights fixed, swapping:
 
 changes the privileged selected-continuation diagnostic but leaves the Stage 8B pre-discriminating public projection unchanged.
 
-That projection contains only current shared physical/modal-neutral data and weights and has no selected-continuation or model-type field.
+That projection contains current shared physical/modal-neutral data and weights and has no selected-continuation or model-type field.
 
-This is the executable Stage 8B control for criterion 21.
+`hidden h* diagnostic != operational access to h*`.
 
-It is not yet the full Stage 8C `O_Q` equality result.
+`Stage 8B pre-discriminating view != full Stage 8C O_Q interface`.
 
 ## Validation controls
 
-The implementation rejects:
+The implementation rejects selected continuations outside `QExt(e1)`, zero epistemic support for the selected continuation, incomplete/negative/nonfinite/non-normalized weights, and post-construction selector injection into the frozen/slots ontic object.
 
-- selected continuations outside `QExt(e1)`;
-- zero epistemic support for the selected continuation;
-- incomplete weight vectors;
-- negative/nonfinite weights;
-- non-normalized weights;
-- post-construction selector injection into the frozen/slots ontic object.
+The first Stage 8B implementation run reported `594 passed / 1 failed in 191.81s`. The only failure was a brittle Python exception-class expectation for rejected selector injection; selector injection itself was rejected as intended. The test was changed to assert rejection without depending on that implementation detail.
 
-The first Stage 8B implementation run reported:
-
-`594 passed / 1 failed in 191.81s`.
-
-The only failure was a brittle test expectation about which Python exception class a frozen+slots dataclass raises when an undeclared selector attribute is injected. The injection itself was rejected as intended. The test was changed to assert the scientific requirement — that selector state cannot be injected — without depending on that implementation-specific exception class.
-
-The corrected implementation regression then reported:
+The corrected implementation regression reported:
 
 **`595 passed in 140.99s`**
 

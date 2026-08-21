@@ -16,12 +16,12 @@ from typing import Any
 from .stage5_clock_change import DEFAULT_ATOL
 from .stage8_ablation import (
     RoleStatus,
+    mismatch_diagnostics,
     no_record_v_family_diagnostics,
     perspective_map_reconstruction_diagnostics,
     semantic_weight_reconstruction_diagnostics,
     singleton_qext_diagnostics,
     stage8f_ablation_matrix,
-    stage8f_mismatch_matrix,
 )
 from .stage8_compatibility import stage8e_compatibility_diagnostics
 from .stage8_continuations import stage8a_substrate_diagnostics
@@ -75,7 +75,7 @@ def pre_merge_exit_criteria(*, atol: float = DEFAULT_ATOL) -> dict[int, bool]:
     semantic_weight = semantic_weight_reconstruction_diagnostics()
     maps = perspective_map_reconstruction_diagnostics()
     ablations = stage8f_ablation_matrix()
-    mismatches = stage8f_mismatch_matrix()
+    mismatches = mismatch_diagnostics()
     gates = stage9_gate_candidates()
 
     record_case = _case_by_id("record_coupling_neutralized")

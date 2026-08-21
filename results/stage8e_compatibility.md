@@ -1,6 +1,6 @@
 # Stage 8E Results — P/O/R/V Compatibility and Underdetermination
 
-Status: **completed for the declared canonical finite continuation family, pending final documentation-synchronized regression.**
+Status: **completed for the declared canonical finite continuation family.**
 
 ## Compatibility matrix
 
@@ -27,8 +27,6 @@ The corrected path explicitly changes basis before the physical lift and perspec
 
 The resulting current record is cross-checked against the independent Stage 8A direct diagnostic.
 
-Frozen guard:
-
 `covariance of a wrongly typed observable != semantic correctness`.
 
 ## Current record versus directional record
@@ -42,35 +40,19 @@ For both canonical continuation classes after the correction:
 - `A_acc = 0`;
 - orientation = `none`.
 
-Thus record content is present while record-defined temporal direction is absent.
-
-The Stage 7C record-scramble contrast shares the same `e0<e1<e2` event skeleton and the same A/e1 current state but has:
-
-- `A_R = +1`;
-- defined lower-index orientation.
+The Stage 7C record-scramble contrast shares the same `e0<e1<e2` event skeleton and the same A/e1 current state but has `A_R = +1` and lower-index orientation.
 
 Therefore the declared finite family refutes `O=>R(direction)`.
 
 ## Modal underdetermination survives P/O/current-R
 
-The canonical epistemic and ontic-extension models share the same continuation carrier and public P/O/current-record structure. With matched `(0.5,0.5)` weights, public modal views match at all nine physical-clock nodes while privileged selected-vs-unselected modal structure remains different.
-
-Changing ontic weights to `(0.75,0.25)` remains detectable after B/C transport, so the public equality is not hardcoded.
-
-Accordingly:
+The canonical epistemic and ontic-extension models share the same continuation carrier and public P/O/current-record structure. With matched `(0.5,0.5)` weights, public modal views match at all nine physical-clock nodes while privileged selected-vs-unselected modal structure remains different. Changing ontic weights to `(0.75,0.25)` remains detectable after B/C transport.
 
 `same P/O/current-R public data != modal identity`.
 
 ## Boundaries
 
-Stage 8E does not establish:
-
-- `P=O=R=V`;
-- universal irreducibility of any layer;
-- ontic openness of the physical future;
-- directional R in the canonical Stage 8 V carrier;
-- full Stage 8C cross-continuation measurement covariance;
-- thermodynamic arrow, ontological becoming, or phenomenal passage.
+Stage 8E does not establish P=O=R=V, universal irreducibility, ontic openness, directional R in the canonical V carrier, full Stage 8C measurement-family covariance, a thermodynamic arrow, ontological becoming, or phenomenal passage.
 
 `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`.
 
@@ -78,15 +60,15 @@ Stage 8E does not establish:
 
 ## Validation history
 
-Before the coordinate correction, Stage 8E exposed a false record readout caused by basis mismatch.
+After the coordinate correction, workflow run #838 had **650 passing scientific tests** and one documentation-only failure from the Stage 8D historical guard. The first Stage 8E documentation-synchronized run then found two wording/ledger-only assertions.
 
-After the correction, workflow run #838 produced:
+After those repairs, final documentation-synchronized workflow run **#858** succeeded:
 
-**`650 passed / 1 failed`**
+**`650 passed in 239.74s (0:03:59)`**
 
-where the single failure was documentation-only: the Stage 8D results file lacked the exact historical guard `equal numeric clock readings != event identity` required by the documentation-consistency audit. All Stage 8E scientific tests passed in that run.
+on branch head `beba09053777699e63a3104f6802b9ffcadc69ed` / PR merge-ref `fb5bbd2f0337921fa14142fb00deb2810851d3e3`.
 
-A final documentation-synchronized full regression follows after repairing that guard and advancing current planning documents to Stage 8E completed / Stage 8F next.
+Node.js 20 deprecation remains a workflow warning only.
 
 ## Exit criteria
 

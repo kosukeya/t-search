@@ -10,12 +10,10 @@ def _read(relative: str) -> str:
 def test_stage9_gate_matches_stage8g_selection() -> None:
     protocol = _read("docs/stage9_protocol.md")
     stage8g = _read("results/stage8g_synthesis_stage9_gate.md")
-    for fragment in (
-        "Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.",
-        "directional_record_potentiality",
-    ):
-        assert fragment in stage8g
-        assert fragment in protocol or fragment == "directional_record_potentiality"
+    gate = "Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family."
+    assert gate in stage8g
+    assert gate in protocol
+    assert "directional_record_potentiality" in stage8g
 
 
 def test_stage9_protocol_preserves_refined_r_and_v_typing() -> None:
@@ -46,7 +44,7 @@ def test_stage9_modal_distinction_is_not_decided_by_direction() -> None:
     assert "explicit evidence update != ontological becoming" in protocol
 
 
-def test_stage9_directional_controls_are_frozen_before_implementation() -> None:
+def test_stage9_directional_controls_remain_frozen_after_stage9a() -> None:
     protocol = _read("docs/stage9_protocol.md")
     checkpoint = _read("results/stage9_0_protocol_freeze.md")
     for text in (protocol, checkpoint):
@@ -80,17 +78,33 @@ def test_stage9_r_direction_v_questions_are_split_not_collapsed() -> None:
         assert fragment in protocol
 
 
-def test_stage9_sequence_and_exit_criteria_are_frozen_only_through_stage90() -> None:
+def test_stage9_sequence_and_exit_criteria_advance_through_stage9a_only() -> None:
     protocol = _read("docs/stage9_protocol.md")
-    checkpoint = _read("results/stage9_0_protocol_freeze.md")
-    assert "Stage 9.0 — protocol freeze — completed" in protocol
-    assert "Stage 9A — common directional-R/V continuation substrate — next" in protocol
-    assert "Stage 9A — common directional-R/V continuation substrate — next" in checkpoint
-    assert "criteria **1–10** only" in protocol
-    assert "criteria **1–10** only" in checkpoint
-    assert "criteria 11–50 remain future work" in protocol
-    assert "Criteria **11–50 remain future scientific work**" in checkpoint
+    readme = _read("README.md")
+    roadmap = _read("docs/roadmap.md")
+    for text in (protocol, readme, roadmap):
+        assert "Stage 9A" in text and "completed" in text
+        assert "Stage 9B" in text and "next" in text
+    assert "Stage 9A closes criteria **11–16**" in protocol
+    assert "Criteria 17–50 remain future work" in protocol
+    assert "criteria **17–23**: Stage 9B" in protocol
     assert "criterion **50**: external final full-repository regression and merge-readiness review" in protocol
+
+
+def test_stage9a_checkpoint_records_common_directional_v_substrate() -> None:
+    notes = _read("docs/stage9a_notes.md")
+    results = _read("results/stage9a_directional_substrate.md")
+    protocol = _read("docs/stage9_protocol.md")
+    for text in (notes, results, protocol):
+        assert "QExt(e1)" in text
+        assert "h_L" in text and "h_R" in text
+        assert "U_scr U_rec" in text
+        assert "Z_C U_scr U_rec" in text
+        assert "continuation identity != record-direction identity" in text
+        assert "directional record arrow != ontological future openness" in text
+    assert "physical dimension = `14`" in results
+    assert "minimum reduction rank" in results and "`14`" in results
+    assert "695 passed in 199.79s" in results
 
 
 def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
@@ -106,10 +120,10 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
             assert status in text
 
 
-def test_readme_records_stage8_as_merged_and_stage9_as_active_next_gate() -> None:
+def test_readme_records_stage8_as_merged_and_stage9a_as_current_checkpoint() -> None:
     readme = _read("README.md")
     lowered = readme.lower()
     assert "Stages 1–8 are completed and merged" in readme
-    assert "stage 9" in lowered
-    assert "directional records with nontrivial quantum potentiality" in lowered
+    assert "stage 9.0 and stage 9a are completed" in lowered
+    assert "stage 9b" in lowered and "next" in lowered
     assert "Draft PR #9" not in readme

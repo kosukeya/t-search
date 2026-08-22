@@ -81,19 +81,17 @@ def test_stage9_r_direction_v_questions_are_split_not_collapsed() -> None:
         assert fragment in protocol
 
 
-def test_stage9_sequence_and_exit_criteria_advance_through_stage9d() -> None:
+def test_stage9_sequence_and_exit_criteria_advance_through_stage9e() -> None:
     protocol = _read("docs/stage9_protocol.md")
     readme = _read("README.md")
     roadmap = _read("docs/roadmap.md")
     for text in (protocol, readme, roadmap):
-        assert "Stage 9A" in text and "completed" in text
-        assert "Stage 9B" in text and "completed" in text
-        assert "Stage 9C" in text and "completed" in text
-        assert "Stage 9D" in text and "completed" in text
-        assert "Stage 9E" in text and "next" in text
-    assert "Stage 9D closes **31–36**" in protocol
-    assert "Criteria 37–50 remain future work" in protocol
-    assert "criteria **37–42**: Stage 9E compatibility/constraint matrix" in protocol
+        for stage in ("Stage 9A", "Stage 9B", "Stage 9C", "Stage 9D", "Stage 9E"):
+            assert stage in text and "completed" in text
+        assert "Stage 9F" in text and "next" in text
+    assert "Stage 9E closes **37–42**" in protocol
+    assert "Criteria 43–50 remain future work" in protocol
+    assert "criteria **43–47**: Stage 9F ablation/reconstruction/accessibility" in protocol
     assert "criterion **50**: external final full-repository regression and merge-readiness review" in protocol
 
 
@@ -172,6 +170,32 @@ def test_stage9d_checkpoint_records_typed_continuation_aware_clock_transport() -
     assert "(-1,-0.5)" in results
 
 
+def test_stage9e_checkpoint_records_compatibility_matrix_and_constraints() -> None:
+    notes = _read("docs/stage9e_notes.md")
+    results = _read("results/stage9e_compatibility.md")
+    protocol = _read("docs/stage9_protocol.md")
+    for text in (notes, results, protocol):
+        for relation in (
+            "R_direction-V_extension",
+            "R_direction-V_weights",
+            "R_direction-V_semantics",
+            "R_access-V",
+            "P-R_direction-V",
+            "O-R_direction-V",
+        ):
+            assert relation in text
+        assert "compatible" in text
+        assert "underdetermined" in text
+        assert "implication_refuted" in text
+        assert "direct" in text and "Xi_RV" in text and "not_established" in text
+        assert "full Stage 9C future" in text and "not_established" in text
+        assert "accessible canonical R_access-V compatibility != accessibility independence" in text
+        assert "directional record arrow != ontological becoming" in text
+    assert "criteria 37–42" in results.lower()
+    assert "743 passed in 404.42s" in results
+    assert "Stage 9F" in results and "Next" in results
+
+
 def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
     protocol = _read("docs/stage9_protocol.md")
     checkpoint = _read("results/stage9_0_protocol_freeze.md")
@@ -192,11 +216,11 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
             assert status in text
 
 
-def test_readme_records_stage8_as_merged_and_stage9d_as_current_checkpoint() -> None:
+def test_readme_records_stage8_as_merged_and_stage9e_as_current_checkpoint() -> None:
     readme = _read("README.md")
     lowered = readme.lower()
     assert "Stages 1–8 are completed and merged" in readme
-    assert "stage 9d are completed" in lowered
-    assert "stage 9e" in lowered and "next" in lowered
-    assert "733 passed in 372.31s" in readme
+    assert "stage 9e are completed" in lowered
+    assert "stage 9f" in lowered and "next" in lowered
+    assert "743 passed in 404.42s" in readme
     assert "Draft PR #9" not in readme

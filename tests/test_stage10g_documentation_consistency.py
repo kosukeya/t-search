@@ -12,8 +12,8 @@ def test_stage10g_notes_and_results_close_48_49_only():
         assert "criteria 48–49 satisfied" in text
         assert "`measurement_covariant`" in text
         assert "`parametrized_covariance_precursor`" in text
-    assert "criterion 50 remains external" in NOTES
-    assert "criterion 50 remains external" in RESULTS
+    assert "criterion 50 remains external" in NOTES.lower()
+    assert "criterion 50 remains external" in RESULTS.lower()
 
 
 def test_stage10g_docs_preserve_frozen_synthesis_vocabulary():

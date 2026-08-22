@@ -1,6 +1,6 @@
 # Stage 10 Protocol — Fully Typed Future-Measurement Covariance
 
-Status: **Stage 10.0 protocol frozen; Stage 10A–10E completed; criteria 1–43 completed; Stage 10F next.**
+Status: **Stage 10.0 protocol frozen; Stage 10A–10F completed; criteria 1–47 completed; Stage 10G next.**
 
 Historical Stage 10B checkpoint: **Stage 10A and Stage 10B completed; criteria 1–23 completed.**
 
@@ -285,9 +285,38 @@ This is an operational result, not a modal-semantic collapse:
 
 `evidence-update covariance != ontological becoming`.
 
-Scientific validation: **`834 passed in 455.24s`** (run #1233).
+Scientific validation: **`834 passed in 455.24s`** (run #1233). Documentation-synchronized regression: **`839 passed in 455.87s`** (run #1243).
 
-## 14. Stage sequence
+## 14. Stage 10F — ablation / wrong-typing / false-positive controls — completed
+
+Stage 10F removes or corrupts individual correspondence and normalization resources while retaining as much numerical structure as possible.
+
+Executable classification:
+
+- removing event correspondence: numerical payload `preserved`, typed identification `lost`, fully typed covariance `not_established`;
+- removing continuation-class correspondence: numerical payload `preserved`, typed identification `lost`, fully typed covariance `not_established`;
+- removing outcome correspondence: numerical payload `preserved`, typed identification `lost`, fully typed covariance `not_established`;
+- removing normalization semantics while retaining its matrix: numerical payload `reconstructible`, typed role `underdetermined`, probability covariance `not_established`;
+- substituting a fresh numerical identity in a non-Euclidean-unitary chart: corrupted rule `refuted` by the tomography-complete probe family;
+- bare-effect reuse, wrong-continuation use, swapped outcome correspondence, misdeclared event correspondence, and weight/class misalignment all receive explicit rejection witnesses/residuals.
+
+The key false-positive guard is:
+
+`numerical reconstructibility != typed operational identification`.
+
+Stage 10F therefore shows that explicit correspondence and normalization semantics perform non-redundant formal work in licensing the fully typed covariance statement, without promoting them to metaphysical fundamentals.
+
+`preserved numerical payload != preserved typed role`.
+
+`lost != metaphysically irreducible`.
+
+`reconstructible != universally redundant`.
+
+`wrong-typing failure != ontological becoming`.
+
+Scientific validation: **`843 passed in 575.02s`** (run #1249).
+
+## 15. Stage sequence
 
 - **Stage 10.0 — protocol freeze — completed**;
 - **Stage 10A — typed reference future-measurement family — completed**;
@@ -295,11 +324,11 @@ Scientific validation: **`834 passed in 455.24s`** (run #1233).
 - **Stage 10C — continuation-aware A/B/C measurement transport — completed**;
 - **Stage 10D — per-continuation Born/completeness/positivity covariance — completed**;
 - **Stage 10E — weights, modal models, and evidence-update covariance — completed**;
-- **Stage 10F — ablation / wrong-typing / false-positive controls — next**;
-- **Stage 10G — synthesis and evidence-selected next gate**;
+- **Stage 10F — ablation / wrong-typing / false-positive controls — completed**;
+- **Stage 10G — synthesis and evidence-selected next gate — next**;
 - **criterion 50 — external full-repository regression / merge-readiness review**.
 
-## 15. Exit-criterion allocation
+## 16. Exit-criterion allocation
 
 ### Stage 10.0 — criteria 1–10 — completed
 
@@ -362,12 +391,12 @@ Scientific validation: **`834 passed in 455.24s`** (run #1233).
 42. Weight mismatch remains predictively visible with the same operational meaning across perspectives — **satisfied**.
 43. Common evidence conditioning/posteriors are perspective-consistent and ontic update remains selector-free — **satisfied**.
 
-### Stage 10F — criteria 44–47
+### Stage 10F — criteria 44–47 — completed
 
-44. Removing event/class/outcome correspondence classifies typed identifications using the project status vocabulary.
-45. Removing/corrupting normalization semantics classifies probability covariance as warranted.
-46. Bare-effect, wrong-continuation, wrong-outcome, wrong-event, and weight-misalignment controls receive explicit witnesses/residuals.
-47. Reconstruction/ablation results avoid metaphysical promotion.
+44. Removing event/class/outcome correspondence classifies typed identifications using the project status vocabulary — **satisfied**.
+45. Removing/corrupting normalization semantics classifies probability covariance as warranted — **satisfied**.
+46. Bare-effect, wrong-continuation, wrong-outcome, wrong-event, and weight-misalignment controls receive explicit witnesses/residuals — **satisfied**.
+47. Reconstruction/ablation results avoid metaphysical promotion — **satisfied**.
 
 ### Stage 10G — criteria 48–49
 
@@ -378,7 +407,7 @@ Scientific validation: **`834 passed in 455.24s`** (run #1233).
 
 50. External final full-repository regression and merge-readiness review close Stage 10 only after criteria 1–49 are satisfied or explicitly resolved.
 
-## 16. Status vocabulary
+## 17. Status vocabulary
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established / compatible / implication_refuted`.
 
@@ -388,7 +417,7 @@ Overall measurement-covariance status additionally permits `established / partia
 
 `refuted measurement covariance != ontological becoming`.
 
-## 17. Interpretation guards
+## 18. Interpretation guards
 
 - `future-measurement covariance != future actuality`;
 - `future-measurement covariance != ontic future openness`;
@@ -411,10 +440,17 @@ Overall measurement-covariance status additionally permits `established / partia
 - `physical metric != operational normalization by definition`;
 - `typed-resource distinction != numerical inequality`;
 - `measurement representation covariance != probability covariance by definition`;
+- `numerical reconstructibility != typed operational identification`;
+- `preserved numerical payload != preserved typed role`;
+- `missing typing != metaphysical absence`;
+- `lost != metaphysically irreducible`;
+- `reconstructible != universally redundant`;
+- `wrong-typing failure != ontological becoming`;
+- `finite-model ablation != fundamental ontology`;
 - `full finite-clock measurement covariance != general covariance`;
 - `finite-model measurement success != empirical discovery`;
 - `not_established != false`.
 
-## 18. Immediate next step
+## 19. Immediate next step
 
-Proceed to **Stage 10F — ablation / wrong-typing / false-positive controls**.
+Proceed to **Stage 10G — synthesis and evidence-selected next gate**.

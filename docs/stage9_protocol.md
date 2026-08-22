@@ -1,6 +1,6 @@
 # Stage 9 Protocol — Directional Records with Nontrivial Quantum Potentiality
 
-Status: **Stage 9.0 protocol frozen; Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, and Stage 9F completed; Stage 9G next.**
+Status: **Stage 9.0 protocol frozen; Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, Stage 9F, and Stage 9G completed; criterion 50 external final validation next.**
 
 Selected Stage 9 gate from Stage 8G:
 
@@ -296,7 +296,60 @@ The deliberately wrong bare record-observable coordinate reuse is rejected.
 
 Stage 9F therefore strengthens the layered interpretation by separating record content, direction, accessibility, V multiplicity, V semantics, V weights, reconstructible P matrices, and explicit semantic correspondence resources.
 
-## 9. Evidence taxonomy
+## 9. Stage 9G synthesis and evidence-selected next gate — completed
+
+The executable Stage 9A–F synthesis selects:
+
+`refined_layered`.
+
+The top-level finite-model candidate remains:
+
+`T9_candidate=(O,P,R,V;Xi)`
+
+with the internal R/V refinements retained.
+
+### 9.1 Why `refined_layered` is strengthened
+
+Stage 9 supplies positive same-family P/O/R_direction/V compatibility and then produces finite-family countermodels in both directions between directional R and nontrivial V multiplicity. It also separates record content from direction, and global record/direction from local accessibility.
+
+These results strengthen role separation without promoting those roles to fundamental metaphysical primitives.
+
+### 9.2 Xi classification
+
+No new direct `Xi_RV` value law is required or established.
+
+The retained Xi-like resources are explicit typed correspondences among events/current anchors, continuation classes, perspectives, weights, and record observables.
+
+`typed Xi correspondence retained != direct Xi_RV value law established`.
+
+`no direct Xi_RV law established != no possible R-V constraint`.
+
+### 9.3 P representation classification
+
+Explicit P edge matrices are a derived representation role when per-node continuation coordinates are retained. Event/class correspondence and semantic observable typing remain explicit resources.
+
+`P edge reconstruction != P layer universally redundant`.
+
+### 9.4 Evidence-selected Stage 10 ranking
+
+The completed `directional_record_potentiality` gate is removed from the future candidate set.
+
+1. `full_measurement_covariance` — score **9**;
+2. `richer_causal_order` — score **6**;
+3. `parametrized_covariance_precursor` — score **5**;
+4. `nonideal_povm_clocks` — score **4**.
+
+Selected Stage 10 gate:
+
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
+
+The full Stage 9C future-signature measurement-family covariance remains the sharpest explicit operational boundary because state/metric/record/class/weight transport is already established while this cross-continuation measurement family is not.
+
+The parametrized/general-covariance precursor rises in priority after Stage 9 but remains deferred behind this narrower operational closure.
+
+`finite clock covariance != general covariance`.
+
+## 10. Evidence taxonomy
 
 Every scientific claim must be one of:
 
@@ -308,7 +361,7 @@ Every scientific claim must be one of:
 - not established;
 - candidate interpretation.
 
-## 10. Stage 9 sequence
+## 11. Stage 9 sequence
 
 - Stage 9.0 — protocol freeze — **completed**; criteria 1–10.
 - Stage 9A — common directional-R/V continuation substrate — **completed**; criteria 11–16.
@@ -317,10 +370,10 @@ Every scientific claim must be one of:
 - Stage 9D — continuation-aware clock transport — **completed**; criteria 31–36.
 - Stage 9E — P/O/R_direction/V compatibility matrix — **completed**; criteria 37–42.
 - Stage 9F — ablation / reconstruction / accessibility matrix — **completed**; criteria 43–47.
-- **Stage 9G — synthesis and evidence-selected next gate — next**; criteria 48–49.
-- criterion 50 — external final full-repository regression and merge-readiness review.
+- Stage 9G — synthesis and evidence-selected next gate — **completed**; criteria 48–49.
+- **criterion 50 — external final full-repository regression and merge-readiness review — next**.
 
-## 11. Exit criteria
+## 12. Exit criteria
 
 ### Stage 9.0 — criteria 1–10 — frozen/completed
 
@@ -396,14 +449,20 @@ Stage 9E closes **37–42**.
 
 Stage 9F closes **43–47**.
 
-### Future allocation
+### Stage 9G — criteria 48–49 — satisfied
 
-- criteria **48–49**: Stage 9G synthesis and next-gate selection;
+48. Executable Stage 9A–F synthesis classifies the candidate as `refined_layered`, retains R/V internal refinements, treats explicit P edges as derived when node coordinates are retained, and does not invent a direct Xi_RV value law — **satisfied**.
+49. Remaining unresolved gates are evidence-ranked and `full_measurement_covariance` is uniquely selected as the Stage 10 gate with score 9 — **satisfied**.
+
+Stage 9G closes **48–49**.
+
+### Remaining allocation
+
 - criterion **50**: external final full-repository regression and merge-readiness review.
 
-Criteria 48–50 remain future work.
+Criterion 50 remains future work until that external validation is explicitly completed.
 
-## 12. Mandatory guards
+## 13. Mandatory guards
 
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
@@ -428,11 +487,14 @@ Criteria 48–50 remain future work.
 - `R_direction-V_extension compatibility != universal R-V independence`;
 - `directional R without V multiplicity != universal R-V independence theorem`;
 - `V without directional R != universal R-V independence theorem`;
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
 - `singleton support != absence of a formal selected-vs-unselected type distinction`;
 - `accessible canonical R_access-V compatibility != accessibility independence`;
 - `P-R_direction-V covariance != ontic openness`;
 - `O-R_direction-V compatibility != O determines R_direction`;
 - `absence of an established direct Xi_RV value constraint != proof that no such constraint exists`;
+- `typed Xi correspondence retained != direct Xi_RV value law established`;
+- `no direct Xi_RV law established != no possible R-V constraint`;
 - `equal numeric clock readings != event identity`;
 - `covariance of a wrongly typed observable != semantic correctness`;
 - `perspective change != temporal-direction reversal`;
@@ -441,6 +503,7 @@ Criteria 48–50 remain future work.
 - `directional record covariance != P=R`;
 - `class/weight covariance != V_semantics identity`;
 - `P edge reconstruction != P=R or P=V`;
+- `P edge reconstruction != P layer universally redundant`;
 - `local P transport without chi != typed event/class identification`;
 - `reconstructible != universally redundant`;
 - `lost != metaphysically irreducible`;
@@ -451,12 +514,12 @@ Criteria 48–50 remain future work.
 - `finite constrained-model success != empirical discovery`;
 - `finite clock covariance != general covariance`.
 
-## 13. Strongest statement allowed after Stage 9F
+## 14. Strongest statement allowed after Stage 9G
 
-Within the declared finite constrained family, `P/O/R_direction/V` structural compatibility survives a discriminating set of ablations. Nontrivial continuation multiplicity can remain after directional R is removed, directional R can remain after nontrivial continuation multiplicity is removed, and record content can remain after directional asymmetry is removed. Local accessibility can be hidden without erasing the global record/direction/V representation. Explicit P edge matrices are reconstructible from per-node coordinates, whereas event/class correspondence and semantic observable typing remain separate resources.
+Within the declared finite constrained Stage 9 family, executable compatibility, transport, modal, and ablation evidence favors retaining the refined layered candidate `T=(O,P,R,V;Xi)`. Directional R and nontrivial V coexist and are not mutually necessary in the tested family; R and V subroles display distinct functional behavior; explicit P edge matrices are reconstructible while semantic correspondence remains explicit; and no new direct Xi_RV value law is established.
 
-This strengthens the refined-layered candidate and provides finite-family countermodels to mutual necessity among several R/V subroles. It does not establish universal R-V independence, metaphysical primitiveness, ontic future openness, ontological becoming, full future-signature measurement covariance, empirical novelty, or general covariance.
+The strongest remaining operational boundary is full cross-continuation future-measurement-family covariance, which is selected as the Stage 10 gate. These results do not establish universal R-V independence, ontic future openness, ontological becoming, general covariance, empirical novelty, or a fundamental/unique ontology of time.
 
-## 14. Immediate next step
+## 15. Immediate next step
 
-**Stage 9G — synthesis and evidence-selected next gate** should now integrate the Stage 9A–9F evidence, classify the refined-layered candidate, and re-rank the remaining finite/general-covariance gates.
+**Stage 9 criterion 50 — external final full-repository regression and merge-readiness review** should now validate the documentation-synchronized Stage 9 head. Only after criterion 50 is closed should the selected Stage 10 gate be treated as ready to start.

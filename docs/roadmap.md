@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E classified the resulting P/O/R_direction/V compatibility matrix, Stage 9F pressure-tested it by ablation/reconstruction/accessibility, and Stage 9G now retains `refined_layered` and selects full future-measurement covariance as the next gate.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E classified the resulting P/O/R_direction/V compatibility matrix, Stage 9F pressure-tested it by ablation/reconstruction/accessibility, and Stage 9G retained `refined_layered` and selected full future-measurement covariance as the next gate. Stage 9 criterion 50 is now closed by the external final regression and merge-readiness review.
 
 ## Stages 0–6 — completed and merged
 
@@ -90,9 +90,9 @@ Stage 9 gate ranking at entry:
 
 `Potentiality != quantum randomness by definition`.
 
-## Stage 9 — Directional records with nontrivial quantum Potentiality — criteria 1–49 completed
+## Stage 9 — Directional records with nontrivial quantum Potentiality — completed
 
-Status: **Stage 9.0 through Stage 9G completed; criterion 50 external final regression / merge-readiness review next.**
+Status: **Stage 9.0 through Stage 9G and the external criterion 50 validation are completed; criteria 1–50 are closed.**
 
 Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
 
@@ -273,9 +273,17 @@ Criteria **48–49** are satisfied.
 
 Source-level Stage 9G validation: **`765 passed in 248.81s`** (run #1099).
 
-### Stage 9 criterion 50 — next
+### Stage 9 criterion 50 — completed externally
 
-Run the final documentation-synchronized full-repository regression and merge-readiness review. Criterion 50 remains external and is not closed by the executable Stage 9G selector.
+The corrected documentation-synchronized Stage 9 head passed GitHub Actions run #1121:
+
+**`766 passed in 459.00s (0:07:38)`**.
+
+Reviewed branch head: `1bcdc83a9dd5261f3d0de8d152534afda89667d7`.
+
+Reviewed PR merge-ref: `b53906446fd6970e3cfb03f110690ea9b5ce97b2`.
+
+At that checkpoint the branch was behind `main` by 0 commits, PR #10 was mergeable, and there were no unresolved review threads or submitted reviews. Criterion 50 is therefore closed as an external merge-readiness condition and adds no new scientific claim.
 
 ## Stage 10 — Fully typed future-measurement covariance — selected next gate
 
@@ -295,7 +303,7 @@ The Stage 10 protocol should freeze a single measurement-family object that make
 
 The key test is whether the Stage 9C future-signature measurement family can be transported as a correctly typed operational object, not merely whether states and individual record observables transform covariantly.
 
-Stage 10 begins only after Stage 9 criterion 50 is externally closed.
+Stage 10 is ready to begin after Stage 9 is merged.
 
 ## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate
 

@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–7 are completed and merged. Stage 8.0 and Stages 8A–8G are completed on Draft PR #9; criteria 48–50 are closed, with criterion 50 satisfied by the final external full-repository CI and merge-readiness review.**
+**Stages 1–8 are completed and merged. Stage 9 — directional records with nontrivial quantum Potentiality — is the selected next gate.**
 
 Current refined finite-model candidate:
 

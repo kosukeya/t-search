@@ -81,7 +81,7 @@ def test_stage9_r_direction_v_questions_are_split_not_collapsed() -> None:
         assert fragment in protocol
 
 
-def test_stage9_sequence_and_exit_criteria_advance_through_stage9g() -> None:
+def test_stage9_sequence_and_exit_criteria_close_through_criterion50() -> None:
     protocol = _read("docs/stage9_protocol.md")
     readme = _read("README.md")
     roadmap = _read("docs/roadmap.md")
@@ -98,8 +98,9 @@ def test_stage9_sequence_and_exit_criteria_advance_through_stage9g() -> None:
             assert stage in text and "completed" in text
         assert "criterion 50" in text.lower()
     assert "Stage 9G closes **48–49**" in protocol
-    assert "Criterion 50 remains future work" in protocol
-    assert "criterion **50**: external final full-repository regression and merge-readiness review" in protocol
+    assert "Criterion 50 — external final validation — satisfied" in protocol
+    assert "criteria 1–50 closed" in protocol
+    assert "766 passed in 459.00s" in protocol
     selected = "Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes."
     assert selected in protocol
     assert selected in readme
@@ -229,7 +230,7 @@ def test_stage9f_checkpoint_records_ablation_reconstruction_and_accessibility() 
     assert "754 passed in 438.94s" in results
 
 
-def test_stage9g_checkpoint_records_synthesis_and_selected_stage10_gate() -> None:
+def test_stage9g_checkpoint_records_synthesis_selected_stage10_and_final_validation() -> None:
     notes = _read("docs/stage9g_notes.md")
     results = _read("results/stage9g_synthesis_stage10_gate.md")
     protocol = _read("docs/stage9_protocol.md")
@@ -244,11 +245,14 @@ def test_stage9g_checkpoint_records_synthesis_and_selected_stage10_gate() -> Non
         assert "P edge reconstruction != P layer universally redundant" in text
         assert "full Stage 9C future-measurement covariance remains not_established" in text
         assert "finite clock covariance != general covariance" in text
-    assert "criteria 48–49" in results.lower()
+    assert "criteria 48–50" in results.lower()
     assert "765 passed in 248.81s" in results
     assert "755 passed in 348.67s" in results
+    assert "766 passed in 459.00s" in results
     assert "criterion **50**" in results
-    assert "not yet closed" in results.lower()
+    assert "satisfied externally" in results.lower()
+    assert "1bcdc83a9dd5261f3d0de8d152534afda89667d7" in results
+    assert "b53906446fd6970e3cfb03f110690ea9b5ce97b2" in results
     assert "parametrized_covariance_precursor" in results
     assert "nonideal_povm_clocks" in results
 
@@ -273,12 +277,13 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
             assert status in text
 
 
-def test_readme_records_stage8_as_merged_and_stage9g_as_current_checkpoint() -> None:
+def test_readme_records_stage8_as_merged_and_stage9_as_fully_closed() -> None:
     readme = _read("README.md")
     lowered = readme.lower()
     assert "Stages 1–8 are completed and merged" in readme
-    assert "stage 9.0 through stage 9g are completed" in lowered
-    assert "criterion 50" in lowered and "next" in lowered
+    assert "stage 9.0 through stage 9g" in lowered
+    assert "criteria 1–50 are closed" in lowered
     assert "765 passed in 248.81s" in readme
     assert "755 passed in 348.67s" in readme
+    assert "766 passed in 459.00s" in readme
     assert "Draft PR #9" not in readme

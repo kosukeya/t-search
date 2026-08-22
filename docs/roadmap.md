@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the directional-R/V link as the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 froze the integration contract, Stage 9A supplied a positive common directional-R/V substrate, and Stage 9B now shows that the directional score can be reversed, balanced, or removed while nontrivial `V_extension` remains.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the directional-R/V link as the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 froze the integration contract, Stage 9A supplied a positive common directional-R/V substrate, Stage 9B showed that the directional score can be reversed, balanced, or removed while nontrivial `V_extension` remains, and Stage 9C now shows that explicit nonzero `R_direction` still does not select `V_semantics` under the matched public interface.
 
 ## Stages 0–6 — completed and merged
 
@@ -122,7 +122,7 @@ Current Stage 9 gate ranking:
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — active gate
 
-Status: **Stage 9.0, Stage 9A, and Stage 9B completed; Stage 9C next.**
+Status: **Stage 9.0, Stage 9A, Stage 9B, and Stage 9C completed; Stage 9D next.**
 
 Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
 
@@ -186,13 +186,35 @@ Criteria **17–23** are satisfied.
 
 Strict validation: **`708 passed in 196.73s`** (run #975).
 
-### Stage 9C — typed modal models and directional operational underdetermination — next
+### Stage 9C — typed modal models and directional operational underdetermination — completed
 
-Place epistemic selected-`h*` and ontic no-selected-continuation semantics on the same directional carrier. Test the declared `O_QR` interface, hidden-selector swaps, matched/mismatched weights, and explicit update semantics without using record direction as evidence for ontic openness.
+Stage 9C assigns the same directional carrier two distinct modal roles:
+
+- `M_E^QR=(QRCarrier,e1,h*,q_E)` with one hidden selected complete continuation;
+- `M_O^QR(e1)=(QRCarrier,e1,QExt(e1),K)` with no selected complete continuation datum.
+
+The public `O_QR` interface includes current density, target-memory record content, continuation-independent directional statistics, and future-signature prediction while excluding hidden selector and modal-type fields.
+
+With matched positive weights `q_E=K=(0.5,0.5)`, the two modal models are operationally equal under `O_QR` even though their privileged structures remain distinct. Swapping only hidden `h*` leaves `O_QR` unchanged.
+
+A `K=(0.75,0.25)` weight mismatch changes future prediction while preserving the current density, record data, and `(A_R,A_acc)=(+1,+0.5)` directional interface. Explicit common evidence conditions both models consistently; the epistemic selected h* is preserved and the ontic update remains selector-free.
+
+Therefore, in this finite family:
+
+`R_direction present + V_extension nontrivial + matched O_QR => V_semantics underdetermined`.
+
+This strengthens the Stage 8 modal-underdetermination result because the public interface now contains a nonzero directional record arrow. It still does not establish ontic openness, a secretly fixed future, or ontological becoming.
+
+Criteria **24–30** are satisfied.
+
+Strict validation: **`720 passed in 265.06s`** (run #995).
+
+### Stage 9D — continuation-aware clock transport — next
+
+Re-derive the A/B/C physical-clock atlases from each Stage 9 continuation-specific constrained carrier. Transport states, typed directional-record observables, event correspondences, continuation classes, and weights; then test direct/global, inverse/round-trip, and three-clock composition consistency with mismatch controls.
 
 ### Later Stage 9 pressure points
 
-- Stage 9D — continuation-aware clock transport;
 - Stage 9E — P/O/R_direction/V compatibility matrix;
 - Stage 9F — ablation / reconstruction / accessibility matrix;
 - Stage 9G — synthesis and evidence-selected next gate.
@@ -201,7 +223,6 @@ Required continuing pressure points include:
 
 - genuine continuation-specific P transport with re-derived A/B/C atlases;
 - explicit event/class/observable correspondence;
-- selected-vs-unselected modal underdetermination with directional R present;
 - separate checks of `R_direction` against `V_extension`, `V_semantics`, and `V_weights`;
 - local-accessibility ablations;
 - continued separation of record direction from thermodynamic, ontological, and phenomenal arrows.
@@ -223,6 +244,7 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 ## Cautions
 
 - `operational quantum equality != modal/ontological identity`;
+- `operational directional equality != modal/ontological identity`;
 - `Potentiality != quantum randomness by definition`;
 - `QExt represented != ontically real futures by definition`;
 - `P-V covariance != P=V`;
@@ -242,8 +264,12 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `balanced mixture != pure constrained history`;
 - `reversed diagnostic sign != reversed Python iteration`;
 - `control of R_direction != control of V_semantics`;
+- `control of V_weights != determination of V_semantics`;
+- `hidden h* diagnostic != operational access to h*`;
+- `weight sensitivity != selected-continuation observability`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
+- `explicit evidence update != ontological becoming`;
 - `lost != metaphysically irreducible`;
 - `reconstructible != universally redundant`;
 - `underdetermined != ontically open`;

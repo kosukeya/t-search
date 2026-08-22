@@ -1,6 +1,6 @@
 # Stage 9.0 Results — Directional Records with Quantum Potentiality Protocol Freeze
 
-Status: **completed**.
+Status: **completed historical protocol-freeze checkpoint. Stage 9A subsequently satisfies criteria 11–16; see `results/stage9a_directional_substrate.md`.**
 
 ## Selected gate
 
@@ -47,7 +47,7 @@ The preferred Stage 9A construction combines the already-tested ingredients rath
 4. keep the continuation-defining future action memory-neutral and record-target-neutral where feasible;
 5. re-derive each continuation's A/B/C constrained clock atlas rather than reusing maps by assumption.
 
-This is a design target, not a positive Stage 9 result.
+This is a design target, not a positive Stage 9 result in this historical checkpoint.
 
 ## Frozen R and V typing
 
@@ -118,50 +118,41 @@ A single undifferentiated `R-V = compatible` label is not sufficient.
 
 ## Frozen ablations
 
-Stage 9F must include one-ingredient controls for at least:
+Stage 9F must include, where physically meaningful:
 
-- direction neutralized with V retained;
-- singleton `QExt` with directional R retained if constructible;
-- modal semantics removed;
+- directional record interaction neutralized while V remains nontrivial;
+- `QExt` collapsed to a singleton while directional R is retained if possible;
+- modal selected-vs-unselected semantics removed;
 - V weights unfixed;
 - local record access hidden;
 - event/class correspondence removed;
-- explicit P edges removed while testing reconstructibility;
-- wrong record-observable coordinates.
+- perspective edge matrices removed while reconstruction data remain;
+- deliberately wrong record-observable coordinate transport.
 
-Statuses remain separated:
+Functional statuses remain distinct:
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
 
-## Stage 9 sequence frozen
+## Frozen exit-criteria allocation
 
-- **Stage 9.0 — protocol freeze — completed**
-- **Stage 9A — common directional-R/V continuation substrate — next**
-- Stage 9B — directional diagnostics and controls
-- Stage 9C — typed modal models and directional operational underdetermination
-- Stage 9D — continuation-aware clock transport
-- Stage 9E — P/O/R_direction/V compatibility matrix
-- Stage 9F — ablation / reconstruction / accessibility matrix
-- Stage 9G — synthesis and evidence-selected next gate
+Stage 9 defines 50 criteria.
 
-## Exit criteria
+At this Stage 9.0 historical checkpoint, only criteria **1–10** were frozen as completed; criteria **11–50 remained future scientific work** at that moment.
 
-Stage 9 defines 50 exit criteria.
+Allocation frozen at Stage 9.0:
 
-Stage 9.0 freezes criteria **1–10** only. Criteria **11–50 remain future scientific work** and are not satisfied by this documentation checkpoint.
+- criteria **11–16**: Stage 9A substrate;
+- criteria **17–23**: Stage 9B directional diagnostics/controls;
+- criteria **24–30**: Stage 9C typed modal/operational tests;
+- criteria **31–36**: Stage 9D genuine clock transport;
+- criteria **37–42**: Stage 9E compatibility/constraint matrix;
+- criteria **43–47**: Stage 9F ablation/reconstruction/accessibility;
+- criteria **48–49**: Stage 9G synthesis and next-gate selection;
+- criterion **50**: external final full-repository regression / merge-readiness review.
 
-Future allocation:
+Stage 9A later closes criteria 11–16 without changing this historical freeze semantics.
 
-- 11–16: Stage 9A;
-- 17–23: Stage 9B;
-- 24–30: Stage 9C;
-- 31–36: Stage 9D;
-- 37–42: Stage 9E;
-- 43–47: Stage 9F;
-- 48–49: Stage 9G;
-- 50: external final CI / merge-readiness review.
-
-## Frozen mandatory guards
+## Guards
 
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
@@ -171,23 +162,17 @@ Future allocation:
 - `QExt represented != ontically real futures by definition`;
 - `operational quantum equality != modal/ontological identity`;
 - `record content != directional record arrow`;
-- `record content != unique future continuation`;
 - `order != directional record arrow`;
 - `continuation identity != record-direction identity`;
 - `weighted directional score != continuation-independent directional structure`;
-- `R-V compatibility != R=V`;
-- `P-R_direction-V covariance != ontic openness`;
-- `equal numeric clock readings != event identity`;
 - `covariance of a wrongly typed observable != semantic correctness`;
 - `underdetermined != ontically open`;
-- `not_established != false`;
-- `finite clock covariance != general covariance`;
-- `finite constrained-model success != empirical discovery`.
+- `not_established != false`.
 
-## Strongest bounded statement
+## Strongest statement at Stage 9.0 freeze
 
-**Stage 9.0 identifies no new positive physical result. It freezes a discriminating same-family test of the strongest unresolved Stage 8 link: nontrivial quantum continuation structure must coexist at one declared current anchor with a coherent per-continuation directional record relation, while continuation identity remains independent of the record-direction channel and selected-versus-unselected modal semantics remain explicitly testable. Only after forward/reversed/balanced/no-record controls, genuine continuation-aware clock transport, modal underdetermination tests, and ablations may Stage 9 make a stronger structural claim.**
+**Stage 8G identifies directional R with nontrivial quantum V as the highest-value unresolved finite-model compatibility link. Stage 9.0 freezes a stronger single-family test requiring at least two physically inequivalent continuations and the same nonzero per-continuation directional record structure at one common current anchor, while keeping continuation identity physically separate from the arrow channel. This freeze itself does not establish that the construction succeeds and does not identify directional records or Potentiality with ontological becoming.**
 
-## Next
+## Historical next step
 
-Stage 9A should construct the smallest physical continuation pair that combines the Stage 7C directional-record mechanism with the Stage 8 nontrivial continuation distinction without using branch identity as the arrow.
+At the time of this checkpoint, **Stage 9A — common directional-R/V continuation substrate — was next**. It has since been completed; see `docs/stage9a_notes.md` and `results/stage9a_directional_substrate.md`.

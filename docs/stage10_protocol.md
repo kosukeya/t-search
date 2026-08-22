@@ -1,8 +1,8 @@
 # Stage 10 Protocol — Fully Typed Future-Measurement Covariance
 
-Status: **Stage 10.0 protocol frozen; Stage 10A–10F completed; criteria 1–47 completed; Stage 10G next.**
+Status: **Stage 10.0 through Stage 10G completed; criteria 1–49 completed; criterion 50 final external full-repository regression / merge-readiness review pending.**
 
-Historical Stage 10B checkpoint: **Stage 10A and Stage 10B completed; criteria 1–23 completed.**
+Historical checkpoint retained for consistency: **Stage 10A and Stage 10B completed; criteria 1–23 completed.**
 
 Selected Stage 10 gate from Stage 9G:
 
@@ -10,39 +10,25 @@ Selected Stage 10 gate from Stage 9G:
 
 Stage 10 retains `T10_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-## 1. Frozen central question
+## 1. Frozen question and carrier
 
-Can the Stage 9C future-signature measurement be promoted into a single **fully typed cross-continuation measurement family** whose outcome semantics, effects, normalization rule, probabilities, continuation classes, and event/outcome correspondences remain operationally consistent under the genuine continuation-specific A/B/C clock changes established in Stage 9D?
+The frozen question is whether the Stage 9C reference future-signature measurement can be promoted to one fully typed cross-continuation measurement family whose effects, normalization, outcome semantics, probabilities, event roles, continuation classes, and correspondences remain operationally consistent under genuine continuation-aware A/B/C clock changes.
 
-`state covariance != measurement covariance by definition`.
+Carrier: `QExt(e1)={h_L,h_R}`.
 
-`same numeric probability != same operational question`.
+Prediction anchor: `e1`. Measurement target: `e2`.
 
-## 2. Frozen carrier and reference measurement
-
-Stage 10 reuses the merged Stage 9 carrier:
-
-`QExt(e1)={h_L,h_R}`.
-
-Prediction anchor: `e1`.
-
-Measurement target: `e2`.
-
-Reference Stage 9C measurement:
-
-`M_ref={future_signature_left,future_signature_other}`
-
-with `E_left=|psi_L(e2)><psi_L(e2)|` and `E_other=I-E_left`.
-
-The existing Stage 9C normalized-reduced-state Born probabilities remain the operational reference.
+Stage 9C reference outcomes: `future_signature_left` and `future_signature_other`.
 
 `prediction anchor e1 != measurement target e2`.
 
-`reference effect derived from h_L != ontic selector h*`.
+`typed continuation id != hidden selected continuation`.
 
-## 3. Fully typed measurement-family schema
+`reference-node validity != cross-clock measurement covariance`.
 
-The frozen schema makes these resources explicit:
+## 2. Frozen measurement typing
+
+The explicit schema retains:
 
 - measurement-family identity;
 - continuation class / continuation id;
@@ -60,38 +46,15 @@ The frozen schema makes these resources explicit:
 - outcome correspondence;
 - continuation-weight semantics.
 
-An individual effect is typed by `(family,continuation,prediction_anchor,target_event,clock,index,outcome,semantics,basis,normalization)`.
-
 `same outcome label != outcome identity`.
 
 `same matrix entries != same typed effect`.
 
-## 4. Normalization boundary and Stage 10B selection
+## 3. Normalization and strong covariance target
 
-Stage 10.0 froze two candidate descriptions:
+The Stage 10.0 decision boundary compared a chart-local POVM with a metric-aware effect-form description. The metric-aware notation was frozen as `sum_o F_o=G` with probability proportional to `z^dagger F_o z` and normalization `z^dagger G z`.
 
-1. **chart-local POVM representation** with `sum_o E_o=I`;
-2. **metric-aware effect-form representation** with `sum_o F_o=G` and `p(o|h)=z^dagger F_o z / (z^dagger G z)`.
-
-Candidate dual transport was frozen as:
-
-`G_Y=S^{-dagger} G_X S^{-1}`
-
-`F_{o,Y}=S^{-dagger} F_{o,X} S^{-1}`.
-
-Stage 10B selected the reference-induced physical effect/normalization form. For each continuation `h` and its A/e2 reduction `R_h`:
-
-`N_h=R_h^dagger R_h`
-
-`F_{h,o}=R_h^dagger E_o R_h`
-
-`p(o|h)=c_h^dagger F_{h,o} c_h / (c_h^dagger N_h c_h)`
-
-`sum_o F_{h,o}=N_h`.
-
-At A/e2 this is equivalent to the ordinary local support POVM. Genuine Stage 9D clock maps are non-Euclidean-unitary, so Stage 10 does not reset normalization to numerical identity independently in every chart.
-
-The Stage 9D physical metric and Stage 10 operational normalization remain different typed resources. Stage 10D additionally shows that different typing must not be promoted into an assumption of numerical inequality.
+Stage 10B selected a reference-induced effect form and operational normalization derived from the Stage 9C reference. Genuine clock maps are non-Euclidean-unitary, so numerical identity is not independently reset in every chart.
 
 `metric-aware candidate law != established measurement covariance`.
 
@@ -99,238 +62,137 @@ The Stage 9D physical metric and Stage 10 operational normalization remain diffe
 
 `reference-chart identity normalization != identity normalization in every transported chart`.
 
-`typed-resource distinction != numerical inequality`.
+`normalization representation selected != measurement covariance established` at the Stage 10B checkpoint.
 
-## 5. Strong covariance target
-
-For every continuation and genuine distinct-clock transport `(X,j)->(Y,k)`, Stage 10 seeks:
-
-`p^h_{X,j}(o)=p^h_{Y,k}(chi_outcome(o))`
-
-within tolerance after event/class/outcome/basis/normalization typing is validated.
-
-The comparison is **per-continuation before weighting**.
+The strong frozen criterion compares `p^h_{X,j}(o)` and `p^h_{Y,k}(chi_outcome(o))` **per-continuation before weighting**.
 
 `weighted probability equality != per-continuation measurement covariance`.
 
 `effect covariance without outcome typing != full measurement covariance`.
 
-## 6. Composition and route consistency
+## 4. Modal/update separation
 
-The declared atlas contains 108 genuine ordered distinct-clock transports and 324 three-clock compositions. Numerical form transport and semantic outcome consistency are both required.
-
-`matrix composition consistency != semantic outcome consistency`.
-
-## 7. Mixture, modal, and update layer
-
-Only after per-continuation likelihood covariance is established are weights restored:
-
-`P_{X,j}(o)=sum_h w_h p^h_{X,j}(o)`.
-
-Canonical models remain:
+Only after per-continuation covariance are weights restored.
 
 `M_E^QR=(QRCarrier,e1,h*,q_E)`
 
-`M_O^QR(e1)=(QRCarrier,e1,QExt(e1),K)`.
+`M_O^QR(e1)=(QRCarrier,e1,QExt(e1),K)`
 
-Stage 10E keeps the **hidden epistemic `h*` swap** outside the public schema, preserves a perspective-stable **weight mismatch**, and conditions **common explicit evidence** using the transported Stage 10D likelihood semantics.
+The public interface keeps the hidden epistemic `h*` swap outside the schema, includes a weight mismatch control, and uses common explicit evidence for update comparison.
 
 `measurement covariance != modal/ontological identity`.
 
-`weight covariance != selected-continuation observability`.
-
 `evidence-update covariance != ontological becoming`.
 
-## 8. Frozen negative controls
+## 5. Frozen negative controls
 
-Stage 10 must test at least:
+The protocol includes bare-effect reuse, wrong-continuation map, swapped continuation classes, swapped/misdeclared outcomes, anchor/target confusion, wrong/missing event correspondence, wrong normalization/metric, weight misalignment, outcome-typing removal, and mixed normalization convention.
 
-1. **bare-effect reuse**;
-2. **wrong-continuation map**;
-3. **swapped continuation classes**;
-4. **swapped/misdeclared outcomes**;
-5. **anchor/target confusion**;
-6. **wrong/missing event correspondence**;
-7. **wrong normalization/metric**;
-8. **weight misalignment**;
-9. **outcome-typing removal**;
-10. **mixed normalization convention**.
+Explicit Stage 10F witnesses include wrong continuation use, wrong outcome typing, wrong event typing, weight misalignment, and fresh numerical identity normalization.
 
 `accidental probability equality != validated covariance`.
 
 `covariance of a wrongly typed measurement != semantic correctness`.
 
-## 9. Stage 10A — typed reference future-measurement family — completed
+## 6. Stage checkpoints
 
-Stage 10A introduced the typed A/e2 reference family without changing Stage 9C semantics. It reproduced canonical outcomes/effects, kept e1/e2 roles explicit, revalidated positivity/completeness, retained h_L/h_R discrimination, reproduced Stage 9C likelihoods, and exposed no hidden selector/modal-type field.
+### Stage 10.0 — protocol freeze — completed
 
-`typed continuation id != hidden selected continuation`.
+Criteria 1–10 were frozen before later implementation. Validation: run #1139, `776 passed in 459.33s`.
 
-`reference-node validity != cross-clock measurement covariance`.
+### Stage 10A — typed reference future-measurement family — completed
 
-Scientific validation: **`783 passed in 461.16s`** (run #1145). Documentation-synchronized regression: **`787 passed in 465.49s`** (run #1157).
+The Stage 9C reference outcomes/effects/probabilities are reproduced with explicit e1/e2 and continuation typing. Scientific validation: run #1145, **`783 passed in 461.16s`**; documentation-synchronized regression: run #1157, `787 passed in 465.49s`.
 
-## 10. Stage 10B — continuation-specific measurement lift / normalization choice — completed
+### Stage 10B — continuation-specific measurement lift / normalization choice — completed
 
-Stage 10B independently derived h_L/h_R support and physical-form lifts, selected the reference-induced operational normalization, made class/outcome correspondence explicit, and rejected wrong-continuation lift use.
+The h_L/h_R reference-induced support and physical effect-form lifts reproduce Stage 9C likelihoods and reject cross-continuation misuse. Scientific validation: run #1163, **`795 passed in 462.74s`**; documentation-synchronized regression: run #1179, `800 passed in 372.79s`.
 
-`normalization representation selected != cross-clock measurement covariance established`.
+### Stage 10C — continuation-aware A/B/C measurement transport — completed
 
-Scientific validation: **`795 passed in 462.74s`** (run #1163). Documentation-synchronized regression: **`800 passed in 372.79s`** (run #1179).
+Every continuation has nine chart representations, giving **18** charts. All **108** genuine ordered distinct-clock transports and **324** three-clock compositions are tested using dual transport `H^Y=S^{-dagger} H^X S^{-1}` and agree with direct reconstruction within the frozen tolerance. Completeness transports as `sum F=N`; positivity/Hermiticity and event/class/outcome typing are checked.
 
-## 11. Stage 10C — continuation-aware A/B/C measurement transport — completed
+`future-measurement representation covariance = established`.
 
-For each continuation, clock, and reading, Stage 10C directly reconstructs the Stage 10B physical forms with:
-
-`H^X_h=C_{h,X,j}^{-dagger} H_h C_{h,X,j}^{-1}`.
-
-For genuine clock changes:
-
-`S^h_{Y,k<-X,j}=C_{h,Y,k} C_{h,X,j}^{-1}`
-
-and:
-
-`H^Y_h=S^{-dagger} H^X_h S^{-1}`.
-
-Established in the declared finite atlas:
-
-- 9 charts per continuation / **18 total**;
-- **108** genuine ordered distinct-clock measurement transports;
-- dual transport agrees with direct reconstruction from the shared physical object;
-- **324** three-clock measurement compositions agree with direct transport;
-- completeness is covariant as `sum_o F^X_{h,o}=N^X_h`;
-- transported normalization is Hermitian positive definite within tolerance;
-- transported effects are Hermitian positive semidefinite within tolerance;
-- preserving event/class/outcome correspondence is valid at every node;
-- bare-effect reuse, misdeclared event correspondence, and swapped continuation classes are rejected.
-
-Evidence status after Stage 10C:
-
-`future-measurement representation covariance = established` in the declared finite atlas.
-
-`full per-continuation probability covariance = not_established` at the Stage 10C checkpoint.
+Historical Stage 10C boundary: `full per-continuation probability covariance = not_established`.
 
 `measurement representation covariance != probability covariance by definition`.
 
-Scientific validation: **`809 passed in 476.21s`** (run #1185). Documentation-synchronized regression: **`815 passed in 471.02s`** (run #1203).
+Scientific validation: run #1185, **`809 passed in 476.21s`**; documentation-synchronized regression: run #1203, `815 passed in 471.02s`.
 
-## 12. Stage 10D — per-continuation Born/completeness/positivity covariance — completed
+### Stage 10D — per-continuation Born/completeness/positivity covariance — completed
 
-Stage 10D evaluates the Stage 10C measurement on each canonical continuation independently at every chart:
+Stage 10D closes the Stage 10C probability boundary before weighting. A **196**-state Hermitian-tomography-complete constrained probe family yields **7056** probe outcome evaluations. Fresh identity normalization, a genuinely misaligned metric, and swapped outcomes are rejected.
 
-`p(o|h,X,j)=z^dagger F^X_{h,o} z / (z^dagger N^X_h z)`.
+`full typed future-measurement covariance = established` within the explicit per-continuation / pre-weighting / finite typed atlas scope.
 
-Established before continuation weighting:
+Historical Stage 10D boundary: `weighted/modal/update covariance = not_established`.
 
-- **36** canonical outcome-probability evaluations across the 18 charts;
-- all corresponding nodes agree within tolerance;
-- every chart reproduces the Stage 9C per-continuation likelihood for the same outcome;
-- probability-level completeness `sum_o p(o)=1` and positivity are retained;
-- swapped outcome correspondence is rejected;
-- fresh numerical identity normalization is rejected;
-- a genuinely misaligned chart metric is rejected.
-
-To exclude accidental canonical-state equality, Stage 10D uses a **196-state Hermitian-tomography-complete constrained probe family**:
-
-`14 + 2*C(14,2) = 196`.
-
-This produces **7056** probe outcome-probability evaluations over the two continuations and nine charts each. Correct probability covariance/completeness/positivity persists over the family.
-
-Pilot run #1209 gave **`818 passed / 4 failed`** because it required the correctly corresponding Stage 9D physical metric to be numerically different merely because its semantic role differs from the Stage 10 normalization. The corrected control uses a genuinely misaligned chart metric instead.
+Pilot #1209: `818 passed / 4 failed`; corrected scientific run #1213: **`823 passed in 311.17s`**; corrected documentation regression #1227: `828 passed in 381.47s`.
 
 `typed-resource distinction != numerical inequality`.
 
-Evidence status after Stage 10D:
+### Stage 10E — weights, modal models, and evidence-update covariance — completed
 
-`full typed future-measurement covariance = established`
+Weights, matched epistemic/ontic-extension public views, hidden-selector swap controls, weight mismatch, and common evidence posteriors are transported consistently.
 
-with the explicit scope **per-continuation / pre-weighting / typed finite A/B/C atlas**.
+`weighted/modal/update operational covariance = established`.
 
-`per-continuation measurement covariance established != weighted/modal/update covariance established` at the Stage 10D checkpoint.
+Scientific validation: run #1233, **`834 passed in 455.24s`**; documentation-synchronized regression: run #1243, `839 passed in 455.87s`.
 
-Scientific validation: **`823 passed in 311.17s`** (run #1213). Corrected documentation-synchronized regression: **`828 passed in 381.47s`** (run #1227).
+### Stage 10F — ablation / wrong-typing / false-positive controls — completed
 
-## 13. Stage 10E — weights, modal models, and evidence-update covariance — completed
-
-Stage 10E restores the Stage 9C continuation weights and modal roles on top of the Stage 10D typed per-continuation likelihood family.
-
-At every declared chart:
-
-`P_{X,j}(o)=sum_h w_h p^h_{X,j}(o)`.
-
-Established in the declared finite operational family:
-
-- matched `q_E=K=(0.5,0.5)` weighted predictions are invariant across all nine A/B/C chart nodes;
-- matched epistemic/ontic-extension public measurement views agree at every node;
-- their privileged modal structures remain distinct;
-- changing the hidden epistemic selector `h*` from h_L to h_R leaves all public measurement views unchanged;
-- the public schema contains no hidden selected-continuation or modal-model-type field;
-- the `K=(0.75,0.25)` weight mismatch changes the prediction at every chart and the mismatch effect is itself perspective-covariant;
-- common evidence `future_signature_left` gives chart-invariant epistemic/ontic posterior weights matching the Stage 9C update semantics;
-- the epistemic hidden selected continuation is preserved while the updated ontic-extension state remains selector-free.
-
-Evidence status after Stage 10E:
-
-`weighted/modal/update operational covariance = established`
-
-for the declared finite A/B/C measurement family.
-
-This is an operational result, not a modal-semantic collapse:
-
-`matched public measurement views != modal/ontological identity`.
-
-`hidden h* swap invariance != selected-continuation observability`.
-
-`weight sensitivity != selected-continuation observability`.
-
-`evidence-update covariance != ontological becoming`.
-
-Scientific validation: **`834 passed in 455.24s`** (run #1233). Documentation-synchronized regression: **`839 passed in 455.87s`** (run #1243).
-
-## 14. Stage 10F — ablation / wrong-typing / false-positive controls — completed
-
-Stage 10F removes or corrupts individual correspondence and normalization resources while retaining as much numerical structure as possible.
-
-Executable classification:
-
-- removing event correspondence: numerical payload `preserved`, typed identification `lost`, fully typed covariance `not_established`;
-- removing continuation-class correspondence: numerical payload `preserved`, typed identification `lost`, fully typed covariance `not_established`;
-- removing outcome correspondence: numerical payload `preserved`, typed identification `lost`, fully typed covariance `not_established`;
-- removing normalization semantics while retaining its matrix: numerical payload `reconstructible`, typed role `underdetermined`, probability covariance `not_established`;
-- substituting a fresh numerical identity in a non-Euclidean-unitary chart: corrupted rule `refuted` by the tomography-complete probe family;
-- bare-effect reuse, wrong-continuation use, swapped outcome correspondence, misdeclared event correspondence, and weight/class misalignment all receive explicit rejection witnesses/residuals.
-
-The key false-positive guard is:
+Event correspondence, continuation-class correspondence, outcome correspondence, normalization semantics, and continuation-weight alignment are ablated or corrupted. Preserved/reconstructible numerical payload does not license typed identity when correspondence is absent; explicitly wrong rules are refuted.
 
 `numerical reconstructibility != typed operational identification`.
-
-Stage 10F therefore shows that explicit correspondence and normalization semantics perform non-redundant formal work in licensing the fully typed covariance statement, without promoting them to metaphysical fundamentals.
-
-`preserved numerical payload != preserved typed role`.
 
 `lost != metaphysically irreducible`.
 
 `reconstructible != universally redundant`.
 
-`wrong-typing failure != ontological becoming`.
+`not_established != false`.
 
-Scientific validation: **`843 passed in 575.02s`** (run #1249).
+`finite-model ablation != fundamental ontology`.
 
-## 15. Stage sequence
+Scientific validation: run #1249, **`843 passed in 575.02s`**.
 
-- **Stage 10.0 — protocol freeze — completed**;
-- **Stage 10A — typed reference future-measurement family — completed**;
-- **Stage 10B — continuation-specific measurement lift / normalization choice — completed**;
-- **Stage 10C — continuation-aware A/B/C measurement transport — completed**;
-- **Stage 10D — per-continuation Born/completeness/positivity covariance — completed**;
-- **Stage 10E — weights, modal models, and evidence-update covariance — completed**;
-- **Stage 10F — ablation / wrong-typing / false-positive controls — completed**;
-- **Stage 10G — synthesis and evidence-selected next gate — next**;
-- **criterion 50 — external full-repository regression / merge-readiness review**.
+### Stage 10G — synthesis and evidence-selected next gate — completed
 
-## 16. Exit-criterion allocation
+Frozen synthesis vocabulary: `measurement_covariant`, `measurement_partial`, `measurement_obstructed`, `inconclusive`.
 
-### Stage 10.0 — criteria 1–10 — completed
+Executable result: `measurement_covariant`.
+
+The Stage 9 measurement boundary is closed only for the declared finite typed family. Current Stage 10G regression: run #1267, **`863 passed in 644.50s`**.
+
+Stage 10G selects:
+
+> **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
+
+Gate ranking: `parametrized_covariance_precursor=9`, `richer_causal_order=7`, `nonideal_povm_clocks=6`.
+
+`parametrized covariance precursor != general relativity`.
+
+## 7. Sequence and exit-criterion allocation
+
+Stage 10.0 — completed; criteria 1–10.
+
+Stage 10A — completed; criteria 11–16.
+
+Stage 10B — completed; criteria 17–23.
+
+Stage 10C — completed; criteria 24–31.
+
+Stage 10D — completed; criteria 32–38.
+
+Stage 10E — completed; criteria 39–43.
+
+Stage 10F — completed; criteria 44–47.
+
+Stage 10G — completed; criteria 48–49.
+
+Criterion 50 — external final full-repository regression / merge-readiness review — pending.
+
+### Criteria 1–10 — Stage 10.0
 
 1. Exact Stage 9G-selected Stage 10 gate frozen — **satisfied**.
 2. Merged Stage 9 carrier reused — **satisfied**.
@@ -343,7 +205,7 @@ Scientific validation: **`843 passed in 575.02s`** (run #1249).
 9. Negative controls frozen — **satisfied**.
 10. Guards, sequence, vocabulary, and criteria 11–50 allocation frozen — **satisfied**.
 
-### Stage 10A — criteria 11–16 — completed
+### Criteria 11–16 — Stage 10A
 
 11. Typed reference measurement reproduces Stage 9C outcomes/effects — **satisfied**.
 12. Outcome provenance and e1/e2 typing explicit — **satisfied**.
@@ -352,105 +214,71 @@ Scientific validation: **`843 passed in 575.02s`** (run #1249).
 15. Per-continuation reference probabilities reproduce Stage 9C — **satisfied**.
 16. Public reference schema contains no hidden selector/modal-type field — **satisfied**.
 
-### Stage 10B — criteria 17–23 — completed
+### Criteria 17–23 — Stage 10B
 
 17. Independent continuation-specific support/physical lifts — **satisfied**.
-18. No universal h-independent measurement map assumed — **satisfied**.
-19. Effects and normalization mathematically well-defined — **satisfied**.
-20. Normalization selected by Stage 9C equivalence plus nonunitarity evidence — **satisfied**.
-21. Reference probabilities agree for both continuations — **satisfied**.
-22. Class/outcome correspondences explicit — **satisfied**.
-23. Wrong-continuation lift rejected — **satisfied**.
+18. No universal continuation-independent lift assumed — **satisfied**.
+19. Effect forms and normalization are well defined — **satisfied**.
+20. Normalization representation selected by reference equivalence and nonunitarity — **satisfied**.
+21. Support and physical forms reproduce Stage 9C likelihoods — **satisfied**.
+22. Class and outcome correspondences explicit — **satisfied**.
+23. Wrong-continuation lift use rejected — **satisfied**.
 
-### Stage 10C — criteria 24–31 — completed
+### Criteria 24–31 — Stage 10C
 
-24. Valid typed measurement representations exist at every canonical h_L/h_R A/B/C chart — **satisfied**.
-25. All 108 genuine ordered distinct-clock measurement transports are tested — **satisfied**.
-26. Dual transport agrees with direct shared-physical-object reconstruction — **satisfied**.
-27. All 324 three-clock compositions agree with direct transport — **satisfied**.
-28. Completeness is covariant in the retained normalization convention — **satisfied**.
-29. Positivity/Hermiticity requirements are covariant — **satisfied**.
-30. Outcome identity and event/class correspondence remain valid at every node — **satisfied**.
-31. Bare-effect and wrong-event/class controls are rejected — **satisfied**.
+24. All canonical measurement chart representations exist and are typed — **satisfied**.
+25. All genuine ordered distinct-clock measurement transports tested — **satisfied**.
+26. Dual transport matches direct physical reconstruction — **satisfied**.
+27. Three-clock compositions match direct transport — **satisfied**.
+28. Completeness is covariant — **satisfied**.
+29. Positivity and Hermiticity are covariant — **satisfied**.
+30. Outcome/event/class typing remains valid — **satisfied**.
+31. Bare-effect and wrong event/class controls rejected — **satisfied**.
 
-### Stage 10D — criteria 32–38 — completed
+### Criteria 32–38 — Stage 10D
 
-32. Per-continuation outcome probabilities are invariant across all declared corresponding clock nodes — **satisfied**.
-33. Every transported chart reproduces Stage 9C reference likelihoods for each continuation/outcome — **satisfied**.
-34. Per-continuation likelihood covariance is established before branch-weight aggregation — **satisfied**.
-35. Swapped/misdeclared outcome correspondence is detected — **satisfied**.
-36. Fresh-identity and genuinely misaligned-metric normalization errors are detected on a discriminating input family — **satisfied**.
-37. Accidental canonical-state equality is ruled out with 196 Hermitian-tomography-complete valid constrained probes — **satisfied**.
-38. Full typed future-measurement covariance receives scoped status `established` for the per-continuation/pre-weighting finite family — **satisfied**.
+32. Per-continuation Born probabilities evaluated at every chart — **satisfied**.
+33. Corresponding-chart probabilities agree — **satisfied**.
+34. Stage 9C likelihoods reproduced — **satisfied**.
+35. Probability completeness and positivity retained — **satisfied**.
+36. Tomography-complete probes exclude accidental canonical equality — **satisfied**.
+37. Wrong normalization/metric/outcome controls rejected — **satisfied**.
+38. Strong per-continuation measurement covariance classified established — **satisfied**.
 
-### Stage 10E — criteria 39–43 — completed
+### Criteria 39–43 — Stage 10E
 
-39. Weighted future predictions are covariant under valid class/weight/outcome correspondence — **satisfied**.
-40. Matched epistemic/ontic-extension public measurement views agree across all declared nodes — **satisfied**.
-41. Hidden epistemic h* swaps remain outside the public typed measurement schema — **satisfied**.
-42. Weight mismatch remains predictively visible with the same operational meaning across perspectives — **satisfied**.
-43. Common evidence conditioning/posteriors are perspective-consistent and ontic update remains selector-free — **satisfied**.
+39. Weighted predictions are perspective-covariant — **satisfied**.
+40. Matched modal public views remain equal while privileged roles remain distinct — **satisfied**.
+41. Hidden h* swap and public-schema guards pass — **satisfied**.
+42. Weight mismatch remains visible and covariant — **satisfied**.
+43. Common evidence update/posteriors are covariant — **satisfied**.
 
-### Stage 10F — criteria 44–47 — completed
+### Criteria 44–47 — Stage 10F
 
-44. Removing event/class/outcome correspondence classifies typed identifications using the project status vocabulary — **satisfied**.
-45. Removing/corrupting normalization semantics classifies probability covariance as warranted — **satisfied**.
-46. Bare-effect, wrong-continuation, wrong-outcome, wrong-event, and weight-misalignment controls receive explicit witnesses/residuals — **satisfied**.
-47. Reconstruction/ablation results avoid metaphysical promotion — **satisfied**.
+44. Correspondence removals classified with typed status vocabulary — **satisfied**.
+45. Normalization removal/corruption classified — **satisfied**.
+46. False-positive controls have explicit witnesses/residuals — **satisfied**.
+47. Ablation results avoid metaphysical promotion — **satisfied**.
 
-### Stage 10G — criteria 48–49
+### Criteria 48–49 — Stage 10G
 
-48. Executable synthesis selects among at least `measurement_covariant`, `measurement_partial`, `measurement_obstructed`, or `inconclusive`.
-49. The next gate is evidence-selected from remaining unresolved boundaries.
+48. Executable synthesis selects `measurement_covariant` from Stage 10A–F evidence — **satisfied**.
+49. The next gate is evidence-selected as `parametrized_covariance_precursor` — **satisfied**.
 
-### Criterion 50
+### Criterion 50 — external repository validation
 
-50. External final full-repository regression and merge-readiness review close Stage 10 only after criteria 1–49 are satisfied or explicitly resolved.
+50. External final full-repository regression and merge-readiness review — **pending** until the documentation-synchronized branch head passes and PR #11 is checked for mergeability, base freshness, and review blockers.
 
-## 17. Status vocabulary
-
-`preserved / reconstructible / inaccessible / lost / underdetermined / not_established / compatible / implication_refuted`.
-
-Overall measurement-covariance status additionally permits `established / partial / refuted / not_established`.
-
-`not_established != false`.
-
-`refuted measurement covariance != ontological becoming`.
-
-## 18. Interpretation guards
+## 8. Interpretation guards
 
 - `future-measurement covariance != future actuality`;
 - `future-measurement covariance != ontic future openness`;
 - `future-measurement covariance != hidden selected future`;
-- `measurement covariance != modal/ontological identity`;
 - `measurement-covariance failure != ontological becoming`;
+- `measurement covariance != refutation of ontological becoming`;
 - `perspective-invariant future probabilities != proof of eternalism`;
-- `same outcome label != outcome identity`;
-- `same numeric probability != measurement-family identity`;
-- `effect covariance != same operational question without outcome/event/class typing`;
-- `reference h_L-ray effect != epistemic/ontic continuation selector`;
-- `continuation-specific measurement representation != hidden branch selection`;
-- `weight covariance != selected-continuation observability`;
-- `hidden h* swap invariance != selected-continuation observability`;
-- `evidence-update covariance != ontological becoming`;
-- `matched public measurement views != modal/ontological identity`;
-- `metric-aware candidate law != established measurement covariance`;
-- `chart-local POVM validity != cross-chart family covariance`;
-- `normalization representation selected != measurement covariance established`;
-- `physical metric != operational normalization by definition`;
-- `typed-resource distinction != numerical inequality`;
-- `measurement representation covariance != probability covariance by definition`;
-- `numerical reconstructibility != typed operational identification`;
-- `preserved numerical payload != preserved typed role`;
-- `missing typing != metaphysical absence`;
-- `lost != metaphysically irreducible`;
-- `reconstructible != universally redundant`;
-- `wrong-typing failure != ontological becoming`;
-- `finite-model ablation != fundamental ontology`;
 - `full finite-clock measurement covariance != general covariance`;
+- `finite clock covariance != general covariance`;
 - `finite-model measurement success != empirical discovery`;
+- `typed-resource necessity != metaphysical fundamentality`;
 - `not_established != false`.
-
-## 19. Immediate next step
-
-Proceed to **Stage 10G — synthesis and evidence-selected next gate**.

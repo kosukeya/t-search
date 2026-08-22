@@ -1,6 +1,6 @@
 # Stage 9 Protocol — Directional Records with Nontrivial Quantum Potentiality
 
-Status: **Stage 9.0 protocol frozen before Stage 9A implementation.**
+Status: **Stage 9.0 protocol frozen; Stage 9A common directional-R/V substrate completed; Stage 9B next.**
 
 Selected Stage 9 gate from Stage 8G:
 
@@ -72,23 +72,27 @@ Guard:
 
 ## 4. Canonical construction strategy
 
-Stage 9A should begin from the smallest Stage 7/8-compatible extension rather than inventing a new unrelated model.
+Stage 9A begins from the smallest Stage 7/8-compatible extension rather than inventing a new unrelated model.
 
-Preferred design:
+The implemented canonical schedule retains the Stage 8 constrained multi-clock carrier and common A-perspective current anchor, restores the Stage 7C reversible record-write plus target-scrambling sequence in both continuations, and keeps the Stage 8 continuation distinction in the separate C-sector phase action:
 
-- retain the Stage 8 constrained multi-clock carrier and common current A-perspective anchor;
-- retain a reversible record-writing interaction before or at the current anchor;
-- use a later common record-target scrambling interaction so that the current record is informative about the lower-side target but not the corresponding upper-side target;
-- place the nontrivial `V` distinction in a future degree of freedom that is memory-neutral and record-target-neutral, such as the continuation-specific C-sector action already used to distinguish Stage 8 continuations;
-- re-derive the constrained completion and A/B/C clock atlases for each continuation rather than assuming Stage 8 maps remain valid.
+- `h_L: (V_0,V_1,V_2)=(I,U_rec,U_scr U_rec)`;
+- `h_R: (V_0,V_1,V_2)=(I,U_rec,Z_C U_scr U_rec)`.
 
-Schematic requirement:
+Thus both continuations share record formation and directional completion while differing physically only through the future C-sector action after the common anchor.
 
-`common prefix / record formation -> D_* -> { directional completion h_L, directional completion h_R }`
+`Z_C` is audited as memory-neutral and record-target-neutral. Pure renaming does not create a third physical continuation.
 
-where `h_L` and `h_R` differ physically after `D_*` but share the same record-direction convention.
+Stage 9A establishes in the declared finite family:
 
-This is a construction target, not a predeclared success result.
+- `QExt(e1)={h_L,h_R}`;
+- shared normalized e0/e1 A-perspective states;
+- nonzero, same-sign per-continuation directional diagnostics before weighting;
+- physical dimension `14` for each completion;
+- rank `14` for every tested A/B/C clock reduction;
+- physical future inequivalence that is not a branch-label artifact.
+
+This establishes substrate-level coexistence only. Stage 9B still must test the forward/reversed/balanced/no-record control family, and Stage 9D still must test the full genuine cross-clock transport algebra.
 
 ## 5. Directional record semantics
 
@@ -202,7 +206,7 @@ Required design guard:
 
 `continuation identity != record-direction identity`.
 
-The preferred canonical witness uses the same record formation/scrambling structure in both `h_L` and `h_R`, while the V distinction acts on a disjoint or record-neutral physical degree of freedom.
+The canonical Stage 9A witness uses the same record formation/scrambling structure in both `h_L` and `h_R`, while the V distinction acts through a record-neutral future C-sector action.
 
 A construction in which "left branch means positive arrow" and "right branch means negative arrow" does not satisfy the canonical integration criterion.
 
@@ -337,16 +341,17 @@ The protocol forbids promoting `not_established` to `false` or `underdetermined`
 
 Freeze the directional-R/V integration criterion, per-continuation direction requirement, modal semantics, controls, clock-transport typing, ablations, evidence vocabulary, interpretation guards, and exit criteria.
 
-### Stage 9A — common directional-R/V continuation substrate — next
+### Stage 9A — common directional-R/V continuation substrate — completed
 
-Construct the smallest constrained family with:
+The implemented family satisfies the Stage 9A substrate target:
 
-- a shared current Actuality;
-- at least two physically inequivalent future continuations;
-- continuation-independent directional record formation at the declared current anchor;
-- branch distinction separated from the record-direction channel.
+- shared current Actuality through e1;
+- `QExt(e1)={h_L,h_R}` with two physically inequivalent continuations;
+- same nonzero lower-index directional record orientation in each continuation before weighting;
+- branch distinction separated from the record-direction channel;
+- physical dimension 14 and rank-14 reductions across all A/B/C clock indices.
 
-### Stage 9B — directional diagnostics and controls
+### Stage 9B — directional diagnostics and controls — next
 
 Implement/reuse exact record-information and accessibility diagnostics, then verify forward/reversed/balanced/no-record controls on the constrained continuation family.
 
@@ -372,7 +377,7 @@ Decide whether the Stage 8 `refined_layered` candidate is strengthened, requires
 
 ## 19. Exit criteria
 
-Stage 9 defines 50 exit criteria. Stage 9.0 freezes criteria **1–10** only; criteria 11–50 remain future work.
+Stage 9 defines 50 exit criteria. Stage 9.0 freezes criteria **1–10**; Stage 9A closes criteria **11–16**. Criteria 17–50 remain future work.
 
 ### Stage 9.0 — criteria 1–10
 
@@ -387,9 +392,17 @@ Stage 9 defines 50 exit criteria. Stage 9.0 freezes criteria **1–10** only; cr
 9. Genuine continuation-aware clock transport requires explicit event/class/observable typing.
 10. Interpretation/evidence guards prohibit promoting operational underdetermination or record direction into ontological becoming.
 
+### Stage 9A — criteria 11–16
+
+11. The canonical current extension set contains at least two admissible physically inequivalent continuations — **satisfied** by `QExt(e1)={h_L,h_R}`.
+12. The canonical continuations share the declared current Actuality through e1 — **satisfied** by the common e0/e1 schedules and reduced-state checks.
+13. Every canonical continuation separately carries the same nonzero directional-record orientation before any continuation weighting — **satisfied**.
+14. Continuation identity is implemented by a future physical action separated from the memory/record-target directional channel — **satisfied** by the audited C-sector phase distinction.
+15. Each constrained completion retains physical dimension 14 and minimum A/B/C reduction rank 14 with residuals within tolerance — **satisfied**.
+16. Mere-label renaming, current-incompatible continuation rejection, and terminal `QExt(e2)=empty` controls behave as declared, with interpretation guards preserved — **satisfied**.
+
 ### Future allocation
 
-- criteria **11–16**: Stage 9A substrate;
 - criteria **17–23**: Stage 9B directional diagnostics/controls;
 - criteria **24–30**: Stage 9C typed modal/operational tests;
 - criteria **31–36**: Stage 9D genuine clock transport;
@@ -442,10 +455,10 @@ Stage 9 does not establish by construction that:
 - finite clock covariance is gravitational/general covariance;
 - a successful implementation is a new empirical law.
 
-## 22. Strongest statement allowed at protocol freeze
+## 22. Strongest statement allowed after Stage 9A
 
-**Stage 8G identifies directional `R` with nontrivial quantum `V` as the highest-value unresolved finite-model compatibility link. Stage 9.0 therefore freezes a stronger single-family test: at one declared common current anchor, at least two physically inequivalent admissible quantum continuations must remain while each continuation carries the same nonzero directional record structure, with continuation identity separated from the record channel. The construction must survive forward/reversed/balanced/no-record controls, typed selected-versus-unselected modal comparison, and genuine continuation-aware A/B/C clock transport before any stronger synthesis is allowed. Stage 9.0 itself establishes none of those positive results and does not identify record direction or Potentiality with ontological becoming.**
+**Within the declared finite constrained family, Stage 9A constructs two physically inequivalent admissible continuations sharing one current Actuality while each continuation separately carries the same nonzero directional record structure before branch weighting. The continuation distinction is carried by a memory-neutral and record-target-neutral future C-sector action rather than by the arrow label/channel. This establishes substrate-level coexistence of nontrivial `V_extension` and `R_direction`, but does not establish ontological future openness, ontological becoming, modal-semantic determination, full clock-transport covariance, or the forward/reversed/balanced/no-record control family.**
 
 ## 23. Immediate next step
 
-Stage 9A should build the smallest continuation pair that combines the Stage 7C directional-record mechanism with the Stage 8 future continuation distinction while preserving a shared current anchor and keeping the continuation-defining physical action record-neutral.
+Stage 9B should keep this substrate fixed and implement the forward/reversed/balanced/no-record directional controls, testing sign reversal, cancellation, and no-record removal without defining nontrivial V away.

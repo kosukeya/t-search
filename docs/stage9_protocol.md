@@ -1,6 +1,6 @@
 # Stage 9 Protocol — Directional Records with Nontrivial Quantum Potentiality
 
-Status: **Stage 9.0 protocol frozen; Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, Stage 9F, and Stage 9G completed; criterion 50 external final validation next.**
+Status: **Stage 9.0 protocol frozen; Stage 9A through Stage 9G completed; criterion 50 external final validation completed; criteria 1–50 closed.**
 
 Selected Stage 9 gate from Stage 8G:
 
@@ -371,7 +371,7 @@ Every scientific claim must be one of:
 - Stage 9E — P/O/R_direction/V compatibility matrix — **completed**; criteria 37–42.
 - Stage 9F — ablation / reconstruction / accessibility matrix — **completed**; criteria 43–47.
 - Stage 9G — synthesis and evidence-selected next gate — **completed**; criteria 48–49.
-- **criterion 50 — external final full-repository regression and merge-readiness review — next**.
+- criterion 50 — external final full-repository regression and merge-readiness review — **completed externally**.
 
 ## 12. Exit criteria
 
@@ -456,11 +456,21 @@ Stage 9F closes **43–47**.
 
 Stage 9G closes **48–49**.
 
-### Remaining allocation
+### Criterion 50 — external final validation — satisfied
 
-- criterion **50**: external final full-repository regression and merge-readiness review.
+50. The corrected documentation-synchronized Stage 9 head passes the full repository regression and the PR has no merge/review blocker at the reviewed checkpoint — **satisfied externally**.
 
-Criterion 50 remains future work until that external validation is explicitly completed.
+Reviewed checkpoint:
+
+- GitHub Actions run #1121: **`766 passed in 459.00s (0:07:38)`**;
+- branch head: `1bcdc83a9dd5261f3d0de8d152534afda89667d7`;
+- PR merge-ref: `b53906446fd6970e3cfb03f110690ea9b5ce97b2`;
+- branch behind `main`: `0` commits;
+- PR #10: `mergeable=true`;
+- unresolved review threads: `0`;
+- submitted reviews: `0`.
+
+Criterion 50 remains external to the executable Stage 9G synthesis and adds no new scientific claim.
 
 ## 13. Mandatory guards
 
@@ -514,12 +524,12 @@ Criterion 50 remains future work until that external validation is explicitly co
 - `finite constrained-model success != empirical discovery`;
 - `finite clock covariance != general covariance`.
 
-## 14. Strongest statement allowed after Stage 9G
+## 14. Strongest statement allowed after Stage 9
 
 Within the declared finite constrained Stage 9 family, executable compatibility, transport, modal, and ablation evidence favors retaining the refined layered candidate `T=(O,P,R,V;Xi)`. Directional R and nontrivial V coexist and are not mutually necessary in the tested family; R and V subroles display distinct functional behavior; explicit P edge matrices are reconstructible while semantic correspondence remains explicit; and no new direct Xi_RV value law is established.
 
-The strongest remaining operational boundary is full cross-continuation future-measurement-family covariance, which is selected as the Stage 10 gate. These results do not establish universal R-V independence, ontic future openness, ontological becoming, general covariance, empirical novelty, or a fundamental/unique ontology of time.
+The strongest remaining operational boundary is full cross-continuation future-measurement-family covariance, which is selected as the Stage 10 gate. Criterion 50 closes only the repository/merge-readiness condition. These results do not establish universal R-V independence, ontic future openness, ontological becoming, general covariance, empirical novelty, or a fundamental/unique ontology of time.
 
 ## 15. Immediate next step
 
-**Stage 9 criterion 50 — external final full-repository regression and merge-readiness review** should now validate the documentation-synchronized Stage 9 head. Only after criterion 50 is closed should the selected Stage 10 gate be treated as ready to start.
+**Stage 10 — fully typed future-measurement covariance** is the selected next gate and is ready to begin after Stage 9 is merged.

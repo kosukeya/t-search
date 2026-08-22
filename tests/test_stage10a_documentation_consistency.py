@@ -11,8 +11,8 @@ def test_stage10a_checkpoint_status_and_next_stage_are_consistent() -> None:
     protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10a_notes.md")
     results = _read("results/stage10a_reference_measurement.md")
-    assert "Stage 10A completed" in protocol
-    assert "criteria 1–16 completed" in protocol
+    assert "Stage 10A — typed reference future-measurement family — completed" in protocol
+    assert "criteria 1–23 completed" in protocol
     assert "Stage 10A completed; criteria 11–16 satisfied" in results
     assert "Stage 10B — continuation-specific measurement lift / normalization choice" in protocol
     assert "Stage 10B — continuation-specific measurement lift / normalization choice" in notes

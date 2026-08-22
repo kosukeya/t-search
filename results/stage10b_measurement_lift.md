@@ -73,9 +73,16 @@ The Stage 10 operational normalization is not identified with the Stage 9D physi
 
 `physical metric != operational normalization by definition`.
 
-## Wrong-continuation control
+## Correspondence typing and wrong-continuation control
 
-The h_L and h_R lifts are separately typed. A lift belonging to one continuation cannot be evaluated as if it belonged to the other continuation; such cross-use is rejected.
+The h_L and h_R lifts are separately typed. Their preserving class correspondences are `h_L -> h_L` and `h_R -> h_R`.
+
+The outcome correspondence is also explicit and preserving:
+
+- `future_signature_left -> future_signature_left`;
+- `future_signature_other -> future_signature_other`.
+
+A lift belonging to one continuation cannot be evaluated as if it belonged to the other continuation; such wrong-continuation cross-use is rejected.
 
 This prevents a numerically shape-compatible 14D matrix from silently becoming a universal h-independent measurement object.
 

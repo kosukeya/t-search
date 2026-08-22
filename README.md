@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0 through Stage 9G are completed on Draft PR #10; Stage 9 criterion 50 — external final regression / merge-readiness review — is next.**
+**Stages 1–8 are completed and merged. Stage 9.0 through Stage 9G and the external criterion 50 validation are completed on PR #10; Stage 9 criteria 1–50 are closed.**
 
 Current refined finite-model candidate:
 
@@ -264,7 +264,9 @@ Selected Stage 10 gate:
 
 Source-level Stage 9G validation: **`765 passed in 248.81s`** (run #1099).
 
-Stage 9G closes criteria **48–49**. Criterion **50** remains external.
+Final external Stage 9 validation: **`766 passed in 459.00s`** (run #1121), with PR #10 mergeable, branch behind `main` by 0 commits, and no review blockers at the reviewed checkpoint.
+
+Stage 9G closes criteria **48–49**. Criterion **50** is closed externally by the final regression / merge-readiness review.
 
 ## Sequence
 
@@ -277,8 +279,8 @@ Stage 9G closes criteria **48–49**. Criterion **50** remains external.
 - Stage 9E — completed
 - Stage 9F — completed
 - Stage 9G — completed
-- **Stage 9 criterion 50 — external final regression / merge-readiness review — next**
-- Stage 10 — selected gate, begins only after Stage 9 criterion 50 is closed
+- Stage 9 criterion 50 — completed externally
+- **Stage 10 — selected gate, ready to start after Stage 9 merge**
 
 ## Roadmap
 

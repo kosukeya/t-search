@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E now classifies the resulting P/O/R_direction/V compatibility matrix. Stage 9F is the next pressure test.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E classified the resulting P/O/R_direction/V compatibility matrix. Stage 9F has now pressure-tested that compatibility by ablation, reconstruction, and accessibility controls. Stage 9G is the next synthesis/gate-selection step.
 
 ## Stages 0–6 — completed and merged
 
@@ -92,7 +92,7 @@ Stage 9 gate ranking at entry:
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — active gate
 
-Status: **Stage 9.0, Stage 9A, Stage 9B, Stage 9C, Stage 9D, and Stage 9E completed; Stage 9F next.**
+Status: **Stage 9.0, Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, and Stage 9F completed; Stage 9G next.**
 
 Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
 
@@ -195,24 +195,48 @@ Criteria **37–42** are satisfied.
 
 Scientific validation: **`743 passed in 404.42s`** (run #1051).
 
-### Stage 9F — ablation / reconstruction / accessibility matrix — next
+### Stage 9F — ablation / reconstruction / accessibility matrix — completed
 
-Pressure-test the Stage 9E classification by removing one ingredient at a time, including:
+Stage 9F pressure-tests the Stage 9E result with eight typed ablations.
 
-- directional record coupling/scrambling neutralized while V remains;
-- singleton QExt with directional R retained if possible;
-- modal semantics erased;
-- weights unfixed;
-- local record access hidden;
-- event/class correspondence removed;
-- explicit perspective edges removed while per-node coordinates remain;
-- deliberately wrong record-observable transport.
+Key results:
 
-Use `preserved / reconstructible / inaccessible / lost / underdetermined / not_established` without promoting an ablation result to metaphysical irreducibility.
+- record-write neutralization removes target-specific record content/direction/access while nontrivial h_L/h_R V and a 108-comparison re-derived P atlas remain;
+- scrambler neutralization retains one-bit `R_content` but gives `(A_R,A_acc)=(0,0)`, while nontrivial V and the 108-comparison P atlas remain;
+- singleton QExt removes `V_extension` multiplicity while one-bit record, `(A_R,A_acc)=(+1,+0.5)`, and a 54-comparison one-continuation P atlas remain; the sole weight is reconstructible as 1;
+- erased selected-vs-unselected modal semantics are lost and are not uniquely reconstructed from the retained public carrier;
+- unfixed `V_weights` are underdetermined;
+- hiding local record access leaves global record/direction/V represented while `R_access = inaccessible`;
+- removing explicit P edge matrices leaves them reconstructible from per-node coordinates over 108 comparisons;
+- removing event/class correspondence leaves local P executable but makes typed P-R-V identification `not_established`;
+- deliberately wrong record-observable coordinate reuse is rejected.
 
-### Stage 9G — synthesis and evidence-selected next gate
+The combined directional/V controls therefore give finite-family countermodels in both directions:
 
-After Stage 9F, decide whether the refined-layered candidate is strengthened, requires an explicit new Xi constraint, is reduced/broken in the declared family, or remains inconclusive; then re-rank the remaining gates.
+- nontrivial V multiplicity without directional R;
+- directional R without nontrivial V multiplicity.
+
+They do **not** constitute a universal R-V independence theorem.
+
+`record content != directional record arrow`.
+
+`A_acc=0 != inaccessible record content`.
+
+`directional R without V multiplicity != universal R-V independence theorem`.
+
+`V without directional R != universal R-V independence theorem`.
+
+`P edge reconstruction != P=R or P=V`.
+
+`local P transport without chi != typed event/class identification`.
+
+Criteria **43–47** are satisfied.
+
+Scientific validation: **`754 passed in 438.94s`** (run #1077).
+
+### Stage 9G — synthesis and evidence-selected next gate — next
+
+Integrate the Stage 9A–F evidence, decide whether `refined_layered` is strengthened/reduced/broken/inconclusive in the declared family, and re-rank the remaining gates. The unresolved full Stage 9C future-signature measurement-family covariance should remain an explicit candidate rather than being silently inferred from structural P/R/V transport.
 
 ## Stage 10 — Generally covariant / gravitational extension — deferred gate
 
@@ -234,6 +258,7 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `directional record covariance != P=R`;
 - `R-V compatibility != R=V`;
 - `record content != directional record arrow`;
+- `A_acc=0 != inaccessible record content`;
 - `order != directional record arrow`;
 - `continuation identity != record-direction identity`;
 - `control of R_direction != control of V_semantics`;
@@ -241,7 +266,12 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `P-R_direction-V covariance != ontic openness`;
 - `O-R_direction-V compatibility != O determines R_direction`;
 - `R_direction-V_extension compatibility != universal R-V independence`;
+- `directional R without V multiplicity != universal R-V independence theorem`;
+- `V without directional R != universal R-V independence theorem`;
+- `singleton support != absence of a formal selected-vs-unselected type distinction`;
 - `accessible canonical R_access-V compatibility != accessibility independence`;
+- `P edge reconstruction != P=R or P=V`;
+- `local P transport without chi != typed event/class identification`;
 - `absence of an established direct Xi_RV value constraint != proof that no such constraint exists`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;

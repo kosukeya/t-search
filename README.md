@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, Stage 9B, and Stage 9C are completed on Draft PR #10; Stage 9D — continuation-aware clock transport — is next.**
+**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, Stage 9B, Stage 9C, and Stage 9D are completed on Draft PR #10; Stage 9E — P/O/R_direction/V compatibility matrix — is next.**
 
 Current refined finite-model candidate:
 
@@ -108,6 +108,8 @@ Key documents:
 - [`results/stage9b_directional_controls.md`](results/stage9b_directional_controls.md)
 - [`docs/stage9c_notes.md`](docs/stage9c_notes.md)
 - [`results/stage9c_directional_modal.md`](results/stage9c_directional_modal.md)
+- [`docs/stage9d_notes.md`](docs/stage9d_notes.md)
+- [`results/stage9d_clock_transport.md`](results/stage9d_clock_transport.md)
 
 ### Stage 9.0 — protocol freeze — completed
 
@@ -184,6 +186,36 @@ Strict Stage 9C validation:
 
 **`720 passed in 265.06s`** (GitHub Actions run #995).
 
+### Stage 9D — continuation-aware clock transport — completed
+
+Stage 9D re-derives a separate A/B/C atlas for each h_L/h_R constrained completion rather than reusing one universal map.
+
+Executable results:
+
+- 9 charts per continuation / 18 charts total;
+- minimum chart rank `14`;
+- 108 genuine distinct-clock state transports;
+- 324 three-clock compositions;
+- state, inverse, induced-metric, and typed-observable transport residuals within tolerance;
+- preserving event correspondence retains `(A_R,A_acc)=(+1,+0.5)` in every chart;
+- reversing event correspondence gives `(-1,-0.5)`;
+- matched epistemic/ontic transported public views remain equal at every node;
+- hidden h* swaps remain publicly invisible at every node;
+- continuation classes and weights transport under explicit correspondence;
+- wrong event/class/continuation maps and bare-observable reuse are rejected.
+
+This supplies a positive finite-model compatibility witness for genuine `P` transport with directional `R` and nontrivial `V_extension/V_weights`, while preserving the distinction between perspective change and temporal-direction reversal.
+
+`perspective change != temporal-direction reversal`.
+
+The full cross-continuation Stage 9C future-signature measurement-family covariance remains separately `not_established`.
+
+Stage 9D closes criteria **31–36**.
+
+Strict Stage 9D scientific validation:
+
+**`733 passed in 372.31s`** (GitHub Actions run #1013).
+
 ## Sequence
 
 - Stage 8.0 — completed
@@ -198,8 +230,8 @@ Strict Stage 9C validation:
 - Stage 9A — common directional-R/V continuation substrate — completed
 - Stage 9B — directional diagnostics and controls — completed
 - Stage 9C — typed modal models and directional operational underdetermination — completed
-- **Stage 9D — continuation-aware clock transport — next**
-- Stage 9E — P/O/R_direction/V compatibility matrix
+- Stage 9D — continuation-aware clock transport — completed
+- **Stage 9E — P/O/R_direction/V compatibility matrix — next**
 - Stage 9F — ablation / reconstruction / accessibility matrix
 - Stage 9G — synthesis and evidence-selected next gate
 
@@ -222,6 +254,12 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `order != directional record arrow`;
 - `same P/O/current-R public data != modal identity`;
 - `covariance of a wrongly typed observable != semantic correctness`;
+- `perspective change != temporal-direction reversal`;
+- `continuation-aware transport != one universal h-independent map`;
+- `branch-specific perspective map != hidden branch selection`;
+- `directional record covariance != P=R`;
+- `P-R_direction-V covariance != ontic openness`;
+- `class/weight covariance != V_semantics identity`;
 - `lost != metaphysically irreducible`;
 - `reconstructible != universally redundant`;
 - `underdetermined != ontically open`;
@@ -240,4 +278,6 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `directional record arrow != ontological becoming`;
 - `explicit evidence update != ontological becoming`;
 - `full Stage 8C measurement covariance remains not_established`;
+- `full Stage 9C future-measurement covariance remains not_established`;
+- `finite clock covariance != general covariance`;
 - `not_established != false`.

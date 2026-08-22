@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G currently selects `measurement_covariant` for the declared finite typed future-measurement family. Stage 10 criterion 50 is the remaining final repository-level validation before PR #11 is merge-ready.
+Stage 10G currently selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–49 are completed.** Stage 10 criterion 50 is the remaining final repository-level validation before PR #11 is merge-ready.
 
 ## Stages 0–6 — completed and merged
 

@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E classified the resulting P/O/R_direction/V compatibility matrix. Stage 9F has now pressure-tested that compatibility by ablation, reconstruction, and accessibility controls. Stage 9G is the next synthesis/gate-selection step.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E classified the resulting P/O/R_direction/V compatibility matrix, Stage 9F pressure-tested it by ablation/reconstruction/accessibility, and Stage 9G now retains `refined_layered` and selects full future-measurement covariance as the next gate.
 
 ## Stages 0–6 — completed and merged
 
@@ -90,9 +90,9 @@ Stage 9 gate ranking at entry:
 
 `Potentiality != quantum randomness by definition`.
 
-## Stage 9 — Directional records with nontrivial quantum Potentiality — active gate
+## Stage 9 — Directional records with nontrivial quantum Potentiality — criteria 1–49 completed
 
-Status: **Stage 9.0, Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, and Stage 9F completed; Stage 9G next.**
+Status: **Stage 9.0 through Stage 9G completed; criterion 50 external final regression / merge-readiness review next.**
 
 Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
 
@@ -232,19 +232,84 @@ They do **not** constitute a universal R-V independence theorem.
 
 Criteria **43–47** are satisfied.
 
-Scientific validation: **`754 passed in 438.94s`** (run #1077).
+Scientific validation: **`754 passed in 438.94s`** (run #1077); documentation-synchronized regression: **`755 passed in 348.67s`** (run #1095).
 
-### Stage 9G — synthesis and evidence-selected next gate — next
+### Stage 9G — synthesis and evidence-selected next gate — completed
 
-Integrate the Stage 9A–F evidence, decide whether `refined_layered` is strengthened/reduced/broken/inconclusive in the declared family, and re-rank the remaining gates. The unresolved full Stage 9C future-signature measurement-family covariance should remain an explicit candidate rather than being silently inferred from structural P/R/V transport.
+Executable synthesis choice:
 
-## Stage 10 — Generally covariant / gravitational extension — deferred gate
+`refined_layered`.
 
-Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9. Stage 8G superseded that placement with the more discriminating directional-R/V gate. Gravity remains deferred rather than discarded.
+Stage 9G retains:
 
-A future progression may use parametrized systems and tractable generally covariant models only after the remaining finite-model R_direction/V, ablation, and measurement-family boundaries are sufficiently isolated.
+- top-level `T=(O,P,R,V;Xi)`;
+- `R=(R_content,R_direction,R_access)`;
+- `V=(V_extension,V_semantics,V_weights)`;
+- explicit typed event/class/observable correspondence;
+- P edge matrices as derived representations when per-node coordinates are retained.
 
-## Stage 11 — Empirical relevance — only if warranted
+It does **not** establish a direct `Xi_RV` value law.
+
+The completed Stage 9 gate is removed from the future ranking. Remaining gates are ranked:
+
+1. `full_measurement_covariance` — score **9**;
+2. `richer_causal_order` — score **6**;
+3. `parametrized_covariance_precursor` — score **5**;
+4. `nonideal_povm_clocks` — score **4**.
+
+Selected Stage 10 gate:
+
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
+
+This is selected because full Stage 9C future-signature measurement-family covariance is the sharpest explicit operational boundary left after state/metric/record/class/weight transport and P/O/R/V compatibility are already established.
+
+`finite-family bidirectional countermodels != universal R-V independence theorem`.
+
+`typed Xi correspondence retained != direct Xi_RV value law established`.
+
+`P edge reconstruction != P layer universally redundant`.
+
+Criteria **48–49** are satisfied.
+
+Source-level Stage 9G validation: **`765 passed in 248.81s`** (run #1099).
+
+### Stage 9 criterion 50 — next
+
+Run the final documentation-synchronized full-repository regression and merge-readiness review. Criterion 50 remains external and is not closed by the executable Stage 9G selector.
+
+## Stage 10 — Fully typed future-measurement covariance — selected next gate
+
+Selected gate:
+
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
+
+The Stage 10 protocol should freeze a single measurement-family object that makes explicit:
+
+- continuation class;
+- source/target clock perspective;
+- relational event anchor;
+- outcome/effect identity;
+- continuation-weight semantics;
+- probability reconstruction;
+- event/class/observable correspondence.
+
+The key test is whether the Stage 9C future-signature measurement family can be transported as a correctly typed operational object, not merely whether states and individual record observables transform covariantly.
+
+Stage 10 begins only after Stage 9 criterion 50 is externally closed.
+
+## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate
+
+The parametrized/general-covariance precursor rises from score 2 at Stage 8G to score 5 at Stage 9G because the finite O/P/R/V architecture is substantially more mature and the directional-R/V blocker is resolved in the declared family.
+
+It remains deferred behind Stage 10 because:
+
+`finite clock covariance != general covariance`.
+
+Introducing a covariance/gravity extension before closing the known future-measurement transport boundary would change more than one unresolved structural ingredient at once.
+
+Gravity/general covariance is deferred, not abandoned.
+
+## Stage 12 — Empirical relevance — only if warranted
 
 Seek empirical relevance only after deriving a genuinely discriminating prediction not already guaranteed by the underlying formalism.
 
@@ -268,11 +333,15 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `R_direction-V_extension compatibility != universal R-V independence`;
 - `directional R without V multiplicity != universal R-V independence theorem`;
 - `V without directional R != universal R-V independence theorem`;
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
 - `singleton support != absence of a formal selected-vs-unselected type distinction`;
 - `accessible canonical R_access-V compatibility != accessibility independence`;
 - `P edge reconstruction != P=R or P=V`;
+- `P edge reconstruction != P layer universally redundant`;
 - `local P transport without chi != typed event/class identification`;
 - `absence of an established direct Xi_RV value constraint != proof that no such constraint exists`;
+- `typed Xi correspondence retained != direct Xi_RV value law established`;
+- `no direct Xi_RV law established != no possible R-V constraint`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
 - `explicit evidence update != ontological becoming`;

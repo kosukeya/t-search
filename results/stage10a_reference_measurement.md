@@ -29,64 +29,25 @@ The reference effect pair is represented separately for h_L and h_R at the type 
 
 For each continuation, the Stage 10A typed matrices equal the corresponding Stage 9C canonical matrices within the declared tolerance.
 
-The effects are independently checked for:
-
-- Hermiticity within tolerance;
-- non-negative spectrum within tolerance;
-- completeness `E_left+E_other=I` within tolerance.
-
-Thus Stage 10A does not obtain its result by redefining the Stage 9C measurement.
+The effects are independently checked for Hermiticity, non-negative spectrum, and completeness `E_left+E_other=I`.
 
 ## Anchor / target / outcome typing
 
-The reference object explicitly distinguishes:
-
-`prediction_anchor=e1`
-
-from:
-
-`measurement_target=e2`.
-
-Each effect also carries the A/e2 reference clock/readout, continuation id, outcome identity, outcome semantics/provenance, effect provenance, coordinate basis, and normalization convention.
+The reference object explicitly distinguishes `prediction_anchor=e1` from `measurement_target=e2`. Each effect also carries the A/e2 reference clock/readout, continuation id, outcome identity, outcome semantics/provenance, effect provenance, coordinate basis, and normalization convention.
 
 `prediction anchor e1 != measurement target e2`.
 
 `same outcome label != outcome identity`.
 
-## Operational discrimination
+## Operational discrimination and likelihood reproduction
 
-The reference family remains operationally discriminating for the canonical h_L/h_R future rays.
-
-The h_L/h_R e2 rays satisfy the inherited Stage 9C condition:
-
-`overlap^2 < 1`.
-
-The independently recomputed Stage 10A outcome-probability vectors are therefore distinct across the two continuations.
-
-## Stage 9C likelihood reproduction
-
-Stage 10A recomputes probabilities directly from each normalized reduced A/e2 continuation state and the typed reference effects.
-
-For every canonical continuation and both outcomes, these values agree with Stage 9C `continuation_future_signature_probabilities` within the declared tolerance.
+The h_L/h_R e2 rays satisfy `overlap^2 < 1`, so the measurement remains operationally discriminating. Stage 10A independently recomputes probabilities from each normalized reduced A/e2 continuation state and the typed reference effects. For every continuation/outcome, these agree with Stage 9C `continuation_future_signature_probabilities` within tolerance.
 
 The Stage 9C likelihood function is used only as the comparison target, not as the source of the Stage 10A probability values.
 
 ## Public schema audit
 
-The Stage 10A public reference measurement schema contains continuation identity, because continuation class is part of the declared measurement typing, but contains no hidden epistemic selector or modal-type field.
-
-In particular it exposes no:
-
-- `selected_continuation`;
-- `selected_continuation_id`;
-- `selector`;
-- `hidden_selector`;
-- `model_type`;
-- `modal_type`;
-- `semantic_type`;
-- `privileged_modal_type`.
-
-Therefore:
+The public reference schema contains continuation identity but no hidden epistemic selector/modal-type field. It exposes no `selected_continuation`, `selected_continuation_id`, `selector`, `hidden_selector`, `model_type`, `modal_type`, `semantic_type`, or `privileged_modal_type`.
 
 `reference h_L-ray effect != hidden selected h*`.
 
@@ -103,17 +64,7 @@ Therefore:
 
 ## Scope boundary
 
-This is a reference-node result only.
-
-Stage 10A does **not** establish criteria 17–50 and does not establish full measurement covariance. In particular the following remain future work:
-
-- continuation-specific physical/support measurement lift;
-- evidence-selected normalization representation;
-- genuine A/B/C measurement transport;
-- transported probability covariance;
-- weighted/modal/update covariance;
-- false-positive/typing ablations;
-- Stage 10 synthesis.
+Stage 10A was a reference-node result only. It did **not** establish criteria 17–50 when completed. Stage 10B has subsequently completed the continuation-specific lift/normalization choice, but genuine cross-clock measurement covariance remains later work.
 
 `reference-node measurement validity != cross-clock measurement covariance`.
 
@@ -127,8 +78,8 @@ Stage 10A source/focused tests passed GitHub Actions run #1145:
 
 **`783 passed in 461.16s (0:07:41)`**.
 
-This is the Stage 10A scientific checkpoint. Documentation-synchronized regression is tracked separately after the checkpoint files are updated.
+Documentation-synchronized Stage 10A regression: run #1157 — **`787 passed in 465.49s`**.
 
-## Next
+## Next completed successor
 
-**Stage 10B — continuation-specific measurement lift / normalization choice.**
+**Stage 10B — continuation-specific measurement lift / normalization choice** is now completed; see `results/stage10b_measurement_lift.md`.

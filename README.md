@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, Stage 9B, Stage 9C, Stage 9D, and Stage 9E are completed on Draft PR #10; Stage 9F — ablation / reconstruction / accessibility matrix — is next.**
+**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, and Stage 9F are completed on Draft PR #10; Stage 9G — synthesis and evidence-selected next gate — is next.**
 
 Current refined finite-model candidate:
 
@@ -85,6 +85,8 @@ Key documents:
 - [`results/stage9d_clock_transport.md`](results/stage9d_clock_transport.md)
 - [`docs/stage9e_notes.md`](docs/stage9e_notes.md)
 - [`results/stage9e_compatibility.md`](results/stage9e_compatibility.md)
+- [`docs/stage9f_notes.md`](docs/stage9f_notes.md)
+- [`results/stage9f_ablation.md`](results/stage9f_ablation.md)
 
 ### Stage 9.0 — protocol freeze — completed
 
@@ -186,6 +188,45 @@ Strict scientific validation: **`743 passed in 404.42s`** (GitHub Actions run #1
 
 Stage 9E closes criteria **37–42**.
 
+### Stage 9F — ablation / reconstruction / accessibility matrix — completed
+
+Stage 9F applies eight typed ablations to separate R/V/P/correspondence roles using:
+
+`preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
+
+Key executable results:
+
+- **record write neutralized:** current target-memory record, direction, and target-specific local access are lost, while nontrivial h_L/h_R V and a 108-comparison re-derived P atlas remain;
+- **scrambler neutralized:** one-bit `R_content` remains while `R_direction` vanishes; h_L/h_R V and 108 P comparisons remain;
+- **singleton QExt:** `V_extension` multiplicity is lost while one-bit record and `(A_R,A_acc)=(+1,+0.5)` remain; sole weight is reconstructible as `1`; 54 clock comparisons remain;
+- **modal semantics removed:** semantic role is lost and not uniquely reconstructed from retained public carrier data;
+- **weights unfixed:** `V_weights = underdetermined`;
+- **local record access hidden:** global record/direction/V remain while `R_access = inaccessible`;
+- **explicit P edges removed:** all 108 canonical edges are reconstructible from per-node coordinates;
+- **event/class correspondence removed:** local P remains but correspondence is lost and typed P-R-V identification becomes `not_established`;
+- **wrong record-observable coordinates:** rejected.
+
+The two directional/V ablations supply finite-family countermodels in both directions:
+
+- nontrivial V multiplicity without directional R;
+- directional R without nontrivial V multiplicity.
+
+`record content != directional record arrow`.
+
+`A_acc=0 != inaccessible record content`.
+
+`directional R without V multiplicity != universal R-V independence theorem`.
+
+`V without directional R != universal R-V independence theorem`.
+
+`P edge reconstruction != P=R or P=V`.
+
+`local P transport without chi != typed event/class identification`.
+
+Scientific validation: **`754 passed in 438.94s`** (GitHub Actions run #1077).
+
+Stage 9F closes criteria **43–47**.
+
 ## Sequence
 
 - Stage 8.0–8G — completed; Stage 8 criterion 50 externally validated
@@ -195,8 +236,8 @@ Stage 9E closes criteria **37–42**.
 - Stage 9C — completed
 - Stage 9D — completed
 - Stage 9E — completed
-- **Stage 9F — ablation / reconstruction / accessibility matrix — next**
-- Stage 9G — synthesis and evidence-selected next gate
+- Stage 9F — completed
+- **Stage 9G — synthesis and evidence-selected next gate — next**
 - Stage 9 criterion 50 — external final regression / merge-readiness review
 
 ## Roadmap
@@ -210,6 +251,7 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `Potentiality != quantum randomness by definition`;
 - `QExt represented != ontically real futures by definition`;
 - `record content != directional record arrow`;
+- `A_acc=0 != inaccessible record content`;
 - `order != directional record arrow`;
 - `covariance of a wrongly typed observable != semantic correctness`;
 - `perspective change != temporal-direction reversal`;
@@ -220,10 +262,19 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `P-R_direction-V covariance != ontic openness`;
 - `O-R_direction-V compatibility != O determines R_direction`;
 - `accessible canonical R_access-V compatibility != accessibility independence`;
+- `directional R without V multiplicity != universal R-V independence theorem`;
+- `V without directional R != universal R-V independence theorem`;
+- `singleton support != absence of a formal selected-vs-unselected type distinction`;
+- `P edge reconstruction != P=R or P=V`;
+- `local P transport without chi != typed event/class identification`;
 - `absence of an established direct Xi_RV value constraint != proof that no such constraint exists`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
 - `explicit evidence update != ontological becoming`;
+- `lost != metaphysically irreducible`;
+- `reconstructible != universally redundant`;
+- `underdetermined != ontically open`;
+- `inaccessible != globally absent`;
 - `full Stage 9C future-measurement covariance remains not_established`;
 - `finite clock covariance != general covariance`;
 - `not_established != false`.

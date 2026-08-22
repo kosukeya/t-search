@@ -93,10 +93,11 @@ def test_stage9_sequence_and_exit_criteria_advance_through_stage9a_only() -> Non
 
 def test_stage90_checkpoint_remains_a_historical_freeze_record() -> None:
     checkpoint = _read("results/stage9_0_protocol_freeze.md")
+    lowered = checkpoint.lower()
     assert "historical protocol-freeze checkpoint" in checkpoint
     assert "only criteria **1–10** were frozen as completed" in checkpoint
     assert "criteria **11–50 remained future scientific work**" in checkpoint
-    assert "Stage 9A later closes criteria 11–16" in checkpoint
+    assert "stage 9a later closes criteria 11–16" in lowered
 
 
 def test_stage9a_checkpoint_records_common_directional_v_substrate() -> None:

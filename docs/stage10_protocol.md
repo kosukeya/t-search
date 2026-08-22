@@ -1,6 +1,6 @@
 # Stage 10 Protocol — Fully Typed Future-Measurement Covariance
 
-Status: **Stage 10.0 protocol frozen; Stage 10A, Stage 10B, Stage 10C, and Stage 10D completed; criteria 1–38 completed; Stage 10E next.**
+Status: **Stage 10.0 protocol frozen; Stage 10A–10E completed; criteria 1–43 completed; Stage 10F next.**
 
 Historical Stage 10B checkpoint: **Stage 10A and Stage 10B completed; criteria 1–23 completed.**
 
@@ -123,7 +123,7 @@ The declared atlas contains 108 genuine ordered distinct-clock transports and 32
 
 ## 7. Mixture, modal, and update layer
 
-Only after per-continuation likelihood covariance is established or refuted are weights restored:
+Only after per-continuation likelihood covariance is established are weights restored:
 
 `P_{X,j}(o)=sum_h w_h p^h_{X,j}(o)`.
 
@@ -133,7 +133,7 @@ Canonical models remain:
 
 `M_O^QR(e1)=(QRCarrier,e1,QExt(e1),K)`.
 
-The **hidden epistemic `h*` swap** remains outside the public schema. A **weight mismatch** must remain predictively visible if supported, and **common explicit evidence** must be conditioned using the same transported likelihood semantics.
+Stage 10E keeps the **hidden epistemic `h*` swap** outside the public schema, preserves a perspective-stable **weight mismatch**, and conditions **common explicit evidence** using the transported Stage 10D likelihood semantics.
 
 `measurement covariance != modal/ontological identity`.
 
@@ -246,27 +246,60 @@ Evidence status after Stage 10D:
 
 with the explicit scope **per-continuation / pre-weighting / typed finite A/B/C atlas**.
 
-The Stage 10E layer remains separate:
+`per-continuation measurement covariance established != weighted/modal/update covariance established` at the Stage 10D checkpoint.
 
-`weighted/modal/update covariance = not_established`.
+Scientific validation: **`823 passed in 311.17s`** (run #1213). Corrected documentation-synchronized regression: **`828 passed in 381.47s`** (run #1227).
 
-`per-continuation measurement covariance established != weighted/modal/update covariance established`.
+## 13. Stage 10E — weights, modal models, and evidence-update covariance — completed
 
-Scientific validation: **`823 passed in 311.17s`** (run #1213).
+Stage 10E restores the Stage 9C continuation weights and modal roles on top of the Stage 10D typed per-continuation likelihood family.
 
-## 13. Stage sequence
+At every declared chart:
+
+`P_{X,j}(o)=sum_h w_h p^h_{X,j}(o)`.
+
+Established in the declared finite operational family:
+
+- matched `q_E=K=(0.5,0.5)` weighted predictions are invariant across all nine A/B/C chart nodes;
+- matched epistemic/ontic-extension public measurement views agree at every node;
+- their privileged modal structures remain distinct;
+- changing the hidden epistemic selector `h*` from h_L to h_R leaves all public measurement views unchanged;
+- the public schema contains no hidden selected-continuation or modal-model-type field;
+- the `K=(0.75,0.25)` weight mismatch changes the prediction at every chart and the mismatch effect is itself perspective-covariant;
+- common evidence `future_signature_left` gives chart-invariant epistemic/ontic posterior weights matching the Stage 9C update semantics;
+- the epistemic hidden selected continuation is preserved while the updated ontic-extension state remains selector-free.
+
+Evidence status after Stage 10E:
+
+`weighted/modal/update operational covariance = established`
+
+for the declared finite A/B/C measurement family.
+
+This is an operational result, not a modal-semantic collapse:
+
+`matched public measurement views != modal/ontological identity`.
+
+`hidden h* swap invariance != selected-continuation observability`.
+
+`weight sensitivity != selected-continuation observability`.
+
+`evidence-update covariance != ontological becoming`.
+
+Scientific validation: **`834 passed in 455.24s`** (run #1233).
+
+## 14. Stage sequence
 
 - **Stage 10.0 — protocol freeze — completed**;
 - **Stage 10A — typed reference future-measurement family — completed**;
 - **Stage 10B — continuation-specific measurement lift / normalization choice — completed**;
 - **Stage 10C — continuation-aware A/B/C measurement transport — completed**;
 - **Stage 10D — per-continuation Born/completeness/positivity covariance — completed**;
-- **Stage 10E — weights, modal models, and evidence-update covariance — next**;
-- **Stage 10F — ablation / wrong-typing / false-positive controls**;
+- **Stage 10E — weights, modal models, and evidence-update covariance — completed**;
+- **Stage 10F — ablation / wrong-typing / false-positive controls — next**;
 - **Stage 10G — synthesis and evidence-selected next gate**;
 - **criterion 50 — external full-repository regression / merge-readiness review**.
 
-## 14. Exit-criterion allocation
+## 15. Exit-criterion allocation
 
 ### Stage 10.0 — criteria 1–10 — completed
 
@@ -321,13 +354,13 @@ Scientific validation: **`823 passed in 311.17s`** (run #1213).
 37. Accidental canonical-state equality is ruled out with 196 Hermitian-tomography-complete valid constrained probes — **satisfied**.
 38. Full typed future-measurement covariance receives scoped status `established` for the per-continuation/pre-weighting finite family — **satisfied**.
 
-### Stage 10E — criteria 39–43
+### Stage 10E — criteria 39–43 — completed
 
-39. Weighted future predictions are covariant under valid class/weight/outcome correspondence.
-40. Matched epistemic/ontic-extension public measurement views agree across all declared nodes if supported.
-41. Hidden epistemic h* swaps remain outside the public typed measurement schema.
-42. Weight mismatch remains predictively visible with the same operational meaning across perspectives.
-43. Common evidence conditioning/posteriors are perspective-consistent and ontic update remains selector-free.
+39. Weighted future predictions are covariant under valid class/weight/outcome correspondence — **satisfied**.
+40. Matched epistemic/ontic-extension public measurement views agree across all declared nodes — **satisfied**.
+41. Hidden epistemic h* swaps remain outside the public typed measurement schema — **satisfied**.
+42. Weight mismatch remains predictively visible with the same operational meaning across perspectives — **satisfied**.
+43. Common evidence conditioning/posteriors are perspective-consistent and ontic update remains selector-free — **satisfied**.
 
 ### Stage 10F — criteria 44–47
 
@@ -345,7 +378,7 @@ Scientific validation: **`823 passed in 311.17s`** (run #1213).
 
 50. External final full-repository regression and merge-readiness review close Stage 10 only after criteria 1–49 are satisfied or explicitly resolved.
 
-## 15. Status vocabulary
+## 16. Status vocabulary
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established / compatible / implication_refuted`.
 
@@ -355,7 +388,7 @@ Overall measurement-covariance status additionally permits `established / partia
 
 `refuted measurement covariance != ontological becoming`.
 
-## 16. Interpretation guards
+## 17. Interpretation guards
 
 - `future-measurement covariance != future actuality`;
 - `future-measurement covariance != ontic future openness`;
@@ -369,18 +402,19 @@ Overall measurement-covariance status additionally permits `established / partia
 - `reference h_L-ray effect != epistemic/ontic continuation selector`;
 - `continuation-specific measurement representation != hidden branch selection`;
 - `weight covariance != selected-continuation observability`;
+- `hidden h* swap invariance != selected-continuation observability`;
 - `evidence-update covariance != ontological becoming`;
+- `matched public measurement views != modal/ontological identity`;
 - `metric-aware candidate law != established measurement covariance`;
 - `chart-local POVM validity != cross-chart family covariance`;
 - `normalization representation selected != measurement covariance established`;
 - `physical metric != operational normalization by definition`;
 - `typed-resource distinction != numerical inequality`;
 - `measurement representation covariance != probability covariance by definition`;
-- `per-continuation measurement covariance established != weighted/modal/update covariance established`;
 - `full finite-clock measurement covariance != general covariance`;
 - `finite-model measurement success != empirical discovery`;
 - `not_established != false`.
 
-## 17. Immediate next step
+## 18. Immediate next step
 
-Proceed to **Stage 10E — weights, modal models, and evidence-update covariance**.
+Proceed to **Stage 10F — ablation / wrong-typing / false-positive controls**.

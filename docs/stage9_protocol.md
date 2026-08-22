@@ -1,6 +1,6 @@
 # Stage 9 Protocol — Directional Records with Nontrivial Quantum Potentiality
 
-Status: **Stage 9.0 protocol frozen; Stage 9A, Stage 9B, Stage 9C, Stage 9D, and Stage 9E completed; Stage 9F next.**
+Status: **Stage 9.0 protocol frozen; Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, and Stage 9F completed; Stage 9G next.**
 
 Selected Stage 9 gate from Stage 8G:
 
@@ -202,9 +202,13 @@ Allowed evidential/status vocabulary remains:
 
 `not_established != false`.
 
-## 8. Stage 9F ablation requirements — next
+## 8. Stage 9F ablation / reconstruction / accessibility — completed
 
-Stage 9F must include at least:
+Stage 9F pressure-tests the Stage 9E compatibility classification with eight one-ingredient ablations while retaining the functional vocabulary:
+
+`preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
+
+The frozen requirements were:
 
 - directional record coupling/scrambling neutralized while V remains nontrivial;
 - `QExt` collapsed to a `singleton` while directional R is retained if possible;
@@ -215,11 +219,82 @@ Stage 9F must include at least:
 - explicit perspective edge matrices removed while per-node coordinates remain;
 - one deliberately `wrong record-observable` coordinate transport.
 
-The classification vocabulary is:
+All are now executable.
 
-`preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
+### 8.1 Record write neutralized
 
-Do not infer metaphysical irreducibility from one lost role.
+Removing `U_rec` while retaining the scrambler and h_L/h_R future distinction gives:
+
+- `R_content = lost`;
+- `R_direction = lost`;
+- target-specific `R_access = lost`;
+- nontrivial h_L/h_R V preserved;
+- re-derived rank-14 constrained clock transport preserved over 108 comparisons.
+
+### 8.2 Scrambler neutralized
+
+Retain the e1 record write but remove e2 `U_scr`:
+
+- `h_L: (I,U_rec,U_rec)`;
+- `h_R: (I,U_rec,Z_C U_rec)`.
+
+Current target-memory information remains one bit, but `(A_R,A_acc)=(0,0)`. Nontrivial V and the re-derived two-continuation P atlas remain.
+
+Therefore:
+
+`R_content preserved + R_direction lost + V_extension multiplicity preserved`.
+
+`A_acc=0 != inaccessible record content`.
+
+### 8.3 Singleton QExt
+
+Retaining only h_L gives:
+
+- `|QExt|=1`;
+- one-bit current record;
+- `(A_R,A_acc)=(+1,+0.5)`;
+- `V_extension_multiplicity = lost`;
+- formal selected-vs-unselected semantic typing preserved;
+- sole normalized weight `reconstructible` as `1`;
+- 54 ordered distinct-clock comparisons preserved.
+
+Together with the previous ablations this supplies finite-family countermodels in both directions between directional R and nontrivial V multiplicity.
+
+`directional R without V multiplicity != universal R-V independence theorem`.
+
+`V without directional R != universal R-V independence theorem`.
+
+### 8.4 Modal semantics removed / weights unfixed
+
+If selected-vs-unselected typing is erased, `V_semantics` is lost and is not uniquely reconstructed from retained public carrier data.
+
+If nontrivial weights are left unfixed, `V_weights = underdetermined`; `(0.5,0.5)` and `(0.75,0.25)` remain distinct assignments with different future predictions and the same current directional data.
+
+### 8.5 Local record access hidden
+
+A reduced public interface retains global record content, global direction, continuation identities, and weights while omitting the local accessibility field.
+
+`R_access = inaccessible` while global R and V remain represented.
+
+`inaccessible != globally absent`.
+
+### 8.6 P edge reconstruction / event-class chi / wrong observable
+
+Removing explicit P edge matrices while retaining per-node coordinates reconstructs all 108 canonical edges using:
+
+`S^h_{Y<-X}=C_{h,Y} C_{h,X}^{-1}`.
+
+Thus explicit `P_perspective_transport` edge matrices are `reconstructible` in this declared atlas.
+
+Removing event/class correspondence `chi` leaves bare local P transport executable, but the correspondence role is lost and typed cross-perspective P-R-V identification becomes `not_established`.
+
+`local P transport without chi != typed event/class identification`.
+
+The deliberately wrong bare record-observable coordinate reuse is rejected.
+
+`covariance of a wrongly typed observable != semantic correctness`.
+
+Stage 9F therefore strengthens the layered interpretation by separating record content, direction, accessibility, V multiplicity, V semantics, V weights, reconstructible P matrices, and explicit semantic correspondence resources.
 
 ## 9. Evidence taxonomy
 
@@ -241,8 +316,8 @@ Every scientific claim must be one of:
 - Stage 9C — typed modal models and directional operational underdetermination — **completed**; criteria 24–30.
 - Stage 9D — continuation-aware clock transport — **completed**; criteria 31–36.
 - Stage 9E — P/O/R_direction/V compatibility matrix — **completed**; criteria 37–42.
-- **Stage 9F — ablation / reconstruction / accessibility matrix — next**; criteria 43–47.
-- Stage 9G — synthesis and evidence-selected next gate; criteria 48–49.
+- Stage 9F — ablation / reconstruction / accessibility matrix — **completed**; criteria 43–47.
+- **Stage 9G — synthesis and evidence-selected next gate — next**; criteria 48–49.
 - criterion 50 — external final full-repository regression and merge-readiness review.
 
 ## 11. Exit criteria
@@ -305,19 +380,28 @@ Stage 9D closes **31–36**.
 37. `R_direction-V_extension` classified — **satisfied; compatible**, with unique-determination implications refuted.
 38. `R_direction-V_weights` classified — **satisfied; compatible**.
 39. `R_direction-V_semantics` classified — **satisfied; underdetermined**.
-40. `R_access-V` classified — **satisfied; compatible** on the canonical accessible carrier; independence deferred to Stage 9F.
+40. `R_access-V` classified — **satisfied; compatible** on the canonical accessible carrier; accessibility pressure-tested in Stage 9F.
 41. `P-R_direction-V` classified — **satisfied; compatible**; full future-measurement covariance remains `not_established`.
 42. `O-R_direction-V` classified — **satisfied; compatible**; `O=>R_direction` is `implication_refuted`, and a direct Xi_RV value law remains `not_established`.
 
 Stage 9E closes **37–42**.
 
+### Stage 9F — criteria 43–47 — satisfied
+
+43. Directional-mechanism ablations distinguish record content, direction, local access, and nontrivial V — **satisfied**. Record-write removal deletes target-specific R while V/P survive; scrambler removal retains one-bit record content but removes directional asymmetry while V/P survive.
+44. Singleton-QExt ablation removes continuation multiplicity while retaining one-bit record, `(+1,+0.5)` directional R, and a 54-edge one-continuation P atlas; sole weight is reconstructible as 1 — **satisfied**.
+45. Erased modal semantics are lost/not uniquely reconstructed; unfixed nontrivial weights are underdetermined — **satisfied**.
+46. Local record access can be hidden while global record/direction and V remain represented, giving `R_access = inaccessible` — **satisfied**.
+47. Explicit P edge matrices are reconstructible from per-node coordinates; removing event/class chi leaves typed P-R-V identification `not_established`; wrong record-observable coordinates are rejected — **satisfied**.
+
+Stage 9F closes **43–47**.
+
 ### Future allocation
 
-- criteria **43–47**: Stage 9F ablation/reconstruction/accessibility;
 - criteria **48–49**: Stage 9G synthesis and next-gate selection;
 - criterion **50**: external final full-repository regression and merge-readiness review.
 
-Criteria 43–50 remain future work.
+Criteria 48–50 remain future work.
 
 ## 12. Mandatory guards
 
@@ -331,6 +415,7 @@ Criteria 43–50 remain future work.
 - `operational directional equality != modal/ontological identity`;
 - `record content != directional record arrow`;
 - `record content != unique future continuation`;
+- `A_acc=0 != inaccessible record content`;
 - `order != directional record arrow`;
 - `continuation identity != record-direction identity`;
 - `weighted directional score != continuation-independent directional structure`;
@@ -341,6 +426,9 @@ Criteria 43–50 remain future work.
 - `P-V covariance != P=V`;
 - `R-V compatibility != R=V`;
 - `R_direction-V_extension compatibility != universal R-V independence`;
+- `directional R without V multiplicity != universal R-V independence theorem`;
+- `V without directional R != universal R-V independence theorem`;
+- `singleton support != absence of a formal selected-vs-unselected type distinction`;
 - `accessible canonical R_access-V compatibility != accessibility independence`;
 - `P-R_direction-V covariance != ontic openness`;
 - `O-R_direction-V compatibility != O determines R_direction`;
@@ -352,6 +440,8 @@ Criteria 43–50 remain future work.
 - `branch-specific perspective map != hidden branch selection`;
 - `directional record covariance != P=R`;
 - `class/weight covariance != V_semantics identity`;
+- `P edge reconstruction != P=R or P=V`;
+- `local P transport without chi != typed event/class identification`;
 - `reconstructible != universally redundant`;
 - `lost != metaphysically irreducible`;
 - `underdetermined != ontically open`;
@@ -361,12 +451,12 @@ Criteria 43–50 remain future work.
 - `finite constrained-model success != empirical discovery`;
 - `finite clock covariance != general covariance`.
 
-## 13. Strongest statement allowed after Stage 9E
+## 13. Strongest statement allowed after Stage 9F
 
-Within the declared finite constrained family, nontrivial `V_extension`, nonzero directional `R_direction`, explicit `R_access`, order/current-anchor structure `O`, and genuine continuation-specific perspective transport `P` are structurally compatible when event/class/observable typing is explicit. `V_semantics` remains operationally underdetermined despite nonzero direction. The tested controls refute unique determination of R_direction by V_extension identity, unique V_extension identity by R_direction, and R_direction by O. No new direct Xi_RV value law is established, and full cross-continuation future-signature measurement covariance remains `not_established`.
+Within the declared finite constrained family, `P/O/R_direction/V` structural compatibility survives a discriminating set of ablations. Nontrivial continuation multiplicity can remain after directional R is removed, directional R can remain after nontrivial continuation multiplicity is removed, and record content can remain after directional asymmetry is removed. Local accessibility can be hidden without erasing the global record/direction/V representation. Explicit P edge matrices are reconstructible from per-node coordinates, whereas event/class correspondence and semantic observable typing remain separate resources.
 
-This strengthens the refined-layered candidate but does not establish universal R–V independence, ontic future openness, ontological becoming, empirical novelty, or general covariance.
+This strengthens the refined-layered candidate and provides finite-family countermodels to mutual necessity among several R/V subroles. It does not establish universal R-V independence, metaphysical primitiveness, ontic future openness, ontological becoming, full future-signature measurement covariance, empirical novelty, or general covariance.
 
 ## 14. Immediate next step
 
-**Stage 9F — ablation / reconstruction / accessibility matrix** should now pressure-test the Stage 9E classifications by removing one typed ingredient at a time.
+**Stage 9G — synthesis and evidence-selected next gate** should now integrate the Stage 9A–9F evidence, classify the refined-layered candidate, and re-rank the remaining finite/general-covariance gates.

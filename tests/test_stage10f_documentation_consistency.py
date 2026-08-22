@@ -8,21 +8,27 @@ def _read(relative: str) -> str:
 
 
 def test_stage10f_checkpoint_and_next_stage_are_documented() -> None:
+    protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10f_notes.md")
     results = _read("results/stage10f_ablation.md")
     for text in (notes, results):
         assert "Stage 10F completed; criteria 44–47 satisfied" in text
         assert "Stage 10G — synthesis and evidence-selected next gate" in text
+    assert "Stage 10A–10F completed; criteria 1–47 completed; Stage 10G next" in protocol
+    assert "Stage 10F — ablation / wrong-typing / false-positive controls — completed" in protocol
+    assert "Stage 10G — synthesis and evidence-selected next gate — next" in protocol
 
 
 def test_stage10f_correspondence_and_normalization_classifications_are_explicit() -> None:
+    protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10f_notes.md")
     results = _read("results/stage10f_ablation.md")
-    for text in (notes, results):
+    for text in (protocol, notes, results):
         assert "event correspondence" in text
         assert "continuation-class correspondence" in text
         assert "outcome correspondence" in text
         assert "normalization" in text.lower()
+    for text in (notes, results):
         assert "preserved" in text
         assert "lost" in text
         assert "underdetermined" in text
@@ -31,9 +37,10 @@ def test_stage10f_correspondence_and_normalization_classifications_are_explicit(
 
 
 def test_stage10f_false_positive_witnesses_and_guards_are_documented() -> None:
+    protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10f_notes.md")
     results = _read("results/stage10f_ablation.md")
-    combined = notes + "\n" + results
+    combined = protocol + "\n" + notes + "\n" + results
     for phrase in (
         "bare-effect",
         "wrong continuation",
@@ -54,18 +61,22 @@ def test_stage10f_false_positive_witnesses_and_guards_are_documented() -> None:
 
 
 def test_stage10f_criteria_44_through_47_are_closed() -> None:
+    protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10f_notes.md")
     results = _read("results/stage10f_ablation.md")
     for criterion in range(44, 48):
+        assert f"{criterion}." in protocol
         assert f"{criterion}." in notes
         assert f"{criterion}." in results
+    assert protocol.count("**satisfied**") >= 47
     assert notes.count("**satisfied**") >= 4
     assert results.count("**satisfied**") >= 4
 
 
 def test_stage10f_validation_checkpoint_is_recorded() -> None:
+    protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10f_notes.md")
     results = _read("results/stage10f_ablation.md")
-    for text in (notes, results):
+    for text in (protocol, notes, results):
         assert "run #1249" in text
         assert "843 passed in 575.02s" in text

@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from t_search.stage5_clock_change import SUBSYSTEMS
-from t_search.stage7_history import CURRENT_EVENT, LOWER_EVENT, UPPER_EVENT
+from t_search.stage7_history import CURRENT_EVENT, LOWER_EVENT
 from t_search.stage9_modal import canonical_stage9c_models
 from t_search.stage9_substrate import stage9_extension_set
 from t_search.stage9_transport import (
@@ -24,14 +24,17 @@ from t_search.stage9_transport import (
 )
 
 ATOL = 1e-9
+# The complete Stage 9D atlas audit is deterministic and expensive.  Compute it
+# once per test module rather than repeating the same 18-chart / 108-map /
+# 324-composition sweep in every assertion-focused test.
+DIAGNOSTICS = stage9d_transport_diagnostics()
 
 
 def test_stage9d_rederives_eighteen_rank14_continuation_specific_charts():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.qext_size == 2
-    assert diagnostics.perspective_nodes_per_continuation == 9
-    assert diagnostics.total_perspective_nodes == 18
-    assert diagnostics.minimum_chart_rank == 14
+    assert DIAGNOSTICS.qext_size == 2
+    assert DIAGNOSTICS.perspective_nodes_per_continuation == 9
+    assert DIAGNOSTICS.total_perspective_nodes == 18
+    assert DIAGNOSTICS.minimum_chart_rank == 14
     for continuation in stage9_extension_set(CURRENT_EVENT):
         for clock in SUBSYSTEMS:
             for index in range(3):
@@ -43,29 +46,25 @@ def test_stage9d_rederives_eighteen_rank14_continuation_specific_charts():
 
 
 def test_stage9d_genuine_state_inverse_metric_and_composition_covariance():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.distinct_clock_state_transports == 108
-    assert diagnostics.three_clock_compositions == 324
-    assert diagnostics.max_state_transport_residual <= ATOL
-    assert diagnostics.max_inverse_residual <= ATOL
-    assert diagnostics.max_metric_covariance_residual <= ATOL
-    assert diagnostics.max_composition_residual <= ATOL
-    assert diagnostics.continuation_level_transport_covariance is True
+    assert DIAGNOSTICS.distinct_clock_state_transports == 108
+    assert DIAGNOSTICS.three_clock_compositions == 324
+    assert DIAGNOSTICS.max_state_transport_residual <= ATOL
+    assert DIAGNOSTICS.max_inverse_residual <= ATOL
+    assert DIAGNOSTICS.max_metric_covariance_residual <= ATOL
+    assert DIAGNOSTICS.max_composition_residual <= ATOL
+    assert DIAGNOSTICS.continuation_level_transport_covariance is True
 
 
 def test_stage9d_record_observables_are_typed_and_transport_covariantly():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.observable_typing_fields_present is True
-    assert diagnostics.max_observable_transport_residual <= ATOL
-    assert diagnostics.max_metric_self_adjoint_residual <= ATOL
-    assert diagnostics.max_projector_residual <= ATOL
-    assert diagnostics.max_record_memory_commutator_residual <= ATOL
-    assert diagnostics.directional_record_covariance is True
+    assert DIAGNOSTICS.observable_typing_fields_present is True
+    assert DIAGNOSTICS.max_observable_transport_residual <= ATOL
+    assert DIAGNOSTICS.max_metric_self_adjoint_residual <= ATOL
+    assert DIAGNOSTICS.max_projector_residual <= ATOL
+    assert DIAGNOSTICS.max_record_memory_commutator_residual <= ATOL
+    assert DIAGNOSTICS.directional_record_covariance is True
 
     continuation = stage9_extension_set(CURRENT_EVENT)[0]
-    typed = typed_event_target_observable(
-        continuation, "B", 0, LOWER_EVENT
-    )
+    typed = typed_event_target_observable(continuation, "B", 0, LOWER_EVENT)
     assert typed.continuation_id == continuation.continuation_id
     assert typed.clock == "B"
     assert typed.clock_index == 0
@@ -76,11 +75,10 @@ def test_stage9d_record_observables_are_typed_and_transport_covariantly():
 
 
 def test_stage9d_directional_scores_are_perspective_covariant_for_each_continuation():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.max_preserving_record_score_residual <= ATOL
-    assert diagnostics.max_preserving_accessibility_residual <= ATOL
-    assert diagnostics.max_reversing_record_sign_residual <= ATOL
-    assert diagnostics.max_reversing_accessibility_sign_residual <= ATOL
+    assert DIAGNOSTICS.max_preserving_record_score_residual <= ATOL
+    assert DIAGNOSTICS.max_preserving_accessibility_residual <= ATOL
+    assert DIAGNOSTICS.max_reversing_record_sign_residual <= ATOL
+    assert DIAGNOSTICS.max_reversing_accessibility_sign_residual <= ATOL
 
     for continuation in stage9_extension_set(CURRENT_EVENT):
         for clock in SUBSYSTEMS:
@@ -113,7 +111,7 @@ def test_stage9d_event_correspondence_not_numeric_clock_reading_defines_orientat
     assert reversing.orientation_sign == -1
     assert wrong.target_events == reversing.target_events
     assert wrong.orientation_sign == 1
-    assert stage9d_transport_diagnostics().wrong_event_correspondence_rejected is True
+    assert DIAGNOSTICS.wrong_event_correspondence_rejected is True
 
 
 def test_stage9d_class_correspondence_preserves_only_physical_qext_classes():
@@ -137,12 +135,11 @@ def test_stage9d_class_correspondence_preserves_only_physical_qext_classes():
 
 
 def test_stage9d_modal_views_remain_matched_and_hidden_selector_swap_invariant_all_nodes():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.matched_modal_views_all_nodes is True
-    assert diagnostics.selected_swap_modal_views_all_nodes is True
-    assert diagnostics.max_weight_transport_residual <= ATOL
-    assert diagnostics.hidden_selected_absent_from_view_schema is True
-    assert diagnostics.class_weight_transport_covariance is True
+    assert DIAGNOSTICS.matched_modal_views_all_nodes is True
+    assert DIAGNOSTICS.selected_swap_modal_views_all_nodes is True
+    assert DIAGNOSTICS.max_weight_transport_residual <= ATOL
+    assert DIAGNOSTICS.hidden_selected_absent_from_view_schema is True
+    assert DIAGNOSTICS.class_weight_transport_covariance is True
 
     epistemic, ontic = canonical_stage9c_models()
     for clock in SUBSYSTEMS:
@@ -166,13 +163,12 @@ def test_stage9d_modal_views_remain_matched_and_hidden_selector_swap_invariant_a
 
 
 def test_stage9d_wrong_continuation_map_and_bare_observable_are_rejected():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.max_cross_continuation_map_difference > ATOL
-    assert diagnostics.one_rederived_map_suffices_for_all_continuations is False
-    assert diagnostics.wrong_continuation_map_residual > ATOL
-    assert diagnostics.wrong_continuation_map_rejected is True
-    assert diagnostics.bare_observable_residual > ATOL
-    assert diagnostics.bare_observable_rejected is True
+    assert DIAGNOSTICS.max_cross_continuation_map_difference > ATOL
+    assert DIAGNOSTICS.one_rederived_map_suffices_for_all_continuations is False
+    assert DIAGNOSTICS.wrong_continuation_map_residual > ATOL
+    assert DIAGNOSTICS.wrong_continuation_map_rejected is True
+    assert DIAGNOSTICS.bare_observable_residual > ATOL
+    assert DIAGNOSTICS.bare_observable_rejected is True
 
 
 def test_stage9d_direct_transport_example_matches_target_state_and_metric():
@@ -209,8 +205,7 @@ def test_stage9d_correct_observable_transport_differs_from_bare_matrix_reuse():
 
 
 def test_stage9d_does_not_overclaim_future_measurement_or_general_covariance():
-    diagnostics = stage9d_transport_diagnostics()
-    assert diagnostics.full_stage9c_future_measurement_covariance_established is False
+    assert DIAGNOSTICS.full_stage9c_future_measurement_covariance_established is False
     summary = stage9d_summary()
     assert "full Stage 9C future-measurement covariance remains not_established" in summary["guards"]
     assert "finite clock covariance != general covariance" in summary["guards"]

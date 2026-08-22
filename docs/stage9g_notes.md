@@ -115,9 +115,7 @@ Stage 9D established covariance for:
 
 However, it deliberately did **not** construct one fully typed cross-continuation transport law for the Stage 9C future-signature measurement family.
 
-Therefore:
-
-`full Stage 9C future-measurement covariance = not_established`.
+`full Stage 9C future-measurement covariance remains not_established`.
 
 This is the sharpest explicit operational boundary left after Stage 9.
 

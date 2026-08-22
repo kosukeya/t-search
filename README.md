@@ -4,7 +4,9 @@
 
 ## Current status
 
-**Stages 1–9 are completed and merged. Stage 10.0, Stage 10A, Stage 10B, and Stage 10C are completed on Draft PR #11; Stage 10 criteria 1–31 are closed and Stage 10D is next.**
+**Stages 1–9 are completed and merged. Stage 10.0, Stage 10A, Stage 10B, Stage 10C, and Stage 10D are completed on Draft PR #11; Stage 10 criteria 1–38 are closed and Stage 10E is next.**
+
+Historical merge checkpoint: **Stages 1–8 are completed and merged. Stage 9.0 through Stage 9G and criterion 50 later closed Stage 9; Stage 9 criteria 1–50 are closed.**
 
 Current refined finite-model candidate:
 
@@ -222,6 +224,8 @@ Selected Stage 10 gate:
 
 > **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
+At the completed Stage 9 checkpoint, `full Stage 9C future-measurement covariance remains not_established`.
+
 Source-level Stage 9G validation: **`765 passed in 248.81s`** (run #1099). Final external Stage 9 validation: **`766 passed in 459.00s`** (run #1121).
 
 Stage 9G closes criteria **48–49**; criterion **50** is closed externally.
@@ -238,6 +242,8 @@ Key documents:
 - [`results/stage10b_measurement_lift.md`](results/stage10b_measurement_lift.md)
 - [`docs/stage10c_notes.md`](docs/stage10c_notes.md)
 - [`results/stage10c_measurement_transport.md`](results/stage10c_measurement_transport.md)
+- [`docs/stage10d_notes.md`](docs/stage10d_notes.md)
+- [`results/stage10d_probability_covariance.md`](results/stage10d_probability_covariance.md)
 
 ### Stage 10.0 — protocol freeze — completed
 
@@ -292,15 +298,45 @@ Thus:
 
 `future-measurement representation covariance = established`
 
-in the declared finite atlas, while:
+in the declared finite atlas. At the Stage 10C checkpoint:
 
-`full per-continuation probability covariance = not_established`
-
-until Stage 10D.
+`full per-continuation probability covariance = not_established`.
 
 Criteria **24–31** are closed.
 
-Scientific validation: **`809 passed in 476.21s`** (run #1185).
+Scientific validation: **`809 passed in 476.21s`** (run #1185); documentation-synchronized regression: **`815 passed in 471.02s`** (run #1203).
+
+### Stage 10D — per-continuation Born/completeness/positivity covariance — completed
+
+Stage 10D evaluates the typed measurement on each canonical continuation independently at every A/B/C node:
+
+`p(o|h,X,j)=z^dagger F^X_{h,o} z / (z^dagger N^X_h z)`.
+
+The 36 canonical outcome probabilities are invariant across corresponding nodes and reproduce the Stage 9C likelihoods. Probability-level completeness, positivity, and positive normalization are retained.
+
+To rule out accidental canonical-state equality, Stage 10D uses **196 Hermitian-tomography-complete valid constrained probes**, giving **7056 probe outcome-probability evaluations**. Correct covariance/completeness/positivity persists over this family. Swapped outcomes, a fresh-identity normalization rule, and a genuinely misaligned chart metric are rejected.
+
+Pilot run #1209 gave **`818 passed / 4 failed`** because it incorrectly required the correctly corresponding Stage 9D physical metric to be numerically different solely from its distinct typing. The corrected control keeps the resource typing separate without assuming numerical inequality:
+
+`typed-resource distinction != numerical inequality`.
+
+Stage 10D assigns:
+
+`full typed future-measurement covariance = established`
+
+with the explicit scope **per-continuation / pre-weighting / typed finite A/B/C atlas**.
+
+The next layer remains:
+
+`weighted/modal/update covariance = not_established`.
+
+Criteria **32–38** are closed.
+
+Scientific validation: **`823 passed in 311.17s`** (run #1213).
+
+### Stage 10E — weights, modal models, and evidence-update covariance — next
+
+Stage 10E restores continuation weights only after the per-continuation result above. It will test weighted future predictions, matched epistemic/ontic-extension public measurement views, hidden `h*` swap invariance, weight-mismatch visibility, and common evidence conditioning/posteriors across the typed atlas.
 
 ## Sequence
 
@@ -310,8 +346,8 @@ Scientific validation: **`809 passed in 476.21s`** (run #1185).
 - Stage 10A — completed
 - Stage 10B — completed
 - Stage 10C — completed
-- **Stage 10D — next**
-- Stage 10E — future
+- Stage 10D — completed
+- **Stage 10E — next**
 - Stage 10F — future
 - Stage 10G — future
 - Stage 10 criterion 50 — future external validation
@@ -347,8 +383,12 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `inaccessible != globally absent`;
 - `reference-chart identity normalization != identity normalization in every transported chart`;
 - `physical metric != operational normalization by definition`;
-- `future-measurement representation covariance != full probability covariance`;
-- `measurement representation covariance != modal/ontological identity`;
-- `full Stage 9C / Stage 10 future-measurement covariance remains not_established pending Stage 10D/E`;
+- `typed-resource distinction != numerical inequality`;
+- `canonical-state equality != tomography-complete covariance`;
+- `per-continuation measurement covariance established != weighted/modal/update covariance established`;
+- `future-measurement covariance != future actuality`;
+- `future-measurement covariance != ontic future openness`;
+- `measurement covariance != modal/ontological identity`;
+- `full finite-clock measurement covariance != general covariance`;
 - `finite clock covariance != general covariance`;
 - `not_established != false`.

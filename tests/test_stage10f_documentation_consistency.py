@@ -7,7 +7,7 @@ def _read(relative: str) -> str:
     return (ROOT / relative).read_text(encoding="utf-8")
 
 
-def test_stage10f_checkpoint_and_successor_are_documented_after_stage10g() -> None:
+def test_stage10f_checkpoint_and_successor_are_documented_after_stage10_completion() -> None:
     protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10f_notes.md")
     results = _read("results/stage10f_ablation.md")
@@ -16,8 +16,10 @@ def test_stage10f_checkpoint_and_successor_are_documented_after_stage10g() -> No
         assert "Stage 10G — synthesis and evidence-selected next gate" in text
     assert "Stage 10F — ablation / wrong-typing / false-positive controls — completed" in protocol
     assert "Stage 10G — synthesis and evidence-selected next gate — completed" in protocol
-    assert "criteria 1–49 completed" in protocol
-    assert "criterion 50" in protocol.lower() and "pending" in protocol.lower()
+    # Stage 10F/G remain historical checkpoints after criterion 50 closes; the
+    # current protocol must advance to the final Stage 10 repository status.
+    assert "criteria 1–50 completed" in protocol
+    assert "criterion 50" in protocol.lower() and "completed" in protocol.lower()
 
 
 def test_stage10f_correspondence_and_normalization_classifications_are_explicit() -> None:

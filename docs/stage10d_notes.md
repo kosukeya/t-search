@@ -137,7 +137,11 @@ It does **not** yet include the Stage 10E layer:
 - weight-mismatch transport;
 - common evidence conditioning/posteriors.
 
-Therefore:
+Therefore the remaining Stage 10E boundary is explicitly:
+
+`weighted/modal/update covariance = not_established`.
+
+And:
 
 `per-continuation measurement covariance established != weighted/modal/update covariance established`.
 

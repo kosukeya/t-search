@@ -1,6 +1,6 @@
 # Stage 10A Notes — Typed Reference Future-Measurement Family
 
-Status: **Stage 10A implementation complete; criteria 11–16 targeted.**
+Status: **Stage 10A completed; criteria 11–16 satisfied.**
 
 ## Purpose
 
@@ -75,7 +75,7 @@ Stage 10A does not accept the Stage 9C probability tuple by copy. It recomputes 
 
 The resulting per-continuation likelihoods are compared against the existing Stage 9C `continuation_future_signature_probabilities` values.
 
-Reference positivity and completeness are also independently rechecked from the typed matrices.
+Reference positivity, Hermiticity, and completeness are independently rechecked from the typed matrices.
 
 The h_L and h_R probability vectors remain distinct because the future rays are not identical (`overlap^2 < 1` within tolerance).
 
@@ -93,6 +93,15 @@ The Stage 10A public measurement schema includes continuation ids because contin
 - `privileged_modal_type`.
 
 `typed continuation id != hidden selected continuation`.
+
+## Criteria 11–16
+
+11. Stage 9C canonical outcomes/effects reproduced without semantic change — **satisfied**.
+12. Outcome identity/provenance and e1-prediction/e2-target typing explicit — **satisfied**.
+13. Positivity/completeness independently revalidated — **satisfied**.
+14. h_L/h_R future rays remain operationally discriminating — **satisfied**.
+15. Per-continuation reference probabilities reproduce Stage 9C likelihoods — **satisfied**.
+16. Public schema contains no hidden selector/modal-type field — **satisfied**.
 
 ## What Stage 10A does not establish
 
@@ -112,6 +121,10 @@ In particular:
 `reference-node validity != cross-clock measurement covariance`.
 
 `same reference likelihoods != full measurement-family covariance`.
+
+## Validation
+
+Stage 10A scientific checkpoint: GitHub Actions run #1145 — **`783 passed in 461.16s`**.
 
 ## Next
 

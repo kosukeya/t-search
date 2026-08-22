@@ -124,6 +124,8 @@ source head:
 
 `e570a2b8e08d73bfa14db87c4faa71499d28dfad`
 
+The Stage 9G documentation-synchronized full-repository regression is tracked separately from the source-level synthesis run. Passing that regression alone does not close criterion 50 until merge-readiness is also reviewed explicitly.
+
 Criterion 50 remains deliberately external to the executable Stage 9G selector.
 
 ## Unresolved implications

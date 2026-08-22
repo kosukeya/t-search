@@ -4,361 +4,134 @@ This roadmap is provisional and evidence-selected.
 
 ## Current refined candidate
 
-`T9_candidate=(O,P,R,V;Xi)`
+`T10_candidate=(O,P,R,V;Xi)`
 
-with candidate internal role typing:
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-`R=(R_content,R_direction,R_access)`
-
-`V=(V_extension,V_semantics,V_weights)`.
-
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V and selected directional-R/V as the next finite-model gate. Stage 9A–D then built the common directional-R/V carrier, controlled direction independently of the continuation distinction, retained modal underdetermination, and transported the typed structure through genuine continuation-specific clock atlases. Stage 9E classified the resulting P/O/R_direction/V compatibility matrix, Stage 9F pressure-tested it by ablation/reconstruction/accessibility, and Stage 9G retained `refined_layered` and selected full future-measurement covariance as the next gate. Stage 9 criterion 50 is now closed by the external final regression and merge-readiness review.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed.** Criterion 50 is closed externally and PR #11 is at the merge-ready checkpoint; Stage 10 has not yet been merged.
 
 ## Stages 0–6 — completed and merged
 
-Stages 0–6 established definitions, classical reconstruction/accessibility controls, formal modal underdetermination, reversible record asymmetry, finite relational quantum dynamics, genuine physical clock changes, and the layered candidate `T6_candidate=(O,P,R,V;Xi)`.
+Stages 0–6 established definitions, reconstruction/accessibility controls, modal underdetermination, reversible record asymmetry, constrained relational quantum dynamics, genuine physical clock changes, and the layered O/P/R/V/Xi candidate.
 
 ## Stage 7 — Quantum records inside a constrained multi-clock model — completed and merged
 
-Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. Stage 6G superseded that chronology with the more discriminating quantum-record gate; gravity was deferred rather than discarded.
+Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. The Stage 6G evidence selection superseded that chronology and inserted the more discriminating record gate first.
 
-Stage 7 placed P/O/R in one constrained quantum construction and ended with a strengthened finite-model P/O/R core.
+Gravity/general covariance is deferred, not abandoned.
 
 ## Stage 8 — Quantum Potentiality inside the shared constrained construction — completed and merged
 
-Selected Stage 8 gate:
+Stage 8 integrated explicit Potentiality/extension semantics into the shared constrained quantum carrier, transported modal structure across clock perspectives, separated operational equality from modal identity, and pressure-tested the layered candidate.
 
-> **Integrate explicit Potentiality / extension semantics `V` into the same constrained quantum construction.**
+Stage 8G selected directional-record integration as Stage 9. `Potentiality != quantum randomness by definition`.
 
-Stage 8A–C constructed `QExt(e1)={h_L,h_R}`, typed selected-vs-unselected modal semantics, the declared operational interface, weight controls, and explicit evidence update. Stage 8D established continuation-aware clock transport. Stage 8E separated current record content from directional record structure. Stage 8F ran role ablations. Stage 8G selected the next gate.
+## Stage 9 — Directional records with nontrivial quantum Potentiality — completed and merged
 
-### Stage 8D — completed
+Stage 9A — common directional-R/V continuation substrate — completed.
 
-The canonical family passes 108 distinct-clock state transports and 324 three-clock compositions. Class/weight `P-V` covariance is positive; full Stage 8C measurement-family covariance remains `not_established`.
+Stage 9B — directional diagnostics and controls — completed.
 
-### Stage 8E — completed
+Stage 9C — typed modal models and directional operational underdetermination — completed.
 
-Stage 8E found:
+Stage 9D — continuation-aware clock transport — completed.
 
-- `P-O(event effects) = compatible`;
-- `P-R(current record) = compatible`;
-- `P-V(class/weights) = compatible`;
-- `O-V(extension) = compatible`;
-- `R(current)-V = underdetermined`;
-- `O=>R(direction) = implication_refuted`;
-- `P/O/current-R=>V semantics = underdetermined`;
-- `full P/O/directional-R/V = partial`.
+Stage 9E — P/O/R_direction/V compatibility matrix — completed.
 
-The Stage 8 canonical V carrier lacked directional R, leaving the last relation only partial.
+Stage 9F — ablation / reconstruction / accessibility matrix — completed.
 
-`covariance of a wrongly typed observable != semantic correctness`.
+Stage 9G — synthesis and evidence-selected next gate — completed.
 
-### Stage 8F — completed
+Stage 9 criterion 50 — external final validation — completed. Final Stage 9 validation: **`766 passed in 459.00s`**.
 
-Stage 8F kept the functional-status vocabulary:
+Stage 9G executable synthesis: `refined_layered`.
 
-`preserved / reconstructible / inaccessible / lost / underdetermined / not_established`.
+The Stage 9 ranking put `full_measurement_covariance` first. Selected Stage 10 gate:
 
-Its record-neutral witness retained nontrivial P/O/V, physical dimension 14, rank-14 reductions, 108 genuine continuation-specific clock transports, modal underdetermination, and weight-sensitive prediction while current target-memory information vanished.
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
-`record-neutral V witness != universal R-V independence theorem`.
+At the **Stage 9 checkpoint**, full Stage 9C future-measurement covariance remained `not_established`.
 
-### Stage 8G — synthesis and next-gate selection — completed
+Historical guards:
 
-Executable synthesis choice:
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
+- `P edge reconstruction != P layer universally redundant`;
+- `finite clock covariance != general covariance`.
 
-`refined_layered`.
-
-The top-level `T=(O,P,R,V;Xi)` candidate is retained, with:
-
-- `R=(R_content,R_direction,R_access)`;
-- `V=(V_extension,V_semantics,V_weights)`.
-
-Criteria **48–49** selected the next finite-model gate. Criterion **50** was closed by external Stage 8 validation.
-
-Selected next gate:
-
-> **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
-
-Stage 9 gate ranking at entry:
-
-1. `directional_record_potentiality` — score 9;
-2. `full_measurement_covariance` — score 6;
-3. `richer_causal_order` — score 5;
-4. `nonideal_povm_clocks` — score 3;
-5. `parametrized_covariance_precursor` — score 2.
-
-`Potentiality != quantum randomness by definition`.
-
-## Stage 9 — Directional records with nontrivial quantum Potentiality — completed
-
-Status: **Stage 9.0 through Stage 9G and the external criterion 50 validation are completed; criteria 1–50 are closed.**
-
-Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
-
-### Stage 9.0 — protocol freeze — completed
-
-Stage 9.0 froze a stronger same-family integration target: one common current anchor, at least two physically inequivalent admissible continuations, and the same nonzero per-continuation directional record structure before branch weighting.
-
-`continuation identity != record-direction identity`.
-
-Criteria **1–10** are completed.
-
-### Stage 9A — common directional-R/V continuation substrate — completed
-
-Canonical schedules:
-
-- `h_L: (V_0,V_1,V_2)=(I,U_rec,U_scr U_rec)`;
-- `h_R: (V_0,V_1,V_2)=(I,U_rec,Z_C U_scr U_rec)`.
-
-The family has `QExt(e1)={h_L,h_R}`, common e0/e1 Actuality, same nonzero direction before weighting, branch action separated from the record channel, physical dimension 14, and rank-14 reductions.
-
-Criteria **11–16** are satisfied.
-
-### Stage 9B — directional diagnostics and controls — completed
-
-For each h_L/h_R continuation before branch weighting:
-
-- forward: `(A_R,A_acc)=(+1,+0.5)`;
-- reversed: `(A_R,A_acc)=(-1,-0.5)`;
-- balanced: `(A_R,A_acc)=(0,0)`;
-- no-record: `(A_R,A_acc)=(0,0)`.
-
-All controls preserve nontrivial h_L/h_R `V_extension`.
-
-`balanced zero R_direction != no R_content`.
-
-Criteria **17–23** are satisfied.
-
-Strict validation: **`708 passed in 196.73s`** (run #975).
-
-### Stage 9C — typed modal models and directional operational underdetermination — completed
-
-The same directional carrier receives selected-`h*` epistemic and no-selector ontic-extension semantics. With matched positive weights their public `O_QR` views are equal despite distinct privileged modal structures. Hidden h* swap remains invisible. Weight mismatch changes future prediction without changing current direction.
-
-`R_direction present + V_extension nontrivial + matched O_QR => V_semantics underdetermined`.
-
-Criteria **24–30** are satisfied.
-
-Strict validation: **`720 passed in 265.06s`** (run #995).
-
-### Stage 9D — continuation-aware clock transport — completed
-
-Stage 9D re-derives the physical A/B/C atlas separately for h_L and h_R:
-
-- 18 total rank-14 charts;
-- 108 genuine ordered distinct-clock transports;
-- 324 three-clock compositions;
-- typed directional record covariance;
-- class/weight covariance;
-- matched modal transported views;
-- wrong event/class/continuation-map and bare-observable controls rejected.
-
-`perspective change != temporal-direction reversal`.
-
-`continuation-aware transport != one universal h-independent map`.
-
-Full Stage 9C future-signature measurement-family covariance remains `not_established`.
-
-Criteria **31–36** are satisfied.
-
-Scientific validation: **`733 passed in 372.31s`** (run #1013); document-synchronized regression: **`734 passed in 295.14s`** (run #1047).
-
-### Stage 9E — P/O/R_direction/V compatibility matrix — completed
-
-Executable matrix:
-
-| relation | status |
-| --- | --- |
-| `R_direction-V_extension` | `compatible` |
-| `R_direction-V_weights` | `compatible` |
-| `R_direction-V_semantics` | `underdetermined` |
-| `R_access-V` | `compatible` |
-| `P-R_direction-V` | `compatible` |
-| `O-R_direction-V` | `compatible` |
-
-Constraint qualifiers:
-
-- `V_extension=>R_direction = implication_refuted`;
-- `R_direction=>V_extension identity = implication_refuted`;
-- `O=>R_direction = implication_refuted`;
-- direct `Xi_RV` value constraint = `not_established`;
-- full Stage 9C future-signature measurement covariance = `not_established`.
-
-Thus the specific Stage 8E obstruction behind `full P/O/directional-R/V = partial` is removed at the level of **structural typed compatibility**. The result does not establish universal R-V independence or every possible measurement-family relation.
-
-`compatibility != identity != determination`.
-
-`accessible canonical R_access-V compatibility != accessibility independence`.
-
-Criteria **37–42** are satisfied.
-
-Scientific validation: **`743 passed in 404.42s`** (run #1051).
-
-### Stage 9F — ablation / reconstruction / accessibility matrix — completed
-
-Stage 9F pressure-tests the Stage 9E result with eight typed ablations.
-
-Key results:
-
-- record-write neutralization removes target-specific record content/direction/access while nontrivial h_L/h_R V and a 108-comparison re-derived P atlas remain;
-- scrambler neutralization retains one-bit `R_content` but gives `(A_R,A_acc)=(0,0)`, while nontrivial V and the 108-comparison P atlas remain;
-- singleton QExt removes `V_extension` multiplicity while one-bit record, `(A_R,A_acc)=(+1,+0.5)`, and a 54-comparison one-continuation P atlas remain; the sole weight is reconstructible as 1;
-- erased selected-vs-unselected modal semantics are lost and are not uniquely reconstructed from the retained public carrier;
-- unfixed `V_weights` are underdetermined;
-- hiding local record access leaves global record/direction/V represented while `R_access = inaccessible`;
-- removing explicit P edge matrices leaves them reconstructible from per-node coordinates over 108 comparisons;
-- removing event/class correspondence leaves local P executable but makes typed P-R-V identification `not_established`;
-- deliberately wrong record-observable coordinate reuse is rejected.
-
-The combined directional/V controls therefore give finite-family countermodels in both directions:
-
-- nontrivial V multiplicity without directional R;
-- directional R without nontrivial V multiplicity.
-
-They do **not** constitute a universal R-V independence theorem.
-
-`record content != directional record arrow`.
-
-`A_acc=0 != inaccessible record content`.
-
-`directional R without V multiplicity != universal R-V independence theorem`.
-
-`V without directional R != universal R-V independence theorem`.
-
-`P edge reconstruction != P=R or P=V`.
-
-`local P transport without chi != typed event/class identification`.
-
-Criteria **43–47** are satisfied.
-
-Scientific validation: **`754 passed in 438.94s`** (run #1077); documentation-synchronized regression: **`755 passed in 348.67s`** (run #1095).
-
-### Stage 9G — synthesis and evidence-selected next gate — completed
-
-Executable synthesis choice:
-
-`refined_layered`.
-
-Stage 9G retains:
-
-- top-level `T=(O,P,R,V;Xi)`;
-- `R=(R_content,R_direction,R_access)`;
-- `V=(V_extension,V_semantics,V_weights)`;
-- explicit typed event/class/observable correspondence;
-- P edge matrices as derived representations when per-node coordinates are retained.
-
-It does **not** establish a direct `Xi_RV` value law.
-
-The completed Stage 9 gate is removed from the future ranking. Remaining gates are ranked:
-
-1. `full_measurement_covariance` — score **9**;
-2. `richer_causal_order` — score **6**;
-3. `parametrized_covariance_precursor` — score **5**;
-4. `nonideal_povm_clocks` — score **4**.
+## Stage 10 — Fully typed future-measurement covariance — completed; merge-ready checkpoint
 
 Selected Stage 10 gate:
 
 > **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
-This is selected because full Stage 9C future-signature measurement-family covariance is the sharpest explicit operational boundary left after state/metric/record/class/weight transport and P/O/R/V compatibility are already established.
+Stage 10.0 — protocol freeze — completed.
 
-`finite-family bidirectional countermodels != universal R-V independence theorem`.
+Stage 10A — typed reference future-measurement family — completed.
 
-`typed Xi correspondence retained != direct Xi_RV value law established`.
+Stage 10B — continuation-specific measurement lift / normalization choice — completed.
 
-`P edge reconstruction != P layer universally redundant`.
+Stage 10C — continuation-aware A/B/C measurement transport — completed: 18 typed charts, 108 genuine ordered distinct-clock measurement transports, and 324 three-clock compositions.
 
-Criteria **48–49** are satisfied.
+Stage 10D — per-continuation Born/completeness/positivity covariance — completed: 196 Hermitian-tomography-complete probes and 7056 probe outcome-probability evaluations support the strong finite-family result.
 
-Source-level Stage 9G validation: **`765 passed in 248.81s`** (run #1099).
+Stage 10E — weights, modal models, and evidence-update covariance — completed.
 
-### Stage 9 criterion 50 — completed externally
+Stage 10F — ablation / wrong-typing / false-positive controls — completed. `numerical reconstructibility != typed operational identification`.
 
-The corrected documentation-synchronized Stage 9 head passed GitHub Actions run #1121:
+Stage 10G — synthesis and evidence-selected next gate — completed. Criteria **48–49** are satisfied.
 
-**`766 passed in 459.00s (0:07:38)`**.
+Executable Stage 10G synthesis:
 
-Reviewed branch head: `1bcdc83a9dd5261f3d0de8d152534afda89667d7`.
+`measurement_covariant`.
 
-Reviewed PR merge-ref: `b53906446fd6970e3cfb03f110690ea9b5ce97b2`.
+The bounded result is:
 
-At that checkpoint the branch was behind `main` by 0 commits, PR #10 was mergeable, and there were no unresolved review threads or submitted reviews. Criterion 50 is therefore closed as an external merge-readiness condition and adds no new scientific claim.
+`fully typed finite future-measurement covariance = established`.
 
-## Stage 10 — Fully typed future-measurement covariance — selected next gate
+Stage 10G ranking:
 
-Selected gate:
+1. `parametrized_covariance_precursor` — **9**
+2. `richer_causal_order` — **7**
+3. `nonideal_povm_clocks` — **6**
 
-> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
+Stage 10 criterion 50 — completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**. At review, PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers.
 
-The Stage 10 protocol should freeze a single measurement-family object that makes explicit:
+`repository validation != new scientific evidence`.
 
-- continuation class;
-- source/target clock perspective;
-- relational event anchor;
-- outcome/effect identity;
-- continuation-weight semantics;
-- probability reconstruction;
-- event/class/observable correspondence.
+`merge-ready != merged`.
 
-The key test is whether the Stage 9C future-signature measurement family can be transported as a correctly typed operational object, not merely whether states and individual record observables transform covariantly.
+## Stage 11 — Parametrized covariance precursor — selected next gate
 
-Stage 10 is ready to begin after Stage 9 is merged.
+Selected Stage 11 gate:
 
-## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate
+> **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
 
-The parametrized/general-covariance precursor rises from score 2 at Stage 8G to score 5 at Stage 9G because the finite O/P/R/V architecture is substantially more mature and the directional-R/V blocker is resolved in the declared family.
-
-It remains deferred behind Stage 10 because:
+The goal is to remove one preferred external parameterization while preserving or reconstructing the typed physical/clock/record/modal/measurement architecture. This is the controlled next test of the repeatedly retained boundary:
 
 `finite clock covariance != general covariance`.
 
-Introducing a covariance/gravity extension before closing the known future-measurement transport boundary would change more than one unresolved structural ingredient at once.
+It is deliberately narrower than a gravitational theory:
 
-Gravity/general covariance is deferred, not abandoned.
+`parametrized covariance precursor != general relativity`.
+
+A richer causal/order layer and nonideal/POVM clocks remain live later candidates rather than rejected directions.
+
+### Historical roadmap labels retained for regression context
+
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is the completed Stage 10 merge-ready checkpoint and the selected Stage 11 parametrized precursor above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 
-Seek empirical relevance only after deriving a genuinely discriminating prediction not already guaranteed by the underlying formalism.
+Seek empirical relevance only after a genuinely discriminating prediction is derived that is not already guaranteed by the chosen formal representation.
 
 ## Cautions
 
 - `operational quantum equality != modal/ontological identity`;
-- `operational directional equality != modal/ontological identity`;
-- `Potentiality != quantum randomness by definition`;
-- `QExt represented != ontically real futures by definition`;
-- `P-V covariance != P=V`;
-- `directional record covariance != P=R`;
-- `R-V compatibility != R=V`;
-- `record content != directional record arrow`;
-- `A_acc=0 != inaccessible record content`;
-- `order != directional record arrow`;
-- `continuation identity != record-direction identity`;
-- `control of R_direction != control of V_semantics`;
-- `control of V_weights != determination of V_semantics`;
-- `P-R_direction-V covariance != ontic openness`;
-- `O-R_direction-V compatibility != O determines R_direction`;
-- `R_direction-V_extension compatibility != universal R-V independence`;
-- `directional R without V multiplicity != universal R-V independence theorem`;
-- `V without directional R != universal R-V independence theorem`;
-- `finite-family bidirectional countermodels != universal R-V independence theorem`;
-- `singleton support != absence of a formal selected-vs-unselected type distinction`;
-- `accessible canonical R_access-V compatibility != accessibility independence`;
-- `P edge reconstruction != P=R or P=V`;
-- `P edge reconstruction != P layer universally redundant`;
-- `local P transport without chi != typed event/class identification`;
-- `absence of an established direct Xi_RV value constraint != proof that no such constraint exists`;
-- `typed Xi correspondence retained != direct Xi_RV value law established`;
-- `no direct Xi_RV law established != no possible R-V constraint`;
-- `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
-- `explicit evidence update != ontological becoming`;
-- `reconstructible != universally redundant`;
-- `lost != metaphysically irreducible`;
-- `underdetermined != ontically open`;
-- `inaccessible != globally absent`;
-- `full Stage 8C measurement covariance remains not_established`;
-- `full Stage 9C future-measurement covariance remains not_established`;
+- `future-measurement covariance != future actuality`;
+- `measurement covariance != modal/ontological identity`;
+- `perspective-invariant future probabilities != proof of eternalism`;
+- `measurement covariance != refutation of ontological becoming`;
+- `typed-resource necessity != metaphysical fundamentality`;
 - `finite clock covariance != general covariance`;
-- `not_established != false`;
 - `finite-model success != empirical discovery`.

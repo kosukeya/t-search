@@ -81,17 +81,24 @@ def test_stage9_r_direction_v_questions_are_split_not_collapsed() -> None:
         assert fragment in protocol
 
 
-def test_stage9_sequence_and_exit_criteria_advance_through_stage9e() -> None:
+def test_stage9_sequence_and_exit_criteria_advance_through_stage9f() -> None:
     protocol = _read("docs/stage9_protocol.md")
     readme = _read("README.md")
     roadmap = _read("docs/roadmap.md")
     for text in (protocol, readme, roadmap):
-        for stage in ("Stage 9A", "Stage 9B", "Stage 9C", "Stage 9D", "Stage 9E"):
+        for stage in (
+            "Stage 9A",
+            "Stage 9B",
+            "Stage 9C",
+            "Stage 9D",
+            "Stage 9E",
+            "Stage 9F",
+        ):
             assert stage in text and "completed" in text
-        assert "Stage 9F" in text and "next" in text
-    assert "Stage 9E closes **37–42**" in protocol
-    assert "Criteria 43–50 remain future work" in protocol
-    assert "criteria **43–47**: Stage 9F ablation/reconstruction/accessibility" in protocol
+        assert "Stage 9G" in text and "next" in text
+    assert "Stage 9F closes **43–47**" in protocol
+    assert "Criteria 48–50 remain future work" in protocol
+    assert "criteria **48–49**: Stage 9G synthesis and next-gate selection" in protocol
     assert "criterion **50**: external final full-repository regression and merge-readiness review" in protocol
 
 
@@ -193,7 +200,30 @@ def test_stage9e_checkpoint_records_compatibility_matrix_and_constraints() -> No
         assert "directional record arrow != ontological becoming" in text
     assert "criteria 37–42" in results.lower()
     assert "743 passed in 404.42s" in results
-    assert "Stage 9F" in results and "Next" in results
+
+
+def test_stage9f_checkpoint_records_ablation_reconstruction_and_accessibility() -> None:
+    notes = _read("docs/stage9f_notes.md")
+    results = _read("results/stage9f_ablation.md")
+    protocol = _read("docs/stage9_protocol.md")
+    for text in (notes, results, protocol):
+        lowered = text.lower()
+        assert "scrambler neutralized" in lowered
+        assert "singleton" in lowered
+        assert "R_content" in text and "R_direction" in text and "R_access" in text
+        assert "reconstructible" in text
+        assert "inaccessible" in text
+        assert "underdetermined" in text
+        assert "not_established" in text
+        assert "record content != directional record arrow" in text
+        assert "local P transport without chi != typed event/class identification" in text
+        assert "covariance of a wrongly typed observable != semantic correctness" in text
+        assert "directional record arrow != ontological becoming" in text
+    assert "criteria 43–47" in results.lower()
+    assert "A_acc=0 != inaccessible record content" in results
+    assert "108" in results and "54" in results
+    assert "754 passed in 438.94s" in results
+    assert "Stage 9G" in results and "Next" in results
 
 
 def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
@@ -216,11 +246,11 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
             assert status in text
 
 
-def test_readme_records_stage8_as_merged_and_stage9e_as_current_checkpoint() -> None:
+def test_readme_records_stage8_as_merged_and_stage9f_as_current_checkpoint() -> None:
     readme = _read("README.md")
     lowered = readme.lower()
     assert "Stages 1–8 are completed and merged" in readme
-    assert "stage 9e are completed" in lowered
-    assert "stage 9f" in lowered and "next" in lowered
-    assert "743 passed in 404.42s" in readme
+    assert "stage 9f are completed" in lowered
+    assert "stage 9g" in lowered and "next" in lowered
+    assert "754 passed in 438.94s" in readme
     assert "Draft PR #9" not in readme

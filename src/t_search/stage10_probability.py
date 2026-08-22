@@ -1,8 +1,8 @@
 """Stage 10D per-continuation Born-probability covariance.
 
 Stage 10C established that the typed future-signature measurement *forms* are
-covariant over the continuation-specific A/B/C clock atlas.  Stage 10D now
-checks the operational probabilities themselves before any continuation-weight
+covariant over the continuation-specific A/B/C clock atlas.  Stage 10D checks
+the operational probabilities themselves before any continuation-weight
 aggregation.
 
 For a local chart state z and the Stage 10C effect/normalization forms,
@@ -10,10 +10,18 @@ For a local chart state z and the Stage 10C effect/normalization forms,
     p(o|h,X,j) = z^dagger F^X_{h,o} z / (z^dagger N^X_h z).
 
 The canonical continuation states must reproduce the unchanged Stage 9C
-future-signature likelihoods at all 18 charts.  A deterministic family of
-additional constrained physical-coordinate probes is also transported through
-the atlas.  Those probes are used to rule out accidental equality on the two
-canonical states and to make wrong-normalization controls discriminating.
+future-signature likelihoods at all 18 charts.  A deterministic,
+Hermitian-tomography-complete family of additional constrained physical-
+coordinate probes is also transported through the atlas.  Those probes rule
+out accidental equality on the canonical states and make wrong-normalization
+controls discriminating.
+
+A Stage 10D pilot exposed an important finite-model fact: the Stage 9D physical
+metric can numerically coincide with the Stage 10 operational normalization
+form even though the two remain differently typed resources.  Therefore the
+negative metric control is a genuinely *misaligned chart metric*, not the
+correct same-chart Stage 9D metric.  Typed distinction does not imply numerical
+inequality.
 
 This stage establishes the typed *per-continuation* measurement-family
 covariance.  Continuation-weight aggregation, epistemic/ontic public views,
@@ -29,7 +37,6 @@ from typing import Literal
 import numpy as np
 
 from .stage5_clock_change import DEFAULT_ATOL, SUBSYSTEMS
-from .stage7_history import UPPER_EVENT
 from .stage8_continuations import QuantumContinuation
 from .stage9_modal import (
     FUTURE_SIGNATURE_LEFT,
@@ -37,12 +44,11 @@ from .stage9_modal import (
     canonical_stage9_directional_carrier,
     continuation_future_signature_probabilities,
 )
-from .stage9_substrate import stage9_physical_basis
-from .stage9_transport import (
-    stage9_clock_coordinates,
-    stage9_reduced_support_coordinates,
-    stage9_support_metric,
+from .stage9_substrate import (
+    canonical_stage9_physical_state,
+    stage9_physical_basis,
 )
+from .stage9_transport import stage9_clock_coordinates
 from .stage10_lift import (
     Stage10ContinuationMeasurementLift,
     canonical_stage10b_lifts,
@@ -58,7 +64,7 @@ MeasurementCovarianceStatus = Literal[
 ]
 
 STAGE10D_PROBE_FAMILY = (
-    "14 physical-coordinate basis probes + adjacent real/phase superpositions + dense complex probe"
+    "Hermitian-tomography-complete 196 physical-coordinate probes"
 )
 
 
@@ -91,12 +97,15 @@ class Stage10DProbabilityDiagnostics:
     minimum_probe_probability: float
     maximum_probe_probability: float
     minimum_probe_denominator: float
+    max_operational_physical_metric_form_residual: float
+    physical_metric_operational_normalization_numerically_coincident: bool
     wrong_identity_normalization_probability_residual: float
     wrong_identity_normalization_sum_residual: float
-    wrong_physical_metric_probability_residual: float
-    wrong_physical_metric_sum_residual: float
+    misaligned_metric_form_residual: float
+    misaligned_metric_probability_residual: float
+    misaligned_metric_sum_residual: float
     wrong_identity_normalization_rejected: bool
-    wrong_physical_metric_rejected: bool
+    misaligned_metric_rejected: bool
     accidental_canonical_equality_ruled_out: bool
     completeness_probability_covariance: bool
     positivity_probability_covariance: bool
@@ -107,32 +116,30 @@ class Stage10DProbabilityDiagnostics:
 
 
 def stage10d_probe_family() -> tuple[Stage10DProbe, ...]:
-    """Return deterministic nonzero coordinates in the 14D physical space.
+    """Return a tomography-complete family for 14D Hermitian quadratic forms.
 
-    Every vector is a valid constrained input because it is interpreted as
-    coordinates in the continuation-specific Stage 9 physical basis.  The
-    family deliberately includes phase-sensitive superpositions so that a
-    control cannot pass merely because basis-state diagonal matrix elements
-    happen to agree.
+    For every coordinate basis vector e_i, and every pair i<j, the family
+    contains e_i, (e_i+e_j)/sqrt(2), and (e_i+i e_j)/sqrt(2).  Their quadratic
+    expectations determine all diagonal, real off-diagonal, and imaginary
+    off-diagonal entries of a Hermitian form.  Thus a wrong Hermitian
+    normalization cannot hide merely because the two canonical states fail to
+    probe a differing matrix component.
+
+    Every probe is a valid constrained input because it is interpreted as
+    coordinates in the continuation-specific Stage 9 physical basis.
     """
 
     dim = 14
-    probes: list[Stage10DProbe] = []
     eye = np.eye(dim, dtype=np.complex128)
-    for index in range(dim):
-        probes.append(Stage10DProbe(f"basis_{index}", eye[:, index].copy()))
-
-    for index in range(dim - 1):
-        real = (eye[:, index] + eye[:, index + 1]) / np.sqrt(2.0)
-        phase = (eye[:, index] + 1j * eye[:, index + 1]) / np.sqrt(2.0)
-        probes.append(Stage10DProbe(f"real_pair_{index}_{index+1}", real))
-        probes.append(Stage10DProbe(f"phase_pair_{index}_{index+1}", phase))
-
-    dense = np.arange(1, dim + 1, dtype=np.float64) + 1j * np.arange(
-        dim, 0, -1, dtype=np.float64
-    )
-    dense = dense / np.linalg.norm(dense)
-    probes.append(Stage10DProbe("dense_complex", dense.astype(np.complex128)))
+    probes: list[Stage10DProbe] = [
+        Stage10DProbe(f"basis_{index}", eye[:, index].copy())
+        for index in range(dim)
+    ]
+    for left, right in combinations(range(dim), 2):
+        real = (eye[:, left] + eye[:, right]) / np.sqrt(2.0)
+        phase = (eye[:, left] + 1j * eye[:, right]) / np.sqrt(2.0)
+        probes.append(Stage10DProbe(f"real_pair_{left}_{right}", real))
+        probes.append(Stage10DProbe(f"phase_pair_{left}_{right}", phase))
     return tuple(probes)
 
 
@@ -145,6 +152,24 @@ def _chart_lookup() -> dict[tuple[str, str, int], Stage10ChartMeasurement]:
 
 def _lift_lookup() -> dict[str, Stage10ContinuationMeasurementLift]:
     return {lift.continuation_id: lift for lift in canonical_stage10b_lifts()}
+
+
+def _physical_coordinates(
+    continuation: QuantumContinuation, *, atol: float
+) -> np.ndarray:
+    basis = stage9_physical_basis(continuation)
+    state = canonical_stage9_physical_state(continuation)
+    coordinates, _, rank, _ = np.linalg.lstsq(basis, state, rcond=None)
+    if rank != 14:
+        raise ValueError("Stage 10D physical basis is not full rank")
+    if float(np.linalg.norm(basis @ coordinates - state)) > 10 * atol:
+        raise ValueError("Stage 10D canonical physical-coordinate reconstruction failed")
+    return np.asarray(coordinates, dtype=np.complex128)
+
+
+def _support_metric_from_coordinates(coordinates: np.ndarray) -> np.ndarray:
+    inverse = np.linalg.inv(coordinates)
+    return inverse.conj().T @ inverse
 
 
 def _validate_real_denominator(value: complex, *, atol: float) -> float:
@@ -188,17 +213,17 @@ def stage10d_chart_probabilities(
 
     if chart.continuation_id != continuation.continuation_id:
         raise ValueError("Stage 10D chart belongs to a different continuation")
-    if physical_coordinates is None:
-        state = stage9_reduced_support_coordinates(
-            continuation, chart.clock, chart.clock_index
-        )
-    else:
-        coordinates = np.asarray(physical_coordinates, dtype=np.complex128)
-        if coordinates.shape != (14,) or float(np.linalg.norm(coordinates)) <= atol:
-            raise ValueError("Stage 10D probe coordinates must be a nonzero 14-vector")
-        state = stage9_clock_coordinates(
-            continuation, chart.clock, chart.clock_index
-        ) @ coordinates
+    coordinates = stage9_clock_coordinates(
+        continuation, chart.clock, chart.clock_index
+    )
+    physical = (
+        _physical_coordinates(continuation, atol=atol)
+        if physical_coordinates is None
+        else np.asarray(physical_coordinates, dtype=np.complex128)
+    )
+    if physical.shape != (14,) or float(np.linalg.norm(physical)) <= atol:
+        raise ValueError("Stage 10D physical coordinates must be a nonzero 14-vector")
+    state = coordinates @ physical
     selected_normalization = (
         chart.normalization_form if normalization is None else normalization
     )
@@ -260,35 +285,26 @@ def _normalization_denominator(
     )
 
 
-def _wrong_normalization_assessment(
-    continuation: QuantumContinuation,
-    chart: Stage10ChartMeasurement,
-    probe: Stage10DProbe,
-    correct: tuple[tuple[str, float], ...],
-    *,
-    atol: float,
-) -> tuple[float, float, float, float]:
-    coordinates = stage9_clock_coordinates(
-        continuation, chart.clock, chart.clock_index
+def _most_misaligned_metric(
+    key: tuple[str, str, int],
+    chart_normalization: np.ndarray,
+    metrics: dict[tuple[str, str, int], np.ndarray],
+) -> tuple[np.ndarray, float]:
+    continuation_id, _, _ = key
+    candidates = tuple(
+        (metric_key, metric)
+        for metric_key, metric in metrics.items()
+        if metric_key[0] == continuation_id and metric_key != key
     )
-    state = coordinates @ probe.physical_coordinates
-    identity = np.eye(state.size, dtype=np.complex128)
-    physical_metric = stage9_support_metric(
-        continuation, chart.clock, chart.clock_index
+    if not candidates:
+        raise ValueError("Stage 10D requires at least two charts for metric control")
+    metric_key, metric = max(
+        candidates,
+        key=lambda item: float(np.linalg.norm(item[1] - chart_normalization)),
     )
-
-    identity_probabilities = _effect_probabilities(
-        state, chart, identity, atol=atol
-    )
-    metric_probabilities = _effect_probabilities(
-        state, chart, physical_metric, atol=atol
-    )
-    return (
-        _probability_residual(correct, identity_probabilities),
-        _sum_residual(identity_probabilities),
-        _probability_residual(correct, metric_probabilities),
-        _sum_residual(metric_probabilities),
-    )
+    del metric_key
+    residual = float(np.linalg.norm(metric - chart_normalization))
+    return metric, residual
 
 
 def stage10d_probability_diagnostics(
@@ -298,6 +314,21 @@ def stage10d_probability_diagnostics(
     charts = _chart_lookup()
     lifts = _lift_lookup()
 
+    # Cache the 18 expensive continuation-specific QR coordinate matrices once.
+    coordinate_matrices: dict[tuple[str, str, int], np.ndarray] = {}
+    physical_metrics: dict[tuple[str, str, int], np.ndarray] = {}
+    canonical_physical: dict[str, np.ndarray] = {}
+    for continuation in carrier.continuations:
+        canonical_physical[continuation.continuation_id] = _physical_coordinates(
+            continuation, atol=atol
+        )
+        for clock in SUBSYSTEMS:
+            for index in range(3):
+                key = (continuation.continuation_id, clock, index)
+                coordinates = stage9_clock_coordinates(continuation, clock, index)
+                coordinate_matrices[key] = coordinates
+                physical_metrics[key] = _support_metric_from_coordinates(coordinates)
+
     max_pairwise = 0.0
     max_reference = 0.0
     max_canonical_sum = 0.0
@@ -306,17 +337,21 @@ def stage10d_probability_diagnostics(
     min_canonical_denominator = float("inf")
     canonical_evaluations = 0
     swapped_numeric_residual = 0.0
+    max_operational_metric_form_residual = 0.0
 
     for continuation in carrier.continuations:
         reference = continuation_future_signature_probabilities(
             carrier, continuation, atol=atol
         )
         node_probabilities: list[tuple[tuple[str, float], ...]] = []
+        physical = canonical_physical[continuation.continuation_id]
         for clock in SUBSYSTEMS:
             for index in range(3):
-                chart = charts[(continuation.continuation_id, clock, index)]
-                values = stage10d_chart_probabilities(
-                    continuation, chart, atol=atol
+                key = (continuation.continuation_id, clock, index)
+                chart = charts[key]
+                state = coordinate_matrices[key] @ physical
+                values = _effect_probabilities(
+                    state, chart, chart.normalization_form, atol=atol
                 )
                 node_probabilities.append(values)
                 canonical_evaluations += len(values)
@@ -327,14 +362,17 @@ def stage10d_probability_diagnostics(
                 low, high = _bounds(values)
                 min_canonical_probability = min(min_canonical_probability, low)
                 max_canonical_probability = max(max_canonical_probability, high)
-                state = stage9_reduced_support_coordinates(
-                    continuation, clock, index
-                )
                 min_canonical_denominator = min(
                     min_canonical_denominator,
                     _normalization_denominator(
                         state, chart.normalization_form, atol=atol
                     ),
+                )
+                max_operational_metric_form_residual = max(
+                    max_operational_metric_form_residual,
+                    float(np.linalg.norm(
+                        chart.normalization_form - physical_metrics[key]
+                    )),
                 )
                 table = _dict(values)
                 swapped_numeric_residual = max(
@@ -364,8 +402,9 @@ def stage10d_probability_diagnostics(
     min_probe_denominator = float("inf")
     wrong_identity_probability = 0.0
     wrong_identity_sum = 0.0
-    wrong_metric_probability = 0.0
-    wrong_metric_sum = 0.0
+    misaligned_metric_form_residual = 0.0
+    misaligned_metric_probability = 0.0
+    misaligned_metric_sum = 0.0
 
     for continuation in carrier.continuations:
         basis = stage9_physical_basis(continuation)
@@ -387,12 +426,11 @@ def stage10d_probability_diagnostics(
             )
             for clock in SUBSYSTEMS:
                 for index in range(3):
-                    chart = charts[(continuation.continuation_id, clock, index)]
-                    values = stage10d_chart_probabilities(
-                        continuation,
-                        chart,
-                        physical_coordinates=probe.physical_coordinates,
-                        atol=atol,
+                    key = (continuation.continuation_id, clock, index)
+                    chart = charts[key]
+                    state = coordinate_matrices[key] @ probe.physical_coordinates
+                    values = _effect_probabilities(
+                        state, chart, chart.normalization_form, atol=atol
                     )
                     probe_evaluations += len(values)
                     max_probe_covariance = max(
@@ -403,33 +441,42 @@ def stage10d_probability_diagnostics(
                     low, high = _bounds(values)
                     min_probe_probability = min(min_probe_probability, low)
                     max_probe_probability = max(max_probe_probability, high)
-                    state = stage9_clock_coordinates(
-                        continuation, clock, index
-                    ) @ probe.physical_coordinates
                     min_probe_denominator = min(
                         min_probe_denominator,
                         _normalization_denominator(
                             state, chart.normalization_form, atol=atol
                         ),
                     )
-                    (
-                        identity_probability_residual,
-                        identity_sum_residual,
-                        metric_probability_residual,
-                        metric_sum_residual,
-                    ) = _wrong_normalization_assessment(
-                        continuation, chart, probe, values, atol=atol
+
+                    identity = np.eye(state.size, dtype=np.complex128)
+                    identity_probabilities = _effect_probabilities(
+                        state, chart, identity, atol=atol
                     )
                     wrong_identity_probability = max(
-                        wrong_identity_probability, identity_probability_residual
+                        wrong_identity_probability,
+                        _probability_residual(values, identity_probabilities),
                     )
                     wrong_identity_sum = max(
-                        wrong_identity_sum, identity_sum_residual
+                        wrong_identity_sum, _sum_residual(identity_probabilities)
                     )
-                    wrong_metric_probability = max(
-                        wrong_metric_probability, metric_probability_residual
+
+                    wrong_metric, form_residual = _most_misaligned_metric(
+                        key, chart.normalization_form, physical_metrics
                     )
-                    wrong_metric_sum = max(wrong_metric_sum, metric_sum_residual)
+                    misaligned_metric_form_residual = max(
+                        misaligned_metric_form_residual, form_residual
+                    )
+                    wrong_metric_probabilities = _effect_probabilities(
+                        state, chart, wrong_metric, atol=atol
+                    )
+                    misaligned_metric_probability = max(
+                        misaligned_metric_probability,
+                        _probability_residual(values, wrong_metric_probabilities),
+                    )
+                    misaligned_metric_sum = max(
+                        misaligned_metric_sum,
+                        _sum_residual(wrong_metric_probabilities),
+                    )
 
     canonical_covariant = bool(max_pairwise <= 10 * atol)
     reference_covariant = bool(max_reference <= 10 * atol)
@@ -443,19 +490,24 @@ def stage10d_probability_diagnostics(
         and min_canonical_denominator > atol
         and min_probe_denominator > atol
     )
+    metric_coincident = bool(max_operational_metric_form_residual <= 10 * atol)
     wrong_identity_rejected = bool(
         wrong_identity_probability > 10 * atol or wrong_identity_sum > 10 * atol
     )
-    wrong_metric_rejected = bool(
-        wrong_metric_probability > 10 * atol or wrong_metric_sum > 10 * atol
+    misaligned_metric_rejected = bool(
+        misaligned_metric_form_residual > 10 * atol
+        and (
+            misaligned_metric_probability > 10 * atol
+            or misaligned_metric_sum > 10 * atol
+        )
     )
     probe_covariant = bool(max_probe_covariance <= 10 * atol)
     accidental_ruled_out = bool(
-        len(probes) > 1
+        len(probes) == 14 + 2 * (14 * 13 // 2)
         and probe_states_in_physical_span
         and probe_covariant
         and wrong_identity_rejected
-        and wrong_metric_rejected
+        and misaligned_metric_rejected
     )
     swapped_rejected = bool(
         not swapped_audit.valid and swapped_numeric_residual > 10 * atol
@@ -496,12 +548,15 @@ def stage10d_probability_diagnostics(
         minimum_probe_probability=min_probe_probability,
         maximum_probe_probability=max_probe_probability,
         minimum_probe_denominator=min_probe_denominator,
+        max_operational_physical_metric_form_residual=max_operational_metric_form_residual,
+        physical_metric_operational_normalization_numerically_coincident=metric_coincident,
         wrong_identity_normalization_probability_residual=wrong_identity_probability,
         wrong_identity_normalization_sum_residual=wrong_identity_sum,
-        wrong_physical_metric_probability_residual=wrong_metric_probability,
-        wrong_physical_metric_sum_residual=wrong_metric_sum,
+        misaligned_metric_form_residual=misaligned_metric_form_residual,
+        misaligned_metric_probability_residual=misaligned_metric_probability,
+        misaligned_metric_sum_residual=misaligned_metric_sum,
         wrong_identity_normalization_rejected=wrong_identity_rejected,
-        wrong_physical_metric_rejected=wrong_metric_rejected,
+        misaligned_metric_rejected=misaligned_metric_rejected,
         accidental_canonical_equality_ruled_out=accidental_ruled_out,
         completeness_probability_covariance=canonical_complete and probe_complete,
         positivity_probability_covariance=positivity,
@@ -525,10 +580,13 @@ def stage10d_summary(*, atol: float = DEFAULT_ATOL) -> dict[str, object]:
         "probe_probability_evaluations": diagnostics.probe_probability_evaluations,
         "max_probe_chart_covariance_residual": diagnostics.max_probe_chart_covariance_residual,
         "max_probe_probability_sum_residual": diagnostics.max_probe_probability_sum_residual,
+        "max_operational_physical_metric_form_residual": diagnostics.max_operational_physical_metric_form_residual,
+        "physical_metric_operational_normalization_numerically_coincident": diagnostics.physical_metric_operational_normalization_numerically_coincident,
         "wrong_identity_normalization_probability_residual": diagnostics.wrong_identity_normalization_probability_residual,
         "wrong_identity_normalization_sum_residual": diagnostics.wrong_identity_normalization_sum_residual,
-        "wrong_physical_metric_probability_residual": diagnostics.wrong_physical_metric_probability_residual,
-        "wrong_physical_metric_sum_residual": diagnostics.wrong_physical_metric_sum_residual,
+        "misaligned_metric_form_residual": diagnostics.misaligned_metric_form_residual,
+        "misaligned_metric_probability_residual": diagnostics.misaligned_metric_probability_residual,
+        "misaligned_metric_sum_residual": diagnostics.misaligned_metric_sum_residual,
         "swapped_outcome_numeric_residual": diagnostics.swapped_outcome_numeric_residual,
         "per_continuation_probability_covariance": diagnostics.per_continuation_probability_covariance,
         "stage9c_reference_likelihood_covariance": diagnostics.stage9c_reference_likelihood_covariance,

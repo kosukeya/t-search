@@ -91,6 +91,14 @@ def test_stage9_sequence_and_exit_criteria_advance_through_stage9a_only() -> Non
     assert "criterion **50**: external final full-repository regression and merge-readiness review" in protocol
 
 
+def test_stage90_checkpoint_remains_a_historical_freeze_record() -> None:
+    checkpoint = _read("results/stage9_0_protocol_freeze.md")
+    assert "historical protocol-freeze checkpoint" in checkpoint
+    assert "only criteria **1–10** were frozen as completed" in checkpoint
+    assert "criteria **11–50 remained future scientific work**" in checkpoint
+    assert "Stage 9A later closes criteria 11–16" in checkpoint
+
+
 def test_stage9a_checkpoint_records_common_directional_v_substrate() -> None:
     notes = _read("docs/stage9a_notes.md")
     results = _read("results/stage9a_directional_substrate.md")

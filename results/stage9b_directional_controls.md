@@ -1,6 +1,6 @@
 # Stage 9B Results — Directional Diagnostics and Controls
 
-Status: **Stage 9B scientific control family implemented; strict current-head validation follows the executable checks below.**
+Status: **Stage 9B scientific control family complete; criteria 17–23 satisfied.**
 
 ## Question
 
@@ -146,4 +146,12 @@ It does not establish universal independence between R and V. In particular, Sta
 
 The first Stage 9B full-suite run (#973) reached **707 passed / 1 failed**. The single failure was only a regex mismatch between the expected and actual `ValueError` wording for balanced-mixture admissibility; all scientific Stage 9B control tests passed.
 
-The message assertion was corrected and the directional tests were tightened to the exact values shown above. A strict full-suite validation is used to close the Stage 9B checkpoint before advancing to Stage 9C.
+After correcting that assertion and tightening the directional tests to exact values, GitHub Actions run #975 passed:
+
+**`708 passed in 196.73s`**.
+
+This closes the executable Stage 9B criteria 17–23. A later documentation-synchronized full-suite run is a branch-consistency check, not a new scientific Stage 9B claim.
+
+## Next
+
+**Stage 9C — typed modal models and directional operational underdetermination**: place selected-`h*` epistemic and no-selected-continuation ontic-extension semantics on this directional carrier and test whether matched public `O_QR` views remain operationally indistinguishable before update.

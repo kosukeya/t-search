@@ -32,8 +32,8 @@ def test_stage9b_forward_control_reproduces_stage9a_positive_direction():
         assessment = assess_stage9b_control_direction(continuation, "forward")
         assert assessment.record_defined is True
         assert assessment.orientation == "lower-index"
-        assert assessment.record_score > 0.9
-        assert assessment.accessibility_score > 0.4
+        assert np.isclose(assessment.record_score, 1.0, atol=ATOL, rtol=0.0)
+        assert np.isclose(assessment.accessibility_score, 0.5, atol=ATOL, rtol=0.0)
         assert assessment.branch_weight_used is False
         assert assessment.v_extension_nontrivial is True
 
@@ -44,8 +44,10 @@ def test_stage9b_reversed_control_flips_both_directional_diagnostics():
         reversed_item = assess_stage9b_control_direction(continuation, "reversed")
         assert reversed_item.record_defined is True
         assert reversed_item.orientation == "upper-index"
-        assert reversed_item.record_score < -0.9
-        assert reversed_item.accessibility_score < -0.4
+        assert np.isclose(reversed_item.record_score, -1.0, atol=ATOL, rtol=0.0)
+        assert np.isclose(
+            reversed_item.accessibility_score, -0.5, atol=ATOL, rtol=0.0
+        )
         assert np.isclose(
             reversed_item.record_score,
             -forward.record_score,
@@ -136,8 +138,8 @@ def test_stage9b_each_pure_control_is_a_valid_constrained_multiclock_carrier():
 
 def test_stage9b_control_diagnostics_summarize_expected_signs_and_residuals():
     diagnostics = stage9b_control_diagnostics()
-    assert all(score > 0.9 for _, score in diagnostics.forward_scores)
-    assert all(score < -0.9 for _, score in diagnostics.reversed_scores)
+    assert all(np.isclose(score, 1.0, atol=ATOL, rtol=0.0) for _, score in diagnostics.forward_scores)
+    assert all(np.isclose(score, -1.0, atol=ATOL, rtol=0.0) for _, score in diagnostics.reversed_scores)
     assert diagnostics.reversal_record_residual <= ATOL
     assert diagnostics.reversal_accessibility_residual <= ATOL
     assert diagnostics.balanced_record_residual <= ATOL
@@ -155,7 +157,7 @@ def test_stage9b_balanced_has_no_single_pure_schedule_or_state():
     continuation = canonical_continuation_left()
     with pytest.raises(ValueError, match="balanced is a mixture"):
         stage9b_control_schedule_rest_operators(continuation, "balanced")
-    with pytest.raises(ValueError, match="balanced is a mixture"):
+    with pytest.raises(ValueError, match="balanced admissibility"):
         assess_stage9b_control_admissibility(continuation, "balanced")
 
 

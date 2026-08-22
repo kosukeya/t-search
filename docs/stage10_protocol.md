@@ -1,6 +1,6 @@
 # Stage 10 Protocol — Fully Typed Future-Measurement Covariance
 
-Status: **Stage 10.0 protocol frozen; Stage 10A completed; criteria 1–16 completed; Stage 10B next.**
+Status: **Stage 10.0 protocol frozen; Stage 10A and Stage 10B completed; criteria 1–23 completed; Stage 10C next.**
 
 Selected Stage 10 gate from Stage 9G:
 
@@ -78,28 +78,54 @@ The family-level object separately carries the relevant `chi_event`, `chi_class`
 
 `same matrix entries != same typed effect`.
 
-## 4. Normalization remains a scientific decision boundary
+## 4. Normalization decision boundary and Stage 10B selection
 
 Stage 9C uses the Euclidean Born rule on normalized reduced e2 states. Stage 9D clock-change support maps need not be Euclidean-unitary and preserve an induced physical metric instead.
 
-Stage 10 therefore distinguishes candidate representations rather than deciding by fiat:
+The Stage 10.0 protocol therefore froze two candidate descriptions:
 
 1. **chart-local POVM representation** — local effects with `sum_o E_o=I` and declared normalized local conditional states;
-2. **metric-aware effect-form representation** — local metric `G`, effect forms with `sum_o F_o=G`, and
+2. **metric-aware effect-form representation** — local metric/normalization form `G`, effect forms with `sum_o F_o=G`, and
 
    `p(o|h)=z^dagger F_o z / (z^dagger G z)`.
 
-Candidate dual transport:
+Candidate dual transport remains:
 
 `G_Y=S^{-dagger} G_X S^{-1}`
 
 `F_{o,Y}=S^{-dagger} F_{o,X} S^{-1}`.
 
-This remains a candidate to test in Stage 10B, not an imported theorem.
+Stage 10B resolves the representation choice for the next stage without claiming cross-clock covariance yet.
+
+For each continuation `h`, with its own A/e2 reduction `R_h`, Stage 10B derives:
+
+`N_h=R_h^dagger R_h`
+
+`F_{h,o}=R_h^dagger E_o R_h`.
+
+Thus:
+
+`p(o|h)=c_h^dagger F_{h,o} c_h / (c_h^dagger N_h c_h)`
+
+and:
+
+`sum_o F_{h,o}=N_h`.
+
+At the A/e2 QR-support reference chart this is equivalent to the ordinary local POVM `Q_h^dagger E_o Q_h` with identity normalization. Both support and physical-form calculations reproduce the Stage 9C reference likelihoods.
+
+However genuine Stage 9D clock maps are non-Euclidean-unitary, and transporting the reference identity normalization gives `S^{-dagger} I S^{-1}`, not generally a fresh numerical identity. Therefore Stage 10 does not adopt an ad hoc `I in every chart` normalization reset.
+
+The retained Stage 10C representation is:
+
+**reference-induced physical-coordinate effect form + reference-induced operational normalization form**.
+
+The Stage 9D physical-norm metric and Stage 10 operational normalization remain different typed resources; equality is not assumed.
 
 `metric-aware candidate law != established measurement covariance`.
 
 `normalization convention != mere implementation detail`.
+
+`reference-chart identity normalization != identity normalization in every transported chart`.
 
 ## 5. Strong covariance target
 
@@ -139,6 +165,8 @@ Canonical modal models remain:
 
 Later stages test matched public predictions, hidden epistemic `h*` swap invariance, weight mismatch, and common explicit evidence conditioning/posteriors without creating an ontic selector.
 
+The `hidden epistemic `h*` swap` remains outside the public typed measurement schema. A `weight mismatch` must remain operationally visible where the transported likelihoods discriminate continuations, and `common explicit evidence` must be conditioned with the same transported likelihood semantics.
+
 `measurement covariance != modal/ontological identity`.
 
 `weight covariance != selected-continuation observability`.
@@ -170,19 +198,16 @@ Controls must use discriminating valid inputs when one canonical state gives acc
 
 Stage 10A introduces `Stage10ReferenceMeasurementFamily`, `Stage10OutcomeIdentity`, and `Stage10TypedReferenceEffect` while leaving the Stage 9C reference question unchanged.
 
-The reference representation is explicitly A/e2 with prediction anchor e1. The common Stage 9C effect pair is typed separately for h_L and h_R, yielding four typed effects total. This is reference typing only; it is not yet the independently derived physical/support lift required by Stage 10B.
-
-Stage 10A independently recomputes each continuation's Born probabilities from the normalized A/e2 reduced state and the typed effect matrices, then compares them with Stage 9C likelihoods.
+The reference representation is explicitly A/e2 with prediction anchor e1. The common Stage 9C effect pair is typed separately for h_L and h_R, yielding four typed effects total. Stage 10A independently recomputes each continuation's Born probabilities from the normalized A/e2 reduced state and the typed effect matrices.
 
 Established at the reference node:
 
-- canonical outcome identities reproduced;
-- canonical effect matrices reproduced within tolerance;
+- canonical outcome identities/effects reproduced;
 - e1 prediction anchor and e2 target explicitly distinct;
-- positivity/Hermiticity/completeness independently revalidated;
-- h_L/h_R future rays remain operationally discriminating (`overlap^2 < 1`);
-- per-continuation likelihoods reproduce Stage 9C within tolerance;
-- public measurement schema has no hidden epistemic selector/modal-type field.
+- positivity/Hermiticity/completeness revalidated;
+- h_L/h_R future rays remain operationally discriminating;
+- per-continuation likelihoods reproduce Stage 9C;
+- public schema has no hidden epistemic selector/modal-type field.
 
 `typed continuation id != hidden selected continuation`.
 
@@ -190,12 +215,37 @@ Established at the reference node:
 
 Scientific validation: **`783 passed in 461.16s`** (run #1145).
 
-## 10. Stage sequence
+Documentation-synchronized regression: **`787 passed in 465.49s`** (run #1157).
+
+## 10. Stage 10B — continuation-specific measurement lift / normalization choice — completed
+
+Stage 10B independently derives a support representation and physical effect-form representation for each h_L/h_R continuation from that continuation's own A/e2 reduction.
+
+Established:
+
+- independent h_L/h_R lifts;
+- `sum_o E^sup_{h,o}=I` at the reference support chart;
+- `sum_o F_{h,o}=N_h` in physical coordinates;
+- positivity and positive-definite normalization in the declared form sense;
+- support and physical-form likelihoods reproduce Stage 9C for both continuations;
+- preserving class and outcome correspondences are explicit;
+- wrong-continuation lift use is rejected;
+- genuine clock maps are non-Euclidean-unitary, so a fresh identity normalization at every chart is not selected as the transport convention.
+
+Retained representation for Stage 10C:
+
+`reference-induced physical-coordinate effect form + operational normalization form`.
+
+`normalization representation selected != cross-clock measurement covariance established`.
+
+Scientific validation: **`795 passed in 462.74s`** (run #1163).
+
+## 11. Stage sequence
 
 - **Stage 10.0 — protocol freeze — completed**;
 - **Stage 10A — typed reference future-measurement family — completed**;
-- **Stage 10B — continuation-specific measurement lift / normalization choice — next**;
-- **Stage 10C — continuation-aware A/B/C measurement transport**;
+- **Stage 10B — continuation-specific measurement lift / normalization choice — completed**;
+- **Stage 10C — continuation-aware A/B/C measurement transport — next**;
 - **Stage 10D — per-continuation Born/completeness/positivity covariance**;
 - **Stage 10E — weights, modal models, and evidence-update covariance**;
 - **Stage 10F — ablation / wrong-typing / false-positive controls**;
@@ -204,7 +254,7 @@ Scientific validation: **`783 passed in 461.16s`** (run #1145).
 
 No later stage is considered successful merely because an earlier stage passes.
 
-## 11. Exit-criterion allocation
+## 12. Exit-criterion allocation
 
 ### Stage 10.0 — criteria 1–10 — completed
 
@@ -228,15 +278,15 @@ No later stage is considered successful merely because an earlier stage passes.
 15. Per-continuation reference probabilities reproduce Stage 9C likelihoods within tolerance — **satisfied**.
 16. The reference public measurement schema contains no hidden epistemic selector/modal-type field — **satisfied**.
 
-### Stage 10B — criteria 17–23
+### Stage 10B — criteria 17–23 — completed
 
-17. Each continuation receives an independently derived measurement representation on its own physical/support coordinates.
-18. No universal h-independent measurement map is assumed where Stage 9D requires continuation-specific maps.
-19. Effect/effect-form and normalization objects are mathematically well-defined in the chosen representation.
-20. The retained normalization representation is selected by explicit equivalence to the Stage 9C reference, not convenience.
-21. Reference-node probabilities agree under the retained representation for both continuations.
-22. Continuation-class and outcome correspondences are explicit in the lift.
-23. A wrong-continuation lift/map is rejected or produces a discriminating nonzero residual.
+17. Each continuation receives an independently derived measurement representation on its own physical/support coordinates — **satisfied**.
+18. No universal h-independent measurement map is assumed where Stage 9D requires continuation-specific maps — **satisfied**.
+19. Effect/effect-form and normalization objects are mathematically well-defined in the retained representation — **satisfied**.
+20. The retained normalization representation is selected by explicit Stage 9C reference equivalence plus the genuine-map nonunitarity constraint, not convenience — **satisfied**.
+21. Reference-node probabilities agree under the retained representation for both continuations — **satisfied**.
+22. Continuation-class and outcome correspondences are explicit in the lift — **satisfied**.
+23. Wrong-continuation lift use is rejected — **satisfied**.
 
 ### Stage 10C — criteria 24–31
 
@@ -247,7 +297,7 @@ No later stage is considered successful merely because an earlier stage passes.
 28. Completeness is covariant in the declared normalization convention.
 29. Positivity/self-adjointness requirements are covariant in the declared convention.
 30. Outcome identity and event/class correspondence remain valid at every node.
-31. Bare-effect and wrong-event/class controls do not pass as semantically valid covariance.
+31. Bare-effect and wrong-event/class transport controls do not pass as semantically valid covariance.
 
 ### Stage 10D — criteria 32–38
 
@@ -283,7 +333,7 @@ No later stage is considered successful merely because an earlier stage passes.
 
 50. External final full-repository regression and merge-readiness review close Stage 10 only after criteria 1–49 are satisfied or explicitly resolved.
 
-## 12. Status vocabulary
+## 13. Status vocabulary
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established / compatible / implication_refuted`.
 
@@ -295,7 +345,7 @@ Overall measurement-covariance status additionally permits:
 
 `refuted measurement covariance != ontological becoming`.
 
-## 13. Interpretation guards
+## 14. Interpretation guards
 
 - `future-measurement covariance != future actuality`;
 - `future-measurement covariance != ontic future openness`;
@@ -312,10 +362,12 @@ Overall measurement-covariance status additionally permits:
 - `evidence-update covariance != ontological becoming`;
 - `metric-aware candidate law != established measurement covariance`;
 - `chart-local POVM validity != cross-chart family covariance`;
+- `normalization representation selected != measurement covariance established`;
+- `physical metric != operational normalization by definition`;
 - `full finite-clock measurement covariance != general covariance`;
 - `finite-model measurement success != empirical discovery`;
 - `not_established != false`.
 
-## 14. Immediate next step
+## 15. Immediate next step
 
-Proceed to **Stage 10B — continuation-specific measurement lift / normalization choice**.
+Proceed to **Stage 10C — continuation-aware A/B/C measurement transport**.

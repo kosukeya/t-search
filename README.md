@@ -128,7 +128,7 @@ Thus Stage 9A supplies a positive finite-model witness for substrate-level coexi
 
 Stage 9A closes criteria **11–16**.
 
-Validation checkpoint after the Stage 9A implementation and the correction of two brittle Stage 9.0 documentation checks:
+Validation checkpoint after the Stage 9A implementation and correction of the two brittle Stage 9.0 documentation checks:
 
 **`695 passed in 199.79s`** (GitHub Actions run #935).
 

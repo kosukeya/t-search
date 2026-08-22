@@ -159,8 +159,9 @@ This does not imply:
 - `P=V`;
 - directional R determines `V_semantics`;
 - the future is ontically open;
-- one hidden future is physically selected;
-- finite clock covariance is general covariance.
+- one hidden future is physically selected.
+
+`finite clock covariance != general covariance`.
 
 ## Validation
 

@@ -15,10 +15,11 @@ def test_stage10e_checkpoint_status_and_next_stage_are_consistent() -> None:
     assert "Stage 10E completed; criteria 39–43 satisfied" in results
     for text in (notes, results):
         assert "Stage 10F — ablation / wrong-typing / false-positive controls" in text
-    # The protocol must be advanced from the Stage 10D checkpoint before this
-    # documentation-synchronized guard can pass.
+    # Historical guard: later Stage 10 checkpoints may advance the top-level
+    # status, but the completed Stage 10E section and criteria must remain.
     assert "Stage 10E — weights, modal models, and evidence-update covariance — completed" in protocol
-    assert "criteria 1–43 completed" in protocol
+    for criterion in range(39, 44):
+        assert f"{criterion}." in protocol
 
 
 def test_stage10e_weighted_modal_and_hidden_selector_guards_are_documented() -> None:

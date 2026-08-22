@@ -119,6 +119,18 @@ It is not evidence that:
 - record direction is the thermodynamic arrow or phenomenal passage;
 - finite multi-clock compatibility is general covariance.
 
+## Interpretation guards
+
+- `directional record arrow != ontological future openness`;
+- `directional record arrow != ontological becoming`;
+- `QExt represented != ontically real futures by definition`;
+- `continuation identity != record-direction identity`;
+- `weighted directional score != continuation-independent directional structure`;
+- `record content != directional record arrow`;
+- `order != directional record arrow`;
+- `finite constrained-model success != empirical discovery`;
+- `not_established != false`.
+
 ## Validation
 
 Initial Stage 9A run #933: **693 passed / 2 failed**; both failures were pre-existing exact-string documentation checks introduced at Stage 9.0. All Stage 9A scientific/focused tests passed.

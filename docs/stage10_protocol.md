@@ -1,6 +1,6 @@
 # Stage 10 Protocol — Fully Typed Future-Measurement Covariance
 
-Status: **Stage 10.0 protocol frozen; Stage 10A, Stage 10B, and Stage 10C completed; criteria 1–31 completed; Stage 10D next.**
+Status: **Stage 10.0 protocol frozen; Stage 10A, Stage 10B, Stage 10C, and Stage 10D completed; criteria 1–38 completed; Stage 10E next.**
 
 Historical Stage 10B checkpoint: **Stage 10A and Stage 10B completed; criteria 1–23 completed.**
 
@@ -91,13 +91,15 @@ Stage 10B selected the reference-induced physical effect/normalization form. For
 
 At A/e2 this is equivalent to the ordinary local support POVM. Genuine Stage 9D clock maps are non-Euclidean-unitary, so Stage 10 does not reset normalization to numerical identity independently in every chart.
 
-The Stage 9D physical metric and Stage 10 operational normalization remain different typed resources.
+The Stage 9D physical metric and Stage 10 operational normalization remain different typed resources. Stage 10D additionally shows that different typing must not be promoted into an assumption of numerical inequality.
 
 `metric-aware candidate law != established measurement covariance`.
 
 `normalization convention != mere implementation detail`.
 
 `reference-chart identity normalization != identity normalization in every transported chart`.
+
+`typed-resource distinction != numerical inequality`.
 
 ## 5. Strong covariance target
 
@@ -206,25 +208,65 @@ Evidence status after Stage 10C:
 
 `future-measurement representation covariance = established` in the declared finite atlas.
 
-`full per-continuation probability covariance = not_established` until Stage 10D.
+`full per-continuation probability covariance = not_established` at the Stage 10C checkpoint.
 
 `measurement representation covariance != probability covariance by definition`.
 
-Scientific validation: **`809 passed in 476.21s`** (run #1185).
+Scientific validation: **`809 passed in 476.21s`** (run #1185). Documentation-synchronized regression: **`815 passed in 471.02s`** (run #1203).
 
-## 12. Stage sequence
+## 12. Stage 10D — per-continuation Born/completeness/positivity covariance — completed
+
+Stage 10D evaluates the Stage 10C measurement on each canonical continuation independently at every chart:
+
+`p(o|h,X,j)=z^dagger F^X_{h,o} z / (z^dagger N^X_h z)`.
+
+Established before continuation weighting:
+
+- **36** canonical outcome-probability evaluations across the 18 charts;
+- all corresponding nodes agree within tolerance;
+- every chart reproduces the Stage 9C per-continuation likelihood for the same outcome;
+- probability-level completeness `sum_o p(o)=1` and positivity are retained;
+- swapped outcome correspondence is rejected;
+- fresh numerical identity normalization is rejected;
+- a genuinely misaligned chart metric is rejected.
+
+To exclude accidental canonical-state equality, Stage 10D uses a **196-state Hermitian-tomography-complete constrained probe family**:
+
+`14 + 2*C(14,2) = 196`.
+
+This produces **7056** probe outcome-probability evaluations over the two continuations and nine charts each. Correct probability covariance/completeness/positivity persists over the family.
+
+Pilot run #1209 gave **`818 passed / 4 failed`** because it required the correctly corresponding Stage 9D physical metric to be numerically different merely because its semantic role differs from the Stage 10 normalization. The corrected control uses a genuinely misaligned chart metric instead.
+
+`typed-resource distinction != numerical inequality`.
+
+Evidence status after Stage 10D:
+
+`full typed future-measurement covariance = established`
+
+with the explicit scope **per-continuation / pre-weighting / typed finite A/B/C atlas**.
+
+The Stage 10E layer remains separate:
+
+`weighted/modal/update covariance = not_established`.
+
+`per-continuation measurement covariance established != weighted/modal/update covariance established`.
+
+Scientific validation: **`823 passed in 311.17s`** (run #1213).
+
+## 13. Stage sequence
 
 - **Stage 10.0 — protocol freeze — completed**;
 - **Stage 10A — typed reference future-measurement family — completed**;
 - **Stage 10B — continuation-specific measurement lift / normalization choice — completed**;
 - **Stage 10C — continuation-aware A/B/C measurement transport — completed**;
-- **Stage 10D — per-continuation Born/completeness/positivity covariance — next**;
-- **Stage 10E — weights, modal models, and evidence-update covariance**;
+- **Stage 10D — per-continuation Born/completeness/positivity covariance — completed**;
+- **Stage 10E — weights, modal models, and evidence-update covariance — next**;
 - **Stage 10F — ablation / wrong-typing / false-positive controls**;
 - **Stage 10G — synthesis and evidence-selected next gate**;
 - **criterion 50 — external full-repository regression / merge-readiness review**.
 
-## 13. Exit-criterion allocation
+## 14. Exit-criterion allocation
 
 ### Stage 10.0 — criteria 1–10 — completed
 
@@ -269,15 +311,15 @@ Scientific validation: **`809 passed in 476.21s`** (run #1185).
 30. Outcome identity and event/class correspondence remain valid at every node — **satisfied**.
 31. Bare-effect and wrong-event/class controls are rejected — **satisfied**.
 
-### Stage 10D — criteria 32–38
+### Stage 10D — criteria 32–38 — completed
 
-32. Per-continuation outcome probabilities are invariant across all declared corresponding clock nodes.
-33. Every transported chart reproduces Stage 9C reference likelihoods for each continuation/outcome.
-34. Per-continuation likelihood covariance is established before branch-weight aggregation.
-35. Swapped/misdeclared outcome correspondence is detected.
-36. Wrong normalization/metric use is detected on a discriminating input family.
-37. Accidental canonical-state equality is ruled out where necessary by additional valid discriminating inputs.
-38. Full typed future-measurement covariance receives an explicit evidence status: `established`, `partial`, `refuted`, or `not_established`.
+32. Per-continuation outcome probabilities are invariant across all declared corresponding clock nodes — **satisfied**.
+33. Every transported chart reproduces Stage 9C reference likelihoods for each continuation/outcome — **satisfied**.
+34. Per-continuation likelihood covariance is established before branch-weight aggregation — **satisfied**.
+35. Swapped/misdeclared outcome correspondence is detected — **satisfied**.
+36. Fresh-identity and genuinely misaligned-metric normalization errors are detected on a discriminating input family — **satisfied**.
+37. Accidental canonical-state equality is ruled out with 196 Hermitian-tomography-complete valid constrained probes — **satisfied**.
+38. Full typed future-measurement covariance receives scoped status `established` for the per-continuation/pre-weighting finite family — **satisfied**.
 
 ### Stage 10E — criteria 39–43
 
@@ -303,7 +345,7 @@ Scientific validation: **`809 passed in 476.21s`** (run #1185).
 
 50. External final full-repository regression and merge-readiness review close Stage 10 only after criteria 1–49 are satisfied or explicitly resolved.
 
-## 14. Status vocabulary
+## 15. Status vocabulary
 
 `preserved / reconstructible / inaccessible / lost / underdetermined / not_established / compatible / implication_refuted`.
 
@@ -313,7 +355,7 @@ Overall measurement-covariance status additionally permits `established / partia
 
 `refuted measurement covariance != ontological becoming`.
 
-## 15. Interpretation guards
+## 16. Interpretation guards
 
 - `future-measurement covariance != future actuality`;
 - `future-measurement covariance != ontic future openness`;
@@ -332,11 +374,13 @@ Overall measurement-covariance status additionally permits `established / partia
 - `chart-local POVM validity != cross-chart family covariance`;
 - `normalization representation selected != measurement covariance established`;
 - `physical metric != operational normalization by definition`;
+- `typed-resource distinction != numerical inequality`;
 - `measurement representation covariance != probability covariance by definition`;
+- `per-continuation measurement covariance established != weighted/modal/update covariance established`;
 - `full finite-clock measurement covariance != general covariance`;
 - `finite-model measurement success != empirical discovery`;
 - `not_established != false`.
 
-## 16. Immediate next step
+## 17. Immediate next step
 
-Proceed to **Stage 10D — per-continuation Born/completeness/positivity covariance**.
+Proceed to **Stage 10E — weights, modal models, and evidence-update covariance**.

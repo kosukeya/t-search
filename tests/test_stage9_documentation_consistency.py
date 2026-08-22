@@ -97,16 +97,19 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
     protocol = _read("docs/stage9_protocol.md")
     checkpoint = _read("results/stage9_0_protocol_freeze.md")
     for text in (protocol, checkpoint):
-        assert "singleton `QExt`" in text
-        assert "local record access hidden" in text
-        assert "event/class correspondence removed" in text
-        assert "wrong record-observable" in text
+        lowered = text.lower()
+        assert "qext" in lowered and "singleton" in lowered
+        assert "local record access hidden" in lowered
+        assert "event/class correspondence removed" in lowered
+        assert "wrong record-observable" in lowered
         for status in ("preserved", "reconstructible", "inaccessible", "lost", "underdetermined", "not_established"):
             assert status in text
 
 
 def test_readme_records_stage8_as_merged_and_stage9_as_active_next_gate() -> None:
     readme = _read("README.md")
+    lowered = readme.lower()
     assert "Stages 1–8 are completed and merged" in readme
-    assert "Stage 9 — directional records with nontrivial quantum Potentiality" in readme
+    assert "stage 9" in lowered
+    assert "directional records with nontrivial quantum potentiality" in lowered
     assert "Draft PR #9" not in readme

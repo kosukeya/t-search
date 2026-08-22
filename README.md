@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, and Stage 9B are completed on Draft PR #10; Stage 9C — typed modal models and directional operational underdetermination — is next.**
+**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, Stage 9B, and Stage 9C are completed on Draft PR #10; Stage 9D — continuation-aware clock transport — is next.**
 
 Current refined finite-model candidate:
 
@@ -106,6 +106,8 @@ Key documents:
 - [`results/stage9a_directional_substrate.md`](results/stage9a_directional_substrate.md)
 - [`docs/stage9b_notes.md`](docs/stage9b_notes.md)
 - [`results/stage9b_directional_controls.md`](results/stage9b_directional_controls.md)
+- [`docs/stage9c_notes.md`](docs/stage9c_notes.md)
+- [`results/stage9c_directional_modal.md`](results/stage9c_directional_modal.md)
 
 ### Stage 9.0 — protocol freeze — completed
 
@@ -155,6 +157,33 @@ Strict Stage 9B validation:
 
 **`708 passed in 196.73s`** (GitHub Actions run #975).
 
+### Stage 9C — typed modal models and directional operational underdetermination — completed
+
+Stage 9C places selected-`h*` epistemic and no-selected-continuation ontic-extension semantics on the exact same Stage 9 directional carrier.
+
+The public `O_QR` view contains current density, record content, the continuation-independent directional interface, future-signature outcomes/probabilities, and explicit observed evidence, while excluding hidden selector and model-type fields.
+
+With matched positive weights `q_E=K=(0.5,0.5)`:
+
+- epistemic and ontic-extension `O_QR` views are equal;
+- privileged modal structures remain distinct;
+- changing only hidden `h*` from h_L to h_R leaves `O_QR` unchanged;
+- `R_direction` remains present with `(A_R,A_acc)=(+1,+0.5)` before weighting.
+
+A weight mismatch `K=(0.75,0.25)` changes future prediction while preserving the current density, current record data, and directional interface. Explicit common evidence conditions both models consistently, preserves the epistemic pre-existing h*, and does not create an ontic selected-continuation field.
+
+Thus the Stage 8 modal-underdetermination result survives the addition of an explicit nonzero directional record interface:
+
+`R_direction present + nontrivial V_extension + matched O_QR => V_semantics underdetermined in the declared finite family`.
+
+This does not imply ontic openness, a secretly fixed future, or ontological becoming.
+
+Stage 9C closes criteria **24–30**.
+
+Strict Stage 9C validation:
+
+**`720 passed in 265.06s`** (GitHub Actions run #995).
+
 ## Sequence
 
 - Stage 8.0 — completed
@@ -168,8 +197,8 @@ Strict Stage 9B validation:
 - Stage 9.0 — protocol freeze — completed
 - Stage 9A — common directional-R/V continuation substrate — completed
 - Stage 9B — directional diagnostics and controls — completed
-- **Stage 9C — typed modal models and directional operational underdetermination — next**
-- Stage 9D — continuation-aware clock transport
+- Stage 9C — typed modal models and directional operational underdetermination — completed
+- **Stage 9D — continuation-aware clock transport — next**
 - Stage 9E — P/O/R_direction/V compatibility matrix
 - Stage 9F — ablation / reconstruction / accessibility matrix
 - Stage 9G — synthesis and evidence-selected next gate
@@ -181,6 +210,7 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 ## Guards
 
 - `operational quantum equality != modal/ontological identity`;
+- `operational directional equality != modal/ontological identity`;
 - `Potentiality != quantum randomness by definition`;
 - `QExt represented != ontically real futures by definition`;
 - `P-V covariance != P=V`;
@@ -203,6 +233,9 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `balanced mixture != pure constrained history`;
 - `reversed diagnostic sign != reversed Python iteration`;
 - `control of R_direction != control of V_semantics`;
+- `control of V_weights != determination of V_semantics`;
+- `hidden h* diagnostic != operational access to h*`;
+- `weight sensitivity != selected-continuation observability`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
 - `explicit evidence update != ontological becoming`;

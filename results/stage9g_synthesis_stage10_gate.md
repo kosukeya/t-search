@@ -88,9 +88,7 @@ The selection is unique under the declared score function.
 
 Stage 9D already establishes continuation-specific state, metric, directional-record observable, continuation-class, and weight covariance. Stage 9E shows the surrounding P/R/V structure is compatible, and Stage 9F shows explicit P edges are reconstructible while correspondence typing remains necessary.
 
-The full Stage 9C future-signature measurement family is the remaining relation that is explicitly and repeatedly classified:
-
-`not_established`.
+`full Stage 9C future-measurement covariance remains not_established`.
 
 Closing that boundary therefore changes one known missing operational layer at a time and is more discriminating than simultaneously changing order structure, clock ideality, or covariance class.
 

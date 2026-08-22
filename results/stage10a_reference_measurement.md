@@ -1,6 +1,6 @@
 # Stage 10A Results — Typed Reference Future-Measurement Family
 
-Status: **Stage 10A scientific implementation completed; criteria 11–16 assessed below.**
+Status: **Stage 10A completed; criteria 11–16 satisfied.**
 
 ## Question
 
@@ -123,7 +123,11 @@ Stage 10A does **not** establish criteria 17–50 and does not establish full me
 
 ## Validation
 
-The Stage 10A source/focused-test checkpoint is validated by the Stage 10A GitHub Actions scientific run once recorded in this Draft PR. Documentation-synchronized regression is tracked separately.
+Stage 10A source/focused tests passed GitHub Actions run #1145:
+
+**`783 passed in 461.16s (0:07:41)`**.
+
+This is the Stage 10A scientific checkpoint. Documentation-synchronized regression is tracked separately after the checkpoint files are updated.
 
 ## Next
 

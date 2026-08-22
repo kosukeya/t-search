@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9 — directional records with nontrivial quantum Potentiality — is the selected next gate.**
+**Stages 1–8 are completed and merged. Stage 9.0 — directional records with nontrivial quantum Potentiality protocol freeze — is completed; Stage 9A is next.**
 
 Current refined finite-model candidate:
 
@@ -98,6 +98,29 @@ Selected Stage 9 gate:
 
 The gate ranking puts `directional_record_potentiality` ahead of full measurement-family covariance, richer causal order, nonideal/POVM clocks, and the parametrized/generally-covariant precursor.
 
+## Stage 9
+
+Key documents:
+
+- [`docs/stage9_protocol.md`](docs/stage9_protocol.md)
+- [`results/stage9_0_protocol_freeze.md`](results/stage9_0_protocol_freeze.md)
+
+### Stage 9.0 — protocol freeze — completed
+
+Stage 9.0 freezes a stronger same-family integration target. At one declared common current anchor `D_*`, the canonical family must eventually satisfy:
+
+`|QExt(D_*)| >= 2`
+
+while every canonical continuation carries a coherent nonzero directional record structure before branch-weighted aggregation.
+
+The continuation-defining physical distinction must remain independent of the record-direction label/channel:
+
+`continuation identity != record-direction identity`.
+
+Forward / reversed / balanced / no-record controls, selected-vs-unselected modal comparison, continuation-aware A/B/C clock transport, event/class/observable typing, R_direction–V subrole checks, ablations, and interpretation guards are frozen before implementation.
+
+Criteria **1–10** are frozen by Stage 9.0. Criteria **11–50 remain future work**.
+
 ## Sequence
 
 - Stage 8.0 — completed
@@ -108,7 +131,14 @@ The gate ranking puts `directional_record_potentiality` ahead of full measuremen
 - Stage 8E — completed
 - Stage 8F — completed
 - Stage 8G — completed; criterion 50 closed by external validation
-- **Stage 9 — directional records with nontrivial quantum Potentiality — selected next gate**
+- Stage 9.0 — protocol freeze — completed
+- **Stage 9A — common directional-R/V continuation substrate — next**
+- Stage 9B — directional diagnostics and controls
+- Stage 9C — typed modal models and directional operational underdetermination
+- Stage 9D — continuation-aware clock transport
+- Stage 9E — P/O/R_direction/V compatibility matrix
+- Stage 9F — ablation / reconstruction / accessibility matrix
+- Stage 9G — synthesis and evidence-selected next gate
 
 ## Roadmap
 
@@ -133,6 +163,10 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `inaccessible != globally absent`;
 - `record-neutral V witness != universal R-V independence theorem`;
 - `V internal role separation != fundamental primitive decomposition`;
+- `continuation identity != record-direction identity`;
+- `weighted directional score != continuation-independent directional structure`;
 - `directional record arrow != ontological future openness`;
+- `directional record arrow != ontological becoming`;
+- `explicit evidence update != ontological becoming`;
 - `full Stage 8C measurement covariance remains not_established`;
 - `not_established != false`.

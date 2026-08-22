@@ -64,7 +64,7 @@ The public reference schema contains continuation identity but no hidden epistem
 
 ## Scope boundary
 
-Stage 10A was a reference-node result only. It did **not** establish criteria 17–50 when completed. Stage 10B has subsequently completed the continuation-specific lift/normalization choice, but genuine cross-clock measurement covariance remains later work.
+At its own checkpoint, Stage 10A does **not** establish criteria 17–50 and does not establish full measurement covariance. Stage 10B has subsequently completed the continuation-specific lift/normalization choice, but genuine cross-clock measurement covariance remains later work.
 
 `reference-node measurement validity != cross-clock measurement covariance`.
 

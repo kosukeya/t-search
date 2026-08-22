@@ -1,6 +1,6 @@
 # Stage 9A Results — Common Directional-R/V Continuation Substrate
 
-Status: **Stage 9A scientific implementation complete.**
+Status: **Stage 9A scientific implementation complete; Stage 9B directional diagnostics and controls are next.**
 
 ## Question
 
@@ -126,6 +126,8 @@ Initial Stage 9A run #933: **693 passed / 2 failed**; both failures were pre-exi
 After correcting those checks to test semantics rather than exact prose, run #935 passed:
 
 **`695 passed in 199.79s`**.
+
+A documentation-synchronized current-head regression is run after recording this Stage 9A checkpoint; it validates branch/documentation consistency rather than adding a new Stage 9A scientific claim.
 
 ## Next
 

@@ -11,8 +11,10 @@ def test_stage10c_checkpoint_status_and_next_stage_are_consistent() -> None:
     protocol = _read("docs/stage10_protocol.md")
     notes = _read("docs/stage10c_notes.md")
     results = _read("results/stage10c_measurement_transport.md")
-    assert "Stage 10A, Stage 10B, and Stage 10C completed" in protocol
-    assert "criteria 1–31 completed" in protocol
+    # Historical Stage 10C guard: later stages may advance the top-level
+    # checkpoint, but the Stage 10C section and its closed criteria must remain.
+    assert "Stage 10C — continuation-aware A/B/C measurement transport — completed" in protocol
+    assert "### Stage 10C — criteria 24–31 — completed" in protocol
     assert "Stage 10C completed; criteria 24–31 satisfied" in notes
     assert "Stage 10C completed; criteria 24–31 satisfied" in results
     for text in (protocol, notes, results):
@@ -30,6 +32,7 @@ def test_stage10c_atlas_counts_and_dual_transport_are_documented() -> None:
         assert "S^{-dagger}" in text
         assert "direct" in text.lower()
     assert "future-measurement representation covariance = established" in protocol
+    # This remains a historical Stage 10C boundary even after Stage 10D closes it.
     assert "full per-continuation probability covariance = not_established" in protocol
 
 

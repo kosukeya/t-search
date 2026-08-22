@@ -4,11 +4,11 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0 — directional records with nontrivial quantum Potentiality protocol freeze — is completed; Stage 9A is next.**
+**Stages 1–8 are completed and merged. Stage 9.0 and Stage 9A are completed on Draft PR #10; Stage 9B — directional diagnostics and controls — is next.**
 
 Current refined finite-model candidate:
 
-`T8_candidate=(O,P,R,V;Xi)`
+`T9_candidate=(O,P,R,V;Xi)`
 
 with internal bookkeeping:
 
@@ -96,30 +96,41 @@ Selected Stage 9 gate:
 
 > **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
 
-The gate ranking puts `directional_record_potentiality` ahead of full measurement-family covariance, richer causal order, nonideal/POVM clocks, and the parametrized/generally-covariant precursor.
-
 ## Stage 9
 
 Key documents:
 
 - [`docs/stage9_protocol.md`](docs/stage9_protocol.md)
 - [`results/stage9_0_protocol_freeze.md`](results/stage9_0_protocol_freeze.md)
+- [`docs/stage9a_notes.md`](docs/stage9a_notes.md)
+- [`results/stage9a_directional_substrate.md`](results/stage9a_directional_substrate.md)
 
 ### Stage 9.0 — protocol freeze — completed
 
-Stage 9.0 freezes a stronger same-family integration target. At one declared common current anchor `D_*`, the canonical family must eventually satisfy:
+Stage 9.0 freezes the per-continuation directional-R/V integration criterion, forward/reversed/balanced/no-record controls, typed modal comparison, continuation-aware A/B/C clock transport, ablations, and interpretation guards.
 
-`|QExt(D_*)| >= 2`
+Criteria **1–10** are frozen by Stage 9.0.
 
-while every canonical continuation carries a coherent nonzero directional record structure before branch-weighted aggregation.
+### Stage 9A — common directional-R/V continuation substrate — completed
 
-The continuation-defining physical distinction must remain independent of the record-direction label/channel:
+The canonical Stage 9A schedules are:
+
+- `h_L: (I,U_rec,U_scr U_rec)`;
+- `h_R: (I,U_rec,Z_C U_scr U_rec)`.
+
+They share the same e0/e1 A-perspective Actuality and retain `QExt(e1)={h_L,h_R}`. Every canonical continuation separately has a nonzero lower-index directional record orientation before any continuation weighting, while the continuation distinction remains a memory-neutral and record-target-neutral future C-sector action.
+
+Each constrained completion has physical dimension `14`, and all tested A/B/C clock reductions retain rank `14`.
+
+Thus Stage 9A supplies a positive finite-model witness for substrate-level coexistence of nontrivial `V_extension` and `R_direction` without identifying the two.
 
 `continuation identity != record-direction identity`.
 
-Forward / reversed / balanced / no-record controls, selected-vs-unselected modal comparison, continuation-aware A/B/C clock transport, event/class/observable typing, R_direction–V subrole checks, ablations, and interpretation guards are frozen before implementation.
+Stage 9A closes criteria **11–16**.
 
-Criteria **1–10** are frozen by Stage 9.0. Criteria **11–50 remain future work**.
+Validation checkpoint after the Stage 9A implementation and the correction of two brittle Stage 9.0 documentation checks:
+
+**`695 passed in 199.79s`** (GitHub Actions run #935).
 
 ## Sequence
 
@@ -132,8 +143,8 @@ Criteria **1–10** are frozen by Stage 9.0. Criteria **11–50 remain future wo
 - Stage 8F — completed
 - Stage 8G — completed; criterion 50 closed by external validation
 - Stage 9.0 — protocol freeze — completed
-- **Stage 9A — common directional-R/V continuation substrate — next**
-- Stage 9B — directional diagnostics and controls
+- Stage 9A — common directional-R/V continuation substrate — completed
+- **Stage 9B — directional diagnostics and controls — next**
 - Stage 9C — typed modal models and directional operational underdetermination
 - Stage 9D — continuation-aware clock transport
 - Stage 9E — P/O/R_direction/V compatibility matrix

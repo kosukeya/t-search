@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G currently selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–49 are completed.** Stage 10 criterion 50 is the remaining final repository-level validation before PR #11 is merge-ready.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed.** Criterion 50 is closed externally and PR #11 is at the merge-ready checkpoint; Stage 10 has not yet been merged.
 
 ## Stages 0–6 — completed and merged
 
@@ -58,7 +58,7 @@ Historical guards:
 - `P edge reconstruction != P layer universally redundant`;
 - `finite clock covariance != general covariance`.
 
-## Stage 10 — Fully typed future-measurement covariance — criterion 50 pending
+## Stage 10 — Fully typed future-measurement covariance — completed; merge-ready checkpoint
 
 Selected Stage 10 gate:
 
@@ -84,11 +84,9 @@ Executable Stage 10G synthesis:
 
 `measurement_covariant`.
 
-The result is bounded:
+The bounded result is:
 
 `fully typed finite future-measurement covariance = established`.
-
-It does not establish future actuality, eternalism, modal identity, ontological becoming, the absence of becoming, or general covariance.
 
 Stage 10G ranking:
 
@@ -96,7 +94,11 @@ Stage 10G ranking:
 2. `richer_causal_order` — **7**
 3. `nonideal_povm_clocks` — **6**
 
-Criterion 50 remains the final external documentation-synchronized full regression and PR #11 merge-readiness review.
+Stage 10 criterion 50 — completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**. At review, PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
 
 ## Stage 11 — Parametrized covariance precursor — selected next gate
 
@@ -116,7 +118,7 @@ A richer causal/order layer and nonideal/POVM clocks remain live later candidate
 
 ### Historical roadmap labels retained for regression context
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is the Stage 10 criterion-50 checkpoint and the selected Stage 11 parametrized precursor above.
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is the completed Stage 10 merge-ready checkpoint and the selected Stage 11 parametrized precursor above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 

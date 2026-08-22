@@ -1,6 +1,6 @@
 # Stage 10 Protocol — Fully Typed Future-Measurement Covariance
 
-Status: **Stage 10.0 through Stage 10G completed; criteria 1–49 completed; criterion 50 final external full-repository regression / merge-readiness review pending.**
+Status: **Stage 10.0 through Stage 10G and criterion 50 completed; criteria 1–50 completed; PR #11 merge-ready checkpoint.**
 
 Historical checkpoint retained for consistency: **Stage 10A and Stage 10B completed; criteria 1–23 completed.**
 
@@ -162,7 +162,7 @@ Frozen synthesis vocabulary: `measurement_covariant`, `measurement_partial`, `me
 
 Executable result: `measurement_covariant`.
 
-The Stage 9 measurement boundary is closed only for the declared finite typed family. Current Stage 10G regression: run #1267, **`863 passed in 644.50s`**.
+The Stage 9 measurement boundary is closed only for the declared finite typed family. Stage 10G regression: run #1267, **`863 passed in 644.50s`**.
 
 Stage 10G selects:
 
@@ -171,6 +171,16 @@ Stage 10G selects:
 Gate ranking: `parametrized_covariance_precursor=9`, `richer_causal_order=7`, `nonideal_povm_clocks=6`.
 
 `parametrized covariance precursor != general relativity`.
+
+### Stage 10 criterion 50 — external final validation — completed
+
+The documentation-synchronized Stage 10 head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed GitHub Actions run #1271 with **`868 passed in 345.59s (0:05:45)`**.
+
+At that reviewed checkpoint PR #11 was mergeable, the Stage 10 branch was behind `main` by 0 commits, and there were no unresolved review threads or submitted review blockers.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
 
 ## 7. Sequence and exit-criterion allocation
 
@@ -190,7 +200,9 @@ Stage 10F — completed; criteria 44–47.
 
 Stage 10G — completed; criteria 48–49.
 
-Criterion 50 — external final full-repository regression / merge-readiness review — pending.
+Criterion 50 — external final full-repository regression / merge-readiness review — completed.
+
+**Stage 10 criteria 1–50 completed.**
 
 ### Criteria 1–10 — Stage 10.0
 
@@ -267,7 +279,7 @@ Criterion 50 — external final full-repository regression / merge-readiness rev
 
 ### Criterion 50 — external repository validation
 
-50. External final full-repository regression and merge-readiness review — **pending** until the documentation-synchronized branch head passes and PR #11 is checked for mergeability, base freshness, and review blockers.
+50. External final full-repository regression and merge-readiness review — **satisfied**. Validated head `11b4357fccb0b73b7b7b80bc13e34f904290107b`; run #1271: **`868 passed in 345.59s`**; PR #11 mergeable; behind `main` by 0; no unresolved review blockers.
 
 ## 8. Interpretation guards
 
@@ -281,4 +293,6 @@ Criterion 50 — external final full-repository regression / merge-readiness rev
 - `finite clock covariance != general covariance`;
 - `finite-model measurement success != empirical discovery`;
 - `typed-resource necessity != metaphysical fundamentality`;
+- `repository validation != new scientific evidence`;
+- `merge-ready != merged`;
 - `not_established != false`.

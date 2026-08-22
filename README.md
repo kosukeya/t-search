@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–9 are completed and merged. Stage 10.0 through Stage 10G are completed on Draft PR #11; Stage 10 criteria 1–49 are closed. Criterion 50 — the final external full-repository regression / merge-readiness review — is the only remaining Stage 10 exit step.**
+**Stages 1–9 are completed and merged. Stage 10.0 through Stage 10G and criterion 50 are completed on PR #11; Stage 10 criteria 1–50 are closed and PR #11 is at the merge-ready checkpoint. Stage 10 has not yet been merged.**
 
 Current refined finite-model candidate:
 
@@ -60,7 +60,7 @@ Historical guards retained from Stage 9:
 - `P edge reconstruction != P layer universally redundant`;
 - `finite clock covariance != general covariance`.
 
-## Stage 10 — Fully typed future-measurement covariance
+## Stage 10 — Fully typed future-measurement covariance — completed; merge-ready checkpoint
 
 Key documents:
 
@@ -73,6 +73,7 @@ Key documents:
 - [`docs/stage10e_notes.md`](docs/stage10e_notes.md) / [`results/stage10e_modal_covariance.md`](results/stage10e_modal_covariance.md)
 - [`docs/stage10f_notes.md`](docs/stage10f_notes.md) / [`results/stage10f_ablation.md`](results/stage10f_ablation.md)
 - [`docs/stage10g_notes.md`](docs/stage10g_notes.md) / [`results/stage10g_synthesis_stage11_gate.md`](results/stage10g_synthesis_stage11_gate.md)
+- [`results/stage10_criterion50_merge_readiness.md`](results/stage10_criterion50_merge_readiness.md)
 
 Stage 10.0 — protocol freeze — completed.
 
@@ -88,7 +89,7 @@ Stage 10E — weights, modal models, and evidence-update covariance — complete
 
 Stage 10F — ablation / wrong-typing / false-positive controls — completed. Its central guard is `numerical reconstructibility != typed operational identification`.
 
-Stage 10G — synthesis and evidence-selected next gate — completed. Criteria **48–49** are satisfied. Current-head Stage 10G validation passed run #1267: **`863 passed in 644.50s`**.
+Stage 10G — synthesis and evidence-selected next gate — completed. Criteria **48–49** are satisfied. Stage 10G validation passed run #1267: **`863 passed in 644.50s`**.
 
 The bounded Stage 10 status is:
 
@@ -100,7 +101,13 @@ Stage 11 candidate ranking at Stage 10G:
 2. `richer_causal_order` — **7**
 3. `nonideal_povm_clocks` — **6**
 
-Criterion **50** remains the final external documentation-synchronized full regression and merge-readiness review before PR #11 is merge-ready.
+### Stage 10 criterion 50 — completed externally
+
+The documentation-synchronized Stage 10 head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed GitHub Actions run #1271:
+
+**`868 passed in 345.59s (0:05:45)`**.
+
+At that reviewed checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review threads or submitted review blockers. Criterion **50** is therefore closed externally. This establishes merge readiness only; `merge-ready != merged`.
 
 ## Guards
 
@@ -113,5 +120,6 @@ Criterion **50** remains the final external documentation-synchronized full regr
 - `typed-resource necessity != metaphysical fundamentality`;
 - `finite clock covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
+- `repository validation != new scientific evidence`;
 - `finite-model success != empirical discovery`;
 - `not_established != false`.

@@ -1,12 +1,12 @@
 # Stage 10 Criterion 50 — Final Regression / Merge-Readiness Review
 
-Status: **documentation synchronization prepared; final external full-repository regression pending.**
+Status: **criterion 50 satisfied externally; Stage 10 PR #11 is merge-ready and unmerged.**
 
 ## Scope
 
 Criterion 50 is repository-level validation only. It does not alter the Stage 10G scientific synthesis or re-rank Stage 11 gates.
 
-The scientific checkpoint remains:
+Scientific checkpoint:
 
 `measurement_covariant`
 
@@ -16,22 +16,40 @@ Selected Stage 11 gate remains:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
 
-## Documentation synchronization
+## External validation
 
-Before the final regression, the planning documents are synchronized so that:
+Reviewed Stage 10 branch head:
 
-- README records Stage 10.0–10G completed and criteria 1–49 closed;
-- `docs/roadmap.md` records Stage 10 at the criterion-50 checkpoint and Stage 11 as the selected parametrized-covariance precursor;
-- `docs/stage10_protocol.md` records all criteria 1–49 as satisfied and criterion 50 as pending;
-- historical Stage 9/10A–F boundaries remain explicit rather than being rewritten as if later conclusions were known earlier.
+`11b4357fccb0b73b7b7b80bc13e34f904290107b`
 
-## Criterion 50 checks still required
+Reviewed `main` base / merge base:
 
-1. Run the full repository test suite on the documentation-synchronized PR head.
-2. Confirm PR #11 is mergeable against `main`.
-3. Confirm the branch is not behind the current `main` head.
-4. Confirm there are no unresolved review blockers.
-5. Record the external validation run and reviewed head SHA.
+`af1934994532269133b0ba93923e540e435202c0`
+
+GitHub Actions run #1271 completed successfully:
+
+**`868 passed in 345.59s (0:05:45)`**.
+
+The run includes the documentation-synchronized README, roadmap, Stage 10 protocol, Stage 10A–G code/tests, historical documentation consistency tests, and the criterion-50 merge-readiness documentation tests.
+
+## Merge-readiness audit
+
+At the reviewed checkpoint:
+
+- PR #11 `mergeable = true`;
+- branch comparison against `main`: **ahead 69 / behind 0**;
+- unresolved inline review threads: **0**;
+- submitted review blockers: **0**;
+- PR remained Draft while criterion 50 was being validated;
+- Stage 10 was not merged as part of this criterion.
+
+Therefore criterion **50** is closed externally and PR #11 may be moved from Draft to Ready for review.
+
+## Criterion closure
+
+50. External final full-repository regression and merge-readiness review — **satisfied**.
+
+Stage 10 criteria **1–50** are closed.
 
 ## Guards
 

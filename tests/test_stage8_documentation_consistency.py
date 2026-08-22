@@ -199,7 +199,8 @@ def test_stage8g_planning_documents_point_to_stage9_and_defer_gravity() -> None:
         assert "48–49" in text
         assert "50" in text
         assert "directional" in text.lower()
-    assert "## Stage 9 — Directional records with nontrivial quantum Potentiality — selected next gate" in roadmap
+    assert "## Stage 9 — Directional records with nontrivial quantum Potentiality" in roadmap
+    assert "Stage 9A" in roadmap and "completed" in roadmap
     assert "## Stage 10 — Generally covariant / gravitational extension — deferred gate" in roadmap
     assert "Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9" in roadmap
 

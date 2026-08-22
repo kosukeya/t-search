@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, Stage 9B, Stage 9C, Stage 9D, Stage 9E, and Stage 9F are completed on Draft PR #10; Stage 9G — synthesis and evidence-selected next gate — is next.**
+**Stages 1–8 are completed and merged. Stage 9.0 through Stage 9G are completed on Draft PR #10; Stage 9 criterion 50 — external final regression / merge-readiness review — is next.**
 
 Current refined finite-model candidate:
 
@@ -15,6 +15,10 @@ with internal bookkeeping:
 `R=(R_content,R_direction,R_access)`
 
 `V=(V_extension,V_semantics,V_weights)`.
+
+Stage 9G retains `refined_layered` and selects the next gate:
+
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
 ## Stage 8
 
@@ -87,6 +91,8 @@ Key documents:
 - [`results/stage9e_compatibility.md`](results/stage9e_compatibility.md)
 - [`docs/stage9f_notes.md`](docs/stage9f_notes.md)
 - [`results/stage9f_ablation.md`](results/stage9f_ablation.md)
+- [`docs/stage9g_notes.md`](docs/stage9g_notes.md)
+- [`results/stage9g_synthesis_stage10_gate.md`](results/stage9g_synthesis_stage10_gate.md)
 
 ### Stage 9.0 — protocol freeze — completed
 
@@ -225,7 +231,40 @@ The two directional/V ablations supply finite-family countermodels in both direc
 
 Scientific validation: **`754 passed in 438.94s`** (GitHub Actions run #1077).
 
+Documentation-synchronized Stage 9F regression: **`755 passed in 348.67s`** (run #1095).
+
 Stage 9F closes criteria **43–47**.
+
+### Stage 9G — synthesis and evidence-selected next gate — completed
+
+The executable synthesis selects:
+
+`refined_layered`.
+
+It retains `T9_candidate=(O,P,R,V;Xi)`, the internal R/V refinements, and typed Xi correspondence resources. It treats explicit P edge matrices as derived from retained per-node coordinates in the tested atlas and does **not** introduce an unsupported direct `Xi_RV` value law.
+
+Remaining gates are re-ranked:
+
+1. `full_measurement_covariance` — **9**
+2. `richer_causal_order` — **6**
+3. `parametrized_covariance_precursor` — **5**
+4. `nonideal_povm_clocks` — **4**
+
+Selected Stage 10 gate:
+
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
+
+`finite-family bidirectional countermodels != universal R-V independence theorem`.
+
+`typed Xi correspondence retained != direct Xi_RV value law established`.
+
+`P edge reconstruction != P layer universally redundant`.
+
+`full Stage 9C future-measurement covariance remains not_established`.
+
+Source-level Stage 9G validation: **`765 passed in 248.81s`** (run #1099).
+
+Stage 9G closes criteria **48–49**. Criterion **50** remains external.
 
 ## Sequence
 
@@ -237,12 +276,13 @@ Stage 9F closes criteria **43–47**.
 - Stage 9D — completed
 - Stage 9E — completed
 - Stage 9F — completed
-- **Stage 9G — synthesis and evidence-selected next gate — next**
-- Stage 9 criterion 50 — external final regression / merge-readiness review
+- Stage 9G — completed
+- **Stage 9 criterion 50 — external final regression / merge-readiness review — next**
+- Stage 10 — selected gate, begins only after Stage 9 criterion 50 is closed
 
 ## Roadmap
 
-See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitational extension remains deferred rather than abandoned.
+See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitational extension has risen in priority after Stage 9 but remains deferred rather than abandoned; the selected Stage 10 gate first closes the known future-measurement transport boundary.
 
 ## Guards
 
@@ -264,10 +304,14 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `accessible canonical R_access-V compatibility != accessibility independence`;
 - `directional R without V multiplicity != universal R-V independence theorem`;
 - `V without directional R != universal R-V independence theorem`;
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
 - `singleton support != absence of a formal selected-vs-unselected type distinction`;
 - `P edge reconstruction != P=R or P=V`;
+- `P edge reconstruction != P layer universally redundant`;
 - `local P transport without chi != typed event/class identification`;
 - `absence of an established direct Xi_RV value constraint != proof that no such constraint exists`;
+- `typed Xi correspondence retained != direct Xi_RV value law established`;
+- `no direct Xi_RV law established != no possible R-V constraint`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
 - `explicit evidence update != ontological becoming`;

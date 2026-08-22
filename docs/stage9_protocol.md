@@ -1,6 +1,6 @@
 # Stage 9 Protocol — Directional Records with Nontrivial Quantum Potentiality
 
-Status: **Stage 9.0 protocol frozen; Stage 9A and Stage 9B completed; Stage 9C next.**
+Status: **Stage 9.0 protocol frozen; Stage 9A, Stage 9B, and Stage 9C completed; Stage 9D next.**
 
 Selected Stage 9 gate from Stage 8G:
 
@@ -108,31 +108,57 @@ Stage 9B adds a concrete example: the balanced control can retain symmetric info
 
 `balanced zero R_direction != no R_content`.
 
-## 7. Potentiality semantics carried forward
+## 7. Potentiality semantics — Stage 9C result
+
+Stage 9C instantiates the frozen distinction directly on the Stage 9 directional carrier.
 
 Epistemic:
 
-`M_E^Q=(QCarrier,D_*,h*,q_E)`
+`M_E^QR=(QRCarrier,D_*,h*,q_E)`
 
 where one complete continuation `h*` is already selected globally but hidden from the declared operational interface.
 
 Ontic-extension:
 
-`M_O^Q(D_*)=(QCarrier,D_*,QExt(D_*),K)`
+`M_O^QR(D_*)=(QRCarrier,D_*,QExt(D_*),K)`
 
-where admissible continuations and weights are represented but **no selected complete continuation datum exists before update**.
+where admissible continuations and weights are represented but **no selected complete continuation datum exists before or after the declared evidence update**.
 
 The presence, reversal, or removal of a directional record does not alter these definitions by fiat.
 
-Stage 9C must test whether the formal distinction remains underdetermined by the declared public directional interface when numerical weights are matched.
+With matched positive weights `q_E=K=(0.5,0.5)`, Stage 9C finds the two typed models operationally equal under the declared directional public interface while their privileged modal structures remain distinct. Swapping only hidden `h*` from h_L to h_R leaves the public view unchanged.
 
-## 8. Ontology-neutral directional operational interface
+Therefore, in the declared finite family:
 
-Stage 9C should define a typed interface extending Stage 8C:
+`R_direction present + nontrivial V_extension + matched O_QR => V_semantics underdetermined`.
 
-`O_QR=(D_*,rho_now,R_now,R_dir_access,Next_Q(D_*),pi_Q(next|D_*),observed_outcome)`.
+`underdetermined != ontically open`.
 
-`R_dir_access` may contain only directional statistics or observables granted by the declared interface. Privileged access to a hidden selected continuation is forbidden. Matched epistemic and ontic-extension models must be compared through `O_QR`, not by Python type or hidden fields.
+## 8. Ontology-neutral directional operational interface — Stage 9C result
+
+Stage 9C implements:
+
+`O_QR=(D_*,rho_now,R_now,R_dir_access,Next_QR(D_*),pi_QR(next|D_*),observed_outcome)`.
+
+The concrete projection contains:
+
+- current density matrix;
+- current target-memory record joint distribution and information;
+- common directional-record/accessibility statistics;
+- future-signature outcomes and probabilities;
+- explicit observed evidence after update.
+
+The public schema excludes hidden selected-continuation, selector, model-type, and typed q_E/K field names.
+
+`R_dir_access` is not a branch-weighted score. The implementation verifies that every carrier continuation independently gives the same directional values before exposing the common interface:
+
+`(A_R,A_acc)=(+1,+0.5)`.
+
+A weight mismatch `K=(0.75,0.25)` changes future prediction while preserving current density, record content, and directional data. Thus the interface is weight-sensitive without making the current arrow a disguised continuation-weight aggregate.
+
+`weight sensitivity != selected-continuation observability`.
+
+`control of V_weights != determination of V_semantics`.
 
 ## 9. Directional controls — Stage 9B result
 
@@ -253,28 +279,40 @@ Stage 9E must distinguish:
 5. `P-R_direction-V`;
 6. `O-R_direction-V`.
 
-Stage 9B already gives positive finite-family evidence that `R_direction` can be varied while nontrivial `V_extension` is retained. It does not yet decide `V_weights`, `V_semantics`, cross-clock P transport, or R_access.
+Evidence accumulated before Stage 9E now includes:
+
+- Stage 9B: positive finite-family evidence that `R_direction` can be varied while nontrivial `V_extension` is retained;
+- Stage 9C: matched `O_QR` underdetermination of `V_semantics` with nonzero `R_direction` present;
+- Stage 9C: `V_weights` can change future prediction while current `R_direction` remains unchanged.
+
+These results do not yet establish genuine cross-clock P transport of the directional interface, local-accessibility behavior, or a universal R–V independence theorem.
 
 Allowed evidential statuses remain:
 
 `compatible / preserved / reconstructible / inaccessible / lost / underdetermined / not_established / implication_refuted`.
 
-## 15. Modal underdetermination test with direction present
+## 15. Modal underdetermination with direction present — Stage 9C result
 
-Stage 9C/E must repeat the hidden-selected-versus-no-selector comparison on the directional carrier.
+Stage 9C satisfies the frozen modal pressure test:
 
-Minimum checks:
+- same physical continuation carrier — **yes**;
+- same current Actuality — **yes**;
+- same accessible directional record interface — **yes**;
+- matched positive continuation weights — **yes**;
+- hidden `h*` swap leaves pre-update `O_QR` unchanged — **yes**;
+- changing only weights changes weight-sensitive future prediction — **yes**;
+- ontic-extension object contains no selected complete continuation datum — **yes**;
+- directional record structure remains present in both typed pre-update models — **yes**.
 
-- same physical continuation carrier;
-- same current Actuality;
-- same accessible directional record interface;
-- matched positive continuation weights;
-- hidden `h*` swap does not change the declared pre-discriminating `O_QR` view;
-- changing only weights changes prediction where the interface is weight-sensitive;
-- the ontic-extension object contains no selected complete continuation datum;
-- directional record structure remains present in both typed models.
+Stage 9C also supplies explicit external evidence rather than sampling internally. Both matched models condition on the same continuation-specific Born likelihoods. The epistemic model preserves its pre-existing hidden h*, while the ontic update remains selector-free. With matched priors the posterior weights and post-update public views match.
 
-A matched result supports operational underdetermination in the declared family. It does not prove that the future is ontically open or fixed.
+The e1 directional interface is tied to its declared anchor; the terminal e2 public view does not automatically promote that old diagnostic into a new e2 arrow.
+
+This supports operational underdetermination in the declared family. It does not prove that the future is ontically open or fixed.
+
+`operational directional equality != modal/ontological identity`.
+
+`explicit evidence update != ontological becoming`.
 
 ## 16. Ablation requirements
 
@@ -328,11 +366,11 @@ Forward/reversed/balanced/no-record controls give, for both h_L and h_R:
 
 for `(A_R,A_acc)` respectively, while nontrivial h_L/h_R `V_extension` remains. Reversal is an interaction-history reversal of the common R-direction skeleton; balanced is a typed history mixture; no-record removes the write channel.
 
-### Stage 9C — typed modal models and directional operational underdetermination — next
+### Stage 9C — typed modal models and directional operational underdetermination — completed
 
-Place epistemic selected-`h*` and ontic no-selected-continuation semantics on the same directional carrier and test `O_QR`, hidden-selector swaps, matched/mismatched weights, and explicit update semantics.
+The same Stage 9 directional carrier receives selected-`h*` epistemic and no-selector ontic-extension modal roles. With matched positive weights their `O_QR` views are equal despite distinct privileged modal structures. Hidden-selector swaps are publicly invisible, weight mismatch changes prediction while preserving current direction, and explicit evidence update leaves the ontic state selector-free.
 
-### Stage 9D — continuation-aware clock transport
+### Stage 9D — continuation-aware clock transport — next
 
 Re-derive A/B/C atlases for each continuation and transport states, record observables, event correspondences, continuation classes, and weights with mismatch controls.
 
@@ -350,7 +388,7 @@ Decide whether the refined-layered candidate is strengthened, requires new `Xi_R
 
 ## 19. Exit criteria
 
-Stage 9 defines 50 exit criteria. Stage 9.0 freezes criteria **1–10**; Stage 9A closes **11–16**; Stage 9B closes **17–23**. Criteria 24–50 remain future work.
+Stage 9 defines 50 exit criteria. Stage 9.0 freezes criteria **1–10**; Stage 9A closes **11–16**; Stage 9B closes **17–23**; Stage 9C closes **24–30**. Criteria 31–50 remain future work.
 
 ### Stage 9.0 — criteria 1–10
 
@@ -384,9 +422,18 @@ Stage 9 defines 50 exit criteria. Stage 9.0 freezes criteria **1–10**; Stage 9
 22. Every pure control has physical dimension 14, rank-14 A/B/C reductions, and valid constrained-carrier residuals; balanced is a typed mixture of valid pure components — **satisfied**.
 23. Direction is controlled without continuation weights or identifying continuation class with arrow orientation, with interpretation guards preserved — **satisfied**.
 
+### Stage 9C — criteria 24–30
+
+24. Selected-`h*` epistemic and no-selected-continuation ontic-extension models share the exact same nontrivial Stage 9 directional carrier — **satisfied**.
+25. `O_QR` exposes current physical/record/directional/future-prediction data while excluding hidden selector and modal-type fields — **satisfied**.
+26. With matched positive q_E/K weights, epistemic and ontic-extension `O_QR` views are equal while privileged modal structures remain distinct — **satisfied**.
+27. Swapping only hidden epistemic h* leaves pre-update `O_QR` unchanged while the privileged diagnostic detects the swap — **satisfied**.
+28. Changing only continuation weights changes future prediction while preserving current density, record content, and directional data — **satisfied**.
+29. Explicit common evidence conditions both models consistently, preserves the epistemic pre-existing h*, and does not create an ontic selected-continuation datum — **satisfied**.
+30. Direction remains nonzero and continuation-independent before weighting, with underdetermination/becoming/weight-semantics guards explicit — **satisfied**.
+
 ### Future allocation
 
-- criteria **24–30**: Stage 9C typed modal/operational tests;
 - criteria **31–36**: Stage 9D genuine clock transport;
 - criteria **37–42**: Stage 9E compatibility/constraint matrix;
 - criteria **43–47**: Stage 9F ablation/reconstruction/accessibility;
@@ -404,6 +451,7 @@ Criterion 50 remains external to the executable scientific classifier.
 - `Potentiality != superposition by definition`;
 - `QExt represented != ontically real futures by definition`;
 - `operational quantum equality != modal/ontological identity`;
+- `operational directional equality != modal/ontological identity`;
 - `record content != directional record arrow`;
 - `record content != unique future continuation`;
 - `order != directional record arrow`;
@@ -412,6 +460,9 @@ Criterion 50 remains external to the executable scientific classifier.
 - `balanced mixture != pure constrained history`;
 - `reversed diagnostic sign != reversed Python iteration`;
 - `control of R_direction != control of V_semantics`;
+- `control of V_weights != determination of V_semantics`;
+- `hidden h* diagnostic != operational access to h*`;
+- `weight sensitivity != selected-continuation observability`;
 - `P-V covariance != P=V`;
 - `R-V compatibility != R=V`;
 - `P-R_direction-V covariance != ontic openness`;
@@ -440,10 +491,10 @@ Stage 9 does not establish by construction that:
 - finite clock covariance is gravitational/general covariance;
 - a successful implementation is a new empirical law.
 
-## 22. Strongest statement allowed after Stage 9B
+## 22. Strongest statement allowed after Stage 9C
 
-**Within the declared finite constrained family, Stage 9A first establishes coexistence of nontrivial `V_extension` and per-continuation directional `R_direction`. Stage 9B then shows that the signed directional diagnostic can be reversed, symmetrized to zero, or removed with the record-writing channel while the h_L/h_R physical continuation distinction remains nontrivial. Forward/reversed/no-record remain valid dimension-14, rank-14 constrained histories and balanced is an equal mixture of valid forward/reversed histories. This supports controllable structural separation of `R_direction` from `V_extension` in this model, but does not establish universal R–V independence, determine `V_semantics` or `V_weights`, prove ontological future openness or becoming, or establish full clock/general covariance.**
+**Within the declared finite constrained family, Stage 9A establishes coexistence of nontrivial `V_extension` and continuation-independent directional `R_direction`; Stage 9B shows that `R_direction` can be reversed, symmetrized, or removed without collapsing the h_L/h_R continuation distinction; and Stage 9C shows that adding an explicit nonzero directional-record interface still does not determine whether the represented Potentiality is selected-`h*` epistemic or no-selector ontic-extension-like when the public q_E/K weights are matched. Hidden h* swaps remain operationally invisible, changing only weights changes future prediction while preserving current directional data, and explicit evidence update does not create an ontic selector. This supports finite-model structural separation of `R_direction`, `V_extension`, `V_weights`, and `V_semantics` at the tested interface level, but does not establish universal independence, ontological future openness, ontological becoming, or full clock/general covariance.**
 
 ## 23. Immediate next step
 
-Stage 9C should place selected-`h*` epistemic and no-selected-continuation ontic-extension semantics on the same directional carrier and test matched `O_QR` views, hidden-selector swaps, weight mismatch, and explicit update semantics without using record direction as evidence for ontic openness.
+Stage 9D should re-derive the continuation-specific A/B/C physical-clock atlases on the directional carrier and test genuine state, record-observable, event/class, and V class/weight transport before Stage 9E assigns the broader compatibility statuses.

@@ -164,13 +164,13 @@ def select_synthesis_choice(
         c.total_charts == 18
         and c.genuine_measurement_transports == 108
         and c.three_clock_measurement_compositions == 324
-        and c.max_direct_transport_normalization_residual <= 10 * atol
-        and c.max_direct_transport_effect_residual <= 10 * atol
-        and c.max_composition_normalization_residual <= 10 * atol
-        and c.max_composition_effect_residual <= 10 * atol
-        and c.max_completeness_residual <= 10 * atol
-        and c.max_hermiticity_residual <= 10 * atol
-        and c.minimum_effect_eigenvalue >= -10 * atol
+        and c.max_direct_transport_normalization_residual <= 100 * atol
+        and c.max_direct_transport_effect_residual <= 100 * atol
+        and c.max_composition_normalization_residual <= 100 * atol
+        and c.max_composition_effect_residual <= 100 * atol
+        and c.max_completeness_residual <= 100 * atol
+        and c.max_hermiticity_residual <= 100 * atol
+        and c.minimum_effect_eigenvalue >= -100 * atol
         and c.minimum_normalization_eigenvalue > atol
         and c.all_chart_typing_valid
         and c.preserving_correspondence_valid

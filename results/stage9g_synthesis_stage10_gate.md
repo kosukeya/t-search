@@ -1,6 +1,6 @@
 # Stage 9G Results — Synthesis and Evidence-Selected Stage 10 Gate
 
-Status: **Stage 9G executable synthesis completed; criteria 48–49 satisfied. Criterion 50 remains external.**
+Status: **Stage 9 executable synthesis and final external validation completed; criteria 48–50 satisfied.**
 
 ## Synthesis result
 
@@ -108,7 +108,7 @@ Gravity/general covariance remains deferred, not discarded.
 
 - criterion **48** — executable Stage 9 synthesis selects/refines the finite-model candidate — **satisfied**;
 - criterion **49** — remaining gates are evidence-ranked and one Stage 10 gate is uniquely selected — **satisfied**;
-- criterion **50** — external final full-repository regression and merge-readiness review — **not yet closed here**.
+- criterion **50** — external final full-repository regression and merge-readiness review — **satisfied externally**.
 
 ## Validation
 
@@ -124,9 +124,34 @@ source head:
 
 `e570a2b8e08d73bfa14db87c4faa71499d28dfad`
 
-The Stage 9G documentation-synchronized full-repository regression is tracked separately from the source-level synthesis run. Passing that regression alone does not close criterion 50 until merge-readiness is also reviewed explicitly.
+The first Stage 9G documentation-synchronized regression, run #1117, reached **764 passing tests / 2 historical documentation failures**. The scientific suite remained green; both failures were stale Stage 7/8 assertions that still fixed the generally covariant/gravitational extension at Stage 10 after Stage 9G had evidence-selected measurement covariance for Stage 10. Those historical assertions were updated without changing the Stage 9G scientific synthesis.
 
-Criterion 50 remains deliberately external to the executable Stage 9G selector.
+The corrected documentation-synchronized head then passed the complete repository suite in GitHub Actions run #1121:
+
+**`766 passed in 459.00s (0:07:38)`**
+
+validated branch head:
+
+`1bcdc83a9dd5261f3d0de8d152534afda89667d7`
+
+validated PR merge-ref:
+
+`b53906446fd6970e3cfb03f110690ea9b5ce97b2`
+
+At that reviewed checkpoint, the Stage 9 branch was ahead of `main` and **behind by 0 commits**, PR #10 was `mergeable=true`, and there were **no unresolved review threads and no submitted reviews**. A repository search also found no TODO/FIXME/HACK markers or obvious credential/absolute-path artifacts in the reviewed Stage 9 repository content.
+
+Criterion 50 is therefore closed as an **external merge-readiness condition**, not as an additional executable scientific criterion. Closing it adds no new scientific claim.
+
+## Final validation interpretation
+
+The external criterion confirms that the already-synthesized Stage 9 evidence is documentation-synchronized, regression-clean, based on the current `main`, mergeable at the reviewed checkpoint, and free of known review blockers. It does not upgrade any `not_established` scientific relation.
+
+In particular:
+
+- `full Stage 9C future-measurement covariance remains not_established`;
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
+- `finite clock covariance != general covariance`;
+- `refined layered candidate != fundamental ontology`.
 
 ## Unresolved implications
 
@@ -148,4 +173,4 @@ Still not established:
 
 ## Strongest bounded statement
 
-**Within the declared finite constrained Stage 9 family, executable compatibility, transport, modal, and ablation evidence favors retaining the refined layered candidate `T=(O,P,R,V;Xi)`. Directional R and nontrivial V coexist and are not mutually necessary in the tested family; R and V subroles display distinct functional behavior; explicit P edge matrices are reconstructible while semantic correspondence remains explicit; and no new direct Xi_RV value law is established. The strongest remaining operational boundary is full cross-continuation future-measurement-family covariance, which is selected as the Stage 10 gate. These results do not establish universal R-V independence, ontic future openness, ontological becoming, general covariance, or a fundamental ontology of time.**
+**Within the declared finite constrained Stage 9 family, executable compatibility, transport, modal, and ablation evidence favors retaining the refined layered candidate `T=(O,P,R,V;Xi)`. Directional R and nontrivial V coexist and are not mutually necessary in the tested family; R and V subroles display distinct functional behavior; explicit P edge matrices are reconstructible while semantic correspondence remains explicit; and no new direct Xi_RV value law is established. The strongest remaining operational boundary is full cross-continuation future-measurement-family covariance, which is selected as the Stage 10 gate. The final external regression and merge-readiness review closes criterion 50 without adding a scientific claim. These results do not establish universal R-V independence, ontic future openness, ontological becoming, general covariance, or a fundamental ontology of time.**

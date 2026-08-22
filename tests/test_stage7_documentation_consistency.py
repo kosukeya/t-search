@@ -23,9 +23,10 @@ def test_roadmap_no_longer_assigns_gravity_to_stage7_and_tracks_later_reranking(
 
     assert "## Stage 7 — Quantum records inside a constrained multi-clock model" in roadmap
     assert "## Stage 7 — Generally covariant / gravitational extension" not in roadmap
-    assert "## Stage 10 — Generally covariant / gravitational extension — deferred gate" in roadmap
+    assert "## Stage 10 — Fully typed future-measurement covariance — selected next gate" in roadmap
+    assert "## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate" in roadmap
     assert "Earlier roadmap versions assigned Stage 7 directly" in roadmap
-    assert "Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9" in roadmap
+    assert "Gravity/general covariance is deferred, not abandoned" in roadmap
 
 
 def test_stage7_protocol_marks_old_roadmap_as_superseded() -> None:

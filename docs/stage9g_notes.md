@@ -1,6 +1,6 @@
 # Stage 9G Notes — Synthesis and Evidence-Selected Stage 10 Gate
 
-Status: **Stage 9G synthesis implemented; criteria 48–49 completed. Criterion 50 remains the external final regression / merge-readiness review.**
+Status: **Stage 9G synthesis and final Stage 9 external validation are completed; criteria 48–50 are closed.**
 
 ## 1. Input evidence
 
@@ -189,8 +189,41 @@ validated source head:
 
 `e570a2b8e08d73bfa14db87c4faa71499d28dfad`
 
-This validates criteria 48–49 at source level. Criterion 50 remains external and must be closed only after the final documentation-synchronized full-repository regression and merge-readiness review.
+The first documentation-synchronized Stage 9G run (#1117) reached **764 passing tests / 2 historical documentation failures**. The Stage 9 scientific suite remained green. Both failures were stale Stage 7/8 roadmap assertions that still fixed gravity at Stage 10 after Stage 9G had selected the measurement-covariance gate for Stage 10. Those historical assertions were updated without changing the Stage 9G synthesis.
 
-## 12. Strongest bounded statement
+The corrected documentation-synchronized head then passed GitHub Actions run #1121:
 
-**Within the declared finite constrained Stage 9 family, the evidence strengthens the refined layered candidate `T=(O,P,R,V;Xi)`: directional R and nontrivial V are jointly realizable, finite-family ablations refute their mutual necessity in both directions, R_content/R_direction/R_access and V_extension/V_semantics/V_weights exhibit distinct functional behavior, and explicit P edge matrices are reconstructible while typed event/class/observable correspondence remains necessary. No direct Xi_RV value law is established. The strongest explicit operational boundary left is the full cross-continuation Stage 9C future-measurement-family covariance, so that boundary is selected as the Stage 10 gate ahead of richer order, parametrized/general covariance, and nonideal clocks. None of this establishes universal R-V independence, ontic openness, ontological becoming, empirical novelty, or general covariance.**
+**`766 passed in 459.00s (0:07:38)`**
+
+validated branch head:
+
+`1bcdc83a9dd5261f3d0de8d152534afda89667d7`
+
+validated PR merge-ref:
+
+`b53906446fd6970e3cfb03f110690ea9b5ce97b2`
+
+At that reviewed checkpoint:
+
+- the branch was ahead of `main` and behind by 0 commits;
+- PR #10 was `mergeable=true`;
+- unresolved review threads: 0;
+- submitted reviews: 0;
+- repository search found no TODO/FIXME/HACK markers or obvious credential/absolute-path artifacts.
+
+Criterion 50 is therefore satisfied externally. It remains deliberately outside the executable Stage 9G selector.
+
+## 12. Final validation interpretation
+
+Closing criterion 50 does not add a new scientific claim. It records that the already-synthesized Stage 9 evidence is documentation-synchronized, regression-clean, based on the current `main`, mergeable, and free of known review blockers at the reviewed head.
+
+It does **not** alter these boundaries:
+
+- `full Stage 9C future-measurement covariance remains not_established`;
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
+- `finite clock covariance != general covariance`;
+- `refined layered candidate != fundamental ontology`.
+
+## 13. Strongest bounded statement
+
+**Within the declared finite constrained Stage 9 family, the evidence strengthens the refined layered candidate `T=(O,P,R,V;Xi)`: directional R and nontrivial V are jointly realizable, finite-family ablations refute their mutual necessity in both directions, R_content/R_direction/R_access and V_extension/V_semantics/V_weights exhibit distinct functional behavior, and explicit P edge matrices are reconstructible while typed event/class/observable correspondence remains necessary. No direct Xi_RV value law is established. The strongest explicit operational boundary left is the full cross-continuation Stage 9C future-measurement-family covariance, so that boundary is selected as the Stage 10 gate ahead of richer order, parametrized/general covariance, and nonideal clocks. Criterion 50 is closed by the external final regression and merge-readiness review without adding a scientific claim. None of this establishes universal R-V independence, ontic openness, ontological becoming, empirical novelty, or general covariance.**

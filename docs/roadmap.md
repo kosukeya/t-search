@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selects the next finite-model gate before any generally covariant/gravitational extension.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 now freezes the directional-R/V integration contract without yet adding a positive Stage 9 witness.
 
 ## Stages 0–6 — completed and merged
 
@@ -24,7 +24,7 @@ Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gr
 
 Stage 7 placed P/O/R in one constrained quantum construction and ended with a strengthened finite-model P/O/R core.
 
-## Stage 8 — Quantum Potentiality inside the shared constrained construction — completed
+## Stage 8 — Quantum Potentiality inside the shared constrained construction — completed and merged
 
 Selected Stage 8 gate:
 
@@ -122,19 +122,48 @@ Current Stage 9 gate ranking:
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — selected next gate
 
-Stage 9 should construct a nontrivial continuation family whose members share the declared current Actuality while later internally anchored dynamics generate a directional record relation. The central pressure test is whether `R_direction` and nontrivial V coexist and transform consistently under genuine continuation-aware clock changes without assuming that record direction means ontological future openness.
+Status: **Stage 9.0 protocol frozen; Stage 9A is next.**
 
-Required pressure points should include:
+Stage 9 now has an explicit protocol in [`stage9_protocol.md`](stage9_protocol.md). The canonical success target is stronger than merely placing a record-bearing model beside a branching model: at one declared common current anchor `D_*`, the same constrained family must retain at least two physically inequivalent admissible continuations while every canonical continuation carries the same nonzero directional record structure.
 
-- nontrivial `QExt` with directional record formation after the common current anchor;
-- genuine continuation-specific P transport;
-- explicit event/class correspondence;
+Canonical target:
+
+`|QExt(D_*)| >= 2`
+
+with nonzero continuation-specific `A_R(h,D_*)` before any branch-weighted aggregation.
+
+The continuation-defining physical distinction must remain independent of the record-direction label/channel:
+
+`continuation identity != record-direction identity`.
+
+Stage 9.0 freezes criteria 1–10 only; no positive Stage 9A–9G result is claimed yet.
+
+Required pressure points include:
+
+- nontrivial `QExt` and per-continuation directional record formation at one declared common anchor;
+- branch distinction kept record-neutral where feasible;
+- genuine continuation-specific P transport with re-derived A/B/C atlases;
+- explicit event/class/observable correspondence;
 - forward / reversed / balanced / no-record controls;
 - selected-vs-unselected modal underdetermination with directional R present;
-- checks of whether record direction constrains continuation classes or weights;
+- separate checks of `R_direction` against `V_extension`, `V_semantics`, and `V_weights`;
+- local-accessibility ablations;
 - continued separation of record direction from thermodynamic, ontological, and phenomenal arrows.
 
+Stage 9 sequence:
+
+- Stage 9.0 — protocol freeze — completed;
+- **Stage 9A — common directional-R/V continuation substrate — next**;
+- Stage 9B — directional diagnostics and controls;
+- Stage 9C — typed modal models and directional operational underdetermination;
+- Stage 9D — continuation-aware clock transport;
+- Stage 9E — P/O/R_direction/V compatibility matrix;
+- Stage 9F — ablation / reconstruction / accessibility matrix;
+- Stage 9G — synthesis and evidence-selected next gate.
+
 `directional record arrow != ontological future openness`.
+
+`directional record arrow != ontological becoming`.
 
 ## Stage 10 — Generally covariant / gravitational extension — deferred gate
 
@@ -162,6 +191,10 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`;
 - `record-neutral V witness != universal R-V independence theorem`;
 - `V internal role separation != fundamental primitive decomposition`;
+- `continuation identity != record-direction identity`;
+- `weighted directional score != continuation-independent directional structure`;
+- `directional record arrow != ontological future openness`;
+- `directional record arrow != ontological becoming`;
 - `lost != metaphysically irreducible`;
 - `reconstructible != universally redundant`;
 - `underdetermined != ontically open`;

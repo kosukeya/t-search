@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–8 are completed and merged. Stage 9.0 and Stage 9A are completed on Draft PR #10; Stage 9B — directional diagnostics and controls — is next.**
+**Stages 1–8 are completed and merged. Stage 9.0, Stage 9A, and Stage 9B are completed on Draft PR #10; Stage 9C — typed modal models and directional operational underdetermination — is next.**
 
 Current refined finite-model candidate:
 
@@ -104,6 +104,8 @@ Key documents:
 - [`results/stage9_0_protocol_freeze.md`](results/stage9_0_protocol_freeze.md)
 - [`docs/stage9a_notes.md`](docs/stage9a_notes.md)
 - [`results/stage9a_directional_substrate.md`](results/stage9a_directional_substrate.md)
+- [`docs/stage9b_notes.md`](docs/stage9b_notes.md)
+- [`results/stage9b_directional_controls.md`](results/stage9b_directional_controls.md)
 
 ### Stage 9.0 — protocol freeze — completed
 
@@ -128,9 +130,30 @@ Thus Stage 9A supplies a positive finite-model witness for substrate-level coexi
 
 Stage 9A closes criteria **11–16**.
 
-Validation checkpoint after the Stage 9A implementation and correction of the two brittle Stage 9.0 documentation checks:
+### Stage 9B — directional diagnostics and controls — completed
 
-**`695 passed in 199.79s`** (GitHub Actions run #935).
+Stage 9B keeps the Stage 9A continuation distinction fixed and varies only the directional-record construction.
+
+For both h_L and h_R, before any continuation weighting:
+
+- forward: `(A_R,A_acc)=(+1,+0.5)`;
+- reversed: `(A_R,A_acc)=(-1,-0.5)`;
+- balanced: `(A_R,A_acc)=(0,0)`;
+- no-record: `(A_R,A_acc)=(0,0)`.
+
+The reversed control performs a modeled reversal of the common record/scramble interaction skeleton rather than reversing Python iteration. Balanced is an equal mixture of separately valid forward/reversed constrained histories, not a fictitious averaged pure history. No-record removes the record write itself.
+
+All controls retain the nontrivial h_L/h_R `V_extension` distinction. Forward, reversed, and no-record each retain physical dimension `14` and minimum A/B/C reduction rank `14`; balanced inherits constrained validity from its two pure components.
+
+This strengthens the Stage 9A coexistence result into a finite-model **controllable separation of `R_direction` from `V_extension`**. It does not establish universal R–V independence, ontological openness, or becoming.
+
+`balanced zero R_direction != no R_content`.
+
+Stage 9B closes criteria **17–23**.
+
+Strict Stage 9B validation:
+
+**`708 passed in 196.73s`** (GitHub Actions run #975).
 
 ## Sequence
 
@@ -144,8 +167,8 @@ Validation checkpoint after the Stage 9A implementation and correction of the tw
 - Stage 8G — completed; criterion 50 closed by external validation
 - Stage 9.0 — protocol freeze — completed
 - Stage 9A — common directional-R/V continuation substrate — completed
-- **Stage 9B — directional diagnostics and controls — next**
-- Stage 9C — typed modal models and directional operational underdetermination
+- Stage 9B — directional diagnostics and controls — completed
+- **Stage 9C — typed modal models and directional operational underdetermination — next**
 - Stage 9D — continuation-aware clock transport
 - Stage 9E — P/O/R_direction/V compatibility matrix
 - Stage 9F — ablation / reconstruction / accessibility matrix
@@ -164,6 +187,7 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `equal numeric clock readings != event identity`;
 - `event-effect covariance != temporal succession`;
 - `current record covariance != directional record arrow`;
+- `record content != directional record arrow`;
 - `record content != unique future continuation`;
 - `order != directional record arrow`;
 - `same P/O/current-R public data != modal identity`;
@@ -176,6 +200,9 @@ See [`docs/roadmap.md`](docs/roadmap.md). The generally covariant / gravitationa
 - `V internal role separation != fundamental primitive decomposition`;
 - `continuation identity != record-direction identity`;
 - `weighted directional score != continuation-independent directional structure`;
+- `balanced mixture != pure constrained history`;
+- `reversed diagnostic sign != reversed Python iteration`;
+- `control of R_direction != control of V_semantics`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
 - `explicit evidence update != ontological becoming`;

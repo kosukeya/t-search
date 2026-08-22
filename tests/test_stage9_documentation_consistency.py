@@ -243,8 +243,12 @@ def test_stage9g_checkpoint_records_synthesis_selected_stage10_and_final_validat
         assert selected in text
         assert "finite-family bidirectional countermodels != universal R-V independence theorem" in text
         assert "P edge reconstruction != P layer universally redundant" in text
-        assert "full Stage 9C future-measurement covariance remains not_established" in text
         assert "finite clock covariance != general covariance" in text
+    for historical in (notes, results, protocol):
+        assert "full Stage 9C future-measurement covariance remains not_established" in historical
+    for current in (readme, roadmap):
+        assert "Stage 9 checkpoint" in current or "Stage 9D checkpoint" in current
+        assert "Stage 9C" in current and "not_established" in current
     assert "criteria 48–50" in results.lower()
     assert "765 passed in 248.81s" in results
     assert "755 passed in 348.67s" in results
@@ -280,9 +284,10 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
 def test_readme_records_stage8_as_merged_and_stage9_as_fully_closed() -> None:
     readme = _read("README.md")
     lowered = readme.lower()
-    assert "Stages 1–8 are completed and merged" in readme
-    assert "stage 9.0 through stage 9g" in lowered
-    assert "criteria 1–50 are closed" in lowered
+    assert "Stages 1–9 are completed and merged" in readme
+    assert "Stage 9G — synthesis and evidence-selected next gate — completed" in readme
+    assert "Stage 9G closes criteria **48–49**" in readme
+    assert "criterion **50** is closed externally" in readme
     assert "765 passed in 248.81s" in readme
     assert "755 passed in 348.67s" in readme
     assert "766 passed in 459.00s" in readme

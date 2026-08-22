@@ -44,13 +44,15 @@ def test_stage9_modal_distinction_is_not_decided_by_direction() -> None:
     assert "explicit evidence update != ontological becoming" in protocol
 
 
-def test_stage9_directional_controls_remain_frozen_after_stage9a() -> None:
+def test_stage9_directional_controls_remain_typed_after_stage9b() -> None:
     protocol = _read("docs/stage9_protocol.md")
     checkpoint = _read("results/stage9_0_protocol_freeze.md")
     for text in (protocol, checkpoint):
         for control in ("Forward", "Reversed", "Balanced", "No-record"):
             assert control.lower() in text.lower()
     assert "order != directional record arrow" in protocol
+    assert "balanced mixture != pure constrained history" in protocol
+    assert "reversed diagnostic sign != reversed Python iteration" in protocol
 
 
 def test_stage9_clock_transport_keeps_event_class_and_observable_typing_explicit() -> None:
@@ -78,16 +80,17 @@ def test_stage9_r_direction_v_questions_are_split_not_collapsed() -> None:
         assert fragment in protocol
 
 
-def test_stage9_sequence_and_exit_criteria_advance_through_stage9a_only() -> None:
+def test_stage9_sequence_and_exit_criteria_advance_through_stage9b() -> None:
     protocol = _read("docs/stage9_protocol.md")
     readme = _read("README.md")
     roadmap = _read("docs/roadmap.md")
     for text in (protocol, readme, roadmap):
         assert "Stage 9A" in text and "completed" in text
-        assert "Stage 9B" in text and "next" in text
-    assert "Stage 9A closes criteria **11–16**" in protocol
-    assert "Criteria 17–50 remain future work" in protocol
-    assert "criteria **17–23**: Stage 9B" in protocol
+        assert "Stage 9B" in text and "completed" in text
+        assert "Stage 9C" in text and "next" in text
+    assert "Stage 9B closes **17–23**" in protocol
+    assert "Criteria 24–50 remain future work" in protocol
+    assert "criteria **24–30**: Stage 9C" in protocol
     assert "criterion **50**: external final full-repository regression and merge-readiness review" in protocol
 
 
@@ -116,6 +119,23 @@ def test_stage9a_checkpoint_records_common_directional_v_substrate() -> None:
     assert "695 passed in 199.79s" in results
 
 
+def test_stage9b_checkpoint_records_exact_directional_control_family() -> None:
+    notes = _read("docs/stage9b_notes.md")
+    results = _read("results/stage9b_directional_controls.md")
+    protocol = _read("docs/stage9_protocol.md")
+    for text in (notes, results, protocol):
+        assert "(+1,+0.5)" in text
+        assert "(-1,-0.5)" in text
+        assert "balanced" in text.lower()
+        assert "no-record" in text.lower()
+        assert "balanced mixture != pure constrained history" in text
+        assert "continuation identity != record-direction identity" in text
+        assert "directional record arrow != ontological future openness" in text
+    assert "balanced zero R_direction != no R_content" in results
+    assert "criteria 17–23" in results.lower()
+    assert "708 passed in 196.73s" in results
+
+
 def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
     protocol = _read("docs/stage9_protocol.md")
     checkpoint = _read("results/stage9_0_protocol_freeze.md")
@@ -129,10 +149,11 @@ def test_stage9_ablation_and_status_vocabulary_remain_explicit() -> None:
             assert status in text
 
 
-def test_readme_records_stage8_as_merged_and_stage9a_as_current_checkpoint() -> None:
+def test_readme_records_stage8_as_merged_and_stage9b_as_current_checkpoint() -> None:
     readme = _read("README.md")
     lowered = readme.lower()
     assert "Stages 1–8 are completed and merged" in readme
-    assert "stage 9.0 and stage 9a are completed" in lowered
-    assert "stage 9b" in lowered and "next" in lowered
+    assert "stage 9.0, stage 9a, and stage 9b are completed" in lowered
+    assert "stage 9c" in lowered and "next" in lowered
+    assert "708 passed in 196.73s" in readme
     assert "Draft PR #9" not in readme

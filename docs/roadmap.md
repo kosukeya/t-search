@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the directional-R/V link as the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 froze the integration contract, and Stage 9A now supplies a positive substrate-level witness with nontrivial V and coherent per-continuation R_direction in one constrained family.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the directional-R/V link as the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 froze the integration contract, Stage 9A supplied a positive common directional-R/V substrate, and Stage 9B now shows that the directional score can be reversed, balanced, or removed while nontrivial `V_extension` remains.
 
 ## Stages 0–6 — completed and merged
 
@@ -122,7 +122,7 @@ Current Stage 9 gate ranking:
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — active gate
 
-Status: **Stage 9.0 and Stage 9A completed; Stage 9B next.**
+Status: **Stage 9.0, Stage 9A, and Stage 9B completed; Stage 9C next.**
 
 Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
 
@@ -155,21 +155,43 @@ Executable results:
 - minimum reduction rank across all A/B/C clock indices is 14;
 - pure renaming deduplicates, current-incompatible candidates are rejected, and `QExt(e2)=empty`.
 
-This establishes substrate-level coexistence of nontrivial `V_extension` and `R_direction` in the declared finite family. It does not establish ontological future openness or becoming, and it does not yet test the complete directional-control family or genuine cross-clock transport algebra.
+This establishes substrate-level coexistence of nontrivial `V_extension` and `R_direction` in the declared finite family. It does not establish ontological future openness or becoming.
 
 Criteria **11–16** are satisfied.
 
-Validation checkpoint:
+### Stage 9B — directional diagnostics and controls — completed
 
-**`695 passed in 199.79s`** (GitHub Actions run #935).
+Stage 9B holds the continuation distinction fixed while changing the directional-record structure.
 
-### Stage 9B — directional diagnostics and controls — next
+For each h_L/h_R continuation before any branch weighting:
 
-Keep the Stage 9A substrate fixed and construct forward/reversed/balanced/no-record variants. The decisive tests are sign reversal, cancellation, and no-record removal while preserving nontrivial V rather than changing the carrier ad hoc.
+- forward: `(A_R,A_acc)=(+1,+0.5)`;
+- reversed: `(A_R,A_acc)=(-1,-0.5)`;
+- balanced: `(A_R,A_acc)=(0,0)`;
+- no-record: `(A_R,A_acc)=(0,0)`.
+
+The reversed construction reverses the common record/scramble interaction skeleton rather than merely reversing diagnostic indices. The independent V branch action remains on the e2 side. Balanced is an equal mixture of separately valid forward/reversed constrained histories; no-record removes the recording channel itself.
+
+All controls preserve nontrivial h_L/h_R `V_extension`. Forward, reversed, and no-record retain physical dimension 14 and minimum A/B/C reduction rank 14. Balanced inherits validity from its pure components.
+
+The balanced control is conceptually distinct from no-record: balanced can retain symmetric record content while its signed direction vanishes.
+
+`balanced zero R_direction != no R_content`.
+
+`control of R_direction != control of V_semantics`.
+
+This supports controllable separation of `R_direction` from `V_extension` in the declared finite family; it is not a universal R–V independence theorem.
+
+Criteria **17–23** are satisfied.
+
+Strict validation: **`708 passed in 196.73s`** (run #975).
+
+### Stage 9C — typed modal models and directional operational underdetermination — next
+
+Place epistemic selected-`h*` and ontic no-selected-continuation semantics on the same directional carrier. Test the declared `O_QR` interface, hidden-selector swaps, matched/mismatched weights, and explicit update semantics without using record direction as evidence for ontic openness.
 
 ### Later Stage 9 pressure points
 
-- Stage 9C — typed modal models and directional operational underdetermination;
 - Stage 9D — continuation-aware clock transport;
 - Stage 9E — P/O/R_direction/V compatibility matrix;
 - Stage 9F — ablation / reconstruction / accessibility matrix;
@@ -207,6 +229,7 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `equal numeric clock readings != event identity`;
 - `event-effect covariance != temporal succession`;
 - `current record covariance != directional record arrow`;
+- `record content != directional record arrow`;
 - `record content != unique future continuation`;
 - `order != directional record arrow`;
 - `same P/O/current-R public data != modal identity`;
@@ -216,6 +239,9 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `V internal role separation != fundamental primitive decomposition`;
 - `continuation identity != record-direction identity`;
 - `weighted directional score != continuation-independent directional structure`;
+- `balanced mixture != pure constrained history`;
+- `reversed diagnostic sign != reversed Python iteration`;
+- `control of R_direction != control of V_semantics`;
 - `directional record arrow != ontological future openness`;
 - `directional record arrow != ontological becoming`;
 - `lost != metaphysically irreducible`;

@@ -12,7 +12,7 @@ with candidate internal role typing:
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the directional-R/V link as the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 froze the integration contract, Stage 9A supplied a positive common directional-R/V substrate, Stage 9B showed that the directional score can be reversed, balanced, or removed while nontrivial `V_extension` remains, and Stage 9C now shows that explicit nonzero `R_direction` still does not select `V_semantics` under the matched public interface.
+Stage 7 strengthened P/O/R inside one constrained quantum construction. Stage 8 integrated and pressure-tested V in that same family, then refined the layered candidate using compatibility and ablation evidence. Stage 8G selected the directional-R/V link as the next finite-model gate before any generally covariant/gravitational extension. Stage 9.0 froze the integration contract; Stage 9A supplied a positive common directional-R/V substrate; Stage 9B showed that direction can be reversed, balanced, or removed while nontrivial `V_extension` remains; Stage 9C showed that nonzero `R_direction` still does not determine `V_semantics`; and Stage 9D now shows that genuine continuation-specific physical-clock transport is compatible with the directional-record and continuation class/weight structures when event/class/observable typing is explicit.
 
 ## Stages 0–6 — completed and merged
 
@@ -112,7 +112,7 @@ Selected next gate:
 
 > **Integrate directional record formation with nontrivial quantum Potentiality in one constrained continuation family.**
 
-Current Stage 9 gate ranking:
+Stage 9 gate ranking at entry:
 
 1. `directional_record_potentiality` — score 9;
 2. `full_measurement_covariance` — score 6;
@@ -122,13 +122,13 @@ Current Stage 9 gate ranking:
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — active gate
 
-Status: **Stage 9.0, Stage 9A, Stage 9B, and Stage 9C completed; Stage 9D next.**
+Status: **Stage 9.0, Stage 9A, Stage 9B, Stage 9C, and Stage 9D completed; Stage 9E next.**
 
 Stage 9 protocol: [`stage9_protocol.md`](stage9_protocol.md).
 
 ### Stage 9.0 — protocol freeze — completed
 
-Stage 9.0 froze a stronger same-family integration target. At one declared common current anchor `D_*`, the same constrained family must retain at least two physically inequivalent admissible continuations while every canonical continuation carries the same nonzero directional record structure before any branch-weighted aggregation.
+Stage 9.0 froze a stronger same-family integration target. At one common current anchor `D_*`, the constrained family must retain at least two physically inequivalent admissible continuations while every canonical continuation carries the same nonzero directional record structure before branch-weight aggregation.
 
 `continuation identity != record-direction identity`.
 
@@ -136,51 +136,40 @@ Criteria **1–10** are frozen by Stage 9.0.
 
 ### Stage 9A — common directional-R/V continuation substrate — completed
 
-Stage 9A combines the Stage 7C directional-record mechanism with the Stage 8 continuation distinction while preserving the shared e1 current anchor.
-
 Canonical schedules:
 
 - `h_L: (V_0,V_1,V_2)=(I,U_rec,U_scr U_rec)`;
 - `h_R: (V_0,V_1,V_2)=(I,U_rec,Z_C U_scr U_rec)`.
 
-Executable results:
+Results:
 
 - `QExt(e1)={h_L,h_R}`;
-- normalized h_L/h_R e0 and e1 A-perspective states agree within tolerance;
-- each continuation separately has a nonzero lower-index directional record orientation before weighting;
-- h_L/h_R directional scores agree within tolerance;
-- the branch-defining C-sector action is memory-neutral and record-target-neutral;
-- h_L/h_R remain physically inequivalent at e2;
-- physical dimension is 14 for both completions;
-- minimum reduction rank across all A/B/C clock indices is 14;
-- pure renaming deduplicates, current-incompatible candidates are rejected, and `QExt(e2)=empty`.
+- common e0/e1 Actuality;
+- same nonzero lower-index direction in each continuation before weighting;
+- branch action memory-neutral and record-target-neutral;
+- physically inequivalent e2 completions;
+- physical dimension 14;
+- minimum A/B/C reduction rank 14;
+- rename/current-incompatible/terminal controls behave as declared.
 
-This establishes substrate-level coexistence of nontrivial `V_extension` and `R_direction` in the declared finite family. It does not establish ontological future openness or becoming.
+This establishes substrate-level coexistence of nontrivial `V_extension` and `R_direction` in the finite family without identifying them.
 
 Criteria **11–16** are satisfied.
 
 ### Stage 9B — directional diagnostics and controls — completed
 
-Stage 9B holds the continuation distinction fixed while changing the directional-record structure.
-
-For each h_L/h_R continuation before any branch weighting:
+For each h_L/h_R continuation before branch weighting:
 
 - forward: `(A_R,A_acc)=(+1,+0.5)`;
 - reversed: `(A_R,A_acc)=(-1,-0.5)`;
 - balanced: `(A_R,A_acc)=(0,0)`;
 - no-record: `(A_R,A_acc)=(0,0)`.
 
-The reversed construction reverses the common record/scramble interaction skeleton rather than merely reversing diagnostic indices. The independent V branch action remains on the e2 side. Balanced is an equal mixture of separately valid forward/reversed constrained histories; no-record removes the recording channel itself.
-
-All controls preserve nontrivial h_L/h_R `V_extension`. Forward, reversed, and no-record retain physical dimension 14 and minimum A/B/C reduction rank 14. Balanced inherits validity from its pure components.
-
-The balanced control is conceptually distinct from no-record: balanced can retain symmetric record content while its signed direction vanishes.
+All controls preserve nontrivial h_L/h_R `V_extension`. The reversed construction changes the common interaction history rather than Python indexing; balanced is a mixture of valid pure histories; no-record removes the write channel.
 
 `balanced zero R_direction != no R_content`.
 
 `control of R_direction != control of V_semantics`.
-
-This supports controllable separation of `R_direction` from `V_extension` in the declared finite family; it is not a universal R–V independence theorem.
 
 Criteria **17–23** are satisfied.
 
@@ -188,52 +177,80 @@ Strict validation: **`708 passed in 196.73s`** (run #975).
 
 ### Stage 9C — typed modal models and directional operational underdetermination — completed
 
-Stage 9C assigns the same directional carrier two distinct modal roles:
+The same directional carrier receives:
 
 - `M_E^QR=(QRCarrier,e1,h*,q_E)` with one hidden selected complete continuation;
 - `M_O^QR(e1)=(QRCarrier,e1,QExt(e1),K)` with no selected complete continuation datum.
 
-The public `O_QR` interface includes current density, target-memory record content, continuation-independent directional statistics, and future-signature prediction while excluding hidden selector and modal-type fields.
+With matched `q_E=K=(0.5,0.5)`, the public `O_QR` views are equal despite distinct privileged modal structures. Hidden h* swap leaves the public view unchanged. A `K=(0.75,0.25)` weight mismatch changes future prediction while preserving current density, record data, and `(A_R,A_acc)=(+1,+0.5)`.
 
-With matched positive weights `q_E=K=(0.5,0.5)`, the two modal models are operationally equal under `O_QR` even though their privileged structures remain distinct. Swapping only hidden `h*` leaves `O_QR` unchanged.
+Explicit common evidence updates both consistently; epistemic h* is preserved and the ontic update remains selector-free.
 
-A `K=(0.75,0.25)` weight mismatch changes future prediction while preserving the current density, record data, and `(A_R,A_acc)=(+1,+0.5)` directional interface. Explicit common evidence conditions both models consistently; the epistemic selected h* is preserved and the ontic update remains selector-free.
-
-Therefore, in this finite family:
+Therefore:
 
 `R_direction present + V_extension nontrivial + matched O_QR => V_semantics underdetermined`.
 
-This strengthens the Stage 8 modal-underdetermination result because the public interface now contains a nonzero directional record arrow. It still does not establish ontic openness, a secretly fixed future, or ontological becoming.
+This does not establish ontic openness, a secretly fixed future, or ontological becoming.
 
 Criteria **24–30** are satisfied.
 
 Strict validation: **`720 passed in 265.06s`** (run #995).
 
-### Stage 9D — continuation-aware clock transport — next
+### Stage 9D — continuation-aware clock transport — completed
 
-Re-derive the A/B/C physical-clock atlases from each Stage 9 continuation-specific constrained carrier. Transport states, typed directional-record observables, event correspondences, continuation classes, and weights; then test direct/global, inverse/round-trip, and three-clock composition consistency with mismatch controls.
+Stage 9D re-derives the physical A/B/C atlas separately for h_L and h_R.
+
+Results:
+
+- 9 charts per continuation / 18 total;
+- minimum chart rank `14`;
+- 108 genuine ordered distinct-clock state transports;
+- 324 three-clock compositions;
+- state, inverse, induced-metric, and typed record-observable covariance within tolerance;
+- preserving event correspondence retains `(A_R,A_acc)=(+1,+0.5)` at all charts;
+- explicit reversing event correspondence gives `(-1,-0.5)`;
+- matched epistemic/ontic transported public views remain equal across all clock nodes;
+- hidden h* swap remains publicly invisible at all nodes;
+- continuation classes and weights transport under explicit class correspondence;
+- wrong event/class/continuation maps and bare-observable reuse are rejected.
+
+Thus the Stage 9 directional-R/V construction is not an artifact of one preferred A-clock representation. Genuine `P` transport is compatible with directional `R` and nontrivial `V_extension/V_weights` in this typed finite atlas.
+
+`perspective change != temporal-direction reversal`.
+
+`continuation-aware transport != one universal h-independent map`.
+
+`covariance of a wrongly typed observable != semantic correctness`.
+
+The full cross-continuation Stage 9C future-signature measurement-family covariance remains separately `not_established`.
+
+Criteria **31–36** are satisfied.
+
+Strict scientific validation: **`733 passed in 372.31s`** (run #1013).
+
+### Stage 9E — P/O/R_direction/V compatibility matrix — next
+
+Use the accumulated executable evidence to classify separately:
+
+- `R_direction` with `V_extension`;
+- `R_direction` with `V_weights`;
+- `R_direction` with `V_semantics`;
+- `R_access` with `V`;
+- `P-R_direction-V`;
+- `O-R_direction-V`.
+
+Stage 9E should not add metaphysical interpretation by fiat; it should classify only what Stages 9A–9D actually establish, leave unresolved relations `not_established` or `underdetermined`, and identify any new `Xi_RV` constraints required by the evidence.
 
 ### Later Stage 9 pressure points
 
-- Stage 9E — P/O/R_direction/V compatibility matrix;
 - Stage 9F — ablation / reconstruction / accessibility matrix;
 - Stage 9G — synthesis and evidence-selected next gate.
 
-Required continuing pressure points include:
-
-- genuine continuation-specific P transport with re-derived A/B/C atlases;
-- explicit event/class/observable correspondence;
-- separate checks of `R_direction` against `V_extension`, `V_semantics`, and `V_weights`;
-- local-accessibility ablations;
-- continued separation of record direction from thermodynamic, ontological, and phenomenal arrows.
-
-`directional record arrow != ontological future openness`.
-
-`directional record arrow != ontological becoming`.
+Remaining pressure points include local-accessibility ablations, reconstruction of explicit maps, modal-semantics ablation, singleton-QExt controls, and deliberate record-observable typing failures.
 
 ## Stage 10 — Generally covariant / gravitational extension — deferred gate
 
-Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9. Stage 8G supersedes that placement with the more discriminating directional-R/V gate. Gravity remains deferred rather than discarded.
+Earlier roadmap versions placed the generally covariant / gravitational extension at Stage 9. Stage 8G superseded that placement with the more discriminating directional-R/V gate. Gravity remains deferred rather than discarded.
 
 A future progression may use parametrized systems and tractable generally covariant models only after the remaining finite-model R_direction/V and measurement-family boundaries are sufficiently isolated.
 
@@ -256,6 +273,12 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `order != directional record arrow`;
 - `same P/O/current-R public data != modal identity`;
 - `covariance of a wrongly typed observable != semantic correctness`;
+- `perspective change != temporal-direction reversal`;
+- `continuation-aware transport != one universal h-independent map`;
+- `branch-specific perspective map != hidden branch selection`;
+- `directional record covariance != P=R`;
+- `P-R_direction-V covariance != ontic openness`;
+- `class/weight covariance != V_semantics identity`;
 - `directional R absent in canonical Stage 8 V carrier != universal R-V incompatibility`;
 - `record-neutral V witness != universal R-V independence theorem`;
 - `V internal role separation != fundamental primitive decomposition`;
@@ -275,6 +298,8 @@ Seek empirical relevance only after deriving a genuinely discriminating predicti
 - `underdetermined != ontically open`;
 - `inaccessible != globally absent`;
 - `full Stage 8C measurement covariance remains not_established`;
+- `full Stage 9C future-measurement covariance remains not_established`;
 - `partial-atlas consistency != general covariance`;
+- `finite clock covariance != general covariance`;
 - `not_established != false`;
 - `finite-model success != empirical discovery`.

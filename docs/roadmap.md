@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 and Stage 11A are completed; criteria 1–16 are satisfied and Stage 11B is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0, Stage 11A, and Stage 11B are completed; criteria 1–23 are satisfied and Stage 11C is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -102,7 +102,7 @@ Historical criterion-50 guard retained: `merge-ready != merged`; merge readiness
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11A completed
+## Stage 11 — Parametrized covariance precursor — Stage 11B completed
 
 Selected Stage 11 gate:
 
@@ -157,17 +157,56 @@ Bounded result:
 
 `minimal Stage 11A constraint orbit preservation = established`.
 
+Repository-level Stage 11A checkpoint: run #1309, **`883 passed in 630.96s (0:10:30)`**.
+
 Guard:
 
 `same constraint orbit != established general covariance`.
 
-### Stage 11B — relational observables and relational derivatives — next
+### Stage 11B — relational observables and relational derivatives — completed
 
-Criteria **17–23** will test `q(T=tau)` and `dq/dT` across all four positive parameterizations, require raw nonlinear parameter rates to remain visibly different, type anchor/target events explicitly, and reject raw-equal-parameter matching as an event-identity rule.
+Criteria **17–23** are satisfied.
+
+The relational observable is
+
+`q(T=tau)`,
+
+and the relational derivative is
+
+`dq/dT=(dq/dlambda)/(dT/dlambda)`.
+
+Stage 11B executable evidence:
+
+- **52** relational-observable evaluations across 4 parameterizations × 13 events;
+- **52** relational-derivative evaluations;
+- maximum corresponding `q(T=tau)` residual: **0.0** within the deterministic carrier;
+- maximum cross-parameterization relational-derivative residual: **0.0** within tolerance;
+- reconstructed `dq/dT`: **1.25**;
+- raw nonlinear `dq/dlambda` differences remain at **24** chart-event points;
+- explicit typed precursor anchor/target views: **8**;
+- identity/affine equal raw-parameter overlaps: **7**;
+- equal raw overlaps that actually pair different events: **6**;
+- coincident overlap that is also the same event: **1**.
+
+The raw-equal-parameter matching rule is classified as
+
+`invalid_equal_raw_parameter_event_rule`.
+
+Bounded result:
+
+`Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
+
+Guards:
+
+`equal raw lambda != physical-event correspondence`.
+
+`relational covariance on one finite orbit != general covariance`.
+
+### Stage 11C — typed O/P/R/V/Xi lift — next
+
+Criteria **24–31** will test whether the layered Stage 10 `O/P/R/V;Xi` architecture can itself be preserved/reconstructed across the four positive parameterizations, including continuation/class correspondence, directional-record typing, value semantics/weights, and explicit parameterization/event/lapse semantics in `Xi`.
 
 ### Later Stage 11 sequence
-
-Stage 11C — typed O/P/R/V/Xi lift across parameterizations.
 
 Stage 11D — Stage 10 future-measurement covariance under reparameterization.
 
@@ -191,7 +230,7 @@ A richer causal/order layer and nonideal/POVM clocks remain live later candidate
 
 ### Historical roadmap labels retained for regression context
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11A completed above.
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11B completed above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 
@@ -210,8 +249,10 @@ Seek empirical relevance only after a genuinely discriminating prediction is der
 - `parameter label != event identity`;
 - `internal clock perspective != external parameterization`;
 - `orientation-preserving reparameterization != time reversal`;
+- `equal raw lambda != physical-event correspondence`;
 - `same relational orbit != same metaphysics`;
 - `same constraint orbit != established general covariance`;
+- `relational covariance on one finite orbit != general covariance`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;

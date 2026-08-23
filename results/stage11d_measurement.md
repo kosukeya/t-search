@@ -4,7 +4,7 @@ Status: **completed; criteria 32–38 satisfied by executable diagnostics.**
 
 Source/unit-test validation checkpoint: run #1361 — **`907 passed in 590.98s (0:09:50)`**.
 
-This CI checkpoint validates repository behavior only:
+The documentation-synchronized full regression is tracked separately from the scientific evidence.
 
 `repository validation != new scientific evidence`.
 

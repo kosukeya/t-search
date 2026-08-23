@@ -1,6 +1,6 @@
 # Stage 11 Protocol — Parametrized Covariance Precursor
 
-Status: **Stage 11.0, Stage 11A, and Stage 11B completed; criteria 1–23 satisfied; criteria 24–50 pending implementation and external review.**
+Status: **Stage 11.0, Stage 11A, Stage 11B, and Stage 11C completed; criteria 1–31 satisfied; criteria 32–50 pending implementation and external review.**
 
 Selected Stage 11 gate from Stage 10G:
 
@@ -196,7 +196,7 @@ Stage 11B keeps explicit precursor event roles:
 - measurement target: `orbit_event_10`;
 - typed anchor/target views across the four parameterizations: **8**.
 
-These precursor roles do not replace the Stage 10 quantum `e1 -> e2` measurement typing; that lift is reserved for Stage 11D.
+These precursor roles do not replace the Stage 10 quantum `e1 -> e2` measurement typing; the Stage 11C bridge is a typed association, not a dynamical identification.
 
 ### Equal-raw-parameter false comparison
 
@@ -217,7 +217,8 @@ Bounded Stage 11B result:
 Stage 11B validation checkpoints:
 
 - source/result checkpoint run #1319 — **`890 passed in 640.07s (0:10:40)`**;
-- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**.
+- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**;
+- final synchronization run #1335 — **`891 passed in 652.53s (0:10:52)`**.
 
 These are repository-validation checkpoints only:
 
@@ -227,54 +228,105 @@ This Stage 11B result is narrower than O/P/R/V or measurement covariance.
 
 `relational covariance on one finite orbit != general covariance`.
 
-## 7. Frozen O/P/R/V/Xi lift target
+## 7. Stage 11C typed O/P/R/V/Xi lift checkpoint
 
-Stage 11C must now transport/reconstruct the full typed architecture across admissible parameterizations.
+Stage 11C lifts the existing Stage 9/10 physical/modal/record/value payload onto each of the four positive external parameterizations while keeping representation-specific information in Xi.
+
+The construction is a typed product lift: it demonstrates representational compatibility, not a new dynamical equivalence theorem.
 
 ### O
 
-`O` is attached to typed physical relational events, not bare parameter values.
+O retains:
+
+- the common Stage 9/10 current `e1` density payload;
+- typed Stage 11 prediction-anchor and measurement-target physical event roles;
+- relational `T` and `q(T)` values.
+
+Raw `lambda_rho` values are excluded from O and placed in Xi.
+
+Across the four positive parameterizations:
+
+- maximum current-density residual: **0.0**;
+- maximum relational-O residual: **0.0**.
 
 ### P
 
-The Stage 10 modal extension carrier remains
+The Stage 10 modal extension carrier remains exactly
 
 `QExt(e1)={h_L,h_R}`.
 
-Stage 11C tests
-
-`QExt^rho(e1) ~= QExt^sigma(e1)`
-
-under explicit continuation/event correspondence.
+Its two continuation ids remain aligned with their physical continuation classes. P is identical/isomorphic across all four positive parameterizations.
 
 `reparameterization invariance of QExt != ontic future openness`.
 
 ### R
 
-`R=(R_content,R_direction,R_access)` is transported under orientation-preserving maps without defining physical direction from increasing `lambda`.
+`R=(R_content,R_direction,R_access)` is retained with **2** rows in each typed component, one per continuation class.
+
+Maximum R residual across parameterizations: **0.0**.
+
+The direction component is inherited from the internally anchored Stage 9 record diagnostic, not from increasing external `lambda`.
 
 `parameter orientation != physical record direction by definition`.
 
 ### V
 
-`V=(V_extension,V_semantics,V_weights)` is transported/reconstructed with continuation/class alignment and weight semantics explicit.
+`V=(V_extension,V_semantics,V_weights)` retains:
+
+- `V_extension=(h_L,h_R)`;
+- matched public continuation-class weights `(0.5,0.5)`;
+- explicit continuation/weight alignment;
+- public weight semantics that do not encode hidden `h*`.
+
+Maximum V-weight residual across parameterizations: **0.0**.
+
+Matched epistemic and ontic-extension public projections agree across all four parameterizations, while their privileged source-model modal semantics remain distinct. Swapping hidden epistemic `h*` from `h_L` to `h_R` leaves the public Stage 11C architecture unchanged.
+
+`selector-free public projection != absence of privileged modal semantics`.
 
 ### Xi
 
-Stage 11 extends `Xi` with at least:
+Stage 11C Xi carries:
 
 - parameterization identity;
-- parameter-event correspondence;
-- lapse/rate transformation semantics;
-- inherited clock/event/class/outcome correspondences;
-- normalization convention;
-- continuation-weight semantics.
+- raw anchor/target parameter values;
+- transformed positive lapse at those roles;
+- typed `e1/e2 -> Stage 11 physical event id` role bridge;
+- continuation/class correspondence;
+- outcome correspondence;
+- event/lapse/weight semantics.
 
-`typed-resource use != metaphysical fundamentality`.
+Canonical Xi views: **4**.
+
+Continuation/class correspondence entries: **8**.
+
+Outcome correspondence entries: **8**.
+
+The Stage 10/Stage 11 event bridge is a typing association only.
+
+`Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`.
+
+### Schema and corruption controls
+
+The public O/P/R/V/Xi schema contains no hidden selected-continuation, selector, model-type, or modal-type field.
+
+Four type-specific parameter-dependent corruption controls are implemented for O, P, R, and V. All **4 / 4** are detected and classified as
+
+`parameter_dependent_oprv_corruption_detected`.
+
+A wrong continuation/class correspondence is rejected independently as an Xi typing failure.
+
+Bounded Stage 11C result:
+
+`Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
+
+`typed O/P/R/V/Xi lift != full future-measurement covariance`.
+
+`typed product lift feasibility != independent dynamical covariance evidence`.
 
 ## 8. Frozen Stage 10 measurement carry-over
 
-Stage 11D must reuse the Stage 10 future-signature measurement family rather than redesigning it after seeing reparameterization results.
+Stage 11D is next and must reuse the Stage 10 future-signature measurement family rather than redesigning it after seeing reparameterization results.
 
 Reference anchor: `e1`.
 
@@ -338,7 +390,7 @@ The original controls remain frozen:
 11. identify parameter direction with `R_direction` by definition;
 12. mix parameterizations inside one probability/weight/update calculation without typed correspondence.
 
-Stage 11A implements controls 5 and 6 as excluded parameterizations. Stage 11B supplies an explicit control for item 1: 7 equal raw-label overlaps contain 6 false event identifications.
+Stage 11A implements controls 5 and 6 as excluded parameterizations. Stage 11B supplies an explicit control for item 1: 7 equal raw-label overlaps contain 6 false event identifications. Stage 11C implements item 7 at the architecture layer and detects item 10 separately for O, P, R, and V.
 
 `orientation reversal != physical record reversal by definition`.
 
@@ -357,12 +409,14 @@ Evidence already obtained:
 - correct transformed lapse with zero chain-rule residual;
 - **52** covariant `q(T=tau)` evaluations;
 - **52** covariant `dq/dT` evaluations;
-- explicit rejection/classification of raw-equal-parameter event matching.
+- explicit rejection/classification of raw-equal-parameter event matching;
+- preserved/reconstructed typed O/P/R/V payload across **4** positive parameterizations;
+- **4** explicit Xi views carrying different representation metadata;
+- **4 / 4** type-specific O/P/R/V corruption controls detected.
 
 Still pending:
 
-- preserved/reconstructed O/P/R/V typing;
-- preserved Stage 10 measurement probabilities;
+- preserved Stage 10 future-measurement probabilities under reparameterization;
 - clock-change × reparameterization compatibility;
 - remaining frozen ablations/controls.
 
@@ -390,11 +444,13 @@ Source/result checkpoint: run #1319, `890 passed in 640.07s (0:10:40)`.
 
 Documentation-synchronized current-head checkpoint: run #1327, `891 passed in 628.78s (0:10:28)`.
 
-### Stage 11C — typed O/P/R/V/Xi lift — next
+Final synchronization checkpoint: run #1335, `891 passed in 652.53s (0:10:52)`.
+
+### Stage 11C — typed O/P/R/V/Xi lift — completed
 
 Criteria 24–31.
 
-### Stage 11D — future-measurement reparameterization covariance
+### Stage 11D — future-measurement reparameterization covariance — next
 
 Criteria 32–38.
 
@@ -450,14 +506,14 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 
 ### Criteria 24–31 — Stage 11C
 
-24. O is preserved/reconstructed by physical-event correspondence — **pending**.
-25. `QExt(e1)={h_L,h_R}` and P typing are isomorphic across positive parameterizations — **pending**.
-26. `R_content`, `R_direction`, and `R_access` are preserved/reconstructed without defining direction from `lambda` — **pending**.
-27. `V_extension`, `V_semantics`, and `V_weights` are preserved/reconstructed — **pending**.
-28. Xi explicitly carries parameterization/event/lapse semantics needed for typed comparison — **pending**.
-29. Continuation/class/outcome correspondences remain explicit and valid — **pending**.
-30. Hidden epistemic selector/modal-type information is not leaked into the public operational schema — **pending**.
-31. Parameter-dependent O/P/R/V corruption is detected — **pending**.
+24. O is preserved/reconstructed by physical-event correspondence — **satisfied**.
+25. `QExt(e1)={h_L,h_R}` and P typing are isomorphic across positive parameterizations — **satisfied**.
+26. `R_content`, `R_direction`, and `R_access` are preserved/reconstructed without defining direction from `lambda` — **satisfied**.
+27. `V_extension`, `V_semantics`, and `V_weights` are preserved/reconstructed — **satisfied**.
+28. Xi explicitly carries parameterization/event/lapse semantics needed for typed comparison — **satisfied**.
+29. Continuation/class/outcome correspondences remain explicit and valid — **satisfied**.
+30. Hidden epistemic selector/modal-type information is not leaked into the public operational schema — **satisfied**.
+31. Parameter-dependent O/P/R/V corruption is detected — **satisfied**.
 
 ### Criteria 32–38 — Stage 11D
 
@@ -510,6 +566,10 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 - `same relational orbit != same metaphysics`;
 - `same constraint orbit != established general covariance`;
 - `relational covariance on one finite orbit != general covariance`;
+- `typed O/P/R/V/Xi lift != full future-measurement covariance`;
+- `typed product lift feasibility != independent dynamical covariance evidence`;
+- `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
+- `selector-free public projection != absence of privileged modal semantics`;
 - `reparameterization covariance != modal/ontological identity`;
 - `reparameterization covariance != future actuality`;
 - `reparameterization covariance != proof of eternalism`;

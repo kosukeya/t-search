@@ -34,14 +34,18 @@ SELECTED_STAGE12 = (
     "architecture descend consistently across that atlas."
 )
 STAGE10_MERGE = "4a322634a5b83e416d374ee18e96ac6c7a5c88ba"
+STAGE11_MERGE = "d5fdc899a72b6a983c03b1f960c65cda948c8fb8"
 VALIDATED_STAGE11_HEAD = "6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a"
 
 
-def test_stage10_merge_and_stage11_gate_are_synchronized() -> None:
-    assert "Stages 1–10 are completed and merged" in README
+def test_stage10_stage11_merges_and_stage11_gate_are_synchronized() -> None:
+    assert "Stages 1–11 are now completed and merged" in README
     assert STAGE10_MERGE in README
+    assert STAGE11_MERGE in README
     assert "Stage 10 criteria 1–50 are completed and Stage 10 is merged" in ROADMAP
+    assert "PR #12 was subsequently merged into `main`" in ROADMAP
     assert STAGE10_MERGE in ROADMAP
+    assert STAGE11_MERGE in ROADMAP
     for text in (README, ROADMAP, PROTOCOL, FREEZE):
         assert SELECTED_STAGE11 in text
         assert "parametrized covariance precursor != general relativity" in text

@@ -4,15 +4,17 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11G and criterion 50 are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–50 are satisfied and PR #12 is at a merge-ready, unmerged checkpoint.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0 and Stage 12A–G are completed on PR #13; Stage 12 criteria 1–50 are completed at the criterion-50 merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged.**
 
-Current refined finite-model candidate carried through Stage 11:
+Current refined finite-model candidate through Stage 12:
 
-`T11_candidate=(O,P,R,V;Xi)`
+`T12_candidate=(O,P,R,V;Xi)`
 
-with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`.
+Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`. Stage 12G executable synthesis is `multi_orbit_gauge_covariant`.
+
+Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
 Selected Stage 11 gate:
 
@@ -21,6 +23,10 @@ Selected Stage 11 gate:
 Selected Stage 12 gate:
 
 > **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+Selected Stage 13 gate:
+
+> **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
 
 ## Historical Stage 8 checkpoint
 
@@ -88,7 +94,7 @@ Historical boundary: `merge-ready != merged`.
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — completed / merge-ready checkpoint
+## Stage 11 — Parametrized covariance precursor — completed and merged
 
 Key documents:
 
@@ -149,7 +155,7 @@ Criteria **17–23** are satisfied.
 
 Stage 11C lifts the existing Stage 9/10 O/P/R/V architecture onto all four positive parameterizations while representation metadata remain in Xi.
 
-Evidence: matched epistemic/ontic public projections **8**; `QExt(e1)` size **2**, with `(h_L,h_R)` preserved; Xi views **4**; continuation/class correspondence entries **8**; outcome correspondence entries **8**; max O/R/V residuals **0.0**; hidden `h*` swap public-invariant; parameter-dependent O/P/R/V corruption controls **4 / 4** detected.
+Evidence: matched epistemic/ontic public projections **8**; `QExt(e1)={h_L,h_R}` size **2**, with `(h_L,h_R)` preserved; Xi views **4**; continuation/class correspondence entries **8**; outcome correspondence entries **8**; max O/R/V residuals **0.0**; hidden `h*` swap public-invariant; parameter-dependent O/P/R/V corruption controls **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`.
 
 Criteria **24–31** are satisfied.
 
@@ -299,11 +305,217 @@ Criteria **48–49** are satisfied.
 
 Criterion **50** is satisfied externally at reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`. GitHub Actions run #1469 passed **`938 passed in 682.23s (0:11:22)`**. At that checkpoint PR #12 was `mergeable = true`, the branch was **ahead 98 / behind 0** relative to `main`, and there were **0** unresolved inline review threads and **0** submitted review blockers.
 
-Stage 11 criteria **1–50** are closed. PR #12 is merge-ready and remains unmerged.
+Stage 11 criteria **1–50** were closed at that historical merge-readiness checkpoint. At that time PR #12 was merge-ready and unmerged. PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
+
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — criterion-50 merge-readiness checkpoint completed
+
+Key documents:
+
+- [`docs/stage12_protocol.md`](docs/stage12_protocol.md)
+- [`results/stage12_0_protocol_freeze.md`](results/stage12_0_protocol_freeze.md)
+- [`docs/stage12a_notes.md`](docs/stage12a_notes.md) / [`results/stage12a_multi_orbit.md`](results/stage12a_multi_orbit.md)
+- [`docs/stage12b_notes.md`](docs/stage12b_notes.md) / [`results/stage12b_relational.md`](results/stage12b_relational.md)
+- [`docs/stage12c_notes.md`](docs/stage12c_notes.md) / [`results/stage12c_gauge_atlas.md`](results/stage12c_gauge_atlas.md)
+- [`docs/stage12d_notes.md`](docs/stage12d_notes.md) / [`results/stage12d_measurement.md`](results/stage12d_measurement.md)
+- [`docs/stage12e_notes.md`](docs/stage12e_notes.md) / [`results/stage12e_compatibility.md`](results/stage12e_compatibility.md)
+- [`docs/stage12f_notes.md`](docs/stage12f_notes.md) / [`results/stage12f_ablation.md`](results/stage12f_ablation.md)
+- [`docs/stage12g_notes.md`](docs/stage12g_notes.md) / [`results/stage12g_synthesis_stage13_gate.md`](results/stage12g_synthesis_stage13_gate.md)
+- [`results/stage12_criterion50_merge_readiness.md`](results/stage12_criterion50_merge_readiness.md)
+
+### Stage 12.0 — protocol freeze — completed
+
+The protocol separates physical-orbit identity, gauge representative and `Phi_s`, external reparameterization `G`, internal clocks, physical events, modal continuations, and measurement typing. It freezes the four canonical orbit controls and the rule
+
+`quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas`.
+
+### Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — completed
+
+The common constraint is `C = p_T + p^2/2 = 0`. Four canonical physical orbits are sampled with five representatives each, giving **20 representatives total** and **80** ordered non-identity same-orbit `Phi_s` transports. Stage 11 identity/affine/cubic/sinh parameterizations are lifted to every orbit, giving **16 external parameterization views**.
+
+`constraint-generated gauge flow != external reparameterization by definition`.
+
+Stage 12A checkpoint head `4e379f6fd5b075078beebdbae8d940ff4bed773d` passed run #1508 with **`963 passed in 680.97s (0:11:20)`**.
+
+### Stage 12B — Dirac/relational observables and physical-orbit discrimination — completed
+
+Stage 12B independently recomputes `Q_D=q-pT` and `P_D=p` from **20** gauge representatives and **16** external parameterization views. All **6** unordered distinct canonical-orbit pairs remain distinct under the full Dirac pair, including the same-P/different-Q and same-Q/different-P anti-triviality controls.
+
+Across `tau in {-1.25,-0.25,0.75,1.50}`, Stage 12B performs **144 relational q(T=tau) evaluations** and **232 relational derivative evaluations** with target `dq/dT=P_D`. Cross-orbit coincidences—**30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda** matches—are explicitly rejected as sufficient physical-orbit identifiers.
+
+The bounded result is
+
+`Stage 12B Dirac/relational physical-orbit discrimination on the frozen finite family = established`.
+
+Stage 12B final incoming checkpoint head `b3f618c2f08a88c26c6153d768149e2ba5f1543e` passed run #1528 with **`973 passed in 677.85s (0:11:17)`**.
+
+### Stage 12C — typed gauge atlas, quotient, and descent of relational structure — completed
+
+Stage 12C constructs the complete sampled same-orbit gauge groupoid over the Stage 12A representatives: **100 typed `Phi` arrows** including **20 identities**, with **100 inverse checks** and **500 composition checks**. Licensed cross-orbit gauge arrows remain **0**.
+
+The gauge quotient is built from arrow connectivity rather than direct `orbit_id` grouping. It recovers exactly **4 quotient classes** of **5 representatives** each, covering all 20 sampled representatives without mixing canonical physical orbits.
+
+For every quotient class and the four frozen `tau` values, Stage 12C independently recomputes `Q_D=q-pT`, `P_D=p`, `q(T=tau)=Q_D+P_D tau`, and `dq/dT=P_D`, giving **16 quotient-level descent evaluations**. Representative spreads are required to remain within tolerance.
+
+Orbit identity/correspondence ablation is separated into typed status **`lost`** and finite numerical status **`reconstructible`**. Two corrupted purported gauge paths, `wrong_Q_D_path` and `wrong_P_D_path`, are **`numerically_refuted`**. Constraint-orbit / modal-continuation identification is **`false_positive_rejected`**.
+
+The bounded structural result is
+
+`gauge-representative redundancy + physical-orbit plurality + nontrivial relational change`.
+
+Stage 12C final checkpoint head `d3e7dd9dd24a671ec7503d16d953b34139f17e3a` passed run #1548 with **`984 passed in 680.36s (0:11:20)`**.
+
+### Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — completed
+
+Stage 12D fixes external parameterization `identity` and the inherited Stage 11D internal measurement chart `A/e2` so that the isolated comparison is same-orbit gauge-representative descent. Explicit `C x G x Phi` compatibility is reserved for Stage 12E.
+
+All **20** gauge representatives receive typed O/P/R/V/Xi architecture views. Representative-specific gauge provenance remains in Xi, while the quotient projection removes representative id/`s`; the positive family yields **4** distinct quotient-level architecture views, one per physical orbit.
+
+The inherited Stage 10/11 future-measurement family yields **40** per-continuation measurement views / **80** outcome probability evaluations, plus **20** weighted public views and **20** common-evidence posterior views. Within each physical orbit, all five representatives must agree on these inherited operational payloads.
+
+To prevent trivial success from copying one orbit-insensitive measurement payload to every orbit, Stage 12D adds **20 orbit-sensitive witness views** from independently reconstructed `Q_D,P_D` and fixed-target relational `q`. The four physical orbits yield **4** distinct signatures; the minimum pairwise separation of the declared bounded bridge is approximately **0.0057933319**.
+
+Six controls cover wrong orbit/event/class/outcome correspondence, wrong normalization, and `orbit_insensitive_measurement_clone`; the clone is required to be `false_positive_rejected`.
+
+The bounded result is
+
+`Stage 12D typed O/P/R/V and orbit-sensitive future-measurement descent on the frozen finite gauge atlas = established`.
+
+Stage 12D final repository checkpoint head `36bc2d02d07fb954441e22452b1498a90833179b` passed run #1570 with **`994 passed in 562.97s (0:09:22)`**.
+
+### Stage 12E — internal clock × external parameterization × gauge-flow compatibility — completed
+
+Stage 12E separately types **108** genuine internal-clock `C` transports, **12** positive external-reparameterization `G` transports, and **80** nonidentity same-orbit gauge `Phi` transports. The endpoint state simultaneously carries orbit/quotient/representative identity, external parameterization metadata, internal clock/readout and continuation typing, relational anchor/target values, inherited Stage 11E future-measurement probabilities, and the Stage 12D orbit-sensitive witness.
+
+All positive gauge arrows are used in the gauge-containing pairwise tests: **8,640 `C × Phi` squares / 17,280 path evaluations** and **1,920 `G × Phi` squares / 3,840 path evaluations**.
+
+The three-way interaction test then uses one maximally nontrivial `|delta_s|=2` `Phi` edge from each of the four physical orbits. Across those 4 spanning edges, 12 `G` transports and 108 `C` transports, Stage 12E checks **5,184 `C × G × Phi` cubes** and all six transport orders, for **31,104 three-way path evaluations**. The four orbit-sensitive witness signatures remain distinct.
+
+Four invalid paths—`mixed_orbit_phi`, `clock_label_as_parameterization`, `parameterization_label_as_clock`, and `gauge_type_relabelled_as_reparameterization`—must all be classified `mixed_or_untyped_path_rejected`.
+
+The bounded result is
+
+`Stage 12E internal-clock x external-parameterization x gauge-flow compatibility on the frozen finite multi-orbit family = established`.
+
+Stage 12E final repository checkpoint head `b035e0a107a6d64b0c17acd8c197aa630ffc13a6` passed run #1592 with **`1002 passed in 887.98s (0:14:47)`**.
+
+### Stage 12F — ablation / wrong-orbit / false-positive controls — completed
+
+Stage 12F separates numerical reconstructibility, typed identification, covariance status, and metaphysical interpretation under orbit-resource removal/corruption and false-positive pressure tests.
+
+Two orbit-resource ablations are explicit. Removing typed orbit identity/correspondence and corrupting one representative's Xi orbit/quotient correspondence both remain numerically **`reconstructible`**, while typed identification is **`lost`** and the covariance claim is **`not_established`**.
+
+The consolidated matrix contains **27 controls** and requires **27 / 27 rejected**. It includes **2** single-invariant controls, **3** equal-label/single-variable controls retaining the **30 equal-T / 2 equal-q / 312 equal-raw-lambda** witnesses, **3** wrong-gauge controls, Stage 12D context/normalization/orbit-insensitive controls, Stage 12E mixed-orbit/untyped controls, orientation-reversal and noninjective relabeling, modal-continuation conflation, and the temporal-succession overread.
+
+Stage 12F adds **5 representative-dependent O/P/R/V/measurement corruption controls**. The measurement control shifts the two probabilities by `±0.05` while preserving normalization, so a normalized but representative-dependent payload is still rejected.
+
+Every ablation/control carries `metaphysical_claim_status = not_licensed`.
+
+The bounded result is
+
+`Stage 12F typed-resource ablation / wrong-orbit / false-positive controls on the frozen finite multi-orbit gauge atlas = established`.
+
+Stage 12F source run #1596 produced **`1 failed, 1009 passed in 696.32s (0:11:36)`** because one test used exact float equality. The implementation was unchanged when that one assertion was changed to a tolerance comparison. Final Stage 12F repository checkpoint head `68f50acacc4b18f7f646ddc912a8e2791e24cded` passed run #1612 with **`1011 passed in 692.53s (0:11:32)`** and supersedes #1596.
+
+### Stage 12G — executable synthesis and evidence-selected next gate — completed
+
+Stage 12G integrates the complete Stage 12A–F evidence chain and selects exactly one frozen status:
+
+`multi_orbit_gauge_covariant`.
+
+The bounded structural result is
+
+`gauge-representative redundancy + physical-orbit plurality + Dirac-invariant orbit data + nontrivial relational change + quotient-level typed operational descent`.
+
+This does not identify gauge quotienting with elimination of change and does not decide between block/eternalist and ontological-becoming interpretations.
+
+Stage 13 candidate ranking:
+
+| rank | gate | score |
+| --- | --- | ---: |
+| 1 | `multi_constraint_refoliation_precursor` | **10** |
+| 2 | `gravitational_minisuperspace_extension` | **7** |
+| 2 | `richer_causal_order` | **7** |
+| 4 | `nonideal_povm_clocks` | **6** |
+
+Selected Stage 13 gate:
+
+> **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
+
+The nearest unresolved assumption is now the single Hamiltonian constraint. The selected gate isolates nontrivial constraint-algebra effects before a direct gravitational extension.
+
+### Stage 12 criterion 50 — external final repository validation / merge-readiness review — completed
+
+Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At the reviewed checkpoint the branch was **ahead 78 / behind 0** relative to `main`, PR #13 was `mergeable = true`, and there were **0** unresolved inline review threads, **0** submitted review blockers, and **0** PR conversation comments.
+
+Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged; no merge action is taken by criterion 50.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
+
+`multi_orbit_gauge_covariant finite family != general covariance`.
+
+`finite constraint-generated gauge atlas != diffeomorphism invariance`.
+
+`finite C x G x Phi compatibility != refoliation invariance`.
+
+`single Hamiltonian constraint != hypersurface-deformation algebra`.
+
+`constraint-algebra/refoliation precursor != general relativity`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`cross-orbit mismatch != temporal succession or ontological becoming`.
+
+`finite-model ablation != fundamental ontology`.
+
+`false-positive rejection != proof of eternalism`.
+
+`same gauge-invariant probability within an orbit != all physical orbits operationally identical`.
+
+`typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`.
+
+`orbit-sensitive witness != empirical prediction`.
+
+`Dirac invariant != timeless ontology by definition`.
+
+`Dirac-invariant data + relational change != proof of eternalism`.
+
+`relational change != ontological becoming by definition`.
+
+`gauge quotient != elimination of physical change`.
+
+`constraint orbit != modal continuation`.
+
+`operational quotient descent != modal/ontological identity`.
+
+`internal-clock covariance != external-reparameterization covariance`.
+
+`constraint-generated gauge flow != internal-clock change`.
+
+`constraint-generated gauge flow != external reparameterization`.
+
+`path-independent future probabilities != future actuality`.
+
+`path-independent relational outputs != ontological becoming`.
+
+`finite three-way compatibility != diffeomorphism invariance`.
+
+`finite gauge atlas != diffeomorphism invariance`.
+
+`multi-orbit gauge covariance != general covariance`.
+
+`full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
 
 ## Guards
 
@@ -353,6 +565,31 @@ Stage 11 criteria **1–50** are closed. PR #12 is merge-ready and remains unmer
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
+- `constraint-generated gauge flow != ontological becoming`;
+- `different physical orbit != later event on one orbit`;
+- `Dirac invariant != timeless ontology by definition`;
+- `Dirac-invariant data + relational change != proof of eternalism`;
+- `relational change != ontological becoming by definition`;
+- `gauge quotient != elimination of physical change`;
+- `constraint orbit != modal continuation`;
+- `operational quotient descent != modal/ontological identity`;
+- `same gauge-invariant probability within an orbit != all physical orbits operationally identical`;
+- `typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`;
+- `orbit-sensitive witness != empirical prediction`;
+- `internal-clock covariance != external-reparameterization covariance`;
+- `constraint-generated gauge flow != internal-clock change`;
+- `constraint-generated gauge flow != external reparameterization`;
+- `path-independent relational outputs != ontological becoming`;
+- `finite three-way compatibility != diffeomorphism invariance`;
+- `cross-orbit mismatch != temporal succession or ontological becoming`;
+- `false-positive rejection != proof of eternalism`;
+- `finite gauge atlas != diffeomorphism invariance`;
+- `multi-orbit gauge covariance != general covariance`;
+- `multi_orbit_gauge_covariant finite family != general covariance`;
+- `finite constraint-generated gauge atlas != diffeomorphism invariance`;
+- `finite C x G x Phi compatibility != refoliation invariance`;
+- `single Hamiltonian constraint != hypersurface-deformation algebra`;
+- `constraint-algebra/refoliation precursor != general relativity`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
 - `finite-model success != empirical discovery`;

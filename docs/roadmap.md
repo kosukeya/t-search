@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T11_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11G selects `parametrized_covariant`; Stage 11.0 through Stage 11G are completed, criteria 1–49 are satisfied, and criterion 50 remains external final repository validation / merge-readiness review.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11G selects `parametrized_covariant`; Stage 11.0 through Stage 11G and criterion 50 are completed, criteria 1–50 are satisfied, and PR #12 is at a merge-ready, unmerged checkpoint.
 
 ## Stages 0–6 — completed and merged
 
@@ -100,7 +100,7 @@ Selected Stage 10 gate remained the fully typed cross-continuation future-measur
 
 At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11G completed
+## Stage 11 — Parametrized covariance precursor — completed / merge-ready checkpoint
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -269,9 +269,15 @@ This gate tests the nearest unresolved assumption before any direct gravitationa
 
 `constraint-generated gauge precursor != general relativity`.
 
-### Stage 11 criterion 50 — external final repository validation — next
+### Stage 11 criterion 50 — external final repository validation / merge-readiness review — completed
 
-Criterion 50 remains external final full-repository regression / merge-readiness review. Stage 11G scientific synthesis does not close it automatically.
+Criterion **50** is satisfied externally at reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`. GitHub Actions run #1469 passed **`938 passed in 682.23s (0:11:22)`**. The reviewed branch was **ahead 98 / behind 0**, PR #12 was `mergeable = true`, and there were **0** unresolved inline review threads and **0** submitted review blockers.
+
+Stage 11 criteria **1–50** are completed. PR #12 is merge-ready and remains unmerged.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
 
 ## Later directions
 
@@ -324,4 +330,5 @@ A richer causal/order layer, nonideal/POVM clocks, and a minimal gravitational/m
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
 - `finite-model success != empirical discovery`;
-- `repository validation != new scientific evidence`.
+- `repository validation != new scientific evidence`;
+- `merge-ready != merged`.

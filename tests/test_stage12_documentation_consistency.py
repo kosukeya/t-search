@@ -13,6 +13,8 @@ NOTES_C = (ROOT / "docs" / "stage12c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage12c_gauge_atlas.md").read_text(encoding="utf-8")
 NOTES_D = (ROOT / "docs" / "stage12d_notes.md").read_text(encoding="utf-8")
 RESULT_D = (ROOT / "results" / "stage12d_measurement.md").read_text(encoding="utf-8")
+NOTES_E = (ROOT / "docs" / "stage12e_notes.md").read_text(encoding="utf-8")
+RESULT_E = (ROOT / "results" / "stage12e_compatibility.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
@@ -29,17 +31,22 @@ def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
         assert "constraint-generated gauge precursor != general relativity" in text
 
 
-def test_stage12d_top_level_current_status_is_synchronized() -> None:
+def test_stage12e_top_level_current_status_is_synchronized() -> None:
     for text in (README, ROADMAP):
-        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D"):
+        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D", "Stage 12E"):
             assert stage in text
-        assert "criteria 1–38 are satisfied and Stage 12E is next" in text
+        assert "criteria 1–43 are satisfied and Stage 12F is next" in text
         assert "d5fdc899a72b6a983c03b1f960c65cda948c8fb8" in text
-        assert "984 passed in 680.36s (0:11:20)" in text
-    assert "docs/stage12c_notes.md" in README
-    assert "results/stage12c_gauge_atlas.md" in README
-    assert "docs/stage12d_notes.md" in README
-    assert "results/stage12d_measurement.md" in README
+        assert "994 passed in 562.97s (0:09:22)" in text
+    for path in (
+        "docs/stage12c_notes.md",
+        "results/stage12c_gauge_atlas.md",
+        "docs/stage12d_notes.md",
+        "results/stage12d_measurement.md",
+        "docs/stage12e_notes.md",
+        "results/stage12e_compatibility.md",
+    ):
+        assert path in README
 
 
 def test_stage12_type_separation_is_frozen() -> None:
@@ -88,10 +95,7 @@ def test_stage12_gauge_equivalence_and_noncollapse_rules_are_frozen() -> None:
     assert "different (Q_D,P_D) => different physical orbit" in combined
     assert "same physical orbit -> quotient-invariant licensed content" in PROTOCOL
     assert "different physical orbit -> not collapsed merely by gauge quotienting" in PROTOCOL
-    assert (
-        "quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas"
-        in combined
-    )
+    assert "quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas" in combined
 
 
 def test_stage12_reuses_stage11_parameter_and_measurement_architecture() -> None:
@@ -135,13 +139,13 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12d_closes_criteria_32_38_while_freeze_remains_historical() -> None:
-    assert "Stage 12D completed; criteria 1–38 satisfied; criteria 39–50 pending" in PROTOCOL
+def test_stage12e_closes_criteria_39_43_while_freeze_remains_historical() -> None:
+    assert "Stage 12E completed; criteria 1–43 satisfied; criteria 44–50 pending" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 38
-    assert PROTOCOL.count("**pending**") == 12
+    assert PROTOCOL.count("**satisfied**") == 43
+    assert PROTOCOL.count("**pending**") == 7
 
 
 def test_stage12a_implementation_checkpoint_remains_documented() -> None:
@@ -199,14 +203,11 @@ def test_stage12c_implementation_checkpoint_remains_documented() -> None:
     assert "984 passed in 680.36s (0:11:20)" in PROTOCOL
 
 
-def test_stage12d_implementation_checkpoint_is_documented() -> None:
+def test_stage12d_implementation_checkpoint_remains_documented() -> None:
     combined = PROTOCOL + "\n" + NOTES_D + "\n" + RESULT_D
     for phrase in (
         "identity",
         "A/e2",
-        "20",
-        "40",
-        "80",
         "weighted public views",
         "posterior views",
         "orbit-sensitive witness",
@@ -221,8 +222,33 @@ def test_stage12d_implementation_checkpoint_is_documented() -> None:
         "orbit-sensitive witness != empirical prediction",
     ):
         assert phrase in combined
-    assert "#1548" in NOTES_D
-    assert "984 passed in 680.36s (0:11:20)" in NOTES_D
+    assert "#1570" in PROTOCOL + "\n" + NOTES_E
+    assert "994 passed in 562.97s (0:09:22)" in PROTOCOL + "\n" + NOTES_E
+
+
+def test_stage12e_implementation_checkpoint_is_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_E + "\n" + RESULT_E
+    for phrase in (
+        "108",
+        "12",
+        "80",
+        "8,640",
+        "17,280",
+        "1,920",
+        "3,840",
+        "5,184",
+        "31,104",
+        "internal_clock_transport",
+        "external_reparameterization_transport",
+        "constraint_generated_gauge_transport",
+        "mixed_or_untyped_path_rejected",
+        "mixed_orbit_phi",
+        "clock_label_as_parameterization",
+        "parameterization_label_as_clock",
+        "gauge_type_relabelled_as_reparameterization",
+        "finite three-way compatibility != diffeomorphism invariance",
+    ):
+        assert phrase in combined
 
 
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
@@ -231,8 +257,8 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
         "Stage 12B — Dirac/relational observables and physical-orbit discrimination — **completed**",
         "Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**",
         "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**",
-        "Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **next**",
-        "Stage 12F — ablation / wrong-orbit / false-positive controls",
+        "Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**",
+        "Stage 12F — ablation / wrong-orbit / false-positive controls — **next**",
         "Stage 12G — executable synthesis and evidence-selected next gate",
     ):
         assert stage in PROTOCOL
@@ -246,7 +272,9 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
 
 
 def test_stage12_interpretation_guards_remain_explicit() -> None:
-    combined = "\n".join((PROTOCOL, FREEZE, NOTES_A, NOTES_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D))
+    combined = "\n".join(
+        (PROTOCOL, FREEZE, NOTES_A, NOTES_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D, NOTES_E, RESULT_E)
+    )
     for phrase in (
         "constraint-generated gauge flow != ontological becoming",
         "Dirac invariant != timeless ontology by definition",
@@ -261,6 +289,12 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
         "finite gauge atlas != diffeomorphism invariance",
         "single Hamiltonian constraint != hypersurface-deformation algebra",
         "future-measurement covariance != future actuality",
+        "commuting finite gauge/clock diagrams != general covariance",
+        "constraint-generated gauge flow != internal-clock change",
+        "constraint-generated gauge flow != external reparameterization",
+        "path-independent future probabilities != future actuality",
+        "path-independent relational outputs != ontological becoming",
+        "finite three-way compatibility != diffeomorphism invariance",
         "finite-model success != empirical discovery",
         "not_established != false",
     ):

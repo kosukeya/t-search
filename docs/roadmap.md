@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T11_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, Stage 12C, Stage 12D, and Stage 12E are completed on Draft PR #13; criteria 1–43 are satisfied and Stage 12F is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, Stage 12C, Stage 12D, Stage 12E, and Stage 12F are completed on Draft PR #13; criteria 1–47 are satisfied and Stage 12G is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -385,6 +385,8 @@ Bounded result:
 
 `Stage 12E internal-clock x external-parameterization x gauge-flow compatibility on the frozen finite multi-orbit family = established`.
 
+Stage 12E final repository checkpoint head `b035e0a107a6d64b0c17acd8c197aa630ffc13a6` passed run #1592: **`1002 passed in 887.98s (0:14:47)`**.
+
 `commuting finite gauge/clock diagrams != general covariance`.
 
 `internal-clock covariance != external-reparameterization covariance`.
@@ -399,9 +401,49 @@ Bounded result:
 
 `finite three-way compatibility != diffeomorphism invariance`.
 
-### Next: Stage 12F — ablation / wrong-orbit / false-positive controls
+### Stage 12F — ablation / wrong-orbit / false-positive controls — completed
 
-Stage 12F must consolidate the frozen ablations and false-positive family across Stage 12A–E, separating typed-resource loss from finite numerical reconstructibility and rejecting weak single-invariant/equal-label/cross-orbit gauge rules, representative-dependent operational corruption, and orbit-insensitive measurement trivialization without promoting failure modes to metaphysical conclusions.
+Criteria **44–47** satisfied. Stage 12F separates finite numerical reconstruction, typed identity, covariance status, and interpretation.
+
+Two orbit-resource ablations are explicit. Removing typed orbit identity/correspondence and corrupting one representative's Xi orbit/quotient correspondence both remain numerically **`reconstructible`**, while typed identification is **`lost`** and the covariance claim is **`not_established`**.
+
+The consolidated false-positive matrix contains **27 controls** and requires **27 / 27 rejected**. Its key subfamilies are:
+
+- **2** single-invariant controls;
+- **3** equal-label/single-variable controls retaining **30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda** witnesses;
+- **3** wrong-gauge controls, including forced cross-orbit `Phi`;
+- **5** representative-dependent O/P/R/V/measurement corruption controls;
+- Stage 12D wrong context/normalization/orbit-insensitive controls;
+- Stage 12E mixed-orbit/untyped transport controls;
+- orientation-reversal and noninjective relabeling;
+- constraint-orbit/modal-continuation conflation;
+- `different_physical_orbit_as_temporal_succession`.
+
+The representative-dependent measurement control changes probabilities by `±0.05` while preserving normalization, so a normalized but representative-dependent payload still fails descent.
+
+Every ablation/control carries `metaphysical_claim_status = not_licensed`.
+
+Bounded result:
+
+`Stage 12F typed-resource ablation / wrong-orbit / false-positive controls on the frozen finite multi-orbit gauge atlas = established`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`cross-orbit mismatch != temporal succession or ontological becoming`.
+
+`finite-model ablation != fundamental ontology`.
+
+`false-positive rejection != proof of eternalism`.
+
+### Next: Stage 12G — executable synthesis and evidence-selected next gate
+
+Stage 12G must integrate the complete Stage 12A–F evidence chain and select exactly one frozen status from `multi_orbit_gauge_covariant`, `multi_orbit_gauge_partial`, `multi_orbit_gauge_obstructed`, or `inconclusive`. The next gate must be evidence-selected without presupposing general covariance, GR, eternalism, or the falsity of ontological becoming.
 
 ## Later directions
 
@@ -470,6 +512,8 @@ A richer causal/order layer, nonideal/POVM clocks, and a minimal gravitational/m
 - `constraint-generated gauge flow != external reparameterization`;
 - `path-independent relational outputs != ontological becoming`;
 - `finite three-way compatibility != diffeomorphism invariance`;
+- `cross-orbit mismatch != temporal succession or ontological becoming`;
+- `false-positive rejection != proof of eternalism`;
 - `finite gauge atlas != diffeomorphism invariance`;
 - `multi-orbit gauge covariance != general covariance`;
 - `finite-model success != empirical discovery`;

@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0, Stage 11A, and Stage 11B are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–23 are satisfied and Stage 11C is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0, Stage 11A, Stage 11B, and Stage 11C are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–31 are satisfied and Stage 11D is next.**
 
 Current refined finite-model candidate carried into Stage 11:
 
@@ -111,7 +111,7 @@ A stale documentation guard exposed by run #1273 was corrected without changing 
 
 At the criterion-50 checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers. That checkpoint established readiness only; the historical guard remains `merge-ready != merged`. PR #11 was subsequently merged into `main` on 2026-08-22.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11B completed
+## Stage 11 — Parametrized covariance precursor — Stage 11C completed
 
 Stage 11 begins from the Stage 10G-selected gate and asks whether the typed O/P/R/V measurement architecture can be preserved or reconstructed when the same physical relational history is represented with different admissible external parameterizations.
 
@@ -123,6 +123,8 @@ Key documents:
 - [`results/stage11a_parametrized.md`](results/stage11a_parametrized.md)
 - [`docs/stage11b_notes.md`](docs/stage11b_notes.md)
 - [`results/stage11b_relational.md`](results/stage11b_relational.md)
+- [`docs/stage11c_notes.md`](docs/stage11c_notes.md)
+- [`results/stage11c_lift.md`](results/stage11c_lift.md)
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -198,7 +200,8 @@ Thus criteria **17–23** are satisfied and the bounded result is:
 Validation checkpoints:
 
 - source/result run #1319 — **`890 passed in 640.07s (0:10:40)`**;
-- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**.
+- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**;
+- final Stage 11B synchronization run #1335 — **`891 passed in 652.53s (0:10:52)`**.
 
 These CI runs validate repository consistency only: `repository validation != new scientific evidence`.
 
@@ -208,9 +211,46 @@ Guards:
 
 `relational covariance on one finite orbit != general covariance`.
 
-### Stage 11C — typed O/P/R/V/Xi lift — next
+### Stage 11C — typed O/P/R/V/Xi lift — completed
 
-Stage 11C will test whether the Stage 10 layered `O/P/R/V;Xi` architecture itself—not merely the classical relational orbit—can be preserved/reconstructed across all four positive parameterizations while keeping event, continuation, record, value, and typing resources explicit.
+Stage 11C lifts the existing Stage 9/10 physical/modal/record/value architecture onto the four frozen positive external parameterizations while isolating representation-specific data in `Xi`.
+
+Executable Stage 11C diagnostics:
+
+- positive parameterizations: **4**;
+- matched epistemic/ontic public projections: **8**;
+- `QExt(e1)` size: **2**, with `(h_L,h_R)` preserved;
+- `R_content` rows: **2**;
+- `R_direction` rows: **2**;
+- `R_access` rows: **2**;
+- Xi views: **4**;
+- continuation/class correspondence entries: **8**;
+- outcome correspondence entries: **8**;
+- max current-density residual across parameterizations: **0.0**;
+- max relational-O residual: **0.0**;
+- max R residual: **0.0**;
+- max V-weight residual: **0.0**;
+- hidden epistemic `h*` swap leaves the public architecture unchanged while privileged modal roles remain distinct;
+- public O/P/R/V/Xi schema remains selector-free;
+- parameter-dependent O/P/R/V corruption controls detected: **4 / 4**.
+
+The bounded result is:
+
+`Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
+
+This result is structural/typed rather than an independent dynamics result:
+
+`typed O/P/R/V/Xi lift != full future-measurement covariance`.
+
+`typed product lift feasibility != independent dynamical covariance evidence`.
+
+`Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`.
+
+Thus criteria **24–31** are satisfied.
+
+### Stage 11D — future-measurement reparameterization covariance — next
+
+Stage 11D will reuse the frozen Stage 10 future-signature measurement family and test per-continuation probabilities, completeness/positivity/normalization, weighted predictions, modal public views, evidence updates, and wrong-typing controls across the four positive external parameterizations.
 
 The controlled target remains narrower than general covariance:
 
@@ -235,6 +275,10 @@ The controlled target remains narrower than general covariance:
 - `same relational orbit != same metaphysics`;
 - `same constraint orbit != established general covariance`;
 - `relational covariance on one finite orbit != general covariance`;
+- `typed O/P/R/V/Xi lift != full future-measurement covariance`;
+- `typed product lift feasibility != independent dynamical covariance evidence`;
+- `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
+- `selector-free public projection != absence of privileged modal semantics`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;

@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0, Stage 11A, and Stage 11B are completed; criteria 1–23 are satisfied and Stage 11C is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0, Stage 11A, Stage 11B, and Stage 11C are completed; criteria 1–31 are satisfied and Stage 11D is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -102,7 +102,7 @@ Historical criterion-50 guard retained: `merge-ready != merged`; merge readiness
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11B completed
+## Stage 11 — Parametrized covariance precursor — Stage 11C completed
 
 Selected Stage 11 gate:
 
@@ -199,7 +199,8 @@ Bounded result:
 Stage 11B validation checkpoints:
 
 - source/result run #1319 — **`890 passed in 640.07s (0:10:40)`**;
-- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**.
+- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**;
+- final Stage 11B synchronization run #1335 — **`891 passed in 652.53s (0:10:52)`**.
 
 These are repository-validation checkpoints only: `repository validation != new scientific evidence`.
 
@@ -209,13 +210,50 @@ Guards:
 
 `relational covariance on one finite orbit != general covariance`.
 
-### Stage 11C — typed O/P/R/V/Xi lift — next
+### Stage 11C — typed O/P/R/V/Xi lift — completed
 
-Criteria **24–31** will test whether the layered Stage 10 `O/P/R/V;Xi` architecture can itself be preserved/reconstructed across the four positive parameterizations, including continuation/class correspondence, directional-record typing, value semantics/weights, and explicit parameterization/event/lapse semantics in `Xi`.
+Criteria **24–31** are satisfied by the executable Stage 11C diagnostics.
+
+The Stage 9/10 O/P/R/V payload is lifted onto all four positive parameterizations while raw parameter values, transformed lapse values, event-role correspondence, and continuation/outcome typing are carried in Xi.
+
+Stage 11C diagnostics:
+
+- positive parameterizations: **4**;
+- matched epistemic/ontic public projections: **8**;
+- `QExt(e1)={h_L,h_R}` size: **2**;
+- `R_content`, `R_direction`, and `R_access` rows: **2** each;
+- Xi views: **4**;
+- continuation/class correspondence entries: **8**;
+- outcome correspondence entries: **8**;
+- maximum current-density residual: **0.0**;
+- maximum relational-O residual: **0.0**;
+- maximum R residual: **0.0**;
+- maximum V-weight residual: **0.0**;
+- matched epistemic/ontic public architectures agree across the positive family;
+- hidden epistemic `h*` swap remains public-invariant while privileged modal semantics remain distinct;
+- public O/P/R/V/Xi schema is selector-free;
+- parameter-dependent O/P/R/V corruption controls detected: **4 / 4**;
+- wrong continuation/class correspondence is rejected independently as an Xi typing failure.
+
+Bounded result:
+
+`Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
+
+Guards:
+
+`typed O/P/R/V/Xi lift != full future-measurement covariance`.
+
+`typed product lift feasibility != independent dynamical covariance evidence`.
+
+`Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`.
+
+`selector-free public projection != absence of privileged modal semantics`.
+
+### Stage 11D — future-measurement reparameterization covariance — next
+
+Criteria **32–38** will reuse the frozen Stage 10 future-signature measurement family and test the actual per-continuation probability/measurement layer across the four positive external parameterizations, including completeness/positivity/normalization, weighted predictions, common-evidence update, and wrong-typing controls.
 
 ### Later Stage 11 sequence
-
-Stage 11D — Stage 10 future-measurement covariance under reparameterization.
 
 Stage 11E — internal-clock change × external-reparameterization compatibility and commuting squares.
 
@@ -237,7 +275,7 @@ A richer causal/order layer and nonideal/POVM clocks remain live later candidate
 
 ### Historical roadmap labels retained for regression context
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11B completed above.
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11C completed above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 
@@ -260,6 +298,10 @@ Seek empirical relevance only after a genuinely discriminating prediction is der
 - `same relational orbit != same metaphysics`;
 - `same constraint orbit != established general covariance`;
 - `relational covariance on one finite orbit != general covariance`;
+- `typed O/P/R/V/Xi lift != full future-measurement covariance`;
+- `typed product lift feasibility != independent dynamical covariance evidence`;
+- `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
+- `selector-free public projection != absence of privileged modal semantics`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;

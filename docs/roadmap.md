@@ -6,7 +6,9 @@ This roadmap is provisional and evidence-selected.
 
 `T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite Stage 12 family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12.0 and Stage 12A–G are completed on Draft PR #13, criteria 1–49 are satisfied and criterion 50 is next.
+Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 are completed at the criterion-50 merge-readiness checkpoint on PR #13. PR #13 remains open, Draft, and unmerged.
+
+Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
 Selected Stage 10 gate:
 
@@ -227,7 +229,7 @@ Stage 11 criteria **1–50** are completed.
 
 `merge-ready != merged`.
 
-## Stage 12 — Multi-orbit constraint-generated gauge atlas — in progress
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — criterion-50 merge-readiness checkpoint completed
 
 ### Stage 12.0 — protocol freeze — completed
 
@@ -330,21 +332,15 @@ Selected Stage 13 gate:
 
 The nearest unresolved assumption is the single Hamiltonian constraint. The selected gate isolates nontrivial constraint-algebra effects before introducing a dynamical gravitational carrier.
 
-Stage 12 criteria **1–49 are satisfied and criterion 50 is next**.
+### Stage 12 criterion 50 — external final repository validation / merge-readiness review — completed
 
-`multi_orbit_gauge_covariant finite family != general covariance`.
+Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At review time the branch was **ahead 78 / behind 0** relative to `main`, PR #13 was `mergeable = true`, unresolved inline review threads were **0**, submitted review blockers were **0**, and PR conversation comments were **0**.
 
-`finite constraint-generated gauge atlas != diffeomorphism invariance`.
+Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged.
 
-`finite C x G x Phi compatibility != refoliation invariance`.
+`repository validation != new scientific evidence`.
 
-`single Hamiltonian constraint != hypersurface-deformation algebra`.
-
-`constraint-algebra/refoliation precursor != general relativity`.
-
-### Next: Stage 12 criterion 50 — external final repository validation / merge-readiness review
-
-Criterion 50 must review the final current head, full-repository regression, branch/base state, PR mergeability, and review blockers. A successful criterion-50 review is repository evidence, not new scientific evidence.
+`merge-ready != merged`.
 
 ## Later directions
 

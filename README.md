@@ -4,19 +4,23 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11F are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–47 are satisfied and Stage 11G is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11G are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–49 are satisfied and criterion 50 remains external final repository validation / merge-readiness review.**
 
-Current refined finite-model candidate carried into Stage 11:
+Current refined finite-model candidate carried through Stage 11:
 
-`T10_candidate=(O,P,R,V;Xi)`
+`T11_candidate=(O,P,R,V;Xi)`
 
-with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G executable synthesis remains `measurement_covariant`.
+Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`.
 
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
+
+Selected Stage 12 gate:
+
+> **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
 
 ## Historical Stage 8 checkpoint
 
@@ -84,7 +88,7 @@ Historical boundary: `merge-ready != merged`.
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11F completed
+## Stage 11 — Parametrized covariance precursor — Stage 11G completed
 
 Key documents:
 
@@ -96,6 +100,7 @@ Key documents:
 - [`docs/stage11d_notes.md`](docs/stage11d_notes.md) / [`results/stage11d_measurement.md`](results/stage11d_measurement.md)
 - [`docs/stage11e_notes.md`](docs/stage11e_notes.md) / [`results/stage11e_compatibility.md`](results/stage11e_compatibility.md)
 - [`docs/stage11f_notes.md`](docs/stage11f_notes.md) / [`results/stage11f_ablation.md`](results/stage11f_ablation.md)
+- [`docs/stage11g_notes.md`](docs/stage11g_notes.md) / [`results/stage11g_synthesis_stage12_gate.md`](results/stage11g_synthesis_stage12_gate.md)
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -246,7 +251,7 @@ Criteria **44–47** are satisfied.
 
 `Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
 
-Source/unit-test checkpoint run #1425: **`924 passed in 586.95s (0:09:46)`**.
+Source/unit-test checkpoint run #1425: **`924 passed in 586.95s (0:09:46)`**. Final Stage 11F documentation-synchronized run #1447: **`925 passed in 792.42s (0:13:12)`**.
 
 `numerical reconstructibility != typed operational identification`.
 
@@ -258,16 +263,36 @@ Source/unit-test checkpoint run #1425: **`924 passed in 586.95s (0:09:46)`**.
 
 `finite-model ablation != fundamental ontology`.
 
-### Stage 11G — synthesis and evidence-selected next gate — next
+### Stage 11G — synthesis and evidence-selected next gate — completed
 
-Stage 11G will evaluate the full Stage 11A–F evidence chain and select exactly one frozen Stage 11 status from:
+Stage 11G integrates the full Stage 11A–F evidence chain and selects the frozen overall status
 
-- `parametrized_covariant`;
-- `parametrized_partial`;
-- `parametrized_obstructed`;
-- `inconclusive`.
+`parametrized_covariant`.
 
-Only after that synthesis will criterion 50 perform external final repository validation / merge-readiness review.
+This means finite typed parametrized covariance is established only on the declared four-parameterization, one-sampled-orbit family. It does not promote the result to general covariance.
+
+Source/unit-test checkpoint run #1453: **`937 passed in 851.19s (0:14:11)`**.
+
+Stage 12 candidate ranking:
+
+| rank | gate | score |
+| --- | --- | ---: |
+| 1 | `multi_orbit_constraint_gauge_atlas` | **10** |
+| 2 | `richer_causal_order` | **7** |
+| 3 | `nonideal_povm_clocks` | **6** |
+| 4 | `gravitational_minisuperspace_extension` | **5** |
+
+Selected Stage 12 gate:
+
+> **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+Criteria **48–49** are satisfied. Criterion **50** remains external final full-repository regression / merge-readiness review.
+
+`one-orbit covariance != multi-orbit gauge covariance`.
+
+`external parameterization independence != diffeomorphism invariance`.
+
+`constraint-generated gauge precursor != general relativity`.
 
 ## Guards
 
@@ -308,6 +333,12 @@ Only after that synthesis will criterion 50 perform external final repository va
 - `finite-model ablation != fundamental ontology`;
 - `selector-free public projection != absence of privileged modal semantics`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
+- `parametrized_covariant finite family != general covariance`;
+- `external parameterization independence != diffeomorphism invariance`;
+- `one-orbit covariance != multi-orbit gauge covariance`;
+- `constraint-generated gauge precursor != general relativity`;
+- `parameterization-covariant future probabilities != future actuality`;
+- `parameterization-covariant future probabilities != proof of eternalism`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;

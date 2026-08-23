@@ -1,6 +1,6 @@
 # Stage 11 Protocol — Parametrized Covariance Precursor
 
-Status: **Stage 11.0 through Stage 11G completed; criteria 1–49 satisfied; criterion 50 pending external final repository validation / merge-readiness review.**
+Status: **Stage 11.0 through Stage 11G and criterion 50 completed; criteria 1–50 satisfied; PR #12 merge-ready checkpoint.**
 
 Selected Stage 11 gate from Stage 10G:
 
@@ -442,7 +442,32 @@ The direct gravitational/minisuperspace candidate is intentionally ranked below 
 
 `constraint-generated gauge precursor != general relativity`.
 
-## 9. Frozen negative and anti-triviality controls
+## 9. Criterion 50 external final repository validation / merge-readiness review — completed
+
+Criterion 50 is repository-level validation only and does not alter the Stage 11G scientific synthesis or Stage 12 ranking.
+
+Reviewed pre-closure head:
+
+`6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`.
+
+GitHub Actions run #1469 completed successfully with **`938 passed in 682.23s (0:11:22)`**.
+
+At the reviewed checkpoint:
+
+- PR #12 `mergeable = true`;
+- branch comparison against `main`: **ahead 98 / behind 0**;
+- merge base: `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`;
+- unresolved inline review threads: **0**;
+- submitted review blockers: **0**;
+- PR remained Draft and was not merged.
+
+Criterion 50 is therefore satisfied externally and Stage 11 criteria 1–50 are closed.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
+
+## 10. Frozen negative and anti-triviality controls
 
 The frozen Stage 11 controls remain:
 
@@ -469,7 +494,7 @@ Anti-triviality evidence includes **36** differing parameter labels, **24** nonl
 
 `same labels after relabeling != sufficient evidence of covariance`.
 
-## 10. Stage sequence and validation checkpoints
+## 11. Stage sequence and validation checkpoints
 
 ### Stage 11.0 — protocol freeze — completed
 Criteria 1–10. Run #1285: `874 passed in 640.88s (0:10:40)`.
@@ -495,10 +520,12 @@ Criteria 44–47. Source/unit-test run #1425 plus final synchronized #1447 retai
 ### Stage 11G — synthesis and evidence-selected next gate — completed
 Criteria 48–49. Source/unit-test run #1453: `937 passed in 851.19s (0:14:11)`.
 
-### Criterion 50 — external final repository validation — next
-Final full-repository regression / merge-readiness review after Stage 11G.
+### Criterion 50 — external final repository validation — completed
+Reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`; run #1469: `938 passed in 682.23s (0:11:22)`; PR #12 mergeable; behind `main` by 0; no unresolved review blockers.
 
-## 11. Exit criteria
+**Stage 11 criteria 1–50 completed.**
+
+## 12. Exit criteria
 
 ### Criteria 1–10 — Stage 11.0
 1. Exact Stage 10G-selected Stage 11 gate frozen — **satisfied**.
@@ -566,9 +593,9 @@ Final full-repository regression / merge-readiness review after Stage 11G.
 49. Next research gate evidence-selected and documented without presupposing general covariance — **satisfied**.
 
 ### Criterion 50 — external repository validation
-50. External final full-repository regression and merge-readiness review — **pending**.
+50. External final full-repository regression and merge-readiness review — **satisfied**. Validated head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`; run #1469: **`938 passed in 682.23s`**; PR #12 mergeable; behind `main` by 0; no unresolved review blockers.
 
-## 12. Interpretation guards
+## 13. Interpretation guards
 
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
@@ -623,4 +650,5 @@ Final full-repository regression / merge-readiness review after Stage 11G.
 - `parametrized covariance precursor != general relativity`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
+- `merge-ready != merged`;
 - `not_established != false`.

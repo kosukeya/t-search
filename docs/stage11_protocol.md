@@ -167,6 +167,8 @@ Bounded Stage 11A result:
 
 `minimal Stage 11A constraint orbit preservation = established`.
 
+Repository-level Stage 11A checkpoint: run #1309 — **`883 passed in 630.96s (0:10:30)`**.
+
 `same constraint orbit != established general covariance`.
 
 ## 6. Stage 11B relational observable and derivative checkpoint
@@ -212,7 +214,16 @@ Bounded Stage 11B result:
 
 `Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
 
-This is narrower than O/P/R/V or measurement covariance.
+Stage 11B validation checkpoints:
+
+- source/result checkpoint run #1319 — **`890 passed in 640.07s (0:10:40)`**;
+- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**.
+
+These are repository-validation checkpoints only:
+
+`repository validation != new scientific evidence`.
+
+This Stage 11B result is narrower than O/P/R/V or measurement covariance.
 
 `relational covariance on one finite orbit != general covariance`.
 
@@ -374,6 +385,10 @@ Repository-level Stage 11A checkpoint: run #1309, `883 passed in 630.96s (0:10:3
 ### Stage 11B — relational observables and relational derivatives — completed
 
 Criteria 17–23.
+
+Source/result checkpoint: run #1319, `890 passed in 640.07s (0:10:40)`.
+
+Documentation-synchronized current-head checkpoint: run #1327, `891 passed in 628.78s (0:10:28)`.
 
 ### Stage 11C — typed O/P/R/V/Xi lift — next
 

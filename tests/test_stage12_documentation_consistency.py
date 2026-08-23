@@ -7,6 +7,8 @@ FREEZE = (ROOT / "results" / "stage12_0_protocol_freeze.md").read_text(encoding=
 NOTES_A = (ROOT / "docs" / "stage12a_notes.md").read_text(encoding="utf-8")
 NOTES_B = (ROOT / "docs" / "stage12b_notes.md").read_text(encoding="utf-8")
 RESULT_B = (ROOT / "results" / "stage12b_relational.md").read_text(encoding="utf-8")
+NOTES_C = (ROOT / "docs" / "stage12c_notes.md").read_text(encoding="utf-8")
+RESULT_C = (ROOT / "results" / "stage12c_gauge_atlas.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
@@ -116,13 +118,13 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12b_closes_criteria_17_23_while_freeze_remains_historical() -> None:
-    assert "Stage 12B completed; criteria 1–23 satisfied; criteria 24–50 pending" in PROTOCOL
+def test_stage12c_closes_criteria_24_31_while_freeze_remains_historical() -> None:
+    assert "Stage 12C completed; criteria 1–31 satisfied; criteria 32–50 pending" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 23
-    assert PROTOCOL.count("**pending**") == 27
+    assert PROTOCOL.count("**satisfied**") == 31
+    assert PROTOCOL.count("**pending**") == 19
 
 
 def test_stage12a_implementation_checkpoint_remains_documented() -> None:
@@ -138,7 +140,7 @@ def test_stage12a_implementation_checkpoint_remains_documented() -> None:
         assert phrase in combined
 
 
-def test_stage12b_implementation_checkpoint_is_documented() -> None:
+def test_stage12b_implementation_checkpoint_remains_documented() -> None:
     combined = PROTOCOL + "\n" + NOTES_B + "\n" + RESULT_B
     for phrase in (
         "20 representative Dirac estimates",
@@ -154,12 +156,36 @@ def test_stage12b_implementation_checkpoint_is_documented() -> None:
         assert phrase in combined
 
 
+def test_stage12c_implementation_checkpoint_is_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_C + "\n" + RESULT_C
+    for phrase in (
+        "100 typed `Phi` arrows",
+        "20 identity arrows",
+        "100 inverse checks",
+        "500 composition checks",
+        "0 licensed cross-orbit gauge arrows",
+        "4 quotient classes",
+        "16 quotient-level",
+        "`lost`",
+        "`reconstructible`",
+        "wrong_Q_D_path",
+        "wrong_P_D_path",
+        "`numerically_refuted`",
+        "`false_positive_rejected`",
+        "gauge quotient != elimination of physical change",
+        "operational quotient descent != modal/ontological identity",
+    ):
+        assert phrase in combined
+    assert "run **#1528**" in NOTES_C
+    assert "973 passed in 677.85s (0:11:17)" in NOTES_C
+
+
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
     for stage in (
         "Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**",
         "Stage 12B — Dirac/relational observables and physical-orbit discrimination — **completed**",
-        "Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **next**",
-        "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent",
+        "Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**",
+        "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **next**",
         "Stage 12E — internal clock × external parameterization × gauge-flow compatibility",
         "Stage 12F — ablation / wrong-orbit / false-positive controls",
         "Stage 12G — executable synthesis and evidence-selected next gate",
@@ -175,14 +201,29 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
 
 
 def test_stage12_interpretation_guards_remain_explicit() -> None:
-    combined = PROTOCOL + "\n" + FREEZE + "\n" + NOTES_A + "\n" + NOTES_B
+    combined = (
+        PROTOCOL
+        + "\n"
+        + FREEZE
+        + "\n"
+        + NOTES_A
+        + "\n"
+        + NOTES_B
+        + "\n"
+        + NOTES_C
+        + "\n"
+        + RESULT_C
+    )
     for phrase in (
         "constraint-generated gauge flow != ontological becoming",
         "Dirac invariant != timeless ontology by definition",
         "Dirac-invariant data + relational change != proof of eternalism",
         "relational change != ontological becoming by definition",
         "gauge quotient != elimination of physical change",
+        "constraint orbit != modal continuation",
+        "operational quotient descent != modal/ontological identity",
         "multi-orbit gauge covariance != general covariance",
+        "finite gauge atlas != diffeomorphism invariance",
         "single Hamiltonian constraint != hypersurface-deformation algebra",
         "finite-model success != empirical discovery",
         "not_established != false",

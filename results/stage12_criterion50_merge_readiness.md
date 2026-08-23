@@ -43,7 +43,7 @@ No repository-level blocker was found in the reviewed state.
 
 `Stage 12 criterion 50 external final repository validation / merge-readiness review = satisfied`.
 
-Together with the Stage 12A–G evidence chain, Stage 12 criteria **1–50 are completed** at this merge-readiness checkpoint.
+Together with the Stage 12A–G evidence chain, **Stage 12 criteria 1–50 are completed** at this merge-readiness checkpoint.
 
 The bounded Stage 12 scientific synthesis remains
 

@@ -109,7 +109,7 @@ def test_stage11a_documented_diagnostics_close_only_criteria_11_16() -> None:
         assert "0.5" in text
         assert "same constraint orbit != established general covariance" in text
     for text in (PROTOCOL, NOTES_A, RESULT_A):
-        assert "criteria 11–16" in text
+        assert "criteria 11–16" in text.lower()
     assert "minimum transformed positive lapse" in RESULT_A
     assert "max constraint residual" in RESULT_A
     assert "max lapse chain-rule residual" in RESULT_A

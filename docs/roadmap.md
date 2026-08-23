@@ -28,6 +28,22 @@ Selected Stage 13 gate:
 
 Stages 0–6 established the reconstruction/accessibility, modal, record, constrained relational, multi-clock, and layered O/P/R/V/Xi foundations. Stage 7 integrated quantum records, Stage 8 explicit Potentiality, and Stage 9 directional records with nontrivial Potentiality. Stage 9G selected the fully typed future-measurement covariance gate and criterion 50 later closed with final Stage 9 validation **`766 passed in 459.00s`**.
 
+Stage 9A — common directional-R/V continuation substrate — completed.
+
+Stage 9B — directional diagnostics and controls — completed.
+
+Stage 9C — typed modal models and directional operational underdetermination — completed.
+
+Stage 9D — continuation-aware clock transport — completed.
+
+Stage 9E — P/O/R_direction/V compatibility matrix — completed.
+
+Stage 9F — ablation / reconstruction / accessibility matrix — completed.
+
+Stage 9G — synthesis and evidence-selected next gate — completed.
+
+Stage 9 criterion 50 — external final validation — completed.
+
 `Potentiality != quantum randomness by definition`.
 
 `finite clock covariance != general covariance`.

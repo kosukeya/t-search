@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11G and criterion 50 are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–50 are satisfied and PR #12 is at a merge-ready, unmerged checkpoint.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, and Stage 12B are completed on Draft PR #13; Stage 12 criteria 1–23 are satisfied and Stage 12C is next.**
 
 Current refined finite-model candidate carried through Stage 11:
 
@@ -88,7 +88,7 @@ Historical boundary: `merge-ready != merged`.
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — completed / merge-ready checkpoint
+## Stage 11 — Parametrized covariance precursor — completed and merged
 
 Key documents:
 
@@ -149,7 +149,7 @@ Criteria **17–23** are satisfied.
 
 Stage 11C lifts the existing Stage 9/10 O/P/R/V architecture onto all four positive parameterizations while representation metadata remain in Xi.
 
-Evidence: matched epistemic/ontic public projections **8**; `QExt(e1)` size **2**, with `(h_L,h_R)` preserved; Xi views **4**; continuation/class correspondence entries **8**; outcome correspondence entries **8**; max O/R/V residuals **0.0**; hidden `h*` swap public-invariant; parameter-dependent O/P/R/V corruption controls **4 / 4** detected.
+Evidence: matched epistemic/ontic public projections **8**; `QExt(e1)={h_L,h_R}` size **2**, with `(h_L,h_R)` preserved; Xi views **4**; continuation/class correspondence entries **8**; outcome correspondence entries **8**; max O/R/V residuals **0.0**; hidden `h*` swap public-invariant; parameter-dependent O/P/R/V corruption controls **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`.
 
 Criteria **24–31** are satisfied.
 
@@ -299,11 +299,56 @@ Criteria **48–49** are satisfied.
 
 Criterion **50** is satisfied externally at reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`. GitHub Actions run #1469 passed **`938 passed in 682.23s (0:11:22)`**. At that checkpoint PR #12 was `mergeable = true`, the branch was **ahead 98 / behind 0** relative to `main`, and there were **0** unresolved inline review threads and **0** submitted review blockers.
 
-Stage 11 criteria **1–50** are closed. PR #12 is merge-ready and remains unmerged.
+Stage 11 criteria **1–50** were closed at that historical merge-readiness checkpoint. At that time PR #12 was merge-ready and unmerged. PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
+
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — in progress
+
+Key documents:
+
+- [`docs/stage12_protocol.md`](docs/stage12_protocol.md)
+- [`results/stage12_0_protocol_freeze.md`](results/stage12_0_protocol_freeze.md)
+- [`docs/stage12a_notes.md`](docs/stage12a_notes.md) / [`results/stage12a_multi_orbit.md`](results/stage12a_multi_orbit.md)
+- [`docs/stage12b_notes.md`](docs/stage12b_notes.md) / [`results/stage12b_relational.md`](results/stage12b_relational.md)
+
+### Stage 12.0 — protocol freeze — completed
+
+The protocol separates physical-orbit identity, gauge representative and `Phi_s`, external reparameterization `G`, internal clocks, physical events, modal continuations, and measurement typing. It freezes the four canonical orbit controls and the rule
+
+`quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas`.
+
+### Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — completed
+
+The common constraint is `C = p_T + p^2/2 = 0`. Four canonical physical orbits are sampled with five representatives each, giving **20 representatives total** and **80** ordered non-identity same-orbit `Phi_s` transports. Stage 11 identity/affine/cubic/sinh parameterizations are lifted to every orbit, giving **16 external parameterization views**.
+
+`constraint-generated gauge flow != external reparameterization by definition`.
+
+Stage 12A checkpoint head `4e379f6fd5b075078beebdbae8d940ff4bed773d` passed run #1508 with **`963 passed in 680.97s (0:11:20)`**.
+
+### Stage 12B — Dirac/relational observables and physical-orbit discrimination — completed
+
+Stage 12B independently recomputes `Q_D=q-pT` and `P_D=p` from **20** gauge representatives and **16** external parameterization views. All **6** unordered distinct canonical-orbit pairs remain distinct under the full Dirac pair, including the same-P/different-Q and same-Q/different-P anti-triviality controls.
+
+Across `tau in {-1.25,-0.25,0.75,1.50}`, Stage 12B performs **144 relational q(T=tau) evaluations** and **232 relational derivative evaluations** with target `dq/dT=P_D`. Cross-orbit coincidences—**30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda** matches—are explicitly rejected as sufficient physical-orbit identifiers.
+
+The bounded result is
+
+`Stage 12B Dirac/relational physical-orbit discrimination on the frozen finite family = established`.
+
+Criteria **1–23** are satisfied; **Stage 12C — typed gauge atlas, quotient, and descent of relational structure — is next**.
+
+`Dirac invariant != timeless ontology by definition`.
+
+`Dirac-invariant data + relational change != proof of eternalism`.
+
+`relational change != ontological becoming by definition`.
+
+`gauge quotient != elimination of physical change`.
+
+`full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
 
 ## Guards
 
@@ -353,6 +398,13 @@ Stage 11 criteria **1–50** are closed. PR #12 is merge-ready and remains unmer
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
+- `constraint-generated gauge flow != ontological becoming`;
+- `different physical orbit != later event on one orbit`;
+- `Dirac invariant != timeless ontology by definition`;
+- `Dirac-invariant data + relational change != proof of eternalism`;
+- `relational change != ontological becoming by definition`;
+- `gauge quotient != elimination of physical change`;
+- `multi-orbit gauge covariance != general covariance`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
 - `finite-model success != empirical discovery`;

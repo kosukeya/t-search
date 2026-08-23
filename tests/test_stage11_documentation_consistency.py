@@ -18,11 +18,19 @@ NOTES_E = (ROOT / "docs" / "stage11e_notes.md").read_text(encoding="utf-8")
 RESULT_E = (ROOT / "results" / "stage11e_compatibility.md").read_text(encoding="utf-8")
 NOTES_F = (ROOT / "docs" / "stage11f_notes.md").read_text(encoding="utf-8")
 RESULT_F = (ROOT / "results" / "stage11f_ablation.md").read_text(encoding="utf-8")
+NOTES_G = (ROOT / "docs" / "stage11g_notes.md").read_text(encoding="utf-8")
+RESULT_G = (ROOT / "results" / "stage11g_synthesis_stage12_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE11 = (
     "Construct a parametrized covariance precursor that preserves the typed "
     "O/P/R/V measurement architecture without assuming a preferred external "
     "time parameterization."
+)
+SELECTED_STAGE12 = (
+    "Construct a multi-orbit constraint-generated gauge atlas that separates "
+    "gauge-related parameterizations from physically distinct orbits and tests "
+    "whether relational/Dirac observables and the typed O/P/R/V measurement "
+    "architecture descend consistently across that atlas."
 )
 STAGE10_MERGE = "4a322634a5b83e416d374ee18e96ac6c7a5c88ba"
 
@@ -90,14 +98,14 @@ def test_stage11_negative_controls_and_antitriviality_remain_frozen() -> None:
     assert "non-injective relabeling != admissible reparameterization" in combined
 
 
-def test_stage11_freeze_remains_historical_after_stage11f_closure() -> None:
+def test_stage11_freeze_remains_historical_after_stage11g_closure() -> None:
     assert "Stage 11.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
-    assert "criteria 1–47 satisfied" in PROTOCOL.lower()
-    assert "criteria 48–50 pending" in PROTOCOL.lower()
+    assert "criteria 1–49 satisfied" in PROTOCOL.lower()
+    assert "criterion 50 pending" in PROTOCOL.lower()
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 47
-    assert PROTOCOL.count("**pending**") == 3
+    assert PROTOCOL.count("**satisfied**") == 49
+    assert PROTOCOL.count("**pending**") == 1
     for stage in (
         "Stage 11A — minimal parametrized constrained carrier and admissible family — completed",
         "Stage 11B — relational observables and relational derivatives — completed",
@@ -105,9 +113,10 @@ def test_stage11_freeze_remains_historical_after_stage11f_closure() -> None:
         "Stage 11D — future-measurement reparameterization covariance — completed",
         "Stage 11E — clock-change × parameterization compatibility — completed",
         "Stage 11F — ablation / wrong-gauge / false-positive controls — completed",
+        "Stage 11G — synthesis and evidence-selected next gate — completed",
     ):
         assert stage in PROTOCOL
-    assert "Stage 11G — synthesis and evidence-selected next gate — next" in PROTOCOL
+    assert "Criterion 50 — external final repository validation — next" in PROTOCOL
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -242,13 +251,36 @@ def test_stage11f_documents_typed_resource_ablation_and_false_positive_controls(
     assert "0.5357142857142857" in RESULT_F
 
 
-def test_stage11_planning_documents_advance_to_stage11g_without_premature_synthesis() -> None:
+def test_stage11g_documents_synthesis_and_selected_stage12_gate() -> None:
+    bounded = "Stage 11 finite typed parametrized covariance status = parametrized_covariant"
+    for text in (README, ROADMAP, PROTOCOL, NOTES_G, RESULT_G):
+        assert "Stage 11G" in text
+        assert "parametrized_covariant" in text
+        assert "multi_orbit_constraint_gauge_atlas" in text
+        assert "one-orbit covariance != multi-orbit gauge covariance" in text
+        assert "external parameterization independence != diffeomorphism invariance" in text
+        assert "constraint-generated gauge precursor != general relativity" in text
+    assert bounded in README
+    assert bounded in ROADMAP
+    assert bounded in PROTOCOL
+    for text in (NOTES_G, RESULT_G):
+        assert "criteria 48–49" in text.lower()
+        assert "937 passed in 851.19s (0:14:11)" in text
+        assert SELECTED_STAGE12 in text
+    assert "`multi_orbit_constraint_gauge_atlas` | **10**" in RESULT_G
+    assert "`richer_causal_order` | **7**" in RESULT_G
+    assert "`nonideal_povm_clocks` | **6**" in RESULT_G
+    assert "`gravitational_minisuperspace_extension` | **5**" in RESULT_G
+
+
+def test_stage11_planning_documents_advance_to_external_criterion50() -> None:
     for text in (README, ROADMAP, PROTOCOL):
         assert "Stage 11G" in text
-        assert "next" in text.lower()
-        assert "criteria 1–47" in text
+        assert "criteria 1–49" in text
+        assert "parametrized_covariant" in text
+        assert "multi_orbit_constraint_gauge_atlas" in text
         assert "finite typed parametrized covariance != general covariance" in text
-    # Stage 11G, not Stage 11F, chooses the frozen overall Stage 11 status.
+        assert "criterion 50" in text.lower()
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -256,6 +288,15 @@ def test_stage11_planning_documents_advance_to_stage11g_without_premature_synthe
         "inconclusive",
     ):
         assert status in PROTOCOL
-    assert "criteria 48–49" in PROTOCOL.lower()
-    assert "48." in PROTOCOL and "**pending**" in PROTOCOL
-    assert "49." in PROTOCOL and "**pending**" in PROTOCOL
+    assert (
+        "48. Executable synthesis selects one frozen Stage 11 status from the full Stage 11A–F evidence chain — **satisfied**."
+        in PROTOCOL
+    )
+    assert (
+        "49. Next research gate evidence-selected and documented without presupposing general covariance — **satisfied**."
+        in PROTOCOL
+    )
+    assert (
+        "50. External final full-repository regression and merge-readiness review — **pending**."
+        in PROTOCOL
+    )

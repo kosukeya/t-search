@@ -8,6 +8,8 @@ PROTOCOL = (ROOT / "docs" / "stage11_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage11_0_protocol_freeze.md").read_text(encoding="utf-8")
 NOTES_A = (ROOT / "docs" / "stage11a_notes.md").read_text(encoding="utf-8")
 RESULT_A = (ROOT / "results" / "stage11a_parametrized.md").read_text(encoding="utf-8")
+NOTES_B = (ROOT / "docs" / "stage11b_notes.md").read_text(encoding="utf-8")
+RESULT_B = (ROOT / "results" / "stage11b_relational.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE11 = (
     "Construct a parametrized covariance precursor that preserves the typed "
@@ -80,16 +82,17 @@ def test_stage11_negative_controls_and_antitriviality_remain_frozen() -> None:
     assert "non-injective relabeling != admissible reparameterization" in combined
 
 
-def test_stage11_freeze_remains_historical_after_stage11a_closure() -> None:
+def test_stage11_freeze_remains_historical_after_stage11b_closure() -> None:
     assert "Stage 11.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
-    assert "criteria 1–16 satisfied" in PROTOCOL.lower()
-    assert "criteria 17–50 pending" in PROTOCOL.lower()
+    assert "criteria 1–23 satisfied" in PROTOCOL.lower()
+    assert "criteria 24–50 pending" in PROTOCOL.lower()
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 16
-    assert PROTOCOL.count("**pending**") == 34
+    assert PROTOCOL.count("**satisfied**") == 23
+    assert PROTOCOL.count("**pending**") == 27
     assert "Stage 11A — minimal parametrized constrained carrier and admissible family — completed" in PROTOCOL
-    assert "Stage 11B — relational observables and relational derivatives — next" in PROTOCOL
+    assert "Stage 11B — relational observables and relational derivatives — completed" in PROTOCOL
+    assert "Stage 11C — typed O/P/R/V/Xi lift — next" in PROTOCOL
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -101,7 +104,7 @@ def test_stage11_freeze_remains_historical_after_stage11a_closure() -> None:
     assert "absence of preferred external parameterization != absence of ontological becoming" in PROTOCOL
 
 
-def test_stage11a_documented_diagnostics_close_only_criteria_11_16() -> None:
+def test_stage11a_documented_diagnostics_remain_historical() -> None:
     for text in (README, ROADMAP, PROTOCOL, NOTES_A, RESULT_A):
         assert "Stage 11A" in text
         assert "36" in text
@@ -113,16 +116,33 @@ def test_stage11a_documented_diagnostics_close_only_criteria_11_16() -> None:
     assert "minimum positive lapse" in RESULT_A
     assert "max constraint residual" in RESULT_A
     assert "max lapse chain-rule residual" in RESULT_A
-    assert "Stage 11B" in NOTES_A and "next" in NOTES_A.lower()
-    assert "Stage 11B" in RESULT_A and "Next checkpoint" in RESULT_A
 
 
-def test_stage11_planning_documents_advance_to_stage11b_without_full_covariance_claim() -> None:
-    for text in (README, ROADMAP, PROTOCOL):
+def test_stage11b_documented_relational_evidence_closes_only_criteria_17_23() -> None:
+    for text in (README, ROADMAP, PROTOCOL, NOTES_B, RESULT_B):
         assert "Stage 11B" in text
+        assert "52" in text
+        assert "24" in text
+        assert "7" in text
+        assert "6" in text
+        assert "1.25" in text
+        assert "invalid_equal_raw_parameter_event_rule" in text
+        assert "relational covariance on one finite orbit != general covariance" in text
+    for text in (PROTOCOL, NOTES_B, RESULT_B):
+        assert "criteria 17–23" in text.lower()
+    assert "q(T=tau)" in RESULT_B
+    assert "dq/dT" in RESULT_B
+    assert "equal raw lambda != physical-event correspondence" in NOTES_B
+    assert "Stage 11C" in NOTES_B and "Next checkpoint" in NOTES_B
+    assert "Stage 11C" in RESULT_B and "Next checkpoint" in RESULT_B
+
+
+def test_stage11_planning_documents_advance_to_stage11c_without_full_covariance_claim() -> None:
+    for text in (README, ROADMAP, PROTOCOL):
+        assert "Stage 11C" in text
         assert "next" in text.lower()
         assert "finite typed parametrized covariance != general covariance" in text
-    assert "criteria 1–16" in README
-    assert "criteria 1–16" in ROADMAP
-    assert "minimal Stage 11A constraint orbit preservation = established" in README
-    assert "minimal Stage 11A constraint orbit preservation = established" in ROADMAP
+    assert "criteria 1–23" in README
+    assert "criteria 1–23" in ROADMAP
+    assert "Stage 11B relational observable/derivative covariance on the frozen positive family = established" in README
+    assert "Stage 11B relational observable/derivative covariance on the frozen positive family = established" in ROADMAP

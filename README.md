@@ -4,23 +4,15 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11D are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–38 are satisfied and Stage 11E is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11E are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–43 are satisfied and Stage 11F is next.**
 
 Current refined finite-model candidate carried into Stage 11:
 
 `T10_candidate=(O,P,R,V;Xi)`
 
-with:
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-`R=(R_content,R_direction,R_access)`
-
-`V=(V_extension,V_semantics,V_weights)`.
-
-Stage 10G executable synthesis:
-
-`measurement_covariant`.
-
-This means only that the declared fully typed, continuation-aware, finite A/B/C future-signature measurement family is operationally covariant. It does not establish general covariance, eternalism, future actuality, or the absence of ontological becoming.
+Stage 10G executable synthesis remains `measurement_covariant`.
 
 Selected Stage 11 gate:
 
@@ -28,7 +20,7 @@ Selected Stage 11 gate:
 
 ## Historical Stage 8 checkpoint
 
-Stage 8G completed the quantum-Potentiality integration and selected a directional-record gate. Criteria **48–49** selected Stage 9; criterion **50** was external. `Potentiality != quantum randomness by definition`.
+Stage 8G completed the quantum-Potentiality integration and selected Stage 9. `Potentiality != quantum randomness by definition`.
 
 ## Stage 9 — completed and merged
 
@@ -48,13 +40,13 @@ Stage 9G — synthesis and evidence-selected next gate — completed.
 
 Stage 9G closes criteria **48–49**; criterion **50** is closed externally. Source synthesis validation: **`765 passed in 248.81s`**; documentation-synchronized Stage 9F regression: **`755 passed in 348.67s`**; final Stage 9 validation: **`766 passed in 459.00s`**.
 
-Stage 9G selected `refined_layered`, retained the `full_measurement_covariance` gate as the highest remaining pressure test, and selected:
+Stage 9G selected `refined_layered`, retained `full_measurement_covariance`, and selected:
 
 > **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
-At the **Stage 9 checkpoint**, full Stage 9C future-measurement covariance remained `not_established`. Stage 10 subsequently closed that bounded operational gap.
+At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 subsequently closed that bounded operational gap.
 
-Historical guards retained from Stage 9:
+Historical guards:
 
 - `finite-family bidirectional countermodels != universal R-V independence theorem`;
 - `P edge reconstruction != P layer universally redundant`;
@@ -62,18 +54,9 @@ Historical guards retained from Stage 9:
 
 ## Stage 10 — Fully typed future-measurement covariance — completed and merged
 
-Key documents:
+Selected Stage 10 gate:
 
-- [`docs/stage10_protocol.md`](docs/stage10_protocol.md)
-- [`results/stage10_0_protocol_freeze.md`](results/stage10_0_protocol_freeze.md)
-- [`docs/stage10a_notes.md`](docs/stage10a_notes.md) / [`results/stage10a_reference_measurement.md`](results/stage10a_reference_measurement.md)
-- [`docs/stage10b_notes.md`](docs/stage10b_notes.md) / [`results/stage10b_measurement_lift.md`](results/stage10b_measurement_lift.md)
-- [`docs/stage10c_notes.md`](docs/stage10c_notes.md) / [`results/stage10c_measurement_transport.md`](results/stage10c_measurement_transport.md)
-- [`docs/stage10d_notes.md`](docs/stage10d_notes.md) / [`results/stage10d_probability_covariance.md`](results/stage10d_probability_covariance.md)
-- [`docs/stage10e_notes.md`](docs/stage10e_notes.md) / [`results/stage10e_modal_covariance.md`](results/stage10e_modal_covariance.md)
-- [`docs/stage10f_notes.md`](docs/stage10f_notes.md) / [`results/stage10f_ablation.md`](results/stage10f_ablation.md)
-- [`docs/stage10g_notes.md`](docs/stage10g_notes.md) / [`results/stage10g_synthesis_stage11_gate.md`](results/stage10g_synthesis_stage11_gate.md)
-- [`results/stage10_criterion50_merge_readiness.md`](results/stage10_criterion50_merge_readiness.md)
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
 Stage 10.0 — protocol freeze — completed.
 
@@ -81,133 +64,75 @@ Stage 10A — typed reference future-measurement family — completed.
 
 Stage 10B — continuation-specific measurement lift / normalization choice — completed.
 
-Stage 10C — continuation-aware A/B/C measurement transport — completed: 18 typed charts, 108 genuine distinct-clock transports, and 324 three-clock compositions.
+Stage 10C — continuation-aware A/B/C measurement transport — completed: 18 typed charts, 108 genuine ordered distinct-clock measurement transports, and 324 three-clock compositions.
 
-Stage 10D — per-continuation Born/completeness/positivity covariance — completed: 196 Hermitian-tomography-complete probes and 7056 probe outcome evaluations rule out canonical-state coincidence as the sole explanation.
+Stage 10D — per-continuation Born/completeness/positivity covariance — completed: 196 Hermitian-tomography-complete probes and 7056 probe outcome evaluations.
 
 Stage 10E — weights, modal models, and evidence-update covariance — completed.
 
-Stage 10F — ablation / wrong-typing / false-positive controls — completed. Its central guard is `numerical reconstructibility != typed operational identification`.
+Stage 10F — ablation / wrong-typing / false-positive controls — completed. `numerical reconstructibility != typed operational identification`.
 
-Stage 10G — synthesis and evidence-selected next gate — completed. Criteria **48–49** are satisfied. Stage 10G validation passed run #1267: **`863 passed in 644.50s`**.
+Stage 10G — synthesis and evidence-selected next gate — completed. Stage 10 criteria 1–50 are completed.
 
-The bounded Stage 10 status is:
+The bounded Stage 10 result is
 
 `fully typed finite future-measurement covariance = established`.
 
-Stage 11 candidate ranking at Stage 10G:
+Stage 10 criterion 50 was completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**; final current-head run #1275 passed **`868 passed in 402.52s`** before merge.
 
-1. `parametrized_covariance_precursor` — **9**
-2. `richer_causal_order` — **7**
-3. `nonideal_povm_clocks` — **6**
+Historical boundary: `merge-ready != merged`.
 
-### Stage 10 criterion 50 — completed externally before merge
+`repository validation != new scientific evidence`.
 
-The documentation-synchronized Stage 10 head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed GitHub Actions run #1271:
-
-**`868 passed in 345.59s (0:05:45)`**.
-
-A stale documentation guard exposed by run #1273 was corrected without changing Stage 10 scientific code; final current-head regression run #1275 passed **`868 passed in 402.52s (0:06:42)`**.
-
-At the criterion-50 checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers. That checkpoint established readiness only; the historical guard remains `merge-ready != merged`. PR #11 was subsequently merged into `main` on 2026-08-22.
-
-## Stage 11 — Parametrized covariance precursor — Stage 11D completed
-
-Stage 11 begins from the Stage 10G-selected gate and asks whether the typed O/P/R/V measurement architecture can be preserved or reconstructed when the same physical relational history is represented with different admissible external parameterizations.
+## Stage 11 — Parametrized covariance precursor — Stage 11E completed
 
 Key documents:
 
 - [`docs/stage11_protocol.md`](docs/stage11_protocol.md)
 - [`results/stage11_0_protocol_freeze.md`](results/stage11_0_protocol_freeze.md)
-- [`docs/stage11a_notes.md`](docs/stage11a_notes.md)
-- [`results/stage11a_parametrized.md`](results/stage11a_parametrized.md)
-- [`docs/stage11b_notes.md`](docs/stage11b_notes.md)
-- [`results/stage11b_relational.md`](results/stage11b_relational.md)
-- [`docs/stage11c_notes.md`](docs/stage11c_notes.md)
-- [`results/stage11c_lift.md`](results/stage11c_lift.md)
-- [`docs/stage11d_notes.md`](docs/stage11d_notes.md)
-- [`results/stage11d_measurement.md`](results/stage11d_measurement.md)
+- [`docs/stage11a_notes.md`](docs/stage11a_notes.md) / [`results/stage11a_parametrized.md`](results/stage11a_parametrized.md)
+- [`docs/stage11b_notes.md`](docs/stage11b_notes.md) / [`results/stage11b_relational.md`](results/stage11b_relational.md)
+- [`docs/stage11c_notes.md`](docs/stage11c_notes.md) / [`results/stage11c_lift.md`](results/stage11c_lift.md)
+- [`docs/stage11d_notes.md`](docs/stage11d_notes.md) / [`results/stage11d_measurement.md`](results/stage11d_measurement.md)
+- [`docs/stage11e_notes.md`](docs/stage11e_notes.md) / [`results/stage11e_compatibility.md`](results/stage11e_compatibility.md)
 
 ### Stage 11.0 — protocol freeze — completed
 
-The Stage 11.0 protocol froze these distinctions:
+The freeze separated external parameterization id, raw parameter label, internal clock reading, physical event identity, continuation identity, and measurement typing. It froze the positive identity/affine/cubic/sinh family, explicit event correspondence, lapse transformation, controls, and criteria allocation.
 
-- `parameter label != internal clock reading`;
-- `parameter label != event identity`;
-- `internal clock perspective != external parameterization`;
-- `orientation-preserving reparameterization != time reversal`.
+`parameter label != internal clock reading`.
 
-It also froze the positive identity/affine/cubic/sinh family, chain-rule lapse transformation, explicit event correspondence, negative controls, Stage 10 carry-over targets, and Stage 11A–G criteria.
+`parameter label != event identity`.
 
-The documentation-synchronized Stage 11.0 checkpoint passed run #1285: **`874 passed in 640.88s (0:10:40)`**.
+`internal clock perspective != external parameterization`.
+
+`orientation-preserving reparameterization != time reversal`.
+
+Run #1285: **`874 passed in 640.88s (0:10:40)`**.
 
 ### Stage 11A — minimal parametrized constrained carrier and admissible family — completed
 
-The implemented precursor uses
+Implemented `C = p_T + p^2/2 = 0`, positive nonconstant lapse, 13 physical events, and the four frozen positive parameterizations.
 
-`C = p_T + p^2/2 = 0`
+Evidence: minimum positive lapse **0.5**; max constraint/lapse/orbit residuals **0.0**; **36** corresponding-event raw-label differences; **24** nonlinear raw-rate differences. Orientation reversal and non-injective square map remain excluded controls.
 
-with positive nonconstant lapse `N(lambda)=1+lambda^2/4`, 13 explicit physical events, and the exact frozen positive identity/affine/cubic/hyperbolic parameterization family.
-
-Executable Stage 11A diagnostics:
-
-- 4 admissible positive parameterizations;
-- minimum transformed positive lapse: **0.5**;
-- max constraint residual: **0.0**;
-- max lapse-chain-rule residual: **0.0**;
-- max `T/q/p/p_T` constraint-orbit residual: **0.0**;
-- corresponding events with different raw parameter labels: **36**;
-- nonlinear-map raw-rate differences: **24**;
-- orientation reversal and the non-injective square map are explicitly excluded from the positive family.
-
-Thus criteria **11–16** are satisfied and the bounded carrier-level result is:
+Criteria **11–16** are satisfied.
 
 `minimal Stage 11A constraint orbit preservation = established`.
 
-Repository-level Stage 11A checkpoint run #1309 passed **`883 passed in 630.96s (0:10:30)`**.
-
-This is not yet the Stage 11 synthesis result:
+Run #1309: **`883 passed in 630.96s (0:10:30)`**.
 
 `same constraint orbit != established general covariance`.
 
 ### Stage 11B — relational observables and relational derivatives — completed
 
-Stage 11B constructs `q(T=tau)` at explicitly corresponded physical events and tests
+Stage 11B constructs `q(T=tau)` and `dq/dT=(dq/dlambda)/(dT/dlambda)` at corresponding typed events.
 
-`dq/dT=(dq/dlambda)/(dT/dlambda)`
+Evidence: **52** relational-observable evaluations; **52** relational-derivative evaluations; max relational residuals **0.0**; reconstructed `dq/dT=1.25`; **24** nonlinear raw-rate differences. Identity/affine has **7** equal raw-label overlaps, **6** of which are different events, so the rule is classified `invalid_equal_raw_parameter_event_rule`.
 
-across all four positive parameterizations.
-
-Executable Stage 11B evidence:
-
-- relational-observable evaluations: **52**;
-- relational-derivative evaluations: **52**;
-- max corresponding `q(T=tau)` residual: **0.0** within the deterministic carrier;
-- max cross-parameterization `dq/dT` residual: **0.0** within tolerance;
-- reconstructed relational derivative: **1.25**;
-- nonlinear raw-rate differences remain visible at **24** chart-event points;
-- typed precursor anchor/target views: **8**;
-- identity/affine equal raw-parameter overlaps: **7**;
-- equal-raw-parameter overlaps that are actually different events: **6**;
-- only **1** equal-raw overlap is also the same event.
-
-The raw-equal-parameter rule is therefore classified as
-
-`invalid_equal_raw_parameter_event_rule`.
-
-Thus criteria **17–23** are satisfied and the bounded result is:
+Criteria **17–23** are satisfied.
 
 `Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
-
-Validation checkpoints:
-
-- source/result run #1319 — **`890 passed in 640.07s (0:10:40)`**;
-- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**;
-- final Stage 11B synchronization run #1335 — **`891 passed in 652.53s (0:10:52)`**.
-
-These CI runs validate repository consistency only: `repository validation != new scientific evidence`.
-
-Guards:
 
 `equal raw lambda != physical-event correspondence`.
 
@@ -215,37 +140,13 @@ Guards:
 
 ### Stage 11C — typed O/P/R/V/Xi lift — completed
 
-Stage 11C lifts the existing Stage 9/10 physical/modal/record/value architecture onto the four frozen positive external parameterizations while isolating representation-specific data in `Xi`.
+Stage 11C lifts the existing Stage 9/10 O/P/R/V architecture onto all four positive parameterizations while representation metadata remain in Xi.
 
-Executable Stage 11C diagnostics:
+Evidence: matched epistemic/ontic public projections **8**; `QExt(e1)` size **2**, with `(h_L,h_R)` preserved; Xi views **4**; continuation/class correspondence entries **8**; outcome correspondence entries **8**; max O/R/V residuals **0.0**; hidden `h*` swap public-invariant; parameter-dependent O/P/R/V corruption controls **4 / 4** detected.
 
-- positive parameterizations: **4**;
-- matched epistemic/ontic public projections: **8**;
-- `QExt(e1)` size: **2**, with `(h_L,h_R)` preserved;
-- `R_content` rows: **2**;
-- `R_direction` rows: **2**;
-- `R_access` rows: **2**;
-- Xi views: **4**;
-- continuation/class correspondence entries: **8**;
-- outcome correspondence entries: **8**;
-- max current-density residual across parameterizations: **0.0**;
-- max relational-O residual: **0.0**;
-- max R residual: **0.0**;
-- max V-weight residual: **0.0**;
-- hidden epistemic `h*` swap leaves the public architecture unchanged while privileged modal roles remain distinct;
-- public O/P/R/V/Xi schema remains selector-free;
-- parameter-dependent O/P/R/V corruption controls detected: **4 / 4**.
-
-The bounded result is:
+Criteria **24–31** are satisfied.
 
 `Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
-
-Validation checkpoints:
-
-- source/unit-test run #1341 — **`898 passed in 666.75s (0:11:06)`**;
-- documentation-synchronized run #1355 — **`899 passed in 647.28s (0:10:47)`**.
-
-This result is structural/typed rather than an independent dynamics result:
 
 `typed O/P/R/V/Xi lift != full future-measurement covariance`.
 
@@ -253,56 +154,70 @@ This result is structural/typed rather than an independent dynamics result:
 
 `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`.
 
-Thus criteria **24–31** are satisfied.
-
 ### Stage 11D — future-measurement reparameterization covariance — completed
 
-Stage 11D keeps the internal Stage 10 reference chart fixed at **A/e2** and tests only the change of external parameterization. It reuses the frozen `e1 -> e2`, `QExt(e1)={h_L,h_R}`, `future_signature_left/future_signature_other` measurement question without redesigning it.
+Stage 11D fixes the internal Stage 10 chart at A/e2 and reuses the frozen `e1 -> e2`, `QExt(e1)={h_L,h_R}`, `future_signature_left/future_signature_other` question across four external parameterizations.
 
-Executable Stage 11D evidence:
+Evidence: **8** typed measurement views; **16** canonical outcome evaluations; per-continuation, weighted-prediction, and posterior residuals **<= 1e-9**; completeness/positivity/normalization retained; wrong event/Jacobian/normalization/outcome controls **4 / 4** rejected.
 
-- positive parameterizations: **4**;
-- continuation classes: **2**;
-- typed measurement views: **8**;
-- canonical outcome-probability evaluations: **16**;
-- per-continuation reparameterization probability residual: **<= 1e-9**;
-- residual against the unchanged Stage 9C/10 reference likelihood: **<= 1e-9**;
-- probability-sum and completeness residuals: **<= 1e-9**;
-- effect positivity retained and normalization form/denominator remain positive;
-- weighted future-prediction reparameterization residual: **<= 1e-9**;
-- matched epistemic/ontic public measurement views remain equal across all four parameterizations;
-- hidden epistemic `h*` swap leaves public measurement views unchanged while privileged modal roles remain distinct;
-- common-evidence epistemic/ontic posterior residuals: **<= 1e-9**;
-- wrong event/Jacobian/normalization/outcome controls rejected: **4 / 4**;
-- wrong-normalization tomography witness changes both the matrix and probabilities by **> 1e-9**.
-
-The bounded result is:
+Criteria **32–38** are satisfied.
 
 `Stage 11D future-measurement reparameterization covariance on the frozen positive family = established`.
 
-Source/unit-test checkpoint run #1361 passed **`907 passed in 590.98s (0:09:50)`**.
-
-Thus criteria **32–38** are satisfied.
-
-This is still a finite typed product construction:
+Source run #1361: **`907 passed in 590.98s (0:09:50)`**. Final Stage 11D repository baseline run #1393: **`908 passed in 589.63s (0:09:49)`**.
 
 `external lapse != quantum measurement normalization form`.
-
-`numerically unchanged probability payload != well-typed reparameterization context`.
 
 `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`.
 
 `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`.
 
-### Stage 11E — clock-change × parameterization compatibility — next
+### Stage 11E — clock-change × parameterization compatibility — completed
 
-Stage 11E will combine the genuine Stage 10 A/B/C internal-clock transports with the Stage 11 external reparameterization transport and test the frozen commuting/path-independence target for O/event data, per-continuation measurements/probabilities, and weighted/modal/update outputs.
+Stage 11E explicitly represents external `G_{rho->sigma}` and genuine continuation-aware Stage 10 internal-clock `C_{X->Y}` transports and tests
 
-The controlled target remains narrower than general covariance:
+`C_{X->Y} o G_{rho->sigma} ~= G_{rho->sigma} o C_{X->Y}`.
 
-`finite typed parametrized covariance != general covariance`.
+Executable family:
 
-`parametrized covariance precursor != general relativity`.
+- 4 external parameterizations / **12** ordered distinct `G` transports;
+- 9 A/B/C clock/readout nodes;
+- 2 continuation classes;
+- **54** genuine distinct-clock edges per continuation / **108** typed `C` transports;
+- **648** relational O/event squares;
+- **1296** per-continuation measurement/probability squares;
+- **648** weighted/modal squares;
+- **648** common-evidence posterior squares.
+
+All positive path/direct-target residuals are **<= 1e-9** in the declared tests. Matched epistemic/ontic target public views and hidden-`h*` public invariance are retained; epistemic/ontic posterior paths agree while hidden epistemic selection is preserved and updated ontic state remains selector-free.
+
+A deliberately mislabeled A/0→B/1 measurement path that omits the genuine dual clock transport is classified
+
+`noncommuting_wrong_clock_path_detected`
+
+with normalization, effect, and canonical-probability residuals all **> 1e-9**.
+
+Criteria **39–43** are satisfied.
+
+`Stage 11E clock-change x parameterization compatibility on the frozen finite family = established`.
+
+Source/unit-test checkpoint run #1407: **`915 passed in 482.25s (0:08:02)`**.
+
+`internal-clock covariance != reparameterization covariance`.
+
+`commuting typed product square != independent interaction law`.
+
+`commuting typed diagram != general covariance`.
+
+`path-independent future probabilities != future actuality`.
+
+`path-independent evidence update != ontological becoming`.
+
+### Stage 11F — ablation / wrong-gauge / false-positive controls — next
+
+Criteria **44–47** will classify parameter-event correspondence removal separately from numerical reconstructibility, isolate missing/wrong lapse-Jacobian semantics, consolidate orientation-reversal/non-injective/raw-lambda/corruption controls, and retain the non-metaphysical interpretation boundary.
+
+Stage 11G will then select one frozen Stage 11 status from the full A–F evidence chain. Criterion 50 remains external final repository validation.
 
 ## Guards
 
@@ -324,14 +239,16 @@ The controlled target remains narrower than general covariance:
 - `typed O/P/R/V/Xi lift != full future-measurement covariance`;
 - `typed product lift feasibility != independent dynamical covariance evidence`;
 - `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
+- `selector-free public projection != absence of privileged modal semantics`;
 - `external lapse != quantum measurement normalization form`;
 - `numerically unchanged probability payload != well-typed reparameterization context`;
 - `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
 - `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
-- `parameterization-covariant future probabilities != future actuality`;
-- `parameterization-covariant future probabilities != proof of eternalism`;
-- `parameterization-covariant future probabilities != refutation of ontological becoming`;
-- `evidence-update covariance != ontological becoming`;
+- `internal-clock covariance != reparameterization covariance`;
+- `commuting typed product square != independent interaction law`;
+- `commuting typed diagram != general covariance`;
+- `path-independent future probabilities != future actuality`;
+- `path-independent evidence update != ontological becoming`;
 - `selector-free public projection != absence of privileged modal semantics`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;

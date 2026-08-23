@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0 and Stage 12A–G are completed on Draft PR #13; Stage 12 criteria 1–49 are satisfied and criterion 50 is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0 and Stage 12A–G are completed on PR #13; Stage 12 criteria 1–50 are completed at the criterion-50 merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged.**
 
 Current refined finite-model candidate through Stage 12:
 
@@ -13,6 +13,8 @@ Current refined finite-model candidate through Stage 12:
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
 Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`. Stage 12G executable synthesis is `multi_orbit_gauge_covariant`.
+
+Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
 Selected Stage 11 gate:
 
@@ -309,7 +311,7 @@ Stage 11 criteria **1–50** were closed at that historical merge-readiness chec
 
 `merge-ready != merged`.
 
-## Stage 12 — Multi-orbit constraint-generated gauge atlas — in progress
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — criterion-50 merge-readiness checkpoint completed
 
 Key documents:
 
@@ -322,6 +324,7 @@ Key documents:
 - [`docs/stage12e_notes.md`](docs/stage12e_notes.md) / [`results/stage12e_compatibility.md`](results/stage12e_compatibility.md)
 - [`docs/stage12f_notes.md`](docs/stage12f_notes.md) / [`results/stage12f_ablation.md`](results/stage12f_ablation.md)
 - [`docs/stage12g_notes.md`](docs/stage12g_notes.md) / [`results/stage12g_synthesis_stage13_gate.md`](results/stage12g_synthesis_stage13_gate.md)
+- [`results/stage12_criterion50_merge_readiness.md`](results/stage12_criterion50_merge_readiness.md)
 
 ### Stage 12.0 — protocol freeze — completed
 
@@ -444,7 +447,15 @@ Selected Stage 13 gate:
 
 The nearest unresolved assumption is now the single Hamiltonian constraint. The selected gate isolates nontrivial constraint-algebra effects before a direct gravitational extension.
 
-Criteria **1–49 are satisfied and criterion 50 is next**.
+### Stage 12 criterion 50 — external final repository validation / merge-readiness review — completed
+
+Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At the reviewed checkpoint the branch was **ahead 78 / behind 0** relative to `main`, PR #13 was `mergeable = true`, and there were **0** unresolved inline review threads, **0** submitted review blockers, and **0** PR conversation comments.
+
+Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged; no merge action is taken by criterion 50.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
 
 `multi_orbit_gauge_covariant finite family != general covariance`.
 

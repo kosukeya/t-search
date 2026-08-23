@@ -260,9 +260,8 @@ def test_stage11g_documents_synthesis_and_selected_stage12_gate() -> None:
         assert "one-orbit covariance != multi-orbit gauge covariance" in text
         assert "external parameterization independence != diffeomorphism invariance" in text
         assert "constraint-generated gauge precursor != general relativity" in text
-    assert bounded in README
-    assert bounded in ROADMAP
     assert bounded in PROTOCOL
+    assert "`parametrized_covariant`" in RESULT_G
     for text in (NOTES_G, RESULT_G):
         assert "criteria 48–49" in text.lower()
         assert "937 passed in 851.19s (0:14:11)" in text

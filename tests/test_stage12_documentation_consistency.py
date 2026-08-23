@@ -17,12 +17,20 @@ NOTES_E = (ROOT / "docs" / "stage12e_notes.md").read_text(encoding="utf-8")
 RESULT_E = (ROOT / "results" / "stage12e_compatibility.md").read_text(encoding="utf-8")
 NOTES_F = (ROOT / "docs" / "stage12f_notes.md").read_text(encoding="utf-8")
 RESULT_F = (ROOT / "results" / "stage12f_ablation.md").read_text(encoding="utf-8")
+NOTES_G = (ROOT / "docs" / "stage12g_notes.md").read_text(encoding="utf-8")
+RESULT_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
     "gauge-related parameterizations from physically distinct orbits and tests "
     "whether relational/Dirac observables and the typed O/P/R/V measurement "
     "architecture descend consistently across that atlas."
+)
+SELECTED_STAGE13 = (
+    "Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two "
+    "nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit "
+    "quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under "
+    "the resulting constraint-generated path structure without assuming general relativity."
 )
 
 
@@ -33,13 +41,15 @@ def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
         assert "constraint-generated gauge precursor != general relativity" in text
 
 
-def test_stage12f_top_level_current_status_is_synchronized() -> None:
+def test_stage12g_top_level_current_status_is_synchronized() -> None:
     for text in (README, ROADMAP):
-        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D", "Stage 12E", "Stage 12F"):
+        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D", "Stage 12E", "Stage 12F", "Stage 12G"):
             assert stage in text
-        assert "criteria 1–47 are satisfied and Stage 12G is next" in text
-        assert "d5fdc899a72b6a983c03b1f960c65cda948c8fb8" in text
-        assert "1002 passed in 887.98s (0:14:47)" in text
+        assert "criteria 1–49 are satisfied and criterion 50 is next" in text
+        assert "multi_orbit_gauge_covariant" in text
+        assert "1011 passed in 692.53s (0:11:32)" in text
+        assert "multi_constraint_refoliation_precursor" in text
+        assert SELECTED_STAGE13 in text
     for path in (
         "docs/stage12c_notes.md",
         "results/stage12c_gauge_atlas.md",
@@ -49,6 +59,8 @@ def test_stage12f_top_level_current_status_is_synchronized() -> None:
         "results/stage12e_compatibility.md",
         "docs/stage12f_notes.md",
         "results/stage12f_ablation.md",
+        "docs/stage12g_notes.md",
+        "results/stage12g_synthesis_stage13_gate.md",
     ):
         assert path in README
 
@@ -143,13 +155,13 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12f_closes_criteria_44_47_while_freeze_remains_historical() -> None:
-    assert "Stage 12F completed; criteria 1–47 satisfied; criteria 48–50 pending" in PROTOCOL
+def test_stage12g_closes_criteria_48_49_while_freeze_remains_historical() -> None:
+    assert "Stage 12G completed; criteria 1–49 satisfied; criterion 50 pending" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 47
-    assert PROTOCOL.count("**pending**") == 3
+    assert PROTOCOL.count("**satisfied**") == 49
+    assert PROTOCOL.count("**pending**") == 1
 
 
 def test_stage12a_implementation_checkpoint_remains_documented() -> None:
@@ -257,8 +269,8 @@ def test_stage12e_implementation_checkpoint_remains_documented() -> None:
     assert "1002 passed in 887.98s (0:14:47)" in PROTOCOL + "\n" + NOTES_F
 
 
-def test_stage12f_implementation_checkpoint_is_documented() -> None:
-    combined = PROTOCOL + "\n" + NOTES_F + "\n" + RESULT_F
+def test_stage12f_implementation_checkpoint_remains_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_F + "\n" + RESULT_F + "\n" + NOTES_G
     for phrase in (
         "2 ablations",
         "27 controls",
@@ -279,6 +291,29 @@ def test_stage12f_implementation_checkpoint_is_documented() -> None:
         "false-positive rejection != proof of eternalism",
     ):
         assert phrase in combined
+    assert "#1612" in PROTOCOL + "\n" + NOTES_G
+    assert "1011 passed in 692.53s (0:11:32)" in PROTOCOL + "\n" + NOTES_G
+    assert "#1596" in PROTOCOL + "\n" + NOTES_G
+
+
+def test_stage12g_synthesis_and_stage13_gate_are_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_G + "\n" + RESULT_G
+    for phrase in (
+        "multi_orbit_gauge_covariant",
+        "T12_candidate=(O,P,R,V;Xi)",
+        "single Hamiltonian constraint",
+        "multi_constraint_refoliation_precursor",
+        "gravitational_minisuperspace_extension",
+        "richer_causal_order",
+        "nonideal_povm_clocks",
+        "10",
+        "7",
+        "6",
+        "constraint-algebra/refoliation precursor != general relativity",
+        "finite C x G x Phi compatibility != refoliation invariance",
+    ):
+        assert phrase in combined
+    assert SELECTED_STAGE13 in combined
 
 
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
@@ -289,7 +324,8 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
         "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**",
         "Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**",
         "Stage 12F — ablation / wrong-orbit / false-positive controls — **completed**",
-        "Stage 12G — executable synthesis and evidence-selected next gate — **next**",
+        "Stage 12G — executable synthesis and evidence-selected next gate — **completed**",
+        "criterion 50 — external final full-repository regression / merge-readiness review — **next**",
     ):
         assert stage in PROTOCOL
     for status in (
@@ -316,6 +352,8 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
             RESULT_E,
             NOTES_F,
             RESULT_F,
+            NOTES_G,
+            RESULT_G,
         )
     )
     for phrase in (
@@ -329,10 +367,14 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
         "same gauge-invariant probability within an orbit != all physical orbits operationally identical",
         "typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint",
         "multi-orbit gauge covariance != general covariance",
+        "multi_orbit_gauge_covariant finite family != general covariance",
         "finite gauge atlas != diffeomorphism invariance",
+        "finite constraint-generated gauge atlas != diffeomorphism invariance",
         "single Hamiltonian constraint != hypersurface-deformation algebra",
+        "constraint-algebra/refoliation precursor != general relativity",
         "future-measurement covariance != future actuality",
         "commuting finite gauge/clock diagrams != general covariance",
+        "finite C x G x Phi compatibility != refoliation invariance",
         "constraint-generated gauge flow != internal-clock change",
         "constraint-generated gauge flow != external reparameterization",
         "path-independent future probabilities != future actuality",

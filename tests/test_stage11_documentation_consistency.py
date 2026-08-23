@@ -12,6 +12,8 @@ NOTES_B = (ROOT / "docs" / "stage11b_notes.md").read_text(encoding="utf-8")
 RESULT_B = (ROOT / "results" / "stage11b_relational.md").read_text(encoding="utf-8")
 NOTES_C = (ROOT / "docs" / "stage11c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage11c_lift.md").read_text(encoding="utf-8")
+NOTES_D = (ROOT / "docs" / "stage11d_notes.md").read_text(encoding="utf-8")
+RESULT_D = (ROOT / "results" / "stage11d_measurement.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE11 = (
     "Construct a parametrized covariance precursor that preserves the typed "
@@ -84,18 +86,19 @@ def test_stage11_negative_controls_and_antitriviality_remain_frozen() -> None:
     assert "non-injective relabeling != admissible reparameterization" in combined
 
 
-def test_stage11_freeze_remains_historical_after_stage11c_closure() -> None:
+def test_stage11_freeze_remains_historical_after_stage11d_closure() -> None:
     assert "Stage 11.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
-    assert "criteria 1–31 satisfied" in PROTOCOL.lower()
-    assert "criteria 32–50 pending" in PROTOCOL.lower()
+    assert "criteria 1–38 satisfied" in PROTOCOL.lower()
+    assert "criteria 39–50 pending" in PROTOCOL.lower()
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 31
-    assert PROTOCOL.count("**pending**") == 19
+    assert PROTOCOL.count("**satisfied**") == 38
+    assert PROTOCOL.count("**pending**") == 12
     assert "Stage 11A — minimal parametrized constrained carrier and admissible family — completed" in PROTOCOL
     assert "Stage 11B — relational observables and relational derivatives — completed" in PROTOCOL
     assert "Stage 11C — typed O/P/R/V/Xi lift — completed" in PROTOCOL
-    assert "Stage 11D — future-measurement reparameterization covariance — next" in PROTOCOL
+    assert "Stage 11D — future-measurement reparameterization covariance — completed" in PROTOCOL
+    assert "Stage 11E — clock-change × parameterization compatibility — next" in PROTOCOL
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -138,7 +141,7 @@ def test_stage11b_documented_relational_evidence_remains_historical() -> None:
     assert "equal raw lambda != physical-event correspondence" in NOTES_B
 
 
-def test_stage11c_documented_typed_lift_closes_only_criteria_24_31() -> None:
+def test_stage11c_documented_typed_lift_remains_historical() -> None:
     for text in (README, ROADMAP, PROTOCOL, NOTES_C, RESULT_C):
         assert "Stage 11C" in text
         assert "typed O/P/R/V/Xi lift != full future-measurement covariance" in text
@@ -151,9 +154,6 @@ def test_stage11c_documented_typed_lift_closes_only_criteria_24_31() -> None:
         assert "criteria 24–31" in text.lower()
     assert "parameter_dependent_oprv_corruption_detected" in NOTES_C
     assert "parameter_dependent_oprv_corruption_detected" in RESULT_C
-    assert "4 / 4" in README
-    assert "4 / 4" in ROADMAP
-    assert "4 / 4" in PROTOCOL
     assert "4 / 4" in RESULT_C
     assert "continuation/class correspondence entries: **8**" in RESULT_C
     assert "outcome correspondence entries: **8**" in RESULT_C
@@ -161,14 +161,44 @@ def test_stage11c_documented_typed_lift_closes_only_criteria_24_31() -> None:
     assert "Stage 11D" in RESULT_C and "Next checkpoint" in RESULT_C
 
 
-def test_stage11_planning_documents_advance_to_stage11d_without_full_covariance_claim() -> None:
-    for text in (README, ROADMAP, PROTOCOL):
+def test_stage11d_documented_measurement_covariance_closes_only_criteria_32_38() -> None:
+    bounded = (
+        "Stage 11D future-measurement reparameterization covariance on the frozen positive family = established"
+    )
+    for text in (README, ROADMAP, PROTOCOL, NOTES_D, RESULT_D):
         assert "Stage 11D" in text
+        assert "QExt(e1)={h_L,h_R}" in text
+        assert bounded in text
+        assert "future-measurement reparameterization covariance != clock-change x reparameterization compatibility" in text
+        assert "typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor" in text
+    for text in (PROTOCOL, NOTES_D, RESULT_D):
+        assert "criteria 32–38" in text.lower()
+    for text in (README, ROADMAP, PROTOCOL, RESULT_D):
+        assert "8" in text
+        assert "16" in text
+        assert "4 / 4" in text
+    assert "run #1361" in NOTES_D
+    assert "907 passed in 590.98s (0:09:50)" in NOTES_D
+    assert "run #1361" in RESULT_D
+    assert "907 passed in 590.98s (0:09:50)" in RESULT_D
+    assert "external lapse != quantum measurement normalization form" in NOTES_D
+    assert "numerically unchanged probability payload != well-typed reparameterization context" in NOTES_D
+    assert "wrong-normalization matrix residual: **> 1e-9**" in RESULT_D
+    assert "wrong-normalization probability residual: **> 1e-9**" in RESULT_D
+    assert "Stage 11E" in NOTES_D and "Next checkpoint" in NOTES_D
+    assert "Stage 11E" in RESULT_D and "Next checkpoint" in RESULT_D
+
+
+def test_stage11_planning_documents_advance_to_stage11e_without_full_covariance_claim() -> None:
+    for text in (README, ROADMAP, PROTOCOL):
+        assert "Stage 11E" in text
         assert "next" in text.lower()
         assert "finite typed parametrized covariance != general covariance" in text
-    assert "criteria 1–31" in README
-    assert "criteria 1–31" in ROADMAP
-    bounded = "Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established"
+    assert "criteria 1–38" in README
+    assert "criteria 1–38" in ROADMAP
+    bounded = (
+        "Stage 11D future-measurement reparameterization covariance on the frozen positive family = established"
+    )
     assert bounded in README
     assert bounded in ROADMAP
     assert bounded in PROTOCOL

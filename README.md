@@ -4,9 +4,9 @@
 
 ## Current status
 
-**Stages 1–9 are completed and merged. Stage 10.0 through Stage 10G and criterion 50 are completed on PR #11; Stage 10 criteria 1–50 are closed and PR #11 is at the merge-ready checkpoint. Stage 10 has not yet been merged.**
+**Stages 1–10 are completed and merged. PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 — parametrized covariance precursor protocol freeze — is now in progress on `agent/stage-11-parametrized-covariance-precursor`.**
 
-Current refined finite-model candidate:
+Current refined finite-model candidate carried into Stage 11:
 
 `T10_candidate=(O,P,R,V;Xi)`
 
@@ -60,7 +60,7 @@ Historical guards retained from Stage 9:
 - `P edge reconstruction != P layer universally redundant`;
 - `finite clock covariance != general covariance`.
 
-## Stage 10 — Fully typed future-measurement covariance — completed; merge-ready checkpoint
+## Stage 10 — Fully typed future-measurement covariance — completed and merged
 
 Key documents:
 
@@ -101,13 +101,34 @@ Stage 11 candidate ranking at Stage 10G:
 2. `richer_causal_order` — **7**
 3. `nonideal_povm_clocks` — **6**
 
-### Stage 10 criterion 50 — completed externally
+### Stage 10 criterion 50 — completed externally before merge
 
 The documentation-synchronized Stage 10 head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed GitHub Actions run #1271:
 
 **`868 passed in 345.59s (0:05:45)`**.
 
-At that reviewed checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review threads or submitted review blockers. Criterion **50** is therefore closed externally. This establishes merge readiness only; `merge-ready != merged`.
+A stale documentation guard exposed by run #1273 was corrected without changing Stage 10 scientific code; final current-head regression run #1275 passed **`868 passed in 402.52s (0:06:42)`**.
+
+At the criterion-50 checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers. That checkpoint established readiness only; the historical guard remains `merge-ready != merged`. PR #11 was subsequently merged into `main` on 2026-08-22.
+
+## Stage 11 — Parametrized covariance precursor — Stage 11.0 protocol freeze
+
+Stage 11 begins from the Stage 10G-selected gate and asks whether the typed O/P/R/V measurement architecture can be preserved or reconstructed when the same physical relational history is represented with different admissible external parameterizations.
+
+The Stage 11.0 protocol freezes these distinctions:
+
+- `parameter label != internal clock reading`;
+- `parameter label != event identity`;
+- `internal clock perspective != external parameterization`;
+- `orientation-preserving reparameterization != time reversal`.
+
+The admissible gauge family is restricted initially to smooth strictly monotone orientation-preserving maps with positive derivative. Orientation reversal and non-injective maps are retained as negative controls rather than silently treated as gauge-equivalent.
+
+Stage 11 does not begin with a claim of general covariance. The target is a controlled finite precursor:
+
+`parametrized covariance precursor != general relativity`.
+
+The new protocol is [`docs/stage11_protocol.md`](docs/stage11_protocol.md), with Stage 11.0 freeze record in [`results/stage11_0_protocol_freeze.md`](results/stage11_0_protocol_freeze.md).
 
 ## Guards
 
@@ -118,6 +139,11 @@ At that reviewed checkpoint PR #11 was mergeable, behind `main` by 0 commits, an
 - `perspective-invariant future probabilities != proof of eternalism`;
 - `measurement covariance != refutation of ontological becoming`;
 - `typed-resource necessity != metaphysical fundamentality`;
+- `parameter label != internal clock reading`;
+- `parameter label != event identity`;
+- `internal clock perspective != external parameterization`;
+- `orientation-preserving reparameterization != time reversal`;
+- `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
 - `repository validation != new scientific evidence`;

@@ -46,7 +46,6 @@ def test_stage11_parametrized_constraint_and_positive_family_are_preserved() -> 
         "H(q,p)=p^2/2",
         "N'(lambda') = N(lambda) dlambda/dlambda' = N(lambda)/f'(lambda)",
         "f_id(lambda)=lambda",
-
         "f_aff(lambda)=2 lambda + 1",
         "f_cub(lambda)=lambda + lambda^3/4",
         "f_sinh(lambda)=sinh(lambda)",
@@ -142,10 +141,12 @@ def test_stage11b_documented_relational_evidence_remains_historical() -> None:
 def test_stage11c_documented_typed_lift_closes_only_criteria_24_31() -> None:
     for text in (README, ROADMAP, PROTOCOL, NOTES_C, RESULT_C):
         assert "Stage 11C" in text
-        assert "QExt(e1)={h_L,h_R}" in text
         assert "typed O/P/R/V/Xi lift != full future-measurement covariance" in text
         assert "typed product lift feasibility != independent dynamical covariance evidence" in text
         assert "Stage 10 event-role bridge != dynamical identification of quantum and classical carriers" in text
+    assert "`QExt(e1)`" in README and "(h_L,h_R)" in README
+    for text in (ROADMAP, PROTOCOL, NOTES_C, RESULT_C):
+        assert "QExt(e1)={h_L,h_R}" in text
     for text in (PROTOCOL, NOTES_C, RESULT_C):
         assert "criteria 24–31" in text.lower()
     assert "parameter_dependent_oprv_corruption_detected" in NOTES_C

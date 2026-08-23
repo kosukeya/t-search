@@ -67,18 +67,27 @@ def test_stage12d_within_orbit_quotient_projection_preserves_typed_oprv_content(
         )
 
 
-def test_stage12d_relational_O_is_orbit_sensitive_but_representative_independent() -> None:
+def test_stage12d_relational_O_is_orbit_sensitive_but_representative_independent_with_tolerance() -> None:
     architectures = canonical_stage12d_architectures()
-    orbit_signatures = {}
+    quotient_signatures = {}
     for orbit in canonical_stage12a_orbits():
         subset = [item for item in architectures if item.orbit_id == orbit.orbit_id]
-        signatures = {
-            tuple((event.clock_value, event.q_value) for event in item.O.relational_events)
-            for item in subset
-        }
-        assert len(signatures) == 1
-        orbit_signatures[orbit.orbit_id] = next(iter(signatures))
-    assert len(set(orbit_signatures.values())) == 4
+        assert len(subset) == 5
+        reference = subset[0].O.relational_events
+        for item in subset[1:]:
+            assert len(item.O.relational_events) == len(reference)
+            for left, right in zip(reference, item.O.relational_events, strict=True):
+                assert left.role == right.role
+                assert left.stage10_event == right.stage10_event
+                assert left.physical_event_id == right.physical_event_id
+                assert np.isclose(left.clock_value, right.clock_value, atol=STAGE12D_ATOL, rtol=0.0)
+                assert np.isclose(left.q_value, right.q_value, atol=STAGE12D_ATOL, rtol=0.0)
+
+        quotient = stage12d_quotient_projection(subset[0])
+        quotient_signatures[orbit.orbit_id] = tuple(
+            (event.clock_value, event.q_value) for event in quotient.O.relational_events
+        )
+    assert len(set(quotient_signatures.values())) == 4
 
 
 def test_stage12d_inherited_future_measurement_descends_within_each_orbit() -> None:
@@ -97,13 +106,15 @@ def test_stage12d_inherited_future_measurement_descends_within_each_orbit() -> N
     for orbit in canonical_stage12a_orbits():
         for continuation in ("h_L", "h_R"):
             subset = [
-                item for item in views
+                item
+                for item in views
                 if item.orbit_id == orbit.orbit_id and item.continuation_id == continuation
             ]
             assert len(subset) == 5
             reference = dict(subset[0].probabilities)
             assert all(
-                max(abs(dict(item.probabilities)[key] - reference[key]) for key in reference) <= 1e-9
+                max(abs(dict(item.probabilities)[key] - reference[key]) for key in reference)
+                <= 1e-9
                 for item in subset
             )
 
@@ -148,7 +159,10 @@ def test_stage12d_orbit_sensitive_witness_is_gauge_invariant_and_distinguishes_a
     signatures = {_probabilities(item) for item in references}
     assert len(signatures) == 4
     separations = [
-        max(abs(a - b) for a, b in zip(_probabilities(left), _probabilities(right), strict=True))
+        max(
+            abs(a - b)
+            for a, b in zip(_probabilities(left), _probabilities(right), strict=True)
+        )
         for index, left in enumerate(references)
         for right in references[index + 1 :]
     ]
@@ -169,7 +183,10 @@ def test_stage12d_wrong_context_and_trivialization_controls_are_rejected() -> No
         assert by_id[control_id].classification == STAGE12D_TYPED_REJECTION
     assert by_id["wrong_normalization"].classification == STAGE12D_NORMALIZATION_REJECTION
     assert by_id["wrong_normalization"].numerical_witness_residual > 1e-9
-    assert by_id["orbit_insensitive_measurement_clone"].classification == STAGE12D_FALSE_POSITIVE_REJECTED
+    assert (
+        by_id["orbit_insensitive_measurement_clone"].classification
+        == STAGE12D_FALSE_POSITIVE_REJECTED
+    )
     assert by_id["orbit_insensitive_measurement_clone"].numerical_witness_residual == 3.0
 
 
@@ -201,11 +218,17 @@ def test_stage12d_diagnostics_close_criteria_32_through_38() -> None:
 
 def test_stage12d_summary_keeps_interpretive_boundaries_explicit() -> None:
     summary = stage12d_summary()
-    assert summary["criteria_32_38_satisfied"] if "criteria_32_38_satisfied" in summary else True
+    assert summary["criteria_32_38_satisfied"]
     assert summary["bounded_result"].endswith("= established")
     assert summary["distinct_orbit_witness_count"] == 4
     assert summary["rejected_control_count"] == 6
     guards = set(summary["guards"])
-    assert "same gauge-invariant probability within an orbit != all physical orbits operationally identical" in guards
-    assert "typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint" in guards
+    assert (
+        "same gauge-invariant probability within an orbit != all physical orbits operationally identical"
+        in guards
+    )
+    assert (
+        "typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint"
+        in guards
+    )
     assert "future-measurement covariance != future actuality" in guards

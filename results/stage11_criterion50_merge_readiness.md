@@ -53,7 +53,7 @@ The Stage 11 branch therefore has no known repository-level blocker to merge at 
 
 50. External final full-repository regression and merge-readiness review — **satisfied**.
 
-Stage 11 criteria **1–50** are closed.
+Stage 11 criteria 1–50 are closed.
 
 PR #12 may be moved from Draft to Ready for review, but that state transition is not part of the criterion-50 scientific/repository result and is not performed automatically here.
 

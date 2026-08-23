@@ -19,6 +19,7 @@ NOTES_F = (ROOT / "docs" / "stage12f_notes.md").read_text(encoding="utf-8")
 RESULT_F = (ROOT / "results" / "stage12f_ablation.md").read_text(encoding="utf-8")
 NOTES_G = (ROOT / "docs" / "stage12g_notes.md").read_text(encoding="utf-8")
 RESULT_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
+CHECKPOINT = (ROOT / "results" / "stage12_criterion50_merge_readiness.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
@@ -32,6 +33,7 @@ SELECTED_STAGE13 = (
     "quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under "
     "the resulting constraint-generated path structure without assuming general relativity."
 )
+VALIDATED_STAGE12_HEAD = "549eed786b36aa458470ef7e858b515117816ac7"
 
 
 def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
@@ -41,13 +43,15 @@ def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
         assert "constraint-generated gauge precursor != general relativity" in text
 
 
-def test_stage12g_top_level_current_status_is_synchronized() -> None:
+def test_stage12_top_level_current_status_is_synchronized() -> None:
     for text in (README, ROADMAP):
         for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D", "Stage 12E", "Stage 12F", "Stage 12G"):
             assert stage in text
-        assert "criteria 1–49 are satisfied and criterion 50 is next" in text
+        assert "criteria 1–50" in text.lower()
         assert "multi_orbit_gauge_covariant" in text
         assert "1011 passed in 692.53s (0:11:32)" in text
+        assert "1024 passed in 896.22s (0:14:56)" in text
+        assert "#1642" in text
         assert "multi_constraint_refoliation_precursor" in text
         assert SELECTED_STAGE13 in text
     for path in (
@@ -61,6 +65,7 @@ def test_stage12g_top_level_current_status_is_synchronized() -> None:
         "results/stage12f_ablation.md",
         "docs/stage12g_notes.md",
         "results/stage12g_synthesis_stage13_gate.md",
+        "results/stage12_criterion50_merge_readiness.md",
     ):
         assert path in README
 
@@ -155,13 +160,13 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12g_closes_criteria_48_49_while_freeze_remains_historical() -> None:
-    assert "Stage 12G completed; criteria 1–49 satisfied; criterion 50 pending" in PROTOCOL
+def test_stage12_closes_criteria_1_50_while_freeze_remains_historical() -> None:
+    assert "Stage 12 completed; criteria 1–50 satisfied" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 49
-    assert PROTOCOL.count("**pending**") == 1
+    assert PROTOCOL.count("**satisfied**") == 50
+    assert PROTOCOL.count("**pending**") == 0
 
 
 def test_stage12a_implementation_checkpoint_remains_documented() -> None:
@@ -316,6 +321,28 @@ def test_stage12g_synthesis_and_stage13_gate_are_documented() -> None:
     assert SELECTED_STAGE13 in combined
 
 
+def test_stage12_criterion50_closure_is_synchronized() -> None:
+    for text in (README, ROADMAP, PROTOCOL, CHECKPOINT):
+        assert "criteria 1–50" in text.lower()
+        assert "multi_orbit_gauge_covariant" in text
+        assert "multi_constraint_refoliation_precursor" in text
+        assert "#1642" in text
+        assert "1024 passed in 896.22s" in text
+        assert "repository validation != new scientific evidence" in text
+        assert "merge-ready != merged" in text
+    assert VALIDATED_STAGE12_HEAD in README
+    assert VALIDATED_STAGE12_HEAD in ROADMAP
+    assert VALIDATED_STAGE12_HEAD in PROTOCOL
+    assert VALIDATED_STAGE12_HEAD in CHECKPOINT
+    assert "ahead: **78**" in CHECKPOINT
+    assert "behind: **0**" in CHECKPOINT
+    assert "mergeable = true" in CHECKPOINT
+    assert "unresolved inline review threads: **0**" in CHECKPOINT
+    assert "submitted reviews / review blockers: **0**" in CHECKPOINT
+    assert "PR conversation comments: **0**" in CHECKPOINT
+    assert "50. External final full-repository regression and merge-readiness review — **satisfied**." in PROTOCOL
+
+
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
     for stage in (
         "Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**",
@@ -325,7 +352,7 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
         "Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**",
         "Stage 12F — ablation / wrong-orbit / false-positive controls — **completed**",
         "Stage 12G — executable synthesis and evidence-selected next gate — **completed**",
-        "criterion 50 — external final full-repository regression / merge-readiness review — **next**",
+        "criterion 50 — external final full-repository regression / merge-readiness review — **completed**",
     ):
         assert stage in PROTOCOL
     for status in (
@@ -354,6 +381,7 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
             RESULT_F,
             NOTES_G,
             RESULT_G,
+            CHECKPOINT,
         )
     )
     for phrase in (
@@ -388,6 +416,8 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
         "finite-model ablation != fundamental ontology",
         "false-positive rejection != proof of eternalism",
         "finite-model success != empirical discovery",
+        "repository validation != new scientific evidence",
+        "merge-ready != merged",
         "not_established != false",
     ):
         assert phrase in combined

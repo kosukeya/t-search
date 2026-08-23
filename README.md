@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11G are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–49 are satisfied and criterion 50 remains external final repository validation / merge-readiness review.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11G and criterion 50 are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–50 are satisfied and PR #12 is at a merge-ready, unmerged checkpoint.**
 
 Current refined finite-model candidate carried through Stage 11:
 
@@ -88,7 +88,7 @@ Historical boundary: `merge-ready != merged`.
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11G completed
+## Stage 11 — Parametrized covariance precursor — completed / merge-ready checkpoint
 
 Key documents:
 
@@ -101,6 +101,7 @@ Key documents:
 - [`docs/stage11e_notes.md`](docs/stage11e_notes.md) / [`results/stage11e_compatibility.md`](results/stage11e_compatibility.md)
 - [`docs/stage11f_notes.md`](docs/stage11f_notes.md) / [`results/stage11f_ablation.md`](results/stage11f_ablation.md)
 - [`docs/stage11g_notes.md`](docs/stage11g_notes.md) / [`results/stage11g_synthesis_stage12_gate.md`](results/stage11g_synthesis_stage12_gate.md)
+- [`results/stage11_criterion50_merge_readiness.md`](results/stage11_criterion50_merge_readiness.md)
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -286,13 +287,23 @@ Selected Stage 12 gate:
 
 > **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
 
-Criteria **48–49** are satisfied. Criterion **50** remains external final full-repository regression / merge-readiness review.
+Criteria **48–49** are satisfied.
 
 `one-orbit covariance != multi-orbit gauge covariance`.
 
 `external parameterization independence != diffeomorphism invariance`.
 
 `constraint-generated gauge precursor != general relativity`.
+
+### Stage 11 criterion 50 — external final repository validation / merge-readiness review — completed
+
+Criterion **50** is satisfied externally at reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`. GitHub Actions run #1469 passed **`938 passed in 682.23s (0:11:22)`**. At that checkpoint PR #12 was `mergeable = true`, the branch was **ahead 98 / behind 0** relative to `main`, and there were **0** unresolved inline review threads and **0** submitted review blockers.
+
+Stage 11 criteria **1–50** are closed. PR #12 is merge-ready and remains unmerged.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
 
 ## Guards
 
@@ -343,5 +354,6 @@ Criteria **48–49** are satisfied. Criterion **50** remains external final full
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
 - `repository validation != new scientific evidence`;
+- `merge-ready != merged`;
 - `finite-model success != empirical discovery`;
 - `not_established != false`.

@@ -102,14 +102,27 @@ def test_stage11_freeze_remains_historical_after_stage11a_closure() -> None:
 
 
 def test_stage11a_documented_diagnostics_close_only_criteria_11_16() -> None:
-    for text in (PROTOCOL, NOTES_A, RESULT_A):
-        assert "criteria 11–16" in text
+    for text in (README, ROADMAP, PROTOCOL, NOTES_A, RESULT_A):
+        assert "Stage 11A" in text
         assert "36" in text
         assert "24" in text
         assert "0.5" in text
         assert "same constraint orbit != established general covariance" in text
+    for text in (PROTOCOL, NOTES_A, RESULT_A):
+        assert "criteria 11–16" in text
     assert "minimum transformed positive lapse" in RESULT_A
     assert "max constraint residual" in RESULT_A
     assert "max lapse chain-rule residual" in RESULT_A
     assert "Stage 11B" in NOTES_A and "next" in NOTES_A.lower()
     assert "Stage 11B" in RESULT_A and "Next checkpoint" in RESULT_A
+
+
+def test_stage11_planning_documents_advance_to_stage11b_without_full_covariance_claim() -> None:
+    for text in (README, ROADMAP, PROTOCOL):
+        assert "Stage 11B" in text
+        assert "next" in text.lower()
+        assert "finite typed parametrized covariance != general covariance" in text
+    assert "criteria 1–16" in README
+    assert "criteria 1–16" in ROADMAP
+    assert "minimal Stage 11A constraint orbit preservation = established" in README
+    assert "minimal Stage 11A constraint orbit preservation = established" in ROADMAP

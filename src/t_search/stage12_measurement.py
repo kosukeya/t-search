@@ -1,30 +1,27 @@
 """Stage 12D O/P/R/V/Xi and orbit-sensitive future-measurement descent.
 
 Stage 12D reuses the Stage 10/11 future-measurement family rather than
-redesigning it.  To isolate constraint-generated gauge-representative descent
-from the clock/reparameterization compatibility reserved for Stage 12E, this
-stage fixes the inherited external parameterization to the Stage 11 identity
-chart and the inherited internal measurement chart to Stage 11D's reference
-A/e2 chart.
+redesigning it.  External reparameterization is fixed to the Stage 11 identity
+chart and the internal measurement chart to Stage 11D's A/e2 reference so this
+stage isolates same-orbit constraint-generated gauge-representative descent.
+Explicit C x G x Phi compatibility remains Stage 12E.
 
-For every one of the 20 Stage 12A gauge representatives, Stage 12D constructs a
-typed O/P/R/V/Xi view.  Representative-specific gauge provenance stays in Xi;
-the quotient public projection drops that representative metadata and asks
-whether the licensed O/P/R/V content is constant on each Stage 12C gauge
-quotient class.
+Representative-level relational O values are reconstructed independently from
+phase-space data and are compared with an explicit tolerance.  The quotient
+projection is then canonicalized with the Stage 12C quotient-class Dirac data,
+so machine-level floating-point noise is not mistaken for a distinct physical
+quotient object.
 
-The inherited Stage 10/11 measurement payload is deliberately supplemented by
-an explicit orbit-sensitive operational witness.  The witness is a declared,
-bounded bridge from independently reconstructed Dirac/relational orbit data to
-the already-frozen outcome names.  It is *not* claimed to follow dynamically
-from the classical constraint or to derive quantum measurement from it.  This
-prevents multi-orbit success from being obtained merely by copying one
-orbit-insensitive measurement payload to every physical orbit.
+The inherited Stage 10/11 measurement payload is supplemented by a declared,
+bounded orbit-sensitive operational witness.  That bridge is diagnostic only:
+it is not a dynamical derivation of quantum measurement from the classical
+constraint and is not an empirical prediction.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, fields, replace
+from functools import lru_cache
 from math import tanh
 
 import numpy as np
@@ -57,7 +54,7 @@ from .stage11_measurement import (
 )
 from .stage11_parametrized import STAGE11A_ATOL, STAGE11A_IDENTITY
 from .stage11_relational import STAGE11B_ANCHOR_INDEX, STAGE11B_TARGET_INDEX
-from .stage12_gauge_atlas import canonical_stage12c_quotient_classes
+from .stage12_gauge_atlas import Stage12CQuotientClass, canonical_stage12c_quotient_classes
 from .stage12_multi_orbit import (
     Stage12GaugeRepresentative,
     canonical_stage12a_orbits,
@@ -83,8 +80,6 @@ STAGE12D_BOUNDED_RESULT = (
     "Stage 12D typed O/P/R/V and orbit-sensitive future-measurement descent "
     "on the frozen finite gauge atlas = established"
 )
-
-_EXPECTED_OUTCOMES = (FUTURE_SIGNATURE_LEFT, FUTURE_SIGNATURE_OTHER)
 
 
 @dataclass(frozen=True, slots=True)
@@ -256,33 +251,39 @@ def _representative_lookup() -> dict[str, Stage12GaugeRepresentative]:
     return {item.representative_id: item for item in canonical_stage12a_representatives()}
 
 
-def _quotient_lookup() -> dict[str, str]:
-    result: dict[str, str] = {}
-    for quotient in canonical_stage12c_quotient_classes():
+@lru_cache(maxsize=1)
+def _quotient_classes() -> tuple[Stage12CQuotientClass, ...]:
+    return canonical_stage12c_quotient_classes()
+
+
+def _quotient_lookup() -> dict[str, Stage12CQuotientClass]:
+    result: dict[str, Stage12CQuotientClass] = {}
+    for quotient in _quotient_classes():
         for representative_id in quotient.representative_ids:
             if representative_id in result:
                 raise ValueError("Stage 12D representative occurs in multiple quotient classes")
-            result[representative_id] = quotient.quotient_id
+            result[representative_id] = quotient
     if set(result) != set(_representative_lookup()):
         raise ValueError("Stage 12D quotient lookup does not cover the representative carrier")
     return result
 
 
+@lru_cache(maxsize=1)
 def _stage11_reference_architecture():
     _, ontic = canonical_stage9c_models(selected_id="h_L")
     return stage11c_public_architecture(ontic, STAGE12D_REFERENCE_PARAMETERIZATION)
 
 
 def _stage11_role_event(role: str) -> Stage11OEvent:
-    architecture = _stage11_reference_architecture()
-    matches = tuple(item for item in architecture.O.relational_events if item.role == role)
+    matches = tuple(
+        item for item in _stage11_reference_architecture().O.relational_events if item.role == role
+    )
     if len(matches) != 1:
         raise ValueError(f"Stage 12D expected exactly one Stage 11 {role!r} event")
     return matches[0]
 
 
 def _anchor_target_tau() -> tuple[float, float]:
-    architecture = _stage11_reference_architecture()
     anchor = _stage11_role_event("prediction_anchor")
     target = _stage11_role_event("measurement_target")
     if STAGE11B_ANCHOR_INDEX >= STAGE11B_TARGET_INDEX:
@@ -290,7 +291,9 @@ def _anchor_target_tau() -> tuple[float, float]:
     return float(anchor.clock_value), float(target.clock_value)
 
 
-def _orbit_relational_events(representative: Stage12GaugeRepresentative) -> tuple[Stage11OEvent, ...]:
+def _orbit_relational_events(
+    representative: Stage12GaugeRepresentative,
+) -> tuple[Stage11OEvent, ...]:
     estimate = stage12b_dirac_from_representative(representative)
     anchor_tau, target_tau = _anchor_target_tau()
     return (
@@ -315,15 +318,14 @@ def stage12d_architecture_for_representative(
     representative: Stage12GaugeRepresentative,
 ) -> Stage12DTypedArchitecture:
     base = _stage11_reference_architecture()
-    quotient_id = _quotient_lookup()[representative.representative_id]
+    quotient = _quotient_lookup()[representative.representative_id]
     relational_events = _orbit_relational_events(representative)
     O = replace(base.O, relational_events=relational_events)
-    anchor = relational_events[0]
-    target = relational_events[1]
+    anchor, target = relational_events
     Xi = Stage12DXiLayer(
         parameterization_id=STAGE12D_REFERENCE_PARAMETERIZATION,
         orbit_id=representative.orbit_id,
-        quotient_id=quotient_id,
+        quotient_id=quotient.quotient_id,
         representative_id=representative.representative_id,
         gauge_parameter_s=float(representative.gauge_parameter_s),
         gauge_provenance_semantics=STAGE12D_GAUGE_PROVENANCE_SEMANTICS,
@@ -341,7 +343,7 @@ def stage12d_architecture_for_representative(
     )
     return Stage12DTypedArchitecture(
         orbit_id=representative.orbit_id,
-        quotient_id=quotient_id,
+        quotient_id=quotient.quotient_id,
         representative_id=representative.representative_id,
         O=O,
         P=base.P,
@@ -351,6 +353,7 @@ def stage12d_architecture_for_representative(
     )
 
 
+@lru_cache(maxsize=1)
 def canonical_stage12d_architectures() -> tuple[Stage12DTypedArchitecture, ...]:
     return tuple(
         stage12d_architecture_for_representative(item)
@@ -361,60 +364,86 @@ def canonical_stage12d_architectures() -> tuple[Stage12DTypedArchitecture, ...]:
 def stage12d_validate_architecture(
     architecture: Stage12DTypedArchitecture,
 ) -> Stage12DArchitectureValidation:
-    lookup = _representative_lookup()
-    representative = lookup.get(architecture.representative_id)
-    reasons: list[str] = []
+    representative = _representative_lookup().get(architecture.representative_id)
     if representative is None:
         return Stage12DArchitectureValidation(
             architecture.orbit_id,
             architecture.representative_id,
-            False, False, False, False, False, False, False, False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
             ("representative_identity",),
         )
     expected = stage12d_architecture_for_representative(representative)
-    orbit_valid = architecture.orbit_id == representative.orbit_id and architecture.Xi.orbit_id == representative.orbit_id
-    quotient_valid = architecture.quotient_id == expected.quotient_id and architecture.Xi.quotient_id == expected.quotient_id
-    O_valid = architecture.O == expected.O
-    P_valid = architecture.P == expected.P
-    R_valid = architecture.R == expected.R
-    V_valid = architecture.V == expected.V
-    Xi_valid = architecture.Xi == expected.Xi
-    for name, valid in (
-        ("orbit_correspondence", orbit_valid),
-        ("quotient_correspondence", quotient_valid),
-        ("O", O_valid),
-        ("P", P_valid),
-        ("R", R_valid),
-        ("V", V_valid),
-        ("Xi", Xi_valid),
-    ):
-        if not valid:
-            reasons.append(name)
-    valid = all((orbit_valid, quotient_valid, O_valid, P_valid, R_valid, V_valid, Xi_valid))
+    checks = {
+        "orbit_correspondence": (
+            architecture.orbit_id == representative.orbit_id
+            and architecture.Xi.orbit_id == representative.orbit_id
+        ),
+        "quotient_correspondence": (
+            architecture.quotient_id == expected.quotient_id
+            and architecture.Xi.quotient_id == expected.quotient_id
+        ),
+        "O": architecture.O == expected.O,
+        "P": architecture.P == expected.P,
+        "R": architecture.R == expected.R,
+        "V": architecture.V == expected.V,
+        "Xi": architecture.Xi == expected.Xi,
+    }
+    reasons = tuple(name for name, valid in checks.items() if not valid)
     return Stage12DArchitectureValidation(
         orbit_id=architecture.orbit_id,
         representative_id=architecture.representative_id,
-        orbit_valid=orbit_valid,
-        quotient_valid=quotient_valid,
-        O_valid=O_valid,
-        P_valid=P_valid,
-        R_valid=R_valid,
-        V_valid=V_valid,
-        Xi_valid=Xi_valid,
-        valid=bool(valid),
-        rejection_reasons=tuple(reasons),
+        orbit_valid=checks["orbit_correspondence"],
+        quotient_valid=checks["quotient_correspondence"],
+        O_valid=checks["O"],
+        P_valid=checks["P"],
+        R_valid=checks["R"],
+        V_valid=checks["V"],
+        Xi_valid=checks["Xi"],
+        valid=not reasons,
+        rejection_reasons=reasons,
     )
+
+
+def _canonical_quotient_O(
+    architecture: Stage12DTypedArchitecture,
+    quotient: Stage12CQuotientClass,
+) -> Stage11OLayer:
+    """Canonicalize relational O using quotient-level Dirac data.
+
+    Representative O remains an independent phase-space reconstruction.  This
+    function is used only after the Stage 12C equivalence class has been built,
+    and removes floating-point representative noise at the quotient boundary.
+    """
+
+    if tuple(sorted(quotient.inferred_orbit_ids)) != (architecture.orbit_id,):
+        raise ValueError("Stage 12D quotient projection cannot mix physical orbits")
+    events = tuple(
+        replace(
+            event,
+            q_value=float(quotient.Q_D + quotient.P_D * event.clock_value),
+        )
+        for event in architecture.O.relational_events
+    )
+    return replace(architecture.O, relational_events=events)
 
 
 def stage12d_quotient_projection(
     architecture: Stage12DTypedArchitecture,
 ) -> Stage12DQuotientArchitecture:
-    """Drop only representative-specific gauge metadata from the public projection."""
-
+    quotient = next(
+        item for item in _quotient_classes() if item.quotient_id == architecture.quotient_id
+    )
     return Stage12DQuotientArchitecture(
         orbit_id=architecture.orbit_id,
         quotient_id=architecture.quotient_id,
-        O=architecture.O,
+        O=_canonical_quotient_O(architecture, quotient),
         P=architecture.P,
         R=architecture.R,
         V=architecture.V,
@@ -428,6 +457,7 @@ def stage12d_quotient_projection(
     )
 
 
+@lru_cache(maxsize=1)
 def canonical_stage12d_quotient_projections() -> tuple[Stage12DQuotientArchitecture, ...]:
     return tuple(stage12d_quotient_projection(item) for item in canonical_stage12d_architectures())
 
@@ -458,6 +488,7 @@ def _wrap_measurement(
     )
 
 
+@lru_cache(maxsize=1)
 def canonical_stage12d_measurement_views() -> tuple[Stage12DMeasurementDescentView, ...]:
     _, ontic = canonical_stage9c_models(selected_id="h_L")
     continuation_ids = tuple(item.continuation_id for item in ontic.carrier.continuations)
@@ -493,6 +524,7 @@ def _wrap_weighted(
     )
 
 
+@lru_cache(maxsize=1)
 def canonical_stage12d_weighted_views() -> tuple[Stage12DWeightedDescentView, ...]:
     _, ontic = canonical_stage9c_models(selected_id="h_L")
     base = stage11d_weighted_public_view(ontic, STAGE12D_REFERENCE_PARAMETERIZATION)
@@ -515,6 +547,7 @@ def _wrap_posterior(
     )
 
 
+@lru_cache(maxsize=1)
 def canonical_stage12d_posterior_views() -> tuple[Stage12DPosteriorDescentView, ...]:
     epistemic, ontic = canonical_stage9c_models(selected_id="h_L")
     base = stage11d_posterior_view(
@@ -529,14 +562,6 @@ def canonical_stage12d_posterior_views() -> tuple[Stage12DPosteriorDescentView, 
 def stage12d_orbit_sensitive_witness(
     representative: Stage12GaugeRepresentative,
 ) -> Stage12DOrbitSensitiveWitness:
-    """Build the frozen explicit orbit-conditioned operational witness.
-
-    The tanh bridge is intentionally declared rather than dynamically derived.
-    It remains bounded and depends on the full Dirac pair plus one fixed
-    relational target value.  Both single-invariant anti-triviality pairs are
-    therefore visible to the witness.
-    """
-
     estimate = stage12b_dirac_from_representative(representative)
     _, target_tau = _anchor_target_tau()
     relational_q = float(estimate.Q_D + estimate.P_D * target_tau)
@@ -547,9 +572,10 @@ def stage12d_orbit_sensitive_witness(
         (FUTURE_SIGNATURE_LEFT, p_left),
         (FUTURE_SIGNATURE_OTHER, p_other),
     )
+    quotient = _quotient_lookup()[representative.representative_id]
     return Stage12DOrbitSensitiveWitness(
         orbit_id=representative.orbit_id,
-        quotient_id=_quotient_lookup()[representative.representative_id],
+        quotient_id=quotient.quotient_id,
         representative_id=representative.representative_id,
         Q_D=float(estimate.Q_D),
         P_D=float(estimate.P_D),
@@ -562,16 +588,18 @@ def stage12d_orbit_sensitive_witness(
     )
 
 
+@lru_cache(maxsize=1)
 def canonical_stage12d_orbit_witnesses() -> tuple[Stage12DOrbitSensitiveWitness, ...]:
-    return tuple(stage12d_orbit_sensitive_witness(item) for item in canonical_stage12a_representatives())
+    return tuple(
+        stage12d_orbit_sensitive_witness(item) for item in canonical_stage12a_representatives()
+    )
 
 
 def _probability_residual(
     left: tuple[tuple[str, float], ...],
     right: tuple[tuple[str, float], ...],
 ) -> float:
-    lhs = dict(left)
-    rhs = dict(right)
+    lhs, rhs = dict(left), dict(right)
     if set(lhs) != set(rhs):
         return float("inf")
     return max((abs(lhs[key] - rhs[key]) for key in lhs), default=0.0)
@@ -594,8 +622,6 @@ def _architecture_projection_residual(
 ) -> float:
     if left == right:
         return 0.0
-    # Dataclass equality is the primary typed criterion.  A finite residual is
-    # useful only for the orbit-sensitive relational O values.
     if (
         left.orbit_id != right.orbit_id
         or left.quotient_id != right.quotient_id
@@ -605,10 +631,22 @@ def _architecture_projection_residual(
         or left.event_correspondence != right.event_correspondence
         or left.continuation_class_correspondence != right.continuation_class_correspondence
         or left.outcome_correspondence != right.outcome_correspondence
+        or left.parameterization_id != right.parameterization_id
+        or left.lapse_semantics != right.lapse_semantics
+        or left.normalization_semantics != right.normalization_semantics
+        or left.orbit_bridge_semantics != right.orbit_bridge_semantics
     ):
         return float("inf")
-    lhs = tuple(value for event in left.O.relational_events for value in (event.clock_value, event.q_value))
-    rhs = tuple(value for event in right.O.relational_events for value in (event.clock_value, event.q_value))
+    lhs = tuple(
+        value
+        for event in left.O.relational_events
+        for value in (event.clock_value, event.q_value)
+    )
+    rhs = tuple(
+        value
+        for event in right.O.relational_events
+        for value in (event.clock_value, event.q_value)
+    )
     return _tuple_residual(lhs, rhs)
 
 
@@ -632,19 +670,22 @@ def _public_schema_selector_free() -> bool:
     return not bool(names & forbidden)
 
 
+@lru_cache(maxsize=1)
 def stage12d_controls() -> tuple[Stage12DControl, ...]:
     architectures = canonical_stage12d_architectures()
     base = architectures[0]
     other_orbit = next(item for item in architectures if item.orbit_id != base.orbit_id)
 
-    wrong_orbit = replace(base, orbit_id=other_orbit.orbit_id, Xi=replace(base.Xi, orbit_id=other_orbit.orbit_id))
+    wrong_orbit = replace(
+        base,
+        orbit_id=other_orbit.orbit_id,
+        Xi=replace(base.Xi, orbit_id=other_orbit.orbit_id),
+    )
     wrong_event = replace(
         base,
-        Xi=replace(
-            base.Xi,
-            event_correspondence=tuple(reversed(base.Xi.event_correspondence)),
-        ),
+        Xi=replace(base.Xi, event_correspondence=tuple(reversed(base.Xi.event_correspondence))),
     )
+    reversed_classes = tuple(reversed(base.Xi.continuation_class_correspondence))
     wrong_class = replace(
         base,
         Xi=replace(
@@ -653,7 +694,7 @@ def stage12d_controls() -> tuple[Stage12DControl, ...]:
                 (source, target)
                 for (source, _), (_, target) in zip(
                     base.Xi.continuation_class_correspondence,
-                    reversed(base.Xi.continuation_class_correspondence),
+                    reversed_classes,
                     strict=True,
                 )
             ),
@@ -681,7 +722,7 @@ def stage12d_controls() -> tuple[Stage12DControl, ...]:
         result.append(
             Stage12DControl(
                 control_id=control_id,
-                classification=(STAGE12D_TYPED_REJECTION if not validation.valid else "inconclusive"),
+                classification=STAGE12D_TYPED_REJECTION if not validation.valid else "inconclusive",
                 rejected=not validation.valid,
                 numerical_witness_residual=0.0,
                 rejection_reasons=validation.rejection_reasons,
@@ -695,7 +736,9 @@ def stage12d_controls() -> tuple[Stage12DControl, ...]:
         Stage12DControl(
             control_id="wrong_normalization",
             classification=(
-                STAGE12D_NORMALIZATION_REJECTION if inherited_normalization.rejected else "inconclusive"
+                STAGE12D_NORMALIZATION_REJECTION
+                if inherited_normalization.rejected
+                else "inconclusive"
             ),
             rejected=inherited_normalization.rejected,
             numerical_witness_residual=float(inherited_normalization.numerical_witness_residual),
@@ -709,16 +752,15 @@ def stage12d_controls() -> tuple[Stage12DControl, ...]:
         for item in witnesses
         if item.representative_id.endswith("rep_00")
     }
-    alpha_probabilities = witnesses[0].probabilities
     cloned_signatures = {
-        tuple(round(value, 15) for _, value in alpha_probabilities)
+        tuple(round(value, 15) for _, value in witnesses[0].probabilities)
         for _ in canonical_stage12a_orbits()
     }
     clone_rejected = len(canonical_signatures) == 4 and len(cloned_signatures) == 1
     result.append(
         Stage12DControl(
             control_id="orbit_insensitive_measurement_clone",
-            classification=(STAGE12D_FALSE_POSITIVE_REJECTED if clone_rejected else "inconclusive"),
+            classification=STAGE12D_FALSE_POSITIVE_REJECTED if clone_rejected else "inconclusive",
             rejected=clone_rejected,
             numerical_witness_residual=float(len(canonical_signatures) - len(cloned_signatures)),
             rejection_reasons=("orbit-sensitive operational witness erased",),
@@ -730,7 +772,7 @@ def stage12d_controls() -> tuple[Stage12DControl, ...]:
 def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
     orbits = canonical_stage12a_orbits()
     representatives = canonical_stage12a_representatives()
-    quotients = canonical_stage12c_quotient_classes()
+    quotients = _quotient_classes()
     architectures = canonical_stage12d_architectures()
     projections = canonical_stage12d_quotient_projections()
     measurements = canonical_stage12d_measurement_views()
@@ -740,36 +782,49 @@ def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
     controls = stage12d_controls()
 
     all_architectures_valid = all(stage12d_validate_architecture(item).valid for item in architectures)
-
     max_architecture = 0.0
     max_measurement = 0.0
     max_weighted = 0.0
     max_posterior = 0.0
     max_witness = 0.0
+
     for orbit in orbits:
         orbit_projections = [item for item in projections if item.orbit_id == orbit.orbit_id]
         reference_projection = orbit_projections[0]
         max_architecture = max(
             max_architecture,
-            max(_architecture_projection_residual(reference_projection, item) for item in orbit_projections),
+            max(
+                _architecture_projection_residual(reference_projection, item)
+                for item in orbit_projections
+            ),
         )
 
-        for continuation_id in {item.continuation_id for item in measurements if item.orbit_id == orbit.orbit_id}:
+        continuation_ids = {
+            item.continuation_id for item in measurements if item.orbit_id == orbit.orbit_id
+        }
+        for continuation_id in continuation_ids:
             subset = [
-                item for item in measurements
+                item
+                for item in measurements
                 if item.orbit_id == orbit.orbit_id and item.continuation_id == continuation_id
             ]
             reference = subset[0]
             max_measurement = max(
                 max_measurement,
-                max(_probability_residual(reference.probabilities, item.probabilities) for item in subset),
+                max(
+                    _probability_residual(reference.probabilities, item.probabilities)
+                    for item in subset
+                ),
             )
 
         weighted_subset = [item for item in weighted if item.orbit_id == orbit.orbit_id]
         weighted_reference = weighted_subset[0]
         max_weighted = max(
             max_weighted,
-            max(_probability_residual(weighted_reference.next_probabilities, item.next_probabilities) for item in weighted_subset),
+            max(
+                _probability_residual(weighted_reference.next_probabilities, item.next_probabilities)
+                for item in weighted_subset
+            ),
         )
 
         posterior_subset = [item for item in posterior if item.orbit_id == orbit.orbit_id]
@@ -778,8 +833,14 @@ def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
             max_posterior,
             max(
                 max(
-                    _tuple_residual(posterior_reference.epistemic_posterior_weights, item.epistemic_posterior_weights),
-                    _tuple_residual(posterior_reference.ontic_posterior_weights, item.ontic_posterior_weights),
+                    _tuple_residual(
+                        posterior_reference.epistemic_posterior_weights,
+                        item.epistemic_posterior_weights,
+                    ),
+                    _tuple_residual(
+                        posterior_reference.ontic_posterior_weights,
+                        item.ontic_posterior_weights,
+                    ),
                 )
                 for item in posterior_subset
             ),
@@ -789,12 +850,14 @@ def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
         witness_reference = witness_subset[0]
         max_witness = max(
             max_witness,
-            max(_probability_residual(witness_reference.probabilities, item.probabilities) for item in witness_subset),
+            max(
+                _probability_residual(witness_reference.probabilities, item.probabilities)
+                for item in witness_subset
+            ),
         )
 
     witness_references = [
-        next(item for item in witnesses if item.orbit_id == orbit.orbit_id)
-        for orbit in orbits
+        next(item for item in witnesses if item.orbit_id == orbit.orbit_id) for orbit in orbits
     ]
     separations = [
         _probability_residual(left.probabilities, right.probabilities)
@@ -821,6 +884,7 @@ def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
         == stage11c_public_architecture(ontic, STAGE12D_REFERENCE_PARAMETERIZATION)
     )
     rejected_controls = sum(item.rejected for item in controls)
+    distinct_quotient_architectures = len(set(projections))
     tolerance = 1.0e-9
 
     criteria = bool(
@@ -829,7 +893,7 @@ def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
         and len(quotients) == 4
         and len(architectures) == 20
         and all_architectures_valid
-        and len(set(projections)) == 4
+        and distinct_quotient_architectures == 4
         and max_architecture <= STAGE12D_ATOL
         and len(measurements) == 40
         and sum(len(item.probabilities) for item in measurements) == 80
@@ -859,7 +923,7 @@ def stage12d_diagnostics(*, atol: float = DEFAULT_ATOL) -> Stage12DDiagnostics:
         representative_count=len(representatives),
         quotient_class_count=len(quotients),
         architecture_view_count=len(architectures),
-        distinct_quotient_architecture_count=len(set(projections)),
+        distinct_quotient_architecture_count=distinct_quotient_architectures,
         measurement_view_count=len(measurements),
         probability_evaluation_count=sum(len(item.probabilities) for item in measurements),
         weighted_public_view_count=len(weighted),
@@ -894,6 +958,7 @@ def stage12d_summary(*, atol: float = DEFAULT_ATOL) -> dict[str, object]:
             if d.criteria_32_38_satisfied
             else "Stage 12D incomplete"
         ),
+        "criteria_32_38_satisfied": d.criteria_32_38_satisfied,
         "reference_parameterization": STAGE12D_REFERENCE_PARAMETERIZATION,
         "reference_internal_clock": STAGE11D_REFERENCE_CLOCK,
         "reference_internal_clock_index": STAGE11D_REFERENCE_CLOCK_INDEX,
@@ -910,7 +975,9 @@ def stage12d_summary(*, atol: float = DEFAULT_ATOL) -> dict[str, object]:
         "minimum_cross_orbit_witness_separation": d.minimum_cross_orbit_witness_separation,
         "control_count": d.control_count,
         "rejected_control_count": d.rejected_control_count,
-        "bounded_result": STAGE12D_BOUNDED_RESULT if d.criteria_32_38_satisfied else "not_established",
+        "bounded_result": (
+            STAGE12D_BOUNDED_RESULT if d.criteria_32_38_satisfied else "not_established"
+        ),
         "guards": (
             "same gauge-invariant probability within an orbit != all physical orbits operationally identical",
             "typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint",

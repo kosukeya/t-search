@@ -1,8 +1,10 @@
 # Stage 11D Notes — Future-Measurement Reparameterization Covariance
 
-Status: **Stage 11D implementation is present; criteria 32–38 are decided by executable diagnostics, with repository-level regression tracked separately.**
+Status: **Stage 11D completed; criteria 32–38 satisfied by executable diagnostics, with repository-level regression tracked separately.**
 
 Stage 11C baseline: run #1355 — **`899 passed in 647.28s (0:10:47)`**.
+
+Stage 11D source/unit-test checkpoint: run #1361 — **`907 passed in 590.98s (0:09:50)`**.
 
 ## Question
 
@@ -51,7 +53,7 @@ The physical Stage 11 anchor and target ids must remain the same across paramete
 
 For every pair
 
-`parameterization rho x continuation h`, 
+`parameterization rho x continuation h`,
 
 Stage 11D builds one typed measurement view at the frozen Stage 10 A/e2 chart.
 
@@ -89,13 +91,19 @@ across all four external parameterizations and also against the unchanged Stage 
 
 The comparison is deliberately before any continuation-weight aggregation.
 
+Executable bounds are:
+
+- per-continuation reparameterization probability residual **<= 1e-9**;
+- Stage 9C/10 reference-likelihood residual **<= 1e-9**;
+- probability-sum residual **<= 1e-9**.
+
 `per-continuation probability covariance != modal identity`.
 
 ## Completeness, positivity, normalization
 
 The Stage 10 operational normalization form is preserved as a typed resource. Stage 11D verifies:
 
-- `sum_o F_{h,o}=N_h` in the fixed reference chart;
+- `sum_o F_{h,o}=N_h` in the fixed reference chart within **1e-9**;
 - effect positivity/Hermiticity within numerical tolerance;
 - positive normalization form;
 - positive canonical normalization denominator;
@@ -111,7 +119,7 @@ Stage 11D then reuses Stage 10E without changing its semantics.
 
 For matched `(0.5,0.5)` continuation weights it checks across all four parameterizations:
 
-- weighted future prediction covariance;
+- weighted future prediction covariance within **1e-9**;
 - matched epistemic/ontic-extension public-view equality;
 - hidden epistemic `h*` swap invariance of the public view;
 - continued private distinction between epistemic-selected and ontic-extension modal roles;
@@ -125,11 +133,11 @@ The common evidence is the already frozen Stage 10/9C outcome
 
 `future_signature_left`.
 
-Stage 11D reuses the Stage 10E/Stage 9C update rules and checks:
+Stage 11D reuses the Stage 10E/Stage 9C update rules and verifies:
 
-- epistemic posterior covariance across parameterizations;
-- ontic posterior covariance across parameterizations;
-- matched epistemic/ontic posterior weights;
+- epistemic posterior covariance across parameterizations within **1e-9**;
+- ontic posterior covariance across parameterizations within **1e-9**;
+- matched epistemic/ontic posterior weights within **1e-9**;
 - preservation of the hidden epistemic selected continuation;
 - selector-free updated ontic state.
 
@@ -137,15 +145,15 @@ Stage 11D reuses the Stage 10E/Stage 9C update rules and checks:
 
 ## Stage 11D controls
 
-Four controls close criterion 38.
+Four controls close criterion 38, and all **4 / 4** are rejected.
 
 ### Wrong event correspondence
 
-The Stage 11 physical targets assigned to `e1` and `e2` are swapped. The context must be rejected before probability evaluation.
+The Stage 11 physical targets assigned to `e1` and `e2` are swapped. The context is rejected before probability evaluation.
 
 ### Wrong lapse/Jacobian
 
-A nonlinear parameterization is supplied with the identity-chart target lapse rather than its transformed lapse. The typed context must reject the mismatch even though the Born-rule matrices themselves do not consume the classical lapse numerically.
+A nonlinear parameterization is supplied with the identity-chart target lapse rather than its transformed lapse. The typed context rejects the mismatch even though the Born-rule matrices themselves do not consume the classical lapse numerically.
 
 This is intentional:
 
@@ -153,17 +161,31 @@ This is intentional:
 
 ### Wrong outcome correspondence
 
-`future_signature_left` and `future_signature_other` are swapped in Xi. The context must be rejected as an outcome-semantic mismatch.
+`future_signature_left` and `future_signature_other` are swapped in Xi. The context is rejected as an outcome-semantic mismatch.
 
 ### Wrong normalization
 
-A normalization form from a different Stage 10 chart is deliberately reused in the fixed A/e2 chart. A Hermitian-tomography-complete Stage 10D probe family supplies an explicit numerical witness that this misaligned normalization changes probabilities.
+A normalization form from a different Stage 10 chart is deliberately reused in the fixed A/e2 chart. The Hermitian-tomography-complete Stage 10D probe family supplies an explicit numerical witness: both the wrong-normalization matrix residual and probability residual are **> 1e-9**.
 
 The three correspondence/Jacobian failures are typed rejections; the normalization control is a numerical witness. They are not conflated.
 
+## Criteria 32–38
+
+32. Stage 10 reference future-measurement family is lifted without changing its physical question — **satisfied**.
+33. Corresponding anchor/target events are found through typed event correspondence rather than equal parameter values — **satisfied**.
+34. Per-continuation probabilities agree across the positive parameterization family — **satisfied**.
+35. Probability completeness/positivity and normalization roles remain valid — **satisfied**.
+36. Weighted predictions and matched modal public views remain parameterization-covariant — **satisfied**.
+37. Common-evidence update/posteriors remain parameterization-covariant — **satisfied**.
+38. Wrong event/Jacobian/normalization/outcome controls are rejected — **satisfied**.
+
+Bounded result:
+
+`Stage 11D future-measurement reparameterization covariance on the frozen positive family = established`.
+
 ## Interpretation boundary
 
-A successful Stage 11D result establishes covariance only for the declared finite product construction in which the tested Stage 10 quantum measurement object is associated with the Stage 11 parameterized event carrier through explicit typing.
+The result establishes covariance only for the declared finite product construction in which the tested Stage 10 quantum measurement object is associated with the Stage 11 parameterized event carrier through explicit typing.
 
 It does not derive the Stage 10 quantum dynamics or Born rule from the classical Stage 11A parametrized scaffold.
 
@@ -185,4 +207,4 @@ It does not derive the Stage 10 quantum dynamics or Born rule from the classical
 
 `repository validation != new scientific evidence`.
 
-Next checkpoint after criteria 32–38 close: **Stage 11E — clock-change x parameterization compatibility.**
+Next checkpoint: **Stage 11E — clock-change x parameterization compatibility.**

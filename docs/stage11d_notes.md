@@ -6,6 +6,8 @@ Stage 11C baseline: run #1355 — **`899 passed in 647.28s (0:10:47)`**.
 
 Stage 11D source/unit-test checkpoint: run #1361 — **`907 passed in 590.98s (0:09:50)`**.
 
+The later documentation-synchronized full regression is tracked separately from the scientific evidence. `repository validation != new scientific evidence`.
+
 ## Question
 
 Stage 11D asks whether the already frozen Stage 10 future-signature measurement question remains operationally unchanged when the same Stage 11 relational event roles are represented by the four admissible external parameterizations.

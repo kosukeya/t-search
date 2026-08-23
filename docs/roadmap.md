@@ -8,6 +8,10 @@ This roadmap is provisional and evidence-selected.
 
 Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12.0 and Stage 12A–G are completed on Draft PR #13, criteria 1–49 are satisfied and criterion 50 is next.
 
+Selected Stage 10 gate:
+
+> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
+
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**

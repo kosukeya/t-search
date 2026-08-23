@@ -11,6 +11,8 @@ NOTES_B = (ROOT / "docs" / "stage12b_notes.md").read_text(encoding="utf-8")
 RESULT_B = (ROOT / "results" / "stage12b_relational.md").read_text(encoding="utf-8")
 NOTES_C = (ROOT / "docs" / "stage12c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage12c_gauge_atlas.md").read_text(encoding="utf-8")
+NOTES_D = (ROOT / "docs" / "stage12d_notes.md").read_text(encoding="utf-8")
+RESULT_D = (ROOT / "results" / "stage12d_measurement.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
@@ -27,15 +29,17 @@ def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
         assert "constraint-generated gauge precursor != general relativity" in text
 
 
-def test_stage12c_top_level_current_status_is_synchronized() -> None:
+def test_stage12d_top_level_current_status_is_synchronized() -> None:
     for text in (README, ROADMAP):
-        assert "Stage 12A" in text
-        assert "Stage 12B" in text
-        assert "Stage 12C" in text
-        assert "criteria 1–31 are satisfied and Stage 12D is next" in text
+        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D"):
+            assert stage in text
+        assert "criteria 1–38 are satisfied and Stage 12E is next" in text
         assert "d5fdc899a72b6a983c03b1f960c65cda948c8fb8" in text
+        assert "984 passed in 680.36s (0:11:20)" in text
     assert "docs/stage12c_notes.md" in README
     assert "results/stage12c_gauge_atlas.md" in README
+    assert "docs/stage12d_notes.md" in README
+    assert "results/stage12d_measurement.md" in README
 
 
 def test_stage12_type_separation_is_frozen() -> None:
@@ -131,13 +135,13 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12c_closes_criteria_24_31_while_freeze_remains_historical() -> None:
-    assert "Stage 12C completed; criteria 1–31 satisfied; criteria 32–50 pending" in PROTOCOL
+def test_stage12d_closes_criteria_32_38_while_freeze_remains_historical() -> None:
+    assert "Stage 12D completed; criteria 1–38 satisfied; criteria 39–50 pending" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 31
-    assert PROTOCOL.count("**pending**") == 19
+    assert PROTOCOL.count("**satisfied**") == 38
+    assert PROTOCOL.count("**pending**") == 12
 
 
 def test_stage12a_implementation_checkpoint_remains_documented() -> None:
@@ -169,7 +173,7 @@ def test_stage12b_implementation_checkpoint_remains_documented() -> None:
         assert phrase in combined
 
 
-def test_stage12c_implementation_checkpoint_is_documented() -> None:
+def test_stage12c_implementation_checkpoint_remains_documented() -> None:
     combined = PROTOCOL + "\n" + NOTES_C + "\n" + RESULT_C
     for phrase in (
         "100 typed `Phi` arrows",
@@ -191,6 +195,34 @@ def test_stage12c_implementation_checkpoint_is_documented() -> None:
         assert phrase in combined
     assert "run **#1528**" in NOTES_C
     assert "973 passed in 677.85s (0:11:17)" in NOTES_C
+    assert "#1548" in PROTOCOL
+    assert "984 passed in 680.36s (0:11:20)" in PROTOCOL
+
+
+def test_stage12d_implementation_checkpoint_is_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_D + "\n" + RESULT_D
+    for phrase in (
+        "identity",
+        "A/e2",
+        "20",
+        "40",
+        "80",
+        "weighted public views",
+        "posterior views",
+        "orbit-sensitive witness",
+        "0.0057933319",
+        "wrong_orbit_correspondence",
+        "wrong_event_correspondence",
+        "wrong_class_correspondence",
+        "wrong_outcome_correspondence",
+        "wrong_normalization",
+        "orbit_insensitive_measurement_clone",
+        "typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint",
+        "orbit-sensitive witness != empirical prediction",
+    ):
+        assert phrase in combined
+    assert "#1548" in NOTES_D
+    assert "984 passed in 680.36s (0:11:20)" in NOTES_D
 
 
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
@@ -198,8 +230,8 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
         "Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**",
         "Stage 12B — Dirac/relational observables and physical-orbit discrimination — **completed**",
         "Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**",
-        "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **next**",
-        "Stage 12E — internal clock × external parameterization × gauge-flow compatibility",
+        "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**",
+        "Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **next**",
         "Stage 12F — ablation / wrong-orbit / false-positive controls",
         "Stage 12G — executable synthesis and evidence-selected next gate",
     ):
@@ -214,19 +246,7 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
 
 
 def test_stage12_interpretation_guards_remain_explicit() -> None:
-    combined = (
-        PROTOCOL
-        + "\n"
-        + FREEZE
-        + "\n"
-        + NOTES_A
-        + "\n"
-        + NOTES_B
-        + "\n"
-        + NOTES_C
-        + "\n"
-        + RESULT_C
-    )
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_A, NOTES_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D))
     for phrase in (
         "constraint-generated gauge flow != ontological becoming",
         "Dirac invariant != timeless ontology by definition",
@@ -235,9 +255,12 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
         "gauge quotient != elimination of physical change",
         "constraint orbit != modal continuation",
         "operational quotient descent != modal/ontological identity",
+        "same gauge-invariant probability within an orbit != all physical orbits operationally identical",
+        "typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint",
         "multi-orbit gauge covariance != general covariance",
         "finite gauge atlas != diffeomorphism invariance",
         "single Hamiltonian constraint != hypersurface-deformation algebra",
+        "future-measurement covariance != future actuality",
         "finite-model success != empirical discovery",
         "not_established != false",
     ):

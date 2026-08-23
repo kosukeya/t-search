@@ -1,6 +1,6 @@
 # Stage 11 Protocol — Parametrized Covariance Precursor
 
-Status: **Stage 11.0 protocol freeze; criteria 1–10 frozen/satisfied; criteria 11–50 pending implementation and external review.**
+Status: **Stage 11.0 protocol freeze and Stage 11A completed; criteria 1–16 satisfied; criteria 17–50 pending implementation and external review.**
 
 Selected Stage 11 gate from Stage 10G:
 
@@ -32,11 +32,11 @@ Stage 11 tests one controlled ingredient beyond Stage 10: whether the same typed
 
 Stage 11 asks whether a preferred external trajectory parameter is necessary for the Stage 10 relational/clock/modal/record/measurement structure, or whether the structure can be represented on a parametrized constrained precursor in which different admissible labels trace the same typed physical relational history.
 
-The target claim, if the evidence later supports it, is only:
+The target claim, if the complete later evidence supports it, is only:
 
 `finite typed parametrized covariance precursor = established`.
 
-It is not frozen as true in advance.
+It is not assumed from Stage 11A alone.
 
 The Stage 11G classification vocabulary is:
 
@@ -49,7 +49,7 @@ The Stage 11G classification vocabulary is:
 
 ## 2. Frozen type distinctions
 
-The following objects are typed separately:
+The following objects remain typed separately:
 
 - external parameterization identity `rho`;
 - external parameter label/value `lambda_rho`;
@@ -79,9 +79,9 @@ Frozen guards:
 
 `parameterization correspondence != event identity`.
 
-## 3. Frozen parametrized constrained precursor
+## 3. Parametrized constrained precursor
 
-Stage 11A will begin from a minimal canonical parametrized-mechanics precursor with variables
+Stage 11A implements the frozen minimal canonical parametrized-mechanics precursor with variables
 
 `(T,p_T;q,p)`
 
@@ -89,23 +89,33 @@ and constraint
 
 `C = p_T + H(q,p) approx 0`.
 
-The external label `lambda` is not interpreted as physical time. A positive lapse-like rate `N(lambda)` parametrizes motion along the same constraint orbit:
-
-`dT/dlambda = N(lambda)`.
-
-For any phase-space quantity `z`,
-
-`dz/dlambda = N(lambda) {z,H}`
-
-in the classical precursor notation.
-
-The first deterministic dynamical seed will use the unit-mass free Hamiltonian
+The deterministic seed uses
 
 `H(q,p)=p^2/2`
 
-with a nonzero momentum seed so that raw `lambda` derivatives change under nonlinear reparameterization while relational derivatives remain nontrivial and testable.
+with `p=1.25`, `p_T=-p^2/2`, and a nonzero configuration motion.
 
-The invariant candidate is relational motion such as
+The external label `lambda` is not interpreted as physical time. The identity representation uses the positive nonconstant lapse-like seed
+
+`N(lambda)=1+lambda^2/4`
+
+so
+
+`dT/dlambda = N(lambda)`
+
+and
+
+`T(lambda)=lambda+lambda^3/12`.
+
+For any phase-space quantity `z`, the precursor notation remains
+
+`dz/dlambda = N(lambda) {z,H}`.
+
+The canonical configuration seed is
+
+`q(T)=-0.35+1.25 T`.
+
+The invariant candidate reserved for Stage 11B is relational motion such as
 
 `dq/dT = (dq/dlambda)/(dT/dlambda)`
 
@@ -115,22 +125,20 @@ This classical constrained seed is a precursor/scaffold for testing parameter re
 
 `classical parametrized precursor != fundamental classical ontology`.
 
-## 4. Frozen admissible reparameterization family
+## 4. Admissible reparameterization family
 
 Positive/admissible reparameterizations are smooth, bijective on the tested trajectory domain, strictly monotone, and orientation-preserving:
 
 `lambda' = f(lambda)` with `f'(lambda) > 0`.
 
-The minimum positive family is frozen as:
+The frozen minimum positive family is implemented exactly as:
 
 1. identity: `f_id(lambda)=lambda`;
 2. positive affine: `f_aff(lambda)=2 lambda + 1`;
 3. nonlinear cubic: `f_cub(lambda)=lambda + lambda^3/4`, with `f'_cub(lambda)=1+3 lambda^2/4 > 0`;
 4. nonlinear hyperbolic: `f_sinh(lambda)=sinh(lambda)`, with `f'_sinh(lambda)=cosh(lambda) > 0`.
 
-Implementations may test additional admissible maps, but they may not remove the identity/affine/two nonlinear frozen minimum family after seeing results.
-
-The lapse-like rate transforms by the chain rule:
+The lapse-like rate transforms by the frozen chain rule:
 
 `N'(lambda') = N(lambda) dlambda/dlambda' = N(lambda)/f'(lambda)`.
 
@@ -144,27 +152,54 @@ Relational derivatives are the candidate invariant:
 
 `raw parameter derivative equality != reparameterization covariance criterion`.
 
-## 5. Frozen physical-event comparison rule
+## 5. Stage 11A physical-event carrier and correspondence
+
+Stage 11A samples 13 explicit physical events on the source-label domain `[-1.5,1.5]`, with event ids
+
+`orbit_event_00 ... orbit_event_12`.
 
 Representations are compared through explicit typed physical-event correspondence, never by equal raw parameter values.
 
-For parameterizations `rho` and `sigma`, Stage 11 must construct an explicit map
+For parameterizations `rho` and `sigma`, Stage 11 uses
 
 `chi_event^{rho->sigma}: e_rho -> e_sigma`
 
-that identifies the same physical relational event while allowing
+while allowing
 
 `lambda_rho(e) != lambda_sigma(e)`.
 
-For an internal clock X, the operational anchor is relational:
+The Stage 11A constructor requires corresponding event identity plus agreement of physical `T` and `q`. Across affine/cubic/hyperbolic versus identity there are 36 corresponding event pairs whose raw parameter values differ.
 
-`e_X(tau) := physical event where X reads tau`,
+For an internal clock X, later stages retain the operational anchor
 
-when the relevant clock reading is unique in the tested domain.
+`e_X(tau) := physical event where X reads tau`
 
-A valid Stage 11 comparison requires agreement of event identity/correspondence, internal-clock reading, continuation class, and measurement typing. Equal parameter labels alone are never sufficient.
+when the clock reading is unique in the tested domain.
 
-## 6. Frozen O/P/R/V/Xi lift target
+Equal parameter labels alone are never sufficient.
+
+## 6. Stage 11A executable diagnostics
+
+The canonical Stage 11A diagnostics establish only the minimal carrier checkpoint:
+
+- event count: **13**;
+- positive parameterization count: **4**;
+- minimum transformed positive lapse: **0.5**;
+- maximum constraint residual: **0.0**;
+- maximum lapse chain-rule residual: **0.0**;
+- maximum `T`, `q`, `p`, and `p_T` orbit residual across the positive family: **0.0**;
+- corresponding event pairs with different raw parameter labels: **36**;
+- nonlinear-map sample points with different raw `dq/dlambda` rates: **24**.
+
+The 24 raw-rate differences are an anti-triviality witness, not yet closure of the Stage 11B relational-derivative criterion.
+
+The bounded Stage 11A result is:
+
+`minimal Stage 11A constraint orbit preservation = established`.
+
+`same constraint orbit != established general covariance`.
+
+## 7. Frozen O/P/R/V/Xi lift target
 
 Stage 11C must attempt to transport/reconstruct the full typed architecture across admissible parameterizations.
 
@@ -209,7 +244,7 @@ Stage 11 extends the operational typing resources in `Xi` with at least:
 
 `typed-resource use != metaphysical fundamentality`.
 
-## 7. Frozen Stage 10 measurement carry-over
+## 8. Frozen Stage 10 measurement carry-over
 
 Stage 11D reuses the Stage 10 future-signature measurement family rather than inventing a new measurement after inspecting reparameterization results.
 
@@ -240,7 +275,7 @@ The comparison is not
 
 unless explicit event correspondence independently establishes that the two labels refer to the same physical event.
 
-## 8. Frozen clock-change × reparameterization compatibility target
+## 9. Frozen clock-change × reparameterization compatibility target
 
 Let `G_{rho->sigma}` denote an admissible reparameterization transport/correspondence and let `C_{X->Y}` denote the Stage 10 genuine internal-clock transport.
 
@@ -264,9 +299,9 @@ All A/B/C internal-clock perspectives and all frozen positive parameterizations 
 
 `commuting typed diagram != general covariance`.
 
-## 9. Frozen negative and false-positive controls
+## 10. Frozen negative and false-positive controls
 
-The following controls are frozen before implementation:
+The controls remain frozen before the stages that use them:
 
 1. raw-equal-parameter matching: identify events only because `lambda_rho=lambda_sigma`;
 2. wrong/missing parameter-event correspondence;
@@ -281,19 +316,23 @@ The following controls are frozen before implementation:
 11. identify parameter direction with `R_direction` by definition;
 12. mix parameterizations inside one probability/weight/update calculation without a typed correspondence.
 
+Stage 11A already implements controls 5 and 6 as explicitly excluded parameterization specifications and rejects them in the positive trajectory constructor.
+
 Orientation reversal is a boundary/control, not an automatic physical record reversal:
 
 `orientation reversal != physical record reversal by definition`.
 
-Non-injective maps are not silently interpreted as gauge-equivalent because they can identify distinct parameter points:
+`orientation-preserving reparameterization != time reversal`.
+
+Non-injective maps are not silently interpreted as gauge-equivalent:
 
 `non-injective relabeling != admissible reparameterization`.
 
-## 10. Frozen anti-triviality requirements
+## 11. Frozen anti-triviality requirements
 
 A positive Stage 11 result may not be based only on unchanged discrete labels.
 
-The positive evidence chain must demonstrate at least:
+The full evidence chain must demonstrate at least:
 
 - genuinely different numerical parameter labels for corresponding events;
 - genuinely different raw parameter derivatives for at least one nonlinear parameterization;
@@ -304,19 +343,23 @@ The positive evidence chain must demonstrate at least:
 - compatibility of clock changes with reparameterization;
 - rejection/classification of the frozen negative controls.
 
+Stage 11A has already supplied the first three carrier-level witnesses: 36 different-label event pairs, 24 nonlinear raw-rate differences, and zero chain-rule residual.
+
 `same labels after relabeling != sufficient evidence of covariance`.
 
-## 11. Stage sequence and exit-criterion allocation
+## 12. Stage sequence and exit-criterion allocation
 
-### Stage 11.0 — protocol freeze — current
+### Stage 11.0 — protocol freeze — completed
 
 Criteria 1–10.
 
-### Stage 11A — minimal parametrized constrained carrier and admissible family
+External full-repository regression after the freeze: run #1285, `874 passed in 640.88s (0:10:40)`.
+
+### Stage 11A — minimal parametrized constrained carrier and admissible family — completed
 
 Criteria 11–16.
 
-### Stage 11B — relational observables and relational derivatives
+### Stage 11B — relational observables and relational derivatives — next
 
 Criteria 17–23.
 
@@ -344,7 +387,7 @@ Criteria 48–49.
 
 Final full-repository regression / merge-readiness review only after Stage 11G.
 
-## 12. Exit criteria
+## 13. Exit criteria
 
 ### Criteria 1–10 — Stage 11.0
 
@@ -361,12 +404,12 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 
 ### Criteria 11–16 — Stage 11A
 
-11. Minimal constrained parametrized trajectory implemented with positive lapse-like rate — **pending**.
-12. Frozen identity/affine/cubic/hyperbolic positive parameterizations implemented — **pending**.
-13. Corresponding physical events carry different raw parameter values where expected — **pending**.
-14. Chain-rule lapse transformation is numerically verified — **pending**.
-15. Constraint-orbit/relational trajectory is preserved across the positive family — **pending**.
-16. Orientation-reversing and non-injective maps are explicitly kept outside the positive admissible family — **pending**.
+11. Minimal constrained parametrized trajectory implemented with positive lapse-like rate — **satisfied**.
+12. Frozen identity/affine/cubic/hyperbolic positive parameterizations implemented — **satisfied**.
+13. Corresponding physical events carry different raw parameter values where expected — **satisfied**.
+14. Chain-rule lapse transformation is numerically verified — **satisfied**.
+15. Constraint-orbit/relational trajectory is preserved across the positive family — **satisfied**.
+16. Orientation-reversing and non-injective maps are explicitly kept outside the positive admissible family — **satisfied**.
 
 ### Criteria 17–23 — Stage 11B
 
@@ -423,7 +466,7 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 13. Interpretation guards
+## 14. Interpretation guards
 
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
@@ -435,6 +478,7 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 - `non-injective relabeling != admissible reparameterization`;
 - `raw parameter derivative equality != reparameterization covariance criterion`;
 - `same relational orbit != same metaphysics`;
+- `same constraint orbit != established general covariance`;
 - `reparameterization covariance != modal/ontological identity`;
 - `reparameterization covariance != future actuality`;
 - `reparameterization covariance != proof of eternalism`;

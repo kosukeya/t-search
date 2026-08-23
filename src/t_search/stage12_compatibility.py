@@ -1,23 +1,22 @@
 """Stage 12E internal-clock x reparameterization x gauge-flow compatibility.
 
-Stage 12E combines three transformations that remain separately typed:
+Three transformations remain separately typed throughout:
 
 * C: genuine continuation-aware Stage 10/11 internal-clock transport;
 * G: Stage 11 external reparameterization transport;
 * Phi: Stage 12 constraint-generated same-physical-orbit gauge transport.
 
-The construction is intentionally a finite typed product/fiber test.  It does
-not identify the three transformations, does not license cross-orbit Phi paths,
-and does not promote finite commutation to general covariance or general
-relativity.
+Stage 11E already established C x G compatibility on the frozen positive
+parameterization/clock family. Stage 12E fibers those operational endpoints over
+the Stage 12 physical-orbit/gauge atlas and checks C x Phi, G x Phi, and a
+three-way spanning C x G x Phi family. Relational outputs come from orbit-
+specific Stage 12A external views, future-measurement probabilities from Stage
+11E, and the Stage 12D orbit-sensitive witness remains attached as a physical-
+orbit discriminator.
 
-Stage 11E already established C x G compatibility on the frozen four-positive-
-parameterization, nine-clock-node, two-continuation family.  Stage 12E fibers
-those operational endpoints over the four Stage 12 physical orbits and twenty
-gauge representatives.  Relational q values come from the orbit-specific Stage
-12A external views; future-measurement probabilities come from the inherited
-Stage 11E endpoint; the Stage 12D orbit-sensitive witness is retained as an
-additional gauge-invariant physical-orbit discriminator.
+This finite compatibility result is not general covariance, diffeomorphism
+invariance, general relativity, eternalism, or a claim about ontological
+becoming.
 """
 
 from __future__ import annotations
@@ -139,6 +138,7 @@ class Stage12EDiagnostics:
     distinct_transform_type_count: int
     clock_gauge_square_count: int
     reparameterization_gauge_square_count: int
+    triple_spanning_gauge_count: int
     triple_cube_count: int
     triple_path_evaluation_count: int
     max_clock_gauge_residual: float
@@ -150,6 +150,7 @@ class Stage12EDiagnostics:
     criteria_39_43_satisfied: bool
 
 
+@lru_cache(maxsize=1)
 def _representative_lookup() -> dict[str, Stage12GaugeRepresentative]:
     return {item.representative_id: item for item in canonical_stage12a_representatives()}
 
@@ -187,13 +188,13 @@ def _witness_lookup():
 def canonical_stage12e_clock_transports() -> tuple[Stage12EClockTransport, ...]:
     return tuple(
         Stage12EClockTransport(
-            transform_type=STAGE12E_CLOCK_TYPE,
-            continuation_id=item.continuation_id,
-            source_clock=item.source_clock,
-            source_index=item.source_index,
-            target_clock=item.target_clock,
-            target_index=item.target_index,
-            valid=bool(item.valid),
+            STAGE12E_CLOCK_TYPE,
+            item.continuation_id,
+            item.source_clock,
+            item.source_index,
+            item.target_clock,
+            item.target_index,
+            bool(item.valid),
         )
         for item in canonical_stage11e_clock_transports()
     )
@@ -205,10 +206,10 @@ def canonical_stage12e_reparameterization_transports() -> tuple[
 ]:
     return tuple(
         Stage12EReparameterizationTransport(
-            transform_type=STAGE12E_REPARAMETERIZATION_TYPE,
-            source_parameterization_id=item.source_parameterization_id,
-            target_parameterization_id=item.target_parameterization_id,
-            valid=bool(item.valid),
+            STAGE12E_REPARAMETERIZATION_TYPE,
+            item.source_parameterization_id,
+            item.target_parameterization_id,
+            bool(item.valid),
         )
         for item in canonical_stage11e_reparameterization_transports()
     )
@@ -218,12 +219,12 @@ def canonical_stage12e_reparameterization_transports() -> tuple[
 def canonical_stage12e_gauge_transports() -> tuple[Stage12EGaugeTransport, ...]:
     return tuple(
         Stage12EGaugeTransport(
-            transform_type=STAGE12E_GAUGE_TYPE,
-            orbit_id=item.orbit_id,
-            source_representative_id=item.source_representative_id,
-            target_representative_id=item.target_representative_id,
-            delta_s=float(item.delta_s),
-            valid=bool(
+            STAGE12E_GAUGE_TYPE,
+            item.orbit_id,
+            item.source_representative_id,
+            item.target_representative_id,
+            float(item.delta_s),
+            bool(
                 item.phase_space_residual <= STAGE12A_ATOL
                 and item.Q_D_drift <= STAGE12A_ATOL
                 and item.P_D_drift <= STAGE12A_ATOL
@@ -232,6 +233,62 @@ def canonical_stage12e_gauge_transports() -> tuple[Stage12EGaugeTransport, ...]:
         )
         for item in canonical_stage12a_gauge_transports()
     )
+
+
+@lru_cache(maxsize=1)
+def canonical_stage12e_triple_spanning_gauge_transports() -> tuple[
+    Stage12EGaugeTransport, ...
+]:
+    """Choose one maximally nontrivial Phi edge per physical orbit.
+
+    Pairwise C x Phi and G x Phi diagnostics already use all 80 nonidentity
+    arrows.  The three-way cube therefore needs only an orbit-spanning Phi
+    family to test interaction rather than redundantly repeating each cube 20x.
+    """
+
+    result = []
+    for orbit in canonical_stage12a_orbits():
+        candidates = [
+            item
+            for item in canonical_stage12e_gauge_transports()
+            if item.orbit_id == orbit.orbit_id
+        ]
+        result.append(max(candidates, key=lambda item: abs(item.delta_s)))
+    return tuple(result)
+
+
+@lru_cache(maxsize=1)
+def _clock_transport_lookup() -> dict[
+    tuple[str, str, int, str, int], Stage12EClockTransport
+]:
+    return {
+        (
+            item.continuation_id,
+            item.source_clock,
+            item.source_index,
+            item.target_clock,
+            item.target_index,
+        ): item
+        for item in canonical_stage12e_clock_transports()
+    }
+
+
+@lru_cache(maxsize=1)
+def _reparameterization_transport_lookup() -> dict[
+    tuple[str, str], Stage12EReparameterizationTransport
+]:
+    return {
+        (item.source_parameterization_id, item.target_parameterization_id): item
+        for item in canonical_stage12e_reparameterization_transports()
+    }
+
+
+@lru_cache(maxsize=1)
+def _gauge_transport_lookup() -> dict[tuple[str, str], Stage12EGaugeTransport]:
+    return {
+        (item.source_representative_id, item.target_representative_id): item
+        for item in canonical_stage12e_gauge_transports()
+    }
 
 
 @lru_cache(maxsize=None)
@@ -281,35 +338,6 @@ def stage12e_state(
         measurement_probabilities=tuple(measurement.probabilities),
         orbit_witness_probabilities=tuple(witness.probabilities),
     )
-
-
-def _clock_transport_lookup() -> dict[tuple[str, str, int, str, int], Stage12EClockTransport]:
-    return {
-        (
-            item.continuation_id,
-            item.source_clock,
-            item.source_index,
-            item.target_clock,
-            item.target_index,
-        ): item
-        for item in canonical_stage12e_clock_transports()
-    }
-
-
-def _reparameterization_transport_lookup() -> dict[
-    tuple[str, str], Stage12EReparameterizationTransport
-]:
-    return {
-        (item.source_parameterization_id, item.target_parameterization_id): item
-        for item in canonical_stage12e_reparameterization_transports()
-    }
-
-
-def _gauge_transport_lookup() -> dict[tuple[str, str], Stage12EGaugeTransport]:
-    return {
-        (item.source_representative_id, item.target_representative_id): item
-        for item in canonical_stage12e_gauge_transports()
-    }
 
 
 def stage12e_apply_clock(
@@ -428,11 +456,30 @@ def _state_residuals(
     return relational, measurement, witness, max(relational, measurement, witness)
 
 
+def _family_result(
+    family_id: str,
+    count: int,
+    path_count: int,
+    max_relational: float,
+    max_measurement: float,
+    max_witness: float,
+) -> Stage12EPathFamilyDiagnostics:
+    total = max(max_relational, max_measurement, max_witness)
+    return Stage12EPathFamilyDiagnostics(
+        family_id,
+        count,
+        path_count,
+        float(max_relational),
+        float(max_measurement),
+        float(max_witness),
+        float(total),
+        bool(total <= STAGE12A_ATOL),
+    )
+
+
 @lru_cache(maxsize=1)
 def stage12e_clock_gauge_diagnostics() -> Stage12EPathFamilyDiagnostics:
-    max_relational = 0.0
-    max_measurement = 0.0
-    max_witness = 0.0
+    mr = mm = mw = 0.0
     count = 0
     for phi in canonical_stage12e_gauge_transports():
         for clock in canonical_stage12e_clock_transports():
@@ -443,8 +490,10 @@ def stage12e_clock_gauge_diagnostics() -> Stage12EPathFamilyDiagnostics:
                 clock.source_index,
                 clock.continuation_id,
             )
-            path_c_phi = stage12e_apply_gauge(stage12e_apply_clock(start, clock), phi)
-            path_phi_c = stage12e_apply_clock(stage12e_apply_gauge(start, phi), clock)
+            candidates = (
+                stage12e_apply_gauge(stage12e_apply_clock(start, clock), phi),
+                stage12e_apply_clock(stage12e_apply_gauge(start, phi), clock),
+            )
             direct = stage12e_state(
                 phi.target_representative_id,
                 STAGE11A_IDENTITY,
@@ -452,31 +501,19 @@ def stage12e_clock_gauge_diagnostics() -> Stage12EPathFamilyDiagnostics:
                 clock.target_index,
                 clock.continuation_id,
             )
-            for candidate in (path_c_phi, path_phi_c):
+            for candidate in candidates:
                 r, m, w, _ = _state_residuals(candidate, direct)
-                max_relational = max(max_relational, r)
-                max_measurement = max(max_measurement, m)
-                max_witness = max(max_witness, w)
+                mr, mm, mw = max(mr, r), max(mm, m), max(mw, w)
             count += 1
-    total = max(max_relational, max_measurement, max_witness)
-    return Stage12EPathFamilyDiagnostics(
-        family_id="C_x_Phi",
-        object_count=count,
-        path_evaluation_count=2 * count,
-        max_relational_residual=float(max_relational),
-        max_measurement_residual=float(max_measurement),
-        max_orbit_witness_residual=float(max_witness),
-        max_total_residual=float(total),
-        compatible=bool(total <= STAGE12A_ATOL),
-    )
+    return _family_result("C_x_Phi", count, 2 * count, mr, mm, mw)
 
 
 @lru_cache(maxsize=1)
 def stage12e_reparameterization_gauge_diagnostics() -> Stage12EPathFamilyDiagnostics:
-    continuation_ids = tuple(sorted({item.continuation_id for item in canonical_stage12e_clock_transports()}))
-    max_relational = 0.0
-    max_measurement = 0.0
-    max_witness = 0.0
+    continuation_ids = tuple(
+        sorted({item.continuation_id for item in canonical_stage12e_clock_transports()})
+    )
+    mr = mm = mw = 0.0
     count = 0
     for phi in canonical_stage12e_gauge_transports():
         for reparam in canonical_stage12e_reparameterization_transports():
@@ -488,11 +525,13 @@ def stage12e_reparameterization_gauge_diagnostics() -> Stage12EPathFamilyDiagnos
                     STAGE11D_REFERENCE_CLOCK_INDEX,
                     continuation_id,
                 )
-                path_g_phi = stage12e_apply_gauge(
-                    stage12e_apply_reparameterization(start, reparam), phi
-                )
-                path_phi_g = stage12e_apply_reparameterization(
-                    stage12e_apply_gauge(start, phi), reparam
+                candidates = (
+                    stage12e_apply_gauge(
+                        stage12e_apply_reparameterization(start, reparam), phi
+                    ),
+                    stage12e_apply_reparameterization(
+                        stage12e_apply_gauge(start, phi), reparam
+                    ),
                 )
                 direct = stage12e_state(
                     phi.target_representative_id,
@@ -501,28 +540,16 @@ def stage12e_reparameterization_gauge_diagnostics() -> Stage12EPathFamilyDiagnos
                     STAGE11D_REFERENCE_CLOCK_INDEX,
                     continuation_id,
                 )
-                for candidate in (path_g_phi, path_phi_g):
+                for candidate in candidates:
                     r, m, w, _ = _state_residuals(candidate, direct)
-                    max_relational = max(max_relational, r)
-                    max_measurement = max(max_measurement, m)
-                    max_witness = max(max_witness, w)
+                    mr, mm, mw = max(mr, r), max(mm, m), max(mw, w)
                 count += 1
-    total = max(max_relational, max_measurement, max_witness)
-    return Stage12EPathFamilyDiagnostics(
-        family_id="G_x_Phi",
-        object_count=count,
-        path_evaluation_count=2 * count,
-        max_relational_residual=float(max_relational),
-        max_measurement_residual=float(max_measurement),
-        max_orbit_witness_residual=float(max_witness),
-        max_total_residual=float(total),
-        compatible=bool(total <= STAGE12A_ATOL),
-    )
+    return _family_result("G_x_Phi", count, 2 * count, mr, mm, mw)
 
 
 def _apply_order(
     start: Stage12EOperationalState,
-    order: tuple[str, str, str],
+    order: tuple[str, ...],
     clock: Stage12EClockTransport,
     reparam: Stage12EReparameterizationTransport,
     phi: Stage12EGaugeTransport,
@@ -543,11 +570,9 @@ def _apply_order(
 @lru_cache(maxsize=1)
 def stage12e_triple_diagnostics() -> Stage12EPathFamilyDiagnostics:
     orders = tuple(permutations(("C", "G", "Phi"), 3))
-    max_relational = 0.0
-    max_measurement = 0.0
-    max_witness = 0.0
+    mr = mm = mw = 0.0
     count = 0
-    for phi in canonical_stage12e_gauge_transports():
+    for phi in canonical_stage12e_triple_spanning_gauge_transports():
         for reparam in canonical_stage12e_reparameterization_transports():
             for clock in canonical_stage12e_clock_transports():
                 start = stage12e_state(
@@ -567,20 +592,10 @@ def stage12e_triple_diagnostics() -> Stage12EPathFamilyDiagnostics:
                 for order in orders:
                     candidate = _apply_order(start, order, clock, reparam, phi)
                     r, m, w, _ = _state_residuals(candidate, direct)
-                    max_relational = max(max_relational, r)
-                    max_measurement = max(max_measurement, m)
-                    max_witness = max(max_witness, w)
+                    mr, mm, mw = max(mr, r), max(mm, m), max(mw, w)
                 count += 1
-    total = max(max_relational, max_measurement, max_witness)
-    return Stage12EPathFamilyDiagnostics(
-        family_id="C_x_G_x_Phi",
-        object_count=count,
-        path_evaluation_count=len(orders) * count,
-        max_relational_residual=float(max_relational),
-        max_measurement_residual=float(max_measurement),
-        max_orbit_witness_residual=float(max_witness),
-        max_total_residual=float(total),
-        compatible=bool(total <= STAGE12A_ATOL),
+    return _family_result(
+        "C_x_G_x_Phi_spanning", count, len(orders) * count, mr, mm, mw
     )
 
 
@@ -603,39 +618,34 @@ def stage12e_controls() -> tuple[Stage12EControl, ...]:
         base_clock.source_index,
         base_clock.continuation_id,
     )
-
-    candidates = (
+    controls = (
         (
             "mixed_orbit_phi",
-            replace(
-                base_phi,
-                target_representative_id=beta.representative_id,
-            ),
-            "Phi endpoint forced onto a distinct physical orbit",
             "phi",
+            replace(base_phi, target_representative_id=beta.representative_id),
+            "Phi endpoint forced onto a distinct physical orbit",
         ),
         (
             "clock_label_as_parameterization",
+            "g",
             replace(base_g, target_parameterization_id=base_clock.target_clock),
             "internal-clock label inserted into external-parameterization slot",
-            "g",
         ),
         (
             "parameterization_label_as_clock",
+            "c",
             replace(base_clock, target_clock=base_g.target_parameterization_id),
             "external-parameterization label inserted into internal-clock slot",
-            "c",
         ),
         (
             "gauge_type_relabelled_as_reparameterization",
+            "phi",
             replace(base_phi, transform_type=STAGE12E_REPARAMETERIZATION_TYPE),
             "Phi transport relabelled with the G transform type",
-            "phi",
         ),
     )
-
-    results: list[Stage12EControl] = []
-    for control_id, transport, reason, kind in candidates:
+    result = []
+    for control_id, kind, transport, reason in controls:
         rejected = False
         try:
             if kind == "phi":
@@ -646,15 +656,15 @@ def stage12e_controls() -> tuple[Stage12EControl, ...]:
                 stage12e_apply_clock(start, transport)  # type: ignore[arg-type]
         except (ValueError, TypeError):
             rejected = True
-        results.append(
+        result.append(
             Stage12EControl(
-                control_id=control_id,
-                classification=STAGE12E_PATH_REJECTION if rejected else "inconclusive",
-                rejected=rejected,
-                reason=reason,
+                control_id,
+                STAGE12E_PATH_REJECTION if rejected else "inconclusive",
+                rejected,
+                reason,
             )
         )
-    return tuple(results)
+    return tuple(result)
 
 
 @lru_cache(maxsize=1)
@@ -662,21 +672,19 @@ def stage12e_diagnostics() -> Stage12EDiagnostics:
     clocks = canonical_stage12e_clock_transports()
     reparams = canonical_stage12e_reparameterization_transports()
     gauges = canonical_stage12e_gauge_transports()
-    clock_gauge = stage12e_clock_gauge_diagnostics()
-    reparam_gauge = stage12e_reparameterization_gauge_diagnostics()
+    spanning = canonical_stage12e_triple_spanning_gauge_transports()
+    c_phi = stage12e_clock_gauge_diagnostics()
+    g_phi = stage12e_reparameterization_gauge_diagnostics()
     triple = stage12e_triple_diagnostics()
     controls = stage12e_controls()
-
-    witness_signatures = {
-        tuple(item.probabilities)
-        for item in canonical_stage12d_orbit_witnesses()
-    }
     transform_types = {
         *(item.transform_type for item in clocks),
         *(item.transform_type for item in reparams),
         *(item.transform_type for item in gauges),
     }
-
+    witness_signatures = {
+        tuple(item.probabilities) for item in canonical_stage12d_orbit_witnesses()
+    }
     criteria = bool(
         len(canonical_stage12a_orbits()) == 4
         and len(canonical_stage12a_representatives()) == 20
@@ -687,12 +695,15 @@ def stage12e_diagnostics() -> Stage12EDiagnostics:
         and all(item.valid for item in clocks)
         and all(item.valid for item in reparams)
         and all(item.valid for item in gauges)
-        and clock_gauge.object_count == 8640
-        and clock_gauge.compatible
-        and reparam_gauge.object_count == 1920
-        and reparam_gauge.compatible
-        and triple.object_count == 103680
-        and triple.path_evaluation_count == 622080
+        and c_phi.object_count == 8640
+        and c_phi.compatible
+        and g_phi.object_count == 1920
+        and g_phi.compatible
+        and len(spanning) == 4
+        and {item.orbit_id for item in spanning}
+        == {item.orbit_id for item in canonical_stage12a_orbits()}
+        and triple.object_count == 5184
+        and triple.path_evaluation_count == 31104
         and triple.compatible
         and len(witness_signatures) == 4
         and len(controls) == 4
@@ -705,12 +716,13 @@ def stage12e_diagnostics() -> Stage12EDiagnostics:
         reparameterization_transport_count=len(reparams),
         gauge_transport_count=len(gauges),
         distinct_transform_type_count=len(transform_types),
-        clock_gauge_square_count=clock_gauge.object_count,
-        reparameterization_gauge_square_count=reparam_gauge.object_count,
+        clock_gauge_square_count=c_phi.object_count,
+        reparameterization_gauge_square_count=g_phi.object_count,
+        triple_spanning_gauge_count=len(spanning),
         triple_cube_count=triple.object_count,
         triple_path_evaluation_count=triple.path_evaluation_count,
-        max_clock_gauge_residual=clock_gauge.max_total_residual,
-        max_reparameterization_gauge_residual=reparam_gauge.max_total_residual,
+        max_clock_gauge_residual=c_phi.max_total_residual,
+        max_reparameterization_gauge_residual=g_phi.max_total_residual,
         max_triple_residual=triple.max_total_residual,
         orbit_sensitive_signature_count=len(witness_signatures),
         control_count=len(controls),
@@ -729,6 +741,7 @@ def stage12e_summary() -> dict[str, object]:
         "distinct_transform_type_count": d.distinct_transform_type_count,
         "clock_gauge_square_count": d.clock_gauge_square_count,
         "reparameterization_gauge_square_count": d.reparameterization_gauge_square_count,
+        "triple_spanning_gauge_count": d.triple_spanning_gauge_count,
         "triple_cube_count": d.triple_cube_count,
         "triple_path_evaluation_count": d.triple_path_evaluation_count,
         "max_clock_gauge_residual": d.max_clock_gauge_residual,

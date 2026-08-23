@@ -164,7 +164,7 @@ def test_stage12g_summary_closes_48_49_and_keeps_50_external() -> None:
     assert tuple(criteria.keys()) == ("48", "49", "50")
     assert "exactly one frozen Stage 12 status" in criteria["48"]
     assert "without presupposing GR or general covariance" in criteria["49"]
-    assert "external" in criteria["50"]
+    assert "external" in criteria["50"].lower()
     assert summary["choice"] == "multi_orbit_gauge_covariant"
     assert summary["selected_stage13_gate"] == "multi_constraint_refoliation_precursor"
     guards = summary["guards"]

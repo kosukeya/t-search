@@ -4,9 +4,9 @@ This roadmap is provisional and evidence-selected.
 
 ## Current refined candidate
 
-`T10_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
+`T11_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11F are completed; criteria 1–47 are satisfied and Stage 11G is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11G selects `parametrized_covariant`; Stage 11.0 through Stage 11G are completed, criteria 1–49 are satisfied, and criterion 50 remains external final repository validation / merge-readiness review.
 
 ## Stages 0–6 — completed and merged
 
@@ -100,7 +100,7 @@ Selected Stage 10 gate remained the fully typed cross-continuation future-measur
 
 At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11F completed
+## Stage 11 — Parametrized covariance precursor — Stage 11G completed
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -145,7 +145,7 @@ Evidence: **52** observable evaluations; **52** derivative evaluations; relation
 
 Criteria **24–31** satisfied. The Stage 9/10 O/P/R/V payload is lifted to all four external parameterizations while raw parameter/lapse and correspondence resources remain in Xi.
 
-Evidence: 4 parameterizations; matched epistemic/ontic projections **8**; `QExt(e1)={h_L,h_R}` size 2; Xi views 4; continuation/class entries 8; outcome entries 8; O/R/V residuals 0.0; selector-free public schema; O/P/R/V corruption controls **4 / 4** detected.
+Evidence: 4 parameterizations; matched epistemic/ontic projections **8**; `QExt(e1)={h_L,h_R}` size 2; Xi views 4; continuation/class entries 8; outcome entries 8; O/R/V residuals 0.0; selector-free public schema; O/P/R/V corruption controls **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`.
 
 `Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
 
@@ -226,7 +226,7 @@ The consolidated false-positive family rejects **7 / 7** controls:
 
 `Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
 
-Source/unit-test run #1425: **`924 passed in 586.95s (0:09:46)`**.
+Source/unit-test run #1425: **`924 passed in 586.95s (0:09:46)`**. Final documentation-synchronized run #1447: **`925 passed in 792.42s (0:13:12)`**.
 
 Guards:
 
@@ -240,20 +240,42 @@ Guards:
 
 `finite-model ablation != fundamental ontology`.
 
-### Stage 11G — synthesis and evidence-selected next gate — next
+### Stage 11G — synthesis and evidence-selected next gate — completed
 
-Criteria **48–49** will select one frozen Stage 11 status from the full A–F evidence chain without assuming general covariance. The allowed statuses remain:
+Criteria **48–49** are satisfied. The full Stage 11A–F evidence chain selects
 
-- `parametrized_covariant`;
-- `parametrized_partial`;
-- `parametrized_obstructed`;
-- `inconclusive`.
+`parametrized_covariant`.
 
-Criterion 50 remains external final repository validation / merge-readiness review after Stage 11G.
+The label is bounded to the declared finite positive family and one frozen sampled constraint orbit. Source/unit-test run #1453: **`937 passed in 851.19s (0:14:11)`**.
+
+Stage 12 candidate ranking:
+
+| rank | gate | score |
+| --- | --- | ---: |
+| 1 | `multi_orbit_constraint_gauge_atlas` | **10** |
+| 2 | `richer_causal_order` | **7** |
+| 3 | `nonideal_povm_clocks` | **6** |
+| 4 | `gravitational_minisuperspace_extension` | **5** |
+
+Selected Stage 12 gate:
+
+> **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+This gate tests the nearest unresolved assumption before any direct gravitational extension: Stage 11 still represents several external parameterizations of one constraint orbit, not a multi-orbit gauge quotient or nontrivial constraint algebra.
+
+`one-orbit covariance != multi-orbit gauge covariance`.
+
+`external parameterization independence != diffeomorphism invariance`.
+
+`constraint-generated gauge precursor != general relativity`.
+
+### Stage 11 criterion 50 — external final repository validation — next
+
+Criterion 50 remains external final full-repository regression / merge-readiness review. Stage 11G scientific synthesis does not close it automatically.
 
 ## Later directions
 
-A richer causal/order layer and nonideal/POVM clocks remain live candidates rather than rejected directions. Empirical relevance should be pursued only if a genuinely discriminating prediction emerges beyond the chosen representation.
+A richer causal/order layer, nonideal/POVM clocks, and a minimal gravitational/minisuperspace extension remain live candidates rather than rejected directions. Empirical relevance should be pursued only if a genuinely discriminating prediction emerges beyond the chosen representation.
 
 ## Cautions
 
@@ -291,6 +313,12 @@ A richer causal/order layer and nonideal/POVM clocks remain live candidates rath
 - `wrong-gauge failure != ontological becoming`;
 - `typed-resource necessity in this finite family != metaphysical fundamentality`;
 - `finite-model ablation != fundamental ontology`;
+- `parametrized_covariant finite family != general covariance`;
+- `external parameterization independence != diffeomorphism invariance`;
+- `one-orbit covariance != multi-orbit gauge covariance`;
+- `constraint-generated gauge precursor != general relativity`;
+- `parameterization-covariant future probabilities != future actuality`;
+- `parameterization-covariant future probabilities != proof of eternalism`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;

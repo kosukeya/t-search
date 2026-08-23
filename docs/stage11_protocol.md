@@ -1,6 +1,6 @@
 # Stage 11 Protocol — Parametrized Covariance Precursor
 
-Status: **Stage 11.0, Stage 11A, Stage 11B, and Stage 11C completed; criteria 1–31 satisfied; criteria 32–50 pending implementation and external review.**
+Status: **Stage 11.0, Stage 11A, Stage 11B, Stage 11C, and Stage 11D completed; criteria 1–38 satisfied; criteria 39–50 pending implementation and external review.**
 
 Selected Stage 11 gate from Stage 10G:
 
@@ -320,13 +320,18 @@ Bounded Stage 11C result:
 
 `Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
 
+Stage 11C validation checkpoints:
+
+- source/unit-test run #1341 — **`898 passed in 666.75s (0:11:06)`**;
+- documentation-synchronized run #1355 — **`899 passed in 647.28s (0:10:47)`**.
+
 `typed O/P/R/V/Xi lift != full future-measurement covariance`.
 
 `typed product lift feasibility != independent dynamical covariance evidence`.
 
-## 8. Frozen Stage 10 measurement carry-over
+## 8. Stage 11D future-measurement reparameterization covariance checkpoint
 
-Stage 11D is next and must reuse the Stage 10 future-signature measurement family rather than redesigning it after seeing reparameterization results.
+Stage 11D reuses the frozen Stage 10 future-signature measurement family at a fixed internal A/e2 chart so that external reparameterization is tested separately from internal-clock change.
 
 Reference anchor: `e1`.
 
@@ -343,11 +348,41 @@ The Stage 10 probability form remains
 
 `p(o|h)=c_h^dagger F_{h,o} c_h / (c_h^dagger N_h c_h)`.
 
-The Stage 11D comparison target is
+Across the four positive parameterizations × two continuations, Stage 11D constructs **8** typed measurement views and **16** canonical outcome-probability evaluations.
 
-`p_rho(o|h,e1->e2) = p_sigma(o|h,e1->e2)`
+The Stage 11 physical anchor/target ids remain fixed under correspondence while the raw parameter values at those roles differ across the parameterization family.
 
-for corresponding typed physical events, not equality at the same raw parameter value.
+Executable Stage 11D bounds:
+
+- maximum per-continuation reparameterization probability residual: **<= 1e-9**;
+- maximum residual against the unchanged Stage 9C/10 reference likelihood: **<= 1e-9**;
+- maximum probability-sum residual: **<= 1e-9**;
+- maximum completeness residual: **<= 1e-9**;
+- minimum effect eigenvalue: **>= -1e-9**;
+- minimum normalization-form eigenvalue: **> 1e-9**;
+- minimum canonical normalization denominator: **> 1e-9**;
+- weighted future-prediction reparameterization residual: **<= 1e-9**;
+- matched epistemic/ontic public measurement views: preserved across all four parameterizations;
+- hidden `h*` swap: public-view invariant while privileged modal roles remain distinct;
+- common-evidence epistemic/ontic posterior residuals: **<= 1e-9**;
+- wrong event/Jacobian/normalization/outcome controls rejected: **4 / 4**;
+- wrong-normalization matrix and probability witnesses: **> 1e-9**.
+
+Stage 11D source/unit-test checkpoint: run #1361 — **`907 passed in 590.98s (0:09:50)`**.
+
+Bounded Stage 11D result:
+
+`Stage 11D future-measurement reparameterization covariance on the frozen positive family = established`.
+
+The Stage 11 external lapse is a typed reparameterization resource; it is not substituted for the Stage 10 quantum normalization form.
+
+`external lapse != quantum measurement normalization form`.
+
+`numerically unchanged probability payload != well-typed reparameterization context`.
+
+`typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`.
+
+`future-measurement reparameterization covariance != clock-change x reparameterization compatibility`.
 
 ## 9. Frozen clock-change × reparameterization compatibility target
 
@@ -390,7 +425,7 @@ The original controls remain frozen:
 11. identify parameter direction with `R_direction` by definition;
 12. mix parameterizations inside one probability/weight/update calculation without typed correspondence.
 
-Stage 11A implements controls 5 and 6 as excluded parameterizations. Stage 11B supplies an explicit control for item 1: 7 equal raw-label overlaps contain 6 false event identifications. Stage 11C implements item 7 at the architecture layer and detects item 10 separately for O, P, R, and V.
+Stage 11A implements controls 5 and 6 as excluded parameterizations. Stage 11B supplies an explicit control for item 1: 7 equal raw-label overlaps contain 6 false event identifications. Stage 11C implements item 7 at the architecture layer and detects item 10 separately for O, P, R, and V. Stage 11D supplies typed wrong-event, wrong-Jacobian, and wrong-outcome rejections plus a tomography-backed wrong-normalization witness, closing the measurement-layer instances of items 2–4, 8, and 9.
 
 `orientation reversal != physical record reversal by definition`.
 
@@ -412,13 +447,15 @@ Evidence already obtained:
 - explicit rejection/classification of raw-equal-parameter event matching;
 - preserved/reconstructed typed O/P/R/V payload across **4** positive parameterizations;
 - **4** explicit Xi views carrying different representation metadata;
-- **4 / 4** type-specific O/P/R/V corruption controls detected.
+- **4 / 4** type-specific O/P/R/V corruption controls detected;
+- **8** typed Stage 11D measurement views and **16** canonical outcome-probability evaluations;
+- per-continuation, weighted-prediction, and common-evidence posterior covariance across all four positive parameterizations;
+- **4 / 4** Stage 11D wrong-event/Jacobian/normalization/outcome controls rejected.
 
 Still pending:
 
-- preserved Stage 10 future-measurement probabilities under reparameterization;
 - clock-change × reparameterization compatibility;
-- remaining frozen ablations/controls.
+- remaining Stage 11F ablations/false-positive controls.
 
 `same labels after relabeling != sufficient evidence of covariance`.
 
@@ -450,11 +487,17 @@ Final synchronization checkpoint: run #1335, `891 passed in 652.53s (0:10:52)`.
 
 Criteria 24–31.
 
-### Stage 11D — future-measurement reparameterization covariance — next
+Source/unit-test checkpoint: run #1341, `898 passed in 666.75s (0:11:06)`.
+
+Documentation-synchronized checkpoint: run #1355, `899 passed in 647.28s (0:10:47)`.
+
+### Stage 11D — future-measurement reparameterization covariance — completed
 
 Criteria 32–38.
 
-### Stage 11E — clock-change × parameterization compatibility
+Source/unit-test checkpoint: run #1361, `907 passed in 590.98s (0:09:50)`.
+
+### Stage 11E — clock-change × parameterization compatibility — next
 
 Criteria 39–43.
 
@@ -517,13 +560,13 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 
 ### Criteria 32–38 — Stage 11D
 
-32. Stage 10 reference future-measurement family is lifted without changing its physical question — **pending**.
-33. Corresponding anchor/target events are found through typed event/clock correspondence rather than equal parameter values — **pending**.
-34. Per-continuation probabilities agree across the positive parameterization family — **pending**.
-35. Probability completeness/positivity and normalization roles remain valid — **pending**.
-36. Weighted predictions and matched modal public views remain parameterization-covariant — **pending**.
-37. Common-evidence update/posteriors remain parameterization-covariant — **pending**.
-38. Wrong event/Jacobian/normalization/outcome controls are rejected — **pending**.
+32. Stage 10 reference future-measurement family is lifted without changing its physical question — **satisfied**.
+33. Corresponding anchor/target events are found through typed event/clock correspondence rather than equal parameter values — **satisfied**.
+34. Per-continuation probabilities agree across the positive parameterization family — **satisfied**.
+35. Probability completeness/positivity and normalization roles remain valid — **satisfied**.
+36. Weighted predictions and matched modal public views remain parameterization-covariant — **satisfied**.
+37. Common-evidence update/posteriors remain parameterization-covariant — **satisfied**.
+38. Wrong event/Jacobian/normalization/outcome controls are rejected — **satisfied**.
 
 ### Criteria 39–43 — Stage 11E
 
@@ -569,11 +612,19 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 - `typed O/P/R/V/Xi lift != full future-measurement covariance`;
 - `typed product lift feasibility != independent dynamical covariance evidence`;
 - `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
+- `external lapse != quantum measurement normalization form`;
+- `numerically unchanged probability payload != well-typed reparameterization context`;
+- `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
+- `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
 - `selector-free public projection != absence of privileged modal semantics`;
 - `reparameterization covariance != modal/ontological identity`;
 - `reparameterization covariance != future actuality`;
 - `reparameterization covariance != proof of eternalism`;
 - `reparameterization covariance != refutation of ontological becoming`;
+- `parameterization-covariant future probabilities != future actuality`;
+- `parameterization-covariant future probabilities != proof of eternalism`;
+- `parameterization-covariant future probabilities != refutation of ontological becoming`;
+- `evidence-update covariance != ontological becoming`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `typed-resource use != metaphysical fundamentality`;
 - `finite typed parametrized covariance != general covariance`;

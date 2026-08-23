@@ -239,7 +239,7 @@ Consolidated false-positive controls:
 - orientation reversal: **12** decreasing steps;
 - non-injective square: **6** collisions;
 - raw-lambda matching: **6** false event identities;
-- parameter-dependent O/P/R/V corruption: **4 / 4** detected;
+- parameter-dependent O/P/R/V corruption: **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`;
 - all declared Stage 11F false-positive controls: **7 / 7** rejected.
 
 Criteria **44–47** are satisfied.

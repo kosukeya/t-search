@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T10_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11E are completed; criteria 1–43 are satisfied and Stage 11F is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11F are completed; criteria 1–47 are satisfied and Stage 11G is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -100,7 +100,7 @@ Selected Stage 10 gate remained the fully typed cross-continuation future-measur
 
 At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11E completed
+## Stage 11 — Parametrized covariance precursor — Stage 11F completed
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -193,7 +193,7 @@ Wrong path: relabeling an A/0 source chart as B/1 without genuine dual transport
 
 `Stage 11E clock-change x parameterization compatibility on the frozen finite family = established`.
 
-Source/unit-test run #1407: **`915 passed in 482.25s (0:08:02)`**.
+Source/unit-test run #1407: **`915 passed in 482.25s (0:08:02)`**. Final documentation-synchronized run #1421: **`916 passed in 589.69s (0:09:49)`**.
 
 Guards:
 
@@ -207,13 +207,49 @@ Guards:
 
 `path-independent evidence update != ontological becoming`.
 
-### Stage 11F — ablation / wrong-gauge / false-positive controls — next
+### Stage 11F — ablation / wrong-gauge / false-positive controls — completed
 
-Criteria **44–47** will test removal of parameter-event correspondence separately from numerical reconstructibility, missing/wrong lapse-Jacobian semantics, consolidated reversal/noninjective/raw-lambda/corruption controls, and interpretation boundaries.
+Criteria **44–47** are satisfied.
 
-### Stage 11G — synthesis and evidence-selected next gate
+Stage 11F separates three statuses that would otherwise be easy to conflate:
 
-Criteria **48–49** will select one frozen Stage 11 status from the full A–F evidence chain without assuming general covariance. Criterion 50 remains external final repository validation.
+- parameter-event correspondence removal: `event_correspondence_reconstructible_but_typed_identity_lost`; the numerical mapping is reconstructible from O with residual **0.0**, while typed identification is lost and covariance becomes `not_established`;
+- lapse/Jacobian semantics removal: `lapse_semantics_missing_typed_claim_not_established`; the correct stored values still give `dq/dT=p=1.25` with residual **0.0**, but the typed transformation claim is absent;
+- wrong lapse/Jacobian value: `wrong_lapse_jacobian_numerically_refuted`; the tested wrong lapse changes both the target lapse and reconstructed relational derivative by approximately **0.5357142857142857**.
+
+The consolidated false-positive family rejects **7 / 7** controls:
+
+- orientation reversal: **12** decreasing sampled steps;
+- non-injective square: **6** collisions;
+- raw-lambda matching: **6** false event identities;
+- O/P/R/V parameter-dependent corruption: **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`.
+
+`Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
+
+Source/unit-test run #1425: **`924 passed in 586.95s (0:09:46)`**.
+
+Guards:
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`finite-model ablation != fundamental ontology`.
+
+### Stage 11G — synthesis and evidence-selected next gate — next
+
+Criteria **48–49** will select one frozen Stage 11 status from the full A–F evidence chain without assuming general covariance. The allowed statuses remain:
+
+- `parametrized_covariant`;
+- `parametrized_partial`;
+- `parametrized_obstructed`;
+- `inconclusive`.
+
+Criterion 50 remains external final repository validation / merge-readiness review after Stage 11G.
 
 ## Later directions
 
@@ -248,6 +284,13 @@ A richer causal/order layer and nonideal/POVM clocks remain live candidates rath
 - `commuting typed diagram != general covariance`;
 - `path-independent future probabilities != future actuality`;
 - `path-independent evidence update != ontological becoming`;
+- `numerical reconstructibility != typed operational identification`;
+- `reconstructible != universally redundant`;
+- `lost != metaphysically irreducible`;
+- `missing typing != metaphysical absence`;
+- `wrong-gauge failure != ontological becoming`;
+- `typed-resource necessity in this finite family != metaphysical fundamentality`;
+- `finite-model ablation != fundamental ontology`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;

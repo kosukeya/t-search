@@ -1,6 +1,6 @@
 # Stage 11F Notes — Ablation / Wrong-Gauge / False-Positive Controls
 
-Stage 11F closes criteria **44–47** by pressure-testing the positive Stage 11A–E construction rather than adding a new physical model.
+Stage 11F closes criteria 44–47 by pressure-testing the positive Stage 11A–E construction rather than adding a new physical model.
 
 Source/unit-test checkpoint: run #1425 — **`924 passed in 586.95s (0:09:46)`**.
 

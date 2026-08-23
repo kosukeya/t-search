@@ -1,8 +1,14 @@
 # Stage 11E Result — Clock-Change × Parameterization Compatibility
 
-Status: **executable diagnostics implemented; criteria 39–43 awaiting source/unit-test checkpoint before final result classification.**
+Status: **completed; criteria 39–43 satisfied by executable diagnostics.**
 
 Stage 11D repository baseline: run #1393 — **`908 passed in 589.63s (0:09:49)`**.
+
+Stage 11E source/unit-test checkpoint: run #1407 — **`915 passed in 482.25s (0:08:02)`**.
+
+These CI checkpoints validate repository behavior only:
+
+`repository validation != new scientific evidence`.
 
 ## Frozen compatibility question
 
@@ -33,15 +39,20 @@ The executable family contains:
 - ordered genuine distinct-clock transports per continuation: **54**;
 - total continuation-aware clock transports: **108**.
 
+All 12 reparameterization transports and all 108 continuation-aware clock transports satisfy their declared typing/admissibility checks. Both families contain nontrivial transforms: the external family changes raw parameter/lapse metadata, while the clock family contains non-identity 14×14 support maps.
+
 The `G` objects carry typed event/class/outcome correspondence plus source/target parameter and lapse metadata. The `C` objects carry continuation id, source/target clock/readout, and the genuine 14×14 Stage 10 support transport matrix.
 
 ## Relational O/event square family
 
 All 12 external edges are crossed with all 54 clock/readout edges:
 
-- event/O commuting squares: **648**.
+- event/O commuting squares: **648**;
+- maximum event/O path residual: **<= 1e-9**.
 
-Both paths are required to end with identical typed physical event ids, target parameterization metadata, relational `T/q(T)` payload, and target internal-clock/readout tags.
+Both paths end with identical typed physical event ids, target parameterization metadata, relational `T/q(T)` payload, and target internal-clock/readout tags.
+
+Criterion 40 is therefore satisfied on the declared finite family.
 
 ## Measurement/probability square family
 
@@ -55,12 +66,20 @@ Each square compares:
 2. Stage 10C dual clock transport then external `G`;
 3. direct reconstruction at the target Stage 10 chart.
 
-The executable comparison covers:
+The executable comparison covers operational normalization forms, both future-signature effect forms, per-continuation probabilities, and event/class/outcome typing.
 
-- operational normalization form;
-- both future-signature effect forms;
-- per-continuation probabilities;
-- event/class/outcome typing.
+Executable Stage 11E bounds:
+
+- maximum path-to-path normalization-form residual: **<= 1e-9**;
+- maximum path-to-path effect-form residual: **<= 1e-9**;
+- maximum transported-path/direct-target normalization residual: **<= 1e-9**;
+- maximum transported-path/direct-target effect residual: **<= 1e-9**;
+- maximum path-to-path probability residual: **<= 1e-9**;
+- maximum transported-path/direct-target probability residual: **<= 1e-9**.
+
+Thus the positive result is not based only on endpoint labels: the genuine Stage 10C dual clock transport reproduces the directly reconstructed target measurement form.
+
+Criterion 41 is satisfied on the declared finite family.
 
 ## Weighted/modal and update square families
 
@@ -69,9 +88,25 @@ The same 12 × 54 endpoint family is used for:
 - weighted/modal squares: **648**;
 - common-evidence posterior squares: **648**.
 
-The weighted comparison includes continuation weights, predictive density, record scores/accessibility/orientation, and weighted future probabilities. It also checks matched epistemic/ontic public equality and hidden-`h*` public invariance at the target endpoints.
+Weighted/modal executable bounds:
 
-The update comparison uses the frozen evidence `future_signature_left` and checks epistemic/ontic posterior weights, preservation of the hidden epistemic selected continuation, and selector-free updated ontic semantics.
+- maximum weighted/modal path residual: **<= 1e-9**;
+- maximum matched epistemic/ontic endpoint residual: **<= 1e-9**;
+- maximum hidden-`h*` swap public endpoint residual: **<= 1e-9**.
+
+The weighted comparison includes continuation weights, predictive density, record scores/accessibility/orientation, and weighted future probabilities. Matched epistemic/ontic public equality and hidden-`h*` public invariance therefore survive both routes to every tested endpoint while the private modal distinction remains outside the public projection.
+
+The update comparison uses the frozen evidence `future_signature_left`.
+
+Posterior executable bounds:
+
+- maximum epistemic posterior path residual: **<= 1e-9**;
+- maximum ontic posterior path residual: **<= 1e-9**;
+- maximum matched epistemic/ontic posterior endpoint residual: **<= 1e-9**;
+- hidden epistemic selected continuation preserved at every endpoint;
+- updated ontic state remains selector-free at every endpoint.
+
+Criterion 42 is satisfied on the declared finite family.
 
 ## Wrong-path control
 
@@ -79,33 +114,51 @@ The explicit Stage 11E control deliberately relabels an `A/0` source measurement
 
 The target labels therefore look superficially correct while the operational matrices remain source-chart matrices.
 
-The executable control requires detectable differences from the direct target in:
+The control is detectably different from the direct target in all three required senses:
 
-- normalization matrix;
-- effect matrices;
-- canonical probabilities.
+- normalization-matrix residual: **> 1e-9**;
+- effect-matrix residual: **> 1e-9**;
+- canonical-probability residual: **> 1e-9**.
 
-Target classification:
+Executable classification:
 
 `noncommuting_wrong_clock_path_detected`.
 
-## Pending executable result
+Criterion 43 is therefore satisfied. This also shows that superficial target labels alone are insufficient for path compatibility.
 
-The Stage 11E source/unit-test run will decide whether the following all hold simultaneously:
+## Runtime caching and anti-triviality
 
-- all 12 typed `G` transports valid;
-- all 108 typed `C` transports valid and nontrivial;
-- 648 event/O squares commute;
-- 1296 measurement/probability squares commute and agree with direct target reconstruction;
-- 648 weighted/modal squares are path-independent;
-- 648 posterior squares are path-independent;
-- wrong-path control is detectably noncommuting.
+The exhaustive square audit memoizes repeated Born-probability evaluations only when the complete typed numerical chart payload is identical, including normalization/effect matrix bytes. This changes evaluation cost, not the declared square family or equality test.
 
-Criteria 39–43 remain **pending** until that source/unit-test checkpoint completes successfully.
+A mislabeled/untransported wrong-path chart has different matrices and therefore receives a distinct cache key. The cache cannot convert the negative control into a positive result.
 
-## Interpretation boundary
+`cached repeated evaluation != reduced scientific comparison family`.
 
-Even if all Stage 11E diagnostics pass:
+## Criteria 39–43
+
+39. Reparameterization transports and Stage 10 A/B/C clock transports are both represented with explicit typing — **satisfied**.
+40. Clock-change × reparameterization squares commute for relational O/event data — **satisfied**.
+41. The squares commute for per-continuation measurement data/probabilities — **satisfied**.
+42. Weighted/modal/update outputs are path-independent across the tested square family — **satisfied**.
+43. Deliberately wrong correspondence/path mixing produces a detectable noncommuting control — **satisfied**.
+
+## Bounded result
+
+**`Stage 11E clock-change x parameterization compatibility on the frozen finite family = established`.**
+
+This means that the already-tested Stage 10 internal-clock changes and Stage 11 external reparameterizations are compatible in the declared finite typed product construction: the two routes agree on relational event/O data, continuation-aware measurement forms and probabilities, weighted/modal public outputs, and common-evidence updates, while a deliberately untransported clock path is rejected.
+
+It does **not** establish:
+
+- an independent dynamical interaction law between clock change and reparameterization;
+- general covariance or general relativity;
+- modal/ontological identity;
+- future actuality;
+- eternalism;
+- absence of ontological becoming;
+- empirical discovery.
+
+Guards:
 
 `internal-clock covariance != reparameterization covariance`.
 
@@ -123,6 +176,4 @@ Even if all Stage 11E diagnostics pass:
 
 `parametrized covariance precursor != general relativity`.
 
-`repository validation != new scientific evidence`.
-
-Next checkpoint after criteria 39–43 close: **Stage 11F — ablation / wrong-gauge / false-positive controls.**
+Next checkpoint: **Stage 11F — ablation / wrong-gauge / false-positive controls.**

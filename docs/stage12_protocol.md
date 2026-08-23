@@ -1,6 +1,6 @@
 # Stage 12 Protocol — Multi-Orbit Constraint-Generated Gauge Atlas
 
-Status: **Stage 12E completed; criteria 1–43 satisfied; criteria 44–50 pending.**
+Status: **Stage 12F completed; criteria 1–47 satisfied; criteria 48–50 pending.**
 
 Selected Stage 12 gate from Stage 11G:
 
@@ -327,6 +327,10 @@ Four deliberately invalid paths are rejected as `mixed_or_untyped_path_rejected`
 - `parameterization_label_as_clock`;
 - `gauge_type_relabelled_as_reparameterization`.
 
+Incoming Stage 12D repository checkpoint head `36bc2d02d07fb954441e22452b1498a90833179b` passed run **#1570** with **`994 passed in 562.97s (0:09:22)`**.
+
+Final Stage 12E repository checkpoint head `b035e0a107a6d64b0c17acd8c197aa630ffc13a6` passed run **#1592** with **`1002 passed in 887.98s (0:14:47)`**.
+
 Bounded result:
 
 `Stage 12E internal-clock x external-parameterization x gauge-flow compatibility on the frozen finite multi-orbit family = established`.
@@ -342,6 +346,60 @@ Bounded result:
 `path-independent relational outputs != ontological becoming`.
 
 `finite three-way compatibility != diffeomorphism invariance`.
+
+### Stage 12F
+
+Stage 12F integrates orbit-resource ablation, wrong-orbit/gauge controls, representative-dependent corruption, and the frozen false-positive family into one typed evidence matrix.
+
+Orbit-resource evidence:
+
+- **2 ablations** total;
+- **2 / 2** remain numerically `reconstructible`;
+- **2 / 2** lose typed identification;
+- both are classified `not_established` rather than `false` or `refuted` at the covariance-claim level.
+
+The two ablations are:
+
+- `remove_typed_orbit_identity_correspondence` -> `orbit_identity_reconstructible_but_typed_correspondence_lost`;
+- `corrupt_orbit_and_quotient_correspondence` -> `corrupted_orbit_correspondence_numerically_reconstructible_but_typed_claim_lost`.
+
+The consolidated false-positive family contains **27 controls**. The positive Stage 12F target requires **27 / 27 rejected**. Key subfamilies are:
+
+- **2** single-invariant controls: same-`P_D`/different-`Q_D` and same-`Q_D`/different-`P_D`;
+- **3** equal-label/single-variable controls retaining the Stage 12B witness counts **30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda**;
+- **3** wrong-gauge controls: `wrong_Q_D_path`, `wrong_P_D_path`, and forced cross-orbit `Phi`;
+- **5** representative-dependent corruption controls: one-representative O, P, R, V, and measurement corruption;
+- Stage 12D context/normalization/orbit-insensitive controls;
+- Stage 12E mixed-orbit/untyped transport controls;
+- inherited orientation-reversal and noninjective external-relabeling controls;
+- constraint-orbit/modal-continuation conflation;
+- `different_physical_orbit_as_temporal_succession`.
+
+The representative-dependent measurement control changes the two outcome probabilities by `±0.05` while preserving total normalization, so normalization alone cannot counterfeit representative-independent descent.
+
+Every Stage 12F ablation/control carries `metaphysical_claim_status = not_licensed`.
+
+Bounded result:
+
+`Stage 12F typed-resource ablation / wrong-orbit / false-positive controls on the frozen finite multi-orbit gauge atlas = established`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`missing typing != metaphysical absence`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`cross-orbit mismatch != temporal succession or ontological becoming`.
+
+`finite-model ablation != fundamental ontology`.
+
+`false-positive rejection != proof of eternalism`.
+
+`not_established != false`.
 
 ## 11. Frozen synthesis vocabulary
 
@@ -362,8 +420,8 @@ Stage 12G must select exactly one of:
 - Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**;
 - Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**;
 - Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**;
-- Stage 12F — ablation / wrong-orbit / false-positive controls — **next**;
-- Stage 12G — executable synthesis and evidence-selected next gate;
+- Stage 12F — ablation / wrong-orbit / false-positive controls — **completed**;
+- Stage 12G — executable synthesis and evidence-selected next gate — **next**;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
 ## 13. Exit criteria
@@ -424,10 +482,10 @@ Stage 12G must select exactly one of:
 43. Deliberately mixed-orbit or untyped paths produce detectable failures — **satisfied**.
 
 ### Criteria 44–47 — Stage 12F
-44. Orbit identity/correspondence removal versus numerical reconstructibility is explicitly classified — **pending**.
-45. Single-invariant, equal-label, and wrong-gauge cross-orbit false positives are explicitly rejected — **pending**.
-46. Representative-dependent O/P/R/V/measurement corruption and orbit-insensitive measurement trivialization controls are classified — **pending**.
-47. Ablation/failure results are not promoted to claims about metaphysical fundamentality, eternalism, or ontological becoming — **pending**.
+44. Orbit identity/correspondence removal versus numerical reconstructibility is explicitly classified — **satisfied**.
+45. Single-invariant, equal-label, and wrong-gauge cross-orbit false positives are explicitly rejected — **satisfied**.
+46. Representative-dependent O/P/R/V/measurement corruption and orbit-insensitive measurement trivialization controls are classified — **satisfied**.
+47. Ablation/failure results are not promoted to claims about metaphysical fundamentality, eternalism, or ontological becoming — **satisfied**.
 
 ### Criteria 48–49 — Stage 12G
 48. Executable synthesis selects exactly one frozen Stage 12 status from the full Stage 12A–F evidence chain — **pending**.
@@ -465,5 +523,13 @@ Stage 12G must select exactly one of:
 - `path-independent future probabilities != future actuality`;
 - `path-independent relational outputs != ontological becoming`;
 - `finite three-way compatibility != diffeomorphism invariance`;
+- `numerical reconstructibility != typed operational identification`;
+- `reconstructible != universally redundant`;
+- `lost != metaphysically irreducible`;
+- `missing typing != metaphysical absence`;
+- `wrong-gauge failure != ontological becoming`;
+- `cross-orbit mismatch != temporal succession or ontological becoming`;
+- `finite-model ablation != fundamental ontology`;
+- `false-positive rejection != proof of eternalism`;
 - `finite-model success != empirical discovery`;
 - `not_established != false`.

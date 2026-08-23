@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T11_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11G selects `parametrized_covariant`; Stage 11.0 through Stage 11G and criterion 50 are completed, criteria 1–50 are satisfied, and PR #12 is at a merge-ready, unmerged checkpoint.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, and Stage 12B are completed on Draft PR #13; criteria 1–23 are satisfied and Stage 12C is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -100,7 +100,7 @@ Selected Stage 10 gate remained the fully typed cross-continuation future-measur
 
 At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
 
-## Stage 11 — Parametrized covariance precursor — completed / merge-ready checkpoint
+## Stage 11 — Parametrized covariance precursor — completed and merged
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -133,7 +133,7 @@ Run #1309: **`883 passed in 630.96s (0:10:30)`**.
 
 Criteria **17–23** satisfied. `q(T=tau)` and `dq/dT=(dq/dlambda)/(dT/dlambda)` are evaluated at typed corresponding events.
 
-Evidence: **52** observable evaluations; **52** derivative evaluations; relational residuals **0.0**; reconstructed `dq/dT=1.25`; **24** nonlinear raw-rate changes. Identity/affine has 7 equal raw-label overlaps, 6 pairing different events; classified `invalid_equal_raw_parameter_event_rule`.
+Evidence: **52** observable evaluations; **52** derivative evaluations; relational residuals **0.0**; reconstructed `dq/dT=1.25`; **24** nonlinear raw-rate changes. Identity/affine has **7** equal raw-label overlaps, **6** pairing different events; classified `invalid_equal_raw_parameter_event_rule`.
 
 `Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
 
@@ -273,11 +273,57 @@ This gate tests the nearest unresolved assumption before any direct gravitationa
 
 Criterion **50** is satisfied externally at reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`. GitHub Actions run #1469 passed **`938 passed in 682.23s (0:11:22)`**. The reviewed branch was **ahead 98 / behind 0**, PR #12 was `mergeable = true`, and there were **0** unresolved inline review threads and **0** submitted review blockers.
 
-Stage 11 criteria **1–50** are completed. PR #12 is merge-ready and remains unmerged.
+Stage 11 criteria **1–50** were completed at that historical merge-readiness checkpoint. At that time PR #12 was merge-ready and unmerged. PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
+
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — in progress
+
+Selected Stage 12 gate:
+
+> **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+### Stage 12.0 — protocol freeze — completed
+
+The freeze separates physical orbit, gauge representative/flow, external parameterization, event, internal clock, modal continuation, and measurement roles. It also fixes the canonical four-orbit family and the central anti-triviality requirement
+
+`quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas`.
+
+### Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — completed
+
+Criteria **11–16** satisfied. The common law `C = p_T + p^2/2 = 0` is instantiated on four distinct physical orbits with five representatives each: **20 representatives total** and **80** ordered non-identity same-orbit `Phi_s` transports. Stage 11's four positive external parameterizations are represented on every orbit, giving **16 external parameterization views**.
+
+Stage 12A checkpoint head `4e379f6fd5b075078beebdbae8d940ff4bed773d` passed run #1508: **`963 passed in 680.97s (0:11:20)`**.
+
+`constraint-generated gauge flow != external reparameterization by definition`.
+
+### Stage 12B — Dirac/relational observables and physical-orbit discrimination — completed
+
+Criteria **17–23** satisfied. Stage 12B independently reconstructs `Q_D=q-pT` and `P_D=p` from **20 representative Dirac estimates** and **16 external Dirac estimates**. All **6** unordered different-orbit pairs remain distinct under the full Dirac pair; same-P/different-Q and same-Q/different-P controls are explicitly rejected as same-orbit matches.
+
+The relational family evaluates `q(T=tau)=Q_D+P_D tau` at four readings, producing **144 relational q(T=tau) evaluations**, and evaluates `dq/dT=P_D` through **232 relational derivative evaluations**. Cross-orbit weak-match rules encounter **30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda** coincidences, all rejected as sufficient physical-orbit identity.
+
+Bounded result:
+
+`Stage 12B Dirac/relational physical-orbit discrimination on the frozen finite family = established`.
+
+`Dirac-invariant orbit data + nontrivial relational change` is therefore executable in this finite carrier.
+
+`Dirac invariant != timeless ontology by definition`.
+
+`Dirac-invariant data + relational change != proof of eternalism`.
+
+`relational change != ontological becoming by definition`.
+
+`gauge quotient != elimination of physical change`.
+
+`full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
+
+### Next: Stage 12C — typed gauge atlas, quotient, and descent of relational structure
+
+Stage 12C must construct the typed atlas explicitly, test identity/inverse/composition of same-orbit gauge transports, recover exactly the intended four quotient classes, and verify that the Stage 12B relational/Dirac content descends without collapsing distinct physical orbits.
 
 ## Later directions
 
@@ -329,6 +375,13 @@ A richer causal/order layer, nonideal/POVM clocks, and a minimal gravitational/m
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
+- `constraint-generated gauge flow != ontological becoming`;
+- `different physical orbit != later event on one orbit`;
+- `Dirac invariant != timeless ontology by definition`;
+- `Dirac-invariant data + relational change != proof of eternalism`;
+- `relational change != ontological becoming by definition`;
+- `gauge quotient != elimination of physical change`;
+- `multi-orbit gauge covariance != general covariance`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`.

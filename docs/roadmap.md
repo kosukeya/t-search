@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T11_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, and Stage 12C are completed on Draft PR #13; criteria 1–31 are satisfied and Stage 12D is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, Stage 12C, and Stage 12D are completed on Draft PR #13; criteria 1–38 are satisfied and Stage 12E is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -335,6 +335,8 @@ Bounded structural result:
 
 `gauge-representative redundancy + physical-orbit plurality + nontrivial relational change`.
 
+Stage 12C final checkpoint head `d3e7dd9dd24a671ec7503d16d953b34139f17e3a` passed run #1548: **`984 passed in 680.36s (0:11:20)`**.
+
 `gauge quotient != elimination of physical change`.
 
 `constraint orbit != modal continuation`.
@@ -345,9 +347,31 @@ Bounded structural result:
 
 `multi-orbit gauge covariance != general covariance`.
 
-### Next: Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent
+### Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — completed
 
-Stage 12D must lift the inherited typed O/P/R/V/Xi and future-measurement family over every canonical physical orbit and representative while adding at least one genuinely orbit-sensitive operational witness. A trivial copy of one orbit-insensitive measurement payload to all orbits is not sufficient.
+Criteria **32–38** satisfied. Stage 12D fixes external parameterization `identity` and the inherited Stage 11D internal chart `A/e2`, isolating same-orbit `Phi` descent from the three-way compatibility test reserved for Stage 12E.
+
+All **20** representatives receive typed O/P/R/V/Xi views. Representative-specific gauge metadata remain in Xi, while quotient projection removes representative id/`s`; the positive family yields **4** distinct quotient-level architectures.
+
+The inherited future-measurement family yields **40** per-continuation measurement views / **80** outcome evaluations, **20** weighted public views, and **20** common-evidence posterior views. Within each physical orbit, all five gauge representatives must agree on these inherited outputs.
+
+The explicit orbit-sensitive diagnostic bridge adds **20** witness views with **4** distinct physical-orbit signatures. Its minimum canonical pairwise separation is approximately **0.0057933319**. The bridge is declared, bounded, and diagnostic rather than a claimed derivation of quantum measurement from the classical constraint.
+
+Six controls reject wrong orbit/event/class/outcome contexts, wrong normalization, and `orbit_insensitive_measurement_clone`.
+
+Bounded result:
+
+`Stage 12D typed O/P/R/V and orbit-sensitive future-measurement descent on the frozen finite gauge atlas = established`.
+
+`same gauge-invariant probability within an orbit != all physical orbits operationally identical`.
+
+`typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`.
+
+`orbit-sensitive witness != empirical prediction`.
+
+### Next: Stage 12E — internal clock × external parameterization × gauge-flow compatibility
+
+Stage 12E must represent `C`, `G`, and `Phi` separately and test clock × gauge, reparameterization × gauge, and combined clock × reparameterization × gauge paths while preserving the declared relational and measurement outputs. Mixed-orbit or untyped paths must fail detectably.
 
 ## Later directions
 
@@ -407,6 +431,9 @@ A richer causal/order layer, nonideal/POVM clocks, and a minimal gravitational/m
 - `gauge quotient != elimination of physical change`;
 - `constraint orbit != modal continuation`;
 - `operational quotient descent != modal/ontological identity`;
+- `same gauge-invariant probability within an orbit != all physical orbits operationally identical`;
+- `typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`;
+- `orbit-sensitive witness != empirical prediction`;
 - `finite gauge atlas != diffeomorphism invariance`;
 - `multi-orbit gauge covariance != general covariance`;
 - `finite-model success != empirical discovery`;

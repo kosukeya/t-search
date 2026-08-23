@@ -8,11 +8,23 @@ This roadmap is provisional and evidence-selected.
 
 Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11E are completed; criteria 1–43 are satisfied and Stage 11F is next.
 
-## Stages 0–8 — completed and merged
+## Stages 0–6 — completed and merged
 
-Stages 0–6 established definitions, reconstruction/accessibility controls, modal underdetermination, reversible record asymmetry, constrained relational quantum dynamics, genuine physical clock changes, and the layered O/P/R/V/Xi candidate. Stage 7 integrated quantum records and Stage 8 integrated quantum Potentiality before selecting the directional-record gate.
+Stages 0–6 established definitions, reconstruction/accessibility controls, modal underdetermination, reversible record asymmetry, constrained relational quantum dynamics, genuine physical clock changes, and the layered O/P/R/V/Xi candidate.
 
-Gravity/general covariance remains deferred, not abandoned.
+## Stage 7 — Quantum records inside a constrained multi-clock model — completed and merged
+
+Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. The Stage 6G evidence selection superseded that chronology and inserted the more discriminating record gate first.
+
+Gravity/general covariance is deferred, not abandoned.
+
+## Stage 8 — Quantum Potentiality inside the shared constrained construction — completed and merged
+
+Stage 8 integrated explicit Potentiality/extension semantics into the shared constrained quantum carrier, transported modal structure across clock perspectives, separated operational equality from modal identity, and pressure-tested the layered candidate.
+
+Stage 8G selected directional-record integration as Stage 9. Stage 8G closed criteria **48–49** by selecting the next finite-model gate; criterion **50** remained the external repository-validation checkpoint.
+
+`Potentiality != quantum randomness by definition`.
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — completed and merged
 
@@ -75,6 +87,18 @@ PR #11 was subsequently merged into `main` at `4a322634a5b83e416d374ee18e96ac6c7
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
+
+### Historical planning labels retained for regression context
+
+Before Stage 10G closed its synthesis and before Stage 11 became the active gate, planning documents used the historical labels below. They are retained only to preserve the evidence-selected chronology; they do not describe the current state.
+
+## Stage 10 — Fully typed future-measurement covariance — in progress
+
+Selected Stage 10 gate remained the fully typed cross-continuation future-measurement family above until Stage 10G closed it.
+
+## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate
+
+At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
 
 ## Stage 11 — Parametrized covariance precursor — Stage 11E completed
 
@@ -144,6 +168,8 @@ Run #1361: **`907 passed in 590.98s (0:09:50)`**. Final Stage 11D baseline run #
 `external lapse != quantum measurement normalization form`.
 
 `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`.
+
+`future-measurement reparameterization covariance != clock-change x reparameterization compatibility`.
 
 ### Stage 11E — clock-change × parameterization compatibility — completed
 
@@ -216,6 +242,7 @@ A richer causal/order layer and nonideal/POVM clocks remain live candidates rath
 - `selector-free public projection != absence of privileged modal semantics`;
 - `external lapse != quantum measurement normalization form`;
 - `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
+- `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
 - `internal-clock covariance != reparameterization covariance`;
 - `commuting typed product square != independent interaction law`;
 - `commuting typed diagram != general covariance`;

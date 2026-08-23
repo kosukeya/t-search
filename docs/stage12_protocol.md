@@ -1,6 +1,6 @@
 # Stage 12 Protocol — Multi-Orbit Constraint-Generated Gauge Atlas
 
-Status: **Stage 12F completed; criteria 1–47 satisfied; criteria 48–50 pending.**
+Status: **Stage 12G completed; criteria 1–49 satisfied; criterion 50 pending.**
 
 Selected Stage 12 gate from Stage 11G:
 
@@ -383,6 +383,8 @@ Bounded result:
 
 `Stage 12F typed-resource ablation / wrong-orbit / false-positive controls on the frozen finite multi-orbit gauge atlas = established`.
 
+Stage 12F source run #1596 produced **`1 failed, 1009 passed in 696.32s (0:11:36)`** because one test used exact float equality `0.050000000000000044 == 0.05`. The Stage 12F source implementation was unchanged when that assertion was replaced by a tolerance comparison. The final Stage 12F repository checkpoint head `68f50acacc4b18f7f646ddc912a8e2791e24cded` passed run **#1612** with **`1011 passed in 692.53s (0:11:32)`** and supersedes #1596 as the repository checkpoint.
+
 `numerical reconstructibility != typed operational identification`.
 
 `reconstructible != universally redundant`.
@@ -401,16 +403,63 @@ Bounded result:
 
 `not_established != false`.
 
+### Stage 12G
+
+Stage 12G executes the frozen synthesis vocabulary over the complete Stage 12A–F diagnostic snapshot.
+
+Selected status:
+
+`multi_orbit_gauge_covariant`.
+
+This is the unique strongest status because criteria 11–47 all pass on the declared positive/negative family. The label is bounded to the four canonical physical orbits, twenty sampled representatives, finite same-orbit quotient/groupoid, relational/Dirac descent, typed O/P/R/V future-measurement descent, orbit-sensitive diagnostic bridge, finite `C × G × Phi` compatibility family, and Stage 12F control matrix.
+
+Updated finite-model candidate:
+
+`T12_candidate=(O,P,R,V;Xi)`
+
+with the bounded additional structure of a typed physical-orbit quotient `Q_Phi` and separately typed `C`, `G`, and `Phi` transport families.
+
+Strongest unresolved structural boundary:
+
+`single Hamiltonian constraint => nontrivial multi-constraint algebra / refoliation structure`.
+
+Stage 13 candidate ranking:
+
+| rank | gate | score |
+| --- | --- | ---: |
+| 1 | `multi_constraint_refoliation_precursor` | **10** |
+| 2 | `gravitational_minisuperspace_extension` | **7** |
+| 2 | `richer_causal_order` | **7** |
+| 4 | `nonideal_povm_clocks` | **6** |
+
+Selected Stage 13 gate:
+
+> **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
+
+The selected gate isolates the first nontrivial constraint-algebra effects before adding a dynamical gravitational carrier. A direct gravity jump would otherwise confound failures due to gravity with failures due merely to leaving the single-constraint setting.
+
+`multi_orbit_gauge_covariant finite family != general covariance`.
+
+`finite constraint-generated gauge atlas != diffeomorphism invariance`.
+
+`finite C x G x Phi compatibility != refoliation invariance`.
+
+`constraint-algebra/refoliation precursor != general relativity`.
+
+`Dirac-invariant data + relational change != proof of eternalism`.
+
+`relational change != ontological becoming by definition`.
+
 ## 11. Frozen synthesis vocabulary
 
-Stage 12G must select exactly one of:
+Stage 12G selects exactly one of:
 
-- `multi_orbit_gauge_covariant`;
+- `multi_orbit_gauge_covariant` — **selected**;
 - `multi_orbit_gauge_partial`;
 - `multi_orbit_gauge_obstructed`;
 - `inconclusive`.
 
-`multi_orbit_gauge_obstructed` is reserved for explicit positive-family failure, not a deliberately wrong control behaving correctly.
+`multi_orbit_gauge_obstructed` remains reserved for explicit positive-family failure, not a deliberately wrong control behaving correctly.
 
 ## 12. Stage sequence
 
@@ -421,8 +470,8 @@ Stage 12G must select exactly one of:
 - Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**;
 - Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**;
 - Stage 12F — ablation / wrong-orbit / false-positive controls — **completed**;
-- Stage 12G — executable synthesis and evidence-selected next gate — **next**;
-- criterion 50 — external final full-repository regression / merge-readiness review.
+- Stage 12G — executable synthesis and evidence-selected next gate — **completed**;
+- criterion 50 — external final full-repository regression / merge-readiness review — **next**.
 
 ## 13. Exit criteria
 
@@ -488,8 +537,8 @@ Stage 12G must select exactly one of:
 47. Ablation/failure results are not promoted to claims about metaphysical fundamentality, eternalism, or ontological becoming — **satisfied**.
 
 ### Criteria 48–49 — Stage 12G
-48. Executable synthesis selects exactly one frozen Stage 12 status from the full Stage 12A–F evidence chain — **pending**.
-49. Next research gate is evidence-selected without presupposing GR or general covariance — **pending**.
+48. Executable synthesis selects exactly one frozen Stage 12 status from the full Stage 12A–F evidence chain — **satisfied**.
+49. Next research gate is evidence-selected without presupposing GR or general covariance — **satisfied**.
 
 ### Criterion 50 — external repository validation
 50. External final full-repository regression and merge-readiness review — **pending**.
@@ -505,10 +554,14 @@ Stage 12G must select exactly one of:
 - `gauge quotient != elimination of physical change`;
 - `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`;
 - `multi-orbit gauge covariance != general covariance`;
+- `multi_orbit_gauge_covariant finite family != general covariance`;
 - `finite gauge atlas != diffeomorphism invariance`;
+- `finite constraint-generated gauge atlas != diffeomorphism invariance`;
 - `commuting finite gauge/clock diagrams != refoliation invariance`;
+- `finite C x G x Phi compatibility != refoliation invariance`;
 - `single Hamiltonian constraint != hypersurface-deformation algebra`;
 - `constraint-generated gauge precursor != general relativity`;
+- `constraint-algebra/refoliation precursor != general relativity`;
 - `typed-resource necessity != metaphysical fundamentality`;
 - `operational quotient descent != modal/ontological identity`;
 - `same gauge-invariant probability within an orbit != all physical orbits operationally identical`;
@@ -532,4 +585,5 @@ Stage 12G must select exactly one of:
 - `finite-model ablation != fundamental ontology`;
 - `false-positive rejection != proof of eternalism`;
 - `finite-model success != empirical discovery`;
+- `repository validation != new scientific evidence`;
 - `not_established != false`.

@@ -1,6 +1,6 @@
 # Stage 12 Protocol — Multi-Orbit Constraint-Generated Gauge Atlas
 
-Status: **Stage 12C completed; criteria 1–31 satisfied; criteria 32–50 pending.**
+Status: **Stage 12D completed; criteria 1–38 satisfied; criteria 39–50 pending.**
 
 Selected Stage 12 gate from Stage 11G:
 
@@ -22,8 +22,6 @@ The Stage 11 bounded result carried forward is
 
 `Stage 11 finite typed parametrized covariance status = parametrized_covariant`.
 
-This remains one-orbit finite evidence.
-
 `one-orbit covariance != multi-orbit gauge covariance`.
 
 `external parameterization independence != diffeomorphism invariance`.
@@ -32,24 +30,19 @@ This remains one-orbit finite evidence.
 
 ## 1. Frozen scientific question and type separation
 
-Stage 12 asks whether the Stage 11 relational/clock/modal/record/measurement architecture can be organized over a **family of physically distinct constraint orbits** while quotienting only genuine constraint-generated gauge redundancy.
+Stage 12 asks whether the Stage 11 relational/clock/modal/record/measurement architecture can be organized over a family of physically distinct constraint orbits while quotienting only genuine constraint-generated gauge redundancy.
 
-The protocol distinguishes:
+The protocol separately types:
 
 - physical orbit identity `omega`;
 - a point/representative on a constraint orbit;
 - constraint-generated gauge-flow parameter `s`;
-- external parameterization identity `rho`;
-- raw external parameter label `lambda_rho`;
+- external parameterization identity `rho` and raw label `lambda_rho`;
 - physical event identity `e`;
 - internal clock perspective `X in {A,B,C}` and reading `tau_X`;
 - continuation/class `h in {h_L,h_R}`;
-- prediction anchor and measurement target;
-- outcome identity/semantics/provenance;
-- measurement normalization convention;
-- continuation-weight semantics;
-- orbit/gauge/event correspondences;
-- inherited clock/class/outcome correspondences.
+- prediction anchor, measurement target, outcomes, normalization, and continuation weights;
+- orbit/gauge/event and inherited clock/class/outcome correspondences.
 
 Frozen distinctions:
 
@@ -71,13 +64,11 @@ Frozen distinctions:
 
 ## 2. Frozen constrained multi-orbit carrier
 
-Stage 12 retains the minimal Stage 11 constrained scaffold
+The common constrained scaffold is
 
 `C = p_T + p^2/2 approx 0`
 
-with canonical variables `(T,p_T;q,p)`.
-
-Constraint-generated gauge flow is frozen as the Hamiltonian flow of `C`:
+with canonical variables `(T,p_T;q,p)` and Hamiltonian gauge flow
 
 `dT/ds = 1`,
 
@@ -87,29 +78,21 @@ Constraint-generated gauge flow is frozen as the Hamiltonian flow of `C`:
 
 `dp_T/ds = 0`.
 
-The frozen Dirac-type invariants are
+Frozen Dirac-type invariants:
 
 `P_D = p`,
 
-`Q_D = q - p T`,
+`Q_D = q - p T`.
 
-with targets
-
-`{P_D,C}=0`,
-
-`{Q_D,C}=0`.
-
-The complete relational observable is frozen as
+The complete relational observable is
 
 `q(T=tau) = Q_D + P_D tau`.
-
-This gives the controlled separation
 
 `Dirac-invariant orbit data can be constant while relational change q(T=tau) remains nontrivial`.
 
 ## 3. Frozen physical-orbit family
 
-The canonical physical-orbit controls are:
+Canonical controls:
 
 - `omega_alpha: (Q_D,P_D)=(-0.35,1.25)` — exact Stage 11 baseline;
 - `omega_beta: (Q_D,P_D)=(0.40,1.25)` — same momentum, different relational intercept;
@@ -118,56 +101,13 @@ The canonical physical-orbit controls are:
 
 Every positive orbit satisfies the same constraint law while representing a distinct physical initial-data class under the frozen finite quotient rule.
 
-## 4. Frozen gauge-equivalence rule
+## 4. Frozen gauge-equivalence and quotient rule
 
-Within the declared Stage 12 family, two sampled representatives are licensed as gauge-related only if:
+Two sampled representatives are licensed as gauge-related only if they lie on the constraint surface, an explicit typed same-orbit `Phi_s` connects them, their independently reconstructed `(Q_D,P_D)` agree within tolerance, and the declared orbit/event/gauge provenance is consistent.
 
-1. they lie on the constraint surface;
-2. an explicit typed constraint-generated gauge transport connects them within the same `omega`;
-3. the frozen Dirac pair `(Q_D,P_D)` agrees within tolerance;
-4. orbit identity, event correspondence, and gauge provenance are consistent.
-
-A mere equality of raw labels, clock readings, `q`, `T`, or one invariant alone is insufficient.
-
-Across the canonical family:
+A mere equality of raw labels, `T`, `q`, or one invariant is insufficient.
 
 `different (Q_D,P_D) => different physical orbit`.
-
-The converse is frozen only for this finite model family and is not promoted to a universal theorem about constrained systems.
-
-## 5. Frozen external reparameterization carry-over
-
-Each physical orbit must admit the Stage 11 positive external parameterization family:
-
-- `f_id(lambda)=lambda`;
-- `f_aff(lambda)=2 lambda + 1`;
-- `f_cub(lambda)=lambda + lambda^3/4`;
-- `f_sinh(lambda)=sinh(lambda)`.
-
-The Stage 11 lapse/Jacobian law remains
-
-`N'(lambda') = N(lambda)/f'(lambda)`.
-
-Stage 12 keeps two transformation notions separately typed:
-
-- `G_{rho->sigma}`: external representation/reparameterization transport;
-- `Phi_s`: constraint-generated gauge flow between phase-space representatives on one orbit.
-
-They may be compatible in this scaffold, but Stage 12 does not identify them by definition.
-
-## 6. Frozen descent targets
-
-A quantity or typed structure `A` descends to the gauge quotient only when its value/role is independent of the chosen representative within each frozen physical orbit under the declared equivalence relation.
-
-Targets:
-
-- constraint satisfaction;
-- `Q_D` and `P_D`;
-- relational observable `q(T=tau)` and relational derivative `dq/dT`;
-- physical orbit classification;
-- typed O/P/R/V/Xi architecture;
-- Stage 10/11 future-measurement probabilities, weights, modal public views, and common-evidence updates;
-- clock-change / reparameterization / gauge-flow path compatibility.
 
 A positive Stage 12 result requires both
 
@@ -177,185 +117,181 @@ and
 
 `different physical orbit -> not collapsed merely by gauge quotienting`.
 
-## 7. Frozen O/P/R/V/Xi and measurement carry-over
+`quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas`.
 
-Stage 12 reuses rather than redesigns
+## 5. Frozen external reparameterization carry-over
 
-`T11_candidate=(O,P,R,V;Xi)`.
+Each orbit admits the Stage 11 positive family:
 
-It preserves:
+- `f_id(lambda)=lambda`;
+- `f_aff(lambda)=2 lambda + 1`;
+- `f_cub(lambda)=lambda + lambda^3/4`;
+- `f_sinh(lambda)=sinh(lambda)`.
+
+The lapse/Jacobian law remains
+
+`N'(lambda') = N(lambda)/f'(lambda)`.
+
+Separate transformations:
+
+- `G_{rho->sigma}` — external reparameterization transport;
+- `Phi_s` — constraint-generated same-orbit gauge transport.
+
+## 6. Frozen O/P/R/V/Xi and future-measurement carry-over
+
+Stage 12 reuses rather than redesigns `T11_candidate=(O,P,R,V;Xi)` and preserves:
 
 - `QExt(e1)={h_L,h_R}`;
-- prediction anchor `e1`;
-- measurement target `e2`;
+- prediction anchor `e1` and measurement target `e2`;
 - outcomes `future_signature_left` and `future_signature_other`;
 - continuation-specific operational normalization/effect typing;
 - class/weight alignment;
 - matched epistemic and ontic-extension public interfaces;
 - hidden-selector nonleakage requirements.
 
-Stage 12D must include at least one **orbit-sensitive operational witness** whose typed input depends on gauge-invariant/relational physical-orbit data.
+A quantity descends only when its licensed value/role is independent of the chosen same-orbit gauge representative.
+
+Stage 12D must include an **orbit-sensitive operational witness** whose typed input depends on gauge-invariant/relational physical-orbit data.
 
 `same gauge-invariant probability within an orbit != all physical orbits operationally identical`.
 
 `typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`.
 
-## 8. Frozen compatibility targets
+## 7. Frozen compatibility targets
 
-Stage 12E separately represents:
+Stage 12E separately represents internal clock transport `C_{X->Y}`, external reparameterization `G_{rho->sigma}`, and gauge transport `Phi_s`.
 
-- internal clock transport `C_{X->Y}`;
-- external reparameterization transport `G_{rho->sigma}`;
-- same-orbit constraint-generated gauge transport `Phi_s`.
-
-Representative commuting targets include
+Targets include
 
 `C o Phi ~= Phi o C`,
 
 `G o Phi ~= Phi o G`,
 
-and the inherited
+and inherited
 
 `C o G ~= G o C`.
 
-This is a finite path-compatibility test, not a hypersurface-deformation/refoliation algebra.
-
 `commuting finite gauge/clock diagrams != general covariance`.
 
-## 9. Frozen negative and false-positive controls
+## 8. Frozen negative and false-positive controls
 
-Stage 12 freezes at least the following controls:
+The frozen control family includes:
 
-1. classify `omega_alpha` and `omega_beta` as gauge-equivalent because `P_D` agrees while `Q_D` differs;
-2. classify `omega_alpha` and `omega_gamma` as gauge-equivalent because `Q_D` agrees while `P_D` differs;
-3. force a gauge transport between representatives with different `(Q_D,P_D)`;
-4. match events by equal raw `lambda` rather than typed event correspondence;
-5. match events by equal `T` or equal `q` alone across distinct physical orbits;
-6. remove or corrupt orbit identity/correspondence while retaining numerically reconstructible data;
-7. alter `Q_D` or `P_D` along a purported positive gauge path;
-8. omit or corrupt the Stage 11 lapse/Jacobian law under nonlinear external reparameterization;
-9. mix internal-clock, external-parameterization, and gauge-flow labels without typed provenance;
-10. identify constraint-orbit identity with modal continuation `h_L/h_R`;
-11. copy an orbit-insensitive measurement payload to all orbits and falsely classify that alone as multi-orbit physical discrimination;
-12. corrupt O/P/R/V or measurement payload as a function of gauge representative while preserving superficial labels;
-13. use orientation reversal or non-injective relabeling as if it belonged to the frozen positive external family;
-14. treat movement between physically distinct orbits as temporal succession or ontological becoming.
+1. `omega_alpha/omega_beta` false equivalence from equal `P_D` alone;
+2. `omega_alpha/omega_gamma` false equivalence from equal `Q_D` alone;
+3. forced cross-orbit gauge transport;
+4. equal raw label matching;
+5. equal `T` or equal `q` matching across physically distinct orbits;
+6. removed/corrupted orbit identity while numerically reconstructible;
+7. altered `Q_D` or `P_D` along a purported gauge path;
+8. corrupted Stage 11 lapse/Jacobian semantics;
+9. untyped mixing of clock/reparameterization/gauge labels;
+10. constraint orbit identified with modal continuation;
+11. an orbit-insensitive measurement copied to all orbits and falsely called discrimination;
+12. representative-dependent O/P/R/V or measurement corruption;
+13. orientation reversal or non-injective relabeling admitted as positive;
+14. motion between physically distinct orbits interpreted as temporal succession/becoming.
 
-Expected classifications separate
+Expected statuses keep `reconstructible`, `lost`, `not_established`, `numerically_refuted`, and `false_positive_rejected` distinct.
 
-`reconstructible`, `lost`, `not_established`, `numerically_refuted`, and `false_positive_rejected`.
+## 9. Anti-triviality requirements
 
-## 10. Frozen anti-triviality requirements
+A successful Stage 12 must retain multiple gauge representatives per orbit, four physically distinct orbits, invariant full Dirac data within each orbit, nontrivial relational change, Stage 11 external covariance, quotient descent, an orbit-sensitive operational witness, explicit clock x reparameterization x gauge compatibility, and rejection of the frozen false-positive family.
 
-A later positive Stage 12 result must demonstrate all of the following:
+## 10. Implementation checkpoints
 
-- multiple representatives per physical orbit connected by explicit constraint-generated gauge flow;
-- four or more physically distinct orbits in the same constrained law;
-- invariant `(Q_D,P_D)` along each positive orbit;
-- at least one pair with same `P_D` but different `Q_D` and one pair with same `Q_D` but different `P_D`;
-- no cross-orbit gauge collapse for those controls;
-- nontrivial relational change `q(T=tau)` within each orbit;
-- multiple external parameterizations per orbit with Stage 11 covariance preserved;
-- quotient descent of the declared relational and typed structures where licensed;
-- an orbit-sensitive operational witness;
-- explicit clock × reparameterization × gauge compatibility tests;
-- rejection of the frozen false-positive family.
+### Stage 12A
 
-Central guard:
-
-`quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas`.
-
-### Stage 12A implementation checkpoint
-
-The finite carrier instantiates the frozen protocol as follows:
-
-- four canonical physical orbits with the exact frozen `(Q_D,P_D)` pairs;
-- five sampled representatives per orbit at `s in {-1.0,-0.5,0.0,0.5,1.0}`;
+- four canonical physical orbits;
+- five representatives per orbit at `s in {-1.0,-0.5,0.0,0.5,1.0}`;
 - **20 representatives total**;
-- **80 transports total** across all ordered non-identity same-orbit `Phi_s` paths;
-- Stage 11 identity/affine/cubic/sinh external parameterizations lifted to every orbit, giving **16 external parameterization views**;
-- gauge-flow typing `constraint_generated_gauge_flow` distinct from external typing `external_reparameterization`;
-- orbit, representative, relational-event, gauge, and external-parameter provenance explicit.
-
-In the Stage 12A seed chart `T=s` numerically, but
+- **80 transports total** across ordered non-identity same-orbit paths;
+- **16 external parameterization views**;
+- types `constraint_generated_gauge_flow` and `external_reparameterization` kept distinct.
 
 `clock coordinate T != gauge-flow parameter s by type`.
 
-The seed equality is a chart choice and not a definitional identification.
+### Stage 12B
 
-### Stage 12B implementation checkpoint
+Independent reconstruction uses `Q_D=q-pT`, `P_D=p`.
 
-Stage 12B independently recomputes the frozen Dirac pair from phase-space values rather than accepting stored invariant fields:
-
-`Q_D=q-pT`, `P_D=p`.
-
-Executable evidence:
+Evidence:
 
 - **20 representative Dirac estimates**;
-- **16 external Dirac estimates** reconstructed across the Stage 11 positive family;
-- all **6** unordered canonical different-orbit pairs remain distinct under the full Dirac pair;
-- `tau in {-1.25,-0.25,0.75,1.50}`;
+- **16 external Dirac estimates**;
+- all 6 distinct canonical-orbit pairs remain distinct under the full pair;
 - **144 relational q(T=tau) evaluations**;
-- **232 relational derivative evaluations** with target `dq/dT=P_D`;
-- same-P/different-Q `omega_alpha/omega_beta` rejected as same orbit;
-- same-Q/different-P `omega_alpha/omega_gamma` rejected as same orbit;
-- **30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda** cross-orbit coincidences explicitly rejected as sufficient physical-orbit identifiers.
-
-This realizes the finite conjunction
-
-`Dirac-invariant orbit data + nontrivial relational change`.
+- **232 relational derivative evaluations**;
+- **30 equal-T**, **2 equal-q**, and **312 equal-raw-lambda** cross-orbit coincidences rejected.
 
 `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
 
 `relational change != ontological becoming by definition`.
 
-### Stage 12C implementation checkpoint
+### Stage 12C
 
-Stage 12C turns the sampled representatives into a typed finite same-orbit gauge groupoid and constructs the quotient from arrow connectivity rather than directly grouping by the stored `orbit_id` field.
+Stage 12C builds the quotient from typed arrow connectivity rather than directly grouping stored orbit labels.
 
-Typed node roles explicitly distinguish:
-
-- physical orbit;
-- gauge representative;
-- external parameterization;
-- relational event;
-- internal clock `T`;
-- modal continuation `h_L/h_R`.
-
-Finite gauge-atlas evidence:
+Evidence:
 
 - **100 typed `Phi` arrows** including identities;
 - **20 identity arrows**;
 - **100 inverse checks**;
 - **500 composition checks**;
 - **0 licensed cross-orbit gauge arrows**;
-- exact quotient partition into **4 classes** of **5 representatives** each;
-- **16 quotient-level relational/Dirac descent evaluations** across the four frozen `tau` values;
-- orbit identity/correspondence ablation classified as typed **`lost`** while the full Dirac-pair partition remains numerically **`reconstructible`** in this finite family;
-- two independently corrupted purported gauge paths (`wrong_Q_D_path`, `wrong_P_D_path`) classified **`numerically_refuted`**;
-- constraint-orbit / modal-continuation false identification classified **`false_positive_rejected`**.
+- exactly **4 quotient classes**, each of size 5;
+- **16 quotient-level** relational/Dirac descent evaluations;
+- orbit-identity ablation: typed **`lost`**, numerical **`reconstructible`**;
+- `wrong_Q_D_path` and `wrong_P_D_path`: **`numerically_refuted`**;
+- constraint-orbit/modal-continuation conflation: **`false_positive_rejected`**.
 
-The quotient-level descent checks independently recompute
+Incoming Stage 12B repository checkpoint run **#1528**: **`973 passed in 677.85s (0:11:17)`**.
 
-`Q_D=q-pT`,
-
-`P_D=p`,
-
-`q(T=tau)=Q_D+P_D tau`,
-
-and
-
-`dq/dT=P_D`
-
-from every representative in each quotient class.
-
-The finite structural result is
-
-`gauge-representative redundancy + physical-orbit plurality + nontrivial relational change`.
+Final Stage 12C repository checkpoint head `d3e7dd9dd24a671ec7503d16d953b34139f17e3a`, run **#1548**: **`984 passed in 680.36s (0:11:20)`**.
 
 `gauge quotient != elimination of physical change`.
 
 `operational quotient descent != modal/ontological identity`.
+
+### Stage 12D
+
+To isolate gauge-representative descent from Stage 12E path compatibility, Stage 12D fixes external parameterization `identity` and the inherited Stage 11D internal measurement chart `A/e2`.
+
+Every Stage 12A representative receives O/P/R/V plus extended Xi carrying orbit, quotient, representative, gauge provenance, event/class/outcome, lapse/normalization, and orbit-bridge semantics. The quotient projection removes representative-specific id/`s` while preserving licensed quotient-level content.
+
+Executable family:
+
+- physical orbits: **4**;
+- gauge representatives / typed O/P/R/V/Xi architecture views: **20**;
+- quotient-level architecture views: **4** expected distinct views, one per physical orbit;
+- inherited per-continuation measurement views: **40**;
+- inherited outcome probability evaluations: **80**;
+- weighted public views: **20**;
+- common-evidence posterior views: **20**;
+- orbit-sensitive witness views: **20** with **4** distinct physical-orbit signatures;
+- Stage 12D controls: **6**.
+
+At the inherited target reading `tau_target=13/12`, the declared diagnostic bridge is
+
+`q_target = Q_D + P_D tau_target`,
+
+`z = Q_D + 0.5 P_D + 0.25 q_target`,
+
+`p_left = 0.5 + 0.25 tanh(z)`,
+
+`p_other = 1 - p_left`.
+
+The canonical `p_left` values are approximately 0.6205873778, 0.7245845693, 0.5349263257, and 0.7303779012 for alpha/beta/gamma/delta respectively; the minimum pairwise separation is approximately **0.0057933319**.
+
+Controls reject wrong orbit/event/class/outcome contexts, wrong normalization, and `orbit_insensitive_measurement_clone`.
+
+Bounded result:
+
+`Stage 12D typed O/P/R/V and orbit-sensitive future-measurement descent on the frozen finite gauge atlas = established`.
+
+`representative-specific Xi provenance != quotient-level physical content`.
+
+`orbit-sensitive witness != empirical prediction`.
 
 ## 11. Frozen synthesis vocabulary
 
@@ -366,7 +302,7 @@ Stage 12G must select exactly one of:
 - `multi_orbit_gauge_obstructed`;
 - `inconclusive`.
 
-`multi_orbit_gauge_obstructed` is reserved for an explicit failure of the declared positive family, not for a deliberately wrong negative control behaving incorrectly.
+`multi_orbit_gauge_obstructed` is reserved for explicit positive-family failure, not a deliberately wrong control behaving correctly.
 
 ## 12. Stage sequence
 
@@ -374,8 +310,8 @@ Stage 12G must select exactly one of:
 - Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**;
 - Stage 12B — Dirac/relational observables and physical-orbit discrimination — **completed**;
 - Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**;
-- Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **next**;
-- Stage 12E — internal clock × external parameterization × gauge-flow compatibility;
+- Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**;
+- Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **next**;
 - Stage 12F — ablation / wrong-orbit / false-positive controls;
 - Stage 12G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
@@ -422,13 +358,13 @@ Stage 12G must select exactly one of:
 31. Gauge quotienting does not identify constraint orbits with modal continuations — **satisfied**.
 
 ### Criteria 32–38 — Stage 12D
-32. O/P/R/V/Xi architecture lifted over every canonical orbit and representative — **pending**.
-33. Licensed within-orbit representative changes preserve quotient-level typed O/P/R/V content — **pending**.
-34. Stage 10/11 future-measurement family descends within each physical orbit — **pending**.
-35. An orbit-sensitive operational witness is implemented — **pending**.
-36. Same-orbit gauge representatives give consistent orbit-sensitive predictions — **pending**.
-37. Distinct physical-orbit data are not erased solely by representative quotienting — **pending**.
-38. Wrong orbit/event/class/outcome/normalization controls are rejected — **pending**.
+32. O/P/R/V/Xi architecture lifted over every canonical orbit and representative — **satisfied**.
+33. Licensed within-orbit representative changes preserve quotient-level typed O/P/R/V content — **satisfied**.
+34. Stage 10/11 future-measurement family descends within each physical orbit — **satisfied**.
+35. An orbit-sensitive operational witness is implemented — **satisfied**.
+36. Same-orbit gauge representatives give consistent orbit-sensitive predictions — **satisfied**.
+37. Distinct physical-orbit data are not erased solely by representative quotienting — **satisfied**.
+38. Wrong orbit/event/class/outcome/normalization controls are rejected — **satisfied**.
 
 ### Criteria 39–43 — Stage 12E
 39. `C`, `G`, and `Phi` transports are separately typed and represented — **pending**.
@@ -467,7 +403,10 @@ Stage 12G must select exactly one of:
 - `constraint-generated gauge precursor != general relativity`;
 - `typed-resource necessity != metaphysical fundamentality`;
 - `operational quotient descent != modal/ontological identity`;
+- `same gauge-invariant probability within an orbit != all physical orbits operationally identical`;
+- `typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`;
 - `orbit-sensitive measurement bridge != derivation of quantum theory from the classical constraint`;
+- `orbit-sensitive witness != empirical prediction`;
 - `future-measurement covariance != future actuality`;
 - `parameterization/gauge covariance != refutation of ontological becoming`;
 - `finite-model success != empirical discovery`;

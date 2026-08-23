@@ -1,6 +1,6 @@
 # Stage 12 Protocol — Multi-Orbit Constraint-Generated Gauge Atlas
 
-Status: **Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending.**
+Status: **Stage 12A completed; criteria 1–16 satisfied; criteria 17–50 pending.**
 
 Selected Stage 12 gate from Stage 11G:
 
@@ -271,6 +271,24 @@ Central guard:
 
 `quotient invariance without physical-orbit discrimination != successful multi-orbit gauge atlas`.
 
+### Stage 12A implementation checkpoint
+
+The finite carrier now instantiates the frozen protocol as follows:
+
+- four canonical physical orbits with the exact frozen `(Q_D,P_D)` pairs;
+- five sampled representatives on each orbit at `s in {-1.0,-0.5,0.0,0.5,1.0}`;
+- 20 representatives total;
+- all 80 ordered non-identity same-orbit `Phi_s` transports explicitly represented;
+- Stage 11 identity/affine/cubic/sinh external parameterizations lifted to every orbit, giving 16 external parameterization views;
+- gauge-flow typing `constraint_generated_gauge_flow` kept distinct from external typing `external_reparameterization`;
+- orbit, representative, relational-event, gauge, and external-parameter provenance kept explicit.
+
+In the Stage 12A seed gauge chart `T=s` numerically, but
+
+`clock coordinate T != gauge-flow parameter s by type`.
+
+The seed equality is a chart choice and is not a definitional identification.
+
 ## 11. Frozen synthesis vocabulary
 
 Stage 12G must select exactly one of:
@@ -285,8 +303,8 @@ Stage 12G must select exactly one of:
 ## 12. Stage sequence
 
 - Stage 12.0 — protocol freeze — **completed**;
-- Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **next**;
-- Stage 12B — Dirac/relational observables and physical-orbit discrimination;
+- Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**;
+- Stage 12B — Dirac/relational observables and physical-orbit discrimination — **next**;
 - Stage 12C — typed gauge atlas, quotient, and descent of relational structure;
 - Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent;
 - Stage 12E — internal clock × external parameterization × gauge-flow compatibility;
@@ -309,12 +327,12 @@ Stage 12G must select exactly one of:
 10. Stage 12A–G sequence and criteria 11–50 allocation frozen — **satisfied**.
 
 ### Criteria 11–16 — Stage 12A
-11. Four canonical distinct physical orbits implemented on the common constraint surface — **pending**.
-12. Multiple explicit gauge-flow representatives sampled per orbit — **pending**.
-13. Constraint residuals remain within tolerance over all positive representatives — **pending**.
-14. `Q_D,P_D` remain invariant along every positive gauge path — **pending**.
-15. Stage 11 external positive parameterization family represented on every canonical orbit — **pending**.
-16. Typed orbit/gauge/event provenance remains explicit — **pending**.
+11. Four canonical distinct physical orbits implemented on the common constraint surface — **satisfied**.
+12. Multiple explicit gauge-flow representatives sampled per orbit — **satisfied**.
+13. Constraint residuals remain within tolerance over all positive representatives — **satisfied**.
+14. `Q_D,P_D` remain invariant along every positive gauge path — **satisfied**.
+15. Stage 11 external positive parameterization family represented on every canonical orbit — **satisfied**.
+16. Typed orbit/gauge/event provenance remains explicit — **satisfied**.
 
 ### Criteria 17–23 — Stage 12B
 17. `Q_D,P_D` computed independently from sampled representatives — **pending**.

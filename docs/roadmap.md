@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 now freezes the parametrized-covariance precursor before implementation.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 and Stage 11A are completed; criteria 1–16 are satisfied and Stage 11B is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -102,24 +102,24 @@ Historical criterion-50 guard retained: `merge-ready != merged`; merge readiness
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11.0 protocol freeze
+## Stage 11 — Parametrized covariance precursor — Stage 11A completed
 
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
 
-### Stage 11.0 — protocol freeze — current
+### Stage 11.0 — protocol freeze — completed
 
-Freeze before implementation:
+The freeze established:
 
-- distinguish external parameter label, internal clock reading, physical event identity, continuation identity, and measurement typing;
-- introduce an explicit parameterization id and parameter-event correspondence in `Xi` rather than identifying equal numerical parameter values across representations;
-- restrict the initial admissible gauge family to smooth strictly monotone orientation-preserving maps `lambda' = f(lambda)` with `f'(lambda) > 0`;
-- retain identity, positive-affine, and genuinely nonlinear monotone parameterizations in the positive family;
-- transform the lapse-like parameter rate by the chain rule so that relational derivatives rather than raw parameter derivatives are candidate invariants;
-- retain orientation reversal, non-injective maps, raw-equal-parameter matching, wrong/missing lapse transformation, wrong event correspondence, and parameter-dependent physical corruption as negative controls;
-- require reparameterization tests for relational observables, O/P/R/V, Stage 10 measurement probabilities, weights/update, and clock-change compatibility;
-- classify Stage 11G only from the full evidence chain, not from one numerical equality.
+- separate external parameterization id, raw parameter label, internal clock reading, physical event identity, continuation identity, and measurement typing;
+- explicit parameter-event correspondence in `Xi` rather than identifying equal numerical parameter values across representations;
+- the initial smooth strictly monotone orientation-preserving positive family `lambda' = f(lambda)` with `f'(lambda) > 0`;
+- identity, positive-affine, cubic-nonlinear, and hyperbolic-nonlinear minimum maps;
+- chain-rule lapse transformation so relational derivatives rather than raw parameter derivatives are candidate invariants;
+- orientation reversal, non-injective maps, raw-equal-parameter matching, wrong/missing lapse transformation, wrong event correspondence, and parameter-dependent physical corruption as controls;
+- Stage 10 measurement carry-over and the clock-change × reparameterization commuting target;
+- Stage 11A–G criteria and synthesis vocabulary.
 
 Frozen distinctions:
 
@@ -130,11 +130,42 @@ Frozen distinctions:
 - `same relational orbit != same metaphysics`;
 - `absence of preferred external parameterization != absence of ontological becoming`.
 
-### Planned Stage 11 sequence
+Stage 11.0 documentation-synchronized regression: run #1285, **`874 passed in 640.88s (0:10:40)`**.
 
-Stage 11A — minimal parametrized constrained carrier and admissible reparameterization family.
+### Stage 11A — minimal parametrized constrained carrier and admissible family — completed
 
-Stage 11B — relational observables and relational derivatives.
+Criteria **11–16** are satisfied.
+
+Implemented scaffold:
+
+`C = p_T + p^2/2 = 0`.
+
+The canonical seed uses positive nonconstant lapse `N(lambda)=1+lambda^2/4`, 13 explicit physical events, and exactly the frozen identity/affine/cubic/hyperbolic positive family.
+
+Stage 11A diagnostics:
+
+- four positive admissible parameterizations;
+- minimum transformed positive lapse: **0.5**;
+- maximum constraint residual: **0.0**;
+- maximum lapse chain-rule residual: **0.0**;
+- maximum `T/q/p/p_T` orbit residual: **0.0**;
+- **36** corresponding event pairs with different raw parameter values;
+- **24** nonlinear-map points with raw derivative changes;
+- orientation reversal and `lambda^2` on the both-sign domain explicitly excluded from the positive family.
+
+Bounded result:
+
+`minimal Stage 11A constraint orbit preservation = established`.
+
+Guard:
+
+`same constraint orbit != established general covariance`.
+
+### Stage 11B — relational observables and relational derivatives — next
+
+Criteria **17–23** will test `q(T=tau)` and `dq/dT` across all four positive parameterizations, require raw nonlinear parameter rates to remain visibly different, type anchor/target events explicitly, and reject raw-equal-parameter matching as an event-identity rule.
+
+### Later Stage 11 sequence
 
 Stage 11C — typed O/P/R/V/Xi lift across parameterizations.
 
@@ -152,13 +183,15 @@ The controlled target is narrower than general covariance:
 
 `finite clock covariance != general covariance`.
 
+`finite typed parametrized covariance != general covariance`.
+
 `parametrized covariance precursor != general relativity`.
 
 A richer causal/order layer and nonideal/POVM clocks remain live later candidates rather than rejected directions.
 
 ### Historical roadmap labels retained for regression context
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11.0 protocol freeze above.
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11A completed above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 
@@ -178,7 +211,9 @@ Seek empirical relevance only after a genuinely discriminating prediction is der
 - `internal clock perspective != external parameterization`;
 - `orientation-preserving reparameterization != time reversal`;
 - `same relational orbit != same metaphysics`;
+- `same constraint orbit != established general covariance`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
+- `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
 - `finite-model success != empirical discovery`.

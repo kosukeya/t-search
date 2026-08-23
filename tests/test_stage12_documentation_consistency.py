@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = (ROOT / "docs" / "stage12_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage12_0_protocol_freeze.md").read_text(encoding="utf-8")
+NOTES_A = (ROOT / "docs" / "stage12a_notes.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
@@ -113,19 +114,32 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12_freeze_closes_only_criteria_1_10() -> None:
-    assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in PROTOCOL
+def test_stage12a_closes_criteria_11_16_while_freeze_remains_historical() -> None:
+    assert "Stage 12A completed; criteria 1–16 satisfied; criteria 17–50 pending" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 10
-    assert PROTOCOL.count("**pending**") == 40
+    assert PROTOCOL.count("**satisfied**") == 16
+    assert PROTOCOL.count("**pending**") == 34
+
+
+def test_stage12a_implementation_checkpoint_is_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_A
+    for phrase in (
+        "20 representatives total",
+        "80 transports total",
+        "16 external parameterization views",
+        "constraint_generated_gauge_flow",
+        "external_reparameterization",
+        "clock coordinate T != gauge-flow parameter s by type",
+    ):
+        assert phrase in combined
 
 
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
     for stage in (
-        "Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **next**",
-        "Stage 12B — Dirac/relational observables and physical-orbit discrimination",
+        "Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**",
+        "Stage 12B — Dirac/relational observables and physical-orbit discrimination — **next**",
         "Stage 12C — typed gauge atlas, quotient, and descent of relational structure",
         "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent",
         "Stage 12E — internal clock × external parameterization × gauge-flow compatibility",
@@ -143,7 +157,7 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
 
 
 def test_stage12_interpretation_guards_remain_explicit() -> None:
-    combined = PROTOCOL + "\n" + FREEZE
+    combined = PROTOCOL + "\n" + FREEZE + "\n" + NOTES_A
     for phrase in (
         "constraint-generated gauge flow != ontological becoming",
         "Dirac invariant != timeless ontology by definition",

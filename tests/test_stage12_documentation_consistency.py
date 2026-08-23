@@ -2,6 +2,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+README = (ROOT / "README.md").read_text(encoding="utf-8")
+ROADMAP = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "docs" / "stage12_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage12_0_protocol_freeze.md").read_text(encoding="utf-8")
 NOTES_A = (ROOT / "docs" / "stage12a_notes.md").read_text(encoding="utf-8")
@@ -23,6 +25,17 @@ def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
         assert SELECTED_STAGE12 in text
         assert "one-orbit covariance != multi-orbit gauge covariance" in text
         assert "constraint-generated gauge precursor != general relativity" in text
+
+
+def test_stage12c_top_level_current_status_is_synchronized() -> None:
+    for text in (README, ROADMAP):
+        assert "Stage 12A" in text
+        assert "Stage 12B" in text
+        assert "Stage 12C" in text
+        assert "criteria 1–31 are satisfied and Stage 12D is next" in text
+        assert "d5fdc899a72b6a983c03b1f960c65cda948c8fb8" in text
+    assert "docs/stage12c_notes.md" in README
+    assert "results/stage12c_gauge_atlas.md" in README
 
 
 def test_stage12_type_separation_is_frozen() -> None:

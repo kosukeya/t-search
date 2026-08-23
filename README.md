@@ -195,6 +195,13 @@ Thus criteria **17–23** are satisfied and the bounded result is:
 
 `Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
 
+Validation checkpoints:
+
+- source/result run #1319 — **`890 passed in 640.07s (0:10:40)`**;
+- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**.
+
+These CI runs validate repository consistency only: `repository validation != new scientific evidence`.
+
 Guards:
 
 `equal raw lambda != physical-event correspondence`.

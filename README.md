@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Stages 1–10 are completed and merged. PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 — parametrized covariance precursor protocol freeze — is now in progress on `agent/stage-11-parametrized-covariance-precursor`.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 — parametrized covariance precursor protocol freeze — is now in progress on `agent/stage-11-parametrized-covariance-precursor`.**
 
 Current refined finite-model candidate carried into Stage 11:
 

@@ -69,7 +69,7 @@ def test_stage12f_detects_representative_dependent_O_P_R_V_and_measurement_corru
     assert all(controls[control_id].classification == STAGE12F_REPRESENTATIVE_CORRUPTION for control_id in ids)
     assert all(controls[control_id].rejected for control_id in ids)
     assert all(controls[control_id].residual > 0.0 for control_id in ids)
-    assert controls["representative_dependent_measurement_corruption"].residual == 0.05
+    assert abs(controls["representative_dependent_measurement_corruption"].residual - 0.05) <= 1e-12
 
 
 def test_stage12f_consolidates_context_transport_and_orbit_insensitive_controls() -> None:

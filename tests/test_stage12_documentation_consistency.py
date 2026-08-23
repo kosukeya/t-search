@@ -15,6 +15,8 @@ NOTES_D = (ROOT / "docs" / "stage12d_notes.md").read_text(encoding="utf-8")
 RESULT_D = (ROOT / "results" / "stage12d_measurement.md").read_text(encoding="utf-8")
 NOTES_E = (ROOT / "docs" / "stage12e_notes.md").read_text(encoding="utf-8")
 RESULT_E = (ROOT / "results" / "stage12e_compatibility.md").read_text(encoding="utf-8")
+NOTES_F = (ROOT / "docs" / "stage12f_notes.md").read_text(encoding="utf-8")
+RESULT_F = (ROOT / "results" / "stage12f_ablation.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE12 = (
     "Construct a multi-orbit constraint-generated gauge atlas that separates "
@@ -31,13 +33,13 @@ def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
         assert "constraint-generated gauge precursor != general relativity" in text
 
 
-def test_stage12e_top_level_current_status_is_synchronized() -> None:
+def test_stage12f_top_level_current_status_is_synchronized() -> None:
     for text in (README, ROADMAP):
-        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D", "Stage 12E"):
+        for stage in ("Stage 12A", "Stage 12B", "Stage 12C", "Stage 12D", "Stage 12E", "Stage 12F"):
             assert stage in text
-        assert "criteria 1–43 are satisfied and Stage 12F is next" in text
+        assert "criteria 1–47 are satisfied and Stage 12G is next" in text
         assert "d5fdc899a72b6a983c03b1f960c65cda948c8fb8" in text
-        assert "994 passed in 562.97s (0:09:22)" in text
+        assert "1002 passed in 887.98s (0:14:47)" in text
     for path in (
         "docs/stage12c_notes.md",
         "results/stage12c_gauge_atlas.md",
@@ -45,6 +47,8 @@ def test_stage12e_top_level_current_status_is_synchronized() -> None:
         "results/stage12d_measurement.md",
         "docs/stage12e_notes.md",
         "results/stage12e_compatibility.md",
+        "docs/stage12f_notes.md",
+        "results/stage12f_ablation.md",
     ):
         assert path in README
 
@@ -139,13 +143,13 @@ def test_stage12_false_positive_controls_are_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage12e_closes_criteria_39_43_while_freeze_remains_historical() -> None:
-    assert "Stage 12E completed; criteria 1–43 satisfied; criteria 44–50 pending" in PROTOCOL
+def test_stage12f_closes_criteria_44_47_while_freeze_remains_historical() -> None:
+    assert "Stage 12F completed; criteria 1–47 satisfied; criteria 48–50 pending" in PROTOCOL
     assert "Stage 12.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 43
-    assert PROTOCOL.count("**pending**") == 7
+    assert PROTOCOL.count("**satisfied**") == 47
+    assert PROTOCOL.count("**pending**") == 3
 
 
 def test_stage12a_implementation_checkpoint_remains_documented() -> None:
@@ -226,7 +230,7 @@ def test_stage12d_implementation_checkpoint_remains_documented() -> None:
     assert "994 passed in 562.97s (0:09:22)" in PROTOCOL + "\n" + NOTES_E
 
 
-def test_stage12e_implementation_checkpoint_is_documented() -> None:
+def test_stage12e_implementation_checkpoint_remains_documented() -> None:
     combined = PROTOCOL + "\n" + NOTES_E + "\n" + RESULT_E
     for phrase in (
         "108",
@@ -249,6 +253,32 @@ def test_stage12e_implementation_checkpoint_is_documented() -> None:
         "finite three-way compatibility != diffeomorphism invariance",
     ):
         assert phrase in combined
+    assert "#1592" in PROTOCOL + "\n" + NOTES_F
+    assert "1002 passed in 887.98s (0:14:47)" in PROTOCOL + "\n" + NOTES_F
+
+
+def test_stage12f_implementation_checkpoint_is_documented() -> None:
+    combined = PROTOCOL + "\n" + NOTES_F + "\n" + RESULT_F
+    for phrase in (
+        "2 ablations",
+        "27 controls",
+        "27 / 27",
+        "30 equal-T",
+        "2 equal-q",
+        "312 equal-raw-lambda",
+        "representative-dependent",
+        "O/P/R/V/measurement",
+        "orbit_insensitive_measurement_clone",
+        "forced cross-orbit `Phi`",
+        "orientation-reversal",
+        "noninjective",
+        "different_physical_orbit_as_temporal_succession",
+        "metaphysical_claim_status = not_licensed",
+        "numerical reconstructibility != typed operational identification",
+        "wrong-gauge failure != ontological becoming",
+        "false-positive rejection != proof of eternalism",
+    ):
+        assert phrase in combined
 
 
 def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
@@ -258,8 +288,8 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
         "Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**",
         "Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**",
         "Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**",
-        "Stage 12F — ablation / wrong-orbit / false-positive controls — **next**",
-        "Stage 12G — executable synthesis and evidence-selected next gate",
+        "Stage 12F — ablation / wrong-orbit / false-positive controls — **completed**",
+        "Stage 12G — executable synthesis and evidence-selected next gate — **next**",
     ):
         assert stage in PROTOCOL
     for status in (
@@ -273,7 +303,20 @@ def test_stage12_sequence_and_synthesis_vocabulary_are_frozen() -> None:
 
 def test_stage12_interpretation_guards_remain_explicit() -> None:
     combined = "\n".join(
-        (PROTOCOL, FREEZE, NOTES_A, NOTES_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D, NOTES_E, RESULT_E)
+        (
+            PROTOCOL,
+            FREEZE,
+            NOTES_A,
+            NOTES_B,
+            NOTES_C,
+            RESULT_C,
+            NOTES_D,
+            RESULT_D,
+            NOTES_E,
+            RESULT_E,
+            NOTES_F,
+            RESULT_F,
+        )
     )
     for phrase in (
         "constraint-generated gauge flow != ontological becoming",
@@ -295,6 +338,13 @@ def test_stage12_interpretation_guards_remain_explicit() -> None:
         "path-independent future probabilities != future actuality",
         "path-independent relational outputs != ontological becoming",
         "finite three-way compatibility != diffeomorphism invariance",
+        "numerical reconstructibility != typed operational identification",
+        "reconstructible != universally redundant",
+        "lost != metaphysically irreducible",
+        "wrong-gauge failure != ontological becoming",
+        "cross-orbit mismatch != temporal succession or ontological becoming",
+        "finite-model ablation != fundamental ontology",
+        "false-positive rejection != proof of eternalism",
         "finite-model success != empirical discovery",
         "not_established != false",
     ):

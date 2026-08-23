@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, Stage 12C, Stage 12D, and Stage 12E are completed on Draft PR #13; Stage 12 criteria 1–43 are satisfied and Stage 12F is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, Stage 12C, Stage 12D, Stage 12E, and Stage 12F are completed on Draft PR #13; Stage 12 criteria 1–47 are satisfied and Stage 12G is next.**
 
 Current refined finite-model candidate carried through Stage 11:
 
@@ -316,6 +316,7 @@ Key documents:
 - [`docs/stage12c_notes.md`](docs/stage12c_notes.md) / [`results/stage12c_gauge_atlas.md`](results/stage12c_gauge_atlas.md)
 - [`docs/stage12d_notes.md`](docs/stage12d_notes.md) / [`results/stage12d_measurement.md`](results/stage12d_measurement.md)
 - [`docs/stage12e_notes.md`](docs/stage12e_notes.md) / [`results/stage12e_compatibility.md`](results/stage12e_compatibility.md)
+- [`docs/stage12f_notes.md`](docs/stage12f_notes.md) / [`results/stage12f_ablation.md`](results/stage12f_ablation.md)
 
 ### Stage 12.0 — protocol freeze — completed
 
@@ -391,7 +392,39 @@ The bounded result is
 
 `Stage 12E internal-clock x external-parameterization x gauge-flow compatibility on the frozen finite multi-orbit family = established`.
 
-Criteria **1–43** are satisfied; **Stage 12F — ablation / wrong-orbit / false-positive controls — is next**.
+Stage 12E final repository checkpoint head `b035e0a107a6d64b0c17acd8c197aa630ffc13a6` passed run #1592 with **`1002 passed in 887.98s (0:14:47)`**.
+
+### Stage 12F — ablation / wrong-orbit / false-positive controls — completed
+
+Stage 12F separates numerical reconstructibility, typed identification, covariance status, and metaphysical interpretation under orbit-resource removal/corruption and false-positive pressure tests.
+
+Two orbit-resource ablations are explicit. Removing typed orbit identity/correspondence and corrupting one representative's Xi orbit/quotient correspondence both remain numerically **`reconstructible`**, while typed identification is **`lost`** and the covariance claim is **`not_established`**.
+
+The consolidated matrix contains **27 controls** and requires **27 / 27 rejected**. It includes **2** single-invariant controls, **3** equal-label/single-variable controls retaining the **30 equal-T / 2 equal-q / 312 equal-raw-lambda** witnesses, **3** wrong-gauge controls, Stage 12D context/normalization/orbit-insensitive controls, Stage 12E mixed-orbit/untyped controls, orientation-reversal and noninjective relabeling, modal-continuation conflation, and the temporal-succession overread.
+
+Stage 12F adds **5 representative-dependent O/P/R/V/measurement corruption controls**. The measurement control shifts the two probabilities by `±0.05` while preserving normalization, so a normalized but representative-dependent payload is still rejected.
+
+Every ablation/control carries `metaphysical_claim_status = not_licensed`.
+
+The bounded result is
+
+`Stage 12F typed-resource ablation / wrong-orbit / false-positive controls on the frozen finite multi-orbit gauge atlas = established`.
+
+Criteria **1–47 are satisfied and Stage 12G is next**.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`cross-orbit mismatch != temporal succession or ontological becoming`.
+
+`finite-model ablation != fundamental ontology`.
+
+`false-positive rejection != proof of eternalism`.
 
 `same gauge-invariant probability within an orbit != all physical orbits operationally identical`.
 
@@ -493,6 +526,8 @@ Criteria **1–43** are satisfied; **Stage 12F — ablation / wrong-orbit / fals
 - `constraint-generated gauge flow != external reparameterization`;
 - `path-independent relational outputs != ontological becoming`;
 - `finite three-way compatibility != diffeomorphism invariance`;
+- `cross-orbit mismatch != temporal succession or ontological becoming`;
+- `false-positive rejection != proof of eternalism`;
 - `finite gauge atlas != diffeomorphism invariance`;
 - `multi-orbit gauge covariance != general covariance`;
 - `repository validation != new scientific evidence`;

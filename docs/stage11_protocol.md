@@ -1,6 +1,6 @@
 # Stage 11 Protocol — Parametrized Covariance Precursor
 
-Status: **Stage 11.0 through Stage 11F completed; criteria 1–47 satisfied; criteria 48–50 pending synthesis and external review.**
+Status: **Stage 11.0 through Stage 11G completed; criteria 1–49 satisfied; criterion 50 pending external final repository validation / merge-readiness review.**
 
 Selected Stage 11 gate from Stage 10G:
 
@@ -22,12 +22,18 @@ The Stage 10 bounded result carried into Stage 11 remains
 
 `fully typed finite future-measurement covariance = established`.
 
-The strongest Stage 11 synthesis label remains unavailable until Stage 11G evaluates the full Stage 11A–F evidence chain. The frozen Stage 11G status vocabulary is:
+Stage 11G evaluates the full Stage 11A–F evidence chain using the frozen status vocabulary:
 
 - `parametrized_covariant`;
 - `parametrized_partial`;
 - `parametrized_obstructed`;
 - `inconclusive`.
+
+The executable Stage 11G synthesis selects
+
+`parametrized_covariant`.
+
+This is a bounded finite-family status, not a general-covariance claim.
 
 `finite clock covariance != general covariance`.
 
@@ -375,6 +381,8 @@ All **7 / 7** controls are rejected:
 
 Source/unit-test checkpoint run #1425 — **`924 passed in 586.95s (0:09:46)`**.
 
+Final documentation-synchronized Stage 11F checkpoint run #1447 — **`925 passed in 792.42s (0:13:12)`**.
+
 Bounded result:
 
 `Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
@@ -389,7 +397,52 @@ Bounded result:
 
 `finite-model ablation != fundamental ontology`.
 
-## 8. Frozen negative and anti-triviality controls
+## 8. Stage 11G synthesis and evidence-selected next gate — completed
+
+Stage 11G integrates Stage 11A–F and selects exactly one frozen overall status:
+
+`parametrized_covariant`.
+
+The selection is executable rather than declarative. `parametrized_obstructed` is reserved for explicit failures of the declared positive family; deliberately wrong Stage 11F controls do not count as positive-family obstructions.
+
+Integrated scope:
+
+- 4 admissible external parameterizations of 13 corresponding physical events on one sampled constraint orbit;
+- 52 relational-observable and 52 relational-derivative evaluations;
+- typed O/P/R/V/Xi lift and future-measurement reparameterization covariance;
+- 648 event/O, 1296 measurement/probability, 648 weighted/modal, and 648 posterior clock × reparameterization squares;
+- Stage 11F separation of reconstructible, not-established, and numerically-refuted cases plus 7/7 false-positive controls.
+
+Source/unit-test checkpoint run #1453 — **`937 passed in 851.19s (0:14:11)`**.
+
+Bounded Stage 11 synthesis:
+
+`Stage 11 finite typed parametrized covariance status = parametrized_covariant`.
+
+This remains one-orbit finite evidence.
+
+Stage 12 gate ranking:
+
+| rank | gate | score |
+| --- | --- | ---: |
+| 1 | `multi_orbit_constraint_gauge_atlas` | **10** |
+| 2 | `richer_causal_order` | **7** |
+| 3 | `nonideal_povm_clocks` | **6** |
+| 4 | `gravitational_minisuperspace_extension` | **5** |
+
+Selected Stage 12 gate:
+
+> **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+The direct gravitational/minisuperspace candidate is intentionally ranked below this intermediate gauge-atlas test because Stage 11 has not yet separated gauge-related representations from physically distinct constraint orbits or implemented a nontrivial constraint algebra/refoliation structure/dynamical metric.
+
+`one-orbit covariance != multi-orbit gauge covariance`.
+
+`external parameterization independence != diffeomorphism invariance`.
+
+`constraint-generated gauge precursor != general relativity`.
+
+## 9. Frozen negative and anti-triviality controls
 
 The frozen Stage 11 controls remain:
 
@@ -406,7 +459,7 @@ The frozen Stage 11 controls remain:
 11. identify parameter direction with `R_direction` by definition;
 12. mix parameterizations inside one probability/weight/update calculation without typed correspondence.
 
-Anti-triviality evidence now includes **36** differing parameter labels, **24** nonlinear raw-rate differences, 52 relational-observable and 52 relational-derivative evaluations, 4/4 O/P/R/V corruption controls, 4/4 Stage 11D measurement-layer controls, the Stage 11E explicit noncommuting wrong-path witness, and Stage 11F's 7/7 consolidated false-positive controls.
+Anti-triviality evidence includes **36** differing parameter labels, **24** nonlinear raw-rate differences, 52 relational-observable and 52 relational-derivative evaluations, 4/4 O/P/R/V corruption controls, 4/4 Stage 11D measurement-layer controls, the Stage 11E explicit noncommuting wrong-path witness, and Stage 11F's 7/7 consolidated false-positive controls.
 
 `orientation-preserving reparameterization != time reversal`.
 
@@ -416,7 +469,7 @@ Anti-triviality evidence now includes **36** differing parameter labels, **24** 
 
 `same labels after relabeling != sufficient evidence of covariance`.
 
-## 9. Stage sequence and validation checkpoints
+## 10. Stage sequence and validation checkpoints
 
 ### Stage 11.0 — protocol freeze — completed
 Criteria 1–10. Run #1285: `874 passed in 640.88s (0:10:40)`.
@@ -437,15 +490,15 @@ Criteria 32–38. Run #1361 plus final baseline #1393 retained above.
 Criteria 39–43. Run #1407 plus final synchronized #1421 retained above.
 
 ### Stage 11F — ablation / wrong-gauge / false-positive controls — completed
-Criteria 44–47. Source/unit-test run #1425: `924 passed in 586.95s (0:09:46)`.
+Criteria 44–47. Source/unit-test run #1425 plus final synchronized #1447 retained above.
 
-### Stage 11G — synthesis and evidence-selected next gate — next
-Criteria 48–49.
+### Stage 11G — synthesis and evidence-selected next gate — completed
+Criteria 48–49. Source/unit-test run #1453: `937 passed in 851.19s (0:14:11)`.
 
-### Criterion 50 — external final repository validation
-Final full-repository regression / merge-readiness review only after Stage 11G.
+### Criterion 50 — external final repository validation — next
+Final full-repository regression / merge-readiness review after Stage 11G.
 
-## 10. Exit criteria
+## 11. Exit criteria
 
 ### Criteria 1–10 — Stage 11.0
 1. Exact Stage 10G-selected Stage 11 gate frozen — **satisfied**.
@@ -509,13 +562,13 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 47. Ablation results not promoted to claims of metaphysical fundamentality or ontological becoming — **satisfied**.
 
 ### Criteria 48–49 — Stage 11G
-48. Executable synthesis selects one frozen Stage 11 status from the full Stage 11A–F evidence chain — **pending**.
-49. Next research gate evidence-selected and documented without presupposing general covariance — **pending**.
+48. Executable synthesis selects one frozen Stage 11 status from the full Stage 11A–F evidence chain — **satisfied**.
+49. Next research gate evidence-selected and documented without presupposing general covariance — **satisfied**.
 
 ### Criterion 50 — external repository validation
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 11. Interpretation guards
+## 12. Interpretation guards
 
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
@@ -560,6 +613,10 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 - `wrong-gauge failure != ontological becoming`;
 - `typed-resource necessity in this finite family != metaphysical fundamentality`;
 - `finite-model ablation != fundamental ontology`;
+- `parametrized_covariant finite family != general covariance`;
+- `external parameterization independence != diffeomorphism invariance`;
+- `one-orbit covariance != multi-orbit gauge covariance`;
+- `constraint-generated gauge precursor != general relativity`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `typed-resource use != metaphysical fundamentality`;
 - `finite typed parametrized covariance != general covariance`;

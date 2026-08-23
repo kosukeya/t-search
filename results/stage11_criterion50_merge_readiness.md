@@ -66,6 +66,7 @@ PR #12 may be moved from Draft to Ready for review, but that state transition is
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
 - `parametrized_covariant finite family != general covariance`;
+- `finite typed parametrized covariance != general covariance`;
 - `one-orbit covariance != multi-orbit gauge covariance`;
 - `external parameterization independence != diffeomorphism invariance`;
 - `constraint-generated gauge precursor != general relativity`;

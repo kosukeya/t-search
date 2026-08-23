@@ -24,6 +24,22 @@ Selected Stage 13 gate:
 
 > **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
 
+## Historical Stage 7–9 checkpoints
+
+## Stage 7 — Quantum records inside a constrained multi-clock model
+
+Stage 7 completed the quantum-record integration before the later Potentiality and directional-record gates. The earlier direct gravity assignment was superseded by evidence-selected intermediate gates; gravity/general covariance remained deferred rather than rejected.
+
+## Stage 8 — Quantum Potentiality inside the shared constrained construction
+
+Stage 8 integrated explicit Potentiality/extension semantics in the shared constrained construction. Stage 8G completed the synthesis and selected Stage 9 while continuing to defer a direct gravity jump.
+
+`Potentiality != quantum randomness by definition`.
+
+At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 subsequently closed that bounded operational gap.
+
+Stage 9G executable synthesis selected `refined_layered` and retained the evidence-selected move to fully typed future-measurement covariance.
+
 ## Stages 0–9 — completed and merged
 
 Stages 0–6 established the reconstruction/accessibility, modal, record, constrained relational, multi-clock, and layered O/P/R/V/Xi foundations. Stage 7 integrated quantum records, Stage 8 explicit Potentiality, and Stage 9 directional records with nontrivial Potentiality. Stage 9G selected the fully typed future-measurement covariance gate and criterion 50 later closed with final Stage 9 validation **`766 passed in 459.00s`**.

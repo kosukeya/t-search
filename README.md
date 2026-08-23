@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 — parametrized covariance precursor protocol freeze — is now in progress on `agent/stage-11-parametrized-covariance-precursor`.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 and Stage 11A are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–16 are satisfied and Stage 11B is next.**
 
 Current refined finite-model candidate carried into Stage 11:
 
@@ -111,24 +111,66 @@ A stale documentation guard exposed by run #1273 was corrected without changing 
 
 At the criterion-50 checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers. That checkpoint established readiness only; the historical guard remains `merge-ready != merged`. PR #11 was subsequently merged into `main` on 2026-08-22.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11.0 protocol freeze
+## Stage 11 — Parametrized covariance precursor — Stage 11A completed
 
 Stage 11 begins from the Stage 10G-selected gate and asks whether the typed O/P/R/V measurement architecture can be preserved or reconstructed when the same physical relational history is represented with different admissible external parameterizations.
 
-The Stage 11.0 protocol freezes these distinctions:
+Key documents:
+
+- [`docs/stage11_protocol.md`](docs/stage11_protocol.md)
+- [`results/stage11_0_protocol_freeze.md`](results/stage11_0_protocol_freeze.md)
+- [`docs/stage11a_notes.md`](docs/stage11a_notes.md)
+- [`results/stage11a_parametrized.md`](results/stage11a_parametrized.md)
+
+### Stage 11.0 — protocol freeze — completed
+
+The Stage 11.0 protocol froze these distinctions:
 
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
 - `internal clock perspective != external parameterization`;
 - `orientation-preserving reparameterization != time reversal`.
 
-The admissible gauge family is restricted initially to smooth strictly monotone orientation-preserving maps with positive derivative. Orientation reversal and non-injective maps are retained as negative controls rather than silently treated as gauge-equivalent.
+It also froze the positive identity/affine/cubic/sinh family, chain-rule lapse transformation, explicit event correspondence, negative controls, Stage 10 carry-over targets, and Stage 11A–G criteria.
 
-Stage 11 does not begin with a claim of general covariance. The target is a controlled finite precursor:
+The documentation-synchronized Stage 11.0 checkpoint passed run #1285: **`874 passed in 640.88s (0:10:40)`**.
+
+### Stage 11A — minimal parametrized constrained carrier and admissible family — completed
+
+The implemented precursor uses
+
+`C = p_T + p^2/2 = 0`
+
+with positive nonconstant lapse `N(lambda)=1+lambda^2/4`, 13 explicit physical events, and the exact frozen positive identity/affine/cubic/hyperbolic parameterization family.
+
+Executable Stage 11A diagnostics:
+
+- 4 admissible positive parameterizations;
+- minimum transformed positive lapse: **0.5**;
+- max constraint residual: **0.0**;
+- max lapse-chain-rule residual: **0.0**;
+- max `T/q/p/p_T` constraint-orbit residual: **0.0**;
+- corresponding events with different raw parameter labels: **36**;
+- nonlinear-map raw-rate differences: **24**;
+- orientation reversal and the non-injective square map are explicitly excluded from the positive family.
+
+Thus criteria **11–16** are satisfied and the bounded carrier-level result is:
+
+`minimal Stage 11A constraint orbit preservation = established`.
+
+This is not yet the Stage 11 synthesis result:
+
+`same constraint orbit != established general covariance`.
+
+### Stage 11B — relational observables and relational derivatives — next
+
+Stage 11B will test whether `q(T=tau)` and `dq/dT` agree across the positive family while raw parameter derivatives differ, with event identity determined by typed correspondence rather than equal raw parameter labels.
+
+The controlled target remains narrower than general covariance:
+
+`finite typed parametrized covariance != general covariance`.
 
 `parametrized covariance precursor != general relativity`.
-
-The new protocol is [`docs/stage11_protocol.md`](docs/stage11_protocol.md), with Stage 11.0 freeze record in [`results/stage11_0_protocol_freeze.md`](results/stage11_0_protocol_freeze.md).
 
 ## Guards
 
@@ -143,8 +185,11 @@ The new protocol is [`docs/stage11_protocol.md`](docs/stage11_protocol.md), with
 - `parameter label != event identity`;
 - `internal clock perspective != external parameterization`;
 - `orientation-preserving reparameterization != time reversal`;
+- `same relational orbit != same metaphysics`;
+- `same constraint orbit != established general covariance`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
+- `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
 - `repository validation != new scientific evidence`;
 - `finite-model success != empirical discovery`;

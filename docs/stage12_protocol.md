@@ -1,6 +1,6 @@
 # Stage 12 Protocol — Multi-Orbit Constraint-Generated Gauge Atlas
 
-Status: **Stage 12D completed; criteria 1–38 satisfied; criteria 39–50 pending.**
+Status: **Stage 12E completed; criteria 1–43 satisfied; criteria 44–50 pending.**
 
 Selected Stage 12 gate from Stage 11G:
 
@@ -285,6 +285,10 @@ The canonical `p_left` values are approximately 0.6205873778, 0.7245845693, 0.53
 
 Controls reject wrong orbit/event/class/outcome contexts, wrong normalization, and `orbit_insensitive_measurement_clone`.
 
+Incoming Stage 12C checkpoint `d3e7dd9dd24a671ec7503d16d953b34139f17e3a` passed run **#1548** with **`984 passed in 680.36s (0:11:20)`**.
+
+Final Stage 12D repository checkpoint head `36bc2d02d07fb954441e22452b1498a90833179b` passed run **#1570** with **`994 passed in 562.97s (0:09:22)`**.
+
 Bounded result:
 
 `Stage 12D typed O/P/R/V and orbit-sensitive future-measurement descent on the frozen finite gauge atlas = established`.
@@ -292,6 +296,52 @@ Bounded result:
 `representative-specific Xi provenance != quotient-level physical content`.
 
 `orbit-sensitive witness != empirical prediction`.
+
+### Stage 12E
+
+Stage 12E combines three separately typed positive transport families:
+
+- **108** `C` transports (`internal_clock_transport`);
+- **12** `G` transports (`external_reparameterization_transport`);
+- **80** nonidentity same-orbit `Phi` transports (`constraint_generated_gauge_transport`).
+
+The operational endpoint state retains physical orbit/quotient/representative identity, external parameterization metadata, internal clock/readout and continuation typing, orbit-specific relational anchor/target values, inherited Stage 11E future-measurement probabilities, and the Stage 12D orbit-sensitive witness.
+
+Pairwise compatibility exhausts all positive nonidentity gauge arrows:
+
+- `C × Phi`: **8,640** squares / **17,280** path evaluations;
+- `G × Phi`: **1,920** squares / **3,840** path evaluations.
+
+The three-way compatibility test uses one maximally nontrivial `|delta_s|=2` `Phi` edge from each physical orbit because the pairwise families already cover all 80 gauge arrows. Across the **4** spanning gauge edges, **12** `G` transports, and **108** `C` transports, Stage 12E checks:
+
+- **5,184** `C × G × Phi` cubes;
+- all six transport orders per cube;
+- **31,104** three-way path evaluations.
+
+The positive criterion requires all declared relational, inherited measurement, and orbit-sensitive witness outputs to agree with the same direct typed endpoint within tolerance. The witness retains **4** distinct physical-orbit signatures.
+
+Four deliberately invalid paths are rejected as `mixed_or_untyped_path_rejected`:
+
+- `mixed_orbit_phi`;
+- `clock_label_as_parameterization`;
+- `parameterization_label_as_clock`;
+- `gauge_type_relabelled_as_reparameterization`.
+
+Bounded result:
+
+`Stage 12E internal-clock x external-parameterization x gauge-flow compatibility on the frozen finite multi-orbit family = established`.
+
+`internal-clock covariance != external-reparameterization covariance`.
+
+`constraint-generated gauge flow != internal-clock change`.
+
+`constraint-generated gauge flow != external reparameterization`.
+
+`path-independent future probabilities != future actuality`.
+
+`path-independent relational outputs != ontological becoming`.
+
+`finite three-way compatibility != diffeomorphism invariance`.
 
 ## 11. Frozen synthesis vocabulary
 
@@ -311,8 +361,8 @@ Stage 12G must select exactly one of:
 - Stage 12B — Dirac/relational observables and physical-orbit discrimination — **completed**;
 - Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**;
 - Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **completed**;
-- Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **next**;
-- Stage 12F — ablation / wrong-orbit / false-positive controls;
+- Stage 12E — internal clock × external parameterization × gauge-flow compatibility — **completed**;
+- Stage 12F — ablation / wrong-orbit / false-positive controls — **next**;
 - Stage 12G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
@@ -367,11 +417,11 @@ Stage 12G must select exactly one of:
 38. Wrong orbit/event/class/outcome/normalization controls are rejected — **satisfied**.
 
 ### Criteria 39–43 — Stage 12E
-39. `C`, `G`, and `Phi` transports are separately typed and represented — **pending**.
-40. Clock × gauge paths are compatible on licensed corresponding objects — **pending**.
-41. Reparameterization × gauge paths are compatible on licensed corresponding objects — **pending**.
-42. Combined clock × reparameterization × gauge paths preserve declared relational/measurement outputs — **pending**.
-43. Deliberately mixed-orbit or untyped paths produce detectable failures — **pending**.
+39. `C`, `G`, and `Phi` transports are separately typed and represented — **satisfied**.
+40. Clock × gauge paths are compatible on licensed corresponding objects — **satisfied**.
+41. Reparameterization × gauge paths are compatible on licensed corresponding objects — **satisfied**.
+42. Combined clock × reparameterization × gauge paths preserve declared relational/measurement outputs — **satisfied**.
+43. Deliberately mixed-orbit or untyped paths produce detectable failures — **satisfied**.
 
 ### Criteria 44–47 — Stage 12F
 44. Orbit identity/correspondence removal versus numerical reconstructibility is explicitly classified — **pending**.
@@ -409,5 +459,11 @@ Stage 12G must select exactly one of:
 - `orbit-sensitive witness != empirical prediction`;
 - `future-measurement covariance != future actuality`;
 - `parameterization/gauge covariance != refutation of ontological becoming`;
+- `internal-clock covariance != external-reparameterization covariance`;
+- `constraint-generated gauge flow != internal-clock change`;
+- `constraint-generated gauge flow != external reparameterization`;
+- `path-independent future probabilities != future actuality`;
+- `path-independent relational outputs != ontological becoming`;
+- `finite three-way compatibility != diffeomorphism invariance`;
 - `finite-model success != empirical discovery`;
 - `not_established != false`.

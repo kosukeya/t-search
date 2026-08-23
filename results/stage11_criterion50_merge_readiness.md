@@ -12,6 +12,10 @@ Scientific checkpoint:
 
 for the declared finite typed four-parameterization, one-sampled-constraint-orbit family with the inherited O/P/R/V future-measurement architecture.
 
+Selected Stage 12 gate id remains:
+
+`multi_orbit_constraint_gauge_atlas`
+
 Selected Stage 12 gate remains:
 
 > **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**

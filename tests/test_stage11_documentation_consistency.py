@@ -16,6 +16,8 @@ NOTES_D = (ROOT / "docs" / "stage11d_notes.md").read_text(encoding="utf-8")
 RESULT_D = (ROOT / "results" / "stage11d_measurement.md").read_text(encoding="utf-8")
 NOTES_E = (ROOT / "docs" / "stage11e_notes.md").read_text(encoding="utf-8")
 RESULT_E = (ROOT / "results" / "stage11e_compatibility.md").read_text(encoding="utf-8")
+NOTES_F = (ROOT / "docs" / "stage11f_notes.md").read_text(encoding="utf-8")
+RESULT_F = (ROOT / "results" / "stage11f_ablation.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE11 = (
     "Construct a parametrized covariance precursor that preserves the typed "
@@ -88,23 +90,24 @@ def test_stage11_negative_controls_and_antitriviality_remain_frozen() -> None:
     assert "non-injective relabeling != admissible reparameterization" in combined
 
 
-def test_stage11_freeze_remains_historical_after_stage11e_closure() -> None:
+def test_stage11_freeze_remains_historical_after_stage11f_closure() -> None:
     assert "Stage 11.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
-    assert "criteria 1–43 satisfied" in PROTOCOL.lower()
-    assert "criteria 44–50 pending" in PROTOCOL.lower()
+    assert "criteria 1–47 satisfied" in PROTOCOL.lower()
+    assert "criteria 48–50 pending" in PROTOCOL.lower()
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 43
-    assert PROTOCOL.count("**pending**") == 7
+    assert PROTOCOL.count("**satisfied**") == 47
+    assert PROTOCOL.count("**pending**") == 3
     for stage in (
         "Stage 11A — minimal parametrized constrained carrier and admissible family — completed",
         "Stage 11B — relational observables and relational derivatives — completed",
         "Stage 11C — typed O/P/R/V/Xi lift — completed",
         "Stage 11D — future-measurement reparameterization covariance — completed",
         "Stage 11E — clock-change × parameterization compatibility — completed",
+        "Stage 11F — ablation / wrong-gauge / false-positive controls — completed",
     ):
         assert stage in PROTOCOL
-    assert "Stage 11F — ablation / wrong-gauge / false-positive controls — next" in PROTOCOL
+    assert "Stage 11G — synthesis and evidence-selected next gate — next" in PROTOCOL
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -209,12 +212,50 @@ def test_stage11e_documents_exhaustive_commuting_square_evidence() -> None:
     assert "cached repeated evaluation != reduced scientific comparison family" in RESULT_E
 
 
-def test_stage11_planning_documents_advance_to_stage11f_without_full_synthesis_claim() -> None:
-    for text in (README, ROADMAP, PROTOCOL):
+def test_stage11f_documents_typed_resource_ablation_and_false_positive_controls() -> None:
+    bounded = (
+        "Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family"
+    )
+    for text in (README, ROADMAP, PROTOCOL, NOTES_F, RESULT_F):
         assert "Stage 11F" in text
+        assert bounded in text
+        assert "event_correspondence_reconstructible_but_typed_identity_lost" in text
+        assert "lapse_semantics_missing_typed_claim_not_established" in text
+        assert "wrong_lapse_jacobian_numerically_refuted" in text
+        assert "reconstructible != universally redundant" in text
+        assert "lost != metaphysically irreducible" in text
+        assert "wrong-gauge failure != ontological becoming" in text
+        assert "finite-model ablation != fundamental ontology" in text
+    for text in (NOTES_F, RESULT_F):
+        assert "criteria 44–47" in text.lower()
+        assert "Stage 11G" in text
+        assert "924 passed in 586.95s (0:09:46)" in text
+    for text in (README, ROADMAP, PROTOCOL, RESULT_F):
+        assert "12" in text
+        assert "6" in text
+        assert "4 / 4" in text
+        assert "7 / 7" in text
+        assert "invalid_equal_raw_parameter_event_rule" in text
+        assert "parameter_dependent_oprv_corruption_detected" in text
+    assert "orientation_reversal_outside_positive_family" in RESULT_F
+    assert "noninjective_relabeling_rejected" in RESULT_F
+    assert "0.5357142857142857" in RESULT_F
+
+
+def test_stage11_planning_documents_advance_to_stage11g_without_premature_synthesis() -> None:
+    for text in (README, ROADMAP, PROTOCOL):
+        assert "Stage 11G" in text
         assert "next" in text.lower()
-        assert "criteria 1–43" in text
+        assert "criteria 1–47" in text
         assert "finite typed parametrized covariance != general covariance" in text
-    # Stage 11G, not Stage 11E, chooses the frozen overall Stage 11 status.
-    assert "parametrized_covariant" in PROTOCOL
+    # Stage 11G, not Stage 11F, chooses the frozen overall Stage 11 status.
+    for status in (
+        "parametrized_covariant",
+        "parametrized_partial",
+        "parametrized_obstructed",
+        "inconclusive",
+    ):
+        assert status in PROTOCOL
     assert "criteria 48–49" in PROTOCOL.lower()
+    assert "48." in PROTOCOL and "**pending**" in PROTOCOL
+    assert "49." in PROTOCOL and "**pending**" in PROTOCOL

@@ -1,11 +1,11 @@
 """Stage 12G executable synthesis and evidence-selected Stage 13 gate.
 
 Stage 12A--F build and pressure-test a finite typed multi-orbit constraint-
-generated gauge atlas.  Stage 12G integrates those diagnostics into exactly
-one frozen Stage 12 status and ranks the next research gates without promoting
-the result to general covariance or general relativity.
+generated gauge atlas. Stage 12G integrates those diagnostics into exactly one
+frozen Stage 12 status and ranks the next research gates without promoting the
+result to general covariance or general relativity.
 
-``multi_orbit_gauge_covariant`` is deliberately bounded.  It means that on the
+``multi_orbit_gauge_covariant`` is deliberately bounded. It means that on the
 declared four-orbit finite family, same-orbit constraint-generated gauge
 representatives form the tested quotient structure; distinct physical orbits
 are not collapsed; relational/Dirac and typed O/P/R/V measurement content
@@ -130,7 +130,7 @@ def select_synthesis_choice(
     snapshot: Stage12EvidenceSnapshot | None = None,
 ) -> Stage12SynthesisChoice:
     evidence = evidence_snapshot() if snapshot is None else snapshot
-    a, b, c, d, e, f = (
+    a, b, c, d, e, _f = (
         evidence.stage12a,
         evidence.stage12b,
         evidence.stage12c,
@@ -143,7 +143,7 @@ def select_synthesis_choice(
     if all(validity):
         return Stage12SynthesisChoice.MULTI_ORBIT_GAUGE_COVARIANT
 
-    # ``obstructed`` is reserved for an explicit positive-family failure.  A
+    # ``obstructed`` is reserved for an explicit positive-family failure. A
     # deliberately wrong control behaving correctly is not an obstruction.
     explicit_positive_obstruction = bool(
         not a.canonical_orbits_distinct
@@ -153,8 +153,15 @@ def select_synthesis_choice(
         or not b.distinct_orbits_not_collapsed
         or not c.quotient_partition_exact
         or c.cross_orbit_gauge_arrow_count > 0
-        or not d.all_positive_architectures_valid
-        or d.distinct_orbit_signature_count < 4
+        or d.distinct_quotient_architecture_count != 4
+        or d.distinct_orbit_witness_count != 4
+        or max(
+            d.max_same_orbit_architecture_residual,
+            d.max_same_orbit_measurement_probability_residual,
+            d.max_same_orbit_weighted_probability_residual,
+            d.max_same_orbit_posterior_residual,
+            d.max_same_orbit_witness_residual,
+        ) > 1e-8
         or e.max_clock_gauge_residual > 1e-8
         or e.max_reparameterization_gauge_residual > 1e-8
         or e.max_triple_residual > 1e-8
@@ -296,9 +303,7 @@ def stage13_gate_candidates(
         algebra_signals.append("wrong-orbit and false-positive controls are mature enough to distinguish true algebraic obstruction from deliberately invalid paths")
 
     gravity_score = 4
-    gravity_signals = [
-        "a dynamical metric and gravitational clock structure remain absent"
-    ]
+    gravity_signals = ["a dynamical metric and gravitational clock structure remain absent"]
     if c.criteria_24_31_satisfied and e.criteria_39_43_satisfied:
         gravity_score += 2
         gravity_signals.append("multi-orbit gauge quotient and three-way compatibility make a gravitational toy model more timely than after Stage 11")
@@ -354,12 +359,12 @@ def stage13_gate_candidates(
 def established_scope(snapshot: Stage12EvidenceSnapshot | None = None) -> tuple[str, ...]:
     evidence = evidence_snapshot() if snapshot is None else snapshot
     return (
-        f"{evidence.stage12a.physical_orbit_count if hasattr(evidence.stage12a, 'physical_orbit_count') else evidence.stage12a.orbit_count} canonical physical orbits with 20 sampled gauge representatives",
+        f"{evidence.stage12a.orbit_count} canonical physical orbits with {evidence.stage12a.representative_count} sampled gauge representatives",
         "full-Dirac-pair discrimination with nontrivial q(T=tau) and dq/dT relational change",
-        "100-arrow finite same-orbit gauge groupoid and 4 quotient classes of size 5",
-        "typed O/P/R/V/Xi and inherited future-measurement descent with 4 orbit-sensitive signatures",
+        f"{evidence.stage12c.gauge_arrow_count}-arrow finite same-orbit gauge groupoid and {evidence.stage12c.quotient_class_count} quotient classes of size 5",
+        f"typed O/P/R/V/Xi and inherited future-measurement descent with {evidence.stage12d.distinct_orbit_witness_count} orbit-sensitive signatures",
         "C x Phi, G x Phi, and spanning C x G x Phi finite path compatibility",
-        "2 typed-resource ablations and 27/27 rejected false-positive controls",
+        f"{evidence.stage12f.ablation_count} typed-resource ablations and {evidence.stage12f.rejected_false_positive_control_count}/{evidence.stage12f.false_positive_control_count} rejected false-positive controls",
     )
 
 
@@ -379,7 +384,7 @@ def retained_typing_resources() -> tuple[str, ...]:
 def derived_or_reconstructible_roles() -> tuple[str, ...]:
     return (
         "the finite four-class orbit partition is numerically reconstructible from the full Dirac pair after typed orbit labels are removed, without restoring typed identity",
-        "representative-specific q values are reduced to quotient-level relational content through Q_D and P_D while relational q(T=tau) remains tau-dependent",
+        "representative-specific q values reduce to quotient-level relational content through Q_D and P_D while relational q(T=tau) remains tau-dependent",
         "representative-specific gauge metadata remain representation-dependent Xi provenance and do not become quotient-level physical content",
     )
 

@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed.** Criterion 50 is closed externally and PR #11 is at the merge-ready checkpoint; Stage 10 has not yet been merged.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 now freezes the parametrized-covariance precursor before implementation.
 
 ## Stages 0–6 — completed and merged
 
@@ -58,7 +58,7 @@ Historical guards:
 - `P edge reconstruction != P layer universally redundant`;
 - `finite clock covariance != general covariance`.
 
-## Stage 10 — Fully typed future-measurement covariance — completed; merge-ready checkpoint
+## Stage 10 — Fully typed future-measurement covariance — completed and merged
 
 Selected Stage 10 gate:
 
@@ -94,23 +94,63 @@ Stage 10G ranking:
 2. `richer_causal_order` — **7**
 3. `nonideal_povm_clocks` — **6**
 
-Stage 10 criterion 50 — completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**. At review, PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers.
+Stage 10 criterion 50 — completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**. The stale documentation guard found by run #1273 was corrected, and final current-head run #1275 passed **`868 passed in 402.52s`** before merge.
+
+PR #11 was merged into `main` on 2026-08-22 at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.
+
+Historical criterion-50 guard retained: `merge-ready != merged`; merge readiness itself did not constitute the later merge.
 
 `repository validation != new scientific evidence`.
 
-`merge-ready != merged`.
-
-## Stage 11 — Parametrized covariance precursor — selected next gate
+## Stage 11 — Parametrized covariance precursor — Stage 11.0 protocol freeze
 
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
 
-The goal is to remove one preferred external parameterization while preserving or reconstructing the typed physical/clock/record/modal/measurement architecture. This is the controlled next test of the repeatedly retained boundary:
+### Stage 11.0 — protocol freeze — current
+
+Freeze before implementation:
+
+- distinguish external parameter label, internal clock reading, physical event identity, continuation identity, and measurement typing;
+- introduce an explicit parameterization id and parameter-event correspondence in `Xi` rather than identifying equal numerical parameter values across representations;
+- restrict the initial admissible gauge family to smooth strictly monotone orientation-preserving maps `lambda' = f(lambda)` with `f'(lambda) > 0`;
+- retain identity, positive-affine, and genuinely nonlinear monotone parameterizations in the positive family;
+- transform the lapse-like parameter rate by the chain rule so that relational derivatives rather than raw parameter derivatives are candidate invariants;
+- retain orientation reversal, non-injective maps, raw-equal-parameter matching, wrong/missing lapse transformation, wrong event correspondence, and parameter-dependent physical corruption as negative controls;
+- require reparameterization tests for relational observables, O/P/R/V, Stage 10 measurement probabilities, weights/update, and clock-change compatibility;
+- classify Stage 11G only from the full evidence chain, not from one numerical equality.
+
+Frozen distinctions:
+
+- `parameter label != internal clock reading`;
+- `parameter label != event identity`;
+- `internal clock perspective != external parameterization`;
+- `orientation-preserving reparameterization != time reversal`;
+- `same relational orbit != same metaphysics`;
+- `absence of preferred external parameterization != absence of ontological becoming`.
+
+### Planned Stage 11 sequence
+
+Stage 11A — minimal parametrized constrained carrier and admissible reparameterization family.
+
+Stage 11B — relational observables and relational derivatives.
+
+Stage 11C — typed O/P/R/V/Xi lift across parameterizations.
+
+Stage 11D — Stage 10 future-measurement covariance under reparameterization.
+
+Stage 11E — internal-clock change × external-reparameterization compatibility and commuting squares.
+
+Stage 11F — ablation / wrong-gauge / false-positive controls.
+
+Stage 11G — executable synthesis and evidence-selected next gate.
+
+Criterion 50 remains an external final full-repository regression / merge-readiness review, as in prior stages.
+
+The controlled target is narrower than general covariance:
 
 `finite clock covariance != general covariance`.
-
-It is deliberately narrower than a gravitational theory:
 
 `parametrized covariance precursor != general relativity`.
 
@@ -118,7 +158,7 @@ A richer causal/order layer and nonideal/POVM clocks remain live later candidate
 
 ### Historical roadmap labels retained for regression context
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is the completed Stage 10 merge-ready checkpoint and the selected Stage 11 parametrized precursor above.
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11.0 protocol freeze above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 
@@ -133,5 +173,12 @@ Seek empirical relevance only after a genuinely discriminating prediction is der
 - `perspective-invariant future probabilities != proof of eternalism`;
 - `measurement covariance != refutation of ontological becoming`;
 - `typed-resource necessity != metaphysical fundamentality`;
+- `parameter label != internal clock reading`;
+- `parameter label != event identity`;
+- `internal clock perspective != external parameterization`;
+- `orientation-preserving reparameterization != time reversal`;
+- `same relational orbit != same metaphysics`;
+- `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
+- `parametrized covariance precursor != general relativity`;
 - `finite-model success != empirical discovery`.

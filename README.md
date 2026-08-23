@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 and Stage 11A are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–16 are satisfied and Stage 11B is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0, Stage 11A, and Stage 11B are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–23 are satisfied and Stage 11C is next.**
 
 Current refined finite-model candidate carried into Stage 11:
 
@@ -111,7 +111,7 @@ A stale documentation guard exposed by run #1273 was corrected without changing 
 
 At the criterion-50 checkpoint PR #11 was mergeable, behind `main` by 0 commits, and had no unresolved review blockers. That checkpoint established readiness only; the historical guard remains `merge-ready != merged`. PR #11 was subsequently merged into `main` on 2026-08-22.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11A completed
+## Stage 11 — Parametrized covariance precursor — Stage 11B completed
 
 Stage 11 begins from the Stage 10G-selected gate and asks whether the typed O/P/R/V measurement architecture can be preserved or reconstructed when the same physical relational history is represented with different admissible external parameterizations.
 
@@ -121,6 +121,8 @@ Key documents:
 - [`results/stage11_0_protocol_freeze.md`](results/stage11_0_protocol_freeze.md)
 - [`docs/stage11a_notes.md`](docs/stage11a_notes.md)
 - [`results/stage11a_parametrized.md`](results/stage11a_parametrized.md)
+- [`docs/stage11b_notes.md`](docs/stage11b_notes.md)
+- [`results/stage11b_relational.md`](results/stage11b_relational.md)
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -158,13 +160,50 @@ Thus criteria **11–16** are satisfied and the bounded carrier-level result is:
 
 `minimal Stage 11A constraint orbit preservation = established`.
 
+Repository-level Stage 11A checkpoint run #1309 passed **`883 passed in 630.96s (0:10:30)`**.
+
 This is not yet the Stage 11 synthesis result:
 
 `same constraint orbit != established general covariance`.
 
-### Stage 11B — relational observables and relational derivatives — next
+### Stage 11B — relational observables and relational derivatives — completed
 
-Stage 11B will test whether `q(T=tau)` and `dq/dT` agree across the positive family while raw parameter derivatives differ, with event identity determined by typed correspondence rather than equal raw parameter labels.
+Stage 11B constructs `q(T=tau)` at explicitly corresponded physical events and tests
+
+`dq/dT=(dq/dlambda)/(dT/dlambda)`
+
+across all four positive parameterizations.
+
+Executable Stage 11B evidence:
+
+- relational-observable evaluations: **52**;
+- relational-derivative evaluations: **52**;
+- max corresponding `q(T=tau)` residual: **0.0** within the deterministic carrier;
+- max cross-parameterization `dq/dT` residual: **0.0** within tolerance;
+- reconstructed relational derivative: **1.25**;
+- nonlinear raw-rate differences remain visible at **24** chart-event points;
+- typed precursor anchor/target views: **8**;
+- identity/affine equal raw-parameter overlaps: **7**;
+- equal-raw-parameter overlaps that are actually different events: **6**;
+- only **1** equal-raw overlap is also the same event.
+
+The raw-equal-parameter rule is therefore classified as
+
+`invalid_equal_raw_parameter_event_rule`.
+
+Thus criteria **17–23** are satisfied and the bounded result is:
+
+`Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
+
+Guards:
+
+`equal raw lambda != physical-event correspondence`.
+
+`relational covariance on one finite orbit != general covariance`.
+
+### Stage 11C — typed O/P/R/V/Xi lift — next
+
+Stage 11C will test whether the Stage 10 layered `O/P/R/V;Xi` architecture itself—not merely the classical relational orbit—can be preserved/reconstructed across all four positive parameterizations while keeping event, continuation, record, value, and typing resources explicit.
 
 The controlled target remains narrower than general covariance:
 
@@ -185,8 +224,10 @@ The controlled target remains narrower than general covariance:
 - `parameter label != event identity`;
 - `internal clock perspective != external parameterization`;
 - `orientation-preserving reparameterization != time reversal`;
+- `equal raw lambda != physical-event correspondence`;
 - `same relational orbit != same metaphysics`;
 - `same constraint orbit != established general covariance`;
+- `relational covariance on one finite orbit != general covariance`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;

@@ -6,7 +6,7 @@ This roadmap is provisional and evidence-selected.
 
 `T11_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, and Stage 12B are completed on Draft PR #13; criteria 1–23 are satisfied and Stage 12C is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and, after the criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, and Stage 12C are completed on Draft PR #13; criteria 1–31 are satisfied and Stage 12D is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -311,6 +311,8 @@ Bounded result:
 
 `Dirac-invariant orbit data + nontrivial relational change` is therefore executable in this finite carrier.
 
+Stage 12B final incoming checkpoint head `b3f618c2f08a88c26c6153d768149e2ba5f1543e` passed run #1528: **`973 passed in 677.85s (0:11:17)`**.
+
 `Dirac invariant != timeless ontology by definition`.
 
 `Dirac-invariant data + relational change != proof of eternalism`.
@@ -321,9 +323,31 @@ Bounded result:
 
 `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
 
-### Next: Stage 12C — typed gauge atlas, quotient, and descent of relational structure
+### Stage 12C — typed gauge atlas, quotient, and descent of relational structure — completed
 
-Stage 12C must construct the typed atlas explicitly, test identity/inverse/composition of same-orbit gauge transports, recover exactly the intended four quotient classes, and verify that the Stage 12B relational/Dirac content descends without collapsing distinct physical orbits.
+Criteria **24–31** satisfied. The finite same-orbit groupoid contains **100 typed `Phi` arrows**, including **20 identities**, with **100 inverse checks** and **500 composition checks**; licensed cross-orbit gauge arrows are **0**.
+
+The quotient is constructed from gauge-arrow connectivity rather than direct `orbit_id` grouping and recovers exactly **4 quotient classes** of **5 representatives** each. Across the four frozen `tau` values, **16 quotient-level descent evaluations** test representative independence of `Q_D`, `P_D`, `q(T=tau)`, and `dq/dT`.
+
+Typed orbit identity/correspondence removal is classified **`lost`** while the full-Dirac-pair partition remains numerically **`reconstructible`** in this finite family. `wrong_Q_D_path` and `wrong_P_D_path` are **`numerically_refuted`**. Constraint-orbit / modal-continuation conflation is **`false_positive_rejected`**.
+
+Bounded structural result:
+
+`gauge-representative redundancy + physical-orbit plurality + nontrivial relational change`.
+
+`gauge quotient != elimination of physical change`.
+
+`constraint orbit != modal continuation`.
+
+`operational quotient descent != modal/ontological identity`.
+
+`finite gauge atlas != diffeomorphism invariance`.
+
+`multi-orbit gauge covariance != general covariance`.
+
+### Next: Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent
+
+Stage 12D must lift the inherited typed O/P/R/V/Xi and future-measurement family over every canonical physical orbit and representative while adding at least one genuinely orbit-sensitive operational witness. A trivial copy of one orbit-insensitive measurement payload to all orbits is not sufficient.
 
 ## Later directions
 
@@ -381,6 +405,9 @@ A richer causal/order layer, nonideal/POVM clocks, and a minimal gravitational/m
 - `Dirac-invariant data + relational change != proof of eternalism`;
 - `relational change != ontological becoming by definition`;
 - `gauge quotient != elimination of physical change`;
+- `constraint orbit != modal continuation`;
+- `operational quotient descent != modal/ontological identity`;
+- `finite gauge atlas != diffeomorphism invariance`;
 - `multi-orbit gauge covariance != general covariance`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;

@@ -4,27 +4,15 @@ This roadmap is provisional and evidence-selected.
 
 ## Current refined candidate
 
-`T10_candidate=(O,P,R,V;Xi)`
+`T10_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11E are completed; criteria 1–43 are satisfied and Stage 11F is next.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11D are completed; criteria 1–38 are satisfied and Stage 11E is next.
+## Stages 0–8 — completed and merged
 
-## Stages 0–6 — completed and merged
+Stages 0–6 established definitions, reconstruction/accessibility controls, modal underdetermination, reversible record asymmetry, constrained relational quantum dynamics, genuine physical clock changes, and the layered O/P/R/V/Xi candidate. Stage 7 integrated quantum records and Stage 8 integrated quantum Potentiality before selecting the directional-record gate.
 
-Stages 0–6 established definitions, reconstruction/accessibility controls, modal underdetermination, reversible record asymmetry, constrained relational quantum dynamics, genuine physical clock changes, and the layered O/P/R/V/Xi candidate.
-
-## Stage 7 — Quantum records inside a constrained multi-clock model — completed and merged
-
-Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. The Stage 6G evidence selection superseded that chronology and inserted the more discriminating record gate first.
-
-Gravity/general covariance is deferred, not abandoned.
-
-## Stage 8 — Quantum Potentiality inside the shared constrained construction — completed and merged
-
-Stage 8 integrated explicit Potentiality/extension semantics into the shared constrained quantum carrier, transported modal structure across clock perspectives, separated operational equality from modal identity, and pressure-tested the layered candidate.
-
-Stage 8G selected directional-record integration as Stage 9. `Potentiality != quantum randomness by definition`.
+Gravity/general covariance remains deferred, not abandoned.
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — completed and merged
 
@@ -44,13 +32,13 @@ Stage 9G — synthesis and evidence-selected next gate — completed.
 
 Stage 9 criterion 50 — external final validation — completed. Final Stage 9 validation: **`766 passed in 459.00s`**.
 
-Stage 9G executable synthesis: `refined_layered`.
+Stage 9G executable synthesis: `refined_layered`; the ranked gate was `full_measurement_covariance`.
 
-The Stage 9 ranking put `full_measurement_covariance` first. Selected Stage 10 gate:
+Selected Stage 10 gate:
 
 > **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
 
-At the **Stage 9 checkpoint**, full Stage 9C future-measurement covariance remained `not_established`.
+At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 later closed that bounded operational gap.
 
 Historical guards:
 
@@ -60,68 +48,39 @@ Historical guards:
 
 ## Stage 10 — Fully typed future-measurement covariance — completed and merged
 
-Selected Stage 10 gate:
-
-> **Construct and validate a fully typed cross-continuation future-measurement family under genuine continuation-aware clock changes.**
-
 Stage 10.0 — protocol freeze — completed.
 
 Stage 10A — typed reference future-measurement family — completed.
 
 Stage 10B — continuation-specific measurement lift / normalization choice — completed.
 
-Stage 10C — continuation-aware A/B/C measurement transport — completed: 18 typed charts, 108 genuine ordered distinct-clock measurement transports, and 324 three-clock compositions.
+Stage 10C — continuation-aware A/B/C measurement transport — completed: 18 typed charts, 108 genuine ordered distinct-clock transports, 324 three-clock compositions.
 
-Stage 10D — per-continuation Born/completeness/positivity covariance — completed: 196 Hermitian-tomography-complete probes and 7056 probe outcome-probability evaluations support the strong finite-family result.
+Stage 10D — per-continuation Born/completeness/positivity covariance — completed: 196 Hermitian-tomography-complete probes, 7056 probe outcome evaluations.
 
 Stage 10E — weights, modal models, and evidence-update covariance — completed.
 
 Stage 10F — ablation / wrong-typing / false-positive controls — completed. `numerical reconstructibility != typed operational identification`.
 
-Stage 10G — synthesis and evidence-selected next gate — completed. Criteria **48–49** are satisfied.
+Stage 10G — synthesis and evidence-selected next gate — completed. Criteria **48–49** are satisfied and the bounded result is `fully typed finite future-measurement covariance = established`.
 
-Executable Stage 10G synthesis:
+Stage 10 criterion 50 — completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**. Final current-head run #1275 passed **`868 passed in 402.52s`** before merge.
 
-`measurement_covariant`.
+Historical criterion-50 boundary: `merge-ready != merged`.
 
-The bounded result is:
-
-`fully typed finite future-measurement covariance = established`.
-
-Stage 10G ranking:
-
-1. `parametrized_covariance_precursor` — **9**
-2. `richer_causal_order` — **7**
-3. `nonideal_povm_clocks` — **6**
-
-Stage 10 criterion 50 — completed externally. Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**. The stale documentation guard found by run #1273 was corrected, and final current-head run #1275 passed **`868 passed in 402.52s`** before merge.
-
-PR #11 was merged into `main` on 2026-08-22 at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.
-
-Historical criterion-50 guard retained: `merge-ready != merged`; merge readiness itself did not constitute the later merge.
+PR #11 was subsequently merged into `main` at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.
 
 `repository validation != new scientific evidence`.
-
-## Stage 11 — Parametrized covariance precursor — Stage 11D completed
 
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
 
+## Stage 11 — Parametrized covariance precursor — Stage 11E completed
+
 ### Stage 11.0 — protocol freeze — completed
 
-The freeze established:
-
-- separate external parameterization id, raw parameter label, internal clock reading, physical event identity, continuation identity, and measurement typing;
-- explicit parameter-event correspondence in `Xi` rather than identifying equal numerical parameter values across representations;
-- the initial smooth strictly monotone orientation-preserving positive family `lambda' = f(lambda)` with `f'(lambda) > 0`;
-- identity, positive-affine, cubic-nonlinear, and hyperbolic-nonlinear minimum maps;
-- chain-rule lapse transformation so relational derivatives rather than raw parameter derivatives are candidate invariants;
-- orientation reversal, non-injective maps, raw-equal-parameter matching, wrong/missing lapse transformation, wrong event correspondence, and parameter-dependent physical corruption as controls;
-- Stage 10 measurement carry-over and the clock-change × reparameterization commuting target;
-- Stage 11A–G criteria and synthesis vocabulary.
-
-Frozen distinctions:
+Frozen distinctions include:
 
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
@@ -130,81 +89,29 @@ Frozen distinctions:
 - `same relational orbit != same metaphysics`;
 - `absence of preferred external parameterization != absence of ontological becoming`.
 
-Stage 11.0 documentation-synchronized regression: run #1285, **`874 passed in 640.88s (0:10:40)`**.
+The freeze also fixed the identity/affine/cubic/sinh positive family, chain-rule lapse transformation, explicit event correspondence, negative controls, Stage 10 carry-over targets, and Stage 11A–G criteria.
+
+Run #1285: **`874 passed in 640.88s (0:10:40)`**.
 
 ### Stage 11A — minimal parametrized constrained carrier and admissible family — completed
 
-Criteria **11–16** are satisfied.
+Criteria **11–16** satisfied. Implemented `C = p_T + p^2/2 = 0`, positive nonconstant lapse, 13 physical events, and the exact frozen positive family.
 
-Implemented scaffold:
-
-`C = p_T + p^2/2 = 0`.
-
-The canonical seed uses positive nonconstant lapse `N(lambda)=1+lambda^2/4`, 13 explicit physical events, and exactly the frozen identity/affine/cubic/hyperbolic positive family.
-
-Stage 11A diagnostics:
-
-- four positive admissible parameterizations;
-- minimum transformed positive lapse: **0.5**;
-- maximum constraint residual: **0.0**;
-- maximum lapse chain-rule residual: **0.0**;
-- maximum `T/q/p/p_T` orbit residual: **0.0**;
-- **36** corresponding event pairs with different raw parameter values;
-- **24** nonlinear-map points with raw derivative changes;
-- orientation reversal and `lambda^2` on the both-sign domain explicitly excluded from the positive family.
-
-Bounded result:
+Evidence: minimum positive lapse **0.5**; max constraint/lapse/orbit residuals **0.0**; **36** corresponding event pairs with different raw labels; **24** nonlinear raw-rate differences; reversal and non-injective controls excluded.
 
 `minimal Stage 11A constraint orbit preservation = established`.
 
-Repository-level Stage 11A checkpoint: run #1309, **`883 passed in 630.96s (0:10:30)`**.
-
-Guard:
+Run #1309: **`883 passed in 630.96s (0:10:30)`**.
 
 `same constraint orbit != established general covariance`.
 
 ### Stage 11B — relational observables and relational derivatives — completed
 
-Criteria **17–23** are satisfied.
+Criteria **17–23** satisfied. `q(T=tau)` and `dq/dT=(dq/dlambda)/(dT/dlambda)` are evaluated at typed corresponding events.
 
-The relational observable is
-
-`q(T=tau)`,
-
-and the relational derivative is
-
-`dq/dT=(dq/dlambda)/(dT/dlambda)`.
-
-Stage 11B executable evidence:
-
-- **52** relational-observable evaluations across 4 parameterizations × 13 events;
-- **52** relational-derivative evaluations;
-- maximum corresponding `q(T=tau)` residual: **0.0** within the deterministic carrier;
-- maximum cross-parameterization relational-derivative residual: **0.0** within tolerance;
-- reconstructed `dq/dT`: **1.25**;
-- raw nonlinear `dq/dlambda` differences remain at **24** chart-event points;
-- explicit typed precursor anchor/target views: **8**;
-- identity/affine equal raw-parameter overlaps: **7**;
-- equal raw overlaps that actually pair different events: **6**;
-- coincident overlap that is also the same event: **1**.
-
-The raw-equal-parameter matching rule is classified as
-
-`invalid_equal_raw_parameter_event_rule`.
-
-Bounded result:
+Evidence: **52** observable evaluations; **52** derivative evaluations; relational residuals **0.0**; reconstructed `dq/dT=1.25`; **24** nonlinear raw-rate changes. Identity/affine has 7 equal raw-label overlaps, 6 pairing different events; classified `invalid_equal_raw_parameter_event_rule`.
 
 `Stage 11B relational observable/derivative covariance on the frozen positive family = established`.
-
-Stage 11B validation checkpoints:
-
-- source/result run #1319 — **`890 passed in 640.07s (0:10:40)`**;
-- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**;
-- final Stage 11B synchronization run #1335 — **`891 passed in 652.53s (0:10:52)`**.
-
-These are repository-validation checkpoints only: `repository validation != new scientific evidence`.
-
-Guards:
 
 `equal raw lambda != physical-event correspondence`.
 
@@ -212,39 +119,11 @@ Guards:
 
 ### Stage 11C — typed O/P/R/V/Xi lift — completed
 
-Criteria **24–31** are satisfied by the executable Stage 11C diagnostics.
+Criteria **24–31** satisfied. The Stage 9/10 O/P/R/V payload is lifted to all four external parameterizations while raw parameter/lapse and correspondence resources remain in Xi.
 
-The Stage 9/10 O/P/R/V payload is lifted onto all four positive parameterizations while raw parameter values, transformed lapse values, event-role correspondence, and continuation/outcome typing are carried in Xi.
-
-Stage 11C diagnostics:
-
-- positive parameterizations: **4**;
-- matched epistemic/ontic public projections: **8**;
-- `QExt(e1)={h_L,h_R}` size: **2**;
-- `R_content`, `R_direction`, and `R_access` rows: **2** each;
-- Xi views: **4**;
-- continuation/class correspondence entries: **8**;
-- outcome correspondence entries: **8**;
-- maximum current-density residual: **0.0**;
-- maximum relational-O residual: **0.0**;
-- maximum R residual: **0.0**;
-- maximum V-weight residual: **0.0**;
-- matched epistemic/ontic public architectures agree across the positive family;
-- hidden epistemic `h*` swap remains public-invariant while privileged modal semantics remain distinct;
-- public O/P/R/V/Xi schema is selector-free;
-- parameter-dependent O/P/R/V corruption controls detected: **4 / 4**;
-- wrong continuation/class correspondence is rejected independently as an Xi typing failure.
-
-Bounded result:
+Evidence: 4 parameterizations; matched epistemic/ontic projections **8**; `QExt(e1)={h_L,h_R}` size 2; Xi views 4; continuation/class entries 8; outcome entries 8; O/R/V residuals 0.0; selector-free public schema; O/P/R/V corruption controls **4 / 4** detected.
 
 `Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
-
-Validation checkpoints:
-
-- source/unit-test run #1341 — **`898 passed in 666.75s (0:11:06)`**;
-- documentation-synchronized run #1355 — **`899 passed in 647.28s (0:10:47)`**.
-
-Guards:
 
 `typed O/P/R/V/Xi lift != full future-measurement covariance`.
 
@@ -252,86 +131,67 @@ Guards:
 
 `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`.
 
-`selector-free public projection != absence of privileged modal semantics`.
-
 ### Stage 11D — future-measurement reparameterization covariance — completed
 
-Criteria **32–38** are satisfied by the executable Stage 11D diagnostics.
+Criteria **32–38** satisfied. At fixed A/e2 internal chart, the frozen `e1 -> e2`, `QExt(e1)={h_L,h_R}`, `future_signature_left/future_signature_other` measurement is carried over all four external parameterizations.
 
-Stage 11D holds the internal Stage 10 reference chart fixed at **A/e2** and reuses the original `e1 -> e2`, `QExt(e1)={h_L,h_R}`, `future_signature_left/future_signature_other` measurement family across the four positive external parameterizations.
-
-Stage 11D evidence:
-
-- positive parameterizations: **4**;
-- continuation classes: **2**;
-- typed measurement views: **8**;
-- canonical outcome-probability evaluations: **16**;
-- maximum per-continuation reparameterization probability residual: **<= 1e-9**;
-- maximum Stage 9C/10 reference-likelihood residual: **<= 1e-9**;
-- maximum probability-sum residual: **<= 1e-9**;
-- maximum completeness residual: **<= 1e-9**;
-- effect positivity retained and operational normalization form/denominator remain positive;
-- weighted future-prediction reparameterization residual: **<= 1e-9**;
-- matched epistemic/ontic public measurement views agree across all four parameterizations;
-- hidden epistemic `h*` swap is public-view invariant while privileged modal roles remain distinct;
-- common-evidence epistemic/ontic posterior residuals: **<= 1e-9**;
-- public weighted schema and updated ontic state remain selector-free;
-- wrong event/Jacobian/normalization/outcome controls rejected: **4 / 4**;
-- wrong-normalization matrix and probability witnesses: **> 1e-9**.
-
-Bounded result:
+Evidence: 8 typed views; 16 canonical outcome evaluations; per-continuation, weighted, and posterior residuals **<=1e-9**; measurement completeness/positivity/normalization retained; wrong event/Jacobian/normalization/outcome controls **4 / 4** rejected.
 
 `Stage 11D future-measurement reparameterization covariance on the frozen positive family = established`.
 
-Source/unit-test checkpoint: run #1361, **`907 passed in 590.98s (0:09:50)`**.
-
-Guards:
+Run #1361: **`907 passed in 590.98s (0:09:50)`**. Final Stage 11D baseline run #1393: **`908 passed in 589.63s (0:09:49)`**.
 
 `external lapse != quantum measurement normalization form`.
 
-`numerically unchanged probability payload != well-typed reparameterization context`.
-
 `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`.
 
-`future-measurement reparameterization covariance != clock-change x reparameterization compatibility`.
+### Stage 11E — clock-change × parameterization compatibility — completed
 
-`parameterization-covariant future probabilities != future actuality`.
+Criteria **39–43** satisfied. Stage 11E explicitly represents both `G_{rho->sigma}` and genuine continuation-aware Stage 10 `C_{X->Y}` and tests
 
-`parameterization-covariant future probabilities != proof of eternalism`.
+`C_{X->Y} o G_{rho->sigma} ~= G_{rho->sigma} o C_{X->Y}`.
 
-`parameterization-covariant future probabilities != refutation of ontological becoming`.
+Finite exhaustive family:
 
-`evidence-update covariance != ontological becoming`.
+- 4 parameterization nodes, **12** ordered external transports;
+- 9 A/B/C clock/readout nodes;
+- 2 continuations, **54** genuine distinct-clock edges per continuation, **108** typed clock transports;
+- **648** relational O/event squares;
+- **1296** measurement/probability squares;
+- **648** weighted/modal squares;
+- **648** posterior squares.
 
-### Stage 11E — clock-change × parameterization compatibility — next
+All declared positive path/direct-target residuals are **<=1e-9**. Matched modal public equality, hidden-`h*` public invariance, and common-evidence posterior path independence are retained.
 
-Criteria **39–43** will combine the Stage 10 genuine A/B/C internal-clock transports with Stage 11 external reparameterization transport and test typed commuting/path-independence for relational O/event data, per-continuation measurement data/probabilities, weighted/modal/update outputs, and an explicit noncommuting control.
+Wrong path: relabeling an A/0 source chart as B/1 without genuine dual transport is classified `noncommuting_wrong_clock_path_detected`; normalization/effect/probability residuals are all **>1e-9**.
 
-### Later Stage 11 sequence
+`Stage 11E clock-change x parameterization compatibility on the frozen finite family = established`.
 
-Stage 11F — ablation / wrong-gauge / false-positive controls.
+Source/unit-test run #1407: **`915 passed in 482.25s (0:08:02)`**.
 
-Stage 11G — executable synthesis and evidence-selected next gate.
+Guards:
 
-Criterion 50 remains an external final full-repository regression / merge-readiness review, as in prior stages.
+`internal-clock covariance != reparameterization covariance`.
 
-The controlled target is narrower than general covariance:
+`commuting typed product square != independent interaction law`.
 
-`finite clock covariance != general covariance`.
+`commuting typed diagram != general covariance`.
 
-`finite typed parametrized covariance != general covariance`.
+`path-independent future probabilities != future actuality`.
 
-`parametrized covariance precursor != general relativity`.
+`path-independent evidence update != ontological becoming`.
 
-A richer causal/order layer and nonideal/POVM clocks remain live later candidates rather than rejected directions.
+### Stage 11F — ablation / wrong-gauge / false-positive controls — next
 
-### Historical roadmap labels retained for regression context
+Criteria **44–47** will test removal of parameter-event correspondence separately from numerical reconstructibility, missing/wrong lapse-Jacobian semantics, consolidated reversal/noninjective/raw-lambda/corruption controls, and interpretation boundaries.
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11D completed above.
+### Stage 11G — synthesis and evidence-selected next gate
 
-## Stage 12 — Empirical relevance — only if warranted
+Criteria **48–49** will select one frozen Stage 11 status from the full A–F evidence chain without assuming general covariance. Criterion 50 remains external final repository validation.
 
-Seek empirical relevance only after a genuinely discriminating prediction is derived that is not already guaranteed by the chosen formal representation.
+## Later directions
+
+A richer causal/order layer and nonideal/POVM clocks remain live candidates rather than rejected directions. Empirical relevance should be pursued only if a genuinely discriminating prediction emerges beyond the chosen representation.
 
 ## Cautions
 
@@ -353,17 +213,17 @@ Seek empirical relevance only after a genuinely discriminating prediction is der
 - `typed O/P/R/V/Xi lift != full future-measurement covariance`;
 - `typed product lift feasibility != independent dynamical covariance evidence`;
 - `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
-- `external lapse != quantum measurement normalization form`;
-- `numerically unchanged probability payload != well-typed reparameterization context`;
-- `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
-- `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
-- `parameterization-covariant future probabilities != future actuality`;
-- `parameterization-covariant future probabilities != proof of eternalism`;
-- `parameterization-covariant future probabilities != refutation of ontological becoming`;
-- `evidence-update covariance != ontological becoming`;
 - `selector-free public projection != absence of privileged modal semantics`;
+- `external lapse != quantum measurement normalization form`;
+- `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
+- `internal-clock covariance != reparameterization covariance`;
+- `commuting typed product square != independent interaction law`;
+- `commuting typed diagram != general covariance`;
+- `path-independent future probabilities != future actuality`;
+- `path-independent evidence update != ontological becoming`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;
 - `parametrized covariance precursor != general relativity`;
-- `finite-model success != empirical discovery`.
+- `finite-model success != empirical discovery`;
+- `repository validation != new scientific evidence`.

@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected.
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0, Stage 11A, Stage 11B, and Stage 11C are completed; criteria 1–31 are satisfied and Stage 11D is next.
+Stage 10G selects `measurement_covariant` for the declared finite typed future-measurement family. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11.** Stage 11.0 through Stage 11D are completed; criteria 1–38 are satisfied and Stage 11E is next.
 
 ## Stages 0–6 — completed and merged
 
@@ -102,7 +102,7 @@ Historical criterion-50 guard retained: `merge-ready != merged`; merge readiness
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11C completed
+## Stage 11 — Parametrized covariance precursor — Stage 11D completed
 
 Selected Stage 11 gate:
 
@@ -239,6 +239,11 @@ Bounded result:
 
 `Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
 
+Validation checkpoints:
+
+- source/unit-test run #1341 — **`898 passed in 666.75s (0:11:06)`**;
+- documentation-synchronized run #1355 — **`899 passed in 647.28s (0:10:47)`**.
+
 Guards:
 
 `typed O/P/R/V/Xi lift != full future-measurement covariance`.
@@ -249,13 +254,60 @@ Guards:
 
 `selector-free public projection != absence of privileged modal semantics`.
 
-### Stage 11D — future-measurement reparameterization covariance — next
+### Stage 11D — future-measurement reparameterization covariance — completed
 
-Criteria **32–38** will reuse the frozen Stage 10 future-signature measurement family and test the actual per-continuation probability/measurement layer across the four positive external parameterizations, including completeness/positivity/normalization, weighted predictions, common-evidence update, and wrong-typing controls.
+Criteria **32–38** are satisfied by the executable Stage 11D diagnostics.
+
+Stage 11D holds the internal Stage 10 reference chart fixed at **A/e2** and reuses the original `e1 -> e2`, `QExt(e1)={h_L,h_R}`, `future_signature_left/future_signature_other` measurement family across the four positive external parameterizations.
+
+Stage 11D evidence:
+
+- positive parameterizations: **4**;
+- continuation classes: **2**;
+- typed measurement views: **8**;
+- canonical outcome-probability evaluations: **16**;
+- maximum per-continuation reparameterization probability residual: **<= 1e-9**;
+- maximum Stage 9C/10 reference-likelihood residual: **<= 1e-9**;
+- maximum probability-sum residual: **<= 1e-9**;
+- maximum completeness residual: **<= 1e-9**;
+- effect positivity retained and operational normalization form/denominator remain positive;
+- weighted future-prediction reparameterization residual: **<= 1e-9**;
+- matched epistemic/ontic public measurement views agree across all four parameterizations;
+- hidden epistemic `h*` swap is public-view invariant while privileged modal roles remain distinct;
+- common-evidence epistemic/ontic posterior residuals: **<= 1e-9**;
+- public weighted schema and updated ontic state remain selector-free;
+- wrong event/Jacobian/normalization/outcome controls rejected: **4 / 4**;
+- wrong-normalization matrix and probability witnesses: **> 1e-9**.
+
+Bounded result:
+
+`Stage 11D future-measurement reparameterization covariance on the frozen positive family = established`.
+
+Source/unit-test checkpoint: run #1361, **`907 passed in 590.98s (0:09:50)`**.
+
+Guards:
+
+`external lapse != quantum measurement normalization form`.
+
+`numerically unchanged probability payload != well-typed reparameterization context`.
+
+`typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`.
+
+`future-measurement reparameterization covariance != clock-change x reparameterization compatibility`.
+
+`parameterization-covariant future probabilities != future actuality`.
+
+`parameterization-covariant future probabilities != proof of eternalism`.
+
+`parameterization-covariant future probabilities != refutation of ontological becoming`.
+
+`evidence-update covariance != ontological becoming`.
+
+### Stage 11E — clock-change × parameterization compatibility — next
+
+Criteria **39–43** will combine the Stage 10 genuine A/B/C internal-clock transports with Stage 11 external reparameterization transport and test typed commuting/path-independence for relational O/event data, per-continuation measurement data/probabilities, weighted/modal/update outputs, and an explicit noncommuting control.
 
 ### Later Stage 11 sequence
-
-Stage 11E — internal-clock change × external-reparameterization compatibility and commuting squares.
 
 Stage 11F — ablation / wrong-gauge / false-positive controls.
 
@@ -275,7 +327,7 @@ A richer causal/order layer and nonideal/POVM clocks remain live later candidate
 
 ### Historical roadmap labels retained for regression context
 
-Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11C completed above.
+Before Stage 10G closed criteria 48–49, planning documents used the historical label `## Stage 10 — Fully typed future-measurement covariance — in progress` and described `## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate`. Those labels are retained here only as historical chronology; the current status is Stage 10 merged and Stage 11D completed above.
 
 ## Stage 12 — Empirical relevance — only if warranted
 
@@ -301,6 +353,14 @@ Seek empirical relevance only after a genuinely discriminating prediction is der
 - `typed O/P/R/V/Xi lift != full future-measurement covariance`;
 - `typed product lift feasibility != independent dynamical covariance evidence`;
 - `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
+- `external lapse != quantum measurement normalization form`;
+- `numerically unchanged probability payload != well-typed reparameterization context`;
+- `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
+- `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
+- `parameterization-covariant future probabilities != future actuality`;
+- `parameterization-covariant future probabilities != proof of eternalism`;
+- `parameterization-covariant future probabilities != refutation of ontological becoming`;
+- `evidence-update covariance != ontological becoming`;
 - `selector-free public projection != absence of privileged modal semantics`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;

@@ -14,6 +14,7 @@ chart has different matrix bytes and therefore receives a distinct cache key.
 
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import Any
 
 import numpy as np
@@ -89,6 +90,7 @@ def _with_cache(function, *args, **kwargs):
         _core.stage10d_chart_probabilities = original
 
 
+@lru_cache(maxsize=None)
 def stage11e_diagnostics(*, atol: float = DEFAULT_ATOL):
     return _with_cache(_core.stage11e_diagnostics, atol=atol)
 

@@ -6,6 +6,8 @@ README = (ROOT / "README.md").read_text(encoding="utf-8")
 ROADMAP = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "docs" / "stage11_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage11_0_protocol_freeze.md").read_text(encoding="utf-8")
+NOTES_A = (ROOT / "docs" / "stage11a_notes.md").read_text(encoding="utf-8")
+RESULT_A = (ROOT / "results" / "stage11a_parametrized.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE11 = (
     "Construct a parametrized covariance precursor that preserves the typed "
@@ -34,7 +36,7 @@ def test_stage11_type_separation_is_frozen() -> None:
     assert "parameterization correspondence != event identity" in PROTOCOL
 
 
-def test_stage11_parametrized_constraint_and_positive_family_are_frozen() -> None:
+def test_stage11_parametrized_constraint_and_positive_family_are_preserved() -> None:
     for phrase in (
         "C = p_T + H(q,p) approx 0",
         "H(q,p)=p^2/2",
@@ -61,7 +63,7 @@ def test_stage11_reuses_stage10_typed_architecture() -> None:
     assert "internal-clock covariance != reparameterization covariance" in PROTOCOL
 
 
-def test_stage11_negative_controls_and_antitriviality_are_frozen() -> None:
+def test_stage11_negative_controls_and_antitriviality_remain_frozen() -> None:
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "raw-equal-parameter",
@@ -78,17 +80,16 @@ def test_stage11_negative_controls_and_antitriviality_are_frozen() -> None:
     assert "non-injective relabeling != admissible reparameterization" in combined
 
 
-def test_stage11_criteria_and_sequence_are_frozen_without_premature_success() -> None:
-    assert "criteria 1–10 frozen/satisfied" in PROTOCOL.lower()
-    assert "criteria 11–50 pending" in PROTOCOL.lower()
+def test_stage11_freeze_remains_historical_after_stage11a_closure() -> None:
     assert "Stage 11.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
+    assert "criteria 1–16 satisfied" in PROTOCOL.lower()
+    assert "criteria 17–50 pending" in PROTOCOL.lower()
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 10
-    assert PROTOCOL.count("**pending**") == 40
-    for stage in ("Stage 11A", "Stage 11B", "Stage 11C", "Stage 11D", "Stage 11E", "Stage 11F", "Stage 11G"):
-        assert stage in PROTOCOL
-        assert stage in FREEZE
+    assert PROTOCOL.count("**satisfied**") == 16
+    assert PROTOCOL.count("**pending**") == 34
+    assert "Stage 11A — minimal parametrized constrained carrier and admissible family — completed" in PROTOCOL
+    assert "Stage 11B — relational observables and relational derivatives — next" in PROTOCOL
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -98,3 +99,17 @@ def test_stage11_criteria_and_sequence_are_frozen_without_premature_success() ->
         assert status in PROTOCOL
     assert "finite typed parametrized covariance != general covariance" in PROTOCOL
     assert "absence of preferred external parameterization != absence of ontological becoming" in PROTOCOL
+
+
+def test_stage11a_documented_diagnostics_close_only_criteria_11_16() -> None:
+    for text in (PROTOCOL, NOTES_A, RESULT_A):
+        assert "criteria 11–16" in text
+        assert "36" in text
+        assert "24" in text
+        assert "0.5" in text
+        assert "same constraint orbit != established general covariance" in text
+    assert "minimum transformed positive lapse" in RESULT_A
+    assert "max constraint residual" in RESULT_A
+    assert "max lapse chain-rule residual" in RESULT_A
+    assert "Stage 11B" in NOTES_A and "next" in NOTES_A.lower()
+    assert "Stage 11B" in RESULT_A and "Next checkpoint" in RESULT_A

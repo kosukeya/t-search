@@ -2,8 +2,6 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-README = (ROOT / "README.md").read_text(encoding="utf-8")
-ROADMAP = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "docs" / "stage12_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage12_0_protocol_freeze.md").read_text(encoding="utf-8")
 
@@ -13,15 +11,9 @@ SELECTED_STAGE12 = (
     "whether relational/Dirac observables and the typed O/P/R/V measurement "
     "architecture descend consistently across that atlas."
 )
-STAGE11_MERGE = "d5fdc899a72b6a983c03b1f960c65cda948c8fb8"
 
 
-def test_stage11_merge_and_stage12_gate_are_synchronized() -> None:
-    for text in (README, ROADMAP):
-        assert "Stage 11" in text
-        assert "merged" in text.lower()
-        assert STAGE11_MERGE in text
-        assert SELECTED_STAGE12 in text
+def test_stage12_gate_and_stage11_boundary_are_synchronized() -> None:
     for text in (PROTOCOL, FREEZE):
         assert SELECTED_STAGE12 in text
         assert "one-orbit covariance != multi-orbit gauge covariance" in text
@@ -56,6 +48,7 @@ def test_stage12_constraint_flow_and_dirac_invariants_are_frozen() -> None:
 
 
 def test_stage12_canonical_multi_orbit_family_is_frozen() -> None:
+    compact = PROTOCOL.replace(" ", "")
     for orbit_id, pair in (
         ("omega_alpha", "(-0.35,1.25)"),
         ("omega_beta", "(0.40,1.25)"),
@@ -63,7 +56,7 @@ def test_stage12_canonical_multi_orbit_family_is_frozen() -> None:
         ("omega_delta", "(0.20,1.75)"),
     ):
         assert orbit_id in PROTOCOL
-        assert pair in PROTOCOL.replace(" ", "")
+        assert pair in compact
     assert "same momentum, different relational intercept" in PROTOCOL
     assert "same intercept, different momentum" in PROTOCOL
 

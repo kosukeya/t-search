@@ -1,8 +1,15 @@
 # Stage 11B Results — Relational Observables and Relational Derivatives
 
-Status: **criteria 17–23 satisfied by the Stage 11B executable diagnostics, pending final current-head repository regression.**
+Status: **criteria 17–23 satisfied; Stage 11B repository-level checkpoint completed.**
 
 Stage 11A repository baseline: run #1309 — **`883 passed in 630.96s (0:10:30)`**.
+
+Stage 11B validation:
+
+- source/result checkpoint run #1319 — **`890 passed in 640.07s (0:10:40)`**;
+- documentation-synchronized current-head run #1327 — **`891 passed in 628.78s (0:10:28)`**.
+
+These runs validate repository consistency only: `repository validation != new scientific evidence`.
 
 ## Carrier and positive family
 

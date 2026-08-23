@@ -20,6 +20,7 @@ NOTES_F = (ROOT / "docs" / "stage11f_notes.md").read_text(encoding="utf-8")
 RESULT_F = (ROOT / "results" / "stage11f_ablation.md").read_text(encoding="utf-8")
 NOTES_G = (ROOT / "docs" / "stage11g_notes.md").read_text(encoding="utf-8")
 RESULT_G = (ROOT / "results" / "stage11g_synthesis_stage12_gate.md").read_text(encoding="utf-8")
+CHECKPOINT = (ROOT / "results" / "stage11_criterion50_merge_readiness.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE11 = (
     "Construct a parametrized covariance precursor that preserves the typed "
@@ -33,6 +34,7 @@ SELECTED_STAGE12 = (
     "architecture descend consistently across that atlas."
 )
 STAGE10_MERGE = "4a322634a5b83e416d374ee18e96ac6c7a5c88ba"
+VALIDATED_STAGE11_HEAD = "6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a"
 
 
 def test_stage10_merge_and_stage11_gate_are_synchronized() -> None:
@@ -98,14 +100,13 @@ def test_stage11_negative_controls_and_antitriviality_remain_frozen() -> None:
     assert "non-injective relabeling != admissible reparameterization" in combined
 
 
-def test_stage11_freeze_remains_historical_after_stage11g_closure() -> None:
+def test_stage11_freeze_remains_historical_after_criterion50_closure() -> None:
     assert "Stage 11.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
-    assert "criteria 1–49 satisfied" in PROTOCOL.lower()
-    assert "criterion 50 pending" in PROTOCOL.lower()
+    assert "criteria 1–50 satisfied" in PROTOCOL.lower()
     for criterion in range(1, 51):
         assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 49
-    assert PROTOCOL.count("**pending**") == 1
+    assert PROTOCOL.count("**satisfied**") == 50
+    assert PROTOCOL.count("**pending**") == 0
     for stage in (
         "Stage 11A — minimal parametrized constrained carrier and admissible family — completed",
         "Stage 11B — relational observables and relational derivatives — completed",
@@ -116,7 +117,7 @@ def test_stage11_freeze_remains_historical_after_stage11g_closure() -> None:
         "Stage 11G — synthesis and evidence-selected next gate — completed",
     ):
         assert stage in PROTOCOL
-    assert "Criterion 50 — external final repository validation — next" in PROTOCOL
+    assert "Criterion 50 — external final repository validation — completed" in PROTOCOL
     for status in (
         "parametrized_covariant",
         "parametrized_partial",
@@ -272,21 +273,19 @@ def test_stage11g_documents_synthesis_and_selected_stage12_gate() -> None:
     assert "`gravitational_minisuperspace_extension` | **5**" in RESULT_G
 
 
-def test_stage11_planning_documents_advance_to_external_criterion50() -> None:
-    for text in (README, ROADMAP, PROTOCOL):
-        assert "Stage 11G" in text
-        assert "criteria 1–49" in text
+def test_stage11_criterion50_closure_is_synchronized() -> None:
+    for text in (README, ROADMAP, PROTOCOL, CHECKPOINT):
+        assert "criteria 1–50" in text.lower()
         assert "parametrized_covariant" in text
         assert "multi_orbit_constraint_gauge_atlas" in text
         assert "finite typed parametrized covariance != general covariance" in text
-        assert "criterion 50" in text.lower()
-    for status in (
-        "parametrized_covariant",
-        "parametrized_partial",
-        "parametrized_obstructed",
-        "inconclusive",
-    ):
-        assert status in PROTOCOL
+        assert "#1469" in text
+        assert "938 passed in 682.23s" in text
+        assert "merge-ready != merged" in text
+    assert VALIDATED_STAGE11_HEAD in README
+    assert VALIDATED_STAGE11_HEAD in ROADMAP
+    assert VALIDATED_STAGE11_HEAD in PROTOCOL
+    assert VALIDATED_STAGE11_HEAD in CHECKPOINT
     assert (
         "48. Executable synthesis selects one frozen Stage 11 status from the full Stage 11A–F evidence chain — **satisfied**."
         in PROTOCOL
@@ -296,6 +295,6 @@ def test_stage11_planning_documents_advance_to_external_criterion50() -> None:
         in PROTOCOL
     )
     assert (
-        "50. External final full-repository regression and merge-readiness review — **pending**."
+        "50. External final full-repository regression and merge-readiness review — **satisfied**."
         in PROTOCOL
     )

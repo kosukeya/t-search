@@ -4,15 +4,15 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, Stage 12C, Stage 12D, Stage 12E, and Stage 12F are completed on Draft PR #13; Stage 12 criteria 1–47 are satisfied and Stage 12G is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0 and Stage 12A–G are completed on Draft PR #13; Stage 12 criteria 1–49 are satisfied and criterion 50 is next.**
 
-Current refined finite-model candidate carried through Stage 11:
+Current refined finite-model candidate through Stage 12:
 
-`T11_candidate=(O,P,R,V;Xi)`
+`T12_candidate=(O,P,R,V;Xi)`
 
-with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped with a finite typed external reparameterization atlas `G` compatible with the continuation-aware internal-clock atlas `C` on the declared finite product family.
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`.
+Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`. Stage 12G executable synthesis is `multi_orbit_gauge_covariant`.
 
 Selected Stage 11 gate:
 
@@ -21,6 +21,10 @@ Selected Stage 11 gate:
 Selected Stage 12 gate:
 
 > **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+Selected Stage 13 gate:
+
+> **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
 
 ## Historical Stage 8 checkpoint
 
@@ -317,6 +321,7 @@ Key documents:
 - [`docs/stage12d_notes.md`](docs/stage12d_notes.md) / [`results/stage12d_measurement.md`](results/stage12d_measurement.md)
 - [`docs/stage12e_notes.md`](docs/stage12e_notes.md) / [`results/stage12e_compatibility.md`](results/stage12e_compatibility.md)
 - [`docs/stage12f_notes.md`](docs/stage12f_notes.md) / [`results/stage12f_ablation.md`](results/stage12f_ablation.md)
+- [`docs/stage12g_notes.md`](docs/stage12g_notes.md) / [`results/stage12g_synthesis_stage13_gate.md`](results/stage12g_synthesis_stage13_gate.md)
 
 ### Stage 12.0 — protocol freeze — completed
 
@@ -410,7 +415,46 @@ The bounded result is
 
 `Stage 12F typed-resource ablation / wrong-orbit / false-positive controls on the frozen finite multi-orbit gauge atlas = established`.
 
-Criteria **1–47 are satisfied and Stage 12G is next**.
+Stage 12F source run #1596 produced **`1 failed, 1009 passed in 696.32s (0:11:36)`** because one test used exact float equality. The implementation was unchanged when that one assertion was changed to a tolerance comparison. Final Stage 12F repository checkpoint head `68f50acacc4b18f7f646ddc912a8e2791e24cded` passed run #1612 with **`1011 passed in 692.53s (0:11:32)`** and supersedes #1596.
+
+### Stage 12G — executable synthesis and evidence-selected next gate — completed
+
+Stage 12G integrates the complete Stage 12A–F evidence chain and selects exactly one frozen status:
+
+`multi_orbit_gauge_covariant`.
+
+The bounded structural result is
+
+`gauge-representative redundancy + physical-orbit plurality + Dirac-invariant orbit data + nontrivial relational change + quotient-level typed operational descent`.
+
+This does not identify gauge quotienting with elimination of change and does not decide between block/eternalist and ontological-becoming interpretations.
+
+Stage 13 candidate ranking:
+
+| rank | gate | score |
+| --- | --- | ---: |
+| 1 | `multi_constraint_refoliation_precursor` | **10** |
+| 2 | `gravitational_minisuperspace_extension` | **7** |
+| 2 | `richer_causal_order` | **7** |
+| 4 | `nonideal_povm_clocks` | **6** |
+
+Selected Stage 13 gate:
+
+> **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
+
+The nearest unresolved assumption is now the single Hamiltonian constraint. The selected gate isolates nontrivial constraint-algebra effects before a direct gravitational extension.
+
+Criteria **1–49 are satisfied and criterion 50 is next**.
+
+`multi_orbit_gauge_covariant finite family != general covariance`.
+
+`finite constraint-generated gauge atlas != diffeomorphism invariance`.
+
+`finite C x G x Phi compatibility != refoliation invariance`.
+
+`single Hamiltonian constraint != hypersurface-deformation algebra`.
+
+`constraint-algebra/refoliation precursor != general relativity`.
 
 `numerical reconstructibility != typed operational identification`.
 
@@ -530,6 +574,11 @@ Criteria **1–47 are satisfied and Stage 12G is next**.
 - `false-positive rejection != proof of eternalism`;
 - `finite gauge atlas != diffeomorphism invariance`;
 - `multi-orbit gauge covariance != general covariance`;
+- `multi_orbit_gauge_covariant finite family != general covariance`;
+- `finite constraint-generated gauge atlas != diffeomorphism invariance`;
+- `finite C x G x Phi compatibility != refoliation invariance`;
+- `single Hamiltonian constraint != hypersurface-deformation algebra`;
+- `constraint-algebra/refoliation precursor != general relativity`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
 - `finite-model success != empirical discovery`;

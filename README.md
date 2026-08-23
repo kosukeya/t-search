@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, and Stage 12B are completed on Draft PR #13; Stage 12 criteria 1–23 are satisfied and Stage 12C is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0, Stage 12A, Stage 12B, and Stage 12C are completed on Draft PR #13; Stage 12 criteria 1–31 are satisfied and Stage 12D is next.**
 
 Current refined finite-model candidate carried through Stage 11:
 
@@ -313,6 +313,7 @@ Key documents:
 - [`results/stage12_0_protocol_freeze.md`](results/stage12_0_protocol_freeze.md)
 - [`docs/stage12a_notes.md`](docs/stage12a_notes.md) / [`results/stage12a_multi_orbit.md`](results/stage12a_multi_orbit.md)
 - [`docs/stage12b_notes.md`](docs/stage12b_notes.md) / [`results/stage12b_relational.md`](results/stage12b_relational.md)
+- [`docs/stage12c_notes.md`](docs/stage12c_notes.md) / [`results/stage12c_gauge_atlas.md`](results/stage12c_gauge_atlas.md)
 
 ### Stage 12.0 — protocol freeze — completed
 
@@ -338,7 +339,23 @@ The bounded result is
 
 `Stage 12B Dirac/relational physical-orbit discrimination on the frozen finite family = established`.
 
-Criteria **1–23** are satisfied; **Stage 12C — typed gauge atlas, quotient, and descent of relational structure — is next**.
+Stage 12B final incoming checkpoint head `b3f618c2f08a88c26c6153d768149e2ba5f1543e` passed run #1528 with **`973 passed in 677.85s (0:11:17)`**.
+
+### Stage 12C — typed gauge atlas, quotient, and descent of relational structure — completed
+
+Stage 12C constructs the complete sampled same-orbit gauge groupoid over the Stage 12A representatives: **100 typed `Phi` arrows** including **20 identities**, with **100 inverse checks** and **500 composition checks**. Licensed cross-orbit gauge arrows remain **0**.
+
+The gauge quotient is built from arrow connectivity rather than direct `orbit_id` grouping. It recovers exactly **4 quotient classes** of **5 representatives** each, covering all 20 sampled representatives without mixing canonical physical orbits.
+
+For every quotient class and the four frozen `tau` values, Stage 12C independently recomputes `Q_D=q-pT`, `P_D=p`, `q(T=tau)=Q_D+P_D tau`, and `dq/dT=P_D`, giving **16 quotient-level descent evaluations**. Representative spreads are required to remain within tolerance.
+
+Orbit identity/correspondence ablation is separated into typed status **`lost`** and finite numerical status **`reconstructible`**. Two corrupted purported gauge paths, `wrong_Q_D_path` and `wrong_P_D_path`, are **`numerically_refuted`**. Constraint-orbit / modal-continuation identification is **`false_positive_rejected`**.
+
+The bounded structural result is
+
+`gauge-representative redundancy + physical-orbit plurality + nontrivial relational change`.
+
+Criteria **1–31** are satisfied; **Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — is next**.
 
 `Dirac invariant != timeless ontology by definition`.
 
@@ -347,6 +364,14 @@ Criteria **1–23** are satisfied; **Stage 12C — typed gauge atlas, quotient, 
 `relational change != ontological becoming by definition`.
 
 `gauge quotient != elimination of physical change`.
+
+`constraint orbit != modal continuation`.
+
+`operational quotient descent != modal/ontological identity`.
+
+`finite gauge atlas != diffeomorphism invariance`.
+
+`multi-orbit gauge covariance != general covariance`.
 
 `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
 
@@ -404,6 +429,9 @@ Criteria **1–23** are satisfied; **Stage 12C — typed gauge atlas, quotient, 
 - `Dirac-invariant data + relational change != proof of eternalism`;
 - `relational change != ontological becoming by definition`;
 - `gauge quotient != elimination of physical change`;
+- `constraint orbit != modal continuation`;
+- `operational quotient descent != modal/ontological identity`;
+- `finite gauge atlas != diffeomorphism invariance`;
 - `multi-orbit gauge covariance != general covariance`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;

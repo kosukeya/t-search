@@ -28,21 +28,17 @@ Selected Stage 13 gate:
 
 ## Stage 7 — Quantum records inside a constrained multi-clock model
 
-Stage 7 completed the quantum-record integration before the later Potentiality and directional-record gates. The earlier direct gravity assignment was superseded by evidence-selected intermediate gates; gravity/general covariance remained deferred rather than rejected.
+Earlier roadmap versions assigned Stage 7 directly to a generally covariant / gravitational extension. The Stage 6G evidence selection superseded that chronology and inserted the more discriminating record gate first.
+
+Gravity/general covariance is deferred, not abandoned.
 
 ## Stage 8 — Quantum Potentiality inside the shared constrained construction
 
-Stage 8 integrated explicit Potentiality/extension semantics in the shared constrained construction. Stage 8G completed the synthesis and selected Stage 9 while continuing to defer a direct gravity jump.
+Stage 8 integrated explicit Potentiality/extension semantics in the shared constrained construction. Stage 8G completed criteria **48–49**, kept criterion **50** external, and selected the directional-record Stage 9 gate while gravity/general covariance remained deferred.
 
 `Potentiality != quantum randomness by definition`.
 
-At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 subsequently closed that bounded operational gap.
-
-Stage 9G executable synthesis selected `refined_layered` and retained the evidence-selected move to fully typed future-measurement covariance.
-
-## Stages 0–9 — completed and merged
-
-Stages 0–6 established the reconstruction/accessibility, modal, record, constrained relational, multi-clock, and layered O/P/R/V/Xi foundations. Stage 7 integrated quantum records, Stage 8 explicit Potentiality, and Stage 9 directional records with nontrivial Potentiality. Stage 9G selected the fully typed future-measurement covariance gate and criterion 50 later closed with final Stage 9 validation **`766 passed in 459.00s`**.
+## Stage 9 — Directional records with nontrivial quantum Potentiality
 
 Stage 9A — common directional-R/V continuation substrate — completed.
 
@@ -59,6 +55,32 @@ Stage 9F — ablation / reconstruction / accessibility matrix — completed.
 Stage 9G — synthesis and evidence-selected next gate — completed.
 
 Stage 9 criterion 50 — external final validation — completed.
+
+At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 subsequently closed that bounded operational gap.
+
+Stage 9G executable synthesis selected `refined_layered`, ranked `full_measurement_covariance` as the next gate, and selected the fully typed future-measurement covariance program.
+
+`finite-family bidirectional countermodels != universal R-V independence theorem`.
+
+`P edge reconstruction != P layer universally redundant`.
+
+`finite clock covariance != general covariance`.
+
+### Historical planning labels retained for regression context
+
+Before Stage 10G closed its synthesis and before Stage 11 became the active gate, planning documents used the historical labels below. They are retained only to preserve the evidence-selected chronology; they do not describe the current state.
+
+## Stage 10 — Fully typed future-measurement covariance — in progress
+
+Selected Stage 10 gate remained the fully typed cross-continuation future-measurement family above until Stage 10G closed it.
+
+## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate
+
+At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
+
+## Stages 0–9 — completed and merged
+
+Stages 0–6 established the reconstruction/accessibility, modal, record, constrained relational, multi-clock, and layered O/P/R/V/Xi foundations. Stage 7 integrated quantum records, Stage 8 explicit Potentiality, and Stage 9 directional records with nontrivial Potentiality. Stage 9G selected the fully typed future-measurement covariance gate and criterion 50 later closed with final Stage 9 validation **`766 passed in 459.00s`**.
 
 `Potentiality != quantum randomness by definition`.
 

@@ -1,6 +1,6 @@
 # Stage 12 Protocol — Multi-Orbit Constraint-Generated Gauge Atlas
 
-Status: **Stage 12B completed; criteria 1–23 satisfied; criteria 24–50 pending.**
+Status: **Stage 12C completed; criteria 1–31 satisfied; criteria 32–50 pending.**
 
 Selected Stage 12 gate from Stage 11G:
 
@@ -309,6 +309,54 @@ This realizes the finite conjunction
 
 `relational change != ontological becoming by definition`.
 
+### Stage 12C implementation checkpoint
+
+Stage 12C turns the sampled representatives into a typed finite same-orbit gauge groupoid and constructs the quotient from arrow connectivity rather than directly grouping by the stored `orbit_id` field.
+
+Typed node roles explicitly distinguish:
+
+- physical orbit;
+- gauge representative;
+- external parameterization;
+- relational event;
+- internal clock `T`;
+- modal continuation `h_L/h_R`.
+
+Finite gauge-atlas evidence:
+
+- **100 typed `Phi` arrows** including identities;
+- **20 identity arrows**;
+- **100 inverse checks**;
+- **500 composition checks**;
+- **0 licensed cross-orbit gauge arrows**;
+- exact quotient partition into **4 classes** of **5 representatives** each;
+- **16 quotient-level relational/Dirac descent evaluations** across the four frozen `tau` values;
+- orbit identity/correspondence ablation classified as typed **`lost`** while the full Dirac-pair partition remains numerically **`reconstructible`** in this finite family;
+- two independently corrupted purported gauge paths (`wrong_Q_D_path`, `wrong_P_D_path`) classified **`numerically_refuted`**;
+- constraint-orbit / modal-continuation false identification classified **`false_positive_rejected`**.
+
+The quotient-level descent checks independently recompute
+
+`Q_D=q-pT`,
+
+`P_D=p`,
+
+`q(T=tau)=Q_D+P_D tau`,
+
+and
+
+`dq/dT=P_D`
+
+from every representative in each quotient class.
+
+The finite structural result is
+
+`gauge-representative redundancy + physical-orbit plurality + nontrivial relational change`.
+
+`gauge quotient != elimination of physical change`.
+
+`operational quotient descent != modal/ontological identity`.
+
 ## 11. Frozen synthesis vocabulary
 
 Stage 12G must select exactly one of:
@@ -325,8 +373,8 @@ Stage 12G must select exactly one of:
 - Stage 12.0 — protocol freeze — **completed**;
 - Stage 12A — multi-orbit constrained carrier and explicit gauge-flow representatives — **completed**;
 - Stage 12B — Dirac/relational observables and physical-orbit discrimination — **completed**;
-- Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **next**;
-- Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent;
+- Stage 12C — typed gauge atlas, quotient, and descent of relational structure — **completed**;
+- Stage 12D — O/P/R/V/Xi and orbit-sensitive future-measurement descent — **next**;
 - Stage 12E — internal clock × external parameterization × gauge-flow compatibility;
 - Stage 12F — ablation / wrong-orbit / false-positive controls;
 - Stage 12G — executable synthesis and evidence-selected next gate;
@@ -364,14 +412,14 @@ Stage 12G must select exactly one of:
 23. Equal-label/equal-single-variable false orbit matching is rejected — **satisfied**.
 
 ### Criteria 24–31 — Stage 12C
-24. Typed nodes distinguish orbit, representative, parameterization, event, and clock roles — **pending**.
-25. Same-orbit gauge transports satisfy identity/inverse/composition on the declared atlas — **pending**.
-26. No licensed gauge transport connects distinct canonical physical orbits — **pending**.
-27. Quotient classes recover exactly the intended canonical orbit partition — **pending**.
-28. Relational/Dirac observables descend consistently to quotient classes — **pending**.
-29. Orbit identity/correspondence ablation is classified separately from numerical reconstructibility — **pending**.
-30. Wrong-invariant gauge paths are numerically detected — **pending**.
-31. Gauge quotienting does not identify constraint orbits with modal continuations — **pending**.
+24. Typed nodes distinguish orbit, representative, parameterization, event, and clock roles — **satisfied**.
+25. Same-orbit gauge transports satisfy identity/inverse/composition on the declared atlas — **satisfied**.
+26. No licensed gauge transport connects distinct canonical physical orbits — **satisfied**.
+27. Quotient classes recover exactly the intended canonical orbit partition — **satisfied**.
+28. Relational/Dirac observables descend consistently to quotient classes — **satisfied**.
+29. Orbit identity/correspondence ablation is classified separately from numerical reconstructibility — **satisfied**.
+30. Wrong-invariant gauge paths are numerically detected — **satisfied**.
+31. Gauge quotienting does not identify constraint orbits with modal continuations — **satisfied**.
 
 ### Criteria 32–38 — Stage 12D
 32. O/P/R/V/Xi architecture lifted over every canonical orbit and representative — **pending**.

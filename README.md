@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11E are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–43 are satisfied and Stage 11F is next.**
+**Historical checkpoint: Stages 1–9 are completed and merged. Current checkpoint: Stages 1–10 are completed and merged. Stage 10 criteria 1–50 are completed; PR #11 merged Stage 10 into `main` at merge commit `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11.0 through Stage 11F are completed on `agent/stage-11-parametrized-covariance-precursor`; criteria 1–47 are satisfied and Stage 11G is next.**
 
 Current refined finite-model candidate carried into Stage 11:
 
@@ -84,7 +84,7 @@ Historical boundary: `merge-ready != merged`.
 
 `repository validation != new scientific evidence`.
 
-## Stage 11 — Parametrized covariance precursor — Stage 11E completed
+## Stage 11 — Parametrized covariance precursor — Stage 11F completed
 
 Key documents:
 
@@ -95,6 +95,7 @@ Key documents:
 - [`docs/stage11c_notes.md`](docs/stage11c_notes.md) / [`results/stage11c_lift.md`](results/stage11c_lift.md)
 - [`docs/stage11d_notes.md`](docs/stage11d_notes.md) / [`results/stage11d_measurement.md`](results/stage11d_measurement.md)
 - [`docs/stage11e_notes.md`](docs/stage11e_notes.md) / [`results/stage11e_compatibility.md`](results/stage11e_compatibility.md)
+- [`docs/stage11f_notes.md`](docs/stage11f_notes.md) / [`results/stage11f_ablation.md`](results/stage11f_ablation.md)
 
 ### Stage 11.0 — protocol freeze — completed
 
@@ -201,7 +202,7 @@ Criteria **39–43** are satisfied.
 
 `Stage 11E clock-change x parameterization compatibility on the frozen finite family = established`.
 
-Source/unit-test checkpoint run #1407: **`915 passed in 482.25s (0:08:02)`**.
+Source/unit-test checkpoint run #1407: **`915 passed in 482.25s (0:08:02)`**. Final documentation-synchronized checkpoint run #1421: **`916 passed in 589.69s (0:09:49)`**.
 
 `internal-clock covariance != reparameterization covariance`.
 
@@ -213,11 +214,60 @@ Source/unit-test checkpoint run #1407: **`915 passed in 482.25s (0:08:02)`**.
 
 `path-independent evidence update != ontological becoming`.
 
-### Stage 11F — ablation / wrong-gauge / false-positive controls — next
+### Stage 11F — ablation / wrong-gauge / false-positive controls — completed
 
-Criteria **44–47** will classify parameter-event correspondence removal separately from numerical reconstructibility, isolate missing/wrong lapse-Jacobian semantics, consolidate orientation-reversal/non-injective/raw-lambda/corruption controls, and retain the non-metaphysical interpretation boundary.
+Stage 11F separates numerical payload, typed identification, and covariance status under resource removal/corruption.
 
-Stage 11G will then select one frozen Stage 11 status from the full A–F evidence chain. Criterion 50 remains external final repository validation.
+Parameter-event correspondence removal is classified
+
+`event_correspondence_reconstructible_but_typed_identity_lost`:
+
+- O still reconstructs the e1/e2-to-physical-event mapping;
+- relational-q residual is **0.0**;
+- typed identification is `lost` and covariance status is `not_established`.
+
+Removing lapse/Jacobian semantics while retaining correct numerical lapse gives `dq/dT=p=1.25` with residual **0.0**, but typed covariance is `not_established`, classified
+
+`lapse_semantics_missing_typed_claim_not_established`.
+
+Replacing the cubic target lapse by the identity target lapse changes both the lapse and reconstructed relational derivative by approximately **0.5357142857142857**, classified
+
+`wrong_lapse_jacobian_numerically_refuted`.
+
+Consolidated false-positive controls:
+
+- orientation reversal: **12** decreasing steps;
+- non-injective square: **6** collisions;
+- raw-lambda matching: **6** false event identities;
+- parameter-dependent O/P/R/V corruption: **4 / 4** detected;
+- all declared Stage 11F false-positive controls: **7 / 7** rejected.
+
+Criteria **44–47** are satisfied.
+
+`Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
+
+Source/unit-test checkpoint run #1425: **`924 passed in 586.95s (0:09:46)`**.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`finite-model ablation != fundamental ontology`.
+
+### Stage 11G — synthesis and evidence-selected next gate — next
+
+Stage 11G will evaluate the full Stage 11A–F evidence chain and select exactly one frozen Stage 11 status from:
+
+- `parametrized_covariant`;
+- `parametrized_partial`;
+- `parametrized_obstructed`;
+- `inconclusive`.
+
+Only after that synthesis will criterion 50 perform external final repository validation / merge-readiness review.
 
 ## Guards
 
@@ -249,6 +299,13 @@ Stage 11G will then select one frozen Stage 11 status from the full A–F eviden
 - `commuting typed diagram != general covariance`;
 - `path-independent future probabilities != future actuality`;
 - `path-independent evidence update != ontological becoming`;
+- `numerical reconstructibility != typed operational identification`;
+- `reconstructible != universally redundant`;
+- `lost != metaphysically irreducible`;
+- `missing typing != metaphysical absence`;
+- `wrong-gauge failure != ontological becoming`;
+- `typed-resource necessity in this finite family != metaphysical fundamentality`;
+- `finite-model ablation != fundamental ontology`;
 - `selector-free public projection != absence of privileged modal semantics`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;

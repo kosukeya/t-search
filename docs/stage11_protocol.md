@@ -1,6 +1,6 @@
 # Stage 11 Protocol — Parametrized Covariance Precursor
 
-Status: **Stage 11.0 through Stage 11E completed; criteria 1–43 satisfied; criteria 44–50 pending implementation and external review.**
+Status: **Stage 11.0 through Stage 11F completed; criteria 1–47 satisfied; criteria 48–50 pending synthesis and external review.**
 
 Selected Stage 11 gate from Stage 10G:
 
@@ -22,7 +22,7 @@ The Stage 10 bounded result carried into Stage 11 remains
 
 `fully typed finite future-measurement covariance = established`.
 
-The strongest Stage 11 synthesis label remains unavailable until Stage 11F closes and Stage 11G evaluates the full evidence chain. The frozen Stage 11G status vocabulary is:
+The strongest Stage 11 synthesis label remains unavailable until Stage 11G evaluates the full Stage 11A–F evidence chain. The frozen Stage 11G status vocabulary is:
 
 - `parametrized_covariant`;
 - `parametrized_partial`;
@@ -281,18 +281,10 @@ Stage 11E exhaustive evidence:
 - measurement/probability commuting squares: **1296**;
 - weighted/modal squares: **648**;
 - common-evidence posterior squares: **648**;
-- max event/O path residual: **<= 1e-9**;
-- max path-to-path normalization residual: **<= 1e-9**;
-- max path-to-path effect residual: **<= 1e-9**;
-- max transported/direct-target normalization residual: **<= 1e-9**;
-- max transported/direct-target effect residual: **<= 1e-9**;
-- max path-to-path probability residual: **<= 1e-9**;
-- max transported/direct-target probability residual: **<= 1e-9**;
-- max weighted/modal path residual: **<= 1e-9**;
+- all declared positive path/direct-target residuals: **<= 1e-9**;
 - matched epistemic/ontic target public residual: **<= 1e-9**;
 - hidden-`h*` target public residual: **<= 1e-9**;
 - epistemic and ontic posterior path residuals: **<= 1e-9**;
-- matched posterior endpoint residual: **<= 1e-9**;
 - hidden epistemic selection preserved and updated ontic state selector-free.
 
 The wrong-path control relabels an A/0 source measurement as B/1 without applying the genuine dual clock transport. It is classified
@@ -306,6 +298,8 @@ The exhaustive audit may memoize repeated Born evaluations only for byte-identic
 `cached repeated evaluation != reduced scientific comparison family`.
 
 Source/unit-test checkpoint run #1407 — **`915 passed in 482.25s (0:08:02)`**.
+
+Final documentation-synchronized Stage 11E checkpoint run #1421 — **`916 passed in 589.69s (0:09:49)`**.
 
 Bounded result:
 
@@ -321,7 +315,81 @@ Bounded result:
 
 `path-independent evidence update != ontological becoming`.
 
-## 7. Frozen negative and anti-triviality controls
+## 7. Stage 11F ablation / wrong-gauge / false-positive controls — completed
+
+Stage 11F asks what survives when representation/typing resources are removed or corrupted. It separates numerical payload, typed identification, and covariance status rather than inferring semantic necessity from a numerical difference alone.
+
+Central distinction:
+
+`numerical reconstructibility != typed operational identification`.
+
+### Parameter-event correspondence removed
+
+The cubic architecture is copied with `Xi.event_correspondence` and its semantics removed while O remains unchanged.
+
+- O still allows the `e1/e2 -> physical event id` mapping to be reconstructed;
+- relational-q residual remains **0.0**;
+- Stage 11C/11D typed validation rejects the ablated context.
+
+Classification:
+
+`event_correspondence_reconstructible_but_typed_identity_lost`.
+
+Statuses:
+
+- numerical payload: `reconstructible`;
+- typed identification: `lost`;
+- covariance: `not_established`.
+
+`reconstructible != universally redundant`.
+
+### Missing lapse/Jacobian semantics
+
+The correct cubic lapse remains numerically stored, so `dq/dT=p=1.25` is reconstructed with residual **0.0**, but Xi no longer states the reparameterization law. The typed context is rejected.
+
+Classification:
+
+`lapse_semantics_missing_typed_claim_not_established`.
+
+### Wrong lapse/Jacobian value
+
+The cubic target is deliberately assigned the identity target lapse. At source label `lambda=1`, the correct cubic lapse is approximately `0.7142857142857143` while the wrong identity lapse is `1.25`.
+
+- lapse-value residual: approximately **0.5357142857142857**;
+- wrong relational-derivative residual: approximately **0.5357142857142857**.
+
+Classification:
+
+`wrong_lapse_jacobian_numerically_refuted`.
+
+`missing semantics != wrong numerical gauge data`.
+
+### Consolidated false-positive family
+
+All **7 / 7** controls are rejected:
+
+1. orientation reversal `f_rev(lambda)=-lambda`: **12** decreasing raw-label steps, classified `orientation_reversal_outside_positive_family`;
+2. non-injective `lambda^2`: **6** collisions, classified `noninjective_relabeling_rejected`;
+3. raw-equal-lambda matching: **6** false event identities, classified `invalid_equal_raw_parameter_event_rule`;
+4–7. parameter-dependent O/P/R/V corruption: **4 / 4** detected, classified `parameter_dependent_oprv_corruption_detected`.
+
+Source/unit-test checkpoint run #1425 — **`924 passed in 586.95s (0:09:46)`**.
+
+Bounded result:
+
+`Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
+
+`lost != metaphysically irreducible`.
+
+`missing typing != metaphysical absence`.
+
+`wrong-gauge failure != ontological becoming`.
+
+`typed-resource necessity in this finite family != metaphysical fundamentality`.
+
+`finite-model ablation != fundamental ontology`.
+
+## 8. Frozen negative and anti-triviality controls
 
 The frozen Stage 11 controls remain:
 
@@ -338,7 +406,7 @@ The frozen Stage 11 controls remain:
 11. identify parameter direction with `R_direction` by definition;
 12. mix parameterizations inside one probability/weight/update calculation without typed correspondence.
 
-Already implemented evidence includes **36** differing parameter labels, **24** nonlinear raw-rate differences, 52 relational-observable and 52 relational-derivative evaluations, 4/4 O/P/R/V corruption controls, 4/4 Stage 11D measurement-layer controls, and the Stage 11E explicit noncommuting wrong-path witness.
+Anti-triviality evidence now includes **36** differing parameter labels, **24** nonlinear raw-rate differences, 52 relational-observable and 52 relational-derivative evaluations, 4/4 O/P/R/V corruption controls, 4/4 Stage 11D measurement-layer controls, the Stage 11E explicit noncommuting wrong-path witness, and Stage 11F's 7/7 consolidated false-positive controls.
 
 `orientation-preserving reparameterization != time reversal`.
 
@@ -348,7 +416,7 @@ Already implemented evidence includes **36** differing parameter labels, **24** 
 
 `same labels after relabeling != sufficient evidence of covariance`.
 
-## 8. Stage sequence and validation checkpoints
+## 9. Stage sequence and validation checkpoints
 
 ### Stage 11.0 — protocol freeze — completed
 Criteria 1–10. Run #1285: `874 passed in 640.88s (0:10:40)`.
@@ -366,18 +434,18 @@ Criteria 24–31. Runs #1341/#1355 retained above.
 Criteria 32–38. Run #1361 plus final baseline #1393 retained above.
 
 ### Stage 11E — clock-change × parameterization compatibility — completed
-Criteria 39–43. Source/unit-test run #1407: `915 passed in 482.25s (0:08:02)`.
+Criteria 39–43. Run #1407 plus final synchronized #1421 retained above.
 
-### Stage 11F — ablation / wrong-gauge / false-positive controls — next
-Criteria 44–47.
+### Stage 11F — ablation / wrong-gauge / false-positive controls — completed
+Criteria 44–47. Source/unit-test run #1425: `924 passed in 586.95s (0:09:46)`.
 
-### Stage 11G — synthesis and evidence-selected next gate
+### Stage 11G — synthesis and evidence-selected next gate — next
 Criteria 48–49.
 
 ### Criterion 50 — external final repository validation
 Final full-repository regression / merge-readiness review only after Stage 11G.
 
-## 9. Exit criteria
+## 10. Exit criteria
 
 ### Criteria 1–10 — Stage 11.0
 1. Exact Stage 10G-selected Stage 11 gate frozen — **satisfied**.
@@ -435,10 +503,10 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 43. Deliberately wrong correspondence/path mixing produces detectable noncommuting control — **satisfied**.
 
 ### Criteria 44–47 — Stage 11F
-44. Removing parameter-event correspondence classified separately from numerical reconstructibility — **pending**.
-45. Missing/wrong lapse-Jacobian semantics classified with explicit witnesses — **pending**.
-46. Orientation reversal, non-injective relabeling, raw-lambda matching, and parameter-dependent corruption have explicit false-positive controls — **pending**.
-47. Ablation results not promoted to claims of metaphysical fundamentality or ontological becoming — **pending**.
+44. Removing parameter-event correspondence classified separately from numerical reconstructibility — **satisfied**.
+45. Missing/wrong lapse-Jacobian semantics classified with explicit witnesses — **satisfied**.
+46. Orientation reversal, non-injective relabeling, raw-lambda matching, and parameter-dependent corruption have explicit false-positive controls — **satisfied**.
+47. Ablation results not promoted to claims of metaphysical fundamentality or ontological becoming — **satisfied**.
 
 ### Criteria 48–49 — Stage 11G
 48. Executable synthesis selects one frozen Stage 11 status from the full Stage 11A–F evidence chain — **pending**.
@@ -447,7 +515,7 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 ### Criterion 50 — external repository validation
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 10. Interpretation guards
+## 11. Interpretation guards
 
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
@@ -485,6 +553,13 @@ Final full-repository regression / merge-readiness review only after Stage 11G.
 - `commuting typed diagram != general covariance`;
 - `path-independent future probabilities != future actuality`;
 - `path-independent evidence update != ontological becoming`;
+- `numerical reconstructibility != typed operational identification`;
+- `reconstructible != universally redundant`;
+- `lost != metaphysically irreducible`;
+- `missing typing != metaphysical absence`;
+- `wrong-gauge failure != ontological becoming`;
+- `typed-resource necessity in this finite family != metaphysical fundamentality`;
+- `finite-model ablation != fundamental ontology`;
 - `absence of preferred external parameterization != absence of ontological becoming`;
 - `typed-resource use != metaphysical fundamentality`;
 - `finite typed parametrized covariance != general covariance`;

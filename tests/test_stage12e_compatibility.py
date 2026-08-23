@@ -3,11 +3,7 @@ import pytest
 from t_search.stage11_measurement import STAGE11D_REFERENCE_CLOCK, STAGE11D_REFERENCE_CLOCK_INDEX
 from t_search.stage11_parametrized import STAGE11A_IDENTITY
 from t_search.stage12_compatibility import (
-    STAGE12E_ATOL if False else STAGE12E_CLOCK_TYPE,
-)
-
-# Import the public Stage 12E surface explicitly after the sentinel import above.
-from t_search.stage12_compatibility import (  # noqa: E402
+    STAGE12E_CLOCK_TYPE,
     STAGE12E_GAUGE_TYPE,
     STAGE12E_GUARD,
     STAGE12E_PATH_REJECTION,
@@ -92,8 +88,6 @@ def test_stage12e_operational_state_keeps_orbit_sensitive_and_representation_rol
     assert len({item.measurement_probabilities for item in alpha_states}) == 1
     assert len({item.orbit_witness_probabilities for item in alpha_states}) == 1
 
-    # The inherited Stage 11 measurement family itself is orbit-insensitive, while
-    # relational O and the Stage 12D witness retain physical-orbit discrimination.
     assert alpha_states[0].measurement_probabilities == beta_state.measurement_probabilities
     assert alpha_states[0].target_relational_q != beta_state.target_relational_q
     assert alpha_states[0].orbit_witness_probabilities != beta_state.orbit_witness_probabilities
@@ -142,7 +136,6 @@ def test_stage12e_mixed_orbit_and_untyped_paths_are_detectably_rejected() -> Non
         "gauge_type_relabelled_as_reparameterization",
     }
 
-    # Construction-level cross-orbit protection remains active independently.
     gauges = canonical_stage12e_gauge_transports()
     reps = canonical_stage12a_representatives()
     alpha = next(item for item in reps if item.orbit_id == "omega_alpha")

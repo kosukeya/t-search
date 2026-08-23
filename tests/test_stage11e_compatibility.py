@@ -4,7 +4,10 @@ from t_search.stage11_compatibility import (
     STAGE11E_WRONG_PATH_CLASSIFICATION,
     canonical_stage11e_clock_transports,
     canonical_stage11e_reparameterization_transports,
+)
+from t_search.stage11_compatibility_runtime import (
     stage11e_diagnostics,
+    stage11e_probability_cache_size,
     stage11e_wrong_path_control,
 )
 
@@ -41,6 +44,9 @@ def test_stage11e_measurement_and_probability_squares_commute(diagnostics) -> No
     assert diagnostics.max_measurement_direct_target_effect_residual <= 1e-9
     assert diagnostics.max_measurement_probability_path_residual <= 1e-9
     assert diagnostics.max_measurement_direct_target_probability_residual <= 1e-9
+    # Caching may merge only exactly identical typed numerical chart payloads;
+    # it must not reduce the declared square counts above.
+    assert stage11e_probability_cache_size() > 0
 
 
 def test_stage11e_weighted_modal_outputs_are_path_independent(diagnostics) -> None:

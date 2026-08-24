@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14.0 protocol freeze completed; criteria 1–10 satisfied; criteria 11–50 pending.**
+Status: **Stage 14A source/test checkpoint validated; criteria 1–17 satisfied; criteria 18–50 pending. Stage 14B is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,7 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 establishes only the protocol. It does not establish a structure-function covariance result.
+Stage 14.0 froze the research protocol; Stage 14A now establishes only the bounded carrier-level evidence stated below.
 
 ## 2. Frozen canonical phase space and constants
 
@@ -46,13 +46,13 @@ The positive Stage 14 carrier has three constraint directions:
 
 `H_2 = p_2 + b p + kappa T1 X D approx 0`.
 
-The three constraint labels must still be checked for independent gradients / Hamiltonian directions on the frozen finite family.
+Stage 14A verifies that the three positive constraint gradients and Hamiltonian directions have rank three on every frozen representative.
 
 `three constraint labels != three independent gauge directions`.
 
 ## 3. Frozen first-class structure-function target
 
-The intended Poisson-bracket closure is
+The Poisson-bracket closure target is
 
 `{H_1,D}=0`,
 
@@ -66,13 +66,13 @@ Thus the nonzero structure functions are phase-space dependent:
 
 `f_2D^D(z)=kappa T1`.
 
-On the frozen representative grid, `T1` and `X` each take `{-1,0,1}`, so the structure-function values must include negative, zero, and positive values.
+The frozen grid samples negative, zero, and positive values.
 
 The Jacobi target is
 
 `{H_1,{H_2,D}} + {H_2,{D,H_1}} + {D,{H_1,H_2}} = 0`.
 
-Stage 14A must verify the bracket identities, numerical closure, rank, finite-family variation, and Jacobi residuals rather than inferring them from symbolic intent.
+Stage 14A checks these identities on all positive representatives and on deliberately off-surface probes, rather than inferring closure only weakly from `D=0`.
 
 `phase-space-dependent first-class closure != hypersurface-deformation algebra`.
 
@@ -80,7 +80,7 @@ Stage 14A must verify the bracket identities, numerical closure, rank, finite-fa
 
 ## 4. Frozen constraint-surface representatives and physical orbit family
 
-The Stage 13 four physical Dirac-data controls are retained:
+The four carried physical Dirac-data controls are
 
 - `omega_alpha : (Q_D,P_D)=(-0.35,1.25)`;
 - `omega_beta : (Q_D,P_D)=(0.40,1.25)`;
@@ -93,7 +93,7 @@ Frozen representative grid:
 
 This gives **27 representatives per physical orbit** and **108 positive representatives total**.
 
-For an orbit with `(Q_D,P_D)=(Q,P)`, the representative is frozen as
+For `(Q_D,P_D)=(Q,P)` the representatives use
 
 `p=P`,
 
@@ -105,9 +105,9 @@ For an orbit with `(Q_D,P_D)=(Q,P)`, the representative is frozen as
 
 `q=Q + P T1 + b T2 + a X`.
 
-Because `D=0` on these representatives, the `kappa T1 X D` term vanishes on the constraint surface while its derivatives and bracket coefficients remain nontrivial.
+Because `D=0` on these representatives, the `kappa T1 X D` contribution vanishes on the positive surface while its derivatives and structure-function coefficients remain nontrivial.
 
-The target physical quotient remains exactly four physical orbit classes, each containing 27 sampled representatives.
+The target physical quotient remains exactly four classes of 27 sampled representatives.
 
 `constraint-surface vanishing of a term != algebraic irrelevance of its derivatives`.
 
@@ -127,55 +127,33 @@ For `Phi_2(u)` with fixed `T1`:
 
 `q -> q + b u + a [X exp(kappa T1 u)-X]`.
 
-The constraint momenta remain on the positive constraint surface.
-
-Stage 14A must verify exact / numerical surface preservation on the declared family.
+Stage 14A checks each generator at parameters `-0.5` and `+0.5` from every positive representative, yielding 648 single-generator flow probes. These probes test constraint-surface and Dirac-data preservation only; mixed path closure remains Stage 14B.
 
 ## 6. Frozen third-direction compensated path semantics
 
-For a same-orbit source `(T1_0,T2_0,X_0)` and target `(T1_1,T2_1,X_1)` with
+For a same-orbit source `(T1_0,T2_0,X_0)` and target `(T1_1,T2_1,X_1)`, define
 
 `s=T1_1-T1_0`,
 
-`u=T2_1-T2_0`,
+`u=T2_1-T2_0`.
 
-define the two canonical ordered paths.
-
-Path `12D`:
-
-1. `Phi_1(s)`;
-2. `Phi_2(u)`;
-3. `Phi_D(v_12D)`,
-
-with
+Path `12D` uses `Phi_1(s)`, then `Phi_2(u)`, then `Phi_D(v_12D)` with
 
 `X_12*=X_0 exp(kappa T1_1 u)`,
 
 `v_12D=X_1-X_12*`.
 
-Path `21D`:
-
-1. `Phi_2(u)`;
-2. `Phi_1(s)`;
-3. `Phi_D(v_21D)`,
-
-with
+Path `21D` uses `Phi_2(u)`, then `Phi_1(s)`, then `Phi_D(v_21D)` with
 
 `X_21*=X_0 exp(kappa T1_0 u)`,
 
 `v_21D=X_1-X_21*`.
 
-The exact third-direction compensation difference is
+The exact compensation difference is
 
 `v_21D-v_12D = X_0 [exp(kappa T1_1 u)-exp(kappa T1_0 u)]`.
 
-The canonical Stage 14B mixed-pair family consists of ordered same-orbit source/target pairs for which all three sampled coordinates differ:
-
-`T1_1 != T1_0`, `T2_1 != T2_0`, `X_1 != X_0`.
-
-On the 4-orbit 3x3x3 grid this yields **864 ordered mixed pairs**.
-
-The protocol expects a nontrivial subset with `X_0 != 0` to require different third-direction compensators, while `X_0=0` provides an exact zero-difference subfamily.
+The canonical Stage 14B family contains **864 ordered mixed pairs** with all three sampled coordinates changed.
 
 `raw path-word inequality != physical path dependence`.
 
@@ -199,14 +177,7 @@ The deliberately incomplete two-clock expression is
 
 `q(T1=tau1,T2=tau2; X raw)=Q_D+P_D tau1+b tau2+a X`.
 
-Stage 14C must test:
-
-- representative-independent reconstruction of `(Q_D,P_D)`;
-- separation of all four physical orbits by the full Dirac pair;
-- compensated-path independence of the complete relational observable;
-- nontrivial relational change as `(tau1,tau2,chi)` vary;
-- residual `D`-direction dependence of the two-clock incomplete observable;
-- exactly four sampled quotient classes of 27 representatives.
+Stage 14C must test representative-independent Dirac reconstruction, all six pairwise orbit separations, compensated-path descent, nontrivial relational change, incomplete-observable `D` dependence, and exactly four quotient classes.
 
 `three gauge directions require enough relational conditions for completeness`.
 
@@ -218,8 +189,6 @@ Stage 14C must test:
 
 ## 8. Frozen basis-transformation taxonomy
 
-Stage 14 distinguishes three basis notions before any result is observed.
-
 ### 8.1 Stage-13-style simple scalar rescaling
 
 A `simple_scalar_rescaling` is an invertible diagonal transformation
@@ -228,43 +197,25 @@ A `simple_scalar_rescaling` is an invertible diagonal transformation
 
 `H_2' = f_2(z) H_2`,
 
-`D' = f_D(z) D`,
+`D' = f_D(z) D`
 
-where each scalar is finite and nonzero on every positive representative under test and **no constraint mixing is allowed**.
+with finite nonzero scalar factors on every positive representative and no constraint mixing.
 
-For such a transformation, modulo terms proportional to `H_1'` and `H_2'`, the `D'` component of `{H_1',H_2'}` is
+Modulo the `H_1'` and `H_2'` directions, the `D'` component of `{H_1',H_2'}` is
 
 `-kappa X f_1 f_2 / f_D`.
 
-Therefore, on positive representatives with `X != 0`, a finite nonzero diagonal rescaling cannot remove that third-direction bracket component.
+A rescaling that vanishes or diverges on the positive family is singular and is not admitted as an equivalent basis.
 
-Stage 14D must verify this frozen obstruction criterion on the finite family.
+### 8.2 Triangular phase-space-dependent mixing
 
-A rescaling that vanishes or diverges on any frozen positive representative is classified as singular and is not admitted as an equivalent basis.
-
-### 8.2 Triangular phase-space-dependent constraint mixing
-
-The separately frozen comparison transformation is
+The frozen comparison transformation is
 
 `H_2_tilde = H_2 - kappa T1 X D = p_2 + b p`.
 
-Together with unchanged `H_1` and `D`,
-
-`{H_1,H_2_tilde}=0`,
-
-`{H_2_tilde,D}=0`,
-
-`{H_1,D}=0`.
-
-This is an invertible triangular basis change with determinant one in constraint space.
-
-Stage 14D must test whether it preserves the sampled constraint surface, gauge distribution, physical quotient, Dirac pair, complete relational observables, and inherited public O/P/R/V payloads.
+Together with unchanged `H_1` and `D`, the target brackets are commuting. The transformation is triangular with determinant one in constraint space.
 
 ### 8.3 Frozen interpretation
-
-A failure of `simple_scalar_rescaling` together with success of triangular mixing means only that the Stage 13 one-generator rescaling trivialization does not persist in the same form.
-
-It does **not** establish non-Abelianizability.
 
 `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`.
 
@@ -274,32 +225,15 @@ It does **not** establish non-Abelianizability.
 
 ## 9. Frozen O/P/R/V/Xi carry-over
 
-Stage 14 reuses the inherited typed architecture rather than redesigning it:
+Stage 14 reuses
 
-`T12_candidate=(O,P,R,V;Xi)`.
+`T12_candidate=(O,P,R,V;Xi)`
 
-The inherited vocabulary retains
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-- `R=(R_content,R_direction,R_access)`;
-- `V=(V_extension,V_semantics,V_weights)`;
-- `QExt(e1)={h_L,h_R}`;
-- `future_signature_left`;
-- `future_signature_other`;
-- external parameterization `identity`;
-- internal measurement chart `A/e2`.
+The inherited vocabulary retains `QExt(e1)={h_L,h_R}`, `future_signature_left`, `future_signature_other`, external parameterization `identity`, and internal measurement chart `A/e2`.
 
-Xi is the designated location for representation provenance, including
-
-- generator identity;
-- structure-function values;
-- path word;
-- raw parameters `(s,u,v)`;
-- compensator provenance;
-- source/target representative;
-- constraint-basis identity;
-- scalar-rescaling or triangular-mixing provenance.
-
-Stage 14E must retest quotient-level public O/P/R/V and future-measurement descent while keeping these representation fields typed separately.
+Xi stores representation provenance including generator identity, structure-function values, path word, raw `(s,u,v)`, compensator provenance, source/target representative, basis identity, and basis-transform provenance.
 
 `structure-function/path Xi provenance != quotient-level physical content`.
 
@@ -309,28 +243,13 @@ Stage 14E must retest quotient-level public O/P/R/V and future-measurement desce
 
 ## 10. Frozen anomaly, ablation, and false-positive controls
 
-Required controls include:
-
-- `kappa=0` / structure-function-removed carrier falsely admitted as the positive Stage 14 structure-function case;
-- rank-deficient or duplicate constraint directions;
-- missing third constraint `D`;
-- wrong sign or wrong value in the structure-function compensation law;
-- `v=0` / no third-direction compensation where nonzero compensation is required;
-- Stage-13-style two-generator compensator falsely reused for the three-generator carrier;
-- cross-orbit paths falsely licensed as gauge-related;
-- two-clock incomplete observable falsely called complete;
-- singular diagonal basis rescaling falsely accepted as equivalent;
-- triangular mixing falsely interpreted as proof of universal Abelianizability;
-- representative/path/basis-dependent O/P/R/V corruption;
-- deliberately non-first-class deformation
+Required controls include `kappa=0`, duplicate/rank-deficient directions, missing `D`, wrong or missing third-direction compensation, reuse of the Stage-13-style two-generator compensator, cross-orbit paths, the two-clock incomplete observable, singular scalar rescaling, false universal-Abelianization interpretation, payload corruption, and
 
 `H_2_bad = H_2 + epsilon q`
 
 with `epsilon=0.1`.
 
-The anomalous deformation introduces non-constraint residual terms, including an `-epsilon p` contribution in `{H_1,H_2_bad}` and an `epsilon a` contribution in `{H_2_bad,D}` under the frozen canonical convention.
-
-Frozen control vocabulary includes:
+Frozen classification vocabulary includes
 
 - `structure_function_removed_control_rejected`;
 - `rank_deficient_constraint_control_rejected`;
@@ -345,11 +264,41 @@ Frozen control vocabulary includes:
 - `constraint_algebra_anomaly_detected`;
 - `representative_dependent_payload_corruption_detected`.
 
-## 11. Frozen Stage 14 sequence
+## 11. Stage 14A validated executable evidence
+
+Incoming repository-validated Stage 14.0 checkpoint: head `afe0598362ccf0e808d2c690491cda810594d87e`, run #1832, **`1106 passed in 879.78s (0:14:39)`**.
+
+Stage 14A source/test head: `d1116a743b0374c96993c476331f5cceacfbb077`, run #1838, **`1113 passed in 545.23s (0:09:05)`**.
+
+Validated deterministic evidence:
+
+- physical orbits: **4**;
+- positive representatives: **108 = 4 x 27**;
+- positive constraint residual maximum: **0.0**;
+- minimum constraint-gradient rank: **3**;
+- minimum Hamiltonian-generator rank: **3**;
+- minimum singular value of both row families: approximately **0.7812880785647448**;
+- sampled structure-function values: **-0.5, 0.0, 0.5**;
+- off-surface closure/Jacobi probes: **108**;
+- maximum Poisson-closure identity residual: **0.0**;
+- maximum Jacobi residual: **0.0**;
+- single-generator flow probes: **648**;
+- maximum flow constraint residual: **0.0**;
+- maximum flow Dirac residual: approximately **2.220446049250313e-16**;
+- `kappa=0` structure-function-removed control: `structure_function_removed_control_rejected`;
+- duplicate-direction rank control: `rank_deficient_constraint_control_rejected`.
+
+Bounded result:
+
+`Stage 14A three-constraint first-class structure-function carrier and finite representative family = established`.
+
+This result establishes the declared finite carrier only. It does not establish mixed-path compensation, a hypersurface-deformation algebra, refoliation invariance, gravitational dynamics, or GR.
+
+## 12. Frozen Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
-- Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **next**;
-- Stage 14B — phase-space-dependent mixed paths and third-direction compensation;
+- Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
+- Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **next**;
 - Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination;
 - Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test;
 - Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases;
@@ -357,9 +306,7 @@ Frozen control vocabulary includes:
 - Stage 14G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
-No later stage is considered established by Stage 14.0.
-
-## 12. Frozen synthesis vocabulary
+## 13. Frozen synthesis vocabulary
 
 Stage 14G will select exactly one of:
 
@@ -369,11 +316,9 @@ Stage 14G will select exactly one of:
 - `structure_function_path_obstructed`;
 - `inconclusive`.
 
-The first two statuses refer only to the frozen Stage-13-style **diagonal scalar-rescaling** question. Success of triangular mixing is recorded separately and does not by itself choose between metaphysical interpretations.
+A negative control behaving as intended does not license a positive-family obstruction classification.
 
-A deliberately anomalous carrier or negative control behaving correctly does not license `structure_function_path_obstructed`; that status is reserved for failure of the positive Stage 14 family.
-
-## 13. Frozen criteria 1–50
+## 14. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -386,13 +331,13 @@ A deliberately anomalous carrier or negative control behaving correctly does not
 9. O/P/R/V/Xi carry-over and anomaly/ablation/false-positive controls are frozen — **satisfied**.
 10. The Stage 14A–G sequence, synthesis vocabulary, and interpretation boundaries are frozen — **satisfied**.
 
-11. Stage 14A constructs all 108 positive representatives on the three-constraint surface — **pending**.
-12. All three positive constraint residuals vanish within the frozen tolerance on the representative family — **pending**.
-13. Constraint gradients and Hamiltonian generator directions have rank three throughout the positive representative family — **pending**.
-14. The sampled structure functions vary nontrivially across the positive family and include negative, zero, and positive values — **pending**.
-15. All frozen Poisson-bracket closure identities and the Jacobi identity satisfy the numerical tolerance — **pending**.
-16. Each licensed single-generator flow preserves the positive constraint surface and the declared Dirac data — **pending**.
-17. Stage 14A rejects structure-function-removed and rank-deficient controls without promoting them to positive evidence — **pending**.
+11. Stage 14A constructs all 108 positive representatives on the three-constraint surface — **satisfied**.
+12. All three positive constraint residuals vanish within the frozen tolerance on the representative family — **satisfied**.
+13. Constraint gradients and Hamiltonian generator directions have rank three throughout the positive representative family — **satisfied**.
+14. The sampled structure functions vary nontrivially across the positive family and include negative, zero, and positive values — **satisfied**.
+15. All frozen Poisson-bracket closure identities and the Jacobi identity satisfy the numerical tolerance — **satisfied**.
+16. Each licensed single-generator flow preserves the positive constraint surface and the declared Dirac data — **satisfied**.
+17. Stage 14A rejects structure-function-removed and rank-deficient controls without promoting them to positive evidence — **satisfied**.
 
 18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **pending**.
 19. Both `12D` and `21D` path implementations match the frozen exact flow formulas — **pending**.
@@ -433,9 +378,9 @@ A deliberately anomalous carrier or negative control behaving correctly does not
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**.
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 14. Interpretation boundary
+## 15. Interpretation boundary
 
-Stage 14.0 is a protocol freeze, not a scientific result beyond the choice of what will be tested.
+Stage 14A establishes a finite three-constraint first-class structure-function carrier with independent generator directions, nonconstant sampled structure functions, strong off-surface closure checks, Jacobi consistency, and individual-flow preservation on the declared family.
 
 Persistent guards:
 
@@ -444,6 +389,7 @@ Persistent guards:
 - `hypersurface-deformation precursor != general relativity`;
 - `structure functions != spacetime geometry by definition`;
 - `three constraint labels != three independent gauge directions`;
+- `Stage 14A single-generator surface/Dirac preservation != third-direction compensated mixed-path closure`;
 - `third-direction compensation != refoliation invariance`;
 - `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`;
 - `triangular basis equivalence != universal basis trivializability`;

@@ -4,7 +4,139 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
+  sync-stage13d-docs:
+    if: github.event_name == 'pull_request' && github.head_ref == 'agent/stage-13-multi-constraint-refoliation-precursor'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/stage-13-multi-constraint-refoliation-precursor
+          fetch-depth: 0
+      - name: Synchronize Stage 13D documentation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          README = Path("README.md")
+          ROADMAP = Path("docs/roadmap.md")
+
+          def replace_required(text: str, old: str, new: str, label: str, *, count: int = -1) -> str:
+              if old not in text:
+                  raise SystemExit(f"missing synchronization marker: {label}")
+              return text.replace(old, new, count)
+
+          readme = README.read_text(encoding="utf-8")
+          readme = replace_required(
+              readme,
+              "Stage 13C is completed on Draft PR #14; Stage 13 criteria 1–31 are satisfied, criteria 32–50 remain pending, and Stage 13D is next.",
+              "Stage 13D is completed on Draft PR #14; Stage 13 criteria 1–38 are satisfied, criteria 39–50 remain pending, and Stage 13E is next.",
+              "README current status",
+              count=1,
+          )
+          checkpoint_old = "Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**."
+          checkpoint_new = checkpoint_old + " Stage 13C documentation-synchronized head `51f119845ec0e9ade3ee8cdeeb4e00ca7b992569` passed run #1762 with **`1066 passed in 892.04s (0:14:52)`**. Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7` passed run #1766 with **`1076 passed in 908.96s (0:15:08)`**."
+          readme = replace_required(readme, checkpoint_old, checkpoint_new, "README Stage 13 checkpoints")
+          doc_line = "- [`results/stage13c_relational.md`](results/stage13c_relational.md)"
+          doc_lines = doc_line + "\n- [`docs/stage13d_notes.md`](docs/stage13d_notes.md)\n- [`results/stage13d_gauge_atlas.md`](results/stage13d_gauge_atlas.md)"
+          readme = replace_required(readme, doc_line, doc_lines, "README Stage 13D document links")
+          stage13d_section = r'''
+### Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — completed
+
+Stage 13D constructs **87 typed nodes** separating physical orbit, representative, constraint generator, constraint basis, path word, relational event, clock, and modal-continuation roles.
+
+The connectivity atlas uses **144 typed single-generator arrows** — 72 `Phi_T` and 72 `Phi_X` — and builds connected components without using stored `orbit_id` labels for union. The resulting quotient recovers exactly **4 quotient classes** of **9 representatives** each, covering all 36 representatives without cross-orbit collapse.
+
+The four quotient classes remain distinct under the full `(Q_D,P_D)` pair. Across the `3 x 3` target-clock grid Stage 13D performs **36 quotient-level descent evaluations**, with representative-independent Dirac and complete-relational payloads within tolerance.
+
+All **144 / 144** compensated Stage 13B mixed pairs descend under both `(Phi_T,Phi_X)` and `(Phi_X,Phi_T)` path words to the same quotient-level payload. Reusing the nine target-clock pairs gives **1296** complete-relational descent comparisons.
+
+Removing typed path-word / compensator provenance is classified `path_provenance_typed_lost_numerically_reconstructible`: `typed_status = lost`, while `numerical_status = reconstructible` on the frozen finite family. Numerical recovery is not treated as recovery of the missing typing.
+
+Bounded result:
+
+`Stage 13D typed multi-constraint gauge atlas, path words, quotient, and descent on the frozen finite family = established`.
+
+Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7`, run #1766: **`1076 passed in 908.96s (0:15:08)`**.
+
+Stage 13 criteria **1–38** are satisfied; criteria **39–50** remain pending. Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — is next.
+
+`path word != modal continuation`.
+
+`path word != physical temporal history`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`gauge quotient != elimination of physical change`.
+
+`compensated-path quotient descent != refoliation invariance`.
+'''.strip()
+          if "### Stage 13D — typed multi-constraint gauge atlas" not in readme:
+              readme = replace_required(readme, "\n## Guards\n", "\n" + stage13d_section + "\n\n## Guards\n", "README Guards insertion", count=1)
+          README.write_text(readme, encoding="utf-8")
+
+          roadmap = ROADMAP.read_text(encoding="utf-8")
+          roadmap = replace_required(
+              roadmap,
+              "Stage 13C is completed on Draft PR #14; criteria 1–31 are satisfied, criteria 32–50 remain pending, and Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — is next.",
+              "Stage 13D is completed on Draft PR #14; criteria 1–38 are satisfied, criteria 39–50 remain pending, and Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — is next.",
+              "roadmap current status",
+              count=1,
+          )
+          roadmap_checkpoint_old = "Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734: **`1069 passed in 550.80s (0:09:10)`**."
+          roadmap_checkpoint_new = roadmap_checkpoint_old + " Stage 13C documentation-synchronized head `51f119845ec0e9ade3ee8cdeeb4e00ca7b992569`, run #1762: **`1066 passed in 892.04s (0:14:52)`**. Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7`, run #1766: **`1076 passed in 908.96s (0:15:08)`**."
+          roadmap = replace_required(roadmap, roadmap_checkpoint_old, roadmap_checkpoint_new, "roadmap Stage 13 checkpoints")
+          roadmap_section = r'''
+## Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — completed
+
+Criteria **32–38** satisfied. Stage 13D constructs **87 typed nodes** and **144 typed single-generator arrows** (`72 Phi_T + 72 Phi_X`). Connected components are built from typed arrow connectivity rather than stored orbit labels and recover exactly **4 quotient classes** of **9 representatives** each.
+
+The full Dirac pair remains distinct across all six quotient-class pairs. The `3 x 3` target-clock grid gives **36 quotient-level descent evaluations**. All **144 / 144** compensated mixed pairs descend under both canonical path words to the same quotient payload, with **1296** complete-relational descent comparisons inherited from the Stage 13C target grid.
+
+Path-word / compensator ablation is `path_provenance_typed_lost_numerically_reconstructible`: `typed_status = lost` while `numerical_status = reconstructible` on the frozen finite family.
+
+Bounded result:
+
+`Stage 13D typed multi-constraint gauge atlas, path words, quotient, and descent on the frozen finite family = established`.
+
+Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7`, run #1766: **`1076 passed in 908.96s (0:15:08)`**.
+
+Stage 13 criteria **1–38** are satisfied; criteria **39–50** remain pending. Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — is next.
+
+`path word != modal continuation`.
+
+`path word != physical temporal history`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`gauge quotient != elimination of physical change`.
+
+`compensated-path quotient descent != refoliation invariance`.
+'''.strip()
+          if "## Stage 13D — typed multi-constraint gauge atlas" not in roadmap:
+              roadmap = roadmap.rstrip() + "\n\n" + roadmap_section + "\n"
+          ROADMAP.write_text(roadmap, encoding="utf-8")
+          PY
+      - name: Commit synchronized documentation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/roadmap.md
+          git diff --cached --check
+          git commit -m "Stage 13D: synchronize README and roadmap"
+          git push origin HEAD:agent/stage-13-multi-constraint-refoliation-precursor
+
   pytest:
     runs-on: ubuntu-latest
     steps:

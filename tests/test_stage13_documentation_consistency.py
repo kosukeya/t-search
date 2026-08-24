@@ -20,6 +20,7 @@ NOTES_F = (ROOT / "docs" / "stage13f_notes.md").read_text(encoding="utf-8")
 RESULT_F = (ROOT / "results" / "stage13f_ablation.md").read_text(encoding="utf-8")
 NOTES_G = (ROOT / "docs" / "stage13g_notes.md").read_text(encoding="utf-8")
 RESULT_G = (ROOT / "results" / "stage13g_synthesis_stage14_gate.md").read_text(encoding="utf-8")
+RESULT_50 = (ROOT / "results" / "stage13_criterion50_merge_readiness.md").read_text(encoding="utf-8")
 STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE13 = (
@@ -38,6 +39,7 @@ MERGED_STAGE12_MAIN = "ee4baec55fa994217b275f9f2451e25fc6736787"
 STAGE13E_VALIDATED_HEAD = "5da1f7b07189ac9fd23c756ed432bfc7406caf37"
 STAGE13F_VALIDATED_HEAD = "518a92315575b4b1d75ef51cad5a2dedd9dd40da"
 STAGE13G_VALIDATED_HEAD = "013f90303ededbf769aaeef11a0336a480b02e2b"
+STAGE13_CRITERION50_REVIEWED_HEAD = "5b6b4641f082f6554cf14ce6f55eba1ce5905ad0"
 
 
 def test_stage13_selected_gate_and_stage12_baseline_remain_frozen():
@@ -48,17 +50,17 @@ def test_stage13_selected_gate_and_stage12_baseline_remain_frozen():
     assert "multi_orbit_gauge_covariant" in PROTOCOL
 
 
-def test_stage13_current_status_is_validated_g_and_only_criterion_50_remains():
+def test_stage13_current_status_is_criterion50_complete_and_merge_ready():
     assert (
-        "Stage 13G completed; criteria 1–49 satisfied; criterion 50 pending. "
-        "External final repository validation / merge-readiness review is next."
+        "Stage 13 completed at the criterion-50 merge-readiness checkpoint; criteria 1–50 satisfied. "
+        "PR #14 is merge-ready, Draft, open, and unmerged."
     ) in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 49
-    assert PROTOCOL.count("**pending**") == 1
+    assert PROTOCOL.count("**satisfied**") == 50
+    assert PROTOCOL.count("**pending**") == 0
     assert "Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **completed**" in PROTOCOL
     assert "Stage 13F — basis / ablation / anomaly / false-positive controls — **completed**" in PROTOCOL
     assert "Stage 13G — executable synthesis and evidence-selected next gate — **completed**" in PROTOCOL
-    assert "criterion 50 — external final full-repository regression / merge-readiness review — pending" in PROTOCOL
+    assert "criterion 50 — external final full-repository regression / merge-readiness review — **completed**" in PROTOCOL
 
 
 def test_stage13e_validated_checkpoint_is_synchronized():
@@ -137,10 +139,34 @@ def test_stage13g_validated_checkpoint_and_selected_gate_are_synchronized():
         assert phrase in combined
 
 
-def test_stage13_closes_exactly_criteria_48_through_49_and_keeps_50_pending():
+def test_stage13_criterion50_review_is_synchronized_across_top_level_docs():
+    combined = "\n".join((PROTOCOL, RESULT_50, README, ROADMAP))
+    assert STAGE13_CRITERION50_REVIEWED_HEAD in combined
+    assert "1098 passed in 695.62s (0:11:35)" in combined
+    for phrase in (
+        "ahead 83 / behind 0",
+        "mergeable = true",
+        "41",
+        "unresolved inline review threads: **0**",
+        "PR conversation comments: **0**",
+        "Stage 13 criterion 50 external final repository validation / merge-readiness review = satisfied",
+        "Stage 13 criteria 1–50 are completed",
+        "multi_constraint_path_covariant",
+        "phase_space_structure_function_precursor",
+        "repository validation != new scientific evidence",
+        "merge-ready != merged",
+    ):
+        assert phrase in combined
+    assert "Stage 13 criteria **1–50** are completed" in README
+    assert "Stage 13 criteria **1–50** are completed" in ROADMAP
+    assert "PR #14" in README and "merge-ready" in README
+    assert "PR #14" in ROADMAP and "merge-ready" in ROADMAP
+
+
+def test_stage13_closes_all_criteria_48_through_50():
     assert "48. Executable synthesis selects exactly one frozen Stage 13 status from the full Stage 13A–F evidence chain — **satisfied**." in PROTOCOL
     assert "49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, or a hypersurface-deformation algebra — **satisfied**." in PROTOCOL
-    assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
+    assert "50. External final full-repository regression and merge-readiness review — **satisfied**." in PROTOCOL
 
 
 def test_stage13_historical_a_through_d_evidence_remains_present():
@@ -178,7 +204,7 @@ def test_stage13_synthesis_vocabulary_and_candidate_families_remain_frozen():
 
 
 def test_stage13_interpretation_boundaries_remain_explicit():
-    combined = "\n".join((PROTOCOL, FREEZE, NOTES_E, RESULT_E, PROTOCOL_F, NOTES_F, RESULT_F, NOTES_G, RESULT_G))
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_E, RESULT_E, PROTOCOL_F, NOTES_F, RESULT_F, NOTES_G, RESULT_G, RESULT_50))
     for phrase in (
         "two constraint labels != two independent gauge directions",
         "noncommuting constraint presentation != fundamental physical non-Abelianity",
@@ -203,6 +229,7 @@ def test_stage13_interpretation_boundaries_remain_explicit():
         "constraint-algebra anomaly != ontological becoming",
         "finite-model success != empirical discovery",
         "repository validation != new scientific evidence",
+        "merge-ready != merged",
         "not_established != false",
     ):
         assert phrase in combined

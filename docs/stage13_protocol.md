@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13G completed; criteria 1–49 satisfied; criterion 50 pending. External final repository validation / merge-readiness review is next.**
+Status: **Stage 13 completed at the criterion-50 merge-readiness checkpoint; criteria 1–50 satisfied. PR #14 is merge-ready, Draft, open, and unmerged.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -395,7 +395,7 @@ The reason for this ranking is diagnostic. Stage 13F showed that the current non
 - Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **completed**;
 - Stage 13F — basis / ablation / anomaly / false-positive controls — **completed**;
 - Stage 13G — executable synthesis and evidence-selected next gate — **completed**;
-- criterion 50 — external final full-repository regression / merge-readiness review — pending.
+- criterion 50 — external final full-repository regression / merge-readiness review — **completed**.
 
 ## 16. Frozen synthesis vocabulary and validated selection
 
@@ -498,9 +498,35 @@ The validated evidence-selected first gate is `phase_space_structure_function_pr
 
 ### Criterion 50 — external repository validation
 
-50. External final full-repository regression and merge-readiness review — **pending**.
+50. External final full-repository regression and merge-readiness review — **satisfied**.
 
-## 18. Interpretation guards
+## 18. Criterion 50 external final repository validation / merge-readiness review
+
+Reviewed pre-closure branch head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0` passed GitHub Actions run #1815 with **`1098 passed in 695.62s (0:11:35)`**.
+
+At the reviewed checkpoint:
+
+- branch relative to `main`: **ahead 83 / behind 0**;
+- merge base: `ee4baec55fa994217b275f9f2451e25fc6736787`, the merged Stage 12 head;
+- PR #14: `mergeable = true`, open, Draft, and unmerged;
+- changed files: **41**, confined to Stage 13 source/tests/experiments/docs/results plus README/roadmap synchronization;
+- unresolved inline review threads: **0**;
+- PR discussion / submitted review blocker entries: **0**;
+- PR conversation comments: **0**.
+
+No repository-level blocker was found. The criterion-50 conclusion is
+
+`Stage 13 criterion 50 external final repository validation / merge-readiness review = satisfied`.
+
+Stage 13 criteria **1–50** are therefore completed at this merge-readiness checkpoint. The scientific synthesis remains `multi_constraint_path_covariant`; criterion 50 adds repository validation and merge-readiness only, not new scientific evidence.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
+
+PR #14 remains Draft, open, and unmerged for user review. No Draft→Ready transition or merge is performed by criterion 50.
+
+## 19. Interpretation guards
 
 - `two constraint labels != two independent gauge directions`;
 - `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;

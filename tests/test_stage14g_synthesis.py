@@ -174,7 +174,7 @@ def test_stage14g_selected_gate_targets_missing_locality_before_gravity(synthesi
     gravity = next(item for item in synthesis.stage15_candidates if item.gate_id == "gravitational_minisuperspace_extension")
     assert gravity.score < selected.score
     assert "minisuperspace suppresses spatial dependence" in gravity.rationale
-    assert "confound" in gravity.rationale
+    assert "conflate" in gravity.rationale
 
 
 def test_stage14g_summary_closes_48_49_in_source_and_keeps_50_external() -> None:

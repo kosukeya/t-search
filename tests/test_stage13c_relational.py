@@ -125,9 +125,9 @@ def test_stage13c_diagnostics_close_criteria_24_31_only() -> None:
     assert diagnostics.one_clock_incomplete_group_count == 12
     assert diagnostics.same_P_different_Q_control_count == 1
     assert diagnostics.same_Q_different_P_control_count == 1
-    assert diagnostics.min_distinct_orbit_full_pair_separation == 0.5
-    assert diagnostics.min_one_clock_spread == 1.0
-    assert diagnostics.max_one_clock_spread == 1.0
+    assert math.isclose(diagnostics.min_distinct_orbit_full_pair_separation, 0.5, abs_tol=1e-12)
+    assert math.isclose(diagnostics.min_one_clock_spread, 1.0, abs_tol=1e-12)
+    assert math.isclose(diagnostics.max_one_clock_spread, 1.0, abs_tol=1e-12)
     assert diagnostics.nontrivial_complete_relational_change
     assert diagnostics.one_clock_incompleteness_explicit
     assert diagnostics.metaphysical_boundary_explicit

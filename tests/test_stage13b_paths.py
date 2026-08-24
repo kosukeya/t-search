@@ -13,6 +13,8 @@ from t_search.stage13_paths import (
     STAGE13B_METAPHYSICAL_CLAIM_STATUS,
     STAGE13B_PATH_ORDER_ROLE,
     STAGE13B_PATH_WORD_ROLE,
+    STAGE13B_PHI_T,
+    STAGE13B_PHI_X,
     STAGE13B_SAME_RAW_CLASSIFICATION,
     STAGE13B_TEMPORAL_ORDER_STATUS,
     STAGE13B_WRONG_COMPENSATOR_CLASSIFICATION,
@@ -80,6 +82,8 @@ def test_stage13b_path_order_metadata_is_not_typed_as_physical_temporal_order() 
     assert all(item.path_order_role == STAGE13B_PATH_ORDER_ROLE for item in comparisons)
     assert all(item.temporal_order_status == STAGE13B_TEMPORAL_ORDER_STATUS for item in comparisons)
     assert all(item.metaphysical_claim_status == STAGE13B_METAPHYSICAL_CLAIM_STATUS for item in comparisons)
+    assert all(item.path_word_TX == (STAGE13B_PHI_T, STAGE13B_PHI_X) for item in comparisons)
+    assert all(item.path_word_XT == (STAGE13B_PHI_X, STAGE13B_PHI_T) for item in comparisons)
     assert all(item.path_word_TX != item.path_word_XT for item in comparisons)
 
 

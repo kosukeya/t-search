@@ -201,7 +201,7 @@ Source run #1361: **`907 passed in 590.98s (0:09:50)`**. Final Stage 11D reposit
 
 `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`.
 
-`future-measurement reparameterization covariance != clock-change x parameterization compatibility`.
+`future-measurement reparameterization covariance != clock-change x reparameterization compatibility`.
 
 ### Stage 11E — clock-change × parameterization compatibility — completed
 
@@ -700,7 +700,7 @@ Stage 13 criteria **1–31** are satisfied; criteria **32–50** remain pending.
 - `external lapse != quantum measurement normalization form`;
 - `numerically unchanged probability payload != well-typed reparameterization context`;
 - `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
-- `future-measurement reparameterization covariance != clock-change x parameterization compatibility`;
+- `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
 - `internal-clock covariance != reparameterization covariance`;
 - `commuting typed product square != independent interaction law`;
 - `commuting typed diagram != general covariance`;

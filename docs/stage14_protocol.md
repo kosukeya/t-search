@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14E source/test checkpoint validated; criteria 1–43 satisfied; criteria 44–50 pending. Stage 14F is next.**
+Status: **Stage 14F source/test and notes/results checkpoints validated; criteria 1–47 satisfied; criteria 48–50 pending. Stage 14G is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,7 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C established the bounded Dirac / relational / quotient evidence. Stage 14D established the frozen basis-transformation pressure test. Stage 14E now establishes only the typed operational / future-measurement descent evidence stated below.
+Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C established the bounded Dirac / relational / quotient evidence. Stage 14D established the frozen basis-transformation pressure test. Stage 14E established typed operational / future-measurement descent. Stage 14F now establishes only the frozen destructive-control evidence stated below.
 
 ## 2. Frozen canonical phase space and constants
 
@@ -460,7 +460,59 @@ The positive result keeps path and basis provenance explicitly in Xi while quoti
 
 `orbit-sensitive witness != empirical prediction`.
 
-## 16. Frozen Stage 14 sequence
+## 16. Stage 14F validated executable evidence
+
+Stage 14F source/test/runner head: `9f20ad22940ba827d346fbb7386eced5e26daedd`.
+
+GitHub Actions run #1900 (`32740094197`) completed successfully on PR merge checkout `d636706b8e141befe0e80b2841413aaeb8f0cabc` with **`1154 passed in 664.20s (0:11:04)`**.
+
+Stage 14F notes/results head `1274f2d64e8964dd0eb46c4bc0bbe9f8ba9f8497` was validated by run #1904 (`32741431871`) on PR merge checkout `880169d21c3d1f217ea79f04ac761468c1bba8b9` with **`1154 passed in 562.70s (0:09:22)`**.
+
+Validated deterministic Stage 14F evidence:
+
+- destructive controls: **14**;
+- rejected controls: **14/14**;
+- structure-function-removed witnesses: **108**;
+- rank-deficient witnesses: **108**;
+- missing-third-direction witnesses: **108/108**;
+- wrong-sign / wrong-value compensator witnesses: **1728**;
+- missing-compensator witnesses: **1728**;
+- cross-orbit false-positive pairs rejected: **8748/8748**;
+- two-clock incomplete groups: **36/36**;
+- singular scalar-basis controls: **2/2**;
+- singular witnesses: **72 = 36 vanishing + 36 nonfinite**;
+- deformed `H_2_bad=H_2+epsilon q` anomaly witnesses: **108/108**;
+- minimum anomaly closure residual: **0.075**;
+- maximum anomaly closure residual: **0.175**;
+- representative/path/basis payload-corruption controls: **3/3**;
+- false Xi typing: **rejected** as `typed_operational_context_rejected`;
+- false universal-Abelianization interpretation: **rejected** as `false_universal_abelianization_interpretation_rejected`;
+- all control/metaphysical claims: **not licensed**;
+- `criteria_44_47_satisfied = true`.
+
+The anomaly control rebuilds the deformed constraint surface with `p_2=-b p-epsilon q`, so the probes satisfy `D=H_1=H_2_bad=0` before closure is tested. On that deformed surface,
+
+`{H_1,H_2_bad}=-epsilon p`,
+
+and
+
+`{H_2_bad,D}=epsilon a`.
+
+Bounded result:
+
+`Stage 14F ablation / anomaly / false-positive controls on the frozen structure-function carrier = established`.
+
+A successful destructive control is only diagnostic of the layer deliberately broken. It is not additional positive-family evidence and does not by itself license a physical, gravitational, refoliation, or metaphysical conclusion.
+
+`negative-control rejection != positive-family obstruction`.
+
+`constraint-algebra anomaly != fundamental physical non-Abelianity`.
+
+`control rejection != hypersurface-deformation algebra`.
+
+`control rejection != general relativity`.
+
+## 17. Frozen Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
 - Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
@@ -468,11 +520,11 @@ The positive result keeps path and basis provenance explicitly in Xi while quoti
 - Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**;
 - Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**;
 - Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **completed**;
-- Stage 14F — ablation / anomaly / false-positive controls — **next**;
-- Stage 14G — executable synthesis and evidence-selected next gate;
+- Stage 14F — ablation / anomaly / false-positive controls — **completed**;
+- Stage 14G — executable synthesis and evidence-selected next gate — **next**;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
-## 17. Frozen synthesis vocabulary
+## 18. Frozen synthesis vocabulary
 
 Stage 14G will select exactly one of:
 
@@ -484,7 +536,7 @@ Stage 14G will select exactly one of:
 
 A negative control behaving as intended does not license a positive-family obstruction classification.
 
-## 18. Frozen criteria 1–50
+## 19. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -535,18 +587,18 @@ A negative control behaving as intended does not license a positive-family obstr
 42. Orbit-sensitive public / measurement signatures remain stable within each physical quotient class and discriminate the frozen physical classes where declared — **satisfied**.
 43. Representative/path/basis-dependent payload corruption controls are detected, while successful operational descent is not promoted to future actuality or empirical discovery — **satisfied**.
 
-44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **pending**.
-45. `H_2_bad=H_2+epsilon q` is detected as a constraint-algebra anomaly rather than admitted as positive evidence — **pending**.
-46. Wrong-compensator, incomplete-observable, cross-orbit, singular-basis, and false-typing controls are explicitly classified and rejected — **pending**.
-47. Control results remain bounded away from hypersurface-deformation algebra, GR, fundamental non-Abelianity, eternalism, or ontological becoming — **pending**.
+44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **satisfied**.
+45. `H_2_bad=H_2+epsilon q` is detected as a constraint-algebra anomaly rather than admitted as positive evidence — **satisfied**.
+46. Wrong-compensator, incomplete-observable, cross-orbit, singular-basis, and false-typing controls are explicitly classified and rejected — **satisfied**.
+47. Control results remain bounded away from hypersurface-deformation algebra, GR, fundamental non-Abelianity, eternalism, or ontological becoming — **satisfied**.
 
 48. Stage 14G executable synthesis selects exactly one frozen Stage 14 status from the validated Stage 14A–F evidence chain — **pending**.
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**.
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 19. Interpretation boundary
+## 20. Interpretation boundary
 
-Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family. Stage 14D establishes a frozen simple-scalar-rescaling obstruction together with a richer triangular commuting-basis equivalence that preserves the sampled physical content. Stage 14E establishes typed O/P/R/V and inherited future-measurement descent across the validated structure-function path and original/triangular basis correspondences while retaining those representation choices explicitly in Xi.
+Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family. Stage 14D establishes a frozen simple-scalar-rescaling obstruction together with a richer triangular commuting-basis equivalence that preserves the sampled physical content. Stage 14E establishes typed O/P/R/V and inherited future-measurement descent across the validated structure-function path and original/triangular basis correspondences while retaining those representation choices explicitly in Xi. Stage 14F establishes that the frozen destructive controls are rejected in the expected algebraic, path, relational, basis, typing, and interpretation layers without being promoted into positive physical evidence.
 
 Persistent guards:
 
@@ -585,7 +637,16 @@ Persistent guards:
 - `finite relational covariance != metaphysical becoming`;
 - `future-measurement covariance != future actuality`;
 - `orbit-sensitive witness != empirical prediction`;
+- `negative-control rejection != positive-family obstruction`;
+- `structure-function removal != evidence against the positive carrier`;
+- `missing-third-direction failure != physical time asymmetry`;
 - `constraint-algebra anomaly != ontological becoming`;
+- `constraint-algebra anomaly != fundamental physical non-Abelianity`;
+- `control rejection != hypersurface-deformation algebra`;
+- `control rejection != general relativity`;
+- `cross-orbit rejection != spacetime causal separation`;
+- `singular-basis rejection != universal non-Abelianizability`;
+- `false typing rejection != empirical discovery`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
 - `not_established != false`.

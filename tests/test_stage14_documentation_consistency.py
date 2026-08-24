@@ -15,6 +15,8 @@ NOTES_D = (ROOT / "docs" / "stage14d_notes.md").read_text(encoding="utf-8")
 RESULT_D = (ROOT / "results" / "stage14d_basis.md").read_text(encoding="utf-8")
 NOTES_E = (ROOT / "docs" / "stage14e_notes.md").read_text(encoding="utf-8")
 RESULT_E = (ROOT / "results" / "stage14e_measurement.md").read_text(encoding="utf-8")
+NOTES_F = (ROOT / "docs" / "stage14f_notes.md").read_text(encoding="utf-8")
+RESULT_F = (ROOT / "results" / "stage14f_ablation.md").read_text(encoding="utf-8")
 STAGE13_G = (ROOT / "results" / "stage13g_synthesis_stage14_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE14 = (
@@ -37,6 +39,10 @@ STAGE14D_SOURCE_HEAD = "3e44454952d71ebbe9b0a52bbd9d68cd398d0635"
 STAGE14D_SYNC_HEAD = "69c979896cc2855869a6637b41faac010b4b0b36"
 STAGE14E_SOURCE_HEAD = "ac2376323f9d2b442bbbf448b22bc683ed2fd3ad"
 STAGE14E_MERGE_CHECKOUT = "1662684069cfe0f44708e7d69b4cada4ae5b72d6"
+STAGE14F_SOURCE_HEAD = "9f20ad22940ba827d346fbb7386eced5e26daedd"
+STAGE14F_SOURCE_MERGE_CHECKOUT = "d636706b8e141befe0e80b2841413aaeb8f0cabc"
+STAGE14F_NOTES_RESULTS_HEAD = "1274f2d64e8964dd0eb46c4bc0bbe9f8ba9f8497"
+STAGE14F_NOTES_RESULTS_MERGE_CHECKOUT = "880169d21c3d1f217ea79f04ac761468c1bba8b9"
 
 
 def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
@@ -50,20 +56,21 @@ def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
     assert "phase_space_structure_function_precursor" in combined
 
 
-def test_stage14e_status_closes_exactly_criteria_1_through_43():
+def test_stage14f_status_closes_exactly_criteria_1_through_47():
     assert (
-        "Stage 14E source/test checkpoint validated; criteria 1–43 satisfied; "
-        "criteria 44–50 pending. Stage 14F is next."
+        "Stage 14F source/test and notes/results checkpoints validated; criteria 1–47 satisfied; "
+        "criteria 48–50 pending. Stage 14G is next."
     ) in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 43
-    assert PROTOCOL.count("**pending**") == 7
+    assert PROTOCOL.count("**satisfied**") == 47
+    assert PROTOCOL.count("**pending**") == 3
     assert "Stage 14.0 completed; criteria 1–10 satisfied; criteria 11–50 pending." in FREEZE
     assert "Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**" in PROTOCOL
     assert "Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**" in PROTOCOL
     assert "Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**" in PROTOCOL
     assert "Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**" in PROTOCOL
     assert "Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **completed**" in PROTOCOL
-    assert "Stage 14F — ablation / anomaly / false-positive controls — **next**" in PROTOCOL
+    assert "Stage 14F — ablation / anomaly / false-positive controls — **completed**" in PROTOCOL
+    assert "Stage 14G — executable synthesis and evidence-selected next gate — **next**" in PROTOCOL
 
 
 def test_stage14_positive_carrier_and_structure_functions_remain_frozen():
@@ -254,16 +261,54 @@ def test_stage14e_repository_checkpoint_and_deterministic_evidence_are_synchroni
         assert phrase in combined
 
 
-def test_stage14e_closes_frozen_criteria_39_through_43_only():
+def test_stage14f_repository_checkpoint_and_deterministic_evidence_are_synchronized():
+    combined = "\n".join((PROTOCOL, NOTES_F, RESULT_F))
+    assert STAGE14F_SOURCE_HEAD in combined
+    assert STAGE14F_SOURCE_MERGE_CHECKOUT in combined
+    assert "#1900" in combined
+    assert "1154 passed in 664.20s (0:11:04)" in combined
+    assert STAGE14F_NOTES_RESULTS_HEAD in combined
+    assert STAGE14F_NOTES_RESULTS_MERGE_CHECKOUT in combined
+    assert "#1904" in combined
+    assert "1154 passed in 562.70s (0:09:22)" in combined
+    for phrase in (
+        "14 controls",
+        "14/14",
+        "108/108",
+        "1728",
+        "8748",
+        "36/36",
+        "72",
+        "0.075",
+        "0.175",
+        "criteria_44_47_satisfied",
+        "typed_operational_context_rejected",
+        "false_universal_abelianization_interpretation_rejected",
+        "Stage 14F ablation / anomaly / false-positive controls on the frozen structure-function carrier = established",
+        "negative-control rejection != positive-family obstruction",
+        "constraint-algebra anomaly != fundamental physical non-Abelianity",
+        "control rejection != hypersurface-deformation algebra",
+        "control rejection != general relativity",
+        "repository validation != new scientific evidence",
+    ):
+        assert phrase in combined
+
+
+def test_stage14f_closes_frozen_criteria_44_through_47_only():
     for criterion in (
         "39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **satisfied**.",
         "40. Licensed compensated path choices preserve quotient-level public O/P/R/V and future-measurement payloads — **satisfied**.",
         "41. Path, structure-function, compensator, and basis provenance are retained in Xi without being silently collapsed into quotient-level physical content — **satisfied**.",
         "42. Orbit-sensitive public / measurement signatures remain stable within each physical quotient class and discriminate the frozen physical classes where declared — **satisfied**.",
         "43. Representative/path/basis-dependent payload corruption controls are detected, while successful operational descent is not promoted to future actuality or empirical discovery — **satisfied**.",
+        "44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **satisfied**.",
+        "45. `H_2_bad=H_2+epsilon q` is detected as a constraint-algebra anomaly rather than admitted as positive evidence — **satisfied**.",
+        "46. Wrong-compensator, incomplete-observable, cross-orbit, singular-basis, and false-typing controls are explicitly classified and rejected — **satisfied**.",
+        "47. Control results remain bounded away from hypersurface-deformation algebra, GR, fundamental non-Abelianity, eternalism, or ontological becoming — **satisfied**.",
     ):
         assert criterion in PROTOCOL
-    assert "44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **pending**." in PROTOCOL
+    assert "48. Stage 14G executable synthesis selects exactly one frozen Stage 14 status from the validated Stage 14A–F evidence chain — **pending**." in PROTOCOL
+    assert "49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**." in PROTOCOL
     assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
@@ -272,7 +317,7 @@ def test_stage14_interpretation_boundaries_remain_explicit():
         (
             PROTOCOL, FREEZE,
             NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C,
-            NOTES_D, RESULT_D, NOTES_E, RESULT_E,
+            NOTES_D, RESULT_D, NOTES_E, RESULT_E, NOTES_F, RESULT_F,
         )
     )
     for phrase in (
@@ -311,7 +356,16 @@ def test_stage14_interpretation_boundaries_remain_explicit():
         "finite relational covariance != metaphysical becoming",
         "future-measurement covariance != future actuality",
         "orbit-sensitive witness != empirical prediction",
+        "negative-control rejection != positive-family obstruction",
+        "structure-function removal != evidence against the positive carrier",
+        "missing-third-direction failure != physical time asymmetry",
         "constraint-algebra anomaly != ontological becoming",
+        "constraint-algebra anomaly != fundamental physical non-Abelianity",
+        "control rejection != hypersurface-deformation algebra",
+        "control rejection != general relativity",
+        "cross-orbit rejection != spacetime causal separation",
+        "singular-basis rejection != universal non-Abelianizability",
+        "false typing rejection != empirical discovery",
         "finite-model success != empirical discovery",
         "repository validation != new scientific evidence",
         "not_established != false",

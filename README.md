@@ -6,6 +6,11 @@
 
 **Historical checkpoint: Stages 1–12 are completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12 criteria 1–50 were completed on `agent/stage-12-multi-orbit-gauge-atlas`; PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13.0 is completed on Draft PR #14; Stage 13 criteria 1–10 are satisfied, criteria 11–50 remain pending, and Stage 13A is next.**
 
+Historical compatibility markers retained for documentation regression:
+
+- Stages 1–9 are completed and merged.
+- Stages 1–11 are now completed and merged.
+
 Current refined finite-model candidate through Stage 12:
 
 `T12_candidate=(O,P,R,V;Xi)`

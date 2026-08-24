@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14B source/test checkpoint validated; criteria 1–24 satisfied; criteria 25–50 pending. Stage 14C is next.**
+Status: **Stage 14C source/test checkpoint validated; criteria 1–31 satisfied; criteria 32–50 pending. Stage 14D is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,7 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B establishes only the bounded compensated mixed-path evidence stated below.
+Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C now establishes only the bounded Dirac / relational / quotient evidence stated below.
 
 ## 2. Frozen canonical phase space and constants
 
@@ -129,6 +129,8 @@ For `Phi_2(u)` with fixed `T1`:
 
 Stage 14A checks each generator at parameters `-0.5` and `+0.5` from every positive representative, yielding 648 single-generator flow probes.
 
+`Stage 14A single-generator surface/Dirac preservation != third-direction compensated mixed-path closure`.
+
 ## 6. Frozen third-direction compensated path semantics
 
 For a same-orbit source `(T1_0,T2_0,X_0)` and target `(T1_1,T2_1,X_1)`, define
@@ -161,6 +163,8 @@ Stage 14B validates both ordered implementations and exact compensation on all 8
 
 `third-direction compensation != refoliation invariance`.
 
+`compensated mixed-path closure != refoliation invariance`.
+
 `wrong compensation failure != physical time asymmetry`.
 
 ## 7. Frozen Dirac, relational, and quotient targets
@@ -179,7 +183,7 @@ The deliberately incomplete two-clock expression is
 
 `q(T1=tau1,T2=tau2; X raw)=Q_D+P_D tau1+b tau2+a X`.
 
-Stage 14C must test representative-independent Dirac reconstruction, all six pairwise orbit separations, compensated-path descent, nontrivial relational change, incomplete-observable `D` dependence, and exactly four quotient classes.
+Stage 14C tests representative-independent Dirac reconstruction, all six pairwise orbit separations, compensated-path descent, nontrivial relational change, incomplete-observable `D` dependence, and exactly four quotient classes.
 
 `three gauge directions require enough relational conditions for completeness`.
 
@@ -300,6 +304,8 @@ Bounded result:
 
 Stage 14B source/test head: `2b0866b63e6fb4d4951f883839e6693b12ceddfc`, run #1852, **`1122 passed in 891.20s (0:14:51)`**.
 
+Documentation-synchronized Stage 14B head: `318d6a34a7f8ddac29966493c31bd0cf8120ac4e`, run #1860, **`1123 passed in 548.54s (0:09:08)`**.
+
 Validated deterministic Stage 14B evidence:
 
 - canonical ordered mixed pairs: **864**;
@@ -327,19 +333,54 @@ Bounded result:
 
 This result establishes only finite compensated mixed-path closure. It does not establish refoliation invariance, hypersurface-deformation algebra, general covariance, gravitational field dynamics, or GR.
 
-## 13. Frozen Stage 14 sequence
+## 13. Stage 14C validated executable evidence
+
+Stage 14C source/test/runner head: `3e390ea59af879cc0b2962989467cdfe2b4ee1ca`, run #1866, **`1130 passed in 898.22s (0:14:58)`**.
+
+Validated deterministic Stage 14C evidence:
+
+- raw Dirac estimates: **108**;
+- physical-orbit summaries: **4 × 27 representatives**;
+- maximum declared `Q_D` reconstruction residual: approximately **1.6653345369377348e-16**;
+- maximum declared `P_D` reconstruction residual: **0.0**;
+- maximum within-orbit `Q_D` spread: approximately **2.220446049250313e-16**;
+- maximum within-orbit `P_D` spread: **0.0**;
+- maximum strong Dirac bracket residual against `D,H_1,H_2`: **0.0**;
+- distinct physical-orbit pairs: **6**, all **6/6** separated;
+- minimum full Dirac-pair separation: **0.5**;
+- same-`P_D`/different-`Q_D` anti-triviality controls: **1**;
+- same-`Q_D`/different-`P_D` anti-triviality controls: **1**;
+- complete three-condition relational evaluations: **2916**;
+- maximum complete-relational target residual: approximately **2.220446049250313e-16**;
+- complete-relational within-orbit spread: **3.0 to 5.0**;
+- compensated-path relational comparisons: **23328 = 864 × 27**;
+- maximum compensated-path relational residual: approximately **8.881784197001252e-16**;
+- two-clock incomplete evaluations: **108** in **36** fixed-clock groups;
+- incomplete groups retaining third-direction dependence: **36/36**;
+- raw-`X` spread: approximately **0.9999999999999998 to 1.0000000000000002**;
+- quotient reconstructed from raw `(Q_D,P_D)`: exactly **4 classes × 27 representatives**;
+- licensed cross-orbit arrows: **0**;
+- rejected cross-orbit ordered representative pairs: **8748/8748**.
+
+Bounded result:
+
+`Stage 14C representative-independent Dirac / three-condition relational / four-class quotient descent = established`.
+
+This result establishes finite representative-independent orbit data, nontrivial complete relational change, and complete-relational descent across the validated compensated path family. It does not establish eternalism, ontological becoming, refoliation invariance, hypersurface-deformation algebra, general covariance, gravity, or GR.
+
+## 14. Frozen Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
 - Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
 - Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**;
-- Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **next**;
-- Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test;
+- Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**;
+- Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **next**;
 - Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases;
 - Stage 14F — ablation / anomaly / false-positive controls;
 - Stage 14G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
-## 14. Frozen synthesis vocabulary
+## 15. Frozen synthesis vocabulary
 
 Stage 14G will select exactly one of:
 
@@ -351,7 +392,7 @@ Stage 14G will select exactly one of:
 
 A negative control behaving as intended does not license a positive-family obstruction classification.
 
-## 15. Frozen criteria 1–50
+## 16. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -380,13 +421,13 @@ A negative control behaving as intended does not license a positive-family obstr
 23. Cross-orbit source/target pairs are not licensed as gauge paths — **satisfied**.
 24. Path-order / compensator results remain explicitly bounded away from refoliation invariance, time asymmetry, and ontological becoming — **satisfied**.
 
-25. Stage 14C reconstructs representative-independent `(Q_D,P_D)` across all 108 positive representatives — **pending**.
-26. The full Dirac pair separates all six pairs among the four physical orbit classes — **pending**.
-27. The complete three-condition relational observable descends across all licensed compensated paths — **pending**.
-28. The complete relational family retains nontrivial relational change across varying `(tau1,tau2,chi)` — **pending**.
-29. The two-clock incomplete observable retains detectable third-direction gauge dependence — **pending**.
-30. The sampled quotient contains exactly four classes of 27 representatives with zero licensed cross-orbit arrows — **pending**.
-31. Dirac / relational / quotient results remain bounded away from eternalism, timeless ontology, and elimination of physical change — **pending**.
+25. Stage 14C reconstructs representative-independent `(Q_D,P_D)` across all 108 positive representatives — **satisfied**.
+26. The full Dirac pair separates all six pairs among the four physical orbit classes — **satisfied**.
+27. The complete three-condition relational observable descends across all licensed compensated paths — **satisfied**.
+28. The complete relational family retains nontrivial relational change across varying `(tau1,tau2,chi)` — **satisfied**.
+29. The two-clock incomplete observable retains detectable third-direction gauge dependence — **satisfied**.
+30. The sampled quotient contains exactly four classes of 27 representatives with zero licensed cross-orbit arrows — **satisfied**.
+31. Dirac / relational / quotient results remain bounded away from eternalism, timeless ontology, and elimination of physical change — **satisfied**.
 
 32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **pending**.
 33. The nonzero `D'` component obstruction is verified on all required `X != 0` positive representatives — **pending**.
@@ -411,9 +452,9 @@ A negative control behaving as intended does not license a positive-family obstr
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**.
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 16. Interpretation boundary
+## 17. Interpretation boundary
 
-Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B further establishes exact third-direction compensated mixed-path closure on the declared finite family, including nontrivial and exact-zero path-order subfamilies and negative controls.
+Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family.
 
 Persistent guards:
 
@@ -425,16 +466,21 @@ Persistent guards:
 - `raw path-word inequality != physical path dependence`;
 - `third-direction compensation != refoliation invariance`;
 - `compensated mixed-path closure != refoliation invariance`;
+- `compensated relational descent != refoliation invariance`;
 - `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`;
 - `triangular basis equivalence != universal basis trivializability`;
 - `constraint-basis change != physical-orbit change`;
 - `path word != physical temporal history`;
 - `wrong compensator failure != physical time asymmetry`;
+- `two-clock incompleteness != physical time asymmetry`;
 - `compensated path closure != ontological becoming`;
 - `complete relational observable != ontological becoming by definition`;
+- `complete three-condition relational observable != ontological becoming by definition`;
 - `Dirac invariant != timeless ontology by definition`;
 - `Dirac-invariant data + relational change != proof of eternalism`;
 - `gauge quotient != elimination of physical change`;
+- `four-class gauge quotient != elimination of physical change`;
+- `finite relational covariance != metaphysical becoming`;
 - `future-measurement covariance != future actuality`;
 - `constraint-algebra anomaly != ontological becoming`;
 - `finite-model success != empirical discovery`;

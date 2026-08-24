@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13A completed; criteria 1–16 satisfied; criteria 17–50 pending.**
+Status: **Stage 13B completed; criteria 1–23 satisfied; criteria 24–50 pending.**
 
 Selected Stage 13 gate from Stage 12G:
 
@@ -13,6 +13,10 @@ The final pre-merge Stage 12 current-head regression was run #1654 with **`1025 
 Stage 13.0 documentation-synchronized baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**.
 
 Stage 13A source/test checkpoint head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**.
+
+Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**.
+
+Stage 13B source/test checkpoint head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**.
 
 The bounded Stage 12 synthesis carried forward is
 
@@ -52,7 +56,7 @@ Positive target:
 
 `noncommuting raw path order + correct algebraic compensator -> same licensed gauge endpoint / same quotient-level physical content`.
 
-Stage 13A establishes only the carrier needed to ask that question. Compensated path closure itself remains Stage 13B work.
+Stage 13A established the carrier needed to ask that question. Stage 13B now establishes compensated path closure on the frozen 144-pair mixed family; complete relational and quotient/operational descent remain later substages.
 
 ## 2. Frozen phase space and two-constraint carrier
 
@@ -155,7 +159,7 @@ The frozen compensator law is
 
 `u_XT = exp(s) u_TX`.
 
-For mixed paths with `s != 0` and `DeltaX != 0`, using the same raw `u` in both orders is expected to produce different raw endpoints.
+For mixed paths with `s != 0` and `DeltaX != 0`, using the same raw `u` in both orders produces different raw endpoints in the declared finite family.
 
 The Stage 13B positive closure test is
 
@@ -237,7 +241,7 @@ This gives
 - **288 ordered nonidentity same-orbit source/target pairs**;
 - **144 ordered mixed pairs** for which both `T` and `X` change.
 
-Stage 13A enumerates the 144 mixed pairs but reserves their two-generator path test for Stage 13B.
+Stage 13B uses all 144 mixed pairs for the noncommuting-order and compensator tests.
 
 `different physical orbit != different path through one gauge orbit`.
 
@@ -400,16 +404,62 @@ Bounded result:
 
 `Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
 
-This bounded result is supported by Stage 13A source/test run #1676: **`1048 passed in 592.23s (0:09:52)`**.
+This bounded result is supported by Stage 13A source/test run #1676: **`1048 passed in 592.23s (0:09:52)`** and documentation-synchronized run #1696: **`1050 passed in 886.76s (0:14:46)`**.
 
 `Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
+
+## 10B. Stage 13B executable evidence
+
+Stage 13B implements `src/t_search/stage13_paths.py`, `tests/test_stage13b_paths.py`, and `experiments/stage13b_paths.py` over all **144** frozen mixed pairs.
+
+All 144 pairs have nonzero `s`, nonzero `DeltaX`, and `u_TX != u_XT`. Reusing `u_TX` in both path orders gives a detectable endpoint difference for **144 / 144** pairs while the correctly compensated `TX` and `XT` paths close on the same declared target for **144 / 144** pairs.
+
+The same-raw endpoint-separation range is
+
+- minimum `0.6321205588285577`;
+- maximum `12.778112197861299`.
+
+The exact compensator gives
+
+- maximum compensator-law residual `8.881784197001252e-16`;
+- maximum compensated endpoint separation `2.220446049250313e-16`;
+- maximum compensated target residual `2.220446049250313e-16`;
+- maximum positive two-constraint residual `0.0`.
+
+A separately defined wrong compensator
+
+`u_XT_wrong = u_XT + 0.25 (u_TX-u_XT)`
+
+is detected for **144 / 144** pairs, with target residual ranging from `0.15803013970713942` to `3.1945280494653243`.
+
+Path words are typed as transport segments
+
+`path_word_TX=(Phi_T,Phi_X)`
+
+and
+
+`path_word_XT=(Phi_X,Phi_T)`,
+
+while Hamiltonian generator identities remain `K_T` and `K_X`. All path-order records carry `temporal_order_status=not_physical_temporal_order` and `metaphysical_claim_status=not_licensed`.
+
+A cross-orbit mixed path is rejected rather than assigned a compensator.
+
+Bounded result:
+
+`Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`.
+
+This bounded result is supported by Stage 13B source/test run #1710: **`1058 passed in 696.20s (0:11:36)`**.
+
+`constraint-surface preservation != correct source/target path correspondence`.
+
+`compensated multi-constraint path closure != refoliation invariance`.
 
 ## 11. Stage 13 sequence
 
 - Stage 13.0 — protocol freeze — **completed**;
 - Stage 13A — two-constraint first-class carrier and finite representative family — **completed**;
-- Stage 13B — noncommuting gauge paths and compensated closure — **next**;
-- Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — pending;
+- Stage 13B — noncommuting gauge paths and compensated closure — **completed**;
+- Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **next**;
 - Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — pending;
 - Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — pending;
 - Stage 13F — basis / ablation / anomaly / false-positive controls — pending;
@@ -460,13 +510,13 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 
 ### Criteria 17–23 — Stage 13B
 
-17. All 144 mixed ordered source/target pairs exhibit the declared nontrivial two-generator path structure — **pending**.
-18. Same-raw-`u` reordered mixed paths are detectably different when the protocol predicts they should be — **pending**.
-19. The exact compensator `u_XT=exp(s)u_TX` maps the two canonical path orders to the same target within tolerance — **pending**.
-20. Compensated path closure preserves both constraints and the declared physical-orbit identity — **pending**.
-21. Wrong-compensator paths are numerically detected — **pending**.
-22. Path-order / generator-order metadata remains distinct from physical temporal order — **pending**.
-23. Cross-orbit path construction is rejected rather than compensated into false equivalence — **pending**.
+17. All 144 mixed ordered source/target pairs exhibit the declared nontrivial two-generator path structure — **satisfied**.
+18. Same-raw-`u` reordered mixed paths are detectably different when the protocol predicts they should be — **satisfied**.
+19. The exact compensator `u_XT=exp(s)u_TX` maps the two canonical path orders to the same target within tolerance — **satisfied**.
+20. Compensated path closure preserves both constraints and the declared physical-orbit identity — **satisfied**.
+21. Wrong-compensator paths are numerically detected — **satisfied**.
+22. Path-order / generator-order metadata remains distinct from physical temporal order — **satisfied**.
+23. Cross-orbit path construction is rejected rather than compensated into false equivalence — **satisfied**.
 
 ### Criteria 24–31 — Stage 13C
 
@@ -516,11 +566,14 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 ## 14. Interpretation guards
 
 - `raw gauge-path commutativity != successful multi-constraint closure`;
+- `same raw generator parameters under reordered paths != corresponding gauge path`;
+- `constraint-surface preservation != correct source/target path correspondence`;
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
 - `constraint-basis change != physical-orbit change`;
 - `two constraint labels != two independent gauge directions`;
 - `first-class closure on this toy carrier != hypersurface-deformation algebra`;
 - `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
+- `compensated multi-constraint path closure != refoliation invariance`;
 - `multi-constraint path covariance != refoliation invariance`;
 - `refoliation precursor != general covariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;

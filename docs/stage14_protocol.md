@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14C source/test checkpoint validated; criteria 1–31 satisfied; criteria 32–50 pending. Stage 14D is next.**
+Status: **Stage 14D source/test checkpoint validated; criteria 1–38 satisfied; criteria 39–50 pending. Stage 14E is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,7 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C now establishes only the bounded Dirac / relational / quotient evidence stated below.
+Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C established the bounded Dirac / relational / quotient evidence. Stage 14D now establishes only the frozen basis-transformation pressure-test evidence stated below.
 
 ## 2. Frozen canonical phase space and constants
 
@@ -337,6 +337,8 @@ This result establishes only finite compensated mixed-path closure. It does not 
 
 Stage 14C source/test/runner head: `3e390ea59af879cc0b2962989467cdfe2b4ee1ca`, run #1866, **`1130 passed in 898.22s (0:14:58)`**.
 
+Documentation-synchronized Stage 14C head: `4011b90078c6a223e6d948a3034e07376fca4dbd`, run #1874, **`1132 passed in 877.20s (0:14:37)`**.
+
 Validated deterministic Stage 14C evidence:
 
 - raw Dirac estimates: **108**;
@@ -368,19 +370,55 @@ Bounded result:
 
 This result establishes finite representative-independent orbit data, nontrivial complete relational change, and complete-relational descent across the validated compensated path family. It does not establish eternalism, ontological becoming, refoliation invariance, hypersurface-deformation algebra, general covariance, gravity, or GR.
 
-## 14. Frozen Stage 14 sequence
+## 14. Stage 14D validated executable evidence
+
+Stage 14D source/test head: `3e44454952d71ebbe9b0a52bbd9d68cd398d0635`, run #1880, **`1139 passed in 889.88s (0:14:49)`**.
+
+Validated deterministic Stage 14D evidence:
+
+- frozen admissible scalar factor families: **3**;
+- diagonal scalar evaluations: **324 = 108 × 3**;
+- `X != 0` scalar evaluations: **216**, all **216/216** `stage13_style_scalar_rescaling_obstructed`;
+- distinct positive representatives with `X != 0`: **72/72**;
+- `X = 0` scalar evaluations: **108**, all with the expected zero `D'` coefficient;
+- minimum nonzero `|-kappa X f_1 f_2/f_D|`: approximately **0.3843557173958058**;
+- maximum `|-kappa X f_1 f_2/f_D|`: approximately **1.135254038874606**;
+- vanishing-factor singular witnesses: **36**;
+- nonfinite-factor singular witnesses: **36**;
+- singular controls rejected: **2/2** as `singular_scalar_rescaling_rejected`;
+- triangular probes: **216 = 108 positive + 108 off-surface**;
+- triangular determinant: **1.0** throughout;
+- matrix/inverse identity residual maximum: **0.0**;
+- forward/inverse constraint-correspondence residual maximum: **0.0**;
+- `H_2_tilde=p_2+b p` formula residual maximum: **0.0**;
+- strong commuting-bracket residual maximum: **0.0**;
+- typed basis-content checks: **108**;
+- sampled quotient preserved: exactly **4 classes × 27 representatives**;
+- Dirac-pair residual maximum: **0.0**;
+- complete three-condition relational residual maximum: **0.0**;
+- triangular-basis Dirac-bracket residual maximum: **0.0**;
+- inherited public `O/P/R/V` payload equality: **108/108**;
+- public basis provenance absent from quotient-level payloads: **108/108**.
+
+Bounded result:
+
+`Stage 14D Stage-13-style scalar-rescaling obstruction with triangular basis equivalence on the frozen finite carrier = established`.
+
+The scalar result is an obstruction only inside the frozen finite, nonzero, diagonal no-mixing class. The exact triangular result shows that this carrier still admits a richer equivalent commuting presentation. Neither fact licenses a universal Abelianization or non-Abelianization claim.
+
+## 15. Frozen Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
 - Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
 - Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**;
 - Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**;
-- Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **next**;
-- Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases;
+- Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**;
+- Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **next**;
 - Stage 14F — ablation / anomaly / false-positive controls;
 - Stage 14G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
-## 15. Frozen synthesis vocabulary
+## 16. Frozen synthesis vocabulary
 
 Stage 14G will select exactly one of:
 
@@ -392,7 +430,7 @@ Stage 14G will select exactly one of:
 
 A negative control behaving as intended does not license a positive-family obstruction classification.
 
-## 16. Frozen criteria 1–50
+## 17. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -429,13 +467,13 @@ A negative control behaving as intended does not license a positive-family obstr
 30. The sampled quotient contains exactly four classes of 27 representatives with zero licensed cross-orbit arrows — **satisfied**.
 31. Dirac / relational / quotient results remain bounded away from eternalism, timeless ontology, and elimination of physical change — **satisfied**.
 
-32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **pending**.
-33. The nonzero `D'` component obstruction is verified on all required `X != 0` positive representatives — **pending**.
-34. Scalar transformations that vanish or diverge on the positive family are rejected as singular rather than accepted as equivalent bases — **pending**.
-35. The frozen triangular transformation `H_2_tilde=H_2-kappa T1 X D` is verified invertible on the positive family — **pending**.
-36. The triangular basis satisfies the frozen commuting bracket targets within tolerance — **pending**.
-37. Correctly typed triangular-basis correspondence preserves the sampled quotient, Dirac pair, complete relational values, and inherited public O/P/R/V payloads — **pending**.
-38. Basis results remain bounded: scalar obstruction is not promoted to universal non-Abelianizability and triangular equivalence is not promoted to universal trivializability — **pending**.
+32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **satisfied**.
+33. The nonzero `D'` component obstruction is verified on all required `X != 0` positive representatives — **satisfied**.
+34. Scalar transformations that vanish or diverge on the positive family are rejected as singular rather than accepted as equivalent bases — **satisfied**.
+35. The frozen triangular transformation `H_2_tilde=H_2-kappa T1 X D` is verified invertible on the positive family — **satisfied**.
+36. The triangular basis satisfies the frozen commuting bracket targets within tolerance — **satisfied**.
+37. Correctly typed triangular-basis correspondence preserves the sampled quotient, Dirac pair, complete relational values, and inherited public O/P/R/V payloads — **satisfied**.
+38. Basis results remain bounded: scalar obstruction is not promoted to universal non-Abelianizability and triangular equivalence is not promoted to universal trivializability — **satisfied**.
 
 39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **pending**.
 40. Licensed compensated path choices preserve quotient-level public O/P/R/V and future-measurement payloads — **pending**.
@@ -452,9 +490,9 @@ A negative control behaving as intended does not license a positive-family obstr
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**.
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 17. Interpretation boundary
+## 18. Interpretation boundary
 
-Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family.
+Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family. Stage 14D establishes a frozen simple-scalar-rescaling obstruction together with a richer triangular commuting-basis equivalence that preserves the sampled physical content.
 
 Persistent guards:
 
@@ -470,6 +508,11 @@ Persistent guards:
 - `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`;
 - `triangular basis equivalence != universal basis trivializability`;
 - `constraint-basis change != physical-orbit change`;
+- `basis-equivalent finite quotient != refoliation invariance`;
+- `commuting triangular presentation != proof that all admissible presentations commute`;
+- `basis equivalence != hypersurface-deformation algebra`;
+- `basis equivalence != general relativity`;
+- `basis equivalence != ontological becoming`;
 - `path word != physical temporal history`;
 - `wrong compensator failure != physical time asymmetry`;
 - `two-clock incompleteness != physical time asymmetry`;

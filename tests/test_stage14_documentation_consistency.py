@@ -5,6 +5,8 @@ README = (ROOT / "README.md").read_text(encoding="utf-8")
 ROADMAP = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "docs" / "stage14_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage14_0_protocol_freeze.md").read_text(encoding="utf-8")
+NOTES_A = (ROOT / "docs" / "stage14a_notes.md").read_text(encoding="utf-8")
+RESULT_A = (ROOT / "results" / "stage14a_structure_function.md").read_text(encoding="utf-8")
 STAGE13_G = (ROOT / "results" / "stage13g_synthesis_stage14_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE14 = (
@@ -16,6 +18,8 @@ SELECTED_STAGE14 = (
 
 MERGED_STAGE13_MAIN = "468fe6667ec6484fbe9e402135cd75f5d69420cf"
 FINAL_STAGE13_HEAD = "d0b541acb4345933a95f592f726827acf00604c0"
+STAGE14_FREEZE_HEAD = "afe0598362ccf0e808d2c690491cda810594d87e"
+STAGE14A_SOURCE_HEAD = "d1116a743b0374c96993c476331f5cceacfbb077"
 
 
 def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
@@ -29,17 +33,19 @@ def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
     assert "phase_space_structure_function_precursor" in combined
 
 
-def test_stage14_protocol_freeze_closes_exactly_criteria_1_through_10():
+def test_stage14a_status_closes_exactly_criteria_1_through_17():
     assert (
-        "Stage 14.0 protocol freeze completed; criteria 1–10 satisfied; criteria 11–50 pending."
-        in PROTOCOL
-    )
-    assert PROTOCOL.count("**satisfied**") == 10
-    assert PROTOCOL.count("**pending**") == 40
+        "Stage 14A source/test checkpoint validated; criteria 1–17 satisfied; "
+        "criteria 18–50 pending. Stage 14B is next."
+    ) in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 17
+    assert PROTOCOL.count("**pending**") == 33
     assert "Stage 14.0 completed; criteria 1–10 satisfied; criteria 11–50 pending." in FREEZE
+    assert "Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**" in PROTOCOL
+    assert "Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **next**" in PROTOCOL
 
 
-def test_stage14_positive_carrier_and_structure_functions_are_frozen():
+def test_stage14_positive_carrier_and_structure_functions_remain_frozen():
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "(T1,p_1; T2,p_2; X,p_X; q,p)",
@@ -60,7 +66,7 @@ def test_stage14_positive_carrier_and_structure_functions_are_frozen():
         assert phrase in combined
 
 
-def test_stage14_finite_family_paths_and_relational_targets_are_frozen():
+def test_stage14_finite_family_paths_and_relational_targets_remain_frozen():
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "27 representatives per physical orbit",
@@ -78,7 +84,7 @@ def test_stage14_finite_family_paths_and_relational_targets_are_frozen():
         assert phrase in combined
 
 
-def test_stage14_basis_taxonomy_is_frozen_before_experiment():
+def test_stage14_basis_controls_sequence_and_synthesis_vocabulary_remain_frozen():
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "simple_scalar_rescaling",
@@ -89,16 +95,6 @@ def test_stage14_basis_taxonomy_is_frozen_before_experiment():
         "singular",
         "H_2_tilde = H_2 - kappa T1 X D",
         "triangular",
-        "Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability",
-        "triangular basis equivalence != universal basis trivializability",
-        "constraint-basis change != physical-orbit change",
-    ):
-        assert phrase in combined
-
-
-def test_stage14_controls_sequence_and_synthesis_vocabulary_are_frozen():
-    combined = PROTOCOL + "\n" + FREEZE
-    for phrase in (
         "structure_function_removed_control_rejected",
         "rank_deficient_constraint_control_rejected",
         "missing_third_direction_control_rejected",
@@ -127,13 +123,53 @@ def test_stage14_controls_sequence_and_synthesis_vocabulary_are_frozen():
         assert phrase in combined
 
 
+def test_stage14a_repository_checkpoint_and_deterministic_evidence_are_synchronized():
+    combined = "\n".join((PROTOCOL, NOTES_A, RESULT_A))
+    assert STAGE14_FREEZE_HEAD in combined
+    assert "1106 passed in 879.78s (0:14:39)" in combined
+    assert STAGE14A_SOURCE_HEAD in combined
+    assert "1113 passed in 545.23s (0:09:05)" in combined
+    for phrase in (
+        "108",
+        "648",
+        "0.7812880785647448",
+        "-0.5",
+        "0.0",
+        "0.5",
+        "2.220446049250313e-16",
+        "structure_function_removed_control_rejected",
+        "rank_deficient_constraint_control_rejected",
+        "Stage 14A three-constraint first-class structure-function carrier and finite representative family = established",
+        "Stage 14A single-generator surface/Dirac preservation != third-direction compensated mixed-path closure",
+        "repository validation != new scientific evidence",
+    ):
+        assert phrase in combined
+
+
+def test_stage14a_closes_frozen_criteria_11_through_17_only():
+    for criterion in (
+        "11. Stage 14A constructs all 108 positive representatives on the three-constraint surface — **satisfied**.",
+        "12. All three positive constraint residuals vanish within the frozen tolerance on the representative family — **satisfied**.",
+        "13. Constraint gradients and Hamiltonian generator directions have rank three throughout the positive representative family — **satisfied**.",
+        "14. The sampled structure functions vary nontrivially across the positive family and include negative, zero, and positive values — **satisfied**.",
+        "15. All frozen Poisson-bracket closure identities and the Jacobi identity satisfy the numerical tolerance — **satisfied**.",
+        "16. Each licensed single-generator flow preserves the positive constraint surface and the declared Dirac data — **satisfied**.",
+        "17. Stage 14A rejects structure-function-removed and rank-deficient controls without promoting them to positive evidence — **satisfied**.",
+    ):
+        assert criterion in PROTOCOL
+    assert "18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **pending**." in PROTOCOL
+    assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
+
+
 def test_stage14_interpretation_boundaries_remain_explicit():
-    combined = PROTOCOL + "\n" + FREEZE
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_A, RESULT_A))
     for phrase in (
         "phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition",
         "finite first-class structure-function algebra != hypersurface-deformation algebra",
         "hypersurface-deformation precursor != general relativity",
         "structure functions != spacetime geometry by definition",
+        "three constraint labels != three independent gauge directions",
+        "Stage 14A single-generator surface/Dirac preservation != third-direction compensated mixed-path closure",
         "third-direction compensation != refoliation invariance",
         "Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability",
         "triangular basis equivalence != universal basis trivializability",

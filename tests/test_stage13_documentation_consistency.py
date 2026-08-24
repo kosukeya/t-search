@@ -11,86 +11,151 @@ NOTES_B = (ROOT / "docs" / "stage13b_notes.md").read_text(encoding="utf-8")
 RESULT_B = (ROOT / "results" / "stage13b_paths.md").read_text(encoding="utf-8")
 NOTES_C = (ROOT / "docs" / "stage13c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage13c_relational.md").read_text(encoding="utf-8")
-NOTES_D = (ROOT / "docs" / "stage13d_notes.md").reaYÝ^
-[˜ÛÙ[™ÏH]‹NŠB”‘TÕSÑH
-“ÓÕÈœ™\Ý[ÈˆÈœÝYÙLLÙÙØ]YÙWØ]\Ë›YŠKœ™XYÝ^
-[˜ÛÙ[™ÏH]‹NŠB““ÕT×ÑHH
-“ÓÕÈ™ØÜÈˆÈœÝYÙLLÙWÛ›Ý\Ë›YŠKœ™XYÝ^
-[˜ÛÙ[™ÏH]‹NŠB”‘TÕSÑHH
-“ÓÕÈœ™\Ý[ÈˆÈœÝYÙLLÙWÛYX\Ý\™[Y[›YŠKœ™XYÝ^
-[˜ÛÙ[™ÏH]‹NŠB”“ÕÐÓÓÑˆH
-“ÓÕÈ™ØÜÈˆÈœÝYÙLLÙ—Ü›ÝØÛÛ›YŠKœ™XYÝ^
-[˜ÛÙ[™ÏH]‹NŠB”ÕQÑLL—ÑÈH
-“ÓÕÈœ™\Ý[ÈˆÈœÝYÙLL™×ÜÞ[\Ú\×ÜÝYÙLL×ÙØ]K›YŠKœ™XYÝ^
-[˜ÛÙ[™ÏH]‹NŠB‚”ÑSPÕQÔÕQÑLLÈH
-ˆÛÛœÝXÝHZ[š[X[][KXÛÛœÝ˜Z[ÛÛœÝ˜Z[X[ÙXœ˜KÜ™Y›ÛX][Ûˆ™XÝ\œÛÜˆÚ]]X\ÝÛÈ‚ˆ››Ûš]šX[H™[]Yš\œÝXÛ\ÜÈÛÛœÝ˜Z[\™XÝ[ÛœË[™\ÝÚ]\ˆHÝYÙHLˆ\ÚXØ[[Ü˜š]‚ˆœ][ÝY[™[][Û˜[ØœÙ\˜X›\Ë[™\YËÔÔ‹ÕˆYX\Ý\™[Y[\˜Ú]XÝ\™H™[XZ[ˆÛÛ\]X›H[™\ˆ‚ˆH™\Ý[[™ÈÛÛœÝ˜Z[YÙ[™\˜]Y]ÝXÝ\™HÚ]Ý]\ÜÝ[Z[™ÈÙ[™\˜[™[]]š]Kˆ‚ŠB“QT‘ÑQÔÕQÑLL—ÓPRSˆH™YM˜YXÍMY˜NNMŒMØŒÍYŽYŒLYLY˜ÍÌÍÎÈ‚”ÕQÑLLÑWÕSQUQÒPQHYLYØŒÌNXXÎY™ŒØÍÍM™YÌ˜™˜ÍÍ˜ØYŒÍÈ‚‚‚™Yˆ\ÝÜÝYÙLL×ÜÙ[XÝYÙØ]WØ[™ÜÝYÙLL—Ø˜\Ù[[™WÜ™[XZ[—Ùœ›Þ™[Š
-N‚ˆ›Üˆ^[ˆ
-“ÕÐÓÓ”‘QV‘KÕQÑLL—ÑË‘PQQK“ÐQPT
-N‚ˆ\ÜÙ\ÑSPÕQÔÕQÑLLÈ[ˆ^ˆ\ÜÙ\QT‘ÑQÔÕQÑLL—ÓPRSˆ[ˆ“ÕÐÓÓˆ\ÜÙ\ŒLH\ÜÙY[ˆŽLËŽÈ
-ŒLNŒÌÊHˆ[ˆ“ÕÐÓÓˆ\ÜÙ\›][WÛÜ˜š]ÙØ]YÙWØÛÝ˜\šX[ˆ[ˆ“ÕÐÓÓ‚‚™Yˆ\ÝÜÝYÙLL×ØÝ\œ™[ÜÝ]\×Ú\×Ý˜[Y]YÙWØ[™Ùœ›Þ™[—ÙŠ
-N‚ˆ\ÜÙ\
-ˆ”ÝYÙHLÑHÛÛ\]YÈÜš]\šXHx $ÍÈØ]\ÙšYYÈÜš]\šXH8 $ÍL[™[™Ëˆ‚ˆ”ÝYÙHLÑˆ›ÝØÛÛœ›Þ™[ˆ[™^XÝ]X›HÛÝ\˜ÙKÝ\Ý˜[Y][Ûˆ[™[™Ëˆ‚ˆ
-H[ˆ“ÕÐÓÓˆ\ÜÙ\“ÕÐÓÓ˜ÛÝ[
-ŠŠœØ]\ÙšYY
-ŠˆŠHOHÂˆ\ÜÙ\“ÕÐÓÓ˜ÛÝ[
-ŠŠœ[™[™ÊŠˆŠHOHÂˆ\ÜÙ\”ÝYÙHLÑH8 %ËÔÔ‹Õ‹ÖH[™]\™K[YX\Ý\™[Y[\ØÙ[XÜ›ÜÜÈÛÛ\[œØ]Y]ÚÚXÙ\È8 %
-Š˜ÛÛ\]Y
-Šˆˆ[ˆ“ÕÐÓÓˆ\ÜÙ\”ÝYÙHLÑˆ8 %˜\Ú\ÈÈX›][ÛˆÈ[›ÛX[HÈ˜[ÙK\ÜÚ]]™HÛÛ›ÛÈ8 %
-Š˜XÝ]™NÈ›ÝØÛÛœ›Þ™[‹ÛÝ\˜ÙKÝ\Ý˜[Y][Ûˆ[™[™ÊŠˆˆ[ˆ“ÕÐÓÓ‚‚™Yˆ\ÝÜÝYÙLLÙWÝ˜[Y]YØÚXÚÜÚ[Ú\×ÜÞ[˜Ú›Ûš^™Y
+NOTES_D = (ROOT / "docs" / "stage13d_notes.md").read_text(encoding="utf-8")
+RESULT_D = (ROOT / "results" / "stage13d_gauge_atlas.md").read_text(encoding="utf-8")
+NOTES_E = (ROOT / "docs" / "stage13e_notes.md").read_text(encoding="utf-8")
+RESULT_E = (ROOT / "results" / "stage13e_measurement.md").read_text(encoding="utf-8")
+PROTOCOL_F = (ROOT / "docs" / "stage13f_protocol.md").read_text(encoding="utf-8")
+STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
-N‚ˆÛÛXš[™YH—ˆ‹š›Ú[Š
-“ÕÐÓÓ“ÕT×ÑK‘TÕSÑJJBˆ\ÜÙ\ÕQÑLLÑWÕSQUQÒPQ[ˆÛÛXš[™Yˆ\ÜÙ\ŒL\ÜÙY[ˆÌË\È
-ŒLNÊHˆ[ˆÛÛXš[™Yˆ›Üˆ˜\ÙH[ˆ
-ˆŒÍˆ‹ˆŒM‹ˆŒŽ‹ˆMÍˆ‹ˆŒLÈL‹ˆ”ÝYÙHLÑH\YËÔÔ‹Õ‹ÖH[™]\™K[YX\Ý\™[Y[\ØÙ[XÜ›ÜÜÈÛÛ\[œØ]Y]ÚÚXÙ\ÈÛˆHœ›Þ™[ˆš[š]H˜[Z[HH\ÝX›\ÚY‹ˆ˜ÛÛ\[œØ]Y\]Ü\˜][Û˜[\ØÙ[OH™Y›ÛX][Ûˆ[˜\šX[˜ÙH‹ˆ™]\™K[YX\Ý\™[Y[ÛÝ˜\šX[˜ÙHOH]\™HXÝX[]H‹ˆœ™\ÜÚ]ÜžH˜[Y][ÛˆOH™]ÈØÚY[YšXÈ]šY[˜ÙH‹ˆ
-N‚ˆ\ÜÙ\˜\ÙH[ˆÛÛXš[™Y‚‚™Yˆ\ÝÜÝYÙLLÙWØÛÜÙ\×Ù^XÝWØÜš]\šXWÌÎWÝ›ÝYÚÍÊ
-N‚ˆ[™\ÈH
-ˆŒÎKˆËÔÔ‹Õ‹ÖH\˜Ú]XÝ\™H\ÈYYÝ™\ˆ]™\žHØ[›ÛšXØ[ÝYÙHLÈ™\™\Ù[]]™HÚ]]Ø˜\Ú\È›Ý™[˜[˜ÙHÛÛ™š[™YÈH8 %
-ŠœØ]\ÙšYY
-Š‹ˆ‹ˆˆXÙ[œÙYÛÛ\[œØ]Y]ÚÚXÙ\È™\Ù\™H][ÝY[[]™[\YËÔÔ‹ÕˆÛÛ[8 %
-ŠœØ]\ÙšYY
-Š‹ˆ‹ˆKˆ[š\š]Y]\™K[YX\Ý\™[Y[^[ØYÈ\ØÙ[™XÜ›ÜÜÈÛÛ\[œØ]Y][KXÛÛœÝ˜Z[]ÚÚXÙ\È8 %
-ŠœØ]\ÙšYY
-Š‹ˆ‹ˆ‹ˆ[ˆÜ˜š]\Ù[œÚ]]™HÜ\˜][Û˜[Ú]™\ÜÈ˜\ÙYÛˆ\˜XËØÛÛ\]K\™[][Û˜[]H™[XZ[œÈ™\™\Ù[]]™KÜ][™\[™[Ú][ˆ[ˆÜ˜š]Ú[H™\Ù\š[™È\ÚXØ[[Ü˜š]\ØÜš[Z[˜][Ûˆ8 %
-ŠœØ]\ÙšYY
-Š‹ˆ‹ˆËˆÜ›Û™È]Ù]™[ØÛ\ÜËÛÝ]ÛÛYKÛ›Ü›X[^˜][ÛˆÜˆ™\™\Ù[]]™KY\[™[ËÔÔ‹Õ‹ÛYX\Ý\™[Y[^[ØYÈ\™H™Z™XÝY8 %
-ŠœØ]\ÙšYY
-Š‹ˆ‹ˆ
-Bˆ›Üˆ[™H[ˆ[™\Î‚ˆ\ÜÙ\[™H[ˆ“ÕÐÓÓˆ\ÜÙ\ˆ›Û˜ÛÛ[]][™È[™\]Z]˜[[ÛÛ[]][™ÈÛÛœÝ˜Z[™\Ù[][ÛœÈ\™HÛÛ\\™Y[™ÚÝÛˆ›ÝÈÚ[™ÙHXÙ[œÙY][ÝY[[]™[\ÚXØ[ÛÛ[Ú[ˆ\YÛÜœ™\ÜÛ™[˜ÙH\ÈÛÜœ™XÝ8 %
-Šœ[™[™ÊŠ‹ˆˆ[ˆ“ÕÐÓÓˆ\ÜÙ\Lˆ^\›˜[š[˜[[\™\ÜÚ]ÜžH™YÜ™\ÜÚ[Ûˆ[™Y\™ÙK\™XY[™\ÜÈ™]šY]È8 %
-Šœ[™[™ÊŠ‹ˆˆ[ˆ“ÕÐÓÓ‚‚™Yˆ\ÝÜÝYÙLLÙ—Ü›ÝØÛÛÙœ™Y^™\×Ø˜\Ú\×ØX›][Û—Ø[™Ø[›ÛX[WØÛÛ›ÛÊ
-N‚ˆÛÛXš[™YH“ÕÐÓÓ
-È—ˆˆ
-È“ÕÐÓÓÑ‚ˆ›Üˆ˜\ÙH[ˆ
-ˆ’×ÖÝ[HH^
-U
-H×ÖHÖ
-ÈH‹ˆžÒ×Õ×ÖÝ[_OL‹ˆ”WÖÝ[JJNˆOˆ
-ÝKHOˆJØHH‹ˆ˜˜\Ú\×Ü™\Ù[][Û—Ù\]Z]˜[[‹ˆœ˜[š×ÙYšXÚY[ØÛÛœÝ˜Z[ØÛÛ›ÛÜ™Z™XÝY‹ˆ™XÛÝ\YØÛÛœÝ˜Z[ØÛÛ›ÛÜ™Z™XÝY‹ˆÜ›Û™×ØÛÛ\[œØ]Ü—Ù]XÝY‹ˆ›Û™WØÛØÚ×ÛØœÙ\˜X›WÚ[˜ÛÛ\]H‹ˆ˜Ü›ÜÜ×ÛÜ˜š]Ù˜[ÙWÜÜÚ]]™WÜ™Z™XÝY‹ˆ’×ÖØ˜Y‹ˆ˜ÛÛœÝ˜Z[Ø[ÙXœ˜WØ[›ÛX[WÙ]XÝY‹ˆ˜˜\Ú\ËY\]Z]˜[[š[š]H][ÝY[OH™Y›ÛX][Ûˆ[˜\šX[˜ÙH‹ˆ˜ÛÛ[]][™È™\Ù[][ÛˆOH›ÛÙˆ][YZ\ÜÚX›H™\Ù[][ÛœÈÛÛ[]]H‹ˆ˜ÛÛœÝ˜Z[X[ÙXœ˜H[›ÛX[HOHÛÛÙÚXØ[™XÛÛZ[™È‹ˆ
-N‚ˆ\ÜÙ\˜\ÙH[ˆÛÛXš[™Yˆ\ÜÙ\ÌˆWÕ
-ÈÌˆWÖÝ[Xˆ[ˆÛÛXš[™Yˆ\ÜÙ\”ÝYÙHLÑˆÛÝ\˜ÙHXYÛ›ÜÝXÜÈØ]\ÙšYYOH™\ÜÚ]ÜžK]˜[Y]YÝYÙHLÑˆÛÛ\][Ûˆˆ[ˆ“ÕÐÓÓÑ‚‚‚™Yˆ\ÝÜÝYÙLL×Ú\ÝÜšXØ[ØWÝ›ÝYÚÙÙ]šY[˜ÙWÜ™[XZ[œ×Ü™\Ù[
+SELECTED_STAGE13 = (
+    "Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two "
+    "nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit "
+    "quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under "
+    "the resulting constraint-generated path structure without assuming general relativity."
+)
+MERGED_STAGE12_MAIN = "ee4baec55fa994217b275f9f2451e25fc6736787"
+STAGE13E_VALIDATED_HEAD = "5da1f7b07189ac9fd23c756ed432bfc7406caf37"
 
-N‚ˆÛÛXš[™YH—ˆ‹š›Ú[Š
-“ÕÐÓÓ“ÕT×ÐK‘TÕSÐK“ÕT×Ð‹‘TÕSÐ‹“ÕT×ÐË‘TÕSÐË“ÕT×Ñ‘TÕSÑ
-JBˆ›Üˆ˜\ÙH[ˆ
-ˆŒL\ÜÙY[ˆNL‹ŒŒÜÈ
-ŒNLŠH‹ˆŒLN\ÜÙY[ˆŽM‹ŒŒÈ
-ŒLNŒÍŠH‹ˆŒLŽH\ÜÙY[ˆMLŽÈ
-ŒNŒL
-H‹ˆŒLÍˆ\ÜÙY[ˆLŽMœÈ
-ŒMNŒ
-H‹ˆŽÈ\Y›Ù\È‹ˆÌˆWÕ
-ÈÌˆWÖHM‹ˆ][ÝY[Û\ÜÙ\È‹ˆœ]Ü›Ý™[˜[˜ÙWÝ\YÛÜÝÛ[Y\šXØ[WÜ™XÛÛœÝXÝX›H‹ˆ\YÜÝ]\ÈHÜÝ‹ˆ›[Y\šXØ[ÜÝ]\ÈH™XÛÛœÝXÝX›H‹ˆ
-N‚ˆ\ÜÙ\˜\ÙH[ˆÛÛXš[™Y‚‚™Yˆ\ÝÜÝYÙLL×ÜÞ[\Ú\×Ý›ØØX[\žWØ[™Û™^ÙØ]WØØ[™Y]\×Ü™[XZ[—Ùœ›Þ™[Š
-N‚ˆ›ÜˆÝ]\È[ˆ
-ˆ›][WØÛÛœÝ˜Z[Ü]ØÛÝ˜\šX[‹ˆ›][WØÛÛœÝ˜Z[Ü]Ü\X[‹ˆ›][WØÛÛœÝ˜Z[Ü]ÛØœÝXÝY‹ˆš[˜ÛÛ˜Û\Ú]™H‹ˆ
-N‚ˆ\ÜÙ\Ý]\È[ˆ“ÕÐÓÓ
-È—ˆˆ
-È”‘QV‘Bˆ›ÜˆØ[™Y]H[ˆ
-ˆœ\ÙK\ÜXÙKY\[™[ÝXÝ\™KY[˜Ý[ÛˆÈ\\œÝ\™˜XÙKYY›Ü›X][Ûˆ™XÝ\œÛÜˆ‹ˆ™Ü˜]š]][Û˜[ÛZ[š\Ý\\œÜXÙH^[œÚ[Ûˆ‹ˆœšXÚ\ˆØ]\Ø[ÛÜ™\ˆ^Y\ˆ‹ˆ››ÛšYX[ÔÕ“HÛØÚÜÈ‹ˆ
-N‚ˆ\ÜÙ\Ø[™Y]H[ˆ“ÕÐÓÓ‚‚™Yˆ\ÝÜÝYÙLL×Ú[\œ™]][Û—Ø›Ý[™\šY\×Ü™[XZ[—Ù^XÚ]
 
-N‚ˆÛÛXš[™YH—ˆ‹š›Ú[Š
-“ÕÐÓÓ”‘QV‘K“ÕT×ÑK‘TÕSÑK“ÕÐÓÓÑŠJBˆ›Üˆ˜\ÙH[ˆ
-ˆÛÈÛÛœÝ˜Z[X™[ÈOHÛÈ[™\[™[Ø]YÙH\™XÝ[ÛœÈ‹ˆ››Û˜ÛÛ[]][™ÈÛÛœÝ˜Z[™\Ù[][ÛˆOH[™[Y[[\ÚXØ[›Û‹PX™[X[š]H‹ˆ˜ÛÛœÝ˜Z[X˜\Ú\ÈÚ[™ÙHOH\ÚXØ[[Ü˜š]Ú[™ÙH‹ˆ˜˜\Ú\ËY\]Z]˜[[š[š]H][ÝY[OH™Y›ÛX][Ûˆ[˜\šX[˜ÙH‹ˆ›][KXÛÛœÝ˜Z[]ÛÝ˜\šX[˜ÙHOH™Y›ÛX][Ûˆ[˜\šX[˜ÙH‹ˆ˜ÛÛœÝ˜Z[X[ÙXœ˜KÜ™Y›ÛX][Ûˆ™XÝ\œÛÜˆOHÙ[™\˜[™[]]š]H‹ˆœ]ÛÜ™OH\ÚXØ[[\Ü˜[\ÝÜžH‹ˆœ]ÛÜ™OH[Ù[ÛÛ[X][Ûˆ‹ˆÜ›Û™ÈÛÛ\[œØ]Üˆ˜Z[\™HOH\ÚXØ[[YH\Þ[[Y]žH‹ˆ›Û™HÛØÚÈÛÛ™][Ûˆ[ˆHÛËYØ]YÙKY\™XÝ[Ûˆ[Ù[OHÛÛ\]H™[][Û˜[ØœÙ\˜X›H‹ˆ˜ÛÛ\]H™[][Û˜[ØœÙ\˜X›HOHÛÛÙÚXØ[™XÛÛZ[™ÈžHYš[š][Ûˆ‹ˆ‘\˜XÈ[˜\šX[OH[Y[\ÜÈÛÛÙÞHžHYš[š][Ûˆ‹ˆ‘\˜XËZ[˜\šX[]H
-È™[][Û˜[Ú[™ÙHOH›ÛÙˆÙˆ]\›˜[\ÛH‹ˆ™Ø]YÙH][ÝY[OH[[Z[˜][ÛˆÙˆ\ÚXØ[Ú[™ÙH‹ˆ™]\™K[YX\Ý\™[Y[ÛÝ˜\šX[˜ÙHOH]\™HXÝX[]H‹ˆ˜ÛÛœÝ˜Z[X[ÙXœ˜H[›ÛX[HOHÛÛÙÚXØ[™XÛÛZ[™È‹ˆ™š[š]K[[Ù[ÝXØÙ\ÜÈOH[\\šXØ[\ØÛÝ™\žH‹ˆ››ÝÙ\ÝX›\ÚYOH˜[ÙH‹ˆ
-N‚ˆ\ÜÙ\˜\ÙH[ˆÛÛXš[™Y
+def test_stage13_selected_gate_and_stage12_baseline_remain_frozen():
+    for text in (PROTOCOL, FREEZE, STAGE12_G, README, ROADMAP):
+        assert SELECTED_STAGE13 in text
+    assert MERGED_STAGE12_MAIN in PROTOCOL
+    assert "1025 passed in 693.84s (0:11:33)" in PROTOCOL
+    assert "multi_orbit_gauge_covariant" in PROTOCOL
+
+
+def test_stage13_current_status_is_validated_e_and_frozen_f():
+    assert (
+        "Stage 13E completed; criteria 1â€“43 satisfied; criteria 44â€“50 pending. "
+        "Stage 13F protocol frozen and executable source/test validation pending."
+    ) in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 43
+    assert PROTOCOL.count("**pending**") == 7
+    assert "Stage 13E â€” O/P/R/V/Xi and future-measurement descent across compensated path choices â€” **completed**" in PROTOCOL
+    assert "Stage 13F â€” basis / ablation / anomaly / false-positive controls â€” **active; protocol frozen, source/test validation pending**" in PROTOCOL
+
+
+def test_stage13e_validated_checkpoint_is_synchronized():
+    combined = "\n".join((PROTOCOL, NOTES_E, RESULT_E))
+    assert STAGE13E_VALIDATED_HEAD in combined
+    assert "1084 passed in 703.45s (0:11:43)" in combined
+    for phrase in (
+        "36",
+        "144",
+        "288",
+        "576",
+        "10 / 10",
+        "Stage 13E typed O/P/R/V/Xi and future-measurement descent across compensated path choices on the frozen finite family = established",
+        "compensated-path operational descent != refoliation invariance",
+        "future-measurement covariance != future actuality",
+        "repository validation != new scientific evidence",
+    ):
+        assert phrase in combined
+
+
+def test_stage13e_closes_exactly_criteria_39_through_43():
+    lines = (
+        "39. O/P/R/V/Xi architecture is lifted over every canonical Stage 13 representative with path/basis provenance confined to Xi â€” **satisfied**.",
+        "40. Licensed compensated path choices preserve quotient-level typed O/P/R/V content â€” **satisfied**.",
+        "41. Inherited future-measurement payloads descend across compensated multi-constraint path choices â€” **satisfied**.",
+        "42. An orbit-sensitive operational witness based on Dirac/complete-relational data remains representative/path independent within an orbit while preserving physical-orbit discrimination â€” **satisfied**.",
+        "43. Wrong path/event/class/outcome/normalization or representative-dependent O/P/R/V/measurement payloads are rejected â€” **satisfied**.",
+    )
+    for line in lines:
+        assert line in PROTOCOL
+    assert "44. Noncommuting and equivalent commuting constraint presentations are compared and shown not to change licensed quotient-level physical content when typed correspondence is correct â€” **pending**." in PROTOCOL
+    assert "50. External final full-repository regression and merge-readiness review â€” **pending**." in PROTOCOL
+
+
+def test_stage13f_protocol_freezes_basis_ablation_and_anomaly_controls():
+    combined = PROTOCOL + "\n" + PROTOCOL_F
+    for phrase in (
+        "K_X_tilde = exp(-T) K_X = p_X + a p",
+        "{K_T,K_X_tilde}=0",
+        "Phi_X_tilde(u): X -> X+u, q -> q+a u",
+        "basis_presentation_equivalent",
+        "rank_deficient_constraint_control_rejected",
+        "decoupled_constraint_control_rejected",
+        "wrong_compensator_detected",
+        "one_clock_observable_incomplete",
+        "cross_orbit_false_positive_rejected",
+        "K_X_bad",
+        "constraint_algebra_anomaly_detected",
+        "basis-equivalent finite quotient != refoliation invariance",
+        "commuting presentation != proof that all admissible presentations commute",
+        "constraint-algebra anomaly != ontological becoming",
+    ):
+        assert phrase in combined
+    assert "72 `Phi_T` + 72 `Phi_X_tilde`" in combined
+    assert "Stage 13F source diagnostics satisfied != repository-validated Stage 13F completion" in PROTOCOL_F
+
+
+def test_stage13_historical_a_through_d_evidence_remains_present():
+    combined = "\n".join((PROTOCOL, NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D))
+    for phrase in (
+        "1048 passed in 592.23s (0:09:52)",
+        "1058 passed in 696.20s (0:11:36)",
+        "1069 passed in 550.80s (0:09:10)",
+        "1076 passed in 908.96s (0:15:08)",
+        "87 typed nodes",
+        "72 `Phi_T` + 72 `Phi_X` = 144",
+        "4 quotient classes",
+        "path_provenance_typed_lost_numerically_reconstructible",
+        "typed_status = lost",
+        "numerical_status = reconstructible",
+    ):
+        assert phrase in combined
+
+
+def test_stage13_synthesis_vocabulary_and_next_gate_candidates_remain_frozen():
+    for status in (
+        "multi_constraint_path_covariant",
+        "multi_constraint_path_partial",
+        "multi_constraint_path_obstructed",
+        "inconclusive",
+    ):
+        assert status in PROTOCOL + "\n" + FREEZE
+    for candidate in (
+        "phase-space-dependent structure-function / hypersurface-deformation precursor",
+        "gravitational/minisuperspace extension",
+        "richer causal/order layer",
+        "nonideal/POVM clocks",
+    ):
+        assert candidate in PROTOCOL
+
+
+def test_stage13_interpretation_boundaries_remain_explicit():
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_E, RESULT_E, PROTOCOL_F))
+    for phrase in (
+        "two constraint labels != two independent gauge directions",
+        "noncommuting constraint presentation != fundamental physical non-Abelianity",
+        "constraint-basis change != physical-orbit change",
+        "basis-equivalent finite quotient != refoliation invariance",
+        "multi-constraint path covariance != refoliation invariance",
+        "constraint-algebra/refoliation precursor != general relativity",
+        "path word != physical temporal history",
+        "path word != modal continuation",
+        "wrong compensator failure != physical time asymmetry",
+        "one clock condition in a two-gauge-direction model != complete relational observable",
+        "complete relational observable != ontological becoming by definition",
+        "Dirac invariant != timeless ontology by definition",
+        "Dirac-invariant data + relational change != proof of eternalism",
+        "gauge quotient != elimination of physical change",
+        "future-measurement covariance != future actuality",
+        "constraint-algebra anomaly != ontological becoming",
+        "finite-model success != empirical discovery",
+        "not_established != false",
+    ):
+        assert phrase in combined

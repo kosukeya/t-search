@@ -12,6 +12,8 @@ NOTES_B = (ROOT / "docs" / "stage13b_notes.md").read_text(encoding="utf-8")
 RESULT_B = (ROOT / "results" / "stage13b_paths.md").read_text(encoding="utf-8")
 NOTES_C = (ROOT / "docs" / "stage13c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage13c_relational.md").read_text(encoding="utf-8")
+NOTES_D = (ROOT / "docs" / "stage13d_notes.md").read_text(encoding="utf-8")
+RESULT_D = (ROOT / "results" / "stage13d_gauge_atlas.md").read_text(encoding="utf-8")
 STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE13 = (
@@ -27,6 +29,8 @@ STAGE13A_FINAL_HEAD = "178f4ac8d160e7b261cd854f8c1856aa80c76675"
 STAGE13B_SOURCE_HEAD = "645ce6ab099d5f9db573c29ba81ac0854c4c26ca"
 STAGE13B_FINAL_HEAD = "d559c031590a058962c50d170b144acbe8eabadd"
 STAGE13C_SOURCE_HEAD = "56f80e8984872591a26f27eb5902310e36616bf0"
+STAGE13C_FINAL_HEAD = "51f119845ec0e9ade3ee8cdeeb4e00ca7b992569"
+STAGE13D_SOURCE_HEAD = "ab7a5c4a917e7612ee89b547baddf127d48947e7"
 
 
 def test_stage13_selected_gate_and_stage12_baseline_are_frozen() -> None:
@@ -46,19 +50,22 @@ def test_stage13_0_historical_freeze_remains_closed_at_10_40() -> None:
     assert "1039 passed in 542.21s (0:09:02)" in NOTES_A
 
 
-def test_stage13_current_status_is_stage13c_31_19() -> None:
-    assert "Stage 13C completed; criteria 1–31 satisfied; criteria 32–50 pending" in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 31
-    assert PROTOCOL.count("**pending**") == 19
+def test_stage13_current_status_is_stage13d_38_12() -> None:
+    assert "Stage 13D completed; criteria 1–38 satisfied; criteria 39–50 pending" in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 38
+    assert PROTOCOL.count("**pending**") == 12
     for text in (README, ROADMAP):
-        assert "Stage 13C" in text
-        assert "criteria 1–31" in text
-        assert "criteria 32–50" in text
         assert "Stage 13D" in text
-        assert "324" in text
+        assert "criteria 1–38" in text
+        assert "criteria 39–50" in text
+        assert "Stage 13E" in text
+        assert "87" in text
+        assert "144" in text
+        assert "4" in text
+        assert "9" in text
+        assert "36" in text
         assert "1296" in text
-        assert "one_clock_observable_incomplete" in text
-        assert "compensated-path relational covariance != refoliation invariance" in text
+        assert "path_provenance_typed_lost_numerically_reconstructible" in text
     for path in (
         "docs/stage13_protocol.md",
         "results/stage13_0_protocol_freeze.md",
@@ -68,6 +75,8 @@ def test_stage13_current_status_is_stage13c_31_19() -> None:
         "results/stage13b_paths.md",
         "docs/stage13c_notes.md",
         "results/stage13c_relational.md",
+        "docs/stage13d_notes.md",
+        "results/stage13d_gauge_atlas.md",
     ):
         assert path in README
 
@@ -93,7 +102,7 @@ def test_stage13_two_constraint_carrier_and_flows_remain_frozen() -> None:
 
 
 def test_stage13_compensated_path_law_remains_executable_evidence() -> None:
-    combined = PROTOCOL + "\n" + FREEZE + "\n" + NOTES_B + "\n" + RESULT_B
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_B, RESULT_B))
     for phrase in (
         "s = T1 - T0",
         "DeltaX = X1 - X0",
@@ -110,7 +119,7 @@ def test_stage13_compensated_path_law_remains_executable_evidence() -> None:
 
 
 def test_stage13_dirac_and_two_clock_structure_is_executable_evidence() -> None:
-    combined = PROTOCOL + "\n" + FREEZE + "\n" + NOTES_C + "\n" + RESULT_C
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_C, RESULT_C))
     for phrase in (
         "P_D = p",
         "Q_D = q - p T - a X",
@@ -172,72 +181,71 @@ def test_stage13_false_positive_and_oprv_resources_remain_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage13a_and_stage13b_evidence_is_preserved() -> None:
-    combined_a = PROTOCOL + "\n" + NOTES_A + "\n" + RESULT_A
-    combined_b = PROTOCOL + "\n" + NOTES_B + "\n" + RESULT_B
+def test_stage13a_through_stage13c_evidence_is_preserved() -> None:
+    combined_a = "\n".join((PROTOCOL, NOTES_A, RESULT_A))
+    combined_b = "\n".join((PROTOCOL, NOTES_B, RESULT_B))
+    combined_c = "\n".join((PROTOCOL, NOTES_C, RESULT_C))
     assert STAGE13A_SOURCE_HEAD in combined_a
     assert STAGE13A_FINAL_HEAD in combined_b
     assert STAGE13B_SOURCE_HEAD in combined_b
-    assert STAGE13B_FINAL_HEAD in NOTES_C + "\n" + RESULT_C
+    assert STAGE13B_FINAL_HEAD in combined_c
+    assert STAGE13C_SOURCE_HEAD in combined_c
+    assert STAGE13C_FINAL_HEAD in README
     assert "1048 passed in 592.23s (0:09:52)" in combined_a
     assert "1050 passed in 886.76s (0:14:46)" in combined_b
     assert "1058 passed in 696.20s (0:11:36)" in combined_b
-    assert "1059 passed in 538.54s (0:08:58)" in NOTES_C + "\n" + RESULT_C
-    for phrase in (
-        "Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established",
-        "Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established",
-        "constraint-surface preservation != correct source/target path correspondence",
-    ):
-        assert phrase in combined_a + "\n" + combined_b
+    assert "1059 passed in 538.54s (0:08:58)" in combined_c
+    assert "1069 passed in 550.80s (0:09:10)" in combined_c
+    assert "1066 passed in 892.04s (0:14:52)" in README
 
 
-def test_stage13c_executable_evidence_is_synchronized() -> None:
-    combined = PROTOCOL + "\n" + NOTES_C + "\n" + RESULT_C
-    assert STAGE13C_SOURCE_HEAD in PROTOCOL
+def test_stage13d_executable_evidence_is_synchronized() -> None:
+    combined = "\n".join((PROTOCOL, NOTES_D, RESULT_D, README, ROADMAP))
+    assert STAGE13D_SOURCE_HEAD in combined
+    assert "1076 passed in 908.96s (0:15:08)" in combined
     for phrase in (
-        "36",
-        "6 / 6",
-        "324",
+        "87 typed nodes",
+        "144 typed single-generator arrows",
+        "4 quotient classes",
+        "9 representatives",
+        "36 quotient-level descent evaluations",
+        "144 / 144",
         "1296",
-        "12 / 12",
-        "2.220446049250313e-16",
-        "0.5",
-        "1.0",
-        "full_dirac_pair_orbit_discrimination_established",
-        "compensated_path_complete_relational_covariance_established",
-        "one_clock_observable_incomplete",
-        "Stage 13C Dirac / two-clock complete relational observables and physical-orbit discrimination on the frozen finite family = established",
-        "representative-independent Dirac orbit data + compensated-path-independent complete relational values + nontrivial relational change",
+        "path_provenance_typed_lost_numerically_reconstructible",
+        "typed_status = lost",
+        "numerical_status = reconstructible",
+        "path word != modal continuation",
+        "path word != physical temporal history",
+        "Stage 13D typed multi-constraint gauge atlas, path words, quotient, and descent on the frozen finite family = established",
     ):
         assert phrase in combined
 
 
-def test_stage13c_closes_exactly_criteria_24_31() -> None:
+def test_stage13d_closes_exactly_criteria_32_38() -> None:
     satisfied_lines = (
-        "24. `Q_D=q-pT-aX` and `P_D=p` are independently reconstructed from all 36 representatives — **satisfied**.",
-        "25. Same-orbit representatives agree in the full Dirac pair — **satisfied**.",
-        "26. All six canonical different-orbit pairs remain physically distinct under the full Dirac pair — **satisfied**.",
-        "27. `q(T=tau,X=chi)=Q_D+P_D tau+a chi` is reconstructed across the declared finite family — **satisfied**.",
-        "28. Complete relational values agree across compensated path choices leading to corresponding gauge representatives — **satisfied**.",
-        "29. Fixing `T=tau` alone is explicitly shown insufficient under variation of the second gauge coordinate — **satisfied**.",
-        "30. Same-P/different-Q and same-Q/different-P anti-triviality controls remain explicit — **satisfied**.",
-        "31. Complete-relational change is not promoted to ontological becoming or eternalism — **satisfied**.",
+        "32. Typed nodes distinguish physical orbit, representative, generator/basis, path word, event, clock, and modal roles — **satisfied**.",
+        "33. The multi-constraint atlas is built from typed `Phi_T` / `Phi_X` connectivity rather than stored orbit labels — **satisfied**.",
+        "34. The quotient recovers exactly four physical classes of nine representatives each — **satisfied**.",
+        "35. Different compensated path words to corresponding representatives descend to the same quotient-level Dirac/relational payload — **satisfied**.",
+        "36. Distinct physical Dirac data are not collapsed by path connectivity — **satisfied**.",
+        "37. Path-word / compensator removal is classified separately from numerical reconstructibility — **satisfied**.",
+        "38. Path word is not identified with modal continuation or physical temporal history — **satisfied**.",
     )
     for line in satisfied_lines:
         assert line in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 31
-    assert PROTOCOL.count("**pending**") == 19
-    assert "32. Typed nodes distinguish physical orbit, representative, generator/basis, path word, event, clock, and modal roles — **pending**." in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 38
+    assert PROTOCOL.count("**pending**") == 12
+    assert "39. O/P/R/V/Xi architecture is lifted over every canonical Stage 13 representative with path/basis provenance confined to Xi — **pending**." in PROTOCOL
     assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
-def test_stage13_sequence_moves_only_to_stage13d() -> None:
+def test_stage13_sequence_moves_only_to_stage13e() -> None:
     for stage in (
         "Stage 13A — two-constraint first-class carrier and finite representative family — **completed**",
         "Stage 13B — noncommuting gauge paths and compensated closure — **completed**",
         "Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **completed**",
-        "Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — **next**",
-        "Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — pending",
+        "Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — **completed**",
+        "Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **next**",
         "Stage 13F — basis / ablation / anomaly / false-positive controls — pending",
         "Stage 13G — executable synthesis and evidence-selected next gate — pending",
         "criterion 50 — external final full-repository regression / merge-readiness review — pending",
@@ -263,7 +271,9 @@ def test_stage13_synthesis_vocabulary_remains_frozen() -> None:
 
 
 def test_stage13_interpretation_guards_are_explicit() -> None:
-    combined = "\n".join((PROTOCOL, FREEZE, NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C, README, ROADMAP))
+    combined = "\n".join(
+        (PROTOCOL, FREEZE, NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D, README, ROADMAP)
+    )
     for phrase in (
         "two constraint labels != two independent gauge directions",
         "Stage 13A single-generator surface preservation != compensated multi-generator path closure",
@@ -275,6 +285,7 @@ def test_stage13_interpretation_guards_are_explicit() -> None:
         "noncommuting constraint presentation != fundamental physical non-Abelianity",
         "constraint-algebra/refoliation precursor != general relativity",
         "path word != physical temporal history",
+        "path word != modal continuation",
         "path-order mismatch != arrow of time by definition",
         "wrong compensator failure != physical time asymmetry",
         "one clock condition in a two-gauge-direction model != complete relational observable",
@@ -284,6 +295,9 @@ def test_stage13_interpretation_guards_are_explicit() -> None:
         "full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem",
         "gauge quotient != elimination of physical change",
         "path-independent complete-relational values != future actuality",
+        "numerical reconstructibility != typed operational identification",
+        "reconstructible != universally redundant",
+        "lost != metaphysically irreducible",
         "finite-model success != empirical discovery",
         "not_established != false",
     ):

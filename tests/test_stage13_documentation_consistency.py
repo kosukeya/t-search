@@ -2,6 +2,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+README = (ROOT / "README.md").read_text(encoding="utf-8")
+ROADMAP = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "docs" / "stage13_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage13_0_protocol_freeze.md").read_text(encoding="utf-8")
 STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
@@ -16,12 +18,26 @@ MERGED_STAGE12_MAIN = "ee4baec55fa994217b275f9f2451e25fc6736787"
 
 
 def test_stage13_selected_gate_and_stage12_baseline_are_frozen() -> None:
-    for text in (PROTOCOL, FREEZE, STAGE12_G):
+    for text in (PROTOCOL, FREEZE, STAGE12_G, README, ROADMAP):
         assert SELECTED_STAGE13 in text
-    for text in (PROTOCOL, FREEZE):
+    for text in (PROTOCOL, FREEZE, README, ROADMAP):
         assert MERGED_STAGE12_MAIN in text
         assert "1025 passed in 693.84s (0:11:33)" in text
         assert "multi_orbit_gauge_covariant" in text
+
+
+def test_stage13_top_level_current_status_is_synchronized() -> None:
+    for text in (README, ROADMAP):
+        assert "Stage 13.0" in text
+        assert "criteria 1–10" in text
+        assert "criteria 11–50" in text
+        assert "Stage 13A" in text
+        assert "36 representatives" in text
+        assert "144" in text
+        assert "raw gauge-path commutativity != successful multi-constraint closure" in text
+        assert "noncommuting constraint presentation != fundamental physical non-Abelianity" in text
+    assert "docs/stage13_protocol.md" in README
+    assert "results/stage13_0_protocol_freeze.md" in README
 
 
 def test_stage13_protocol_closes_only_criteria_1_10() -> None:
@@ -187,7 +203,7 @@ def test_stage13_synthesis_vocabulary_is_frozen() -> None:
 
 
 def test_stage13_interpretation_guards_are_explicit() -> None:
-    combined = PROTOCOL + "\n" + FREEZE
+    combined = PROTOCOL + "\n" + FREEZE + "\n" + README + "\n" + ROADMAP
     for phrase in (
         "noncommuting constraint presentation != fundamental physical non-Abelianity",
         "multi-constraint path covariance != refoliation invariance",

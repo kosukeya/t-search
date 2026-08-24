@@ -1,9 +1,9 @@
 name: stage13-doc-sync
 
 on:
-  push:
+  pull_request:
     branches:
-      - agent/stage-13-multi-constraint-refoliation-precursor
+      - main
     paths:
       - .github/workflows/stage13_doc_sync.yml
 
@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   sync:
+    if: github.head_ref == 'agent/stage-13-multi-constraint-refoliation-precursor'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4

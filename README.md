@@ -44,6 +44,22 @@ Evidence-selected Stage 14 gate:
 
 Stage 14 selector: `phase_space_structure_function_precursor`.
 
+## Historical Stage 8–9 checkpoint markers
+
+Stage 8G completed the quantum-Potentiality integration and selected the directional-record Stage 9 gate. Stage 8G closes criteria **48–49** while criterion **50** remains an external final validation boundary at that historical checkpoint.
+
+Stage 9G — synthesis and evidence-selected next gate — completed.
+
+Stage 9G closes criteria **48–49**; criterion **50** is closed externally. Source synthesis validation: **`765 passed in 248.81s`**; documentation-synchronized Stage 9F regression: **`755 passed in 348.67s`**; final Stage 9 validation: **`766 passed in 459.00s`**.
+
+Stage 9G selected `refined_layered`, retained `full_measurement_covariance`, and selected the fully typed cross-continuation future-measurement gate above.
+
+Historical guards:
+
+- `finite-family bidirectional countermodels != universal R-V independence theorem`;
+- `P edge reconstruction != P layer universally redundant`;
+- `finite clock covariance != general covariance`.
+
 ## Stage 9 — Directional records with nontrivial quantum Potentiality — completed
 
 - Stage 9A — common directional-R/V continuation substrate — completed.

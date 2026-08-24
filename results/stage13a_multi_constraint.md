@@ -1,8 +1,10 @@
 # Stage 13A Result — Two-Constraint First-Class Carrier and Finite Representative Family
 
-Status: **executable implementation complete; repository CI checkpoint pending at the time of this result write.**
+Status: **validated; criteria 11–16 satisfied. Stage 13B is next.**
 
 Incoming validated baseline: Stage 13.0 head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672, **`1039 passed in 542.21s (0:09:02)`**.
+
+Stage 13A source/test checkpoint: head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676, **`1048 passed in 592.23s (0:09:52)`**.
 
 ## Executable family
 
@@ -101,7 +103,7 @@ No generator label is treated as an event, clock, or physical-orbit identifier.
 
 ## Stage boundary
 
-Stage 13A does **not** yet establish compensated two-generator closure. The 144 mixed pairs are enumerated but not promoted to positive path-covariance evidence.
+Stage 13A does **not** establish compensated two-generator closure. The 144 mixed pairs are enumerated but not promoted to positive path-covariance evidence.
 
 `Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
 
@@ -113,7 +115,7 @@ The next executable question is Stage 13B:
 
 `Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`
 
-subject to the repository CI checkpoint for the new source/test family.
+Repository source/test checkpoint #1676 passed with **`1048 passed in 592.23s (0:09:52)`**.
 
 ## Guards
 

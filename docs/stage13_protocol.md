@@ -16,7 +16,7 @@ Stage 13A source/test checkpoint head `ccd35956ac034de5d73d8b884a361fbe2fc92784`
 
 Stage 13B source/test checkpoint head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd` passed run #1726 with **`1059 passed in 538.54s (0:08:58)`**.
 
-Stage 13C source/test checkpoint head is `56f80e8984872591a26f27eb5902310e36616bf0`; its final full-repository run is recorded after GitHub Actions completes.
+Stage 13C source/test checkpoint head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**.
 
 The bounded Stage 12 synthesis carried forward is
 

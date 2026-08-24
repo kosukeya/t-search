@@ -11,6 +11,8 @@ NOTES_B = (ROOT / "docs" / "stage14b_notes.md").read_text(encoding="utf-8")
 RESULT_B = (ROOT / "results" / "stage14b_paths.md").read_text(encoding="utf-8")
 NOTES_C = (ROOT / "docs" / "stage14c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage14c_relational.md").read_text(encoding="utf-8")
+NOTES_D = (ROOT / "docs" / "stage14d_notes.md").read_text(encoding="utf-8")
+RESULT_D = (ROOT / "results" / "stage14d_basis.md").read_text(encoding="utf-8")
 STAGE13_G = (ROOT / "results" / "stage13g_synthesis_stage14_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE14 = (
@@ -28,6 +30,8 @@ STAGE14A_SYNC_HEAD = "db72c8715a3b58d4422932640807dbb20297005e"
 STAGE14B_SOURCE_HEAD = "2b0866b63e6fb4d4951f883839e6693b12ceddfc"
 STAGE14B_SYNC_HEAD = "318d6a34a7f8ddac29966493c31bd0cf8120ac4e"
 STAGE14C_SOURCE_HEAD = "3e390ea59af879cc0b2962989467cdfe2b4ee1ca"
+STAGE14C_SYNC_HEAD = "4011b90078c6a223e6d948a3034e07376fca4dbd"
+STAGE14D_SOURCE_HEAD = "3e44454952d71ebbe9b0a52bbd9d68cd398d0635"
 
 
 def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
@@ -41,18 +45,19 @@ def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
     assert "phase_space_structure_function_precursor" in combined
 
 
-def test_stage14c_status_closes_exactly_criteria_1_through_31():
+def test_stage14d_status_closes_exactly_criteria_1_through_38():
     assert (
-        "Stage 14C source/test checkpoint validated; criteria 1–31 satisfied; "
-        "criteria 32–50 pending. Stage 14D is next."
+        "Stage 14D source/test checkpoint validated; criteria 1–38 satisfied; "
+        "criteria 39–50 pending. Stage 14E is next."
     ) in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 31
-    assert PROTOCOL.count("**pending**") == 19
+    assert PROTOCOL.count("**satisfied**") == 38
+    assert PROTOCOL.count("**pending**") == 12
     assert "Stage 14.0 completed; criteria 1–10 satisfied; criteria 11–50 pending." in FREEZE
     assert "Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**" in PROTOCOL
     assert "Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**" in PROTOCOL
     assert "Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**" in PROTOCOL
-    assert "Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **next**" in PROTOCOL
+    assert "Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**" in PROTOCOL
+    assert "Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **next**" in PROTOCOL
 
 
 def test_stage14_positive_carrier_and_structure_functions_remain_frozen():
@@ -187,6 +192,8 @@ def test_stage14c_repository_checkpoint_and_deterministic_evidence_are_synchroni
     combined = "\n".join((PROTOCOL, NOTES_C, RESULT_C))
     assert STAGE14C_SOURCE_HEAD in combined
     assert "1130 passed in 898.22s (0:14:58)" in combined
+    assert STAGE14C_SYNC_HEAD in combined
+    assert "1132 passed in 877.20s (0:14:37)" in combined
     for phrase in (
         "108",
         "2916",
@@ -209,6 +216,30 @@ def test_stage14c_repository_checkpoint_and_deterministic_evidence_are_synchroni
         assert phrase in combined
 
 
+def test_stage14d_repository_checkpoint_and_deterministic_evidence_are_synchronized():
+    combined = "\n".join((PROTOCOL, NOTES_D, RESULT_D))
+    assert STAGE14D_SOURCE_HEAD in combined
+    assert "1139 passed in 889.88s (0:14:49)" in combined
+    for phrase in (
+        "324",
+        "216/216",
+        "72/72",
+        "108/108",
+        "0.3843557173958058",
+        "1.135254038874606",
+        "singular_scalar_rescaling_rejected",
+        "216 = 108 positive + 108 off-surface",
+        "determinant",
+        "4 classes × 27 representatives",
+        "Stage 14D Stage-13-style scalar-rescaling obstruction with triangular basis equivalence on the frozen finite carrier = established",
+        "Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability",
+        "triangular basis equivalence != universal basis trivializability",
+        "basis-equivalent finite quotient != refoliation invariance",
+        "repository validation != new scientific evidence",
+    ):
+        assert phrase in combined
+
+
 def test_stage14b_closed_criteria_18_through_24_remain_synchronized():
     for criterion in (
         "18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **satisfied**.",
@@ -222,7 +253,7 @@ def test_stage14b_closed_criteria_18_through_24_remain_synchronized():
         assert criterion in PROTOCOL
 
 
-def test_stage14c_closes_frozen_criteria_25_through_31_only():
+def test_stage14d_closes_frozen_criteria_25_through_38_only():
     for criterion in (
         "25. Stage 14C reconstructs representative-independent `(Q_D,P_D)` across all 108 positive representatives — **satisfied**.",
         "26. The full Dirac pair separates all six pairs among the four physical orbit classes — **satisfied**.",
@@ -231,14 +262,23 @@ def test_stage14c_closes_frozen_criteria_25_through_31_only():
         "29. The two-clock incomplete observable retains detectable third-direction gauge dependence — **satisfied**.",
         "30. The sampled quotient contains exactly four classes of 27 representatives with zero licensed cross-orbit arrows — **satisfied**.",
         "31. Dirac / relational / quotient results remain bounded away from eternalism, timeless ontology, and elimination of physical change — **satisfied**.",
+        "32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **satisfied**.",
+        "33. The nonzero `D'` component obstruction is verified on all required `X != 0` positive representatives — **satisfied**.",
+        "34. Scalar transformations that vanish or diverge on the positive family are rejected as singular rather than accepted as equivalent bases — **satisfied**.",
+        "35. The frozen triangular transformation `H_2_tilde=H_2-kappa T1 X D` is verified invertible on the positive family — **satisfied**.",
+        "36. The triangular basis satisfies the frozen commuting bracket targets within tolerance — **satisfied**.",
+        "37. Correctly typed triangular-basis correspondence preserves the sampled quotient, Dirac pair, complete relational values, and inherited public O/P/R/V payloads — **satisfied**.",
+        "38. Basis results remain bounded: scalar obstruction is not promoted to universal non-Abelianizability and triangular equivalence is not promoted to universal trivializability — **satisfied**.",
     ):
         assert criterion in PROTOCOL
-    assert "32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **pending**." in PROTOCOL
+    assert "39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **pending**." in PROTOCOL
     assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
 def test_stage14_interpretation_boundaries_remain_explicit():
-    combined = "\n".join((PROTOCOL, FREEZE, NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C))
+    combined = "\n".join(
+        (PROTOCOL, FREEZE, NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D)
+    )
     for phrase in (
         "phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition",
         "finite first-class structure-function algebra != hypersurface-deformation algebra",
@@ -252,6 +292,12 @@ def test_stage14_interpretation_boundaries_remain_explicit():
         "compensated relational descent != refoliation invariance",
         "Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability",
         "triangular basis equivalence != universal basis trivializability",
+        "constraint-basis change != physical-orbit change",
+        "basis-equivalent finite quotient != refoliation invariance",
+        "commuting triangular presentation != proof that all admissible presentations commute",
+        "basis equivalence != hypersurface-deformation algebra",
+        "basis equivalence != general relativity",
+        "basis equivalence != ontological becoming",
         "wrong compensator failure != physical time asymmetry",
         "two-clock incompleteness != physical time asymmetry",
         "compensated path closure != ontological becoming",

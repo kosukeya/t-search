@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–12 are completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12 criteria 1–50 were completed on `agent/stage-12-multi-orbit-gauge-atlas`; PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13C is completed on Draft PR #14; Stage 13 criteria 1–31 are satisfied, criteria 32–50 remain pending, and Stage 13D is next.**
+**Historical checkpoint: Stages 1–12 are completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12 criteria 1–50 were completed on `agent/stage-12-multi-orbit-gauge-atlas`; PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13D is completed on Draft PR #14; Stage 13 criteria 1–38 are satisfied, criteria 39–50 remain pending, and Stage 13E is next.**
 
 Historical compatibility markers retained for documentation regression:
 
@@ -21,7 +21,7 @@ Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G execut
 
 Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was merged. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
-Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd` passed run #1726 with **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd` passed run #1726 with **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**. Stage 13C documentation-synchronized head `51f119845ec0e9ade3ee8cdeeb4e00ca7b992569` passed run #1762 with **`1066 passed in 892.04s (0:14:52)`**. Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7` passed run #1766 with **`1076 passed in 908.96s (0:15:08)`**.
 
 Selected Stage 11 gate:
 
@@ -45,6 +45,8 @@ Stage 13 documents:
 - [`results/stage13b_paths.md`](results/stage13b_paths.md)
 - [`docs/stage13c_notes.md`](docs/stage13c_notes.md)
 - [`results/stage13c_relational.md`](results/stage13c_relational.md)
+- [`docs/stage13d_notes.md`](docs/stage13d_notes.md)
+- [`results/stage13d_gauge_atlas.md`](results/stage13d_gauge_atlas.md)
 
 ## Historical Stage 8 checkpoint
 
@@ -547,6 +549,8 @@ Key documents:
 - [`results/stage13b_paths.md`](results/stage13b_paths.md)
 - [`docs/stage13c_notes.md`](docs/stage13c_notes.md)
 - [`results/stage13c_relational.md`](results/stage13c_relational.md)
+- [`docs/stage13d_notes.md`](docs/stage13d_notes.md)
+- [`results/stage13d_gauge_atlas.md`](results/stage13d_gauge_atlas.md)
 
 ### Stage 13.0 — protocol freeze — completed
 
@@ -676,6 +680,40 @@ Stage 13 criteria **1–31** are satisfied; criteria **32–50** remain pending.
 
 `path-independent complete-relational values != future actuality`.
 
+### Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — completed
+
+Stage 13D constructs **87 typed nodes** separating physical orbit, representative, constraint generator, constraint basis, path word, relational event, clock, and modal-continuation roles.
+
+The connectivity atlas uses **144 typed single-generator arrows** — 72 `Phi_T` and 72 `Phi_X` — and builds connected components without using stored `orbit_id` labels for union. The resulting quotient recovers exactly **4 quotient classes** of **9 representatives** each, covering all 36 representatives without cross-orbit collapse.
+
+The four quotient classes remain distinct under the full `(Q_D,P_D)` pair. Across the `3 x 3` target-clock grid Stage 13D performs **36 quotient-level descent evaluations**, with representative-independent Dirac and complete-relational payloads within tolerance.
+
+All **144 / 144** compensated Stage 13B mixed pairs descend under both `(Phi_T,Phi_X)` and `(Phi_X,Phi_T)` path words to the same quotient-level payload. Reusing the nine target-clock pairs gives **1296** complete-relational descent comparisons.
+
+Removing typed path-word / compensator provenance is classified `path_provenance_typed_lost_numerically_reconstructible`: `typed_status = lost`, while `numerical_status = reconstructible` on the frozen finite family. Numerical recovery is not treated as recovery of the missing typing.
+
+Bounded result:
+
+`Stage 13D typed multi-constraint gauge atlas, path words, quotient, and descent on the frozen finite family = established`.
+
+Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7`, run #1766: **`1076 passed in 908.96s (0:15:08)`**.
+
+Stage 13 criteria **1–38** are satisfied; criteria **39–50** remain pending. Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — is next.
+
+`path word != modal continuation`.
+
+`path word != physical temporal history`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`gauge quotient != elimination of physical change`.
+
+`compensated-path quotient descent != refoliation invariance`.
+
 ## Guards
 
 - `operational quantum equality != modal/ontological identity`;
@@ -760,12 +798,14 @@ Stage 13 criteria **1–31** are satisfied; criteria **32–50** remain pending.
 - `multi-constraint path covariance != refoliation invariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;
 - `path word != physical temporal history`;
+- `path word != modal continuation`;
 - `path-order mismatch != arrow of time by definition`;
 - `wrong compensator failure != physical time asymmetry`;
 - `one clock condition in a two-gauge-direction model != complete relational observable`;
 - `complete relational observable != ontological becoming by definition`;
 - `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`;
 - `path-independent complete-relational values != future actuality`;
+- `compensated-path quotient descent != refoliation invariance`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
 - `finite-model success != empirical discovery`;

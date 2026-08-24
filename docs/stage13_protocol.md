@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13F completed; criteria 1–47 satisfied; criteria 48–50 pending. Stage 13G is next.**
+Status: **Stage 13G completed; criteria 1–49 satisfied; criterion 50 pending. External final repository validation / merge-readiness review is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -302,7 +302,7 @@ Bounded result:
 
 ## 13. Stage 13F validated executable evidence
 
-Stage 13F was frozen in `docs/stage13f_protocol.md` from the validated Stage 13E checkpoint. The implementation head is `0abd4681f04df91fab9fbe9de2d811ce26461c57`. After repairing the documentation guard encoding without changing the Stage 13F scientific logic, repository-validated branch head `518a92315575b4b1d75ef51cad5a2dedd9dd40da` passed GitHub Actions run #1809 with **`1085 passed in 562.97s (0:09:22)`**.
+Stage 13F was frozen in `docs/stage13f_protocol.md` from the validated Stage 13E checkpoint. The implementation head is `0abd4681f04df91fab9fbe9de2d811ce26461c57`. After repairing the documentation guard encoding without changing the Stage 13F scientific logic, repository-validated branch head `518a92315575b4b1d75ef51cad5a2dedd9dd40da` passed GitHub Actions run #1809 with **`1085 passed in 562.97s (0:09:22)`**. Its validated documentation-synchronized head `a4259a5c04f40f4e4ca172146b799dd5655989ed` passed follow-up run #1811 with **`1087 passed in 867.22s (0:14:27)`**.
 
 Validated finite evidence:
 
@@ -335,7 +335,57 @@ The validated result supports the bounded statement that the original noncommuti
 
 `repository validation != new scientific evidence`.
 
-## 14. Stage 13 sequence
+## 14. Stage 13G validated executable synthesis and Stage 14 gate
+
+Stage 13G implementation/source-test head `013f90303ededbf769aaeef11a0336a480b02e2b` passed GitHub Actions run #1813 with **`1099 passed in 878.58s (0:14:38)`**.
+
+The executable A–F evidence selector chooses exactly
+
+`multi_constraint_path_covariant`.
+
+Validated synthesis evidence integrates:
+
+- **4** physical orbits, **36** sampled representatives, and two independent first-class constraint directions;
+- **144 / 144** exact compensated mixed-path closures with physical-orbit identity preserved;
+- **6 / 6** distinct physical-orbit pairs separated by the full Dirac pair together with nontrivial two-clock complete relational change;
+- exactly **4** typed quotient classes of **9** representatives each and **0** licensed cross-orbit arrows;
+- **144** compensated operational-descent checks with **4** distinct orbit-sensitive signatures;
+- **36 / 36** equivalent-basis public/Dirac/relational checks;
+- **144 / 144** equivalent commuting-basis mixed-path closures;
+- **6 / 6** Stage 13F basis/ablation/anomaly controls rejected.
+
+Bounded result:
+
+`Stage 13G synthesis on the validated Stage 13A-F finite evidence chain = multi_constraint_path_covariant`.
+
+The status is finite and deliberately bounded. It establishes compatibility of the tested multi-constraint path/quotient/relational/operational stack, not refoliation invariance.
+
+The evidence-selected Stage 14 ranking is:
+
+1. `phase_space_structure_function_precursor` — score **12**;
+2. `gravitational_minisuperspace_extension` — score **8**;
+3. `richer_causal_order` — score **8**;
+4. `nonideal_povm_clocks` — score **7**.
+
+Selected Stage 14 gate:
+
+> **Construct a minimal phase-space-dependent structure-function / hypersurface-deformation precursor designed to test whether the Stage 13F simple commuting-basis trivialization persists, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
+
+The reason for this ranking is diagnostic. Stage 13F showed that the current noncommuting presentation can be removed by the simple rescaling `K_X_tilde=exp(-T)K_X`. The next clean pressure test is therefore whether that simple basis-trivialization persists under phase-space-dependent structure-function dependence before gravitational field degrees of freedom are introduced.
+
+`multi_constraint_path_covariant finite family != refoliation invariance`.
+
+`finite first-class constraint algebra != hypersurface-deformation algebra`.
+
+`constraint-basis equivalence != universal basis trivializability`.
+
+`phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition`.
+
+`structure-function precursor != general relativity`.
+
+`repository validation != new scientific evidence`.
+
+## 15. Stage 13 sequence
 
 - Stage 13.0 — protocol freeze — **completed**;
 - Stage 13A — two-constraint first-class carrier and finite representative family — **completed**;
@@ -344,12 +394,12 @@ The validated result supports the bounded statement that the original noncommuti
 - Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — **completed**;
 - Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **completed**;
 - Stage 13F — basis / ablation / anomaly / false-positive controls — **completed**;
-- Stage 13G — executable synthesis and evidence-selected next gate — pending;
+- Stage 13G — executable synthesis and evidence-selected next gate — **completed**;
 - criterion 50 — external final full-repository regression / merge-readiness review — pending.
 
-## 15. Frozen synthesis vocabulary
+## 16. Frozen synthesis vocabulary and validated selection
 
-Stage 13G must select exactly one of:
+The frozen Stage 13G selector contains exactly:
 
 - `multi_constraint_path_covariant`;
 - `multi_constraint_path_partial`;
@@ -358,14 +408,20 @@ Stage 13G must select exactly one of:
 
 `multi_constraint_path_obstructed` is reserved for an explicit positive-family failure rather than a deliberately invalid control behaving correctly.
 
-Live Stage 14 gate candidates remain
+The validated selection is
+
+`multi_constraint_path_covariant`.
+
+The Stage 14 candidate families remain
 
 - `phase-space-dependent structure-function / hypersurface-deformation precursor`;
 - `gravitational/minisuperspace extension`;
 - `richer causal/order layer`;
 - `nonideal/POVM clocks`.
 
-## 16. Exit criteria
+The validated evidence-selected first gate is `phase_space_structure_function_precursor`; the other three remain live alternatives rather than rejected research directions.
+
+## 17. Exit criteria
 
 ### Criteria 1–10 — Stage 13.0
 
@@ -437,14 +493,14 @@ Live Stage 14 gate candidates remain
 
 ### Criteria 48–49 — Stage 13G
 
-48. Executable synthesis selects exactly one frozen Stage 13 status from the full Stage 13A–F evidence chain — **pending**.
-49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, or a hypersurface-deformation algebra — **pending**.
+48. Executable synthesis selects exactly one frozen Stage 13 status from the full Stage 13A–F evidence chain — **satisfied**.
+49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, or a hypersurface-deformation algebra — **satisfied**.
 
 ### Criterion 50 — external repository validation
 
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 17. Interpretation guards
+## 18. Interpretation guards
 
 - `two constraint labels != two independent gauge directions`;
 - `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
@@ -454,15 +510,20 @@ Live Stage 14 gate candidates remain
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
 - `constraint-basis change != physical-orbit change`;
 - `basis-equivalent finite quotient != refoliation invariance`;
+- `constraint-basis equivalence != universal basis trivializability`;
 - `commuting presentation != proof that all admissible presentations commute`;
 - `first-class closure on this toy carrier != hypersurface-deformation algebra`;
+- `finite first-class constraint algebra != hypersurface-deformation algebra`;
 - `compensated multi-constraint path closure != refoliation invariance`;
 - `compensated-path relational covariance != refoliation invariance`;
 - `compensated path-word descent != refoliation invariance`;
 - `compensated-path operational descent != refoliation invariance`;
 - `multi-constraint path covariance != refoliation invariance`;
+- `multi_constraint_path_covariant finite family != refoliation invariance`;
 - `refoliation precursor != general covariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;
+- `phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition`;
+- `structure-function precursor != general relativity`;
 - `path word != modal continuation`;
 - `path word != physical temporal history`;
 - `path-order mismatch != arrow of time by definition`;

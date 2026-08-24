@@ -26,8 +26,6 @@ from t_search.stage13_multi_constraint import (
     STAGE13A_A,
     STAGE13A_ATOL,
     STAGE13A_BASIS_ID,
-    STAGE13A_K_T,
-    STAGE13A_K_X,
     Stage13PhaseSpacePoint,
     Stage13Representative,
     canonical_stage13a_mixed_pairs,
@@ -37,6 +35,8 @@ from t_search.stage13_multi_constraint import (
     stage13a_K_X,
 )
 
+STAGE13B_PHI_T = "Phi_T"
+STAGE13B_PHI_X = "Phi_X"
 STAGE13B_PATH_WORD_ROLE = "constraint_generated_gauge_path_word"
 STAGE13B_PATH_ORDER_ROLE = "gauge_generator_order_metadata"
 STAGE13B_TEMPORAL_ORDER_STATUS = "not_physical_temporal_order"
@@ -231,8 +231,8 @@ def stage13b_mixed_path_comparison(
         source_event_id=source.event_id,
         target_event_id=target.event_id,
         constraint_basis_id=STAGE13A_BASIS_ID,
-        path_word_TX=(STAGE13A_K_T, STAGE13A_K_X),
-        path_word_XT=(STAGE13A_K_X, STAGE13A_K_T),
+        path_word_TX=(STAGE13B_PHI_T, STAGE13B_PHI_X),
+        path_word_XT=(STAGE13B_PHI_X, STAGE13B_PHI_T),
         path_word_role=STAGE13B_PATH_WORD_ROLE,
         path_order_role=STAGE13B_PATH_ORDER_ROLE,
         temporal_order_status=STAGE13B_TEMPORAL_ORDER_STATUS,
@@ -331,8 +331,8 @@ def stage13b_diagnostics() -> Stage13BDiagnostics:
         and item.path_order_role == STAGE13B_PATH_ORDER_ROLE
         and item.temporal_order_status == STAGE13B_TEMPORAL_ORDER_STATUS
         and item.metaphysical_claim_status == STAGE13B_METAPHYSICAL_CLAIM_STATUS
-        and item.path_word_TX == (STAGE13A_K_T, STAGE13A_K_X)
-        and item.path_word_XT == (STAGE13A_K_X, STAGE13A_K_T)
+        and item.path_word_TX == (STAGE13B_PHI_T, STAGE13B_PHI_X)
+        and item.path_word_XT == (STAGE13B_PHI_X, STAGE13B_PHI_T)
     ]
 
     cross_orbit_rejected = stage13b_cross_orbit_control_rejected()

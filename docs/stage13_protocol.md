@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13E completed; criteria 1–43 satisfied; criteria 44–50 pending. Stage 13F protocol frozen and executable source/test validation pending.**
+Status: **Stage 13F completed; criteria 1–47 satisfied; criteria 48–50 pending. Stage 13G is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -300,21 +300,40 @@ Bounded result:
 
 `repository validation != new scientific evidence`.
 
-## 13. Stage 13F frozen gate
+## 13. Stage 13F validated executable evidence
 
-Stage 13F is frozen in `docs/stage13f_protocol.md` from the validated Stage 13E checkpoint.
+Stage 13F was frozen in `docs/stage13f_protocol.md` from the validated Stage 13E checkpoint. The implementation head is `0abd4681f04df91fab9fbe9de2d811ce26461c57`. After repairing the documentation guard encoding without changing the Stage 13F scientific logic, repository-validated branch head `518a92315575b4b1d75ef51cad5a2dedd9dd40da` passed GitHub Actions run #1809 with **`1085 passed in 562.97s (0:09:22)`**.
 
-The positive comparison is between the noncommuting presentation `K_X` and the equivalent commuting presentation `K_X_tilde`. Required evidence includes **36** positive representatives, **144** commuting-basis single-generator arrows (**72 `Phi_T` + 72 `Phi_X_tilde`**), exactly **4** quotient classes of **9** representatives, **4 / 4** Stage 13D representative-set matches, **36** basis-equivalence public/Dirac/relational checks, and **144** commuting mixed-path checks.
+Validated finite evidence:
 
-The destructive/anomaly matrix contains **6** controls: rank-deficient pair, decoupled second constraint, wrong compensator, one-clock incompleteness, cross-orbit single-invariant false match, and `K_X_bad`.
+- **36 / 36** positive representatives satisfy the equivalent commuting presentation;
+- **144** commuting-basis single-generator arrows = **72 `Phi_T` + 72 `Phi_X_tilde`**;
+- exactly **4 quotient classes** of **9 representatives** each;
+- **4 / 4** quotient representative-set memberships match Stage 13D;
+- **36 / 36** basis-equivalence checks preserve quotient identity, `(Q_D,P_D)`, complete-relational values, and inherited public O/P/R/V content;
+- **144 / 144** mixed pairs close under both commuting-basis path orders using the same raw `s=T1-T0`, `u=X1-X0`;
+- all **6 / 6** destructive/anomaly controls are rejected as intended;
+- `K_X_bad` is classified as `constraint_algebra_anomaly_detected`, not as a positive carrier.
 
-Criteria 44–47 remain pending until the Stage 13F source/test head passes full repository regression.
+Bounded result:
+
+`Stage 13F basis equivalence, ablation, anomaly, and false-positive controls on the frozen finite family = established`.
+
+The validated result supports the bounded statement that the original noncommuting presentation is not itself quotient-level physical content on this finite carrier: the explicitly equivalent commuting presentation reconstructs the same sampled quotient and licensed quotient-level operational payloads.
+
+`noncommuting constraint presentation != fundamental physical non-Abelianity`.
+
+`constraint-basis change != physical-orbit change`.
 
 `basis-equivalent finite quotient != refoliation invariance`.
 
 `commuting presentation != proof that all admissible presentations commute`.
 
+`multi-constraint path covariance != refoliation invariance`.
+
 `constraint-algebra anomaly != ontological becoming`.
+
+`repository validation != new scientific evidence`.
 
 ## 14. Stage 13 sequence
 
@@ -324,7 +343,7 @@ Criteria 44–47 remain pending until the Stage 13F source/test head passes full
 - Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **completed**;
 - Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — **completed**;
 - Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **completed**;
-- Stage 13F — basis / ablation / anomaly / false-positive controls — **active; protocol frozen, source/test validation pending**;
+- Stage 13F — basis / ablation / anomaly / false-positive controls — **completed**;
 - Stage 13G — executable synthesis and evidence-selected next gate — pending;
 - criterion 50 — external final full-repository regression / merge-readiness review — pending.
 
@@ -411,10 +430,10 @@ Live Stage 14 gate candidates remain
 
 ### Criteria 44–47 — Stage 13F
 
-44. Noncommuting and equivalent commuting constraint presentations are compared and shown not to change licensed quotient-level physical content when typed correspondence is correct — **pending**.
-45. Rank-deficient, decoupled, wrong-compensator, one-clock-incomplete, and cross-orbit false positives are explicitly classified — **pending**.
-46. `K_X_bad` or an equivalent deliberately non-first-class deformation is detected as a constraint-algebra anomaly rather than admitted as a positive carrier — **pending**.
-47. Basis/path/anomaly results are not promoted to fundamental non-Abelianity, refoliation invariance, GR, eternalism, or ontological becoming — **pending**.
+44. Noncommuting and equivalent commuting constraint presentations are compared and shown not to change licensed quotient-level physical content when typed correspondence is correct — **satisfied**.
+45. Rank-deficient, decoupled, wrong-compensator, one-clock-incomplete, and cross-orbit false positives are explicitly classified — **satisfied**.
+46. `K_X_bad` or an equivalent deliberately non-first-class deformation is detected as a constraint-algebra anomaly rather than admitted as a positive carrier — **satisfied**.
+47. Basis/path/anomaly results are not promoted to fundamental non-Abelianity, refoliation invariance, GR, eternalism, or ontological becoming — **satisfied**.
 
 ### Criteria 48–49 — Stage 13G
 

@@ -16,6 +16,8 @@ RESULT_D = (ROOT / "results" / "stage13d_gauge_atlas.md").read_text(encoding="ut
 NOTES_E = (ROOT / "docs" / "stage13e_notes.md").read_text(encoding="utf-8")
 RESULT_E = (ROOT / "results" / "stage13e_measurement.md").read_text(encoding="utf-8")
 PROTOCOL_F = (ROOT / "docs" / "stage13f_protocol.md").read_text(encoding="utf-8")
+NOTES_F = (ROOT / "docs" / "stage13f_notes.md").read_text(encoding="utf-8")
+RESULT_F = (ROOT / "results" / "stage13f_ablation.md").read_text(encoding="utf-8")
 STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE13 = (
@@ -26,6 +28,7 @@ SELECTED_STAGE13 = (
 )
 MERGED_STAGE12_MAIN = "ee4baec55fa994217b275f9f2451e25fc6736787"
 STAGE13E_VALIDATED_HEAD = "5da1f7b07189ac9fd23c756ed432bfc7406caf37"
+STAGE13F_VALIDATED_HEAD = "518a92315575b4b1d75ef51cad5a2dedd9dd40da"
 
 
 def test_stage13_selected_gate_and_stage12_baseline_remain_frozen():
@@ -36,15 +39,16 @@ def test_stage13_selected_gate_and_stage12_baseline_remain_frozen():
     assert "multi_orbit_gauge_covariant" in PROTOCOL
 
 
-def test_stage13_current_status_is_validated_e_and_frozen_f():
+def test_stage13_current_status_is_validated_f_and_stage13g_is_next():
     assert (
-        "Stage 13E completed; criteria 1–43 satisfied; criteria 44–50 pending. "
-        "Stage 13F protocol frozen and executable source/test validation pending."
+        "Stage 13F completed; criteria 1–47 satisfied; criteria 48–50 pending. "
+        "Stage 13G is next."
     ) in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 43
-    assert PROTOCOL.count("**pending**") == 7
+    assert PROTOCOL.count("**satisfied**") == 47
+    assert PROTOCOL.count("**pending**") == 3
     assert "Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **completed**" in PROTOCOL
-    assert "Stage 13F — basis / ablation / anomaly / false-positive controls — **active; protocol frozen, source/test validation pending**" in PROTOCOL
+    assert "Stage 13F — basis / ablation / anomaly / false-positive controls — **completed**" in PROTOCOL
+    assert "Stage 13G — executable synthesis and evidence-selected next gate — pending" in PROTOCOL
 
 
 def test_stage13e_validated_checkpoint_is_synchronized():
@@ -75,7 +79,7 @@ def test_stage13e_closes_exactly_criteria_39_through_43():
     )
     for line in lines:
         assert line in PROTOCOL
-    assert "44. Noncommuting and equivalent commuting constraint presentations are compared and shown not to change licensed quotient-level physical content when typed correspondence is correct — **pending**." in PROTOCOL
+    assert "48. Executable synthesis selects exactly one frozen Stage 13 status from the full Stage 13A–F evidence chain — **pending**." in PROTOCOL
     assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
@@ -100,6 +104,39 @@ def test_stage13f_protocol_freezes_basis_ablation_and_anomaly_controls():
         assert phrase in combined
     assert "72 `Phi_T` + 72 `Phi_X_tilde`" in combined
     assert "Stage 13F source diagnostics satisfied != repository-validated Stage 13F completion" in PROTOCOL_F
+
+
+def test_stage13f_validated_checkpoint_is_synchronized():
+    combined = "\n".join((PROTOCOL, NOTES_F, RESULT_F))
+    assert STAGE13F_VALIDATED_HEAD in combined
+    assert "1085 passed in 562.97s (0:09:22)" in combined
+    for phrase in (
+        "36 / 36",
+        "144",
+        "4 / 4",
+        "6 / 6",
+        "basis_presentation_equivalent",
+        "constraint_algebra_anomaly_detected",
+        "Stage 13F basis equivalence, ablation, anomaly, and false-positive controls on the frozen finite family = established",
+        "basis-equivalent finite quotient != refoliation invariance",
+        "constraint-algebra anomaly != ontological becoming",
+        "repository validation != new scientific evidence",
+    ):
+        assert phrase in combined
+
+
+def test_stage13f_closes_exactly_criteria_44_through_47():
+    lines = (
+        "44. Noncommuting and equivalent commuting constraint presentations are compared and shown not to change licensed quotient-level physical content when typed correspondence is correct — **satisfied**.",
+        "45. Rank-deficient, decoupled, wrong-compensator, one-clock-incomplete, and cross-orbit false positives are explicitly classified — **satisfied**.",
+        "46. `K_X_bad` or an equivalent deliberately non-first-class deformation is detected as a constraint-algebra anomaly rather than admitted as a positive carrier — **satisfied**.",
+        "47. Basis/path/anomaly results are not promoted to fundamental non-Abelianity, refoliation invariance, GR, eternalism, or ontological becoming — **satisfied**.",
+    )
+    for line in lines:
+        assert line in PROTOCOL
+    assert "48. Executable synthesis selects exactly one frozen Stage 13 status from the full Stage 13A–F evidence chain — **pending**." in PROTOCOL
+    assert "49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, or a hypersurface-deformation algebra — **pending**." in PROTOCOL
+    assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
 def test_stage13_historical_a_through_d_evidence_remains_present():
@@ -137,7 +174,7 @@ def test_stage13_synthesis_vocabulary_and_next_gate_candidates_remain_frozen():
 
 
 def test_stage13_interpretation_boundaries_remain_explicit():
-    combined = "\n".join((PROTOCOL, FREEZE, NOTES_E, RESULT_E, PROTOCOL_F))
+    combined = "\n".join((PROTOCOL, FREEZE, NOTES_E, RESULT_E, PROTOCOL_F, NOTES_F, RESULT_F))
     for phrase in (
         "two constraint labels != two independent gauge directions",
         "noncommuting constraint presentation != fundamental physical non-Abelianity",
@@ -156,6 +193,7 @@ def test_stage13_interpretation_boundaries_remain_explicit():
         "future-measurement covariance != future actuality",
         "constraint-algebra anomaly != ontological becoming",
         "finite-model success != empirical discovery",
+        "repository validation != new scientific evidence",
         "not_established != false",
     ):
         assert phrase in combined

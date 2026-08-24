@@ -1,8 +1,10 @@
 # Stage 13B Notes — Noncommuting Gauge Paths and Compensated Closure
 
-Status: **implementation complete; criteria 17–23 close only after the Stage 13B executable/test family passes repository CI.**
+Status: **Stage 13B completed; criteria 17–23 satisfied.**
 
 Incoming Stage 13A final checkpoint: head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, GitHub Actions run #1696, **`1050 passed in 886.76s (0:14:46)`**.
+
+Stage 13B source/test checkpoint: head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, GitHub Actions run #1710, **`1058 passed in 696.20s (0:11:36)`**.
 
 ## Question
 
@@ -42,7 +44,7 @@ versus
 
 `Phi_T(s) after Phi_X(u_TX)`.
 
-The first path reaches the declared target by construction. The reordered path does not. The expected endpoint separation over the frozen grid ranges from approximately
+The first path reaches the declared target by construction. The reordered path does not. The endpoint separation over the frozen grid ranges from approximately
 
 - minimum **0.6321205588285577**;
 - maximum **12.778112197861299**.
@@ -73,7 +75,9 @@ The executable comparison requires, for every one of the 144 mixed pairs,
 - compensated `TX` and `XT` endpoints to agree within tolerance;
 - all intermediate/final positive path points to satisfy both constraints within tolerance.
 
-The deterministic floating-point construction has expected maximum compensator-law residual about **8.88e-16**, maximum compensated endpoint/target residual about **2.22e-16**, and positive-surface constraint residual **0.0**.
+The deterministic floating-point construction gives maximum compensator-law residual **8.881784197001252e-16**, maximum compensated endpoint/target residual **2.220446049250313e-16**, and positive-surface constraint residual **0.0**.
+
+All **144 / 144** mixed pairs satisfy the compensated closure test.
 
 Classification:
 
@@ -87,12 +91,12 @@ Stage 13B keeps wrong compensation separate from the same-raw control. For each 
 
 This parameter lies one quarter of the way from the exact `XT` value toward the wrong same-raw value and is nonexact for every mixed pair.
 
-The expected target residual ranges from approximately
+The target residual ranges from approximately
 
 - minimum **0.15803013970713942**;
 - maximum **3.1945280494653243**.
 
-The wrong path can remain on the constraint surface while failing the typed endpoint correspondence.
+All **144 / 144** wrong-compensator cases are detected. The wrong path can remain on the constraint surface while failing the typed endpoint correspondence.
 
 Classification:
 
@@ -130,9 +134,15 @@ Thus constraint-generator identity and transport-segment identity remain separat
 
 `path-order mismatch != arrow of time by definition`.
 
+## Bounded Stage 13B result
+
+`Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`
+
+This bounded result is validated by run #1710. It is a finite constraint-generated path-closure result only.
+
 ## Stage boundary
 
-A successful Stage 13B establishes compensated two-generator path closure only on the frozen finite carrier. It does not yet establish
+Stage 13B does not yet establish
 
 - representative-independent Dirac reconstruction;
 - two-clock complete relational covariance;
@@ -141,6 +151,8 @@ A successful Stage 13B establishes compensated two-generator path closure only o
 - refoliation invariance;
 - a hypersurface-deformation algebra;
 - general relativity.
+
+The next executable question is Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination.
 
 ## Interpretation guards
 

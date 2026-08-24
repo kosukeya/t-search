@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–9 are completed and merged. Stages 1–11 are now completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12.0 and Stage 12A–G are completed on PR #13; Stage 12 criteria 1–50 are completed at the criterion-50 merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged.**
+**Historical checkpoint: Stages 1–12 are completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12 criteria 1–50 were completed on `agent/stage-12-multi-orbit-gauge-atlas`; PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13.0 is completed on Draft PR #14; Stage 13 criteria 1–10 are satisfied, criteria 11–50 remain pending, and Stage 13A is next.**
 
 Current refined finite-model candidate through Stage 12:
 
@@ -14,7 +14,7 @@ with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weig
 
 Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G executable synthesis is `parametrized_covariant`. Stage 12G executable synthesis is `multi_orbit_gauge_covariant`.
 
-Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. `repository validation != new scientific evidence`; `merge-ready != merged`.
+Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was merged. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
 Selected Stage 11 gate:
 
@@ -27,6 +27,11 @@ Selected Stage 12 gate:
 Selected Stage 13 gate:
 
 > **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
+
+Stage 13.0 documents:
+
+- [`docs/stage13_protocol.md`](docs/stage13_protocol.md)
+- [`results/stage13_0_protocol_freeze.md`](results/stage13_0_protocol_freeze.md)
 
 ## Historical Stage 8 checkpoint
 
@@ -311,7 +316,7 @@ Stage 11 criteria **1–50** were closed at that historical merge-readiness chec
 
 `merge-ready != merged`.
 
-## Stage 12 — Multi-orbit constraint-generated gauge atlas — criterion-50 merge-readiness checkpoint completed
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — completed and merged
 
 Key documents:
 
@@ -451,7 +456,7 @@ The nearest unresolved assumption is now the single Hamiltonian constraint. The 
 
 Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At the reviewed checkpoint the branch was **ahead 78 / behind 0** relative to `main`, PR #13 was `mergeable = true`, and there were **0** unresolved inline review threads, **0** submitted review blockers, and **0** PR conversation comments.
 
-Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged; no merge action is taken by criterion 50.
+Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. Final current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
 
 `repository validation != new scientific evidence`.
 
@@ -516,6 +521,43 @@ Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. P
 `multi-orbit gauge covariance != general covariance`.
 
 `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
+
+## Stage 13 — Multi-constraint constraint-algebra / refoliation precursor — in progress
+
+Key documents:
+
+- [`docs/stage13_protocol.md`](docs/stage13_protocol.md)
+- [`results/stage13_0_protocol_freeze.md`](results/stage13_0_protocol_freeze.md)
+
+### Stage 13.0 — protocol freeze — completed
+
+The frozen positive carrier is
+
+`K_T = p_T + p^2/2 approx 0`,
+
+`K_X = exp(T)(p_X + 0.5p) approx 0`,
+
+with `{K_T,K_X}=-K_X` on canonical phase space `(T,p_T; X,p_X; q,p)`.
+
+The Stage 12 four physical `(Q_D,P_D)` classes are retained on a `3 x 3` `(T,X)` representative grid: **36 representatives**, **288 ordered nonidentity same-orbit pairs**, and **144 ordered mixed pairs**.
+
+The positive Stage 13 path target is compensated closure, not raw commutativity. For mixed paths,
+
+`u_XT = exp(s) u_TX`.
+
+The complete relational observable is
+
+`q(T=tau,X=chi)=Q_D+P_D tau+0.5chi`,
+
+while fixing only `T=tau` remains an explicit incompleteness control.
+
+Equivalent basis control:
+
+`K_X_tilde=exp(-T)K_X=p_X+0.5p`, with `{K_T,K_X_tilde}=0`.
+
+`noncommuting constraint presentation != fundamental physical non-Abelianity`.
+
+Stage 13 criteria **1–10** are satisfied by the freeze; criteria **11–50** remain pending. Stage 13A is next.
 
 ## Guards
 
@@ -589,7 +631,15 @@ Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. P
 - `finite constraint-generated gauge atlas != diffeomorphism invariance`;
 - `finite C x G x Phi compatibility != refoliation invariance`;
 - `single Hamiltonian constraint != hypersurface-deformation algebra`;
+- `raw gauge-path commutativity != successful multi-constraint closure`;
+- `noncommuting constraint presentation != fundamental physical non-Abelianity`;
+- `first-class closure on this finite model != hypersurface-deformation algebra`;
+- `multi-constraint path covariance != refoliation invariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;
+- `path word != physical temporal history`;
+- `path-order mismatch != arrow of time by definition`;
+- `one clock condition in a two-gauge-direction model != complete relational observable`;
+- `complete relational observable != ontological becoming by definition`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
 - `finite-model success != empirical discovery`;

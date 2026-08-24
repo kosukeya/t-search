@@ -83,17 +83,17 @@ A cross-orbit mixed-path constructor call is rejected rather than receiving a co
 
 This is typed carry-over only. Independent orbit discrimination from reconstructed Dirac data remains Stage 13C.
 
-## Temporal interpretation boundary
+## Typed path provenance and temporal boundary
 
-The two path words are stored as gauge-generator provenance:
+The Hamiltonian generator identities remain `K_T` and `K_X`, while the transport segments recorded in the path word are
 
-`(K_T,K_X)`
+`path_word_TX = (Phi_T,Phi_X)`
 
 and
 
-`(K_X,K_T)`.
+`path_word_XT = (Phi_X,Phi_T)`.
 
-They carry
+The path records carry
 
 `temporal_order_status = not_physical_temporal_order`
 
@@ -101,7 +101,7 @@ and
 
 `metaphysical_claim_status = not_licensed`.
 
-Therefore Stage 13B does not interpret raw path order, compensator failure, or successful compensated closure as an arrow of time, ontological becoming, or eternalism result.
+Therefore Stage 13B does not identify generator identity with transport identity and does not interpret raw path order, compensator failure, or successful compensated closure as an arrow of time, ontological becoming, or eternalism result.
 
 ## Stage boundary
 

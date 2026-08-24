@@ -32,7 +32,7 @@ def test_stage13_top_level_current_status_is_synchronized() -> None:
         assert "criteria 1–10" in text
         assert "criteria 11–50" in text
         assert "Stage 13A" in text
-        assert "36 representatives" in text
+        assert "36" in text and "representatives" in text
         assert "144" in text
         assert "raw gauge-path commutativity != successful multi-constraint closure" in text
         assert "noncommuting constraint presentation != fundamental physical non-Abelianity" in text

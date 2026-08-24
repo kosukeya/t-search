@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14A source/test checkpoint validated; criteria 1–17 satisfied; criteria 18–50 pending. Stage 14B is next.**
+Status: **Stage 14B source/test checkpoint validated; criteria 1–24 satisfied; criteria 25–50 pending. Stage 14C is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,7 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 froze the research protocol; Stage 14A now establishes only the bounded carrier-level evidence stated below.
+Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B establishes only the bounded compensated mixed-path evidence stated below.
 
 ## 2. Frozen canonical phase space and constants
 
@@ -127,7 +127,7 @@ For `Phi_2(u)` with fixed `T1`:
 
 `q -> q + b u + a [X exp(kappa T1 u)-X]`.
 
-Stage 14A checks each generator at parameters `-0.5` and `+0.5` from every positive representative, yielding 648 single-generator flow probes. These probes test constraint-surface and Dirac-data preservation only; mixed path closure remains Stage 14B.
+Stage 14A checks each generator at parameters `-0.5` and `+0.5` from every positive representative, yielding 648 single-generator flow probes.
 
 ## 6. Frozen third-direction compensated path semantics
 
@@ -154,6 +154,8 @@ The exact compensation difference is
 `v_21D-v_12D = X_0 [exp(kappa T1_1 u)-exp(kappa T1_0 u)]`.
 
 The canonical Stage 14B family contains **864 ordered mixed pairs** with all three sampled coordinates changed.
+
+Stage 14B validates both ordered implementations and exact compensation on all 864 pairs.
 
 `raw path-word inequality != physical path dependence`.
 
@@ -270,7 +272,9 @@ Incoming repository-validated Stage 14.0 checkpoint: head `afe0598362ccf0e808d2c
 
 Stage 14A source/test head: `d1116a743b0374c96993c476331f5cceacfbb077`, run #1838, **`1113 passed in 545.23s (0:09:05)`**.
 
-Validated deterministic evidence:
+Documentation-synchronized Stage 14A head: `db72c8715a3b58d4422932640807dbb20297005e`, run #1846, **`1114 passed in 900.17s (0:15:00)`**.
+
+Validated deterministic Stage 14A evidence:
 
 - physical orbits: **4**;
 - positive representatives: **108 = 4 x 27**;
@@ -285,28 +289,57 @@ Validated deterministic evidence:
 - single-generator flow probes: **648**;
 - maximum flow constraint residual: **0.0**;
 - maximum flow Dirac residual: approximately **2.220446049250313e-16**;
-- `kappa=0` structure-function-removed control: `structure_function_removed_control_rejected`;
-- duplicate-direction rank control: `rank_deficient_constraint_control_rejected`.
+- `structure_function_removed_control_rejected`;
+- `rank_deficient_constraint_control_rejected`.
 
 Bounded result:
 
 `Stage 14A three-constraint first-class structure-function carrier and finite representative family = established`.
 
-This result establishes the declared finite carrier only. It does not establish mixed-path compensation, a hypersurface-deformation algebra, refoliation invariance, gravitational dynamics, or GR.
+## 12. Stage 14B validated executable evidence
 
-## 12. Frozen Stage 14 sequence
+Stage 14B source/test head: `2b0866b63e6fb4d4951f883839e6693b12ceddfc`, run #1852, **`1122 passed in 891.20s (0:14:51)`**.
+
+Validated deterministic Stage 14B evidence:
+
+- canonical ordered mixed pairs: **864**;
+- positive ordered path results: **1728**;
+- nontrivial `X_0 != 0` pairs: **576**;
+- exact-zero `X_0 = 0` pairs: **288**;
+- nonzero compensator-difference count: **576**;
+- zero compensator-difference count: **288**;
+- minimum nonzero `|v_21D-v_12D|`: approximately **0.3934693402873666**;
+- maximum `|v_21D-v_12D|`: approximately **2.3504023872876028**;
+- maximum compensator-identity residual: **0.0**;
+- maximum raw-formula residual: approximately **4.440892098500626e-16**;
+- maximum final endpoint residual: approximately **4.440892098500626e-16**;
+- maximum final Dirac residual: approximately **4.440892098500626e-16**;
+- wrong-sign compensator rejected: **1728/1728**;
+- half-value compensator rejected: **1728/1728**;
+- missing compensator rejected: **1728/1728**;
+- reused Stage-13-style same-`D` compensator rejected on **576/576** nontrivial pairs;
+- exact-zero-difference compatibility retained on **288/288** `X_0=0` pairs;
+- cross-orbit false positives rejected: **8748/8748**.
+
+Bounded result:
+
+`Stage 14B phase-space-dependent mixed paths and exact third-direction compensation on the frozen finite family = established`.
+
+This result establishes only finite compensated mixed-path closure. It does not establish refoliation invariance, hypersurface-deformation algebra, general covariance, gravitational field dynamics, or GR.
+
+## 13. Frozen Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
 - Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
-- Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **next**;
-- Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination;
+- Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**;
+- Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **next**;
 - Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test;
 - Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases;
 - Stage 14F — ablation / anomaly / false-positive controls;
 - Stage 14G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
-## 13. Frozen synthesis vocabulary
+## 14. Frozen synthesis vocabulary
 
 Stage 14G will select exactly one of:
 
@@ -318,7 +351,7 @@ Stage 14G will select exactly one of:
 
 A negative control behaving as intended does not license a positive-family obstruction classification.
 
-## 14. Frozen criteria 1–50
+## 15. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -339,13 +372,13 @@ A negative control behaving as intended does not license a positive-family obstr
 16. Each licensed single-generator flow preserves the positive constraint surface and the declared Dirac data — **satisfied**.
 17. Stage 14A rejects structure-function-removed and rank-deficient controls without promoting them to positive evidence — **satisfied**.
 
-18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **pending**.
-19. Both `12D` and `21D` path implementations match the frozen exact flow formulas — **pending**.
-20. Exact third-direction compensation closes every positive mixed pair on the same licensed target within tolerance — **pending**.
-21. The nontrivial `X_0 != 0` subfamily exhibits the expected path-order-dependent raw compensator difference — **pending**.
-22. Wrong-sign, wrong-value, missing, and Stage-13-style compensators are rejected on the required nontrivial cases — **pending**.
-23. Cross-orbit source/target pairs are not licensed as gauge paths — **pending**.
-24. Path-order / compensator results remain explicitly bounded away from refoliation invariance, time asymmetry, and ontological becoming — **pending**.
+18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **satisfied**.
+19. Both `12D` and `21D` path implementations match the frozen exact flow formulas — **satisfied**.
+20. Exact third-direction compensation closes every positive mixed pair on the same licensed target within tolerance — **satisfied**.
+21. The nontrivial `X_0 != 0` subfamily exhibits the expected path-order-dependent raw compensator difference — **satisfied**.
+22. Wrong-sign, wrong-value, missing, and Stage-13-style compensators are rejected on the required nontrivial cases — **satisfied**.
+23. Cross-orbit source/target pairs are not licensed as gauge paths — **satisfied**.
+24. Path-order / compensator results remain explicitly bounded away from refoliation invariance, time asymmetry, and ontological becoming — **satisfied**.
 
 25. Stage 14C reconstructs representative-independent `(Q_D,P_D)` across all 108 positive representatives — **pending**.
 26. The full Dirac pair separates all six pairs among the four physical orbit classes — **pending**.
@@ -378,9 +411,9 @@ A negative control behaving as intended does not license a positive-family obstr
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**.
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 15. Interpretation boundary
+## 16. Interpretation boundary
 
-Stage 14A establishes a finite three-constraint first-class structure-function carrier with independent generator directions, nonconstant sampled structure functions, strong off-surface closure checks, Jacobi consistency, and individual-flow preservation on the declared family.
+Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B further establishes exact third-direction compensated mixed-path closure on the declared finite family, including nontrivial and exact-zero path-order subfamilies and negative controls.
 
 Persistent guards:
 
@@ -389,13 +422,15 @@ Persistent guards:
 - `hypersurface-deformation precursor != general relativity`;
 - `structure functions != spacetime geometry by definition`;
 - `three constraint labels != three independent gauge directions`;
-- `Stage 14A single-generator surface/Dirac preservation != third-direction compensated mixed-path closure`;
+- `raw path-word inequality != physical path dependence`;
 - `third-direction compensation != refoliation invariance`;
+- `compensated mixed-path closure != refoliation invariance`;
 - `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`;
 - `triangular basis equivalence != universal basis trivializability`;
 - `constraint-basis change != physical-orbit change`;
 - `path word != physical temporal history`;
 - `wrong compensator failure != physical time asymmetry`;
+- `compensated path closure != ontological becoming`;
 - `complete relational observable != ontological becoming by definition`;
 - `Dirac invariant != timeless ontology by definition`;
 - `Dirac-invariant data + relational change != proof of eternalism`;

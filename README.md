@@ -21,7 +21,7 @@ Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G execut
 
 Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was merged. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
-Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd` passed run #1726 with **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head is `56f80e8984872591a26f27eb5902310e36616bf0`; its final CI result is recorded after run #1734 completes.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd` passed run #1726 with **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**.
 
 Selected Stage 11 gate:
 
@@ -376,7 +376,7 @@ Stage 12C constructs the complete sampled same-orbit gauge groupoid over the Sta
 
 The gauge quotient is built from arrow connectivity rather than direct `orbit_id` grouping. It recovers exactly **4 quotient classes** of **5 representatives** each, covering all 20 sampled representatives without mixing canonical physical orbits.
 
-For every quotient class and the four frozen `tau` values, Stage 12C independently recomputes `Q_D=q-pT`, `P_D=p`, `q(T=tau)=Q_D+P_D tau`, and `dq/dT=P_D`, giving **16 quotient-level descent evaluations**. Representative spreads are required to remain within tolerance.
+For every quotient class and the four frozen `tau` values, Stage 12C independently recomputes `Q_D=q-pT`, `P_D=p`, `q(T=tau)=Q_D+P_D tau`, and `dq/dT=P_D`, giving **16 quotient-level relational/Dirac descent evaluations**. Representative spreads are required to remain within tolerance.
 
 Orbit identity/correspondence ablation is separated into typed status **`lost`** and finite numerical status **`reconstructible`**. Two corrupted purported gauge paths, `wrong_Q_D_path` and `wrong_P_D_path`, are **`numerically_refuted`**. Constraint-orbit / modal-continuation identification is **`false_positive_rejected`**.
 
@@ -655,6 +655,8 @@ Bounded result:
 Finite structural conjunction:
 
 `representative-independent Dirac orbit data + compensated-path-independent complete relational values + nontrivial relational change`.
+
+Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734: **`1069 passed in 550.80s (0:09:10)`**.
 
 Stage 13 criteria **1–31** are satisfied; criteria **32–50** remain pending. Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — is next.
 

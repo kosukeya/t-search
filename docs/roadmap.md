@@ -6,11 +6,11 @@ This roadmap is provisional and evidence-selected. Historical checkpoints are re
 
 `T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite Stage 12 family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. **Stage 13C is completed on Draft PR #14; criteria 1–31 are satisfied, criteria 32–50 remain pending, and Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — is next.**
+Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. **Stage 13D is completed on Draft PR #14; criteria 1–38 are satisfied, criteria 39–50 remain pending, and Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — is next.**
 
 Stage 10 criterion 50 validated head `11b4357fccb0b73b7b7b80bc13e34f904290107b`; run #1271 passed **`868 passed in 345.59s`**. Stage 11 criterion 50 validated head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`; run #1469 passed **`938 passed in 682.23s (0:11:22)`**. Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`; run #1642 passed **`1024 passed in 896.22s (0:14:56)`**, and final pre-merge run #1654 passed **`1025 passed in 693.84s (0:11:33)`**. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
-Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672: **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, run #1696: **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, run #1710: **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd`, run #1726: **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734: **`1069 passed in 550.80s (0:09:10)`**.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672: **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, run #1696: **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, run #1710: **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd`, run #1726: **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734: **`1069 passed in 550.80s (0:09:10)`**. Stage 13C documentation-synchronized head `51f119845ec0e9ade3ee8cdeeb4e00ca7b992569`, run #1762: **`1066 passed in 892.04s (0:14:52)`**. Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7`, run #1766: **`1076 passed in 908.96s (0:15:08)`**.
 
 Selected Stage 10 gate:
 
@@ -417,6 +417,36 @@ Stage 13 criteria **1–31** are satisfied; criteria **32–50** remain pending.
 `gauge quotient != elimination of physical change`.
 
 `path-independent complete-relational values != future actuality`.
+
+### Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — completed
+
+Criteria **32–38** satisfied. Stage 13D constructs **87 typed nodes** and **144 typed single-generator arrows** (`72 Phi_T + 72 Phi_X`). Connected components are built from typed arrow connectivity rather than stored orbit labels and recover exactly **4 quotient classes** of **9 representatives** each.
+
+The full Dirac pair remains distinct across all six quotient-class pairs. The `3 x 3` target-clock grid gives **36 quotient-level descent evaluations**. All **144 / 144** compensated mixed pairs descend under both canonical path words to the same quotient payload, with **1296** complete-relational descent comparisons inherited from the Stage 13C target grid.
+
+Path-word / compensator ablation is `path_provenance_typed_lost_numerically_reconstructible`: `typed_status = lost` while `numerical_status = reconstructible` on the frozen finite family.
+
+Bounded result:
+
+`Stage 13D typed multi-constraint gauge atlas, path words, quotient, and descent on the frozen finite family = established`.
+
+Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7`, run #1766: **`1076 passed in 908.96s (0:15:08)`**.
+
+Stage 13 criteria **1–38** are satisfied; criteria **39–50** remain pending. Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — is next.
+
+`path word != modal continuation`.
+
+`path word != physical temporal history`.
+
+`numerical reconstructibility != typed operational identification`.
+
+`reconstructible != universally redundant`.
+
+`lost != metaphysically irreducible`.
+
+`gauge quotient != elimination of physical change`.
+
+`compensated-path quotient descent != refoliation invariance`.
 
 ## Later directions
 

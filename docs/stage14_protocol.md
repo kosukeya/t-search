@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14D source/test checkpoint validated; criteria 1–38 satisfied; criteria 39–50 pending. Stage 14E is next.**
+Status: **Stage 14E source/test checkpoint validated; criteria 1–43 satisfied; criteria 44–50 pending. Stage 14F is next.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,7 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C established the bounded Dirac / relational / quotient evidence. Stage 14D now establishes only the frozen basis-transformation pressure-test evidence stated below.
+Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C established the bounded Dirac / relational / quotient evidence. Stage 14D established the frozen basis-transformation pressure test. Stage 14E now establishes only the typed operational / future-measurement descent evidence stated below.
 
 ## 2. Frozen canonical phase space and constants
 
@@ -268,7 +268,9 @@ Frozen classification vocabulary includes
 - `stage13_style_scalar_rescaling_obstructed`;
 - `triangular_basis_equivalent`;
 - `constraint_algebra_anomaly_detected`;
-- `representative_dependent_payload_corruption_detected`.
+- `representative_dependent_payload_corruption_detected`;
+- `path_dependent_payload_corruption_detected`;
+- `basis_dependent_payload_corruption_detected`.
 
 ## 11. Stage 14A validated executable evidence
 
@@ -374,6 +376,8 @@ This result establishes finite representative-independent orbit data, nontrivial
 
 Stage 14D source/test head: `3e44454952d71ebbe9b0a52bbd9d68cd398d0635`, run #1880, **`1139 passed in 889.88s (0:14:49)`**.
 
+Documentation-synchronized Stage 14D head: `69c979896cc2855869a6637b41faac010b4b0b36`, run #1888, **`1140 passed in 562.70s (0:09:22)`**.
+
 Validated deterministic Stage 14D evidence:
 
 - frozen admissible scalar factor families: **3**;
@@ -406,19 +410,69 @@ Bounded result:
 
 The scalar result is an obstruction only inside the frozen finite, nonzero, diagonal no-mixing class. The exact triangular result shows that this carrier still admits a richer equivalent commuting presentation. Neither fact licenses a universal Abelianization or non-Abelianization claim.
 
-## 15. Frozen Stage 14 sequence
+## 15. Stage 14E validated executable evidence
+
+Stage 14E source/test/runner head: `ac2376323f9d2b442bbbf448b22bc683ed2fd3ad`.
+
+GitHub Actions run #1890 (`32734821431`) completed successfully on PR merge checkout `1662684069cfe0f44708e7d69b4cada4ae5b72d6` with **`1148 passed in 897.57s (0:14:57)`**.
+
+Validated deterministic Stage 14E evidence:
+
+- representative-level typed O/P/R/V/Xi architectures: **108**;
+- physical quotient classes: **4**;
+- distinct quotient-level public payloads: **4**;
+- same-orbit public/future descent: **true**;
+- structure-function path checks: **864**;
+- path Xi views: **1728**;
+- distinct `12D` / `21D` Xi provenance: **864/864**;
+- distinct intermediate structure-function traces: **864/864**;
+- public/future/witness path descent: **864/864**;
+- original/triangular basis checks: **108**;
+- basis Xi views: **216**;
+- distinct original/triangular Xi provenance: **108/108**;
+- public/future/witness basis descent: **108/108**;
+- orbit-sensitive witness views: **108**;
+- distinct orbit-sensitive witness signatures: **4**;
+- minimum cross-orbit witness separation: **0.014943579189526601**;
+- public representation/path/basis provenance absent: **true**;
+- Xi structure-function/path/basis provenance explicit: **true**;
+- payload-corruption controls: **3**;
+- rejected controls: **3/3**;
+- `criteria_39_43_satisfied = true`.
+
+Payload-corruption classifications:
+
+- `representative_dependent_payload_corruption_detected`;
+- `path_dependent_payload_corruption_detected`;
+- `basis_dependent_payload_corruption_detected`.
+
+Bounded result:
+
+`Stage 14E typed O/P/R/V/Xi and future-measurement descent across structure-function paths and original/triangular basis choices on the frozen finite family = established`.
+
+The positive result keeps path and basis provenance explicitly in Xi while quotient-level public O/P/R/V and inherited future-measurement payloads descend across the licensed path/basis correspondences. The orbit-sensitive witness is diagnostic only and is not an empirical prediction.
+
+`compensated-path operational descent != refoliation invariance`.
+
+`basis-equivalent operational descent != refoliation invariance`.
+
+`future-measurement covariance != future actuality`.
+
+`orbit-sensitive witness != empirical prediction`.
+
+## 16. Frozen Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
 - Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
 - Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**;
 - Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**;
 - Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**;
-- Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **next**;
-- Stage 14F — ablation / anomaly / false-positive controls;
+- Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **completed**;
+- Stage 14F — ablation / anomaly / false-positive controls — **next**;
 - Stage 14G — executable synthesis and evidence-selected next gate;
 - criterion 50 — external final full-repository regression / merge-readiness review.
 
-## 16. Frozen synthesis vocabulary
+## 17. Frozen synthesis vocabulary
 
 Stage 14G will select exactly one of:
 
@@ -430,7 +484,7 @@ Stage 14G will select exactly one of:
 
 A negative control behaving as intended does not license a positive-family obstruction classification.
 
-## 17. Frozen criteria 1–50
+## 18. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -475,11 +529,11 @@ A negative control behaving as intended does not license a positive-family obstr
 37. Correctly typed triangular-basis correspondence preserves the sampled quotient, Dirac pair, complete relational values, and inherited public O/P/R/V payloads — **satisfied**.
 38. Basis results remain bounded: scalar obstruction is not promoted to universal non-Abelianizability and triangular equivalence is not promoted to universal trivializability — **satisfied**.
 
-39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **pending**.
-40. Licensed compensated path choices preserve quotient-level public O/P/R/V and future-measurement payloads — **pending**.
-41. Path, structure-function, compensator, and basis provenance are retained in Xi without being silently collapsed into quotient-level physical content — **pending**.
-42. Orbit-sensitive public / measurement signatures remain stable within each physical quotient class and discriminate the frozen physical classes where declared — **pending**.
-43. Representative/path/basis-dependent payload corruption controls are detected, while successful operational descent is not promoted to future actuality or empirical discovery — **pending**.
+39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **satisfied**.
+40. Licensed compensated path choices preserve quotient-level public O/P/R/V and future-measurement payloads — **satisfied**.
+41. Path, structure-function, compensator, and basis provenance are retained in Xi without being silently collapsed into quotient-level physical content — **satisfied**.
+42. Orbit-sensitive public / measurement signatures remain stable within each physical quotient class and discriminate the frozen physical classes where declared — **satisfied**.
+43. Representative/path/basis-dependent payload corruption controls are detected, while successful operational descent is not promoted to future actuality or empirical discovery — **satisfied**.
 
 44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **pending**.
 45. `H_2_bad=H_2+epsilon q` is detected as a constraint-algebra anomaly rather than admitted as positive evidence — **pending**.
@@ -490,9 +544,9 @@ A negative control behaving as intended does not license a positive-family obstr
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **pending**.
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 18. Interpretation boundary
+## 19. Interpretation boundary
 
-Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family. Stage 14D establishes a frozen simple-scalar-rescaling obstruction together with a richer triangular commuting-basis equivalence that preserves the sampled physical content.
+Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family. Stage 14D establishes a frozen simple-scalar-rescaling obstruction together with a richer triangular commuting-basis equivalence that preserves the sampled physical content. Stage 14E establishes typed O/P/R/V and inherited future-measurement descent across the validated structure-function path and original/triangular basis correspondences while retaining those representation choices explicitly in Xi.
 
 Persistent guards:
 
@@ -505,6 +559,8 @@ Persistent guards:
 - `third-direction compensation != refoliation invariance`;
 - `compensated mixed-path closure != refoliation invariance`;
 - `compensated relational descent != refoliation invariance`;
+- `compensated-path operational descent != refoliation invariance`;
+- `basis-equivalent operational descent != refoliation invariance`;
 - `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`;
 - `triangular basis equivalence != universal basis trivializability`;
 - `constraint-basis change != physical-orbit change`;
@@ -513,7 +569,10 @@ Persistent guards:
 - `basis equivalence != hypersurface-deformation algebra`;
 - `basis equivalence != general relativity`;
 - `basis equivalence != ontological becoming`;
+- `structure-function/path Xi provenance != quotient-level physical content`;
+- `basis-specific Xi provenance != quotient-level physical content`;
 - `path word != physical temporal history`;
+- `path word != modal continuation`;
 - `wrong compensator failure != physical time asymmetry`;
 - `two-clock incompleteness != physical time asymmetry`;
 - `compensated path closure != ontological becoming`;
@@ -525,6 +584,7 @@ Persistent guards:
 - `four-class gauge quotient != elimination of physical change`;
 - `finite relational covariance != metaphysical becoming`;
 - `future-measurement covariance != future actuality`;
+- `orbit-sensitive witness != empirical prediction`;
 - `constraint-algebra anomaly != ontological becoming`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;

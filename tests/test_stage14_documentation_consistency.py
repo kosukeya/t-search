@@ -13,6 +13,8 @@ NOTES_C = (ROOT / "docs" / "stage14c_notes.md").read_text(encoding="utf-8")
 RESULT_C = (ROOT / "results" / "stage14c_relational.md").read_text(encoding="utf-8")
 NOTES_D = (ROOT / "docs" / "stage14d_notes.md").read_text(encoding="utf-8")
 RESULT_D = (ROOT / "results" / "stage14d_basis.md").read_text(encoding="utf-8")
+NOTES_E = (ROOT / "docs" / "stage14e_notes.md").read_text(encoding="utf-8")
+RESULT_E = (ROOT / "results" / "stage14e_measurement.md").read_text(encoding="utf-8")
 STAGE13_G = (ROOT / "results" / "stage13g_synthesis_stage14_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE14 = (
@@ -32,6 +34,9 @@ STAGE14B_SYNC_HEAD = "318d6a34a7f8ddac29966493c31bd0cf8120ac4e"
 STAGE14C_SOURCE_HEAD = "3e390ea59af879cc0b2962989467cdfe2b4ee1ca"
 STAGE14C_SYNC_HEAD = "4011b90078c6a223e6d948a3034e07376fca4dbd"
 STAGE14D_SOURCE_HEAD = "3e44454952d71ebbe9b0a52bbd9d68cd398d0635"
+STAGE14D_SYNC_HEAD = "69c979896cc2855869a6637b41faac010b4b0b36"
+STAGE14E_SOURCE_HEAD = "ac2376323f9d2b442bbbf448b22bc683ed2fd3ad"
+STAGE14E_MERGE_CHECKOUT = "1662684069cfe0f44708e7d69b4cada4ae5b72d6"
 
 
 def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
@@ -45,19 +50,20 @@ def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
     assert "phase_space_structure_function_precursor" in combined
 
 
-def test_stage14d_status_closes_exactly_criteria_1_through_38():
+def test_stage14e_status_closes_exactly_criteria_1_through_43():
     assert (
-        "Stage 14D source/test checkpoint validated; criteria 1–38 satisfied; "
-        "criteria 39–50 pending. Stage 14E is next."
+        "Stage 14E source/test checkpoint validated; criteria 1–43 satisfied; "
+        "criteria 44–50 pending. Stage 14F is next."
     ) in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 38
-    assert PROTOCOL.count("**pending**") == 12
+    assert PROTOCOL.count("**satisfied**") == 43
+    assert PROTOCOL.count("**pending**") == 7
     assert "Stage 14.0 completed; criteria 1–10 satisfied; criteria 11–50 pending." in FREEZE
     assert "Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**" in PROTOCOL
     assert "Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**" in PROTOCOL
     assert "Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**" in PROTOCOL
     assert "Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**" in PROTOCOL
-    assert "Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **next**" in PROTOCOL
+    assert "Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **completed**" in PROTOCOL
+    assert "Stage 14F — ablation / anomaly / false-positive controls — **next**" in PROTOCOL
 
 
 def test_stage14_positive_carrier_and_structure_functions_remain_frozen():
@@ -122,6 +128,8 @@ def test_stage14_basis_controls_sequence_and_synthesis_vocabulary_remain_frozen(
         "triangular_basis_equivalent",
         "constraint_algebra_anomaly_detected",
         "representative_dependent_payload_corruption_detected",
+        "path_dependent_payload_corruption_detected",
+        "basis_dependent_payload_corruption_detected",
         "Stage 14A",
         "Stage 14B",
         "Stage 14C",
@@ -147,12 +155,7 @@ def test_stage14a_repository_checkpoint_and_deterministic_evidence_are_synchroni
     assert STAGE14A_SYNC_HEAD in combined
     assert "1114 passed in 900.17s (0:15:00)" in combined
     for phrase in (
-        "108",
-        "648",
-        "0.7812880785647448",
-        "-0.5",
-        "0.0",
-        "0.5",
+        "108", "648", "0.7812880785647448", "-0.5", "0.0", "0.5",
         "2.220446049250313e-16",
         "structure_function_removed_control_rejected",
         "rank_deficient_constraint_control_rejected",
@@ -169,14 +172,8 @@ def test_stage14b_repository_checkpoint_and_deterministic_evidence_are_synchroni
     assert STAGE14B_SYNC_HEAD in combined
     assert "1123 passed in 548.54s (0:09:08)" in combined
     for phrase in (
-        "864",
-        "1728",
-        "576",
-        "288",
-        "8748",
-        "0.3934693402873666",
-        "2.3504023872876028",
-        "4.440892098500626e-16",
+        "864", "1728", "576", "288", "8748",
+        "0.3934693402873666", "2.3504023872876028", "4.440892098500626e-16",
         "wrong_structure_function_compensator_detected",
         "missing_third_direction_compensator_detected",
         "cross_orbit_false_positive_rejected",
@@ -195,18 +192,9 @@ def test_stage14c_repository_checkpoint_and_deterministic_evidence_are_synchroni
     assert STAGE14C_SYNC_HEAD in combined
     assert "1132 passed in 877.20s (0:14:37)" in combined
     for phrase in (
-        "108",
-        "2916",
-        "23328",
-        "36/36",
-        "8748",
-        "1.6653345369377348e-16",
-        "2.220446049250313e-16",
-        "8.881784197001252e-16",
-        "0.5",
-        "3.0 to 5.0",
-        "0.9999999999999998",
-        "1.0000000000000002",
+        "108", "2916", "23328", "36/36", "8748",
+        "1.6653345369377348e-16", "2.220446049250313e-16", "8.881784197001252e-16",
+        "0.5", "3.0 to 5.0", "0.9999999999999998", "1.0000000000000002",
         "two_clock_observable_incomplete",
         "four_class_physical_quotient_established",
         "Stage 14C representative-independent Dirac / three-condition relational / four-class quotient descent = established",
@@ -220,17 +208,14 @@ def test_stage14d_repository_checkpoint_and_deterministic_evidence_are_synchroni
     combined = "\n".join((PROTOCOL, NOTES_D, RESULT_D))
     assert STAGE14D_SOURCE_HEAD in combined
     assert "1139 passed in 889.88s (0:14:49)" in combined
+    assert STAGE14D_SYNC_HEAD in combined
+    assert "1140 passed in 562.70s (0:09:22)" in combined
     for phrase in (
-        "324",
-        "216/216",
-        "72/72",
-        "108/108",
-        "0.3843557173958058",
-        "1.135254038874606",
+        "324", "216/216", "72/72", "108/108",
+        "0.3843557173958058", "1.135254038874606",
         "singular_scalar_rescaling_rejected",
         "216 = 108 positive + 108 off-surface",
-        "determinant",
-        "4 classes × 27 representatives",
+        "determinant", "4 classes × 27 representatives",
         "Stage 14D Stage-13-style scalar-rescaling obstruction with triangular basis equivalence on the frozen finite carrier = established",
         "Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability",
         "triangular basis equivalence != universal basis trivializability",
@@ -240,44 +225,55 @@ def test_stage14d_repository_checkpoint_and_deterministic_evidence_are_synchroni
         assert phrase in combined
 
 
-def test_stage14b_closed_criteria_18_through_24_remain_synchronized():
-    for criterion in (
-        "18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **satisfied**.",
-        "19. Both `12D` and `21D` path implementations match the frozen exact flow formulas — **satisfied**.",
-        "20. Exact third-direction compensation closes every positive mixed pair on the same licensed target within tolerance — **satisfied**.",
-        "21. The nontrivial `X_0 != 0` subfamily exhibits the expected path-order-dependent raw compensator difference — **satisfied**.",
-        "22. Wrong-sign, wrong-value, missing, and Stage-13-style compensators are rejected on the required nontrivial cases — **satisfied**.",
-        "23. Cross-orbit source/target pairs are not licensed as gauge paths — **satisfied**.",
-        "24. Path-order / compensator results remain explicitly bounded away from refoliation invariance, time asymmetry, and ontological becoming — **satisfied**.",
+def test_stage14e_repository_checkpoint_and_deterministic_evidence_are_synchronized():
+    combined = "\n".join((PROTOCOL, NOTES_E, RESULT_E))
+    assert STAGE14E_SOURCE_HEAD in combined
+    assert STAGE14E_MERGE_CHECKOUT in combined
+    assert "#1890" in combined
+    assert "1148 passed in 897.57s (0:14:57)" in combined
+    for phrase in (
+        "108",
+        "4",
+        "864",
+        "1728",
+        "216",
+        "0.014943579189526601",
+        "structure_function_path_operational_payloads_descend",
+        "basis_operational_payloads_descend",
+        "representative_dependent_payload_corruption_detected",
+        "path_dependent_payload_corruption_detected",
+        "basis_dependent_payload_corruption_detected",
+        "criteria_39_43_satisfied",
+        "Stage 14E typed O/P/R/V/Xi and future-measurement descent across structure-function paths and original/triangular basis choices on the frozen finite family = established",
+        "compensated-path operational descent != refoliation invariance",
+        "basis-equivalent operational descent != refoliation invariance",
+        "future-measurement covariance != future actuality",
+        "orbit-sensitive witness != empirical prediction",
+        "repository validation != new scientific evidence",
     ):
-        assert criterion in PROTOCOL
+        assert phrase in combined
 
 
-def test_stage14d_closes_frozen_criteria_25_through_38_only():
+def test_stage14e_closes_frozen_criteria_39_through_43_only():
     for criterion in (
-        "25. Stage 14C reconstructs representative-independent `(Q_D,P_D)` across all 108 positive representatives — **satisfied**.",
-        "26. The full Dirac pair separates all six pairs among the four physical orbit classes — **satisfied**.",
-        "27. The complete three-condition relational observable descends across all licensed compensated paths — **satisfied**.",
-        "28. The complete relational family retains nontrivial relational change across varying `(tau1,tau2,chi)` — **satisfied**.",
-        "29. The two-clock incomplete observable retains detectable third-direction gauge dependence — **satisfied**.",
-        "30. The sampled quotient contains exactly four classes of 27 representatives with zero licensed cross-orbit arrows — **satisfied**.",
-        "31. Dirac / relational / quotient results remain bounded away from eternalism, timeless ontology, and elimination of physical change — **satisfied**.",
-        "32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **satisfied**.",
-        "33. The nonzero `D'` component obstruction is verified on all required `X != 0` positive representatives — **satisfied**.",
-        "34. Scalar transformations that vanish or diverge on the positive family are rejected as singular rather than accepted as equivalent bases — **satisfied**.",
-        "35. The frozen triangular transformation `H_2_tilde=H_2-kappa T1 X D` is verified invertible on the positive family — **satisfied**.",
-        "36. The triangular basis satisfies the frozen commuting bracket targets within tolerance — **satisfied**.",
-        "37. Correctly typed triangular-basis correspondence preserves the sampled quotient, Dirac pair, complete relational values, and inherited public O/P/R/V payloads — **satisfied**.",
-        "38. Basis results remain bounded: scalar obstruction is not promoted to universal non-Abelianizability and triangular equivalence is not promoted to universal trivializability — **satisfied**.",
+        "39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **satisfied**.",
+        "40. Licensed compensated path choices preserve quotient-level public O/P/R/V and future-measurement payloads — **satisfied**.",
+        "41. Path, structure-function, compensator, and basis provenance are retained in Xi without being silently collapsed into quotient-level physical content — **satisfied**.",
+        "42. Orbit-sensitive public / measurement signatures remain stable within each physical quotient class and discriminate the frozen physical classes where declared — **satisfied**.",
+        "43. Representative/path/basis-dependent payload corruption controls are detected, while successful operational descent is not promoted to future actuality or empirical discovery — **satisfied**.",
     ):
         assert criterion in PROTOCOL
-    assert "39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **pending**." in PROTOCOL
+    assert "44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **pending**." in PROTOCOL
     assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
 def test_stage14_interpretation_boundaries_remain_explicit():
     combined = "\n".join(
-        (PROTOCOL, FREEZE, NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C, NOTES_D, RESULT_D)
+        (
+            PROTOCOL, FREEZE,
+            NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C,
+            NOTES_D, RESULT_D, NOTES_E, RESULT_E,
+        )
     )
     for phrase in (
         "phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition",
@@ -290,6 +286,8 @@ def test_stage14_interpretation_boundaries_remain_explicit():
         "third-direction compensation != refoliation invariance",
         "compensated mixed-path closure != refoliation invariance",
         "compensated relational descent != refoliation invariance",
+        "compensated-path operational descent != refoliation invariance",
+        "basis-equivalent operational descent != refoliation invariance",
         "Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability",
         "triangular basis equivalence != universal basis trivializability",
         "constraint-basis change != physical-orbit change",
@@ -298,6 +296,10 @@ def test_stage14_interpretation_boundaries_remain_explicit():
         "basis equivalence != hypersurface-deformation algebra",
         "basis equivalence != general relativity",
         "basis equivalence != ontological becoming",
+        "structure-function/path Xi provenance != quotient-level physical content",
+        "basis-specific Xi provenance != quotient-level physical content",
+        "path word != physical temporal history",
+        "path word != modal continuation",
         "wrong compensator failure != physical time asymmetry",
         "two-clock incompleteness != physical time asymmetry",
         "compensated path closure != ontological becoming",
@@ -308,6 +310,7 @@ def test_stage14_interpretation_boundaries_remain_explicit():
         "four-class gauge quotient != elimination of physical change",
         "finite relational covariance != metaphysical becoming",
         "future-measurement covariance != future actuality",
+        "orbit-sensitive witness != empirical prediction",
         "constraint-algebra anomaly != ontological becoming",
         "finite-model success != empirical discovery",
         "repository validation != new scientific evidence",

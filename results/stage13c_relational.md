@@ -1,8 +1,10 @@
 # Stage 13C Result — Dirac / Two-Clock Complete Relational Observables
 
-Status: **executable implementation complete; repository CI checkpoint pending at the time of this result write.**
+Status: **validated; Stage 13C criteria 24–31 satisfied.**
 
 Incoming validated baseline: Stage 13B documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd`, run #1726, **`1059 passed in 538.54s (0:08:58)`**.
+
+Stage 13C source/test checkpoint: head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734, **`1069 passed in 550.80s (0:09:10)`**.
 
 ## Executable family
 
@@ -27,7 +29,7 @@ For every raw representative,
 
 are reconstructed without using the stored declared values as inputs.
 
-Deterministic finite-family maxima are expected to be within floating tolerance:
+Deterministic finite-family maxima remain within floating tolerance:
 
 - reconstructed/declaration `Q_D` residual: at most approximately **2.220446049250313e-16**;
 - reconstructed/declaration `P_D` residual: **0.0**;
@@ -94,7 +96,7 @@ The frozen one-clock expression
 
 is evaluated for 4 orbits x 3 `tau` values x 3 raw `X` values = **36** evaluations.
 
-The resulting **12** fixed-orbit/fixed-`tau` groups all have nonzero `X`-dependent spread, approximately **1.0** in every group.
+The resulting **12 / 12** fixed-orbit/fixed-`tau` groups all have nonzero `X`-dependent spread, approximately **1.0** in every group.
 
 Classification:
 
@@ -105,8 +107,6 @@ Thus fixing only `T=tau` does not yield a complete relational observable in this
 ## Bounded result
 
 `Stage 13C Dirac / two-clock complete relational observables and physical-orbit discrimination on the frozen finite family = established`
-
-subject to repository CI validation of the new executable/test family.
 
 The result supports the finite structural conjunction
 

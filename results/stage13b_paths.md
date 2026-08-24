@@ -1,8 +1,10 @@
 # Stage 13B Result — Noncommuting Gauge Paths and Compensated Closure
 
-Status: **executable implementation complete; repository CI checkpoint pending at the time of this result write.**
+Status: **Stage 13B executable result validated; criteria 17–23 satisfied.**
 
 Incoming validated baseline: Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, run #1696, **`1050 passed in 886.76s (0:14:46)`**.
+
+Stage 13B source/test checkpoint: head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, run #1710, **`1058 passed in 696.20s (0:11:36)`**.
 
 ## Executable family
 
@@ -28,12 +30,12 @@ The implementation keeps the following three questions separate:
 
 The canonical raw-order control uses `u_TX` in both path orders.
 
-All **144 / 144** mixed pairs are expected to have detectably distinct final endpoints under this incorrect same-raw comparison.
+All **144 / 144** mixed pairs have detectably distinct final endpoints under this incorrect same-raw comparison.
 
 Deterministic finite-grid endpoint-separation range:
 
-- minimum: approximately **0.6321205588285577**;
-- maximum: approximately **12.778112197861299**.
+- minimum: **0.6321205588285577**;
+- maximum: **12.778112197861299**.
 
 The `TX` path reaches the target while the reordered `XT` path does not. This is classified
 
@@ -43,9 +45,9 @@ The mismatch is an endpoint-correspondence mismatch, not a constraint-surface fa
 
 ## Compensated closure result
 
-Using the exact `u_TX` and `u_XT`, all **144 / 144** path pairs are expected to close on the same declared target within `1e-10`.
+Using the exact `u_TX` and `u_XT`, all **144 / 144** path pairs close on the same declared target within `1e-10`.
 
-Deterministic floating-point maxima from the frozen formulas are approximately
+Deterministic floating-point maxima are
 
 - compensator-law residual: **8.881784197001252e-16**;
 - compensated endpoint separation: **2.220446049250313e-16**;
@@ -54,9 +56,9 @@ Deterministic floating-point maxima from the frozen formulas are approximately
 
 Bounded classification:
 
-`Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`
+`Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`.
 
-subject to repository CI validation of the new executable/test family.
+This bounded result is validated by run #1710.
 
 ## Wrong-compensator result
 
@@ -64,12 +66,12 @@ The deterministic wrong value is
 
 `u_XT_wrong = u_XT + 0.25 (u_TX-u_XT)`.
 
-It is distinct from the exact compensator on all mixed pairs. Expected target-residual range:
+It is distinct from the exact compensator on all mixed pairs. Target-residual range:
 
-- minimum: approximately **0.15803013970713942**;
-- maximum: approximately **3.1945280494653243**.
+- minimum: **0.15803013970713942**;
+- maximum: **3.1945280494653243**.
 
-All **144 / 144** wrong-compensator cases are therefore expected to be detected as
+All **144 / 144** wrong-compensator cases are detected as
 
 `wrong_compensator_detected`.
 

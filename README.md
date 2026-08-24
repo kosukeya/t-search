@@ -4,7 +4,7 @@
 
 ## Current status
 
-**Historical checkpoint: Stages 1–12 are completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12 criteria 1–50 were completed on `agent/stage-12-multi-orbit-gauge-atlas`; PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13.0 is completed on Draft PR #14; Stage 13 criteria 1–10 are satisfied, criteria 11–50 remain pending, and Stage 13A is next.**
+**Historical checkpoint: Stages 1–12 are completed and merged. Stage 10 was merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`. Stage 11 criteria 1–50 were completed on `agent/stage-11-parametrized-covariance-precursor`; after its criterion-50 merge-ready checkpoint, PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12 criteria 1–50 were completed on `agent/stage-12-multi-orbit-gauge-atlas`; PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13A is completed on Draft PR #14; Stage 13 criteria 1–16 are satisfied, criteria 17–50 remain pending, and Stage 13B is next.**
 
 Historical compatibility markers retained for documentation regression:
 
@@ -21,6 +21,8 @@ Stage 10G executable synthesis remains `measurement_covariant`. Stage 11G execut
 
 Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the reviewed branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and no review blockers were found. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was merged. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**.
+
 Selected Stage 11 gate:
 
 > **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
@@ -33,10 +35,12 @@ Selected Stage 13 gate:
 
 > **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
 
-Stage 13.0 documents:
+Stage 13 documents:
 
 - [`docs/stage13_protocol.md`](docs/stage13_protocol.md)
 - [`results/stage13_0_protocol_freeze.md`](results/stage13_0_protocol_freeze.md)
+- [`docs/stage13a_notes.md`](docs/stage13a_notes.md)
+- [`results/stage13a_multi_constraint.md`](results/stage13a_multi_constraint.md)
 
 ## Historical Stage 8 checkpoint
 
@@ -533,6 +537,8 @@ Key documents:
 
 - [`docs/stage13_protocol.md`](docs/stage13_protocol.md)
 - [`results/stage13_0_protocol_freeze.md`](results/stage13_0_protocol_freeze.md)
+- [`docs/stage13a_notes.md`](docs/stage13a_notes.md)
+- [`results/stage13a_multi_constraint.md`](results/stage13a_multi_constraint.md)
 
 ### Stage 13.0 — protocol freeze — completed
 
@@ -562,7 +568,29 @@ Equivalent basis control:
 
 `noncommuting constraint presentation != fundamental physical non-Abelianity`.
 
-Stage 13 criteria **1–10** are satisfied by the freeze; criteria **11–50** remain pending. Stage 13A is next.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672: **`1039 passed in 542.21s (0:09:02)`**.
+
+### Stage 13A — two-constraint first-class carrier and finite representative family — completed
+
+Stage 13A implements the frozen positive carrier over all **36** canonical representatives. Both constraint-gradient and Hamiltonian-generator matrices have rank **2** at every representative; the minimum finite-family singular value is approximately **0.3778026572933153**.
+
+The bracket identity `{K_T,K_X}=-K_X` is checked both on the positive family and on **36 off-surface nonzero-`K_X` probes**, avoiding a merely weak `0=0` test.
+
+Each generator is tested separately over **72 `Phi_T` + 72 `Phi_X` = 144 single-generator transports**. Maximum endpoint residuals are approximately `2.220446049250313e-16`, while the positive-surface constraint residual is `0.0`.
+
+The **144 mixed ordered pairs** are enumerated but deliberately reserved for Stage 13B; Stage 13A does not pre-establish compensated closure.
+
+Bounded result:
+
+`Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
+
+Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**.
+
+Stage 13 criteria **1–16** are satisfied; criteria **17–50** remain pending. Stage 13B — noncommuting gauge paths and compensated closure — is next.
+
+`two constraint labels != two independent gauge directions`.
+
+`Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
 
 ## Guards
 
@@ -638,6 +666,8 @@ Stage 13 criteria **1–10** are satisfied by the freeze; criteria **11–50** r
 - `single Hamiltonian constraint != hypersurface-deformation algebra`;
 - `raw gauge-path commutativity != successful multi-constraint closure`;
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
+- `two constraint labels != two independent gauge directions`;
+- `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
 - `first-class closure on this finite model != hypersurface-deformation algebra`;
 - `multi-constraint path covariance != refoliation invariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;

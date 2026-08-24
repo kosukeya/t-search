@@ -1,5 +1,3 @@
-from collections import Counter
-
 import pytest
 
 from t_search.stage14_basis import (
@@ -120,12 +118,11 @@ def test_stage14d_criterion_37_typed_triangular_correspondence_preserves_public_
     assert all(item.original_basis_id == STAGE14A_BASIS_ID for item in checks)
     assert all(item.triangular_basis_id == STAGE14D_TRIANGULAR_BASIS_ID for item in checks)
     assert all(item.quotient_membership_preserved for item in checks)
-    assert Counter(item.quotient_class_id for item in checks).values() == Counter({
-        "q1": 27,
-        "q2": 27,
-        "q3": 27,
-        "q4": 27,
-    }).values()
+    class_counts: dict[str, int] = {}
+    for item in checks:
+        class_counts[item.quotient_class_id] = class_counts.get(item.quotient_class_id, 0) + 1
+    assert len(class_counts) == 4
+    assert sorted(class_counts.values()) == [27, 27, 27, 27]
     assert max(max(item.Q_D_residual, item.P_D_residual) for item in checks) <= STAGE14D_ATOL
     assert max(item.max_complete_relational_residual for item in checks) <= STAGE14D_ATOL
     assert max(item.max_triangular_dirac_bracket_residual for item in checks) <= STAGE14D_ATOL

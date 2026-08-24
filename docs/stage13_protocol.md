@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13.0 completed; criteria 1–10 satisfied; criteria 11–50 pending.**
+Status: **Stage 13A completed; criteria 1–16 satisfied; criteria 17–50 pending.**
 
 Selected Stage 13 gate from Stage 12G:
 
@@ -9,6 +9,10 @@ Selected Stage 13 gate from Stage 12G:
 Stage 12 is merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
 
 The final pre-merge Stage 12 current-head regression was run #1654 with **`1025 passed in 693.84s (0:11:33)`**.
+
+Stage 13.0 documentation-synchronized baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**.
+
+Stage 13A source/test checkpoint head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**.
 
 The bounded Stage 12 synthesis carried forward is
 
@@ -38,9 +42,7 @@ Stage 13 changes the constraint-generated path structure. It does not assume tha
 
 Stage 13 asks whether the Stage 12 physical-orbit quotient, complete relational observables, and typed O/P/R/V measurement content remain well defined when one-dimensional constraint-generated gauge flow is replaced by a two-dimensional first-class gauge distribution with nontrivial path ordering.
 
-The central positive question is not whether two raw gauge transports commute.
-
-Instead, Stage 13 tests whether order-dependent raw paths satisfy the frozen first-class algebra and can be related by the algebraically required compensating gauge parameter so that licensed corresponding endpoints carry the same quotient-level physical content.
+The central positive question is not whether two raw gauge transports commute. Instead, Stage 13 tests whether order-dependent raw paths satisfy the frozen first-class algebra and can be related by the algebraically required compensating gauge parameter so that licensed corresponding endpoints carry the same quotient-level physical content.
 
 Frozen distinction:
 
@@ -50,7 +52,7 @@ Positive target:
 
 `noncommuting raw path order + correct algebraic compensator -> same licensed gauge endpoint / same quotient-level physical content`.
 
-No Stage 13 path-covariance or refoliation result is established by this protocol freeze.
+Stage 13A establishes only the carrier needed to ask that question. Compensated path closure itself remains Stage 13B work.
 
 ## 2. Frozen phase space and two-constraint carrier
 
@@ -64,7 +66,7 @@ with canonical brackets
 
 and all other elementary brackets zero.
 
-The positive Stage 13 constraint pair is frozen as
+The positive Stage 13 constraint pair is
 
 `K_T = p_T + p^2/2 approx 0`,
 
@@ -84,9 +86,7 @@ The two constraints satisfy
 
 `{K_T,K_X} = -K_X`.
 
-Thus the pair is first-class on the declared finite model and the two generator directions are nontrivially related.
-
-Stage 13A must also verify that the two constraint gradients / Hamiltonian generator directions are independent on every declared positive representative; merely duplicating one constraint under another name does not satisfy the protocol.
+Stage 13A verifies that the two constraint gradients and Hamiltonian generator directions have rank 2 on every one of the 36 declared positive representatives. The minimum singular value in the frozen family is approximately `0.3778026572933153`.
 
 `two constraint labels != two independent gauge directions`.
 
@@ -94,7 +94,7 @@ Stage 13A must also verify that the two constraint gradients / Hamiltonian gener
 
 ## 3. Frozen generator flows
 
-The `K_T` Hamiltonian flow, with parameter `s`, is frozen as
+The `K_T` Hamiltonian flow, with parameter `s`, is
 
 `dT/ds = 1`,
 
@@ -108,7 +108,7 @@ The `K_T` Hamiltonian flow, with parameter `s`, is frozen as
 
 `dp_T/ds = 0`.
 
-The `K_X` Hamiltonian flow, with parameter `u`, is frozen on the positive constraint surface as
+The `K_X` Hamiltonian flow, with parameter `u`, is
 
 `dX/du = exp(T)`,
 
@@ -120,14 +120,14 @@ The `K_X` Hamiltonian flow, with parameter `u`, is frozen on the positive constr
 
 `dp_X/du = 0`,
 
-`dp_T/du = 0` on `K_X=0`.
+`dp_T/du = -K_X`, hence `dp_T/du = 0` on `K_X=0`.
 
 Typed transport names:
 
 - `Phi_T(s)` — `K_T`-generated gauge transport;
 - `Phi_X(u)` — `K_X`-generated gauge transport.
 
-The generator identity is part of Xi/provenance and is not itself quotient-level physical content.
+The generator identity is representation/provenance information rather than quotient-level physical content.
 
 `constraint-generator identity != physical-event identity`.
 
@@ -135,7 +135,7 @@ The generator identity is part of Xi/provenance and is not itself quotient-level
 
 ## 4. Frozen noncommuting path law and compensator
 
-For a source representative with clock coordinate `T0`, a mixed target changes both `T` and `X`.
+For a source representative with coordinate `T0`, a mixed target changes both `T` and `X`.
 
 Let
 
@@ -151,15 +151,13 @@ For the path that applies `Phi_X` first and then `Phi_T(s)`, the required first 
 
 `u_XT = DeltaX / exp(T0)`.
 
-The frozen compensator law is therefore
+The frozen compensator law is
 
 `u_XT = exp(s) u_TX`.
 
 For mixed paths with `s != 0` and `DeltaX != 0`, using the same raw `u` in both orders is expected to produce different raw endpoints.
 
-This order dependence is positive evidence for the nontrivial presentation, not a failure.
-
-The positive closure test is
+The Stage 13B positive closure test is
 
 `Phi_X(u_TX) after Phi_T(s)`
 
@@ -169,21 +167,19 @@ versus
 
 with `u_XT = exp(s) u_TX`.
 
-The two compensated paths must land on the same declared representative within tolerance and must agree on all quotient-level physical payloads tested in later substages.
-
 `same raw generator parameters under reordered paths != corresponding gauge path`.
 
 `wrong compensator failure != physical time asymmetry`.
 
 ## 5. Frozen Dirac data and complete relational observable
 
-The Stage 13 Dirac-type invariant pair is frozen as
+The Stage 13 Dirac-type invariant pair is
 
 `P_D = p`,
 
 `Q_D = q - p T - a X`.
 
-Stage 13 must verify independently from sampled representatives that
+Stage 13C must independently verify from sampled representatives that
 
 `{P_D,K_T}=0`, `{P_D,K_X}=0`,
 
@@ -191,7 +187,7 @@ Stage 13 must verify independently from sampled representatives that
 
 on the declared positive family.
 
-The complete relational observable is frozen as
+The complete relational observable is
 
 `q(T=tau,X=chi) = Q_D + P_D tau + a chi`.
 
@@ -199,9 +195,7 @@ The one-clock expression
 
 `q(T=tau; X raw) = Q_D + P_D tau + a X`
 
-is deliberately not treated as a complete observable because it retains the second gauge coordinate `X`.
-
-Stage 13C must include a control in which fixing `T=tau` alone while varying the licensed `K_X` representative changes the one-clock value. That control is expected to be classified as incomplete rather than as a failure of the two-clock relational construction.
+is deliberately not treated as complete because it retains the second gauge coordinate `X`.
 
 `one clock condition in a two-gauge-direction model != complete relational observable`.
 
@@ -216,9 +210,9 @@ Stage 13 retains the Stage 12 four physical initial-data classes in `(Q_D,P_D)`:
 - `omega_gamma: (Q_D,P_D)=(-0.35,0.75)`;
 - `omega_delta: (Q_D,P_D)=(0.20,1.75)`.
 
-This preserves the same-P/different-Q and same-Q/different-P anti-triviality controls while changing only the gauge-distribution structure.
+This preserves the same-P/different-Q and same-Q/different-P anti-triviality controls while changing the gauge-distribution structure.
 
-The canonical positive representative grid per physical orbit is frozen as
+The canonical positive representative grid per physical orbit is
 
 `T in {-1.0,0.0,1.0}`
 
@@ -243,7 +237,7 @@ This gives
 - **288 ordered nonidentity same-orbit source/target pairs**;
 - **144 ordered mixed pairs** for which both `T` and `X` change.
 
-The 144 mixed pairs are the canonical positive family for noncommuting-order / compensator tests.
+Stage 13A enumerates the 144 mixed pairs but reserves their two-generator path test for Stage 13B.
 
 `different physical orbit != different path through one gauge orbit`.
 
@@ -279,11 +273,7 @@ For the pair `(K_T,K_X_tilde)`,
 
 `{K_T,K_X_tilde}=0`.
 
-On the constraint surface, the rescaling changes the generator parameterization but preserves the gauge distribution.
-
-Stage 13F must therefore compare the noncommuting presentation `(K_T,K_X)` with the commuting presentation `(K_T,K_X_tilde)` and require agreement of the physical quotient, Dirac data, and declared complete relational / operational payloads after typed correspondence.
-
-This is a central anti-overinterpretation control.
+Stage 13F must compare the noncommuting presentation `(K_T,K_X)` with the commuting presentation `(K_T,K_X_tilde)` and require agreement of the physical quotient, Dirac data, and complete-relational / operational payloads after typed correspondence.
 
 `noncommuting constraint presentation != fundamental physical non-Abelianity`.
 
@@ -292,8 +282,6 @@ This is a central anti-overinterpretation control.
 `constraint-basis change != physical-orbit change`.
 
 ## 9. Frozen anomaly / failure controls
-
-The negative family must include at least the following controls.
 
 ### Wrong path semantics
 
@@ -306,23 +294,21 @@ The negative family must include at least the following controls.
 
 - treat `q(T=tau;X raw)` as a complete observable;
 - drop the `X` correspondence while claiming two-clock equality;
-- identify gauge coordinate `X` with modal continuation identity or with ontological becoming.
+- identify gauge coordinate `X` with modal continuation identity or ontological becoming.
 
 ### Degenerate anti-triviality carriers
 
-- `a=0`, which decouples `q` from the second gauge direction and cannot establish the intended two-clock relational coupling;
+- `a=0`, which decouples `q` from the second gauge direction;
 - a commuting-limit presentation used as if it independently established the nontrivial path-order target;
 - duplicate / rank-deficient constraint directions.
 
 ### Broken first-class closure
 
-A deliberately anomalous deformation is frozen as
+The deliberately anomalous deformation remains
 
-`K_X_bad = exp(T)(p_X + a p) + epsilon q`
+`K_X_bad = exp(T)(p_X + a p) + epsilon q`.
 
-with nonzero `epsilon` chosen in Stage 13F.
-
-Its bracket with `K_T` is generically not weakly zero on the declared `K_T=K_X_bad=0` surface. It must therefore be rejected as a positive first-class carrier.
+Its bracket with `K_T` is generically not weakly zero on the declared `K_T=K_X_bad=0` surface and must be rejected in Stage 13F.
 
 Expected classification vocabulary includes
 
@@ -358,7 +344,7 @@ The inherited physical/modal/measurement vocabulary remains:
 - matched epistemic and ontic-extension public interfaces;
 - hidden-selector nonleakage.
 
-Stage 13E isolates the new multi-constraint path question by fixing the inherited external parameterization to `identity` and the inherited internal measurement chart to `A/e2`, unless an executable reason discovered in Stage 13A–D requires a protocol amendment.
+Stage 13E isolates the new multi-constraint path question by fixing inherited external parameterization `identity` and inherited internal measurement chart `A/e2`, unless earlier executable evidence requires an explicit protocol amendment.
 
 Xi is extended with representation metadata for
 
@@ -369,21 +355,60 @@ Xi is extended with representation metadata for
 - source/target representative;
 - constraint-basis identity.
 
-Those fields must not leak into quotient-level physical content merely because they are available in Xi.
-
-The orbit-sensitive diagnostic witness must depend on Dirac/complete-relational data rather than on raw path parameters.
-
 `path-specific Xi provenance != quotient-level physical content`.
 
 `basis-specific Xi provenance != quotient-level physical content`.
 
 `typed bridge to relational data != dynamical derivation of quantum measurement from the constraints`.
 
-## 11. Frozen Stage 13 sequence
+## 10A. Stage 13A executable evidence
+
+Stage 13A implements `src/t_search/stage13_multi_constraint.py`, `tests/test_stage13a_multi_constraint.py`, and `experiments/stage13a_multi_constraint.py`.
+
+The deterministic positive family has
+
+- **4** physical initial-data classes;
+- **9** representatives per class / **36** total;
+- **72** licensed nonidentity `Phi_T` transports;
+- **72** licensed nonidentity `Phi_X` transports;
+- **144** single-generator transports total;
+- **144** mixed ordered pairs enumerated and reserved for Stage 13B;
+- **36** nonzero off-surface bracket probes.
+
+All 36 canonical representatives satisfy both positive constraints within tolerance. The maximum deterministic canonical residuals are `max |K_T| = 0.0` and `max |K_X| = 0.0`.
+
+At every positive representative both the constraint-gradient matrix and Hamiltonian-generator matrix have rank **2**. The finite-family minimum singular value is approximately **0.3778026572933153**.
+
+The Poisson bracket is computed from analytic gradients. To avoid testing only the weak `0=0` identity, the bracket family includes 36 nonzero-`K_X` off-surface probes. The maximum residual in
+
+`{K_T,K_X}+K_X=0`
+
+is `0.0` for the deterministic family.
+
+Each generator is then tested separately over all licensed one-coordinate paths. The maximum deterministic endpoint residuals are approximately
+
+- `Phi_T`: `2.220446049250313e-16`;
+- `Phi_X`: `2.220446049250313e-16`.
+
+The maximum source/predicted/target positive-surface constraint residual is `0.0`.
+
+The four declared Stage 12 initial-data classes remain distinct at carrier level, including same-P/different-Q and same-Q/different-P controls. Independent reconstruction from representative data remains Stage 13C work.
+
+Typed roles remain separate for physical orbit, representative, event, `T` clock, `X` clock, generator, and constraint basis.
+
+Bounded result:
+
+`Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
+
+This bounded result is supported by Stage 13A source/test run #1676: **`1048 passed in 592.23s (0:09:52)`**.
+
+`Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
+
+## 11. Stage 13 sequence
 
 - Stage 13.0 — protocol freeze — **completed**;
-- Stage 13A — two-constraint first-class carrier and finite representative family — **next**;
-- Stage 13B — noncommuting gauge paths and compensated closure — pending;
+- Stage 13A — two-constraint first-class carrier and finite representative family — **completed**;
+- Stage 13B — noncommuting gauge paths and compensated closure — **next**;
 - Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — pending;
 - Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — pending;
 - Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — pending;
@@ -426,12 +451,12 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 
 ### Criteria 11–16 — Stage 13A
 
-11. All 36 canonical representatives satisfy both positive constraints within tolerance — **pending**.
-12. The two constraint gradients / generator directions are independent over the declared positive family — **pending**.
-13. Numerical/symbolic evaluation confirms `{K_T,K_X}=-K_X` on the declared carrier — **pending**.
-14. `Phi_T` and `Phi_X` individually preserve the two-constraint surface on licensed paths — **pending**.
-15. The four Stage 12 physical initial-data classes are represented without accidental collapse — **pending**.
-16. Generator, representative, orbit, event, clock, and basis provenance remain separately typed — **pending**.
+11. All 36 canonical representatives satisfy both positive constraints within tolerance — **satisfied**.
+12. The two constraint gradients / generator directions are independent over the declared positive family — **satisfied**.
+13. Numerical/analytic-gradient evaluation confirms `{K_T,K_X}=-K_X` on the declared carrier and nonzero off-surface probes — **satisfied**.
+14. `Phi_T` and `Phi_X` individually preserve the two-constraint surface on licensed paths — **satisfied**.
+15. The four Stage 12 physical initial-data classes are represented without accidental collapse — **satisfied**.
+16. Generator, representative, orbit, event, clock, and basis provenance remain separately typed — **satisfied**.
 
 ### Criteria 17–23 — Stage 13B
 
@@ -493,7 +518,9 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 - `raw gauge-path commutativity != successful multi-constraint closure`;
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
 - `constraint-basis change != physical-orbit change`;
-- `first-class closure on this finite model != hypersurface-deformation algebra`;
+- `two constraint labels != two independent gauge directions`;
+- `first-class closure on this toy carrier != hypersurface-deformation algebra`;
+- `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
 - `multi-constraint path covariance != refoliation invariance`;
 - `refoliation precursor != general covariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;

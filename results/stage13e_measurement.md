@@ -1,12 +1,14 @@
 # Stage 13E — O/P/R/V/Xi and Future-Measurement Descent
 
-Status: **executable evidence pending current source/test GitHub Actions validation.**
+Status: **validated; criteria 39–43 satisfied.**
 
 Incoming validated checkpoint: Stage 13D documentation-synchronized head `0ef29d0c0c38c1a90a9e10441b275970e4c242ae`, run #1791, **`1076 passed in 567.34s (0:09:27)`**.
 
-## Frozen evidence matrix
+Stage 13E source/test and evidence head `5da1f7b07189ac9fd23c756ed432bfc7406caf37` passed GitHub Actions run #1801 with **`1084 passed in 703.45s (0:11:43)`**.
 
-| item | expected finite count / condition |
+## Validated evidence matrix
+
+| item | validated finite count / condition |
 | --- | ---: |
 | physical orbits | 4 |
 | Stage 13 representatives | 36 |
@@ -23,21 +25,13 @@ Incoming validated checkpoint: Stage 13D documentation-synchronized head `0ef29d
 | path-specific Xi views | 288 |
 | compensated measurement outcome comparisons | 576 |
 | explicit controls | 10 |
-| required rejected controls | 10 |
+| rejected controls | 10 / 10 |
 
 ## Positive test
 
-For each of the 144 Stage 13B compensated same-orbit mixed pairs, Stage 13E retains two distinct Xi descriptions,
+For each of the 144 Stage 13B compensated same-orbit mixed pairs, Stage 13E retains two distinct Xi descriptions, `TX=(Phi_T,Phi_X)` and `XT=(Phi_X,Phi_T)`, with their corresponding raw `u_TX` and compensated `u_XT`. Stage 13D first certifies that both path choices descend to the same Dirac/complete-relational quotient payload. Stage 13E then confirms agreement in quotient-level public O/P/R/V, inherited future-measurement probabilities, weighted predictions, posterior outputs, and the orbit-sensitive witness.
 
-`TX=(Phi_T,Phi_X)`
-
-and
-
-`XT=(Phi_X,Phi_T)`,
-
-with their corresponding raw `u_TX` and compensated `u_XT`. Stage 13D must first certify that both path choices descend to the same Dirac/complete-relational quotient payload. Stage 13E then requires the source/target quotient projections to agree in public O/P/R/V, inherited future-measurement probabilities, weighted predictions, posterior outputs, and the orbit-sensitive witness.
-
-Path-specific provenance is therefore allowed — indeed required — in Xi while being absent from quotient-level public content.
+Path-specific provenance is therefore retained in Xi while being absent from quotient-level public content.
 
 ## Orbit-sensitive witness
 
@@ -57,30 +51,15 @@ and
 
 `p_other = 1 - p_left`.
 
-The positive requirement is **within-orbit representative/path independence plus four-way physical-orbit discrimination**.
+The validated positive requirement is **within-orbit representative/path independence plus four-way physical-orbit discrimination**.
 
 ## Negative controls
 
-The suite requires rejection of:
+The suite rejects all 10 required controls: wrong compensated path; wrong event correspondence; wrong continuation-class correspondence; wrong outcome correspondence; wrong normalization; representative-dependent O; representative-dependent P; representative-dependent R; representative-dependent V; and representative-dependent normalized measurement payload.
 
-1. wrong compensated path;
-2. wrong event correspondence;
-3. wrong continuation-class correspondence;
-4. wrong outcome correspondence;
-5. wrong normalization;
-6. representative-dependent O;
-7. representative-dependent P;
-8. representative-dependent R;
-9. representative-dependent V;
-10. representative-dependent normalized measurement payload.
+## Bounded result
 
-## Bounded claim
-
-The bounded result may be promoted to
-
-`Stage 13E typed O/P/R/V/Xi and future-measurement descent across compensated path choices on the frozen finite family = established`
-
-**only after the current source/test head passes the full repository regression.**
+`Stage 13E typed O/P/R/V/Xi and future-measurement descent across compensated path choices on the frozen finite family = established`.
 
 This does not establish refoliation invariance, a hypersurface-deformation algebra, general covariance, general relativity, future actuality, eternalism, or ontological becoming.
 
@@ -97,3 +76,5 @@ This does not establish refoliation invariance, a hypersurface-deformation algeb
 `future-measurement covariance != future actuality`.
 
 `orbit-sensitive witness != empirical prediction`.
+
+`repository validation != new scientific evidence`.

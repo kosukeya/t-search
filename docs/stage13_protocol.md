@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13D completed; criteria 1–38 satisfied; criteria 39–50 pending.**
+Status: **Stage 13E completed; criteria 1–43 satisfied; criteria 44–50 pending. Stage 13F protocol frozen and executable source/test validation pending.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -30,11 +30,7 @@ Frozen positive constraints:
 
 `K_X = exp(T) (p_X + a p) approx 0`,
 
-with
-
-`a = 0.5`,
-
-and first-class bracket
+with `a = 0.5` and first-class bracket
 
 `{K_T,K_X} = -K_X`.
 
@@ -130,7 +126,7 @@ Frozen classifications include
 
 ## 6. Equivalent basis and anomaly controls
 
-The equivalent commuting presentation reserved for Stage 13F is
+The equivalent commuting presentation frozen for Stage 13F is
 
 `K_X_tilde = exp(-T) K_X = p_X + a p`,
 
@@ -138,19 +134,31 @@ with
 
 `{K_T,K_X_tilde}=0`.
 
+Its finite flow is
+
+`Phi_X_tilde(u): X -> X+u, q -> q+a u`.
+
 `noncommuting constraint presentation != fundamental physical non-Abelianity`.
 
 `constraint-basis change != physical-orbit change`.
 
-The deliberately anomalous deformation reserved for Stage 13F is
+The deliberately anomalous deformation frozen for Stage 13F is
 
-`K_X_bad = exp(T)(p_X + a p) + epsilon q`.
+`K_X_bad = exp(T)(p_X + a p) + epsilon q`
+
+with `epsilon=0.1`.
+
+The Stage 13F anomaly witness uses
+
+`{K_T,K_X_bad}+K_X_bad = epsilon(q-p)`.
 
 Frozen control vocabulary includes
 
 - `rank_deficient_constraint_control_rejected`;
+- `decoupled_constraint_control_rejected`;
 - `constraint_algebra_anomaly_detected`;
 - `basis_presentation_equivalent`;
+- `cross_orbit_false_positive_rejected`;
 - `representative_dependent_payload_corruption_detected`.
 
 ## 7. Frozen O/P/R/V/Xi carry-over
@@ -179,15 +187,7 @@ Xi is the designated location for representation provenance such as generator id
 
 Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**. Its documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**.
 
-Evidence:
-
-- **36** positive representatives;
-- constraint-gradient and Hamiltonian-generator rank **2** at every representative;
-- minimum finite-family singular value approximately **0.3778026572933153**;
-- **36** nonzero off-surface bracket probes;
-- `{K_T,K_X}+K_X` maximum residual **0.0**;
-- **72 `Phi_T` + 72 `Phi_X` = 144** licensed single-generator transports;
-- maximum single-flow endpoint residual approximately **2.220446049250313e-16**.
+Evidence: **36** positive representatives; constraint-gradient and Hamiltonian-generator rank **2** at every representative; minimum finite-family singular value approximately **0.3778026572933153**; **36** nonzero off-surface bracket probes; `{K_T,K_X}+K_X` maximum residual **0.0**; **72 `Phi_T` + 72 `Phi_X` = 144** licensed single-generator transports; maximum single-flow endpoint residual approximately **2.220446049250313e-16**.
 
 Bounded result:
 
@@ -215,18 +215,9 @@ Bounded result:
 
 ## 10. Stage 13C executable evidence
 
-Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**. Documentation synchronization, including restoration of the historical Stage 11D guard wording, closed at head `51f119845ec0e9ade3ee8cdeeb4e00ca7b992569`, run #1762, with **`1066 passed in 892.04s (0:14:52)`**.
+Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0` passed run #1734 with **`1069 passed in 550.80s (0:09:10)`**. Documentation synchronization closed at head `51f119845ec0e9ade3ee8cdeeb4e00ca7b992569`, run #1762, with **`1066 passed in 892.04s (0:14:52)`**.
 
-Evidence:
-
-- **36** independently reconstructed Dirac estimates;
-- **4** same-orbit summaries;
-- all **6 / 6** different-orbit pairs distinct under the full Dirac pair;
-- minimum full-pair separation **0.5**;
-- **324** complete-relational evaluations;
-- **1296** compensated-path complete-relational comparisons;
-- **36** one-clock values in **12** groups, all **12 / 12** nonzero-spread with spread approximately **1.0**;
-- deterministic positive residuals at most approximately **2.220446049250313e-16**.
+Evidence: **36** independently reconstructed Dirac estimates; **4** same-orbit summaries; all **6 / 6** different-orbit pairs distinct under the full Dirac pair; minimum full-pair separation **0.5**; **324** complete-relational evaluations; **1296** compensated-path complete-relational comparisons; **36** one-clock values in **12** groups, all **12 / 12** nonzero-spread with spread approximately **1.0**; deterministic positive residuals at most approximately **2.220446049250313e-16**.
 
 Bounded result:
 
@@ -246,43 +237,22 @@ Finite structural conjunction:
 
 ## 11. Stage 13D executable evidence
 
-Stage 13D implements
-
-- `src/t_search/stage13_gauge_atlas.py`;
-- `tests/test_stage13d_gauge_atlas.py`;
-- `experiments/stage13d_gauge_atlas.py`;
-- `docs/stage13d_notes.md`;
-- `results/stage13d_gauge_atlas.md`.
-
-Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7` passed GitHub Actions run #1766 with **`1076 passed in 908.96s (0:15:08)`**.
+Stage 13D source/test head `ab7a5c4a917e7612ee89b547baddf127d48947e7` passed GitHub Actions run #1766 with **`1076 passed in 908.96s (0:15:08)`**. Documentation-synchronized head `0ef29d0c0c38c1a90a9e10441b275970e4c242ae` passed run #1791 with **`1076 passed in 567.34s (0:09:27)`**.
 
 Typed finite atlas evidence:
 
 - **87 typed nodes** separating physical orbit, representative, generator, basis, path word, event, clock, and modal continuation roles;
-- **72 `Phi_T` + 72 `Phi_X` = 144** typed single-generator atlas arrows;
-- **0** licensed cross-orbit atlas arrows;
-- connected components built from typed arrow endpoints rather than stored orbit labels;
+- **72 `Phi_T` + 72 `Phi_X` = 144** typed single-generator arrows;
+- **0** licensed cross-orbit arrows;
 - exactly **4 quotient classes** of **9 representatives** each, covering all **36** representatives;
-- **0** mixed-orbit quotient classes;
-- all **6 / 6** quotient-class pairs remain distinct under the full Dirac pair;
-- **36** quotient-level Dirac/two-clock descent evaluations;
-- **144** compensated path-word descent checks consuming **1296** Stage 13C relational evaluations;
-- `TX=(Phi_T,Phi_X)` and `XT=(Phi_X,Phi_T)` descend to the same quotient-level Dirac/relational payload within the frozen `1e-10` tolerance;
-- path-word/compensator ablation: typed status **`lost`**, finite numerical status **`reconstructible`**, **144 / 144** targets uniquely reconstructible;
-- path-word nodes remain distinct from modal-continuation nodes and all compensated descent records retain `not_physical_temporal_order` / `not_licensed` typing.
-
-Classifications:
-
-- `compensated_path_words_descend_to_same_quotient_payload`;
-- `path_word_compensator_provenance_lost_numerically_reconstructible`.
+- **36 quotient-level descent evaluations**;
+- **144 / 144** compensated path-word descent checks consuming **1296** Stage 13C relational evaluations;
+- `typed_status = lost`, `numerical_status = reconstructible` for path-word/compensator ablation;
+- classification `path_provenance_typed_lost_numerically_reconstructible`.
 
 Bounded result:
 
-`Stage 13D typed multi-constraint gauge atlas, path-word quotient, and Dirac/relational descent on the frozen finite family = established`.
-
-Finite structural conjunction:
-
-`typed Phi_T/Phi_X connectivity + four-class physical quotient + path-word-independent Dirac/two-clock descent`.
+`Stage 13D typed multi-constraint gauge atlas, path words, quotient, and descent on the frozen finite family = established`.
 
 `stored orbit label != quotient-construction rule`.
 
@@ -298,19 +268,67 @@ Finite structural conjunction:
 
 `compensated path-word descent != refoliation invariance`.
 
-## 12. Stage 13 sequence
+## 12. Stage 13E validated executable evidence
+
+Stage 13E source/test and evidence head `5da1f7b07189ac9fd23c756ed432bfc7406caf37` passed GitHub Actions run #1801 with **`1084 passed in 703.45s (0:11:43)`**.
+
+Validated finite evidence:
+
+- **36** representative O/P/R/V/Xi architectures;
+- **4** distinct quotient-level public architectures;
+- **72** inherited future-measurement views / **144** outcome evaluations;
+- **36** weighted views and **36** posterior views;
+- **36** two-clock orbit-sensitive witnesses with **4** distinct orbit signatures;
+- **144** compensated operational-descent checks;
+- **288** path-specific Xi views;
+- **576** compensated measurement outcome comparisons;
+- **10 / 10** required negative controls rejected.
+
+Bounded result:
+
+`Stage 13E typed O/P/R/V/Xi and future-measurement descent across compensated path choices on the frozen finite family = established`.
+
+`path-specific Xi provenance != quotient-level physical content`.
+
+`basis-specific Xi provenance != quotient-level physical content`.
+
+`compensated-path operational descent != refoliation invariance`.
+
+`future-measurement covariance != future actuality`.
+
+`orbit-sensitive witness != empirical prediction`.
+
+`repository validation != new scientific evidence`.
+
+## 13. Stage 13F frozen gate
+
+Stage 13F is frozen in `docs/stage13f_protocol.md` from the validated Stage 13E checkpoint.
+
+The positive comparison is between the noncommuting presentation `K_X` and the equivalent commuting presentation `K_X_tilde`. Required evidence includes **36** positive representatives, **144** commuting-basis single-generator arrows (**72 `Phi_T` + 72 `Phi_X_tilde`**), exactly **4** quotient classes of **9** representatives, **4 / 4** Stage 13D representative-set matches, **36** basis-equivalence public/Dirac/relational checks, and **144** commuting mixed-path checks.
+
+The destructive/anomaly matrix contains **6** controls: rank-deficient pair, decoupled second constraint, wrong compensator, one-clock incompleteness, cross-orbit single-invariant false match, and `K_X_bad`.
+
+Criteria 44–47 remain pending until the Stage 13F source/test head passes full repository regression.
+
+`basis-equivalent finite quotient != refoliation invariance`.
+
+`commuting presentation != proof that all admissible presentations commute`.
+
+`constraint-algebra anomaly != ontological becoming`.
+
+## 14. Stage 13 sequence
 
 - Stage 13.0 — protocol freeze — **completed**;
 - Stage 13A — two-constraint first-class carrier and finite representative family — **completed**;
 - Stage 13B — noncommuting gauge paths and compensated closure — **completed**;
 - Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **completed**;
 - Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — **completed**;
-- Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **next**;
-- Stage 13F — basis / ablation / anomaly / false-positive controls — pending;
+- Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — **completed**;
+- Stage 13F — basis / ablation / anomaly / false-positive controls — **active; protocol frozen, source/test validation pending**;
 - Stage 13G — executable synthesis and evidence-selected next gate — pending;
 - criterion 50 — external final full-repository regression / merge-readiness review — pending.
 
-## 13. Frozen synthesis vocabulary
+## 15. Frozen synthesis vocabulary
 
 Stage 13G must select exactly one of:
 
@@ -328,7 +346,7 @@ Live Stage 14 gate candidates remain
 - `richer causal/order layer`;
 - `nonideal/POVM clocks`.
 
-## 14. Exit criteria
+## 16. Exit criteria
 
 ### Criteria 1–10 — Stage 13.0
 
@@ -385,11 +403,11 @@ Live Stage 14 gate candidates remain
 
 ### Criteria 39–43 — Stage 13E
 
-39. O/P/R/V/Xi architecture is lifted over every canonical Stage 13 representative with path/basis provenance confined to Xi — **pending**.
-40. Licensed compensated path choices preserve quotient-level typed O/P/R/V content — **pending**.
-41. Inherited future-measurement payloads descend across compensated multi-constraint path choices — **pending**.
-42. An orbit-sensitive operational witness based on Dirac/complete-relational data remains representative/path independent within an orbit while preserving physical-orbit discrimination — **pending**.
-43. Wrong path/event/class/outcome/normalization or representative-dependent O/P/R/V/measurement payloads are rejected — **pending**.
+39. O/P/R/V/Xi architecture is lifted over every canonical Stage 13 representative with path/basis provenance confined to Xi — **satisfied**.
+40. Licensed compensated path choices preserve quotient-level typed O/P/R/V content — **satisfied**.
+41. Inherited future-measurement payloads descend across compensated multi-constraint path choices — **satisfied**.
+42. An orbit-sensitive operational witness based on Dirac/complete-relational data remains representative/path independent within an orbit while preserving physical-orbit discrimination — **satisfied**.
+43. Wrong path/event/class/outcome/normalization or representative-dependent O/P/R/V/measurement payloads are rejected — **satisfied**.
 
 ### Criteria 44–47 — Stage 13F
 
@@ -407,7 +425,7 @@ Live Stage 14 gate candidates remain
 
 50. External final full-repository regression and merge-readiness review — **pending**.
 
-## 15. Interpretation guards
+## 17. Interpretation guards
 
 - `two constraint labels != two independent gauge directions`;
 - `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
@@ -416,10 +434,13 @@ Live Stage 14 gate candidates remain
 - `constraint-surface preservation != correct source/target path correspondence`;
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
 - `constraint-basis change != physical-orbit change`;
+- `basis-equivalent finite quotient != refoliation invariance`;
+- `commuting presentation != proof that all admissible presentations commute`;
 - `first-class closure on this toy carrier != hypersurface-deformation algebra`;
 - `compensated multi-constraint path closure != refoliation invariance`;
 - `compensated-path relational covariance != refoliation invariance`;
 - `compensated path-word descent != refoliation invariance`;
+- `compensated-path operational descent != refoliation invariance`;
 - `multi-constraint path covariance != refoliation invariance`;
 - `refoliation precursor != general covariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;
@@ -431,12 +452,14 @@ Live Stage 14 gate candidates remain
 - `complete relational observable != ontological becoming by definition`;
 - `different physical orbit != later event on one orbit`;
 - `constraint-generated gauge flow != ontological becoming`;
+- `constraint-algebra anomaly != ontological becoming`;
 - `Dirac invariant != timeless ontology by definition`;
 - `Dirac-invariant data + relational change != proof of eternalism`;
 - `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`;
 - `gauge quotient != elimination of physical change`;
 - `stored orbit label != quotient-construction rule`;
 - `path-independent complete-relational values != future actuality`;
+- `future-measurement covariance != future actuality`;
 - `path-specific Xi provenance != quotient-level physical content`;
 - `basis-specific Xi provenance != quotient-level physical content`;
 - `numerical reconstructibility != typed operational identification`;

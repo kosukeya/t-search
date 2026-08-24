@@ -1,8 +1,12 @@
 # Stage 13E Notes — O/P/R/V/Xi and Future-Measurement Descent Across Compensated Path Choices
 
-Status: **Stage 13E executable implementation; criteria 39–43 under source/test validation.**
+Status: **Stage 13E completed; criteria 39–43 validated.**
 
 Incoming Stage 13D documentation-synchronized repository checkpoint: head `0ef29d0c0c38c1a90a9e10441b275970e4c242ae`, GitHub Actions run #1791, **`1076 passed in 567.34s (0:09:27)`**.
+
+Stage 13E source/test and evidence head: `5da1f7b07189ac9fd23c756ed432bfc7406caf37`, GitHub Actions run #1801, **`1084 passed in 703.45s (0:11:43)`**.
+
+The full repository regression validates the Stage 13E source/test checkpoint and closes criteria 39–43.
 
 ## Question
 
@@ -24,27 +28,9 @@ Stage 13E carries forward
 
 `T12_candidate=(O,P,R,V;Xi)`
 
-with
+with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-`R=(R_content,R_direction,R_access)`
-
-and
-
-`V=(V_extension,V_semantics,V_weights)`.
-
-The inherited modal/measurement vocabulary remains
-
-`QExt(e1)={h_L,h_R}`
-
-with outcomes
-
-`future_signature_left`
-
-and
-
-`future_signature_other`.
-
-External parameterization remains `identity`; the inherited Stage 11D measurement chart remains A/e2.
+The inherited modal/measurement vocabulary remains `QExt(e1)={h_L,h_R}` with outcomes `future_signature_left` and `future_signature_other`. External parameterization remains `identity`; the inherited Stage 11D measurement chart remains A/e2.
 
 The two Stage 13 complete-relational event anchors are fixed at
 
@@ -61,16 +47,7 @@ and
 
 ## Xi boundary
 
-Xi retains:
-
-- representative identity and `(T,X)` coordinates;
-- constraint-basis identity;
-- generator-family type;
-- the licensed `TX=(Phi_T,Phi_X)` and `XT=(Phi_X,Phi_T)` path words;
-- path-word role;
-- event/class/outcome correspondence;
-- normalization/lapse semantics;
-- path/basis provenance semantics.
+Xi retains representative identity and `(T,X)` coordinates, constraint-basis identity, generator-family type, the licensed `TX=(Phi_T,Phi_X)` and `XT=(Phi_X,Phi_T)` path words, path-word role, event/class/outcome correspondence, normalization/lapse semantics, and path/basis provenance semantics.
 
 The quotient-level public architecture deliberately omits representative id, basis id, path word, `s`, `u`, compensator provenance, and raw representative coordinates.
 
@@ -78,9 +55,9 @@ The quotient-level public architecture deliberately omits representative id, bas
 
 `basis-specific Xi provenance != quotient-level physical content`.
 
-## Expected finite evidence
+## Validated finite evidence
 
-The canonical Stage 13E family contains:
+The Stage 13E family contains:
 
 - **36** representative O/P/R/V/Xi architectures;
 - **4** distinct quotient-level public architectures;
@@ -91,7 +68,7 @@ The canonical Stage 13E family contains:
 - **144** compensated operational-descent checks;
 - **288** path-specific Xi views (`TX` and `XT`);
 - **576** per-path measurement outcome comparisons;
-- **10** explicit negative controls, all required to be rejected.
+- **10** explicit negative controls, **10 / 10 rejected**.
 
 The witness uses fixed target `(tau,chi)=(1,1)` and
 
@@ -101,22 +78,9 @@ The witness uses fixed target `(tau,chi)=(1,1)` and
 
 This bridge is diagnostic only.
 
-## Controls
+## Bounded result
 
-Stage 13E includes:
-
-- wrong compensated path correspondence;
-- wrong event correspondence;
-- wrong continuation-class correspondence;
-- wrong outcome correspondence;
-- inherited wrong-normalization control;
-- representative-dependent O corruption;
-- representative-dependent P corruption;
-- representative-dependent R corruption;
-- representative-dependent V corruption;
-- representative-dependent normalized measurement corruption.
-
-Basis equivalence, anomaly deformation, rank deficiency, and broader false-positive synthesis remain Stage 13F rather than being pre-empted here.
+`Stage 13E typed O/P/R/V/Xi and future-measurement descent across compensated path choices on the frozen finite family = established`.
 
 ## Interpretation guards
 
@@ -137,3 +101,5 @@ Basis equivalence, anomaly deformation, rank deficiency, and broader false-posit
 `gauge quotient != elimination of physical change`.
 
 `finite-model success != empirical discovery`.
+
+`repository validation != new scientific evidence`.

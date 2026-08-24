@@ -59,7 +59,9 @@ Gravity/general covariance is deferred, not abandoned.
 
 ## Stage 8 — Quantum Potentiality inside the shared constrained construction
 
-Stage 8 integrated explicit Potentiality/extension semantics in the shared constrained construction. `Potentiality != quantum randomness by definition`.
+Stage 8 integrated explicit Potentiality/extension semantics in the shared constrained construction. Stage 8G completed criteria **48–49**, kept criterion **50** external, and selected the directional-record Stage 9 gate while gravity/general covariance remained deferred.
+
+`Potentiality != quantum randomness by definition`.
 
 ## Stage 9 — Directional records with nontrivial quantum Potentiality
 
@@ -73,6 +75,14 @@ Stage 8 integrated explicit Potentiality/extension semantics in the shared const
 - Stage 9 criterion 50 — external final validation — completed.
 
 At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 subsequently closed that bounded operational gap.
+
+Stage 9G executable synthesis selected `refined_layered`, retained/ranked `full_measurement_covariance`, and selected the fully typed future-measurement covariance program.
+
+`finite-family bidirectional countermodels != universal R-V independence theorem`.
+
+`P edge reconstruction != P layer universally redundant`.
+
+`finite clock covariance != general covariance`.
 
 ### Historical planning labels retained for regression context
 

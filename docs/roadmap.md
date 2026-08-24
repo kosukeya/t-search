@@ -6,9 +6,9 @@ This roadmap is provisional and evidence-selected.
 
 `T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite Stage 12 family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 are completed at the criterion-50 merge-readiness checkpoint on PR #13. PR #13 remains open, Draft, and unmerged.
+Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13.0 is completed on Draft PR #14; criteria 1–10 are satisfied, criteria 11–50 remain pending, and Stage 13A is next.
 
-Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. `repository validation != new scientific evidence`; `merge-ready != merged`.
+Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before merge. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
 Selected Stage 10 gate:
 
@@ -229,7 +229,7 @@ Stage 11 criteria **1–50** are completed.
 
 `merge-ready != merged`.
 
-## Stage 12 — Multi-orbit constraint-generated gauge atlas — criterion-50 merge-readiness checkpoint completed
+## Stage 12 — Multi-orbit constraint-generated gauge atlas — completed and merged
 
 ### Stage 12.0 — protocol freeze — completed
 
@@ -336,15 +336,83 @@ The nearest unresolved assumption is the single Hamiltonian constraint. The sele
 
 Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At review time the branch was **ahead 78 / behind 0** relative to `main`, PR #13 was `mergeable = true`, unresolved inline review threads were **0**, submitted review blockers were **0**, and PR conversation comments were **0**.
 
-Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. PR #13 remains open, Draft, and unmerged.
+Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. Final current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
 
+## Stage 13 — Multi-constraint constraint-algebra / refoliation precursor — in progress
+
+### Stage 13.0 — protocol freeze — completed
+
+Stage 13.0 fixes a six-dimensional canonical phase space
+
+`(T,p_T; X,p_X; q,p)`
+
+and the positive two-constraint pair
+
+`K_T = p_T + p^2/2 approx 0`,
+
+`K_X = exp(T)(p_X + 0.5p) approx 0`,
+
+with
+
+`{K_T,K_X}=-K_X`.
+
+The Stage 12 physical classes are retained as the same four `(Q_D,P_D)` pairs. The canonical Stage 13 representative grid is `T,X in {-1,0,1}`, giving **9 representatives per orbit**, **36 total representatives**, **288 ordered nonidentity same-orbit source/target pairs**, and **144 mixed ordered pairs** with both gauge coordinates changed.
+
+The positive Stage 13B target is not raw commutativity. For a mixed source/target pair,
+
+`u_TX=DeltaX/exp(T1)`,
+
+`u_XT=DeltaX/exp(T0)`,
+
+and
+
+`u_XT=exp(s)u_TX`.
+
+Thus reordered paths may have different raw parameters while still closing onto the same licensed endpoint.
+
+Dirac-type data are
+
+`P_D=p`,
+
+`Q_D=q-pT-0.5X`,
+
+and the complete relational observable is
+
+`q(T=tau,X=chi)=Q_D+P_D tau+0.5chi`.
+
+Fixing only `T=tau` remains an explicit incompleteness control.
+
+The equivalent constraint-basis control
+
+`K_X_tilde=exp(-T)K_X=p_X+0.5p`
+
+satisfies `{K_T,K_X_tilde}=0` and is used to prevent presentation-level noncommutativity from being promoted to physical fundamentality.
+
+Stage 13 criteria **1–10** are satisfied by the freeze; criteria **11–50** remain pending. Stage 13A — two-constraint first-class carrier and finite representative family — is next.
+
+`raw gauge-path commutativity != successful multi-constraint closure`.
+
+`noncommuting constraint presentation != fundamental physical non-Abelianity`.
+
+`multi-constraint path covariance != refoliation invariance`.
+
+`constraint-algebra/refoliation precursor != general relativity`.
+
+`path word != physical temporal history`.
+
+`path-order mismatch != arrow of time by definition`.
+
+`one clock condition in a two-gauge-direction model != complete relational observable`.
+
+`complete relational observable != ontological becoming by definition`.
+
 ## Later directions
 
-After the selected Stage 13 constraint-algebra/refoliation precursor, a gravitational/minisuperspace extension, richer causal order, and nonideal/POVM clocks remain live candidates rather than rejected directions. Empirical relevance should be pursued only if a genuinely discriminating prediction emerges beyond the chosen representation.
+After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-space-dependent structure-function / hypersurface-deformation precursor, gravitational/minisuperspace extension, richer causal order, and nonideal/POVM clocks remain live candidates rather than rejected directions. Empirical relevance should be pursued only if a genuinely discriminating prediction emerges beyond the chosen representation.
 
 ## Cautions
 
@@ -417,7 +485,15 @@ After the selected Stage 13 constraint-algebra/refoliation precursor, a gravitat
 - `finite constraint-generated gauge atlas != diffeomorphism invariance`;
 - `finite C x G x Phi compatibility != refoliation invariance`;
 - `single Hamiltonian constraint != hypersurface-deformation algebra`;
+- `raw gauge-path commutativity != successful multi-constraint closure`;
+- `noncommuting constraint presentation != fundamental physical non-Abelianity`;
+- `first-class closure on this finite model != hypersurface-deformation algebra`;
+- `multi-constraint path covariance != refoliation invariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;
+- `path word != physical temporal history`;
+- `path-order mismatch != arrow of time by definition`;
+- `one clock condition in a two-gauge-direction model != complete relational observable`;
+- `complete relational observable != ontological becoming by definition`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`.

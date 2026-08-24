@@ -1,6 +1,6 @@
 # Stage 13 Protocol — Multi-Constraint Constraint-Algebra / Refoliation Precursor
 
-Status: **Stage 13B completed; criteria 1–23 satisfied; criteria 24–50 pending.**
+Status: **Stage 13C completed; criteria 1–31 satisfied; criteria 32–50 pending.**
 
 Selected Stage 13 gate from Stage 12G:
 
@@ -12,11 +12,11 @@ The final pre-merge Stage 12 current-head regression was run #1654 with **`1025 
 
 Stage 13.0 documentation-synchronized baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**.
 
-Stage 13A source/test checkpoint head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**.
+Stage 13A source/test checkpoint head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**.
 
-Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**.
+Stage 13B source/test checkpoint head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd` passed run #1726 with **`1059 passed in 538.54s (0:08:58)`**.
 
-Stage 13B source/test checkpoint head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**.
+Stage 13C source/test checkpoint head is `56f80e8984872591a26f27eb5902310e36616bf0`; its final full-repository run is recorded after GitHub Actions completes.
 
 The bounded Stage 12 synthesis carried forward is
 
@@ -48,15 +48,13 @@ Stage 13 asks whether the Stage 12 physical-orbit quotient, complete relational 
 
 The central positive question is not whether two raw gauge transports commute. Instead, Stage 13 tests whether order-dependent raw paths satisfy the frozen first-class algebra and can be related by the algebraically required compensating gauge parameter so that licensed corresponding endpoints carry the same quotient-level physical content.
 
-Frozen distinction:
-
 `raw gauge-path commutativity != successful multi-constraint closure`.
 
 Positive target:
 
 `noncommuting raw path order + correct algebraic compensator -> same licensed gauge endpoint / same quotient-level physical content`.
 
-Stage 13A established the carrier needed to ask that question. Stage 13B now establishes compensated path closure on the frozen 144-pair mixed family; complete relational and quotient/operational descent remain later substages.
+Stage 13A establishes the two-constraint carrier, Stage 13B establishes compensated path closure, and Stage 13C establishes the Dirac / complete-relational layer. Typed quotient/operational descent remains later work.
 
 ## 2. Frozen phase space and two-constraint carrier
 
@@ -90,7 +88,7 @@ The two constraints satisfy
 
 `{K_T,K_X} = -K_X`.
 
-Stage 13A verifies that the two constraint gradients and Hamiltonian generator directions have rank 2 on every one of the 36 declared positive representatives. The minimum singular value in the frozen family is approximately `0.3778026572933153`.
+Stage 13A verifies that both the constraint-gradient matrix and Hamiltonian-generator matrix have rank 2 on all 36 positive representatives, with minimum singular value approximately `0.3778026572933153`.
 
 `two constraint labels != two independent gauge directions`.
 
@@ -131,51 +129,39 @@ Typed transport names:
 - `Phi_T(s)` — `K_T`-generated gauge transport;
 - `Phi_X(u)` — `K_X`-generated gauge transport.
 
-The generator identity is representation/provenance information rather than quotient-level physical content.
-
 `constraint-generator identity != physical-event identity`.
 
 `constraint-generator identity != internal-clock perspective`.
 
 ## 4. Frozen noncommuting path law and compensator
 
-For a source representative with coordinate `T0`, a mixed target changes both `T` and `X`.
-
-Let
+For a mixed source/target pair,
 
 `s = T1 - T0`,
 
-`DeltaX = X1 - X0`.
+`DeltaX = X1 - X0`,
 
-For the path that applies `Phi_T(s)` first and then `Phi_X`, the required second parameter is
+`u_TX = DeltaX / exp(T1)`,
 
-`u_TX = DeltaX / exp(T1)`.
+`u_XT = DeltaX / exp(T0)`,
 
-For the path that applies `Phi_X` first and then `Phi_T(s)`, the required first parameter is
-
-`u_XT = DeltaX / exp(T0)`.
-
-The frozen compensator law is
+and the exact compensator law is
 
 `u_XT = exp(s) u_TX`.
 
-For mixed paths with `s != 0` and `DeltaX != 0`, using the same raw `u` in both orders produces different raw endpoints in the declared finite family.
-
-The Stage 13B positive closure test is
+The positive Stage 13B comparison is
 
 `Phi_X(u_TX) after Phi_T(s)`
 
 versus
 
-`Phi_T(s) after Phi_X(u_XT)`
-
-with `u_XT = exp(s) u_TX`.
+`Phi_T(s) after Phi_X(u_XT)`.
 
 `same raw generator parameters under reordered paths != corresponding gauge path`.
 
 `wrong compensator failure != physical time asymmetry`.
 
-## 5. Frozen Dirac data and complete relational observable
+## 5. Dirac data and complete relational observable
 
 The Stage 13 Dirac-type invariant pair is
 
@@ -183,13 +169,13 @@ The Stage 13 Dirac-type invariant pair is
 
 `Q_D = q - p T - a X`.
 
-Stage 13C must independently verify from sampled representatives that
+Stage 13C verifies from all 36 sampled representatives that
 
 `{P_D,K_T}=0`, `{P_D,K_X}=0`,
 
 `{Q_D,K_T}=0`, `{Q_D,K_X}=0`
 
-on the declared positive family.
+within the declared finite implementation.
 
 The complete relational observable is
 
@@ -199,7 +185,7 @@ The one-clock expression
 
 `q(T=tau; X raw) = Q_D + P_D tau + a X`
 
-is deliberately not treated as complete because it retains the second gauge coordinate `X`.
+is explicitly incomplete because it retains the second gauge coordinate `X`.
 
 `one clock condition in a two-gauge-direction model != complete relational observable`.
 
@@ -213,8 +199,6 @@ Stage 13 retains the Stage 12 four physical initial-data classes in `(Q_D,P_D)`:
 - `omega_beta: (Q_D,P_D)=(0.40,1.25)`;
 - `omega_gamma: (Q_D,P_D)=(-0.35,0.75)`;
 - `omega_delta: (Q_D,P_D)=(0.20,1.75)`.
-
-This preserves the same-P/different-Q and same-Q/different-P anti-triviality controls while changing the gauge-distribution structure.
 
 The canonical positive representative grid per physical orbit is
 
@@ -241,8 +225,6 @@ This gives
 - **288 ordered nonidentity same-orbit source/target pairs**;
 - **144 ordered mixed pairs** for which both `T` and `X` change.
 
-Stage 13B uses all 144 mixed pairs for the noncommuting-order and compensator tests.
-
 `different physical orbit != different path through one gauge orbit`.
 
 `different path word != different physical orbit`.
@@ -251,15 +233,9 @@ Stage 13B uses all 144 mixed pairs for the noncommuting-order and compensator te
 
 Stage 13D must build the multi-constraint gauge quotient from typed generator/path connectivity, not by directly grouping stored `orbit_id` labels.
 
-A path word may contain `Phi_T` and `Phi_X` segments. The path word and its raw parameters belong to representation/provenance metadata.
+The intended physical quotient remains exactly four classes of nine representatives each.
 
-The intended physical quotient remains exactly four classes, each containing the nine representatives associated with one canonical `(Q_D,P_D)` pair.
-
-A successful quotient must establish both
-
-`different licensed path words -> same quotient class when they connect the same physical orbit`,
-
-and
+`different licensed path words -> same quotient class when they connect the same physical orbit`.
 
 `different physical Dirac data -> not collapsed merely by multi-constraint gauge connectivity`.
 
@@ -269,15 +245,15 @@ and
 
 ## 8. Frozen constraint-basis control
 
-The same positive constraint surface admits the rescaled second constraint
+The same positive constraint surface admits
 
-`K_X_tilde = exp(-T) K_X = p_X + a p`.
+`K_X_tilde = exp(-T) K_X = p_X + a p`,
 
-For the pair `(K_T,K_X_tilde)`,
+with
 
 `{K_T,K_X_tilde}=0`.
 
-Stage 13F must compare the noncommuting presentation `(K_T,K_X)` with the commuting presentation `(K_T,K_X_tilde)` and require agreement of the physical quotient, Dirac data, and complete-relational / operational payloads after typed correspondence.
+Stage 13F must compare the noncommuting presentation `(K_T,K_X)` with the equivalent commuting presentation `(K_T,K_X_tilde)`.
 
 `noncommuting constraint presentation != fundamental physical non-Abelianity`.
 
@@ -285,36 +261,9 @@ Stage 13F must compare the noncommuting presentation `(K_T,K_X)` with the commut
 
 `constraint-basis change != physical-orbit change`.
 
-## 9. Frozen anomaly / failure controls
+## 9. Frozen anomaly / false-positive controls
 
-### Wrong path semantics
-
-- reorder `Phi_T` and `Phi_X` while incorrectly reusing the same raw `u`;
-- use a deliberately wrong compensator instead of `u_XT=exp(s)u_TX`;
-- falsely treat raw path-word equality as necessary for physical equivalence;
-- falsely treat different path words as distinct physical time histories.
-
-### Incomplete relational typing
-
-- treat `q(T=tau;X raw)` as a complete observable;
-- drop the `X` correspondence while claiming two-clock equality;
-- identify gauge coordinate `X` with modal continuation identity or ontological becoming.
-
-### Degenerate anti-triviality carriers
-
-- `a=0`, which decouples `q` from the second gauge direction;
-- a commuting-limit presentation used as if it independently established the nontrivial path-order target;
-- duplicate / rank-deficient constraint directions.
-
-### Broken first-class closure
-
-The deliberately anomalous deformation remains
-
-`K_X_bad = exp(T)(p_X + a p) + epsilon q`.
-
-Its bracket with `K_T` is generically not weakly zero on the declared `K_T=K_X_bad=0` surface and must be rejected in Stage 13F.
-
-Expected classification vocabulary includes
+The declared control vocabulary includes
 
 - `compensated_path_closure_established`;
 - `wrong_compensator_detected`;
@@ -326,6 +275,10 @@ Expected classification vocabulary includes
 - `cross_orbit_path_rejected`;
 - `representative_dependent_payload_corruption_detected`.
 
+The deliberately anomalous deformation remains
+
+`K_X_bad = exp(T)(p_X + a p) + epsilon q`.
+
 `broken first-class closure != ontological becoming`.
 
 `path-order mismatch != arrow of time by definition`.
@@ -336,28 +289,16 @@ Stage 13 reuses rather than redesigns
 
 `T12_candidate=(O,P,R,V;Xi)`.
 
-The inherited physical/modal/measurement vocabulary remains:
+The inherited vocabulary retains
 
 - `R=(R_content,R_direction,R_access)`;
 - `V=(V_extension,V_semantics,V_weights)`;
 - `QExt(e1)={h_L,h_R}`;
-- prediction anchor `e1` and measurement target `e2`;
 - outcomes `future_signature_left` and `future_signature_other`;
-- continuation-specific normalization/effect typing;
-- class/weight alignment;
-- matched epistemic and ontic-extension public interfaces;
-- hidden-selector nonleakage.
+- external parameterization `identity`;
+- internal measurement chart `A/e2`.
 
-Stage 13E isolates the new multi-constraint path question by fixing inherited external parameterization `identity` and inherited internal measurement chart `A/e2`, unless earlier executable evidence requires an explicit protocol amendment.
-
-Xi is extended with representation metadata for
-
-- constraint-generator identity;
-- path word;
-- raw path parameters;
-- compensator provenance;
-- source/target representative;
-- constraint-basis identity.
+Xi is extended with representation metadata for constraint-generator identity, path word, raw parameters, compensator provenance, source/target representative, and constraint-basis identity.
 
 `path-specific Xi provenance != quotient-level physical content`.
 
@@ -369,42 +310,21 @@ Xi is extended with representation metadata for
 
 Stage 13A implements `src/t_search/stage13_multi_constraint.py`, `tests/test_stage13a_multi_constraint.py`, and `experiments/stage13a_multi_constraint.py`.
 
-The deterministic positive family has
+Evidence:
 
 - **4** physical initial-data classes;
-- **9** representatives per class / **36** total;
-- **72** licensed nonidentity `Phi_T` transports;
-- **72** licensed nonidentity `Phi_X` transports;
-- **144** single-generator transports total;
-- **144** mixed ordered pairs enumerated and reserved for Stage 13B;
-- **36** nonzero off-surface bracket probes.
-
-All 36 canonical representatives satisfy both positive constraints within tolerance. The maximum deterministic canonical residuals are `max |K_T| = 0.0` and `max |K_X| = 0.0`.
-
-At every positive representative both the constraint-gradient matrix and Hamiltonian-generator matrix have rank **2**. The finite-family minimum singular value is approximately **0.3778026572933153**.
-
-The Poisson bracket is computed from analytic gradients. To avoid testing only the weak `0=0` identity, the bracket family includes 36 nonzero-`K_X` off-surface probes. The maximum residual in
-
-`{K_T,K_X}+K_X=0`
-
-is `0.0` for the deterministic family.
-
-Each generator is then tested separately over all licensed one-coordinate paths. The maximum deterministic endpoint residuals are approximately
-
-- `Phi_T`: `2.220446049250313e-16`;
-- `Phi_X`: `2.220446049250313e-16`.
-
-The maximum source/predicted/target positive-surface constraint residual is `0.0`.
-
-The four declared Stage 12 initial-data classes remain distinct at carrier level, including same-P/different-Q and same-Q/different-P controls. Independent reconstruction from representative data remains Stage 13C work.
-
-Typed roles remain separate for physical orbit, representative, event, `T` clock, `X` clock, generator, and constraint basis.
+- **36** representatives total;
+- **72** `Phi_T` + **72** `Phi_X` = **144 single-generator** transports;
+- **144 mixed** pairs reserved for Stage 13B;
+- **36 off-surface** nonzero-`K_X` bracket probes;
+- rank **2** everywhere;
+- minimum singular value **0.3778026572933153**;
+- `{K_T,K_X}+K_X=0` maximum residual **0.0**;
+- maximum single-flow endpoint residual approximately **2.220446049250313e-16**.
 
 Bounded result:
 
 `Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
-
-This bounded result is supported by Stage 13A source/test run #1676: **`1048 passed in 592.23s (0:09:52)`** and documentation-synchronized run #1696: **`1050 passed in 886.76s (0:14:46)`**.
 
 `Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
 
@@ -412,55 +332,102 @@ This bounded result is supported by Stage 13A source/test run #1676: **`1048 pas
 
 Stage 13B implements `src/t_search/stage13_paths.py`, `tests/test_stage13b_paths.py`, and `experiments/stage13b_paths.py` over all **144** frozen mixed pairs.
 
-All 144 pairs have nonzero `s`, nonzero `DeltaX`, and `u_TX != u_XT`. Reusing `u_TX` in both path orders gives a detectable endpoint difference for **144 / 144** pairs while the correctly compensated `TX` and `XT` paths close on the same declared target for **144 / 144** pairs.
+All **144 / 144** pairs have nontrivial raw path order. Same-raw reordered endpoint separation ranges from **0.6321205588285577** to **12.778112197861299**.
 
-The same-raw endpoint-separation range is
+The exact compensator closes **144 / 144** pairs with
 
-- minimum `0.6321205588285577`;
-- maximum `12.778112197861299`.
+- maximum compensator-law residual **8.881784197001252e-16**;
+- maximum endpoint/target residual **2.220446049250313e-16**;
+- positive two-constraint residual **0.0**.
 
-The exact compensator gives
+Wrong-compensator residual ranges from **0.15803013970713942** to **3.1945280494653243** and is detected in **144 / 144** cases.
 
-- maximum compensator-law residual `8.881784197001252e-16`;
-- maximum compensated endpoint separation `2.220446049250313e-16`;
-- maximum compensated target residual `2.220446049250313e-16`;
-- maximum positive two-constraint residual `0.0`.
-
-A separately defined wrong compensator
-
-`u_XT_wrong = u_XT + 0.25 (u_TX-u_XT)`
-
-is detected for **144 / 144** pairs, with target residual ranging from `0.15803013970713942` to `3.1945280494653243`.
-
-Path words are typed as transport segments
+Path words are
 
 `path_word_TX=(Phi_T,Phi_X)`
 
 and
 
-`path_word_XT=(Phi_X,Phi_T)`,
+`path_word_XT=(Phi_X,Phi_T)`.
 
-while Hamiltonian generator identities remain `K_T` and `K_X`. All path-order records carry `temporal_order_status=not_physical_temporal_order` and `metaphysical_claim_status=not_licensed`.
-
-A cross-orbit mixed path is rejected rather than assigned a compensator.
+All records carry `not_physical_temporal_order` and `not_licensed` typing; cross-orbit construction is rejected.
 
 Bounded result:
 
 `Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`.
 
-This bounded result is supported by Stage 13B source/test run #1710: **`1058 passed in 696.20s (0:11:36)`**.
-
 `constraint-surface preservation != correct source/target path correspondence`.
 
 `compensated multi-constraint path closure != refoliation invariance`.
+
+## 10C. Stage 13C executable evidence
+
+Stage 13C implements `src/t_search/stage13_relational.py`, `tests/test_stage13c_relational.py`, and `experiments/stage13c_relational.py`.
+
+The executable family contains
+
+- **36** independently reconstructed Dirac estimates;
+- **4** same-orbit summaries;
+- **6** unordered different-orbit pair checks;
+- **324** complete-relational evaluations over the 3x3 `(tau,chi)` target grid;
+- **1296** complete-relational comparisons across Stage 13B compensated path choices;
+- **36** one-clock evaluations in **12** fixed-orbit/fixed-`tau` groups.
+
+Raw representative reconstruction uses
+
+`Q_D=q-pT-0.5X`,
+
+`P_D=p`.
+
+The deterministic maximum reconstructed/declaration and same-orbit `Q_D` residual/spread is at most approximately **2.220446049250313e-16**; `P_D` residual/spread is **0.0**. The analytic Dirac/constraint bracket residual is **0.0**.
+
+All **6 / 6** different-orbit pairs remain distinct under the full Dirac pair. Minimum full-pair separation is **0.5**. The canonical same-P/different-Q and same-Q/different-P controls remain explicit.
+
+For
+
+`q(T=tau,X=chi)=Q_D+P_D tau+0.5chi`,
+
+all **324** evaluations agree with their canonical same-orbit targets within approximately **2.220446049250313e-16**.
+
+Across the **1296** compensated-path comparisons,
+
+`q_TX ~= q_XT ~= q_target`
+
+within approximately **2.220446049250313e-16**.
+
+The one-clock expression
+
+`q(T=tau;X raw)=Q_D+P_D tau+0.5X_raw`
+
+has nonzero spread in all **12 / 12** groups, approximately **1.0**, and is classified
+
+`one_clock_observable_incomplete`.
+
+Bounded result:
+
+`Stage 13C Dirac / two-clock complete relational observables and physical-orbit discrimination on the frozen finite family = established`.
+
+Finite structural conjunction:
+
+`representative-independent Dirac orbit data + compensated-path-independent complete relational values + nontrivial relational change`.
+
+`full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
+
+`compensated-path relational covariance != refoliation invariance`.
+
+`Dirac invariant != timeless ontology by definition`.
+
+`Dirac-invariant data + relational change != proof of eternalism`.
+
+`gauge quotient != elimination of physical change`.
 
 ## 11. Stage 13 sequence
 
 - Stage 13.0 — protocol freeze — **completed**;
 - Stage 13A — two-constraint first-class carrier and finite representative family — **completed**;
 - Stage 13B — noncommuting gauge paths and compensated closure — **completed**;
-- Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **next**;
-- Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — pending;
+- Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **completed**;
+- Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — **next**;
 - Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — pending;
 - Stage 13F — basis / ablation / anomaly / false-positive controls — pending;
 - Stage 13G — executable synthesis and evidence-selected next gate — pending;
@@ -475,14 +442,14 @@ Stage 13G must select exactly one of:
 - `multi_constraint_path_obstructed`;
 - `inconclusive`.
 
-`multi_constraint_path_obstructed` is reserved for an explicit failure of the positive family, not for a deliberately anomalous or wrong-compensator control behaving correctly.
+`multi_constraint_path_obstructed` is reserved for an explicit positive-family failure rather than a deliberately invalid control behaving correctly.
 
-Stage 13G must evidence-select the next gate without presupposing GR. The live candidate pool includes at least:
+Live Stage 14 gate candidates remain
 
-- a phase-space-dependent structure-function / hypersurface-deformation precursor;
-- a gravitational/minisuperspace extension;
-- a richer causal/order layer;
-- nonideal/POVM clocks.
+- `phase-space-dependent structure-function / hypersurface-deformation precursor`;
+- `gravitational/minisuperspace extension`;
+- `richer causal/order layer`;
+- `nonideal/POVM clocks`.
 
 ## 13. Exit criteria
 
@@ -520,14 +487,14 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 
 ### Criteria 24–31 — Stage 13C
 
-24. `Q_D=q-pT-aX` and `P_D=p` are independently reconstructed from all 36 representatives — **pending**.
-25. Same-orbit representatives agree in the full Dirac pair — **pending**.
-26. All six canonical different-orbit pairs remain physically distinct under the full Dirac pair — **pending**.
-27. `q(T=tau,X=chi)=Q_D+P_D tau+a chi` is reconstructed across the declared finite family — **pending**.
-28. Complete relational values agree across compensated path choices leading to corresponding gauge representatives — **pending**.
-29. Fixing `T=tau` alone is explicitly shown insufficient under variation of the second gauge coordinate — **pending**.
-30. Same-P/different-Q and same-Q/different-P anti-triviality controls remain explicit — **pending**.
-31. Complete-relational change is not promoted to ontological becoming or eternalism — **pending**.
+24. `Q_D=q-pT-aX` and `P_D=p` are independently reconstructed from all 36 representatives — **satisfied**.
+25. Same-orbit representatives agree in the full Dirac pair — **satisfied**.
+26. All six canonical different-orbit pairs remain physically distinct under the full Dirac pair — **satisfied**.
+27. `q(T=tau,X=chi)=Q_D+P_D tau+a chi` is reconstructed across the declared finite family — **satisfied**.
+28. Complete relational values agree across compensated path choices leading to corresponding gauge representatives — **satisfied**.
+29. Fixing `T=tau` alone is explicitly shown insufficient under variation of the second gauge coordinate — **satisfied**.
+30. Same-P/different-Q and same-Q/different-P anti-triviality controls remain explicit — **satisfied**.
+31. Complete-relational change is not promoted to ontological becoming or eternalism — **satisfied**.
 
 ### Criteria 32–38 — Stage 13D
 
@@ -574,6 +541,7 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 - `first-class closure on this toy carrier != hypersurface-deformation algebra`;
 - `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
 - `compensated multi-constraint path closure != refoliation invariance`;
+- `compensated-path relational covariance != refoliation invariance`;
 - `multi-constraint path covariance != refoliation invariance`;
 - `refoliation precursor != general covariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;
@@ -586,7 +554,9 @@ Stage 13G must evidence-select the next gate without presupposing GR. The live c
 - `constraint-generated gauge flow != ontological becoming`;
 - `Dirac invariant != timeless ontology by definition`;
 - `Dirac-invariant data + relational change != proof of eternalism`;
+- `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`;
 - `gauge quotient != elimination of physical change`;
+- `path-independent complete-relational values != future actuality`;
 - `path-specific Xi provenance != quotient-level physical content`;
 - `basis-specific Xi provenance != quotient-level physical content`;
 - `typed bridge to relational data != dynamical derivation of quantum measurement from the constraints`;

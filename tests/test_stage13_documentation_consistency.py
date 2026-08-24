@@ -8,6 +8,8 @@ PROTOCOL = (ROOT / "docs" / "stage13_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage13_0_protocol_freeze.md").read_text(encoding="utf-8")
 NOTES_A = (ROOT / "docs" / "stage13a_notes.md").read_text(encoding="utf-8")
 RESULT_A = (ROOT / "results" / "stage13a_multi_constraint.md").read_text(encoding="utf-8")
+NOTES_B = (ROOT / "docs" / "stage13b_notes.md").read_text(encoding="utf-8")
+RESULT_B = (ROOT / "results" / "stage13b_paths.md").read_text(encoding="utf-8")
 STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE13 = (
@@ -19,6 +21,8 @@ SELECTED_STAGE13 = (
 MERGED_STAGE12_MAIN = "ee4baec55fa994217b275f9f2451e25fc6736787"
 STAGE13_0_HEAD = "898f36682b3cadac4abd953ba1bac8e32f17103e"
 STAGE13A_SOURCE_HEAD = "ccd35956ac034de5d73d8b884a361fbe2fc92784"
+STAGE13A_FINAL_HEAD = "178f4ac8d160e7b261cd854f8c1856aa80c76675"
+STAGE13B_SOURCE_HEAD = "645ce6ab099d5f9db573c29ba81ac0854c4c26ca"
 
 
 def test_stage13_selected_gate_and_stage12_baseline_are_frozen() -> None:
@@ -38,23 +42,25 @@ def test_stage13_0_historical_freeze_remains_closed_at_10_40() -> None:
     assert "1039 passed in 542.21s (0:09:02)" in NOTES_A
 
 
-def test_stage13_current_status_is_stage13a_16_34() -> None:
-    assert "Stage 13A completed; criteria 1–16 satisfied; criteria 17–50 pending" in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 16
-    assert PROTOCOL.count("**pending**") == 34
+def test_stage13_current_status_is_stage13b_23_27() -> None:
+    assert "Stage 13B completed; criteria 1–23 satisfied; criteria 24–50 pending" in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 23
+    assert PROTOCOL.count("**pending**") == 27
     for text in (README, ROADMAP):
-        assert "Stage 13A" in text
-        assert "criteria 1–16" in text
-        assert "criteria 17–50" in text
         assert "Stage 13B" in text
-        assert "36" in text and "representatives" in text
+        assert "criteria 1–23" in text
+        assert "criteria 24–50" in text
+        assert "Stage 13C" in text
         assert "144" in text
+        assert "compensated" in text
         assert "raw gauge-path commutativity != successful multi-constraint closure" in text
         assert "noncommuting constraint presentation != fundamental physical non-Abelianity" in text
     assert "docs/stage13_protocol.md" in README
     assert "results/stage13_0_protocol_freeze.md" in README
     assert "docs/stage13a_notes.md" in README
     assert "results/stage13a_multi_constraint.md" in README
+    assert "docs/stage13b_notes.md" in README
+    assert "results/stage13b_paths.md" in README
 
 
 def test_stage13_two_constraint_carrier_is_frozen() -> None:
@@ -86,8 +92,8 @@ def test_stage13_generator_flows_and_types_are_frozen() -> None:
         assert phrase in PROTOCOL
 
 
-def test_stage13_compensated_path_law_remains_frozen_for_stage13b() -> None:
-    combined = PROTOCOL + "\n" + FREEZE
+def test_stage13_compensated_path_law_is_now_executable_evidence() -> None:
+    combined = PROTOCOL + "\n" + FREEZE + "\n" + NOTES_B + "\n" + RESULT_B
     for phrase in (
         "s = T1 - T0",
         "DeltaX = X1 - X0",
@@ -97,11 +103,12 @@ def test_stage13_compensated_path_law_remains_frozen_for_stage13b() -> None:
         "raw gauge-path commutativity != successful multi-constraint closure",
         "same raw generator parameters under reordered paths != corresponding gauge path",
         "wrong compensator failure != physical time asymmetry",
+        "compensated_path_closure_established",
     ):
         assert phrase in combined
 
 
-def test_stage13_dirac_and_two_clock_relational_structure_remains_frozen() -> None:
+def test_stage13_dirac_and_two_clock_relational_structure_remains_frozen_for_stage13c() -> None:
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "P_D = p",
@@ -179,10 +186,12 @@ def test_stage13_oprv_xi_carryover_is_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage13a_executable_evidence_is_synchronized() -> None:
+def test_stage13a_executable_evidence_is_preserved() -> None:
     combined = PROTOCOL + "\n" + NOTES_A + "\n" + RESULT_A
     assert STAGE13A_SOURCE_HEAD in combined
+    assert STAGE13A_FINAL_HEAD in PROTOCOL + "\n" + NOTES_B + "\n" + RESULT_B
     assert "1048 passed in 592.23s (0:09:52)" in combined
+    assert "1050 passed in 886.76s (0:14:46)" in PROTOCOL + "\n" + NOTES_B + "\n" + RESULT_B
     for phrase in (
         "36 representatives",
         "72",
@@ -200,28 +209,53 @@ def test_stage13a_executable_evidence_is_synchronized() -> None:
         assert phrase in combined
 
 
-def test_stage13a_closes_exactly_criteria_11_16() -> None:
+def test_stage13b_executable_evidence_is_synchronized() -> None:
+    combined = PROTOCOL + "\n" + NOTES_B + "\n" + RESULT_B
+    assert STAGE13B_SOURCE_HEAD in combined
+    assert "1058 passed in 696.20s (0:11:36)" in combined
+    for phrase in (
+        "144 / 144",
+        "0.6321205588285577",
+        "12.778112197861299",
+        "8.881784197001252e-16",
+        "2.220446049250313e-16",
+        "0.15803013970713942",
+        "3.1945280494653243",
+        "path_word_TX=(Phi_T,Phi_X)",
+        "path_word_XT=(Phi_X,Phi_T)",
+        "not_physical_temporal_order",
+        "not_licensed",
+        "wrong_compensator_detected",
+        "cross_orbit_path_rejected",
+        "Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established",
+        "constraint-surface preservation != correct source/target path correspondence",
+    ):
+        assert phrase in combined.replace(" = ", "=") if "path_word_" in phrase else phrase in combined
+
+
+def test_stage13b_closes_exactly_criteria_17_23() -> None:
     satisfied_lines = (
-        "11. All 36 canonical representatives satisfy both positive constraints within tolerance — **satisfied**.",
-        "12. The two constraint gradients / generator directions are independent over the declared positive family — **satisfied**.",
-        "13. Numerical/analytic-gradient evaluation confirms `{K_T,K_X}=-K_X` on the declared carrier and nonzero off-surface probes — **satisfied**.",
-        "14. `Phi_T` and `Phi_X` individually preserve the two-constraint surface on licensed paths — **satisfied**.",
-        "15. The four Stage 12 physical initial-data classes are represented without accidental collapse — **satisfied**.",
-        "16. Generator, representative, orbit, event, clock, and basis provenance remain separately typed — **satisfied**.",
+        "17. All 144 mixed ordered source/target pairs exhibit the declared nontrivial two-generator path structure — **satisfied**.",
+        "18. Same-raw-`u` reordered mixed paths are detectably different when the protocol predicts they should be — **satisfied**.",
+        "19. The exact compensator `u_XT=exp(s)u_TX` maps the two canonical path orders to the same target within tolerance — **satisfied**.",
+        "20. Compensated path closure preserves both constraints and the declared physical-orbit identity — **satisfied**.",
+        "21. Wrong-compensator paths are numerically detected — **satisfied**.",
+        "22. Path-order / generator-order metadata remains distinct from physical temporal order — **satisfied**.",
+        "23. Cross-orbit path construction is rejected rather than compensated into false equivalence — **satisfied**.",
     )
     for line in satisfied_lines:
         assert line in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 16
-    assert PROTOCOL.count("**pending**") == 34
-    assert "17. All 144 mixed ordered source/target pairs exhibit the declared nontrivial two-generator path structure — **pending**." in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 23
+    assert PROTOCOL.count("**pending**") == 27
+    assert "24. `Q_D=q-pT-aX` and `P_D=p` are independently reconstructed from all 36 representatives — **pending**." in PROTOCOL
     assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
-def test_stage13_sequence_moves_only_to_stage13b() -> None:
+def test_stage13_sequence_moves_only_to_stage13c() -> None:
     for stage in (
         "Stage 13A — two-constraint first-class carrier and finite representative family — **completed**",
-        "Stage 13B — noncommuting gauge paths and compensated closure — **next**",
-        "Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — pending",
+        "Stage 13B — noncommuting gauge paths and compensated closure — **completed**",
+        "Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — **next**",
         "Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — pending",
         "Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — pending",
         "Stage 13F — basis / ablation / anomaly / false-positive controls — pending",
@@ -258,6 +292,10 @@ def test_stage13_interpretation_guards_are_explicit() -> None:
         + "\n"
         + RESULT_A
         + "\n"
+        + NOTES_B
+        + "\n"
+        + RESULT_B
+        + "\n"
         + README
         + "\n"
         + ROADMAP
@@ -265,11 +303,16 @@ def test_stage13_interpretation_guards_are_explicit() -> None:
     for phrase in (
         "two constraint labels != two independent gauge directions",
         "Stage 13A single-generator surface preservation != compensated multi-generator path closure",
+        "raw gauge-path commutativity != successful multi-constraint closure",
+        "same raw generator parameters under reordered paths != corresponding gauge path",
+        "constraint-surface preservation != correct source/target path correspondence",
+        "compensated multi-constraint path closure != refoliation invariance",
         "noncommuting constraint presentation != fundamental physical non-Abelianity",
         "multi-constraint path covariance != refoliation invariance",
         "constraint-algebra/refoliation precursor != general relativity",
         "path word != physical temporal history",
         "path-order mismatch != arrow of time by definition",
+        "wrong compensator failure != physical time asymmetry",
         "one clock condition in a two-gauge-direction model != complete relational observable",
         "complete relational observable != ontological becoming by definition",
         "Dirac-invariant data + relational change != proof of eternalism",

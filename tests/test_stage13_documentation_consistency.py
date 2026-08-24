@@ -6,6 +6,8 @@ README = (ROOT / "README.md").read_text(encoding="utf-8")
 ROADMAP = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "docs" / "stage13_protocol.md").read_text(encoding="utf-8")
 FREEZE = (ROOT / "results" / "stage13_0_protocol_freeze.md").read_text(encoding="utf-8")
+NOTES_A = (ROOT / "docs" / "stage13a_notes.md").read_text(encoding="utf-8")
+RESULT_A = (ROOT / "results" / "stage13a_multi_constraint.md").read_text(encoding="utf-8")
 STAGE12_G = (ROOT / "results" / "stage12g_synthesis_stage13_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE13 = (
@@ -15,6 +17,8 @@ SELECTED_STAGE13 = (
     "the resulting constraint-generated path structure without assuming general relativity."
 )
 MERGED_STAGE12_MAIN = "ee4baec55fa994217b275f9f2451e25fc6736787"
+STAGE13_0_HEAD = "898f36682b3cadac4abd953ba1bac8e32f17103e"
+STAGE13A_SOURCE_HEAD = "ccd35956ac034de5d73d8b884a361fbe2fc92784"
 
 
 def test_stage13_selected_gate_and_stage12_baseline_are_frozen() -> None:
@@ -26,27 +30,31 @@ def test_stage13_selected_gate_and_stage12_baseline_are_frozen() -> None:
         assert "multi_orbit_gauge_covariant" in text
 
 
-def test_stage13_top_level_current_status_is_synchronized() -> None:
+def test_stage13_0_historical_freeze_remains_closed_at_10_40() -> None:
+    assert "Stage 13.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
+    for criterion in range(1, 51):
+        assert f"{criterion}." in PROTOCOL
+    assert STAGE13_0_HEAD in NOTES_A
+    assert "1039 passed in 542.21s (0:09:02)" in NOTES_A
+
+
+def test_stage13_current_status_is_stage13a_16_34() -> None:
+    assert "Stage 13A completed; criteria 1–16 satisfied; criteria 17–50 pending" in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 16
+    assert PROTOCOL.count("**pending**") == 34
     for text in (README, ROADMAP):
-        assert "Stage 13.0" in text
-        assert "criteria 1–10" in text
-        assert "criteria 11–50" in text
         assert "Stage 13A" in text
+        assert "criteria 1–16" in text
+        assert "criteria 17–50" in text
+        assert "Stage 13B" in text
         assert "36" in text and "representatives" in text
         assert "144" in text
         assert "raw gauge-path commutativity != successful multi-constraint closure" in text
         assert "noncommuting constraint presentation != fundamental physical non-Abelianity" in text
     assert "docs/stage13_protocol.md" in README
     assert "results/stage13_0_protocol_freeze.md" in README
-
-
-def test_stage13_protocol_closes_only_criteria_1_10() -> None:
-    assert "Stage 13.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in PROTOCOL
-    assert "Stage 13.0 completed; criteria 1–10 satisfied; criteria 11–50 pending" in FREEZE
-    for criterion in range(1, 51):
-        assert f"{criterion}." in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 10
-    assert PROTOCOL.count("**pending**") == 40
+    assert "docs/stage13a_notes.md" in README
+    assert "results/stage13a_multi_constraint.md" in README
 
 
 def test_stage13_two_constraint_carrier_is_frozen() -> None:
@@ -78,7 +86,7 @@ def test_stage13_generator_flows_and_types_are_frozen() -> None:
         assert phrase in PROTOCOL
 
 
-def test_stage13_compensated_path_law_is_frozen() -> None:
+def test_stage13_compensated_path_law_remains_frozen_for_stage13b() -> None:
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "s = T1 - T0",
@@ -93,7 +101,7 @@ def test_stage13_compensated_path_law_is_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage13_dirac_and_two_clock_relational_structure_is_frozen() -> None:
+def test_stage13_dirac_and_two_clock_relational_structure_remains_frozen() -> None:
     combined = PROTOCOL + "\n" + FREEZE
     for phrase in (
         "P_D = p",
@@ -171,10 +179,42 @@ def test_stage13_oprv_xi_carryover_is_frozen() -> None:
         assert phrase in combined
 
 
-def test_stage13_sequence_is_frozen() -> None:
+def test_stage13a_executable_evidence_is_synchronized() -> None:
+    combined = PROTOCOL + "\n" + NOTES_A + "\n" + RESULT_A
+    assert STAGE13A_SOURCE_HEAD in combined
+    assert "1048 passed in 592.23s (0:09:52)" in combined
+    for phrase in (
+        "36 representatives",
+        "72",
+        "Phi_T",
+        "Phi_X",
+        "144 single-generator",
+        "144 mixed",
+        "36 off-surface",
+        "rank **2**",
+        "0.3778026572933153",
+        "{K_T,K_X}+K_X=0",
+        "Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established",
+        "Stage 13A single-generator surface preservation != compensated multi-generator path closure",
+    ):
+        assert phrase in combined
+
+
+def test_stage13a_closes_exactly_criteria_11_16() -> None:
+    for criterion in range(11, 17):
+        marker = f"{criterion}."
+        position = PROTOCOL.index(marker)
+        assert "**satisfied**" in PROTOCOL[position : position + 350]
+    for criterion in range(17, 51):
+        marker = f"{criterion}."
+        position = PROTOCOL.index(marker)
+        assert "**pending**" in PROTOCOL[position : position + 500]
+
+
+def test_stage13_sequence_moves_only_to_stage13b() -> None:
     for stage in (
-        "Stage 13A — two-constraint first-class carrier and finite representative family — **next**",
-        "Stage 13B — noncommuting gauge paths and compensated closure — pending",
+        "Stage 13A — two-constraint first-class carrier and finite representative family — **completed**",
+        "Stage 13B — noncommuting gauge paths and compensated closure — **next**",
         "Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — pending",
         "Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — pending",
         "Stage 13E — O/P/R/V/Xi and future-measurement descent across compensated path choices — pending",
@@ -185,7 +225,7 @@ def test_stage13_sequence_is_frozen() -> None:
         assert stage in PROTOCOL
 
 
-def test_stage13_synthesis_vocabulary_is_frozen() -> None:
+def test_stage13_synthesis_vocabulary_remains_frozen() -> None:
     for status in (
         "multi_constraint_path_covariant",
         "multi_constraint_path_partial",
@@ -203,8 +243,22 @@ def test_stage13_synthesis_vocabulary_is_frozen() -> None:
 
 
 def test_stage13_interpretation_guards_are_explicit() -> None:
-    combined = PROTOCOL + "\n" + FREEZE + "\n" + README + "\n" + ROADMAP
+    combined = (
+        PROTOCOL
+        + "\n"
+        + FREEZE
+        + "\n"
+        + NOTES_A
+        + "\n"
+        + RESULT_A
+        + "\n"
+        + README
+        + "\n"
+        + ROADMAP
+    )
     for phrase in (
+        "two constraint labels != two independent gauge directions",
+        "Stage 13A single-generator surface preservation != compensated multi-generator path closure",
         "noncommuting constraint presentation != fundamental physical non-Abelianity",
         "multi-constraint path covariance != refoliation invariance",
         "constraint-algebra/refoliation precursor != general relativity",

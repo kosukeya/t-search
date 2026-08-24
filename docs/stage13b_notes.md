@@ -116,14 +116,15 @@ Independent physical-orbit reconstruction from Dirac data remains Stage 13C work
 
 Every comparison separately records
 
-- `path_word_TX = (K_T,K_X)`;
-- `path_word_XT = (K_X,K_T)`;
+- generator identities `K_T` and `K_X` as the Hamiltonian sources of the flows;
+- `path_word_TX = (Phi_T,Phi_X)`;
+- `path_word_XT = (Phi_X,Phi_T)`;
 - path-word role `constraint_generated_gauge_path_word`;
 - path-order role `gauge_generator_order_metadata`;
 - temporal-order status `not_physical_temporal_order`;
 - metaphysical-claim status `not_licensed`.
 
-Thus raw generator order is executable provenance, not a physical temporal-order declaration.
+Thus constraint-generator identity and transport-segment identity remain separately interpretable, and raw path order is executable provenance rather than a physical temporal-order declaration.
 
 `path word != physical temporal history`.
 

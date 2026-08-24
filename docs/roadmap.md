@@ -1,16 +1,16 @@
 # Research Roadmap
 
-This roadmap is provisional and evidence-selected.
+This roadmap is provisional and evidence-selected. Historical checkpoints are retained because later stages were selected by earlier evidence and documentation regressions use those checkpoints to prevent accidental rewriting of the research history.
 
 ## Current refined candidate
 
 `T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite Stage 12 family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13B is completed on Draft PR #14; criteria 1–23 are satisfied, criteria 24–50 remain pending, and Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — is next.
+Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. **Stage 13C is completed on Draft PR #14; criteria 1–31 are satisfied, criteria 32–50 remain pending, and Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — is next.**
 
-Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before merge. `repository validation != new scientific evidence`; `merge-ready != merged`.
+Stage 10 criterion 50 validated head `11b4357fccb0b73b7b7b80bc13e34f904290107b`; run #1271 passed **`868 passed in 345.59s`**. Stage 11 criterion 50 validated head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`; run #1469 passed **`938 passed in 682.23s (0:11:22)`**. Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`; run #1642 passed **`1024 passed in 896.22s (0:14:56)`**, and final pre-merge run #1654 passed **`1025 passed in 693.84s (0:11:33)`**. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
-Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**. Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672: **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**; documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, run #1696: **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, run #1710: **`1058 passed in 696.20s (0:11:36)`**; documentation-synchronized head `d559c031590a058962c50d170b144acbe8eabadd`, run #1726: **`1059 passed in 538.54s (0:08:58)`**. Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734: **`1069 passed in 550.80s (0:09:10)`**.
 
 Selected Stage 10 gate:
 
@@ -62,7 +62,7 @@ Stage 9 criterion 50 — external final validation — completed.
 
 At the **Stage 9 checkpoint**, Stage 9C future-measurement covariance remained `not_established`; Stage 10 subsequently closed that bounded operational gap.
 
-Stage 9G executable synthesis selected `refined_layered`, ranked `full_measurement_covariance` as the next gate, and selected the fully typed future-measurement covariance program.
+Stage 9G executable synthesis selected `refined_layered`, retained/ranked `full_measurement_covariance`, and selected the fully typed future-measurement covariance program.
 
 `finite-family bidirectional countermodels != universal R-V independence theorem`.
 
@@ -72,7 +72,7 @@ Stage 9G executable synthesis selected `refined_layered`, ranked `full_measureme
 
 ### Historical planning labels retained for regression context
 
-Before Stage 10G closed its synthesis and before Stage 11 became the active gate, planning documents used the historical labels below. They are retained only to preserve the evidence-selected chronology; they do not describe the current state.
+Before Stage 10G closed its synthesis and before Stage 11 became the active gate, planning documents used the historical labels below. They do not describe the current state.
 
 ## Stage 10 — Fully typed future-measurement covariance — in progress
 
@@ -80,25 +80,29 @@ Selected Stage 10 gate remained the fully typed cross-continuation future-measur
 
 ## Stage 11 — Parametrized / generally covariant / gravitational extension — deferred gate
 
-At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate now implemented below.
+At that historical checkpoint, Gravity/general covariance is deferred, not abandoned. Stage 10G later reranked the finite precursor and selected the narrower parametrized-covariance gate implemented below.
 
 ## Stages 0–9 — completed and merged
 
 Stages 0–6 established the reconstruction/accessibility, modal, record, constrained relational, multi-clock, and layered O/P/R/V/Xi foundations. Stage 7 integrated quantum records, Stage 8 explicit Potentiality, and Stage 9 directional records with nontrivial Potentiality. Stage 9G selected the fully typed future-measurement covariance gate and criterion 50 later closed with final Stage 9 validation **`766 passed in 459.00s`**.
 
-`Potentiality != quantum randomness by definition`.
-
-`finite clock covariance != general covariance`.
-
 ## Stage 10 — Fully typed future-measurement covariance — completed and merged
 
-Stage 10A–B established the typed reference family and continuation-specific normalization. Stage 10C implemented 18 typed charts, 108 genuine ordered distinct-clock transports, and 324 three-clock compositions. Stage 10D used 196 Hermitian-tomography-complete probes and 7056 probe outcome evaluations. Stage 10E transported weights/modal models/evidence updates; Stage 10F pressure-tested typing and false positives; Stage 10G selected `measurement_covariant`.
+Stage 10A–B established the typed reference family and continuation-specific normalization. Stage 10C implemented 18 typed charts, 108 genuine ordered distinct-clock transports, and 324 three-clock compositions. Stage 10D used 196 Hermitian-tomography-complete probes and 7056 probe outcome evaluations. Stage 10E transported weights/modal models/evidence updates; Stage 10F pressure-tested typing and false positives; Stage 10G — synthesis and evidence-selected next gate — completed and selected `measurement_covariant`.
+
+Stage 10 criteria 1–50 are completed.
 
 Bounded result:
 
 `fully typed finite future-measurement covariance = established`.
 
-Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passed run #1271 with **`868 passed in 345.59s`**; final run #1275 passed **`868 passed in 402.52s`** before merge.
+Criterion 50 was satisfied externally at validated head `11b4357fccb0b73b7b7b80bc13e34f904290107b`; run #1271 passed **`868 passed in 345.59s`** and final run #1275 passed **`868 passed in 402.52s`** before merge.
+
+Selected Stage 11 gate:
+
+> **Construct a parametrized covariance precursor that preserves the typed O/P/R/V measurement architecture without assuming a preferred external time parameterization.**
+
+`parametrized covariance precursor != general relativity`.
 
 `repository validation != new scientific evidence`.
 
@@ -106,7 +110,7 @@ Documentation-synchronized head `11b4357fccb0b73b7b7b80bc13e34f904290107b` passe
 
 ## Stage 11 — Parametrized covariance precursor — completed and merged
 
-Frozen distinctions include:
+Frozen distinctions retained throughout Stage 11:
 
 `parameter label != internal clock reading`.
 
@@ -138,7 +142,7 @@ Criteria **17–23** satisfied. Stage 11B evaluated **52** `q(T=tau)` observable
 
 ### Stage 11C — typed O/P/R/V/Xi lift — completed
 
-Criteria **24–31** satisfied. The Stage 9/10 architecture was lifted across the four external parameterizations while representation metadata stayed in Xi. `QExt(e1)={h_L,h_R}` remained explicit. Parameter-dependent O/P/R/V corruption controls were **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`.
+Criteria **24–31** satisfied. The Stage 9/10 architecture was lifted across the four external parameterizations while representation metadata stayed in Xi. `QExt(e1)={h_L,h_R}` remained explicit. Continuation/class and outcome correspondence each retain **8** entries. Parameter-dependent O/P/R/V corruption controls were **4 / 4** detected as `parameter_dependent_oprv_corruption_detected`.
 
 `Stage 11C typed O/P/R/V/Xi lift on the frozen positive family = established`.
 
@@ -178,9 +182,9 @@ Criteria **39–43** satisfied. The finite family used **12** external `G` trans
 
 ### Stage 11F — ablation / wrong-gauge / false-positive controls — completed
 
-Criteria **44–47** satisfied. The classifications include `event_correspondence_reconstructible_but_typed_identity_lost`, `lapse_semantics_missing_typed_claim_not_established`, and `wrong_lapse_jacobian_numerically_refuted`. The wrong lapse changes the tested value/derivative by approximately **0.5357142857142857**.
+Criteria **44–47** satisfied. The classifications retain `event_correspondence_reconstructible_but_typed_identity_lost`, `lapse_semantics_missing_typed_claim_not_established`, and `wrong_lapse_jacobian_numerically_refuted`; the wrong lapse changes the tested value/derivative by approximately **0.5357142857142857**.
 
-The consolidated family retains orientation reversal (**12** decreasing steps), non-injective square (**6** collisions), the `invalid_equal_raw_parameter_event_rule`, parameter-dependent O/P/R/V corruption (**4 / 4**), and **7 / 7** rejected controls.
+The consolidated controls retain **12** orientation-reversal decreasing steps, **6** noninjective collisions, `invalid_equal_raw_parameter_event_rule`, **4 / 4** `parameter_dependent_oprv_corruption_detected`, and **7 / 7** rejected controls.
 
 `Stage 11F typed-resource ablation and wrong-gauge false-positive controls = established on the frozen finite family`.
 
@@ -194,22 +198,17 @@ The consolidated family retains orientation reversal (**12** decreasing steps), 
 
 ### Stage 11G — synthesis and evidence-selected next gate — completed
 
-Criteria **48–49** satisfied. The complete Stage 11A–F evidence selects `parametrized_covariant`.
+Criteria **48–49** satisfied. The full Stage 11A–F evidence selects `parametrized_covariant` and ranks `multi_orbit_constraint_gauge_atlas` first.
 
 `Stage 11 finite typed parametrized covariance status = parametrized_covariant`.
-
-Stage 12 candidate ranking was:
-
-| rank | gate | score |
-| --- | --- | ---: |
-| 1 | `multi_orbit_constraint_gauge_atlas` | **10** |
-| 2 | `richer_causal_order` | **7** |
-| 3 | `nonideal_povm_clocks` | **6** |
-| 4 | `gravitational_minisuperspace_extension` | **5** |
 
 Selected Stage 12 gate:
 
 > **Construct a multi-orbit constraint-generated gauge atlas that separates gauge-related parameterizations from physically distinct orbits and tests whether relational/Dirac observables and the typed O/P/R/V measurement architecture descend consistently across that atlas.**
+
+`parametrized_covariant finite family != general covariance`.
+
+`finite typed parametrized covariance != general covariance`.
 
 `one-orbit covariance != multi-orbit gauge covariance`.
 
@@ -222,10 +221,6 @@ Selected Stage 12 gate:
 Criterion 50 was satisfied at reviewed head `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`. GitHub Actions run **#1469** passed **`938 passed in 682.23s (0:11:22)`**. PR #12 was mergeable at the reviewed checkpoint and was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`.
 
 Stage 11 criteria **1–50** are completed.
-
-`finite typed parametrized covariance != general covariance`.
-
-`absence of preferred external parameterization != absence of ontological becoming`.
 
 `repository validation != new scientific evidence`.
 
@@ -317,28 +312,21 @@ Bounded structural synthesis:
 
 `gauge-representative redundancy + physical-orbit plurality + Dirac-invariant orbit data + nontrivial relational change + quotient-level typed operational descent`.
 
-This result does not identify gauge quotienting with elimination of change and does not decide eternalism/blockness versus ontological becoming.
-
-Stage 13 candidate ranking:
-
-| rank | gate | score |
-| --- | --- | ---: |
-| 1 | `multi_constraint_refoliation_precursor` | **10** |
-| 2 | `gravitational_minisuperspace_extension` | **7** |
-| 2 | `richer_causal_order` | **7** |
-| 4 | `nonideal_povm_clocks` | **6** |
+Stage 13 candidate ranking retains `multi_constraint_refoliation_precursor` as the selected score-10 gate, ahead of `gravitational_minisuperspace_extension`, `richer_causal_order`, and `nonideal_povm_clocks`.
 
 Selected Stage 13 gate:
 
 > **Construct a minimal multi-constraint constraint-algebra/refoliation precursor with at least two nontrivially related first-class constraint directions, and test whether the Stage 12 physical-orbit quotient, relational observables, and typed O/P/R/V measurement architecture remain compatible under the resulting constraint-generated path structure without assuming general relativity.**
 
-The nearest unresolved assumption is the single Hamiltonian constraint. The selected gate isolates nontrivial constraint-algebra effects before introducing a dynamical gravitational carrier.
+`finite C x G x Phi compatibility != refoliation invariance`.
+
+`constraint-algebra/refoliation precursor != general relativity`.
 
 ### Stage 12 criterion 50 — external final repository validation / merge-readiness review — completed
 
-Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At review time the branch was **ahead 78 / behind 0** relative to `main`, PR #13 was `mergeable = true`, unresolved inline review threads were **0**, submitted review blockers were **0**, and PR conversation comments were **0**.
+Criterion **50** is satisfied externally at reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**. At review time the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. Final current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
 
-Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. Final current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
+Stage 12 criteria **1–50** are completed.
 
 `repository validation != new scientific evidence`.
 
@@ -348,162 +336,107 @@ Stage 12 criteria **1–50** are completed at this merge-readiness checkpoint. F
 
 ### Stage 13.0 — protocol freeze — completed
 
-Stage 13.0 fixes a six-dimensional canonical phase space
-
-`(T,p_T; X,p_X; q,p)`
-
-and the positive two-constraint pair
+The positive carrier uses canonical phase space `(T,p_T; X,p_X; q,p)` and
 
 `K_T = p_T + p^2/2 approx 0`,
 
 `K_X = exp(T)(p_X + 0.5p) approx 0`,
 
-with
+with `{K_T,K_X}=-K_X`.
 
-`{K_T,K_X}=-K_X`.
+The four Stage 12 `(Q_D,P_D)` classes are retained on `T,X in {-1,0,1}`, giving **36 representatives**, **288 ordered nonidentity same-orbit pairs**, and **144 mixed ordered pairs**.
 
-The Stage 12 physical classes are retained as the same four `(Q_D,P_D)` pairs. The canonical Stage 13 representative grid is `T,X in {-1,0,1}`, giving **9 representatives per orbit**, **36 total representatives**, **288 ordered nonidentity same-orbit source/target pairs**, and **144 mixed ordered pairs** with both gauge coordinates changed.
+The positive target is compensated closure, not raw commutativity:
 
-The positive Stage 13B target is not raw commutativity. For a mixed source/target pair,
+`u_TX=DeltaX/exp(T1)`, `u_XT=DeltaX/exp(T0)`, `u_XT=exp(s)u_TX`.
 
-`u_TX=DeltaX/exp(T1)`,
+The equivalent-basis control is `K_X_tilde=exp(-T)K_X=p_X+0.5p` with `{K_T,K_X_tilde}=0`.
 
-`u_XT=DeltaX/exp(T0)`,
-
-and
-
-`u_XT=exp(s)u_TX`.
-
-Thus reordered paths may have different raw parameters while still closing onto the same licensed endpoint.
-
-Dirac-type data are
-
-`P_D=p`,
-
-`Q_D=q-pT-0.5X`,
-
-and the complete relational observable is
-
-`q(T=tau,X=chi)=Q_D+P_D tau+0.5chi`.
-
-Fixing only `T=tau` remains an explicit incompleteness control.
-
-The equivalent constraint-basis control
-
-`K_X_tilde=exp(-T)K_X=p_X+0.5p`
-
-satisfies `{K_T,K_X_tilde}=0` and is used to prevent presentation-level noncommutativity from being promoted to physical fundamentality.
-
-Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672: **`1039 passed in 542.21s (0:09:02)`**.
+`noncommuting constraint presentation != fundamental physical non-Abelianity`.
 
 ### Stage 13A — two-constraint first-class carrier and finite representative family — completed
 
-Criteria **11–16** satisfied. All **36** canonical representatives satisfy both positive constraints within tolerance. The constraint-gradient and Hamiltonian-generator matrices have rank **2** at every representative, with minimum singular value approximately **0.3778026572933153**.
-
-The analytic-gradient bracket identity `{K_T,K_X}=-K_X` is checked on the positive family and on **36 nonzero-`K_X` off-surface probes**, with maximum deterministic residual `0.0`.
-
-There are **72** licensed `Phi_T` transports and **72** licensed `Phi_X` transports, for **144 single-generator transports total**. Maximum endpoint residuals are approximately `2.220446049250313e-16`; the positive-surface constraint residual is `0.0`.
-
-The **144 mixed ordered pairs** are enumerated but left for Stage 13B. The four Stage 12 physical initial-data classes remain distinct at carrier level, and generator/representative/orbit/event/clock/basis roles remain separately typed.
-
-Bounded result:
+Criteria **11–16** satisfied. All **36** representatives satisfy both constraints; the constraint-gradient and Hamiltonian-generator matrices have rank **2** everywhere, with minimum singular value **0.3778026572933153**. The bracket is checked on the positive family and **36 off-surface** probes. There are **72 `Phi_T` + 72 `Phi_X` = 144 single-generator transports** and **144 mixed** pairs reserved for Stage 13B.
 
 `Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
 
-Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**. Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, run #1696: **`1050 passed in 886.76s (0:14:46)`**.
+`Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
 
 ### Stage 13B — noncommuting gauge paths and compensated closure — completed
 
-Criteria **17–23** satisfied. All **144** ordered mixed same-orbit source/target pairs have nonzero `T` and `X` displacement and satisfy `u_TX != u_XT`, so the frozen two-generator ordering is nontrivial throughout the finite family.
-
-Using the same raw `u_TX` in both path orders makes **144 / 144** reordered paths detectably different. The finite-grid endpoint separation ranges from approximately **0.6321205588285577** to **12.778112197861299**. This is an endpoint-correspondence mismatch while both paths can remain on the positive constraint surface.
-
-With the exact compensator `u_XT=exp(s)u_TX`, **144 / 144** pairs close onto the same declared target. Maximum deterministic residuals are approximately **8.881784197001252e-16** for the compensator law and **2.220446049250313e-16** for endpoint/target equality; the tested two-constraint surface residual is **0.0**.
-
-The independent wrong-compensator control `u_XT_wrong=u_XT+0.25(u_TX-u_XT)` is detected in **144 / 144** cases, with target residual approximately **0.15803013970713942** to **3.1945280494653243**. Cross-orbit path construction is rejected rather than compensated.
-
-Hamiltonian generator identity (`K_T`,`K_X`) remains distinct from transport/path-segment identity (`Phi_T`,`Phi_X`). Path words are typed as `(Phi_T,Phi_X)` and `(Phi_X,Phi_T)`, with `temporal_order_status = not_physical_temporal_order` and `metaphysical_claim_status = not_licensed`.
-
-Bounded result:
+Criteria **17–23** satisfied. All **144 / 144** same-raw reordered paths are detectably different, with endpoint separation **0.6321205588285577–12.778112197861299**. Exact compensation closes **144 / 144** pairs with maximum compensator residual **8.881784197001252e-16**, endpoint/target residual **2.220446049250313e-16**, and positive constraint residual **0.0**. Wrong compensation is detected **144 / 144**, with target residual **0.15803013970713942–3.1945280494653243**. Cross-orbit construction is rejected.
 
 `Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`.
-
-Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, run #1710: **`1058 passed in 696.20s (0:11:36)`**.
-
-Stage 13 criteria **1–23** are satisfied; criteria **24–50** remain pending. Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — is next.
 
 `raw gauge-path commutativity != successful multi-constraint closure`.
 
 `same raw generator parameters under reordered paths != corresponding gauge path`.
 
-`wrong compensator failure != physical time asymmetry`.
+`constraint-surface preservation != correct source/target path correspondence`.
 
 `path word != physical temporal history`.
 
-`path-order mismatch != arrow of time by definition`.
+`wrong compensator failure != physical time asymmetry`.
 
 `compensated multi-constraint path closure != refoliation invariance`.
 
-`first-class finite path closure != hypersurface-deformation algebra`.
+### Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — completed
 
-`noncommuting constraint presentation != fundamental physical non-Abelianity`.
+Criteria **24–31** satisfied. Stage 13C reconstructs `Q_D=q-pT-0.5X` and `P_D=p` independently from all **36** representatives. Same-orbit Dirac spreads remain within floating tolerance, and all **6 / 6** different-orbit pairs remain distinct under the full pair; minimum full-pair separation is **0.5**. The same-P/different-Q and same-Q/different-P anti-triviality controls remain explicit.
 
-`constraint-algebra/refoliation precursor != general relativity`.
+The target grid `tau,chi in {-1,0,1}` yields **324** complete-relational evaluations of `q(T=tau,X=chi)=Q_D+P_D tau+0.5chi`. The maximum target residual is approximately **2.220446049250313e-16**.
+
+Across the **144** compensated Stage 13B mixed-path comparisons and all 9 target clock pairs, Stage 13C performs **1296** comparisons with `q_TX ~= q_XT ~= q_target`, again within approximately **2.220446049250313e-16**.
+
+The one-clock expression `q(T=tau;X raw)=Q_D+P_D tau+0.5X_raw` produces **36** evaluations in **12** fixed-orbit/fixed-`tau` groups. All **12 / 12** groups retain nonzero spread, approximately **1.0**, and are classified `one_clock_observable_incomplete`.
+
+Bounded result:
+
+`Stage 13C Dirac / two-clock complete relational observables and physical-orbit discrimination on the frozen finite family = established`.
+
+Finite structural conjunction:
+
+`representative-independent Dirac orbit data + compensated-path-independent complete relational values + nontrivial relational change`.
+
+Stage 13C source/test head `56f80e8984872591a26f27eb5902310e36616bf0`, run #1734: **`1069 passed in 550.80s (0:09:10)`**.
+
+Stage 13 criteria **1–31** are satisfied; criteria **32–50** remain pending. Stage 13D — typed multi-constraint gauge atlas, path words, quotient, and descent — is next.
+
+`Dirac invariant != timeless ontology by definition`.
+
+`Dirac-invariant data + relational change != proof of eternalism`.
+
+`full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`.
 
 `one clock condition in a two-gauge-direction model != complete relational observable`.
 
+`compensated-path relational covariance != refoliation invariance`.
+
 `complete relational observable != ontological becoming by definition`.
+
+`gauge quotient != elimination of physical change`.
+
+`path-independent complete-relational values != future actuality`.
 
 ## Later directions
 
-After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-space-dependent structure-function / hypersurface-deformation precursor, gravitational/minisuperspace extension, richer causal order, and nonideal/POVM clocks remain live candidates rather than rejected directions. Empirical relevance should be pursued only if a genuinely discriminating prediction emerges beyond the chosen representation.
+After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-space-dependent structure-function / hypersurface-deformation precursor, gravitational/minisuperspace extension, richer causal order, and nonideal/POVM clocks remain live candidates rather than rejected directions.
 
 ## Cautions
 
 - `operational quantum equality != modal/ontological identity`;
 - `directional record arrow != ontological becoming`;
 - `future-measurement covariance != future actuality`;
-- `measurement covariance != modal/ontological identity`;
-- `perspective-invariant future probabilities != proof of eternalism`;
-- `measurement covariance != refutation of ontological becoming`;
-- `typed-resource necessity != metaphysical fundamentality`;
 - `parameter label != internal clock reading`;
 - `parameter label != event identity`;
 - `internal clock perspective != external parameterization`;
 - `orientation-preserving reparameterization != time reversal`;
-- `equal raw lambda != physical-event correspondence`;
-- `same relational orbit != same metaphysics`;
-- `same constraint orbit != established general covariance`;
-- `relational covariance on one finite orbit != general covariance`;
-- `typed O/P/R/V/Xi lift != full future-measurement covariance`;
-- `typed product lift feasibility != independent dynamical covariance evidence`;
-- `Stage 10 event-role bridge != dynamical identification of quantum and classical carriers`;
-- `selector-free public projection != absence of privileged modal semantics`;
-- `external lapse != quantum measurement normalization form`;
-- `typed Stage 10/11 bridge != dynamical derivation of quantum measurement from the classical precursor`;
-- `future-measurement reparameterization covariance != clock-change x reparameterization compatibility`;
-- `internal-clock covariance != reparameterization covariance`;
-- `commuting typed product square != independent interaction law`;
-- `commuting typed diagram != general covariance`;
-- `path-independent future probabilities != future actuality`;
-- `path-independent evidence update != ontological becoming`;
-- `numerical reconstructibility != typed operational identification`;
-- `reconstructible != universally redundant`;
-- `lost != metaphysically irreducible`;
-- `missing typing != metaphysical absence`;
-- `wrong-gauge failure != ontological becoming`;
-- `typed-resource necessity in this finite family != metaphysical fundamentality`;
-- `finite-model ablation != fundamental ontology`;
-- `parametrized_covariant finite family != general covariance`;
-- `external parameterization independence != diffeomorphism invariance`;
-- `one-orbit covariance != multi-orbit gauge covariance`;
-- `constraint-generated gauge precursor != general relativity`;
-- `parameterization-covariant future probabilities != future actuality`;
-- `parameterization-covariant future probabilities != proof of eternalism`;
-- `absence of preferred external parameterization != absence of ontological becoming`;
 - `finite clock covariance != general covariance`;
 - `finite typed parametrized covariance != general covariance`;
-- `parametrized covariance precursor != general relativity`;
+- `parametrized_covariant finite family != general covariance`;
+- `one-orbit covariance != multi-orbit gauge covariance`;
+- `external parameterization independence != diffeomorphism invariance`;
+- `constraint-generated gauge precursor != general relativity`;
 - `constraint-generated gauge flow != ontological becoming`;
 - `different physical orbit != later event on one orbit`;
 - `Dirac invariant != timeless ontology by definition`;
@@ -512,14 +445,10 @@ After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-sp
 - `gauge quotient != elimination of physical change`;
 - `constraint orbit != modal continuation`;
 - `operational quotient descent != modal/ontological identity`;
-- `same gauge-invariant probability within an orbit != all physical orbits operationally identical`;
-- `typed bridge to orbit data != dynamical derivation of quantum measurement from the classical constraint`;
-- `orbit-sensitive witness != empirical prediction`;
-- `commuting finite gauge/clock diagrams != general covariance`;
 - `internal-clock covariance != external-reparameterization covariance`;
 - `constraint-generated gauge flow != internal-clock change`;
 - `constraint-generated gauge flow != external reparameterization`;
-- `path-independent relational outputs != ontological becoming`;
+- `path-independent future probabilities != future actuality`;
 - `finite three-way compatibility != diffeomorphism invariance`;
 - `cross-orbit mismatch != temporal succession or ontological becoming`;
 - `false-positive rejection != proof of eternalism`;
@@ -543,7 +472,10 @@ After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-sp
 - `compensated multi-constraint path closure != refoliation invariance`;
 - `first-class finite path closure != hypersurface-deformation algebra`;
 - `one clock condition in a two-gauge-direction model != complete relational observable`;
+- `compensated-path relational covariance != refoliation invariance`;
+- `full-Dirac-pair discrimination in this finite family != universal orbit-classification theorem`;
 - `complete relational observable != ontological becoming by definition`;
+- `path-independent complete-relational values != future actuality`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`.

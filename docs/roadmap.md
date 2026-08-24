@@ -6,9 +6,11 @@ This roadmap is provisional and evidence-selected.
 
 `T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite Stage 12 family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13.0 is completed on Draft PR #14; criteria 1–10 are satisfied, criteria 11–50 remain pending, and Stage 13A is next.
+Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13A is completed on Draft PR #14; criteria 1–16 are satisfied, criteria 17–50 remain pending, and Stage 13B is next.
 
 Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before merge. `repository validation != new scientific evidence`; `merge-ready != merged`.
+
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**.
 
 Selected Stage 10 gate:
 
@@ -392,7 +394,29 @@ The equivalent constraint-basis control
 
 satisfies `{K_T,K_X_tilde}=0` and is used to prevent presentation-level noncommutativity from being promoted to physical fundamentality.
 
-Stage 13 criteria **1–10** are satisfied by the freeze; criteria **11–50** remain pending. Stage 13A — two-constraint first-class carrier and finite representative family — is next.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e`, run #1672: **`1039 passed in 542.21s (0:09:02)`**.
+
+### Stage 13A — two-constraint first-class carrier and finite representative family — completed
+
+Criteria **11–16** satisfied. All **36** canonical representatives satisfy both positive constraints within tolerance. The constraint-gradient and Hamiltonian-generator matrices have rank **2** at every representative, with minimum singular value approximately **0.3778026572933153**.
+
+The analytic-gradient bracket identity `{K_T,K_X}=-K_X` is checked on the positive family and on **36 nonzero-`K_X` off-surface probes**, with maximum deterministic residual `0.0`.
+
+There are **72** licensed `Phi_T` transports and **72** licensed `Phi_X` transports, for **144 single-generator transports total**. Maximum endpoint residuals are approximately `2.220446049250313e-16`; the positive-surface constraint residual is `0.0`.
+
+The **144 mixed ordered pairs** are enumerated but left for Stage 13B. The four Stage 12 physical initial-data classes remain distinct at carrier level, and generator/representative/orbit/event/clock/basis roles remain separately typed.
+
+Bounded result:
+
+`Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
+
+Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**.
+
+Stage 13 criteria **1–16** are satisfied; criteria **17–50** remain pending. Stage 13B — noncommuting gauge paths and compensated closure — is next.
+
+`two constraint labels != two independent gauge directions`.
+
+`Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
 
 `raw gauge-path commutativity != successful multi-constraint closure`.
 
@@ -487,6 +511,8 @@ After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-sp
 - `single Hamiltonian constraint != hypersurface-deformation algebra`;
 - `raw gauge-path commutativity != successful multi-constraint closure`;
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
+- `two constraint labels != two independent gauge directions`;
+- `Stage 13A single-generator surface preservation != compensated multi-generator path closure`;
 - `first-class closure on this finite model != hypersurface-deformation algebra`;
 - `multi-constraint path covariance != refoliation invariance`;
 - `constraint-algebra/refoliation precursor != general relativity`;

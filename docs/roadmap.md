@@ -6,11 +6,11 @@ This roadmap is provisional and evidence-selected.
 
 `T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`, equipped on the frozen finite Stage 12 family with a typed physical-orbit quotient `Q_Phi` and separately typed internal-clock `C`, external-reparameterization `G`, and constraint-generated gauge `Phi` transport families.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13A is completed on Draft PR #14; criteria 1–16 are satisfied, criteria 17–50 remain pending, and Stage 13B is next.
+Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.** Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and PR #12 was subsequently merged into `main` at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`. Stage 13B is completed on Draft PR #14; criteria 1–23 are satisfied, criteria 24–50 remain pending, and Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — is next.
 
 Stage 12 criterion 50 reviewed head `549eed786b36aa458470ef7e858b515117816ac7`. GitHub Actions run #1642 passed **`1024 passed in 896.22s (0:14:56)`**; the branch was **ahead 78 / behind 0**, PR #13 was `mergeable = true`, and review blockers were **0**. Final pre-merge current-head run #1654 passed **`1025 passed in 693.84s (0:11:33)`** before merge. `repository validation != new scientific evidence`; `merge-ready != merged`.
 
-Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**.
+Stage 13.0 final baseline head `898f36682b3cadac4abd953ba1bac8e32f17103e` passed run #1672 with **`1039 passed in 542.21s (0:09:02)`**. Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784` passed run #1676 with **`1048 passed in 592.23s (0:09:52)`**. Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675` passed run #1696 with **`1050 passed in 886.76s (0:14:46)`**. Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca` passed run #1710 with **`1058 passed in 696.20s (0:11:36)`**.
 
 Selected Stage 10 gate:
 
@@ -410,25 +410,45 @@ Bounded result:
 
 `Stage 13A two-constraint first-class carrier and finite representative family on the frozen four-orbit family = established`.
 
-Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**.
+Stage 13A source/test head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, run #1676: **`1048 passed in 592.23s (0:09:52)`**. Stage 13A documentation-synchronized head `178f4ac8d160e7b261cd854f8c1856aa80c76675`, run #1696: **`1050 passed in 886.76s (0:14:46)`**.
 
-Stage 13 criteria **1–16** are satisfied; criteria **17–50** remain pending. Stage 13B — noncommuting gauge paths and compensated closure — is next.
+### Stage 13B — noncommuting gauge paths and compensated closure — completed
 
-`two constraint labels != two independent gauge directions`.
+Criteria **17–23** satisfied. All **144** ordered mixed same-orbit source/target pairs have nonzero `T` and `X` displacement and satisfy `u_TX != u_XT`, so the frozen two-generator ordering is nontrivial throughout the finite family.
 
-`Stage 13A single-generator surface preservation != compensated multi-generator path closure`.
+Using the same raw `u_TX` in both path orders makes **144 / 144** reordered paths detectably different. The finite-grid endpoint separation ranges from approximately **0.6321205588285577** to **12.778112197861299**. This is an endpoint-correspondence mismatch while both paths can remain on the positive constraint surface.
+
+With the exact compensator `u_XT=exp(s)u_TX`, **144 / 144** pairs close onto the same declared target. Maximum deterministic residuals are approximately **8.881784197001252e-16** for the compensator law and **2.220446049250313e-16** for endpoint/target equality; the tested two-constraint surface residual is **0.0**.
+
+The independent wrong-compensator control `u_XT_wrong=u_XT+0.25(u_TX-u_XT)` is detected in **144 / 144** cases, with target residual approximately **0.15803013970713942** to **3.1945280494653243**. Cross-orbit path construction is rejected rather than compensated.
+
+Hamiltonian generator identity (`K_T`,`K_X`) remains distinct from transport/path-segment identity (`Phi_T`,`Phi_X`). Path words are typed as `(Phi_T,Phi_X)` and `(Phi_X,Phi_T)`, with `temporal_order_status = not_physical_temporal_order` and `metaphysical_claim_status = not_licensed`.
+
+Bounded result:
+
+`Stage 13B compensated two-generator path closure on the frozen 144-pair finite family = established`.
+
+Stage 13B source/test head `645ce6ab099d5f9db573c29ba81ac0854c4c26ca`, run #1710: **`1058 passed in 696.20s (0:11:36)`**.
+
+Stage 13 criteria **1–23** are satisfied; criteria **24–50** remain pending. Stage 13C — Dirac / two-clock complete relational observables and physical-orbit discrimination — is next.
 
 `raw gauge-path commutativity != successful multi-constraint closure`.
 
-`noncommuting constraint presentation != fundamental physical non-Abelianity`.
+`same raw generator parameters under reordered paths != corresponding gauge path`.
 
-`multi-constraint path covariance != refoliation invariance`.
-
-`constraint-algebra/refoliation precursor != general relativity`.
+`wrong compensator failure != physical time asymmetry`.
 
 `path word != physical temporal history`.
 
 `path-order mismatch != arrow of time by definition`.
+
+`compensated multi-constraint path closure != refoliation invariance`.
+
+`first-class finite path closure != hypersurface-deformation algebra`.
+
+`noncommuting constraint presentation != fundamental physical non-Abelianity`.
+
+`constraint-algebra/refoliation precursor != general relativity`.
 
 `one clock condition in a two-gauge-direction model != complete relational observable`.
 
@@ -518,6 +538,10 @@ After the selected Stage 13 constraint-algebra/refoliation precursor, a phase-sp
 - `constraint-algebra/refoliation precursor != general relativity`;
 - `path word != physical temporal history`;
 - `path-order mismatch != arrow of time by definition`;
+- `wrong compensator failure != physical time asymmetry`;
+- `same raw generator parameters under reordered paths != corresponding gauge path`;
+- `compensated multi-constraint path closure != refoliation invariance`;
+- `first-class finite path closure != hypersurface-deformation algebra`;
 - `one clock condition in a two-gauge-direction model != complete relational observable`;
 - `complete relational observable != ontological becoming by definition`;
 - `finite-model success != empirical discovery`;

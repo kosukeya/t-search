@@ -201,14 +201,20 @@ def test_stage13a_executable_evidence_is_synchronized() -> None:
 
 
 def test_stage13a_closes_exactly_criteria_11_16() -> None:
-    for criterion in range(11, 17):
-        marker = f"{criterion}."
-        position = PROTOCOL.index(marker)
-        assert "**satisfied**" in PROTOCOL[position : position + 350]
-    for criterion in range(17, 51):
-        marker = f"{criterion}."
-        position = PROTOCOL.index(marker)
-        assert "**pending**" in PROTOCOL[position : position + 500]
+    satisfied_lines = (
+        "11. All 36 canonical representatives satisfy both positive constraints within tolerance — **satisfied**.",
+        "12. The two constraint gradients / generator directions are independent over the declared positive family — **satisfied**.",
+        "13. Numerical/analytic-gradient evaluation confirms `{K_T,K_X}=-K_X` on the declared carrier and nonzero off-surface probes — **satisfied**.",
+        "14. `Phi_T` and `Phi_X` individually preserve the two-constraint surface on licensed paths — **satisfied**.",
+        "15. The four Stage 12 physical initial-data classes are represented without accidental collapse — **satisfied**.",
+        "16. Generator, representative, orbit, event, clock, and basis provenance remain separately typed — **satisfied**.",
+    )
+    for line in satisfied_lines:
+        assert line in PROTOCOL
+    assert PROTOCOL.count("**satisfied**") == 16
+    assert PROTOCOL.count("**pending**") == 34
+    assert "17. All 144 mixed ordered source/target pairs exhibit the declared nontrivial two-generator path structure — **pending**." in PROTOCOL
+    assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
 
 
 def test_stage13_sequence_moves_only_to_stage13b() -> None:

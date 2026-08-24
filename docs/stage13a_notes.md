@@ -1,8 +1,10 @@
 # Stage 13A Notes — Two-Constraint First-Class Carrier and Finite Representative Family
 
-Status: **implementation complete; criteria 11–16 close only after the Stage 13A executable/test family passes repository CI.**
+Status: **completed; criteria 11–16 satisfied. Stage 13B is next.**
 
 Incoming Stage 13.0 checkpoint: head `898f36682b3cadac4abd953ba1bac8e32f17103e`, GitHub Actions run #1672, **`1039 passed in 542.21s (0:09:02)`**.
+
+Stage 13A source/test checkpoint: head `ccd35956ac034de5d73d8b884a361fbe2fc92784`, GitHub Actions run #1676, **`1048 passed in 592.23s (0:09:52)`**.
 
 ## Question
 
@@ -151,9 +153,9 @@ The generator id is recorded on each transport, while basis and clock roles rema
 
 ## Stage boundary
 
-A successful Stage 13A establishes only a bounded two-constraint first-class carrier and single-generator surface preservation.
+Stage 13A establishes only a bounded two-constraint first-class carrier and single-generator surface preservation.
 
-It does not yet establish
+It does not establish
 
 - noncommuting reordered path behavior;
 - correct compensated closure;

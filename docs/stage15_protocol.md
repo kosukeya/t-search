@@ -34,7 +34,7 @@ Poisson brackets are canonical and all undeclared cross-site brackets vanish.
 
 Constants:
 
-`kappa=0.5`, `b=0.25`, and
+`kappa=0.5`, `b=0.5`, and
 
 `c_0=1.0`, `c_1=0.5`, `c_2=-0.25`.
 
@@ -75,7 +75,7 @@ and nearest-neighbor
 
 with `H_0-H_2` bracket zero.
 
-The coefficient `A_i` is phase-space dependent and must take at least one negative, one zero, and one positive value somewhere in the frozen finite family.
+The coefficient `A_i` is phase-space dependent and must take at least one negative, one zero, and one positive value somewhere in the frozen finite family. With the frozen sample and `b=kappa=0.5`, the attainable coefficient set is `{-0.5,0,0.5,1.0,1.5}`.
 
 The positive locality criterion is not merely first-class closure: the bracket of compactly supported generators must close within the union of their supports enlarged by at most one graph edge.
 

@@ -25,8 +25,9 @@ def test_stage15g_documents_validated_checkpoint_and_closes_only_criteria_48_49(
         assert "1255 passed in 886.65s (0:14:46)" in text
         assert "1255 passed in 553.80s (0:09:13)" in text
         assert "criteria 48–49 satisfied" in text.lower()
-        assert "criterion 50" in text.lower()
-        assert "pending" in text.lower()
+        normalized = text.lower().replace("**", "")
+        assert "criterion 50" in normalized
+        assert "pending" in normalized
     assert SOURCE_LOGIC_HEAD in NOTES
 
 

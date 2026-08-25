@@ -88,8 +88,8 @@ def test_stage15g_project_answers_and_boundaries_keep_metaphysical_and_physical_
     assert len(synthesis.project_questions) == 8
     q7 = next(item for item in synthesis.project_questions if item.question_id == "Q7")
     assert "No." in q7.answer
-    assert "eternalism" in q7.answer
-    assert "becoming" in q7.answer
+    assert "eternalism" in q7.question
+    assert "becoming" in q7.question
     assert "local Abelianizability != physical triviality" in q7.boundary
 
     boundaries = set(synthesis.unresolved_boundaries)

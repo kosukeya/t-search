@@ -12,20 +12,22 @@ Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were comple
 
 Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
 
-Stage 13 criteria **1–50** are completed on Draft PR #14. The validated Stage 13 synthesis is `multi_constraint_path_covariant`; PR #14 is merge-ready, open, Draft, and unmerged.
+Stage 13 criteria **1–50** are completed. At its criterion-50 checkpoint PR #14 was merge-ready, open, Draft, and unmerged; it was subsequently merged into `main` at `468fe6667ec6484fbe9e402135cd75f5d69420cf`. The validated Stage 13 synthesis is `multi_constraint_path_covariant`.
+
+Stage 14A–G are completed on Draft PR #15. The validated Stage 14 synthesis is `structure_function_path_covariant_scalar_obstructed`; criteria **1–49** are satisfied and criterion **50** is the current external final full-repository / merge-readiness review.
 
 Validated criterion-50 checkpoints:
 
 - Stage 10: `11b4357fccb0b73b7b7b80bc13e34f904290107b`, run #1271, **`868 passed in 345.59s`**.
 - Stage 11: `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`, run #1469, **`938 passed in 682.23s (0:11:22)`**.
 - Stage 12F: **`1011 passed in 692.53s (0:11:32)`**; Stage 12 criterion 50 `549eed786b36aa458470ef7e858b515117816ac7`, run #1642, **`1024 passed in 896.22s (0:14:56)`**.
-- Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`, no repository-level blocker found.
+- Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`, no repository-level blocker found. This is a historical merge-readiness marker; PR #14 was subsequently merged.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
 
-## Selected gates through Stage 14
+## Selected gates through Stage 15
 
 Selected Stage 10 gate:
 
@@ -48,6 +50,12 @@ Evidence-selected Stage 14 gate:
 > **Construct a minimal phase-space-dependent structure-function / hypersurface-deformation precursor designed to test whether the Stage 13F simple commuting-basis trivialization persists, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
 
 Stage 14 selector id: `phase_space_structure_function_precursor`.
+
+Evidence-selected Stage 15 gate:
+
+> **Construct a minimal spatially indexed first-class constraint-algebra precursor with explicit local/smeared generators and nontrivial structure-function dependence, test whether the Stage 14 triangular Abelianization persists under the declared locality-preserving basis class, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
+
+Stage 15 selector id: `spatially_indexed_constraint_algebra_precursor`.
 
 ## Historical Stage 7–9 checkpoints
 
@@ -228,7 +236,7 @@ Stage 12 criteria 1–50 are completed. Criterion 50 reviewed head `549eed786b36
 
 `finite C x G x Phi compatibility != refoliation invariance`.
 
-## Stage 13 — Multi-constraint constraint-algebra / refoliation precursor — completed at merge-readiness checkpoint
+## Stage 13 — Multi-constraint constraint-algebra / refoliation precursor — completed and merged
 
 ### Stage 13A — two-constraint first-class carrier and finite representative family — completed
 
@@ -260,23 +268,59 @@ The executable selector chooses exactly `multi_constraint_path_covariant`. Imple
 
 ### Stage 13 criterion 50 — external final repository validation / merge-readiness review — completed
 
-Reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`; run #1815 passed **`1098 passed in 695.62s (0:11:35)`**. The branch was **ahead 83 / behind 0**, PR #14 was `mergeable = true`, and no repository-level blocker was found.
+Reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`; run #1815 passed **`1098 passed in 695.62s (0:11:35)`**. The branch was **ahead 83 / behind 0**, PR #14 was `mergeable = true`, and no repository-level blocker was found. At this historical checkpoint PR #14 was merge-ready, Draft, open, and unmerged; it was subsequently merged into `main` at `468fe6667ec6484fbe9e402135cd75f5d69420cf`.
 
-Stage 13 criteria **1–50** are completed. PR #14 remains Draft, open, and unmerged.
+Stage 13 criteria **1–50** are completed and Stage 13 is merged into `main` via PR #14.
 
-## Stage 14 — phase-space-dependent structure-function / hypersurface-deformation precursor — selected next gate
+## Stage 14 — phase-space-dependent structure-function / hypersurface-deformation precursor — criteria 1–49 completed
 
-Stage 14 first tests whether Stage 13F's simple commuting-basis trivialization persists under phase-space-dependent structure-function dependence before adding gravitational field degrees of freedom.
+### Stage 14A — three-constraint first-class structure-function carrier — completed
 
-`constraint-basis equivalence != universal basis trivializability`.
+The 108 positive representatives have three independent first-class constraint/generator directions, with phase-space-dependent structure functions sampling negative, zero, and positive values and off-surface closure/Jacobi checks.
 
-`multi_constraint_path_covariant finite family != refoliation invariance`.
+### Stage 14B — mixed paths and third-direction compensation — completed
 
-`finite first-class constraint algebra != hypersurface-deformation algebra`.
+All **864/864** canonical same-orbit mixed pairs close for both `12D` and `21D` under the exact third-direction compensator. The nontrivial `X_0 != 0` subfamily contains **576** compensator differences and the `X_0=0` subfamily contains **288** exact zero differences.
 
-`phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition`.
+### Stage 14C — Dirac / complete relational / quotient descent — completed
 
-`structure-function precursor != general relativity`.
+The raw Dirac pair reconstructs exactly **4 classes × 27 representatives**, separates all **6/6** physical-orbit pairs, preserves **23328** compensated-path complete-relational comparisons, and retains nontrivial three-condition relational change.
+
+### Stage 14D — scalar obstruction vs triangular basis equivalence — completed
+
+All **216/216** required `X != 0` finite/nonzero diagonal `simple_scalar_rescaling` evaluations retain the nonzero `D'` component, while the determinant-one triangular transformation `H_2_tilde=H_2-kappa T1 X D=p_2+b p` gives an equivalent strongly commuting tested basis preserving sampled quotient/Dirac/relational/public content.
+
+### Stage 14E — typed O/P/R/V/Xi and future-measurement descent — completed
+
+All **864** path checks and **108** original/triangular basis checks preserve quotient-level public/future payloads while path, structure-function, compensator, and basis provenance remain explicit in Xi.
+
+### Stage 14F — destructive controls — completed
+
+The frozen matrix rejects **14/14** ablation/anomaly/false-positive controls in their intended layers, including the rebuilt `H_2_bad` anomaly surface.
+
+### Stage 14G — executable synthesis and evidence-selected Stage 15 gate — completed
+
+The validated synthesis is
+
+`structure_function_path_covariant_scalar_obstructed`.
+
+Source/test head `c109d1ed1c9a1f043ed741a934c32b139ca15e09`; run #1910 passed **`1168 passed in 891.95s (0:14:51)`**. Documentation-synchronized head `70adbf1355581f159544ff200f45d5a2b007d80e`; run #1918 passed **`1166 passed in 902.17s (0:15:02)`**.
+
+The Stage 15 ranking selects `spatially_indexed_constraint_algebra_precursor` before gravitational minisuperspace because spatial indexing/local smearing is the sharper missing algebraic structure and minisuperspace suppresses it.
+
+### Stage 14 criterion 50 — external final full-repository regression / merge-readiness review — in progress
+
+Stage 14 criteria **1–49** are satisfied. Criterion 50 reviews the complete Stage 14A–G repository delta, synchronizes top-level planning/status documents, checks review blockers and branch/base state, and performs the final full regression before merge-readiness is declared.
+
+`structure_function_path_covariant_scalar_obstructed finite family != refoliation invariance`.
+
+`diagonal scalar-rescaling obstruction != fundamental physical non-Abelianity`.
+
+`triangular basis equivalence != universal basis trivializability`.
+
+`spatially indexed constraint precursor != hypersurface-deformation algebra by definition`.
+
+`spatially indexed constraint precursor != general relativity`.
 
 ## Persistent interpretation guards
 

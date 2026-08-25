@@ -4,30 +4,33 @@ This roadmap is provisional and evidence-selected. Historical checkpoints and su
 
 ## Current refined candidate and status
 
-`T12_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)` remains the carried typed architecture.
+`T_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)` remains the carried typed architecture.
 
-Stage 10G selects `measurement_covariant`. **Stage 10 criteria 1–50 are completed and Stage 10 is merged** into `main` via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.
+Stage 10G selects `measurement_covariant`; Stage 10 criteria 1–50 are completed and Stage 10 is merged via PR #11.
 
-Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 were completed and **PR #12 was subsequently merged into `main`** at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`.
+Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 are completed and Stage 11 is merged via PR #12.
 
-Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 were completed and PR #13 was subsequently merged into `main` at `ee4baec55fa994217b275f9f2451e25fc6736787`.
+Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 are completed and Stage 12 is merged via PR #13.
 
-Stage 13 criteria **1–50** are completed. At its criterion-50 checkpoint PR #14 was merge-ready, open, Draft, and unmerged; it was subsequently merged into `main` at `468fe6667ec6484fbe9e402135cd75f5d69420cf`. The validated Stage 13 synthesis is `multi_constraint_path_covariant`.
+Stage 13G selects `multi_constraint_path_covariant`; Stage 13 criteria 1–50 are completed and Stage 13 is merged via PR #14.
 
-Stage 14A–G are completed on Draft PR #15. The validated Stage 14 synthesis is `structure_function_path_covariant_scalar_obstructed`; criteria **1–49** are satisfied and criterion **50** is the current external final full-repository / merge-readiness review.
+Stage 14G selects `structure_function_path_covariant_scalar_obstructed`. Stage 14 criterion 50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`. Stage 14 criteria 1–50 are completed.
+
+Stage 15A–F are scientifically validated on Draft PR #16. Stage 15G executable synthesis is implemented and currently selects `spatial_local_path_covariant_local_abelianizable`. Criteria **1–47** are validated; criteria **48–49** are in the final Stage 15G regression and criterion **50** remains the final external full-repository / merge-readiness review.
 
 Validated criterion-50 checkpoints:
 
 - Stage 10: `11b4357fccb0b73b7b7b80bc13e34f904290107b`, run #1271, **`868 passed in 345.59s`**.
 - Stage 11: `6b5ae9ffb2f1fe784080d9d2a02e349430d4f01a`, run #1469, **`938 passed in 682.23s (0:11:22)`**.
 - Stage 12F: **`1011 passed in 692.53s (0:11:32)`**; Stage 12 criterion 50 `549eed786b36aa458470ef7e858b515117816ac7`, run #1642, **`1024 passed in 896.22s (0:14:56)`**.
-- Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`, no repository-level blocker found. This is a historical merge-readiness marker; PR #14 was subsequently merged.
+- Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`; PR #14 was subsequently merged.
+- Stage 14 criterion-50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`, run #1922, **`1166 passed in 709.02s (0:11:49)`**; PR #15 was subsequently merged.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
 
-## Selected gates through Stage 15
+## Selected gates through Stage 16
 
 Selected Stage 10 gate:
 
@@ -56,6 +59,14 @@ Evidence-selected Stage 15 gate:
 > **Construct a minimal spatially indexed first-class constraint-algebra precursor with explicit local/smeared generators and nontrivial structure-function dependence, test whether the Stage 14 triangular Abelianization persists under the declared locality-preserving basis class, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
 
 Stage 15 selector id: `spatially_indexed_constraint_algebra_precursor`.
+
+Evidence-selected Stage 16 gate candidate/current executable selection:
+
+> **Construct a minimal four-site closed-cycle spatially indexed first-class constraint-algebra precursor with no terminal seed generator, retain explicit local/smeared structure-function dependence, test whether one-step L1 or finite-depth locality-preserving Abelianization still exists, and retest compensated paths, the physical quotient, complete relational observables, and typed O/P/R/V/Xi descent without assuming general relativity or refoliation invariance.**
+
+Stage 16 selector id: `four_site_closed_cycle_constraint_algebra_precursor`.
+
+Selection rationale: the Stage 15 one-step L1 witness peels the terminal `C2=K2` tail of an acyclic open chain. A three-site cycle would make every one-step neighbourhood contain every site, so the locality audit would degenerate. A four-site cycle is the smallest closed carrier for which `N1(i)` remains a genuine restriction while removing the terminal-seed loophole.
 
 ## Historical Stage 7–9 checkpoints
 
@@ -180,7 +191,7 @@ The historical matrix retains **12** typed-resource/ablation cases, **6** contro
 - `lapse_semantics_missing_typed_claim_not_established`;
 - `wrong_lapse_jacobian_numerically_refuted`;
 - `reconstructible != universally redundant`;
-- `lost != metaphysically irreducible`;
+- `lost != metaphysically_irreducible`;
 - `wrong-gauge failure != ontological becoming`;
 - `finite-model ablation != fundamental ontology`.
 
@@ -272,7 +283,7 @@ Reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`; run #1815 passed **`10
 
 Stage 13 criteria **1–50** are completed and Stage 13 is merged into `main` via PR #14.
 
-## Stage 14 — phase-space-dependent structure-function / hypersurface-deformation precursor — criteria 1–49 completed
+## Stage 14 — phase-space-dependent structure-function / hypersurface-deformation precursor — completed and merged
 
 ### Stage 14A — three-constraint first-class structure-function carrier — completed
 
@@ -300,30 +311,70 @@ The frozen matrix rejects **14/14** ablation/anomaly/false-positive controls in 
 
 ### Stage 14G — executable synthesis and evidence-selected Stage 15 gate — completed
 
-The validated synthesis is
-
-`structure_function_path_covariant_scalar_obstructed`.
+The validated synthesis is `structure_function_path_covariant_scalar_obstructed`.
 
 Source/test head `c109d1ed1c9a1f043ed741a934c32b139ca15e09`; run #1910 passed **`1168 passed in 891.95s (0:14:51)`**. Documentation-synchronized head `70adbf1355581f159544ff200f45d5a2b007d80e`; run #1918 passed **`1166 passed in 902.17s (0:15:02)`**.
 
-The Stage 15 ranking selects `spatially_indexed_constraint_algebra_precursor` before gravitational minisuperspace because spatial indexing/local smearing is the sharper missing algebraic structure and minisuperspace suppresses it.
+### Stage 14 criterion 50 — completed and subsequently merged
 
-### Stage 14 criterion 50 — external final full-repository regression / merge-readiness review — in progress
+Reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was merge-ready, Draft, open, and unmerged at that historical checkpoint and was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`.
 
-Stage 14 criteria **1–49** are satisfied. Criterion 50 reviews the complete Stage 14A–G repository delta, synchronizes top-level planning/status documents, checks review blockers and branch/base state, and performs the final full regression before merge-readiness is declared.
+Stage 14 criteria **1–50** are completed.
 
-`structure_function_path_covariant_scalar_obstructed finite family != refoliation invariance`.
+## Stage 15 — spatially indexed constraint-algebra precursor — A–G implemented, final validation in progress
 
-`diagonal scalar-rescaling obstruction != fundamental physical non-Abelianity`.
+### Stage 15A — local/smeared first-class carrier — completed
 
-`triangular basis equivalence != universal basis trivializability`.
+The open three-site carrier has 108 positive representatives in four physical orbits, three independent constraint directions, and a nontrivial phase-space-dependent local structure coefficient.
 
-`spatially indexed constraint precursor != hypersurface-deformation algebra by definition`.
+### Stage 15B — compensated local/smeared paths and Jacobi — completed
 
-`spatially indexed constraint precursor != general relativity`.
+All 864 canonical local pairs and 540 smeared ordering probes satisfy the exact predicted compensation; off-surface Jacobi and an independent Hamiltonian flow oracle are retained.
+
+### Stage 15C — Dirac / complete relational / physical quotient — completed
+
+The full Dirac pair yields exactly four classes of 27 representatives; same-orbit sampled pairs are constraint-flow reachable, all six orbit pairs are separated, and complete three-clock relational observables descend while omitted-clock/raw-coordinate controls fail.
+
+### Stage 15D — locality-preserving basis pressure — completed
+
+A distinct one-step L1 nearest-neighbour shear `C1 -> C1-kappa*T1*C2=K1` gives a strongly commuting basis and preserves the tested physical content. The full seed reconstruction itself remains non-one-step-L1 and factors at exact Lfinite depth 2.
+
+Classification: `local_abelianization_persists`.
+
+### Stage 15E — typed O/P/R/V/Xi descent — completed
+
+108 representative architectures descend to four public payloads; 864 local checks, 540 smeared checks, 1080 independent non-grid endpoint reconstructions, and 1512 basis correspondences preserve the declared public/future payloads while provenance remains in Xi.
+
+### Stage 15F — destructive controls — completed
+
+All **15/15** frozen destructive controls are rejected as intended. Scientific run #1982 passed **`1242 passed in 489.65s (0:08:09)`**.
+
+### Stage 15G — executable synthesis and evidence-selected Stage 16 gate — implemented, final regression in progress
+
+The executable selector chooses `spatial_local_path_covariant_local_abelianizable` and ranks `four_site_closed_cycle_constraint_algebra_precursor` first.
+
+The closed-cycle gate is selected to remove the open-chain terminal-seed/triangular-elimination loophole without importing GR or refoliation assumptions.
+
+Stage 15 criteria **1–47** are validated. Criteria **48–49** await the final Stage 15G full regression and criterion **50** remains the final repository/merge-readiness review.
+
+## Stage 16 — four-site closed-cycle locality pressure test — selected, not started
+
+The selected gate is the four-site closed-cycle precursor stated above. Stage 16 has not started and no claim about local Abelianizability or locality obstruction on the cycle is yet established.
+
+`closed-cycle selection != predicted locality obstruction`.
 
 ## Persistent interpretation guards
 
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
-- `not_established != false`.
+- `not_established != false`;
+- `one-step L1 Abelianization on an open three-site chain != universal local Abelianizability`;
+- `local Abelianization != absence of meaningful local constraint structure`;
+- `finite graph locality != relativistic locality`;
+- `finite smeared constraint algebra != hypersurface-deformation algebra`;
+- `compensated local/smeared operational descent != refoliation invariance`;
+- `Dirac-invariant data + relational change != proof of eternalism`;
+- `complete relational observable != ontological becoming by definition`;
+- `future-measurement covariance != future actuality`;
+- `typed operational descent != ontological equivalence`;
+- `closed-cycle selection != predicted locality obstruction`.

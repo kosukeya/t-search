@@ -6,9 +6,9 @@ This roadmap is provisional and evidence-selected. Historical checkpoints and su
 
 `T_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)` remains the carried typed architecture.
 
-Stage 10G selects `measurement_covariant`; Stage 10 criteria 1–50 are completed and Stage 10 is merged via PR #11.
+Stage 10G selects `measurement_covariant`; Stage 10 criteria 1–50 are completed and Stage 10 is merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.
 
-Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 are completed and Stage 11 is merged via PR #12. PR #12 was subsequently merged into `main`.
+Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 are completed and Stage 11 is merged via PR #12 at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`. PR #12 was subsequently merged into `main`.
 
 Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 are completed and Stage 12 is merged via PR #13.
 

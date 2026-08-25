@@ -8,7 +8,7 @@ This roadmap is provisional and evidence-selected. Historical checkpoints and su
 
 Stage 10G selects `measurement_covariant`; Stage 10 criteria 1–50 are completed and Stage 10 is merged via PR #11.
 
-Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 are completed and Stage 11 is merged via PR #12.
+Stage 11G selects `parametrized_covariant`; Stage 11 criteria 1–50 are completed and Stage 11 is merged via PR #12. PR #12 was subsequently merged into `main`.
 
 Stage 12G selects `multi_orbit_gauge_covariant`; Stage 12 criteria 1–50 are completed and Stage 12 is merged via PR #13.
 
@@ -191,7 +191,7 @@ The historical matrix retains **12** typed-resource/ablation cases, **6** contro
 - `lapse_semantics_missing_typed_claim_not_established`;
 - `wrong_lapse_jacobian_numerically_refuted`;
 - `reconstructible != universally redundant`;
-- `lost != metaphysically_irreducible`;
+- `lost != metaphysically irreducible`;
 - `wrong-gauge failure != ontological becoming`;
 - `finite-model ablation != fundamental ontology`.
 

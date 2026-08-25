@@ -16,7 +16,7 @@ Stage 13G selects `multi_constraint_path_covariant`; Stage 13 criteria 1–50 ar
 
 Stage 14G selects `structure_function_path_covariant_scalar_obstructed`. Stage 14 criterion 50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`. Stage 14 criteria 1–50 are completed.
 
-Stage 15A–G are scientifically validated on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; its reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed. Stage 16 is selected but not started.
+Stage 15A–G and criterion 50 are completed on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`. Criterion 50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. Stage 15 criteria **1–50** are completed; PR #16 is merge-ready while remaining Draft, open, and unmerged. Stage 16 is selected but not started.
 
 Validated criterion-50 checkpoints:
 
@@ -25,6 +25,7 @@ Validated criterion-50 checkpoints:
 - Stage 12F: **`1011 passed in 692.53s (0:11:32)`**; Stage 12 criterion 50 `549eed786b36aa458470ef7e858b515117816ac7`, run #1642, **`1024 passed in 896.22s (0:14:56)`**.
 - Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`; PR #14 was subsequently merged.
 - Stage 14 criterion-50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`, run #1922, **`1166 passed in 709.02s (0:11:49)`**; PR #15 was subsequently merged.
+- Stage 15 criterion-50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 **`1261 passed in 486.79s (0:08:06)`**; PR run #2002 **`1261 passed in 906.83s (0:15:06)`**; PR #16 is merge-ready while remaining Draft, open, and unmerged.
 
 `repository validation != new scientific evidence`.
 
@@ -60,7 +61,7 @@ Evidence-selected Stage 15 gate:
 
 Stage 15 selector id: `spatially_indexed_constraint_algebra_precursor`.
 
-Evidence-selected Stage 16 gate candidate/current executable selection:
+Evidence-selected Stage 16 gate:
 
 > **Construct a minimal four-site closed-cycle spatially indexed first-class constraint-algebra precursor with no terminal seed generator, retain explicit local/smeared structure-function dependence, test whether one-step L1 or finite-depth locality-preserving Abelianization still exists, and retest compensated paths, the physical quotient, complete relational observables, and typed O/P/R/V/Xi descent without assuming general relativity or refoliation invariance.**
 
@@ -321,7 +322,7 @@ Reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`11
 
 Stage 14 criteria **1–50** are completed.
 
-## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–49 completed; criterion 50 external review
+## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–50 completed; merge-ready
 
 ### Stage 15A — local/smeared first-class carrier — completed
 
@@ -355,7 +356,11 @@ The validated executable selector chooses `spatial_local_path_covariant_local_ab
 
 The closed-cycle gate is selected to remove the open-chain terminal-seed/triangular-elimination loophole without importing GR or refoliation assumptions.
 
-Stage 15 criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; its reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed.
+### Stage 15 criterion 50 — external final repository validation / merge-readiness review — completed
+
+Reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. The external review found no remaining repository-level blocker. The audit is recorded in `results/stage15_criterion50_merge_readiness.md`.
+
+Stage 15 criteria **1–50** are completed. PR #16 is **merge-ready** while remaining **Draft, open, and unmerged** for user review.
 
 ## Stage 16 — four-site closed-cycle locality pressure test — selected, not started
 

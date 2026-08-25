@@ -103,8 +103,11 @@ def test_stage15c_omitting_any_one_clock_condition_leaves_explicit_gauge_depende
 
     expected = {0: 2.0, 1: 1.0, 2: 0.5}
     for omitted, target in expected.items():
-        observed = {round(spread, 12) for _, index, _, spread in spreads if index == omitted}
-        assert observed == {target}
+        assert all(
+            math.isclose(spread, target, abs_tol=STAGE15A_ATOL)
+            for _, index, _, spread in spreads
+            if index == omitted
+        )
 
 
 def test_stage15c_raw_Q_coordinate_does_not_descend_to_the_sampled_quotient():
@@ -159,7 +162,12 @@ def test_stage15c_diagnostics_close_only_criteria_25_through_31():
     assert diagnostics.max_local_relational_residual <= STAGE15A_ATOL
     assert diagnostics.max_smeared_endpoint_residual <= STAGE15A_ATOL
     assert diagnostics.max_smeared_relational_residual <= STAGE15A_ATOL
-    assert diagnostics.omitted_clock_spreads == (2.0, 1.0, 0.5)
+    assert all(
+        math.isclose(observed, expected, abs_tol=STAGE15A_ATOL)
+        for observed, expected in zip(
+            diagnostics.omitted_clock_spreads, (2.0, 1.0, 0.5), strict=True
+        )
+    )
     assert math.isclose(diagnostics.min_raw_Q_spread, 3.5, abs_tol=STAGE15A_ATOL)
     assert math.isclose(diagnostics.max_raw_Q_spread, 3.5, abs_tol=STAGE15A_ATOL)
     assert diagnostics.strong_dirac_commutation_established

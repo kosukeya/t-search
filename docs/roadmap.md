@@ -16,7 +16,7 @@ Stage 13G selects `multi_constraint_path_covariant`; Stage 13 criteria 1–50 ar
 
 Stage 14G selects `structure_function_path_covariant_scalar_obstructed`. Stage 14 criterion 50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`. Stage 14 criteria 1–50 are completed.
 
-Stage 15A–F are scientifically validated on Draft PR #16. Stage 15G executable synthesis is implemented and currently selects `spatial_local_path_covariant_local_abelianizable`. Criteria **1–47** are validated; criteria **48–49** are in the final Stage 15G regression and criterion **50** remains the final external full-repository / merge-readiness review.
+Stage 15A–G are scientifically validated on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; its reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed. Stage 16 is selected but not started.
 
 Validated criterion-50 checkpoints:
 
@@ -321,7 +321,7 @@ Reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`11
 
 Stage 14 criteria **1–50** are completed.
 
-## Stage 15 — spatially indexed constraint-algebra precursor — A–G implemented, final validation in progress
+## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–49 completed; criterion 50 external review
 
 ### Stage 15A — local/smeared first-class carrier — completed
 
@@ -349,13 +349,13 @@ Classification: `local_abelianization_persists`.
 
 All **15/15** frozen destructive controls are rejected as intended. Scientific run #1982 passed **`1242 passed in 489.65s (0:08:09)`**.
 
-### Stage 15G — executable synthesis and evidence-selected Stage 16 gate — implemented, final regression in progress
+### Stage 15G — executable synthesis and evidence-selected Stage 16 gate — completed
 
-The executable selector chooses `spatial_local_path_covariant_local_abelianizable` and ranks `four_site_closed_cycle_constraint_algebra_precursor` first.
+The validated executable selector chooses `spatial_local_path_covariant_local_abelianizable` and ranks `four_site_closed_cycle_constraint_algebra_precursor` first. Push run #1995 passed **`1255 passed in 886.65s (0:14:46)`** and PR run #1996 passed **`1255 passed in 553.80s (0:09:13)`**.
 
 The closed-cycle gate is selected to remove the open-chain terminal-seed/triangular-elimination loophole without importing GR or refoliation assumptions.
 
-Stage 15 criteria **1–47** are validated. Criteria **48–49** await the final Stage 15G full regression and criterion **50** remains the final repository/merge-readiness review.
+Stage 15 criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; its reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed.
 
 ## Stage 16 — four-site closed-cycle locality pressure test — selected, not started
 

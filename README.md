@@ -6,7 +6,7 @@
 
 Stages 1–14 are completed and merged. Stage 14 completed criterion 50 at reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was merge-ready, Draft, open, and unmerged at that checkpoint and was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`.
 
-Stage 15A–F are scientifically validated on Draft PR #16. Stage 15G executable synthesis is implemented and selects `spatial_local_path_covariant_local_abelianizable`; criteria **1–47** are validated, criteria **48–49** are in final Stage 15G regression, and criterion **50** remains the external full-repository / merge-readiness review. PR #16 remains Draft, open, and unmerged.
+Stage 15A–G are scientifically validated on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; its reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed. PR #16 remains Draft, open, and unmerged.
 
 Historical compatibility markers:
 
@@ -18,7 +18,7 @@ Historical compatibility markers:
 - Stage 13 merged via PR #14 at `468fe6667ec6484fbe9e402135cd75f5d69420cf` after its criterion-50 checkpoint.
 - Stage 14 merged via PR #15 at `041dce7af2a8990d6ca759dd668d9a53323bccff` after its criterion-50 checkpoint.
 
-Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`; Stage 14G `structure_function_path_covariant_scalar_obstructed`; Stage 15G candidate/current executable selection `spatial_local_path_covariant_local_abelianizable`.
+Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`; Stage 14G `structure_function_path_covariant_scalar_obstructed`; Stage 15G `spatial_local_path_covariant_local_abelianizable`.
 
 `repository validation != new scientific evidence`.
 
@@ -287,7 +287,7 @@ Criterion 50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922
 
 Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 
-## Stage 15 — spatially indexed constraint-algebra precursor — A–G implemented, final validation in progress
+## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–49 completed; criterion 50 external review
 
 - Stage 15A establishes the three-site local/smeared first-class carrier and 108-representative family.
 - Stage 15B establishes exact compensated local/smeared path closure and off-surface Jacobi consistency.
@@ -295,9 +295,9 @@ Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 - Stage 15D finds a genuine one-step L1 Abelianizing witness while the full seed reconstruction remains Lfinite depth 2; classification `local_abelianization_persists`.
 - Stage 15E carries typed O/P/R/V/Xi and inherited future-measurement payloads across quotient, path, and basis choices while provenance remains in Xi.
 - Stage 15F rejects **15/15** frozen destructive controls; PR run #1982 passed **`1242 passed in 489.65s (0:08:09)`**.
-- Stage 15G executable synthesis selects `spatial_local_path_covariant_local_abelianizable` and ranks the four-site closed-cycle gate first; its final full-suite regression is in progress.
+- Stage 15G is validated and selects `spatial_local_path_covariant_local_abelianizable`; push run #1995 passed **`1255 passed in 886.65s (0:14:46)`** and PR run #1996 passed **`1255 passed in 553.80s (0:09:13)`**. It ranks the four-site closed-cycle gate first.
 
-Stage 15 criteria **1–47** are validated. Criteria **48–49** await the final Stage 15G regression; criterion **50** remains the final external full-repository / merge-readiness review.
+Stage 15 criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; the reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed.
 
 ## Interpretation guards
 

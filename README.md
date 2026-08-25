@@ -6,7 +6,7 @@
 
 Stages 1–14 are completed and merged. Stage 14 completed criterion 50 at reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was merge-ready, Draft, open, and unmerged at that checkpoint and was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`.
 
-Stage 15A–G are scientifically validated on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; its reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed. PR #16 remains Draft, open, and unmerged.
+Stage 15A–G and criterion 50 are completed on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`. Criterion 50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. Stage 15 criteria **1–50** are completed and PR #16 is merge-ready while remaining Draft, open, and unmerged. Stage 16 is selected but not started.
 
 Historical compatibility markers:
 
@@ -54,7 +54,7 @@ Evidence-selected Stage 15 gate:
 
 Stage 15 selector: `spatially_indexed_constraint_algebra_precursor`.
 
-Evidence-selected Stage 16 gate candidate/current executable selection:
+Evidence-selected Stage 16 gate:
 
 > **Construct a minimal four-site closed-cycle spatially indexed first-class constraint-algebra precursor with no terminal seed generator, retain explicit local/smeared structure-function dependence, test whether one-step L1 or finite-depth locality-preserving Abelianization still exists, and retest compensated paths, the physical quotient, complete relational observables, and typed O/P/R/V/Xi descent without assuming general relativity or refoliation invariance.**
 
@@ -166,7 +166,7 @@ Classifications and guards retained:
 - `lapse_semantics_missing_typed_claim_not_established`;
 - `wrong_lapse_jacobian_numerically_refuted`;
 - `reconstructible != universally redundant`;
-- `lost != metaphysically irreducible`;
+- `lost != metaphysically_irreducible`;
 - `wrong-gauge failure != ontological becoming`;
 - `finite-model ablation != fundamental ontology`.
 
@@ -287,7 +287,7 @@ Criterion 50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922
 
 Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 
-## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–49 completed; criterion 50 external review
+## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–50 completed; merge-ready
 
 - Stage 15A establishes the three-site local/smeared first-class carrier and 108-representative family.
 - Stage 15B establishes exact compensated local/smeared path closure and off-surface Jacobi consistency.
@@ -296,8 +296,9 @@ Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 - Stage 15E carries typed O/P/R/V/Xi and inherited future-measurement payloads across quotient, path, and basis choices while provenance remains in Xi.
 - Stage 15F rejects **15/15** frozen destructive controls; PR run #1982 passed **`1242 passed in 489.65s (0:08:09)`**.
 - Stage 15G is validated and selects `spatial_local_path_covariant_local_abelianizable`; push run #1995 passed **`1255 passed in 886.65s (0:14:46)`** and PR run #1996 passed **`1255 passed in 553.80s (0:09:13)`**. It ranks the four-site closed-cycle gate first.
+- Criterion 50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. The external merge-readiness review is recorded in `results/stage15_criterion50_merge_readiness.md`.
 
-Stage 15 criteria **1–49** are satisfied. Criterion **50** is the external final full-repository / merge-readiness review; the reviewed checkpoint is recorded in `results/stage15_criterion50_merge_readiness.md` when closed.
+Stage 15 criteria **1–50** are completed. PR #16 is **merge-ready** while remaining **Draft, open, and unmerged** for user review. Stage 16 remains selected, not started.
 
 ## Interpretation guards
 

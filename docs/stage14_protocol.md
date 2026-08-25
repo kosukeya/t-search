@@ -1,6 +1,6 @@
 # Stage 14 Protocol — Phase-Space-Dependent Structure-Function / Hypersurface-Deformation Precursor
 
-Status: **Stage 14G source/test checkpoint validated; criteria 1–49 satisfied; criterion 50 pending. External final full-repository regression / merge-readiness review is next.**
+Status: **Stage 14 completed at the criterion-50 merge-readiness checkpoint; criteria 1–50 satisfied. PR #15 is merge-ready, Draft, open, and unmerged.**
 
 ## 1. Incoming baseline and selected gate
 
@@ -26,9 +26,7 @@ The carried typed architecture remains
 
 with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)`.
 
-Stage 14.0 froze the protocol. Stage 14A established the bounded carrier. Stage 14B established exact compensated mixed-path closure. Stage 14C established the bounded Dirac / relational / quotient evidence. Stage 14D established the frozen basis-transformation pressure test. Stage 14E established typed operational / future-measurement descent. Stage 14F established the frozen destructive-control evidence. Stage 14G now integrates A–F into the bounded synthesis and evidence-selects the Stage 15 gate.
-
-## 2. Frozen canonical phase space and constants
+## 2. Frozen canonical carrier and first-class target
 
 Canonical phase space:
 
@@ -38,7 +36,7 @@ Frozen constants:
 
 `a=0.5`, `b=0.25`, `kappa=0.5`.
 
-The positive Stage 14 carrier has three constraint directions:
+Positive constraints:
 
 `D = p_X + a p approx 0`,
 
@@ -46,13 +44,7 @@ The positive Stage 14 carrier has three constraint directions:
 
 `H_2 = p_2 + b p + kappa T1 X D approx 0`.
 
-Stage 14A verifies that the three positive constraint gradients and Hamiltonian directions have rank three on every frozen representative.
-
-`three constraint labels != three independent gauge directions`.
-
-## 3. Frozen first-class structure-function target
-
-The Poisson-bracket closure target is
+Frozen bracket targets:
 
 `{H_1,D}=0`,
 
@@ -60,27 +52,25 @@ The Poisson-bracket closure target is
 
 `{H_2,D}=kappa T1 D`.
 
-Thus the nonzero structure functions are phase-space dependent:
+Thus
 
 `f_12^D(z)=-kappa X`,
 
 `f_2D^D(z)=kappa T1`.
 
-The frozen grid samples negative, zero, and positive values.
-
-The Jacobi target is
+The frozen Jacobi target is
 
 `{H_1,{H_2,D}} + {H_2,{D,H_1}} + {D,{H_1,H_2}} = 0`.
 
-Stage 14A checks these identities on all positive representatives and on deliberately off-surface probes, rather than inferring closure only weakly from `D=0`.
+`three constraint labels != three independent gauge directions`.
 
 `phase-space-dependent first-class closure != hypersurface-deformation algebra`.
 
 `structure functions != spacetime geometry by definition`.
 
-## 4. Frozen constraint-surface representatives and physical orbit family
+## 3. Frozen representative family
 
-The four carried physical Dirac-data controls are
+The four physical Dirac-data controls are
 
 - `omega_alpha : (Q_D,P_D)=(-0.35,1.25)`;
 - `omega_beta : (Q_D,P_D)=(0.40,1.25)`;
@@ -93,7 +83,7 @@ Frozen representative grid:
 
 This gives **27 representatives per physical orbit** and **108 positive representatives total**.
 
-For `(Q_D,P_D)=(Q,P)` the representatives use
+For `(Q_D,P_D)=(Q,P)`:
 
 `p=P`,
 
@@ -105,13 +95,11 @@ For `(Q_D,P_D)=(Q,P)` the representatives use
 
 `q=Q + P T1 + b T2 + a X`.
 
-Because `D=0` on these representatives, the `kappa T1 X D` contribution vanishes on the positive surface while its derivatives and structure-function coefficients remain nontrivial.
-
-The target physical quotient remains exactly four classes of 27 sampled representatives.
+The target quotient contains exactly four classes of 27 sampled representatives.
 
 `constraint-surface vanishing of a term != algebraic irrelevance of its derivatives`.
 
-## 5. Frozen positive Hamiltonian flows
+## 4. Frozen flows and compensated mixed paths
 
 On the positive constraint surface:
 
@@ -127,37 +115,31 @@ For `Phi_2(u)` with fixed `T1`:
 
 `q -> q + b u + a [X exp(kappa T1 u)-X]`.
 
-Stage 14A checks each generator at parameters `-0.5` and `+0.5` from every positive representative, yielding 648 single-generator flow probes.
-
 `Stage 14A single-generator surface/Dirac preservation != third-direction compensated mixed-path closure`.
 
-## 6. Frozen third-direction compensated path semantics
-
-For a same-orbit source `(T1_0,T2_0,X_0)` and target `(T1_1,T2_1,X_1)`, define
+For a same-orbit source `(T1_0,T2_0,X_0)` and target `(T1_1,T2_1,X_1)` define
 
 `s=T1_1-T1_0`,
 
 `u=T2_1-T2_0`.
 
-Path `12D` uses `Phi_1(s)`, then `Phi_2(u)`, then `Phi_D(v_12D)` with
+Path `12D` uses `Phi_1(s)`, `Phi_2(u)`, `Phi_D(v_12D)` with
 
 `X_12*=X_0 exp(kappa T1_1 u)`,
 
 `v_12D=X_1-X_12*`.
 
-Path `21D` uses `Phi_2(u)`, then `Phi_1(s)`, then `Phi_D(v_21D)` with
+Path `21D` uses `Phi_2(u)`, `Phi_1(s)`, `Phi_D(v_21D)` with
 
 `X_21*=X_0 exp(kappa T1_0 u)`,
 
 `v_21D=X_1-X_21*`.
 
-The exact compensation difference is
+Exact difference:
 
 `v_21D-v_12D = X_0 [exp(kappa T1_1 u)-exp(kappa T1_0 u)]`.
 
-The canonical Stage 14B family contains **864 ordered mixed pairs** with all three sampled coordinates changed.
-
-Stage 14B validates both ordered implementations and exact compensation on all 864 pairs.
+The canonical family contains **864 ordered mixed pairs**.
 
 `raw path-word inequality != physical path dependence`.
 
@@ -167,7 +149,7 @@ Stage 14B validates both ordered implementations and exact compensation on all 8
 
 `wrong compensation failure != physical time asymmetry`.
 
-## 7. Frozen Dirac, relational, and quotient targets
+## 5. Frozen Dirac, relational, and quotient targets
 
 Frozen Dirac pair:
 
@@ -179,11 +161,9 @@ Frozen complete relational observable:
 
 `q(T1=tau1,T2=tau2,X=chi)=Q_D+P_D tau1+b tau2+a chi`.
 
-The deliberately incomplete two-clock expression is
+Deliberately incomplete two-clock expression:
 
 `q(T1=tau1,T2=tau2; X raw)=Q_D+P_D tau1+b tau2+a X`.
-
-Stage 14C tests representative-independent Dirac reconstruction, all six pairwise orbit separations, compensated-path descent, nontrivial relational change, incomplete-observable `D` dependence, and exactly four quotient classes.
 
 `three gauge directions require enough relational conditions for completeness`.
 
@@ -193,11 +173,9 @@ Stage 14C tests representative-independent Dirac reconstruction, all six pairwis
 
 `gauge quotient != elimination of physical change`.
 
-## 8. Frozen basis-transformation taxonomy
+## 6. Frozen basis-transformation taxonomy
 
-### 8.1 Stage-13-style simple scalar rescaling
-
-A `simple_scalar_rescaling` is an invertible diagonal transformation
+A `simple_scalar_rescaling` is
 
 `H_1' = f_1(z) H_1`,
 
@@ -205,31 +183,29 @@ A `simple_scalar_rescaling` is an invertible diagonal transformation
 
 `D' = f_D(z) D`
 
-with finite nonzero scalar factors on every positive representative and no constraint mixing.
+with finite nonzero factors and no constraint mixing.
 
-Modulo the `H_1'` and `H_2'` directions, the `D'` component of `{H_1',H_2'}` is
+Modulo the `H_1'` and `H_2'` directions, the `D'` coefficient of `{H_1',H_2'}` is
 
 `-kappa X f_1 f_2 / f_D`.
 
-A rescaling that vanishes or diverges on the positive family is singular and is not admitted as an equivalent basis.
+Vanishing or divergent transformations are singular and not admitted as equivalent bases.
 
-### 8.2 Triangular phase-space-dependent mixing
-
-The frozen comparison transformation is
+The frozen triangular comparison is
 
 `H_2_tilde = H_2 - kappa T1 X D = p_2 + b p`.
 
-Together with unchanged `H_1` and `D`, the target brackets are commuting. The transformation is triangular with determinant one in constraint space.
-
-### 8.3 Frozen interpretation
+Together with unchanged `H_1` and `D`, it gives a determinant-one commuting presentation.
 
 `Stage-13-style scalar-rescaling obstruction != universal non-Abelianizability`.
+
+`diagonal scalar-rescaling obstruction != fundamental physical non-Abelianity`.
 
 `triangular basis equivalence != universal basis trivializability`.
 
 `constraint-basis change != physical-orbit change`.
 
-## 9. Frozen O/P/R/V/Xi carry-over
+## 7. Frozen O/P/R/V/Xi carry-over
 
 Stage 14 reuses
 
@@ -239,7 +215,7 @@ with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weig
 
 The inherited vocabulary retains `QExt(e1)={h_L,h_R}`, `future_signature_left`, `future_signature_other`, external parameterization `identity`, and internal measurement chart `A/e2`.
 
-Xi stores representation provenance including generator identity, structure-function values, path word, raw `(s,u,v)`, compensator provenance, source/target representative, basis identity, and basis-transform provenance.
+Xi stores generator identity, structure-function values, representative identity, path word, raw `(s,u,v)`, compensator provenance, source/target correspondence, basis identity, and basis-transform provenance.
 
 `structure-function/path Xi provenance != quotient-level physical content`.
 
@@ -247,15 +223,15 @@ Xi stores representation provenance including generator identity, structure-func
 
 `future-measurement covariance != future actuality`.
 
-## 10. Frozen anomaly, ablation, and false-positive controls
+## 8. Frozen controls and classification vocabulary
 
-Required controls include `kappa=0`, duplicate/rank-deficient directions, missing `D`, wrong or missing third-direction compensation, reuse of the Stage-13-style two-generator compensator, cross-orbit paths, the two-clock incomplete observable, singular scalar rescaling, false universal-Abelianization interpretation, payload corruption, and
+Required controls include `kappa=0`, duplicate/rank-deficient directions, missing `D`, wrong/missing compensation, Stage-13-style compensator reuse, cross-orbit paths, the incomplete two-clock observable, singular scalar rescaling, false universal-Abelianization interpretation, payload corruption, and
 
 `H_2_bad = H_2 + epsilon q`
 
 with `epsilon=0.1`.
 
-Frozen classification vocabulary includes
+Frozen classifications include
 
 - `structure_function_removed_control_rejected`;
 - `rank_deficient_constraint_control_rejected`;
@@ -272,239 +248,75 @@ Frozen classification vocabulary includes
 - `path_dependent_payload_corruption_detected`;
 - `basis_dependent_payload_corruption_detected`.
 
-## 11. Stage 14A validated executable evidence
+## 9. Validated Stage 14A–F executable evidence
 
-Incoming repository-validated Stage 14.0 checkpoint: head `afe0598362ccf0e808d2c690491cda810594d87e`, run #1832, **`1106 passed in 879.78s (0:14:39)`**.
+### Stage 14.0 / 14A
 
-Stage 14A source/test head: `d1116a743b0374c96993c476331f5cceacfbb077`, run #1838, **`1113 passed in 545.23s (0:09:05)`**.
+Stage 14.0 head `afe0598362ccf0e808d2c690491cda810594d87e`, run #1832: **`1106 passed in 879.78s (0:14:39)`**.
 
-Documentation-synchronized Stage 14A head: `db72c8715a3b58d4422932640807dbb20297005e`, run #1846, **`1114 passed in 900.17s (0:15:00)`**.
+Stage 14A source/test head `d1116a743b0374c96993c476331f5cceacfbb077`, run #1838: **`1113 passed in 545.23s (0:09:05)`**.
 
-Validated deterministic Stage 14A evidence:
+Documentation-synchronized Stage 14A head `db72c8715a3b58d4422932640807dbb20297005e`, run #1846: **`1114 passed in 900.17s (0:15:00)`**.
 
-- physical orbits: **4**;
-- positive representatives: **108 = 4 x 27**;
-- positive constraint residual maximum: **0.0**;
-- minimum constraint-gradient rank: **3**;
-- minimum Hamiltonian-generator rank: **3**;
-- minimum singular value of both row families: approximately **0.7812880785647448**;
-- sampled structure-function values: **-0.5, 0.0, 0.5**;
-- off-surface closure/Jacobi probes: **108**;
-- maximum Poisson-closure identity residual: **0.0**;
-- maximum Jacobi residual: **0.0**;
-- single-generator flow probes: **648**;
-- maximum flow constraint residual: **0.0**;
-- maximum flow Dirac residual: approximately **2.220446049250313e-16**;
-- `structure_function_removed_control_rejected`;
-- `rank_deficient_constraint_control_rejected`.
-
-Bounded result:
+Validated evidence includes **108** representatives, rank-three constraint/generator families, minimum singular value approximately **0.7812880785647448**, structure-function samples `-0.5, 0.0, 0.5`, **108** off-surface closure/Jacobi probes, **648** single-generator flow probes, zero closure/Jacobi residuals, and maximum flow Dirac residual approximately **2.220446049250313e-16**.
 
 `Stage 14A three-constraint first-class structure-function carrier and finite representative family = established`.
 
-## 12. Stage 14B validated executable evidence
+### Stage 14B
 
-Stage 14B source/test head: `2b0866b63e6fb4d4951f883839e6693b12ceddfc`, run #1852, **`1122 passed in 891.20s (0:14:51)`**.
+Source/test head `2b0866b63e6fb4d4951f883839e6693b12ceddfc`, run #1852: **`1122 passed in 891.20s (0:14:51)`**.
 
-Documentation-synchronized Stage 14B head: `318d6a34a7f8ddac29966493c31bd0cf8120ac4e`, run #1860, **`1123 passed in 548.54s (0:09:08)`**.
+Documentation-synchronized head `318d6a34a7f8ddac29966493c31bd0cf8120ac4e`, run #1860: **`1123 passed in 548.54s (0:09:08)`**.
 
-Validated deterministic Stage 14B evidence:
-
-- canonical ordered mixed pairs: **864**;
-- positive ordered path results: **1728**;
-- nontrivial `X_0 != 0` pairs: **576**;
-- exact-zero `X_0 = 0` pairs: **288**;
-- nonzero compensator-difference count: **576**;
-- zero compensator-difference count: **288**;
-- minimum nonzero `|v_21D-v_12D|`: approximately **0.3934693402873666**;
-- maximum `|v_21D-v_12D|`: approximately **2.3504023872876028**;
-- maximum compensator-identity residual: **0.0**;
-- maximum raw-formula residual: approximately **4.440892098500626e-16**;
-- maximum final endpoint residual: approximately **4.440892098500626e-16**;
-- maximum final Dirac residual: approximately **4.440892098500626e-16**;
-- wrong-sign compensator rejected: **1728/1728**;
-- half-value compensator rejected: **1728/1728**;
-- missing compensator rejected: **1728/1728**;
-- reused Stage-13-style same-`D` compensator rejected on **576/576** nontrivial pairs;
-- exact-zero-difference compatibility retained on **288/288** `X_0=0` pairs;
-- cross-orbit false positives rejected: **8748/8748**.
-
-Bounded result:
+Validated evidence includes **864** mixed pairs, **1728** positive ordered paths, **576** nonzero compensator differences, **288** exact-zero differences, minimum nonzero difference approximately **0.3934693402873666**, maximum approximately **2.3504023872876028**, endpoint/Dirac residuals of order `4.440892098500626e-16`, wrong/missing compensator rejection, and **8748/8748** cross-orbit rejection.
 
 `Stage 14B phase-space-dependent mixed paths and exact third-direction compensation on the frozen finite family = established`.
 
-This result establishes only finite compensated mixed-path closure. It does not establish refoliation invariance, hypersurface-deformation algebra, general covariance, gravitational field dynamics, or GR.
+### Stage 14C
 
-## 13. Stage 14C validated executable evidence
+Source/test/runner head `3e390ea59af879cc0b2962989467cdfe2b4ee1ca`, run #1866: **`1130 passed in 898.22s (0:14:58)`**.
 
-Stage 14C source/test/runner head: `3e390ea59af879cc0b2962989467cdfe2b4ee1ca`, run #1866, **`1130 passed in 898.22s (0:14:58)`**.
+Documentation-synchronized head `4011b90078c6a223e6d948a3034e07376fca4dbd`, run #1874: **`1132 passed in 877.20s (0:14:37)`**.
 
-Documentation-synchronized Stage 14C head: `4011b90078c6a223e6d948a3034e07376fca4dbd`, run #1874, **`1132 passed in 877.20s (0:14:37)`**.
+Validated evidence includes **2916** complete-relational evaluations, **23328** compensated relational comparisons, **36/36** incomplete two-clock groups retaining third-direction dependence, maximum path relational residual approximately **8.881784197001252e-16**, **6/6** physical-orbit separation, and exactly four quotient classes of 27 representatives with **8748/8748** cross-orbit pairs rejected.
 
-Validated deterministic Stage 14C evidence:
-
-- raw Dirac estimates: **108**;
-- physical-orbit summaries: **4 × 27 representatives**;
-- maximum declared `Q_D` reconstruction residual: approximately **1.6653345369377348e-16**;
-- maximum declared `P_D` reconstruction residual: **0.0**;
-- maximum within-orbit `Q_D` spread: approximately **2.220446049250313e-16**;
-- maximum within-orbit `P_D` spread: **0.0**;
-- maximum strong Dirac bracket residual against `D,H_1,H_2`: **0.0**;
-- distinct physical-orbit pairs: **6**, all **6/6** separated;
-- minimum full Dirac-pair separation: **0.5**;
-- same-`P_D`/different-`Q_D` anti-triviality controls: **1**;
-- same-`Q_D`/different-`P_D` anti-triviality controls: **1**;
-- complete three-condition relational evaluations: **2916**;
-- maximum complete-relational target residual: approximately **2.220446049250313e-16**;
-- complete-relational within-orbit spread: **3.0 to 5.0**;
-- compensated-path relational comparisons: **23328 = 864 × 27**;
-- maximum compensated-path relational residual: approximately **8.881784197001252e-16**;
-- two-clock incomplete evaluations: **108** in **36** fixed-clock groups;
-- incomplete groups retaining third-direction dependence: **36/36**;
-- raw-`X` spread: approximately **0.9999999999999998 to 1.0000000000000002**;
-- quotient reconstructed from raw `(Q_D,P_D)`: exactly **4 classes × 27 representatives**;
-- licensed cross-orbit arrows: **0**;
-- rejected cross-orbit ordered representative pairs: **8748/8748**.
-
-Bounded result:
+`four_class_physical_quotient_established`.
 
 `Stage 14C representative-independent Dirac / three-condition relational / four-class quotient descent = established`.
 
-This result establishes finite representative-independent orbit data, nontrivial complete relational change, and complete-relational descent across the validated compensated path family. It does not establish eternalism, ontological becoming, refoliation invariance, hypersurface-deformation algebra, general covariance, gravity, or GR.
+### Stage 14D
 
-## 14. Stage 14D validated executable evidence
+Source/test head `3e44454952d71ebbe9b0a52bbd9d68cd398d0635`, run #1880: **`1139 passed in 889.88s (0:14:49)`**.
 
-Stage 14D source/test head: `3e44454952d71ebbe9b0a52bbd9d68cd398d0635`, run #1880, **`1139 passed in 889.88s (0:14:49)`**.
+Documentation-synchronized head `69c979896cc2855869a6637b41faac010b4b0b36`, run #1888: **`1140 passed in 562.70s (0:09:22)`**.
 
-Documentation-synchronized Stage 14D head: `69c979896cc2855869a6637b41faac010b4b0b36`, run #1888, **`1140 passed in 562.70s (0:09:22)`**.
-
-Validated deterministic Stage 14D evidence:
-
-- frozen admissible scalar factor families: **3**;
-- diagonal scalar evaluations: **324 = 108 × 3**;
-- `X != 0` scalar evaluations: **216**, all **216/216** `stage13_style_scalar_rescaling_obstructed`;
-- distinct positive representatives with `X != 0`: **72/72**;
-- `X = 0` scalar evaluations: **108**, all with the expected zero `D'` coefficient;
-- minimum nonzero `|-kappa X f_1 f_2/f_D|`: approximately **0.3843557173958058**;
-- maximum `|-kappa X f_1 f_2/f_D|`: approximately **1.135254038874606**;
-- vanishing-factor singular witnesses: **36**;
-- nonfinite-factor singular witnesses: **36**;
-- singular controls rejected: **2/2** as `singular_scalar_rescaling_rejected`;
-- triangular probes: **216 = 108 positive + 108 off-surface**;
-- triangular determinant: **1.0** throughout;
-- matrix/inverse identity residual maximum: **0.0**;
-- forward/inverse constraint-correspondence residual maximum: **0.0**;
-- `H_2_tilde=p_2+b p` formula residual maximum: **0.0**;
-- strong commuting-bracket residual maximum: **0.0**;
-- typed basis-content checks: **108**;
-- sampled quotient preserved: exactly **4 classes × 27 representatives**;
-- Dirac-pair residual maximum: **0.0**;
-- complete three-condition relational residual maximum: **0.0**;
-- triangular-basis Dirac-bracket residual maximum: **0.0**;
-- inherited public `O/P/R/V` payload equality: **108/108**;
-- public basis provenance absent from quotient-level payloads: **108/108**.
-
-Bounded result:
+Validated evidence includes **324** scalar evaluations, **216/216** required `X != 0` scalar obstructions across **72/72** distinct nonzero-X representatives, coefficient range approximately **0.3843557173958058** to **1.135254038874606**, **72** singular witnesses, **216 = 108 positive + 108 off-surface** triangular probes, determinant one, zero strong bracket residual, exactly **4 classes × 27 representatives**, and **108/108** public-content correspondence checks.
 
 `Stage 14D Stage-13-style scalar-rescaling obstruction with triangular basis equivalence on the frozen finite carrier = established`.
 
-The scalar result is an obstruction only inside the frozen finite, nonzero, diagonal no-mixing class. The exact triangular result shows that this carrier still admits a richer equivalent commuting presentation. Neither fact licenses a universal Abelianization or non-Abelianization claim.
+### Stage 14E
 
-## 15. Stage 14E validated executable evidence
+Source/test/runner head `ac2376323f9d2b442bbbf448b22bc683ed2fd3ad`, run #1890: **`1148 passed in 897.57s (0:14:57)`** on merge checkout `1662684069cfe0f44708e7d69b4cada4ae5b72d6`.
 
-Stage 14E source/test/runner head: `ac2376323f9d2b442bbbf448b22bc683ed2fd3ad`.
+Validated evidence includes **108** typed architectures, **864** path checks, **1728** path-Xi views, **108** basis checks, **216** basis-Xi views, four distinct orbit-sensitive signatures with minimum cross-orbit separation **0.014943579189526601**, all three representative/path/basis payload-corruption controls rejected, and `criteria_39_43_satisfied = true`.
 
-GitHub Actions run #1890 (`32734821431`) completed successfully on PR merge checkout `1662684069cfe0f44708e7d69b4cada4ae5b72d6` with **`1148 passed in 897.57s (0:14:57)`**.
+`structure_function_path_operational_payloads_descend`.
 
-Validated deterministic Stage 14E evidence:
-
-- representative-level typed O/P/R/V/Xi architectures: **108**;
-- physical quotient classes: **4**;
-- distinct quotient-level public payloads: **4**;
-- same-orbit public/future descent: **true**;
-- structure-function path checks: **864**;
-- path Xi views: **1728**;
-- distinct `12D` / `21D` Xi provenance: **864/864**;
-- distinct intermediate structure-function traces: **864/864**;
-- public/future/witness path descent: **864/864**;
-- original/triangular basis checks: **108**;
-- basis Xi views: **216**;
-- distinct original/triangular Xi provenance: **108/108**;
-- public/future/witness basis descent: **108/108**;
-- orbit-sensitive witness views: **108**;
-- distinct orbit-sensitive witness signatures: **4**;
-- minimum cross-orbit witness separation: **0.014943579189526601**;
-- public representation/path/basis provenance absent: **true**;
-- Xi structure-function/path/basis provenance explicit: **true**;
-- payload-corruption controls: **3**;
-- rejected controls: **3/3**;
-- `criteria_39_43_satisfied = true`.
-
-Payload-corruption classifications:
-
-- `representative_dependent_payload_corruption_detected`;
-- `path_dependent_payload_corruption_detected`;
-- `basis_dependent_payload_corruption_detected`.
-
-Bounded result:
+`basis_operational_payloads_descend`.
 
 `Stage 14E typed O/P/R/V/Xi and future-measurement descent across structure-function paths and original/triangular basis choices on the frozen finite family = established`.
 
-The positive result keeps path and basis provenance explicitly in Xi while quotient-level public O/P/R/V and inherited future-measurement payloads descend across the licensed path/basis correspondences. The orbit-sensitive witness is diagnostic only and is not an empirical prediction.
+### Stage 14F
 
-`compensated-path operational descent != refoliation invariance`.
+Source/test/runner head `9f20ad22940ba827d346fbb7386eced5e26daedd`, run #1900: **`1154 passed in 664.20s (0:11:04)`** on merge checkout `d636706b8e141befe0e80b2841413aaeb8f0cabc`.
 
-`basis-equivalent operational descent != refoliation invariance`.
+Notes/results head `1274f2d64e8964dd0eb46c4bc0bbe9f8ba9f8497`, run #1904: **`1154 passed in 562.70s (0:09:22)`** on merge checkout `880169d21c3d1f217ea79f04ac761468c1bba8b9`.
 
-`future-measurement covariance != future actuality`.
+Formal closure head `83e00e4ada2870c33e09006e25074b909be5a975`, run #1906: **`1155 passed in 850.27s (0:14:10)`**.
 
-`orbit-sensitive witness != empirical prediction`.
-
-## 16. Stage 14F validated executable evidence
-
-Stage 14F source/test/runner head: `9f20ad22940ba827d346fbb7386eced5e26daedd`.
-
-GitHub Actions run #1900 (`32740094197`) completed successfully on PR merge checkout `d636706b8e141befe0e80b2841413aaeb8f0cabc` with **`1154 passed in 664.20s (0:11:04)`**.
-
-Stage 14F notes/results head `1274f2d64e8964dd0eb46c4bc0bbe9f8ba9f8497` was validated by run #1904 (`32741431871`) on PR merge checkout `880169d21c3d1f217ea79f04ac761468c1bba8b9` with **`1154 passed in 562.70s (0:09:22)`**.
-
-Formal Stage 14F protocol/documentation closure head `83e00e4ada2870c33e09006e25074b909be5a975` was validated by run #1906 with **`1155 passed in 850.27s (0:14:10)`**.
-
-Validated deterministic Stage 14F evidence:
-
-- destructive controls: **14**;
-- rejected controls: **14/14**;
-- structure-function-removed witnesses: **108**;
-- rank-deficient witnesses: **108**;
-- missing-third-direction witnesses: **108/108**;
-- wrong-sign / wrong-value compensator witnesses: **1728**;
-- missing-compensator witnesses: **1728**;
-- cross-orbit false-positive pairs rejected: **8748/8748**;
-- two-clock incomplete groups: **36/36**;
-- singular scalar-basis controls: **2/2**;
-- singular witnesses: **72 = 36 vanishing + 36 nonfinite**;
-- deformed `H_2_bad=H_2+epsilon q` anomaly witnesses: **108/108**;
-- minimum anomaly closure residual: **0.075**;
-- maximum anomaly closure residual: **0.175**;
-- representative/path/basis payload-corruption controls: **3/3**;
-- false Xi typing: **rejected** as `typed_operational_context_rejected`;
-- false universal-Abelianization interpretation: **rejected** as `false_universal_abelianization_interpretation_rejected`;
-- all control/metaphysical claims: **not licensed**;
-- `criteria_44_47_satisfied = true`.
-
-The anomaly control rebuilds the deformed constraint surface with `p_2=-b p-epsilon q`, so the probes satisfy `D=H_1=H_2_bad=0` before closure is tested. On that deformed surface,
-
-`{H_1,H_2_bad}=-epsilon p`,
-
-and
-
-`{H_2_bad,D}=epsilon a`.
-
-Bounded result:
+Validated evidence includes **14/14** rejected controls, **108/108** missing-third-direction witnesses, **1728** wrong/missing compensator witnesses, **8748** cross-orbit pairs, **36/36** incomplete groups, **72** singular witnesses, deformed-surface anomaly residual range **0.075** to **0.175**, `typed_operational_context_rejected`, `false_universal_abelianization_interpretation_rejected`, and `criteria_44_47_satisfied = true`.
 
 `Stage 14F ablation / anomaly / false-positive controls on the frozen structure-function carrier = established`.
-
-A successful destructive control is only diagnostic of the layer deliberately broken. It is not additional positive-family evidence and does not by itself license a physical, gravitational, refoliation, or metaphysical conclusion.
 
 `negative-control rejection != positive-family obstruction`.
 
@@ -514,41 +326,27 @@ A successful destructive control is only diagnostic of the layer deliberately br
 
 `control rejection != general relativity`.
 
-## 17. Stage 14G validated executable synthesis
+## 10. Stage 14G validated executable synthesis and Stage 15 gate
 
-Stage 14G implementation head: `2b59d7ac4af65d58e1a155d142a8c2bbaeb2136d`.
+Stage 14G implementation head `2b59d7ac4af65d58e1a155d142a8c2bbaeb2136d`.
 
-Run #1908 reached the completed synthesis but failed one test-only wording assertion (`confound` versus `conflate`), with **`1 failed, 1167 passed in 551.59s (0:09:11)`**. No synthesis logic or ranking changed.
+Run #1908 completed the synthesis but failed one test-only wording assertion (`confound` versus `conflate`): **`1 failed, 1167 passed in 551.59s (0:09:11)`**. No synthesis logic or ranking changed.
 
 The one-word assertion alignment produced source/test head `c109d1ed1c9a1f043ed741a934c32b139ca15e09`.
 
-GitHub Actions run #1910 (`32791750211`) completed successfully on PR merge checkout `45a13aeff70010e05ee97f32f3114f7335a13502` with **`1168 passed in 891.95s (0:14:51)`**.
+Run #1910 (`32791750211`) passed **`1168 passed in 891.95s (0:14:51)`** on PR merge checkout `45a13aeff70010e05ee97f32f3114f7335a13502`.
 
-The executable Stage 14 selector chooses exactly
+The executable selector chooses exactly
 
 `structure_function_path_covariant_scalar_obstructed`.
 
-The validated synthesis integrates:
-
-- **4** physical orbits and **108** representatives with three independent first-class directions;
-- **864/864** exact compensated mixed-path closures;
-- **6/6** distinct physical-orbit pairs separated;
-- exactly **4 quotient classes × 27 representatives**;
-- **23328** compensated complete-relational comparisons;
-- **216/216 `X != 0`** diagonal `simple_scalar_rescaling` evaluations obstructed;
-- **216** triangular probes and **108/108** basis-content checks preserving sampled physical content;
-- **864** typed path-descent checks and **108** original/triangular typed basis-descent checks;
-- **14/14** destructive/anomaly/false-positive controls rejected.
+The validated synthesis integrates **864/864** compensated paths, **6/6** physical-orbit pair discrimination, **4 quotient classes × 27 representatives**, **23328** complete-relational comparisons, **216/216** nonzero-X scalar obstructions, **108/108** basis-content checks, and **14/14** destructive controls.
 
 Bounded result:
 
 `Stage 14G synthesis on the validated Stage 14A-F finite evidence chain = structure_function_path_covariant_scalar_obstructed`.
 
-The status is deliberately not `structure_function_path_covariant_scalar_trivializable`: the frozen diagonal finite/nonzero no-mixing class is obstructed on all required `X != 0` evaluations.
-
-The status is also deliberately not a fundamental-non-Abelian claim: the determinant-one triangular transformation `H_2_tilde=H_2-kappa T1 X D` produces an equivalent strongly commuting tested basis while preserving the sampled quotient, Dirac/relational data, and public O/P/R/V content.
-
-### Evidence-selected Stage 15 ranking
+The validated Stage 15 ranking is:
 
 1. `spatially_indexed_constraint_algebra_precursor` — score **13**;
 2. `admissible_basis_transformation_audit` — score **10**;
@@ -560,21 +358,45 @@ Selected Stage 15 gate:
 
 `spatially_indexed_constraint_algebra_precursor`.
 
-Exact selected gate:
-
 > **Construct a minimal spatially indexed first-class constraint-algebra precursor with explicit local/smeared generators and nontrivial structure-function dependence, test whether the Stage 14 triangular Abelianization persists under the declared locality-preserving basis class, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
 
-The selected gate introduces spatial indexing/local smearing before gravity because Stage 14's sharpest remaining limitation is not only the absence of gravitational variables but the absence of spatially indexed local/smeared constraint structure. Minisuperspace suppresses that spatial dependence and would conflate new gravitational dynamics with the unresolved locality/basis question.
-
-`diagonal scalar-rescaling obstruction != fundamental physical non-Abelianity`.
-
-`triangular basis equivalence != universal basis trivializability`.
+`structure_function_path_covariant_scalar_obstructed finite family != refoliation invariance`.
 
 `spatially indexed constraint precursor != hypersurface-deformation algebra by definition`.
 
 `spatially indexed constraint precursor != general relativity`.
 
-## 18. Frozen Stage 14 sequence
+`local/smeared precursor != spacetime diffeomorphism invariance by definition`.
+
+## 11. Criterion 50 external review and merge readiness
+
+Criterion-50 reviewed head:
+
+`ab500148975ecea6e03fe8678ba1e8dcc50cb666`.
+
+Run #1922 (`32795808985`) passed **`1166 passed in 709.02s (0:11:49)`** on PR merge checkout `c4cafff62da2ba0726153e977724f3f78c8d2ff7`.
+
+At the reviewed checkpoint:
+
+- branch comparison: **ahead 46 / behind 0** against `main`;
+- merge base: `468fe6667ec6484fbe9e402135cd75f5d69420cf`;
+- changed files: **39**;
+- PR #15: Draft, open, unmerged, `mergeable = true`;
+- submitted reviews: **0**;
+- unresolved inline review threads: **0**;
+- PR conversation comments: **0**.
+
+The criterion-50 review found one top-level documentation debt: README/roadmap still described Stage 13 PR #14 as currently Draft/open/unmerged although Stage 13 had already merged. Those documents were corrected to preserve the historical merge-readiness marker while stating the current merged status. Run #1922 validates the correction together with all historical regressions.
+
+No remaining repository-level blocker was found.
+
+`Stage 14 criterion 50 external final full-repository regression / merge-readiness review = satisfied`.
+
+`repository validation != new scientific evidence`.
+
+`merge-ready != merged`.
+
+## 12. Stage 14 sequence
 
 - Stage 14.0 — protocol freeze — **completed**;
 - Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**;
@@ -584,11 +406,11 @@ The selected gate introduces spatial indexing/local smearing before gravity beca
 - Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **completed**;
 - Stage 14F — ablation / anomaly / false-positive controls — **completed**;
 - Stage 14G — executable synthesis and evidence-selected next gate — **completed**;
-- criterion 50 — external final full-repository regression / merge-readiness review — **next**.
+- criterion 50 — external final full-repository regression / merge-readiness review — **completed**.
 
-## 19. Frozen synthesis vocabulary
+## 13. Frozen synthesis vocabulary and validated selection
 
-Stage 14G selects exactly one of:
+The frozen selector contains exactly:
 
 - `structure_function_path_covariant_scalar_obstructed`;
 - `structure_function_path_covariant_scalar_trivializable`;
@@ -596,13 +418,13 @@ Stage 14G selects exactly one of:
 - `structure_function_path_obstructed`;
 - `inconclusive`.
 
-A negative control behaving as intended does not license a positive-family obstruction classification.
-
-Validated choice:
+Validated selection:
 
 `structure_function_path_covariant_scalar_obstructed`.
 
-## 20. Frozen criteria 1–50
+A negative control behaving as intended does not license a positive-family obstruction classification.
+
+## 14. Frozen criteria 1–50
 
 1. Stage 13 merged baseline, merge commit, final branch head, and run #1823 are frozen — **satisfied**.
 2. The Stage 14 selected gate and selector `phase_space_structure_function_precursor` are frozen — **satisfied**.
@@ -614,7 +436,6 @@ Validated choice:
 8. `simple_scalar_rescaling`, singular-rescaling rejection, and triangular-mixing comparison classes are frozen before testing — **satisfied**.
 9. O/P/R/V/Xi carry-over and anomaly/ablation/false-positive controls are frozen — **satisfied**.
 10. The Stage 14A–G sequence, synthesis vocabulary, and interpretation boundaries are frozen — **satisfied**.
-
 11. Stage 14A constructs all 108 positive representatives on the three-constraint surface — **satisfied**.
 12. All three positive constraint residuals vanish within the frozen tolerance on the representative family — **satisfied**.
 13. Constraint gradients and Hamiltonian generator directions have rank three throughout the positive representative family — **satisfied**.
@@ -622,7 +443,6 @@ Validated choice:
 15. All frozen Poisson-bracket closure identities and the Jacobi identity satisfy the numerical tolerance — **satisfied**.
 16. Each licensed single-generator flow preserves the positive constraint surface and the declared Dirac data — **satisfied**.
 17. Stage 14A rejects structure-function-removed and rank-deficient controls without promoting them to positive evidence — **satisfied**.
-
 18. Stage 14B constructs the canonical 864 ordered mixed source/target pairs — **satisfied**.
 19. Both `12D` and `21D` path implementations match the frozen exact flow formulas — **satisfied**.
 20. Exact third-direction compensation closes every positive mixed pair on the same licensed target within tolerance — **satisfied**.
@@ -630,7 +450,6 @@ Validated choice:
 22. Wrong-sign, wrong-value, missing, and Stage-13-style compensators are rejected on the required nontrivial cases — **satisfied**.
 23. Cross-orbit source/target pairs are not licensed as gauge paths — **satisfied**.
 24. Path-order / compensator results remain explicitly bounded away from refoliation invariance, time asymmetry, and ontological becoming — **satisfied**.
-
 25. Stage 14C reconstructs representative-independent `(Q_D,P_D)` across all 108 positive representatives — **satisfied**.
 26. The full Dirac pair separates all six pairs among the four physical orbit classes — **satisfied**.
 27. The complete three-condition relational observable descends across all licensed compensated paths — **satisfied**.
@@ -638,7 +457,6 @@ Validated choice:
 29. The two-clock incomplete observable retains detectable third-direction gauge dependence — **satisfied**.
 30. The sampled quotient contains exactly four classes of 27 representatives with zero licensed cross-orbit arrows — **satisfied**.
 31. Dirac / relational / quotient results remain bounded away from eternalism, timeless ontology, and elimination of physical change — **satisfied**.
-
 32. Stage 14D implements the frozen invertible diagonal `simple_scalar_rescaling` class without constraint mixing — **satisfied**.
 33. The nonzero `D'` component obstruction is verified on all required `X != 0` positive representatives — **satisfied**.
 34. Scalar transformations that vanish or diverge on the positive family are rejected as singular rather than accepted as equivalent bases — **satisfied**.
@@ -646,25 +464,22 @@ Validated choice:
 36. The triangular basis satisfies the frozen commuting bracket targets within tolerance — **satisfied**.
 37. Correctly typed triangular-basis correspondence preserves the sampled quotient, Dirac pair, complete relational values, and inherited public O/P/R/V payloads — **satisfied**.
 38. Basis results remain bounded: scalar obstruction is not promoted to universal non-Abelianizability and triangular equivalence is not promoted to universal trivializability — **satisfied**.
-
 39. Stage 14E constructs representative-level typed O/P/R/V/Xi architectures over the 108 positive representatives — **satisfied**.
 40. Licensed compensated path choices preserve quotient-level public O/P/R/V and future-measurement payloads — **satisfied**.
 41. Path, structure-function, compensator, and basis provenance are retained in Xi without being silently collapsed into quotient-level physical content — **satisfied**.
 42. Orbit-sensitive public / measurement signatures remain stable within each physical quotient class and discriminate the frozen physical classes where declared — **satisfied**.
 43. Representative/path/basis-dependent payload corruption controls are detected, while successful operational descent is not promoted to future actuality or empirical discovery — **satisfied**.
-
 44. Stage 14F executes the frozen ablation family, including missing-third-direction and structure-function-removed controls — **satisfied**.
 45. `H_2_bad=H_2+epsilon q` is detected as a constraint-algebra anomaly rather than admitted as positive evidence — **satisfied**.
 46. Wrong-compensator, incomplete-observable, cross-orbit, singular-basis, and false-typing controls are explicitly classified and rejected — **satisfied**.
 47. Control results remain bounded away from hypersurface-deformation algebra, GR, fundamental non-Abelianity, eternalism, or ontological becoming — **satisfied**.
-
 48. Stage 14G executable synthesis selects exactly one frozen Stage 14 status from the validated Stage 14A–F evidence chain — **satisfied**.
 49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **satisfied**.
-50. External final full-repository regression and merge-readiness review — **pending**.
+50. External final full-repository regression and merge-readiness review — **satisfied**.
 
-## 21. Interpretation boundary
+## 15. Interpretation boundary
 
-Stage 14A establishes a finite three-constraint first-class structure-function carrier. Stage 14B establishes exact third-direction compensated mixed-path closure on the declared finite family. Stage 14C establishes representative-independent Dirac reconstruction, a four-class sampled quotient, nontrivial three-condition relational change, and complete-relational descent across the compensated path family. Stage 14D establishes a frozen simple-scalar-rescaling obstruction together with a richer triangular commuting-basis equivalence that preserves the sampled physical content. Stage 14E establishes typed O/P/R/V and inherited future-measurement descent across the validated structure-function path and original/triangular basis correspondences while retaining those representation choices explicitly in Xi. Stage 14F establishes that the frozen destructive controls are rejected in the expected algebraic, path, relational, basis, typing, and interpretation layers without being promoted into positive physical evidence. Stage 14G integrates the validated A–F chain as `structure_function_path_covariant_scalar_obstructed` and selects a spatially indexed/local-smeared constraint-algebra precursor as the next gate, while leaving HDA, refoliation, GR, basis-independent non-Abelianity, and blockness/becoming open.
+Stage 14 establishes a bounded finite structure-function path-covariance precursor with representative-independent Dirac data, nontrivial complete relational change, typed operational descent, a diagonal scalar-rescaling obstruction, an explicit richer commuting triangular presentation, and a successful destructive-control matrix. Criterion 50 adds only repository-level validation and merge-readiness review; it is not new scientific evidence.
 
 Persistent guards:
 
@@ -721,4 +536,5 @@ Persistent guards:
 - `finite-dimensional/minisuperspace carrier != spatially local smeared constraint algebra`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
+- `merge-ready != merged`;
 - `not_established != false`.

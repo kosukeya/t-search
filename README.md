@@ -4,7 +4,9 @@
 
 ## Current status
 
-Stage 13 criteria **1–50** are completed on Draft PR #14 at the criterion-50 merge-readiness checkpoint. PR #14 remains merge-ready, Draft, open, and unmerged.
+Stages 1–13 are completed and merged. Stage 13 was merged via PR #14 into `main` at `468fe6667ec6484fbe9e402135cd75f5d69420cf` after its criterion-50 merge-readiness checkpoint.
+
+Stage 14A–G are completed on Draft PR #15. The validated Stage 14 synthesis is `structure_function_path_covariant_scalar_obstructed`; criteria **1–49** are satisfied and criterion **50** is the current external final full-repository / merge-readiness review.
 
 Historical compatibility markers:
 
@@ -13,8 +15,9 @@ Historical compatibility markers:
 - Stage 10 merged via PR #11 at `4a322634a5b83e416d374ee18e96ac6c7a5c88ba`.
 - Stage 11 merged via PR #12 at `d5fdc899a72b6a983c03b1f960c65cda948c8fb8`.
 - Stage 12 merged via PR #13 at `ee4baec55fa994217b275f9f2451e25fc6736787`.
+- At the Stage 13 criterion-50 checkpoint, PR #14 was `merge-ready`, Draft, open, and unmerged; it was subsequently merged into `main` at `468fe6667ec6484fbe9e402135cd75f5d69420cf`.
 
-Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`.
+Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`; Stage 14G `structure_function_path_covariant_scalar_obstructed`.
 
 `repository validation != new scientific evidence`.
 
@@ -43,6 +46,12 @@ Evidence-selected Stage 14 gate:
 > **Construct a minimal phase-space-dependent structure-function / hypersurface-deformation precursor designed to test whether the Stage 13F simple commuting-basis trivialization persists, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
 
 Stage 14 selector: `phase_space_structure_function_precursor`.
+
+Evidence-selected Stage 15 gate:
+
+> **Construct a minimal spatially indexed first-class constraint-algebra precursor with explicit local/smeared generators and nontrivial structure-function dependence, test whether the Stage 14 triangular Abelianization persists under the declared locality-preserving basis class, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
+
+Stage 15 selector: `spatially_indexed_constraint_algebra_precursor`.
 
 ## Historical Stage 8–9 checkpoint markers
 
@@ -200,7 +209,7 @@ Stage 12 documents:
 
 `finite C x G x Phi compatibility != refoliation invariance`.
 
-## Stage 13 — Multi-constraint constraint-algebra / refoliation precursor — completed at merge-readiness checkpoint
+## Stage 13 — Multi-constraint constraint-algebra / refoliation precursor — completed and merged
 
 ### Stage 13A — two-constraint first-class carrier and finite representative family — completed
 
@@ -232,9 +241,9 @@ Executable synthesis head `013f90303ededbf769aaeef11a0336a480b02e2b`; run #1813 
 
 ### Stage 13 criterion 50 — external final repository validation / merge-readiness review — completed
 
-Reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`; run #1815 passed **`1098 passed in 695.62s (0:11:35)`**. Branch state was **ahead 83 / behind 0** and PR #14 was `mergeable = true`, with no repository-level blocker found.
+Reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`; run #1815 passed **`1098 passed in 695.62s (0:11:35)`**. Branch state was **ahead 83 / behind 0** and PR #14 was `mergeable = true`, with no repository-level blocker found. At that historical checkpoint PR #14 was `merge-ready`, Draft, open, and unmerged; it was later merged into `main` at `468fe6667ec6484fbe9e402135cd75f5d69420cf`.
 
-Stage 13 criteria **1–50** are completed. PR #14 remains Draft, open, and unmerged.
+Stage 13 criteria **1–50** are completed and Stage 13 is merged into `main` via PR #14.
 
 Stage 13 documents:
 
@@ -257,6 +266,30 @@ Stage 13 documents:
 - `results/stage13g_synthesis_stage14_gate.md`
 - `results/stage13_criterion50_merge_readiness.md`
 
+## Stage 14 — phase-space-dependent structure-function / hypersurface-deformation precursor — criteria 1–49 completed
+
+Stage 14A–G are completed on Draft PR #15. Stage 14G selects
+
+`structure_function_path_covariant_scalar_obstructed`.
+
+The finite carrier validates phase-space-dependent first-class closure, exact third-direction compensated mixed paths, a four-class physical quotient with nontrivial three-condition relational change, typed O/P/R/V/Xi operational descent, and the frozen simple-scalar-rescaling obstruction. The same carrier nevertheless admits the determinant-one triangular commuting presentation `H_2_tilde=H_2-kappa T1 X D=p_2+b p`, so the result does not establish basis-independent physical noncommutativity.
+
+Stage 14G source/test head `c109d1ed1c9a1f043ed741a934c32b139ca15e09`; run #1910 passed **`1168 passed in 891.95s (0:14:51)`**. Documentation-synchronized head `70adbf1355581f159544ff200f45d5a2b007d80e`; run #1918 passed **`1166 passed in 902.17s (0:15:02)`**.
+
+Stage 14 criterion 50 — external final full-repository regression / merge-readiness review — is in progress.
+
+Stage 14 documents include:
+
+- `docs/stage14_protocol.md`
+- `results/stage14_0_protocol_freeze.md`
+- `docs/stage14a_notes.md` / `results/stage14a_structure_function.md`
+- `docs/stage14b_notes.md` / `results/stage14b_paths.md`
+- `docs/stage14c_notes.md` / `results/stage14c_relational.md`
+- `docs/stage14d_notes.md` / `results/stage14d_basis.md`
+- `docs/stage14e_notes.md` / `results/stage14e_measurement.md`
+- `docs/stage14f_notes.md` / `results/stage14f_ablation.md`
+- `docs/stage14g_notes.md` / `results/stage14g_synthesis_stage15_gate.md`
+
 ## Interpretation guards
 
 - `noncommuting constraint presentation != fundamental physical non-Abelianity`;
@@ -267,6 +300,11 @@ Stage 13 documents:
 - `finite first-class constraint algebra != hypersurface-deformation algebra`;
 - `phase-space-dependent structure-function precursor != hypersurface-deformation algebra by definition`;
 - `structure-function precursor != general relativity`;
+- `structure_function_path_covariant_scalar_obstructed finite family != refoliation invariance`;
+- `diagonal scalar-rescaling obstruction != fundamental physical non-Abelianity`;
+- `triangular basis equivalence != universal basis trivializability`;
+- `spatially indexed constraint precursor != hypersurface-deformation algebra by definition`;
+- `spatially indexed constraint precursor != general relativity`;
 - `Dirac-invariant data + relational change != proof of eternalism`;
 - `complete relational observable != ontological becoming by definition`;
 - `future-measurement covariance != future actuality`;

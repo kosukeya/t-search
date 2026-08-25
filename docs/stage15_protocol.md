@@ -1,10 +1,10 @@
 # Stage 15 Protocol — Spatially Indexed Constraint-Algebra Precursor
 
-Status: **Stage 15.0 protocol freeze in progress; criteria 1–10 are assigned to the freeze and criteria 11–50 remain unavailable until later substages.**
+Status: **Stage 15.0 protocol freeze in progress; criteria 1–10 are assigned to the freeze and criteria 11–50 remain pending.**
 
 ## Incoming validated baseline
 
-Stage 14 is completed and merged via PR #15. The validated Stage 14 synthesis is
+Stage 14 is completed and merged via PR #15. Its validated synthesis is
 
 `structure_function_path_covariant_scalar_obstructed`.
 
@@ -16,9 +16,9 @@ Frozen gate:
 
 > **Construct a minimal spatially indexed first-class constraint-algebra precursor with explicit local/smeared generators and nontrivial structure-function dependence, test whether the Stage 14 triangular Abelianization persists under the declared locality-preserving basis class, and retest the physical quotient, relational observables, and typed O/P/R/V measurement architecture without assuming general relativity or refoliation invariance.**
 
-Stage 14 established a diagonal scalar-rescaling obstruction on its finite carrier but also exhibited an equivalent determinant-one triangular commuting presentation. Stage 15 therefore asks a narrower question: **does adding an explicit spatial index and a predeclared locality criterion constrain that basis equivalence?**
+Stage 14 obstructed the frozen diagonal scalar-rescaling class but admitted a determinant-one triangular commuting presentation. Stage 15 therefore asks whether an explicit spatial support structure restricts that basis equivalence.
 
-No Stage 15 locality-protected non-Abelianity result is established by this protocol.
+No Stage 15 locality-protected non-Abelianity result is established by this freeze.
 
 ## Frozen spatial carrier
 
@@ -28,127 +28,119 @@ Use the open three-site path graph
 
 Canonical phase space:
 
-`(Q,P; T_i,pi_i; q_i,p_i)`, for `i in Lambda`.
+`(Q,P; T_0,pi_0; T_1,pi_1; T_2,pi_2)`.
 
-Poisson brackets are canonical and all undeclared cross-site brackets vanish.
+Canonical Poisson brackets are
+
+`{Q,P}=1`, `{T_i,pi_j}=delta_ij`,
+
+with all undeclared brackets zero.
 
 Constants:
 
-`kappa=0.5`, `b=0.5`, and
+`kappa=0.5`,
 
 `c_0=1.0`, `c_1=0.5`, `c_2=-0.25`.
 
-Define
+Define the commuting seed constraints
 
-`D_i = p_i`,
+`K_i = pi_i + c_i P`.
 
-`A_0 = b + kappa T_0`,
+The **positive presented basis** is frozen as the nearest-neighbor triangular frame
 
-`A_i = b + kappa(T_i + q_{i-1})` for `i=1,2`,
+`C_0 = K_0 + kappa T_0 K_1`,
 
-and local Hamiltonian-like constraints
+`C_1 = K_1 + kappa T_1 K_2`,
 
-`H_i = pi_i + c_i P + A_i D_i`.
+`C_2 = K_2`.
 
-Declared support:
+Declared site labels and supports are
 
-- `supp(D_i)={i}`;
-- `supp(H_0)={0}`;
-- `supp(H_1)={0,1}`;
-- `supp(H_2)={1,2}`.
+- `label(C_0)=0`, `supp(C_0)={0,1}`;
+- `label(C_1)=1`, `supp(C_1)={1,2}`;
+- `label(C_2)=2`, `supp(C_2)={2}`.
 
-This support declaration is part of the protocol and must not be changed after Stage 15A results are known.
+The global pair `(Q,P)` is spatially neutral for support bookkeeping. This convention is frozen before Stage 15D.
 
 ## Frozen local algebra target
 
-Stage 15A must verify symbolically and numerically on the declared finite family that the positive carrier is first class and spatially local.
+Stage 15A must derive, not assume, the complete unsmeared algebra. The required target is
 
-Target unsmeared relations include
+`{C_0,C_1} = -kappa^2 T_0 C_2`,
 
-`{D_i,D_j}=0`,
+`{C_0,C_2}=0`,
 
-`{H_i,D_j}=kappa delta_{j,i-1} D_i` for `i>0`, with all other `H_i-D_j` brackets zero,
+`{C_1,C_2}=0`,
 
-and nearest-neighbor
+plus antisymmetric counterparts.
 
-`{H_i,H_{i+1}} = -kappa A_i D_{i+1}` for `i=0,1`,
+The structure function `-kappa^2 T_0` must sample negative, zero, and positive values on the frozen family.
 
-with `H_0-H_2` bracket zero.
+Required positive checks:
 
-The coefficient `A_i` is phase-space dependent and must take at least one negative, one zero, and one positive value somewhere in the frozen finite family. With the frozen sample and `b=kappa=0.5`, the attainable coefficient set is `{-0.5,0,0.5,1.0,1.5}`.
-
-The positive locality criterion is not merely first-class closure: the bracket of compactly supported generators must close within the union of their supports enlarged by at most one graph edge.
+- exact symbolic Poisson-bracket agreement;
+- direct numerical agreement on every positive representative;
+- first-class closure both on and off the constraint surface;
+- off-surface Jacobi identity;
+- no bracket support outside the union of the input supports.
 
 `spatial indexing != continuum field theory`.
 
-`nearest-neighbor closure != hypersurface-deformation algebra`.
+`nearest-neighbor first-class closure != hypersurface-deformation algebra`.
 
 `phase-space-dependent local structure function != spacetime geometry`.
 
 ## Frozen smeared generators
 
-For site smearings `N=(N_0,N_1,N_2)` and `M=(M_0,M_1,M_2)`, define
+For a site smearing `N=(N_0,N_1,N_2)`, define
 
-`H[N] = sum_i N_i H_i`,
+`C[N] = sum_i N_i C_i`.
 
-`D[M] = sum_i M_i D_i`.
+Stage 15A/B must derive `{C[N],C[M]}` from the direct Poisson bracket. It must agree with the unsmeared algebra and be antisymmetric under `N <-> M`.
 
-Stage 15A/B must derive the smeared bracket directly from the unsmeared Poisson algebra rather than hard-code the expected answer.
+For the frozen carrier the derived expression is expected to be representable in the original local basis with support no larger than the support union of the two smearings. The implementation must derive this expression rather than insert it as a special case.
 
-The derived result must be expressible as a linear combination of the same local `D_i` generators with phase-space-dependent coefficients. Smearing dependence must be antisymmetric under `N <-> M` for the `H-H` bracket.
-
-Required positive checks include:
+Required checks include:
 
 - local-to-smeared consistency;
 - smeared-to-local recovery using Kronecker-delta smearings;
-- off-constraint-surface Jacobi checks;
-- support propagation no larger than one graph edge beyond the input support union;
-- exact agreement between symbolic and direct Poisson-bracket evaluation on all sampled representatives.
+- compact support on `{0,1}` and `{1,2}`;
+- at least one full-support smearing;
+- symbolic/direct numerical equality;
+- antisymmetry and Jacobi checks.
 
 `finite smeared algebra != continuum distributional algebra`.
 
 ## Frozen finite representative family
 
-Physical Dirac-data classes are carried from Stage 14 as
+Carry the Stage 14 physical Dirac-data classes:
 
 - `omega_alpha=(-0.35,1.25)`;
 - `omega_beta=(0.40,1.25)`;
 - `omega_gamma=(-0.35,0.75)`;
 - `omega_delta=(0.20,1.75)`.
 
-Interpret these as `(Q_D,P_D)` values.
+Interpret these as `(Q_D,P_D)`.
 
-Freeze three clock-coordinate triples
+Freeze
 
-- `tau_A=(-1,0,1)`;
-- `tau_B=(0,1,-1)`;
-- `tau_C=(1,-1,0)`;
+`T_0,T_1,T_2 in {-1,0,1}`.
 
-and three local-gauge triples
-
-- `rho_A=(0,-1,1)`;
-- `rho_B=(1,0,-1)`;
-- `rho_C=(-1,1,0)`.
-
-Use the Cartesian product of these two triple sets: **9 representatives per physical orbit, 36 positive representatives total**.
+This gives **27 representatives per physical orbit and 108 positive representatives total**.
 
 For each representative set
 
 `P=P_D`,
 
-`p_i=0`,
-
 `pi_i=-c_i P`,
-
-`T_i=tau_i`,
-
-`q_i=rho_i`,
 
 `Q=Q_D + sum_i c_i T_i`.
 
-The target physical quotient is exactly **four classes of nine representatives**.
+Because the triangular constraint matrix has determinant one, `C_i=0` is equivalent to `K_i=0` on the whole carrier.
 
-The finite family is a diagnostic sample, not a discretization of physical space.
+The target physical quotient is exactly **four classes of 27 representatives**.
+
+The finite site graph is a diagnostic precursor, not a spatial discretization of general relativity.
 
 ## Frozen Dirac and relational observables
 
@@ -158,79 +150,100 @@ Freeze
 
 `Q_D=Q-sum_i c_i T_i`.
 
-Stage 15C must verify that both are invariant under every licensed local constraint flow on the positive family and that the pair separates all four physical classes.
+Stage 15C must verify that both Poisson-commute with every `C_i`, remain representative-independent inside each physical class, and separate all four physical classes as a pair.
 
 Complete relational observable:
 
-`Q(T_0=tau_0,T_1=tau_1,T_2=tau_2)=Q_D + c_0 tau_0 + c_1 tau_1 + c_2 tau_2`.
+`Q(T_0=tau_0,T_1=tau_1,T_2=tau_2)=Q_D+c_0 tau_0+c_1 tau_1+c_2 tau_2`.
 
-The observable must show nontrivial relational change while remaining quotient-compatible.
+It must show nontrivial relational change while descending to the quotient.
 
-Controls must include omission of one clock condition and use of a raw gauge coordinate where a complete relational condition is required.
+Controls must include omission of one clock condition and use of a raw representative coordinate as though it were a complete relational observable.
 
 `complete spatially indexed relational observable != ontological becoming by definition`.
 
 `Dirac-invariant data + relational change != proof of eternalism`.
 
-## Frozen locality notion
+## Frozen locality classes for basis transformations
 
-The declared graph metric on `Lambda` fixes neighborhoods
+The graph metric fixes
 
 `N_r(i)={j : dist(i,j)<=r}`.
 
-A basis map is **L1-locality-preserving** only if all of the following hold:
+A transformed generator carrying label `i` is classified relative to that label. A basis map is **L1-locality-preserving** iff all of the following hold:
 
-1. each transformed generator labelled by site `i` mixes only generators labelled by sites in `N_1(i)`;
-2. every coefficient multiplying those generators depends only on canonical variables whose site labels lie in `N_1(i)` plus the global Dirac pair `(Q,P)`;
+1. the transformed generator labelled `i` mixes only original generators labelled in `N_1(i)`;
+2. every mixing coefficient depends only on canonical variables with site labels in `N_1(i)` plus the spatially neutral global pair `(Q,P)`;
 3. the map is finite and invertible on every positive representative;
-4. the transformed generator support, after explicit symbolic simplification, is contained in `N_1(supp(original generator))`;
-5. the inverse map satisfies the same four conditions.
+4. after symbolic simplification, the transformed generator has support contained in `N_1(i)`;
+5. the inverse map satisfies conditions 1–4 with the same labels.
 
-This definition is frozen **before** Stage 15D basis results are evaluated.
+The stricter **L0** subclass permits only same-site mixing and same-site coefficient dependence.
 
-A map violating any one condition is classified `nonlocal_for_stage15_L1`, even if it preserves the finite quotient.
+The broader audit class **Lfinite** permits a finite composition of L1 maps. Any Lfinite success must report the minimal composition depth found and may not be relabelled as a one-step L1 success.
 
-A stricter ultralocal subclass `L0` allows only same-site generator mixing and same-site coefficient dependence. A broader audit class `Lfinite` allows a composition of finitely many L1 maps, but Stage 15D must report the required composition depth and may not silently relabel an `Lfinite` success as an `L1` success.
+Any map failing the L1 conditions is `nonlocal_for_stage15_L1` even if it preserves the constraint surface and quotient.
 
-`locality-preserving basis map != gauge transformation`.
+These classes are frozen before any Stage 15D search result is evaluated.
 
 `basis locality != physical causal locality`.
 
 `finite graph locality != relativistic microcausality`.
 
+`locality-preserving basis map != gauge transformation`.
+
+## Frozen known Abelianizing comparison and anti-bias rule
+
+The commuting seed basis is reconstructible algebraically:
+
+`K_2=C_2`,
+
+`K_1=C_1-kappa T_1 C_2`,
+
+`K_0=C_0-kappa T_0 C_1+kappa^2 T_0 T_1 C_2`.
+
+This map is an explicit **known algebraic Abelianization control**. Its `K_0` row contains the distance-2 generator `C_2`, so under the frozen one-step definition the full map is **not automatically licensed as L1**.
+
+This fact is a protocol input, not the Stage 15D result.
+
+Stage 15D must still search for **other** invertible Abelianizing bases in the declared L0/L1 classes. Failure of the displayed seed reconstruction to be L1 does not prove that no different L1 Abelianization exists.
+
+Conversely, the implementation may not enlarge L1 after seeing a negative result merely to admit the known seed reconstruction.
+
+This is the central anti-bias rule of Stage 15.
+
 ## Frozen basis pressure test
 
-Stage 15D must test, without changing the locality definition, whether the Stage 14 style triangular Abelianization persists.
-
-The following classes must be audited separately:
+Stage 15D must audit separately:
 
 - diagonal scalar rescalings;
-- `L0` triangular `H-D` mixing;
-- general invertible `L1` mixing;
-- broader `Lfinite` compositions;
-- deliberately nonlocal full-matrix mixing as a control.
+- L0 triangular/general mixing;
+- general invertible L1 mixing;
+- Lfinite compositions;
+- the known seed reconstruction above;
+- deliberately unrestricted full-matrix mixing as a nonlocal control.
 
-For every candidate basis, Stage 15D must report:
+For every candidate basis report:
 
 - invertibility;
 - locality class (`L0`, `L1`, `Lfinite`, or nonlocal);
 - unsmeared closure;
 - smeared closure;
-- whether the transformed algebra is strongly commuting or only first class;
+- strongly commuting vs merely first class;
 - physical quotient preservation;
 - Dirac-pair preservation;
 - complete-relational preservation;
-- typed O/P/R/V/Xi preservation when Stage 15E is available.
+- typed O/P/R/V/Xi preservation once Stage 15E exists.
 
-No candidate basis may be declared physically preferred solely because it is commuting.
-
-Possible Stage 15D classifications are frozen as:
+Frozen Stage 15D classifications:
 
 - `local_abelianization_persists`;
 - `L1_obstructed_but_Lfinite_abelianizable`;
 - `only_nonlocal_abelianization_found`;
 - `no_abelianization_found_in_declared_search`;
 - `basis_audit_inconclusive`.
+
+`known nonlocal seed reconstruction != proof that all Abelianizations are nonlocal`.
 
 `L1 obstruction != universal non-Abelianizability`.
 
@@ -240,15 +253,15 @@ Possible Stage 15D classifications are frozen as:
 
 ## Frozen local/smeared path tests
 
-Stage 15B must construct licensed finite local flows generated by individual `H_i`, `D_i`, and smeared combinations.
+Stage 15B must construct finite flows generated by individual `C_i` and declared smeared combinations.
 
 Positive comparisons must include:
 
-- same-orbit path pairs using different local-generator orderings;
+- same-orbit path pairs with different local-generator orderings;
 - compactly supported smearings on `{0,1}` and `{1,2}`;
-- at least one full-support smearing;
-- exact or numerically controlled compensators where the algebra requires them;
-- endpoint equality at the quotient/relational level rather than raw path-word equality.
+- a full-support smearing;
+- exact or numerically controlled compensators where required;
+- quotient/relational endpoint comparison rather than raw path-word equality.
 
 `raw local path-word inequality != physical path dependence`.
 
@@ -256,7 +269,7 @@ Positive comparisons must include:
 
 ## Frozen typed O/P/R/V/Xi carry-forward
 
-Stage 15E carries the typed architecture
+Stage 15E carries
 
 `T_candidate=(O,P,R,V;Xi)`,
 
@@ -266,11 +279,11 @@ with
 
 `V=(V_extension,V_semantics,V_weights)`.
 
-The Stage 15 requirement is descent/compatibility across the spatially indexed quotient, licensed local/smeared paths, and basis choices classified in Stage 15D.
+The requirement is typed descent/compatibility across the spatially indexed quotient, licensed local/smeared paths, and basis classes established by Stage 15D.
 
-No new ontological semantics may be assigned to O/P/R/V merely because spatial indexing is present.
+No new ontological semantics are assigned merely because the carrier has spatial labels.
 
-Required guards remain:
+Required guards:
 
 `future-measurement covariance != future actuality`;
 
@@ -285,18 +298,17 @@ Required guards remain:
 Stage 15F must include at least:
 
 - structure-function removal (`kappa=0`);
-- deletion of a spatial site;
+- deletion/disconnection of a site;
 - disconnected-site false-positive path;
 - support-expanding generator corruption;
-- coefficient dependence on a distance-2 site;
-- singular basis map;
-- noninvertible local mixing;
+- distance-2 coefficient dependence in an alleged L1 map;
+- singular/noninvertible basis map;
 - wrong smearing sign / antisymmetry corruption;
 - Jacobi-violating anomalous term;
 - cross-orbit path false positive;
 - incomplete relational observable;
-- representative/path/basis-dependent O/P/R/V payload corruption;
-- a deliberately nonlocal Abelianizing map, if one is available, to ensure the classifier distinguishes algebraic equivalence from L1 locality.
+- representative/path/basis-dependent O/P/R/V corruption;
+- the known distance-2 seed reconstruction to ensure algebraic Abelianization is not silently counted as one-step L1.
 
 Expected control vocabulary includes
 
@@ -306,7 +318,7 @@ Expected control vocabulary includes
 
 `support_expansion_detected`,
 
-`distance2_coefficient_nonlocal_detected`,
+`distance2_basis_nonlocal_detected`,
 
 `singular_basis_map_rejected`,
 
@@ -343,7 +355,7 @@ Stage 15G must select exactly one of:
 - `spatial_local_path_obstructed`;
 - `inconclusive`.
 
-The selector must rank the next gate from evidence accumulated through Stage 15A–F rather than preserving a pre-Stage-15 philosophical preference.
+The next gate must be evidence-selected from Stage 15A–F rather than chosen to preserve a prior metaphysical preference.
 
 ## Criteria
 
@@ -351,26 +363,26 @@ Stage 15 uses 50 criteria.
 
 ### Stage 15.0 — criteria 1–10
 
-1. Stage 14 merged baseline and Stage 15 selected gate recorded.
-2. Spatial graph/sites and canonical phase space frozen.
-3. Local constraints and declared supports frozen.
-4. Local and smeared closure targets frozen.
-5. Finite representative family and four-class quotient target frozen.
-6. Dirac and complete-relational observables frozen.
-7. `L0`, `L1`, `Lfinite`, and nonlocal basis classes frozen before results.
-8. Basis-audit reporting requirements and classifications frozen.
-9. Required negative controls and interpretation guards frozen.
-10. Stage 15A–G sequence and synthesis vocabulary frozen.
+1. Stage 14 merged baseline and selected Stage 15 gate recorded.
+2. Three-site graph, canonical phase space, and spatially neutral global pair frozen.
+3. Commuting seed and nearest-neighbor presented constraint basis frozen.
+4. Unsmeared/smeared first-class targets and support rules frozen.
+5. 108-representative positive family and four-class quotient target frozen.
+6. Dirac pair and complete relational observable frozen.
+7. L0/L1/Lfinite/nonlocal basis classes frozen before Stage 15D evidence.
+8. Known distance-2 Abelianizing control and anti-bias rule frozen.
+9. Required controls and interpretation guards frozen.
+10. Stage 15A–G sequence and Stage 15G synthesis vocabulary frozen.
 
 ### Stage 15A–G and criterion 50 — criteria 11–50
 
-Criteria 11–49 are assigned monotonically across Stage 15A–G and may be marked satisfied only by executable evidence and synchronized notes/results. Criterion 50 remains an external final full-repository regression / merge-readiness review.
+Criteria 11–49 are assigned monotonically across Stage 15A–G and may be satisfied only by executable evidence plus synchronized notes/results. Criterion 50 remains an external final full-repository regression / merge-readiness review.
 
 At Stage 15.0, criteria **11–50 are pending**.
 
 ## Interpretation boundary
 
-Stage 15 is a finite spatially indexed constraint-algebra precursor. It does **not** establish general relativity, the continuum hypersurface-deformation algebra, spacetime diffeomorphism invariance, refoliation invariance, relativistic locality, fundamental non-Abelianity, eternalism, ontological becoming, absence of becoming, future actuality, or empirical discovery.
+Stage 15 is a finite spatially indexed constraint-algebra precursor. It does **not** establish general relativity, a continuum hypersurface-deformation algebra, spacetime diffeomorphism invariance, refoliation invariance, relativistic locality, fundamental non-Abelianity, eternalism, ontological becoming, absence of becoming, future actuality, or empirical discovery.
 
 Guards:
 
@@ -379,6 +391,7 @@ Guards:
 - `nearest-neighbor graph locality != relativistic locality`;
 - `finite smeared algebra != continuum hypersurface-deformation algebra`;
 - `phase-space-dependent local structure functions != spacetime geometry by definition`;
+- `known nonlocal Abelianization != proof of locality-protected non-Abelianity`;
 - `locality-preserving Abelianization != physical triviality`;
 - `locality obstruction in the declared basis class != universal non-Abelianizability`;
 - `constraint-basis change != physical-orbit change`;

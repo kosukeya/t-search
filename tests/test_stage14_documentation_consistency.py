@@ -19,6 +19,7 @@ NOTES_F = (ROOT / "docs" / "stage14f_notes.md").read_text(encoding="utf-8")
 RESULT_F = (ROOT / "results" / "stage14f_ablation.md").read_text(encoding="utf-8")
 NOTES_G = (ROOT / "docs" / "stage14g_notes.md").read_text(encoding="utf-8")
 RESULT_G = (ROOT / "results" / "stage14g_synthesis_stage15_gate.md").read_text(encoding="utf-8")
+RESULT_50 = (ROOT / "results" / "stage14_criterion50_merge_readiness.md").read_text(encoding="utf-8")
 STAGE13_G = (ROOT / "results" / "stage13g_synthesis_stage14_gate.md").read_text(encoding="utf-8")
 
 SELECTED_STAGE14 = (
@@ -55,6 +56,8 @@ STAGE14F_NOTES_RESULTS_MERGE_CHECKOUT = "880169d21c3d1f217ea79f04ac761468c1bba8b
 STAGE14F_CLOSURE_HEAD = "83e00e4ada2870c33e09006e25074b909be5a975"
 STAGE14G_SOURCE_HEAD = "c109d1ed1c9a1f043ed741a934c32b139ca15e09"
 STAGE14G_SOURCE_MERGE_CHECKOUT = "45a13aeff70010e05ee97f32f3114f7335a13502"
+STAGE14_CRITERION50_REVIEWED_HEAD = "ab500148975ecea6e03fe8678ba1e8dcc50cb666"
+STAGE14_CRITERION50_MERGE_CHECKOUT = "c4cafff62da2ba0726153e977724f3f78c8d2ff7"
 
 
 def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
@@ -68,23 +71,23 @@ def test_stage14_selected_gate_and_merged_stage13_baseline_are_frozen():
     assert "phase_space_structure_function_precursor" in combined
 
 
-def test_stage14g_status_closes_exactly_criteria_1_through_49():
+def test_stage14_status_closes_exactly_criteria_1_through_50():
     assert (
-        "Stage 14G source/test checkpoint validated; criteria 1–49 satisfied; criterion 50 pending. "
-        "External final full-repository regression / merge-readiness review is next."
+        "Stage 14 completed at the criterion-50 merge-readiness checkpoint; criteria 1–50 satisfied. "
+        "PR #15 is merge-ready, Draft, open, and unmerged."
     ) in PROTOCOL
-    assert PROTOCOL.count("**satisfied**") == 49
-    assert PROTOCOL.count("**pending**") == 1
+    assert PROTOCOL.count("**satisfied**") == 50
+    assert PROTOCOL.count("**pending**") == 0
     assert "Stage 14.0 completed; criteria 1–10 satisfied; criteria 11–50 pending." in FREEZE
     for phrase in (
         "Stage 14A — three-constraint first-class structure-function carrier and finite representative family — **completed**",
         "Stage 14B — phase-space-dependent mixed paths and third-direction compensation — **completed**",
         "Stage 14C — Dirac / three-condition complete relational observables, physical quotient, and orbit discrimination — **completed**",
-        "Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis equivalence pressure test — **completed**",
+        "Stage 14D — simple-scalar-rescaling obstruction vs triangular-basis-equivalence pressure test — **completed**",
         "Stage 14E — typed O/P/R/V/Xi and future-measurement descent across structure-function paths/bases — **completed**",
         "Stage 14F — ablation / anomaly / false-positive controls — **completed**",
         "Stage 14G — executable synthesis and evidence-selected next gate — **completed**",
-        "criterion 50 — external final full-repository regression / merge-readiness review — **next**",
+        "criterion 50 — external final full-repository regression / merge-readiness review — **completed**",
     ):
         assert phrase in PROTOCOL
 
@@ -241,14 +244,38 @@ def test_stage14g_repository_checkpoint_synthesis_and_gate_are_synchronized():
     assert SELECTED_STAGE15 in combined
 
 
-def test_stage14g_closes_frozen_criteria_48_49_only():
+def test_stage14_criterion50_review_is_synchronized():
+    combined = "\n".join((PROTOCOL, RESULT_50))
+    assert STAGE14_CRITERION50_REVIEWED_HEAD in combined
+    assert STAGE14_CRITERION50_MERGE_CHECKOUT in combined
+    assert "#1922" in combined
+    assert "1166 passed in 709.02s (0:11:49)" in combined
+    for phrase in (
+        "ahead: **46** commits",
+        "behind: **0** commits",
+        "changed files: **39**",
+        "mergeable = true",
+        "submitted reviews: **0**",
+        "unresolved inline review threads: **0**",
+        "PR conversation comments: **0**",
+        "Stage 14 criterion 50 external final full-repository regression / merge-readiness review = satisfied",
+        "Stage 14 criteria **1–50** are completed",
+        "structure_function_path_covariant_scalar_obstructed",
+        "spatially_indexed_constraint_algebra_precursor",
+        "repository validation != new scientific evidence",
+        "merge-ready != merged",
+    ):
+        assert phrase in combined
+
+
+def test_stage14_closes_frozen_criteria_48_through_50():
     assert "48. Stage 14G executable synthesis selects exactly one frozen Stage 14 status from the validated Stage 14A–F evidence chain — **satisfied**." in PROTOCOL
     assert "49. The next research gate is evidence-selected without presupposing GR, refoliation invariance, gravitational field degrees of freedom, or a metaphysical conclusion — **satisfied**." in PROTOCOL
-    assert "50. External final full-repository regression and merge-readiness review — **pending**." in PROTOCOL
+    assert "50. External final full-repository regression and merge-readiness review — **satisfied**." in PROTOCOL
 
 
 def test_stage14g_basis_pressure_and_next_gate_boundaries_remain_explicit():
-    combined = "\n".join((PROTOCOL, NOTES_G, RESULT_G))
+    combined = "\n".join((PROTOCOL, NOTES_G, RESULT_G, RESULT_50))
     for phrase in (
         "diagonal scalar-rescaling obstruction != fundamental physical non-Abelianity",
         "triangular basis equivalence != universal basis trivializability",
@@ -272,7 +299,7 @@ def test_stage14_persistent_interpretation_boundaries_remain_explicit():
             PROTOCOL, FREEZE,
             NOTES_A, RESULT_A, NOTES_B, RESULT_B, NOTES_C, RESULT_C,
             NOTES_D, RESULT_D, NOTES_E, RESULT_E, NOTES_F, RESULT_F,
-            NOTES_G, RESULT_G,
+            NOTES_G, RESULT_G, RESULT_50,
         )
     )
     for phrase in (

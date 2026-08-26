@@ -20,7 +20,7 @@ Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; Stage 15 c
 
 Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`; Stage 16 criteria 1–50 are completed and PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but Finalization later froze new bounded scientific search after Stage 16. Stage 17 is therefore selected historically but not started and not pursued in the current program.
 
-The project is now in a documentation/synthesis-only Finalization phase on Draft PR #18. Finalization introduces no new scientific Stage or scientific evidence. Its current artifacts are `docs/t_search_closure_decision.md`, `docs/t_search_final_synthesis_protocol.md`, `results/t_search_final_claim_ledger.md`, `results/t_search_final_synthesis.md`, and `docs/t_search_methodological_limits.md`.
+The project is now in a documentation/synthesis-only Finalization closure state on PR #18. Finalization introduces no new scientific Stage or scientific evidence. Its current artifacts are `docs/t_search_closure_decision.md`, `docs/t_search_final_synthesis_protocol.md`, `results/t_search_final_claim_ledger.md`, `results/t_search_final_synthesis.md`, and `docs/t_search_methodological_limits.md`. README / roadmap synchronization and the final closure audit are complete; PR #18 is merge-ready and remains unmerged pending human merge.
 
 Validated criterion-50 checkpoints:
 
@@ -421,11 +421,11 @@ Reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **
 
 Stage 16 criteria **1–50** are completed. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
-## Finalization — documentation/synthesis-only closure phase — in progress
+## Finalization — documentation/synthesis-only closure phase — audit complete / merge-ready
 
 Finalization starts from merged Stage 16 baseline `477a8e940bfcfaab377d618f7512027bacb5b5dd`. It is not Stage 17 and introduces no new scientific carrier, search family, or physical evidence.
 
-Completed artifacts on Draft PR #18:
+Completed artifacts on PR #18:
 
 - `docs/t_search_closure_decision.md`;
 - `docs/t_search_final_synthesis_protocol.md`;
@@ -435,7 +435,7 @@ Completed artifacts on Draft PR #18:
 
 The current final synthesis classifies ontological becoming and blockness/eternalism as `not_established`, decisive discrimination between them as `underdetermined`, and the decision not to continue the same bounded-search trajectory as a `methodological_judgment` rather than a new physical result.
 
-README / roadmap current-state synchronization is now complete. The remaining Finalization work is the final full-repository regression and closure merge-readiness review.
+README / roadmap current-state synchronization and the final closure audit are complete. PR #18 is merge-ready and remains unmerged pending human merge. The audit establishes repository/documentation readiness only; it adds no new scientific evidence.
 
 `final synthesis != new scientific evidence`.
 

@@ -1,6 +1,6 @@
 # Stage 16E Notes — Typed O/P/R/V/Xi and Future-Measurement Descent
 
-Status: **Stage 16E scientifically validated. Criteria 1–44 are satisfied; criteria 45–50 remain pending.**
+Status: **Stage 16E scientifically validated. Criteria 1–44 satisfied; criteria 45–50 remain pending.**
 
 Scientific implementation head: `d87a84dca0c553ab1a0c203e3f12b4670e9dbcbd`
 

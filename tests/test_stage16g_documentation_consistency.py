@@ -23,12 +23,13 @@ def _documents() -> tuple[str, str]:
 def test_stage16g_documents_record_scientific_checkpoint_and_criteria_state():
     notes, result = _documents()
     for text in (notes, result):
+        normalized = text.lower().replace("**", "")
         assert SCIENTIFIC_HEAD in text
         assert "#2060" in text
         assert CHECKPOINT in text
-        assert "criteria 1–49 satisfied" in text.lower()
-        assert "criterion 50" in text.lower()
-        assert "pending" in text.lower()
+        assert "criteria 1–49 satisfied" in normalized
+        assert "criterion 50" in normalized
+        assert "pending" in normalized
         assert STAGE16G_SELECTED_CLASSIFICATION in text
         assert STAGE17_SELECTED_GATE in text
 

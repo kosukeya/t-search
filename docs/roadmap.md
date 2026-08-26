@@ -18,7 +18,9 @@ Stage 14G selects `structure_function_path_covariant_scalar_obstructed`. Stage 1
 
 Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; Stage 15 criteria 1–50 are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-Stage 16.0–16G and criterion 50 are completed at the merge-readiness checkpoint on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criterion 50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. PR #17 is merge-ready while remaining Draft, open, and unmerged.
+Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`; Stage 16 criteria 1–50 are completed and PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but Finalization later froze new bounded scientific search after Stage 16. Stage 17 is therefore selected historically but not started and not pursued in the current program.
+
+The project is now in a documentation/synthesis-only Finalization closure state on PR #18. Finalization introduces no new scientific Stage or scientific evidence. Its current artifacts are `docs/t_search_closure_decision.md`, `docs/t_search_final_synthesis_protocol.md`, `results/t_search_final_claim_ledger.md`, `results/t_search_final_synthesis.md`, and `docs/t_search_methodological_limits.md`. README / roadmap synchronization and the final closure audit are complete; PR #18 is merge-ready and remains unmerged pending human merge.
 
 Validated criterion-50 checkpoints:
 
@@ -28,13 +30,19 @@ Validated criterion-50 checkpoints:
 - Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`; PR #14 was subsequently merged.
 - Stage 14 criterion-50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`, run #1922, **`1166 passed in 709.02s (0:11:49)`**; PR #15 was subsequently merged.
 - Stage 15 criterion-50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 **`1261 passed in 486.79s (0:08:06)`**; PR run #2002 **`1261 passed in 906.83s (0:15:06)`**; PR #16 was subsequently merged.
-- Stage 16 criterion-50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 **`1342 passed in 944.90s (0:15:44)`**; audit `results/stage16_criterion50_merge_readiness.md`; PR #17 remains Draft/open/unmerged at the merge-ready checkpoint.
+- Stage 16 criterion-50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 **`1342 passed in 944.90s (0:15:44)`**; audit `results/stage16_criterion50_merge_readiness.md`; PR #17 was subsequently merged at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
 
-## Selected gates through Stage 17
+`project closure decision != new scientific evidence`.
+
+`Stage 17 not pursued != Stage 17 refuted`.
+
+## Historical selected gates through Stage 17
+
+The gates below retain the evidence-selected historical trajectory. The Stage 17 gate remains a correct Stage 16G checkpoint, but Finalization records the later methodological decision not to execute it in the current program.
 
 Selected Stage 10 gate:
 
@@ -77,6 +85,8 @@ Evidence-selected Stage 17 gate:
 > **Audit a broader admissible locality-preserving basis-transformation class on the validated four-site closed-cycle carrier beyond the frozen affine cyclic one-step L1 ansatz and depth<=4 elementary-shear compositions; seek either a constructive local strongly commuting witness or a bounded completeness/nonexistence certificate, while preserving invertibility, the four-class quotient, the Dirac pair, complete four-clock relational observables, and typed O/P/R/V/Xi content, without promoting search failure to a universal physical locality obstruction.**
 
 Stage 17 selector id: `admissible_basis_transformation_completeness_audit`.
+
+Current Finalization disposition: **historically selected, not started, and not pursued after methodological closure review**.
 
 ## Historical Stage 7–9 checkpoints
 
@@ -371,7 +381,7 @@ Reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed 
 
 Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-## Stage 16 — four-site closed-cycle locality pressure test — completed at merge-readiness checkpoint
+## Stage 16 — four-site closed-cycle locality pressure test — completed and merged
 
 ### Stage 16A — closed-cycle local/smeared first-class carrier — completed
 
@@ -403,18 +413,43 @@ All **20/20** frozen controls reject/detect as intended. Topology controls exhib
 
 The executable selector chooses `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`. Scientific implementation head `e1a559abc2488e6ef23bda7c7dbb50bc43bd030d`; PR run #2060 passed **`1338 passed in 738.18s (0:12:18)`**.
 
-The selected Stage 17 gate is `admissible_basis_transformation_completeness_audit`, targeting the principal uncertainty left by Stage 16D: whether the negative local-witness result reflects the frozen search class or survives a broader declared admissible class.
+The selected Stage 17 gate is `admissible_basis_transformation_completeness_audit`, targeting the principal uncertainty left by Stage 16D: whether the negative local-witness result reflects the frozen search class or survives a broader declared admissible class. This remains the historical Stage 16G selection; it was not started and is not pursued by Finalization.
 
 ### Stage 16 criterion 50 — external final full-repository regression / merge-readiness review — completed
 
 Reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`** on merge checkout `b9b457a3baa4c52c124ce9ab9ea329185cdcfbdf`. The external review found no repository-level merge blocker. The audit is recorded in `results/stage16_criterion50_merge_readiness.md`.
 
-Stage 16 criteria **1–50** are completed. PR #17 is merge-ready while remaining Draft, open, and unmerged. Stage 17 is selected but not started by this closure.
+Stage 16 criteria **1–50** are completed. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
+
+## Finalization — documentation/synthesis-only closure phase — audit complete / merge-ready
+
+Finalization starts from merged Stage 16 baseline `477a8e940bfcfaab377d618f7512027bacb5b5dd`. It is not Stage 17 and introduces no new scientific carrier, search family, or physical evidence.
+
+Completed artifacts on PR #18:
+
+- `docs/t_search_closure_decision.md`;
+- `docs/t_search_final_synthesis_protocol.md`;
+- `results/t_search_final_claim_ledger.md`;
+- `results/t_search_final_synthesis.md`;
+- `docs/t_search_methodological_limits.md`.
+
+The current final synthesis classifies ontological becoming and blockness/eternalism as `not_established`, decisive discrimination between them as `underdetermined`, and the decision not to continue the same bounded-search trajectory as a `methodological_judgment` rather than a new physical result.
+
+README / roadmap current-state synchronization and the final closure audit are complete. PR #18 is merge-ready and remains unmerged pending human merge. The audit establishes repository/documentation readiness only; it adds no new scientific evidence.
+
+`final synthesis != new scientific evidence`.
+
+`Stage 17 not pursued != Stage 17 refuted`.
+
+`project closure decision != physical theorem`.
 
 ## Persistent interpretation guards
 
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;
+- `project closure decision != physical theorem`;
+- `final synthesis != new scientific evidence`;
+- `Stage 17 not pursued != Stage 17 refuted`;
 - `not_established != false`;
 - `one-step L1 Abelianization on an open three-site chain != universal local Abelianizability`;
 - `local Abelianization != absence of meaningful local constraint structure`;

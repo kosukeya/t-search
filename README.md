@@ -4,9 +4,19 @@
 
 ## Current status
 
-Stages 1–15 are completed and merged. Stage 15 completed criterion 50 at reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
+Stages 1–16 are completed and merged. Stage 16 completed criteria 1–50 at the reviewed merge-readiness checkpoint; criterion-50 PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
-Stage 16.0–16G and criterion 50 are completed at the merge-readiness checkpoint on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criterion 50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. The external audit is recorded in `results/stage16_criterion50_merge_readiness.md`. PR #17 is merge-ready while remaining Draft, open, and unmerged.
+The project is now in a documentation/synthesis-only Finalization closure state on PR #18. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but a subsequent methodological review froze new bounded scientific search after Stage 16. Stage 17 therefore remains **historically selected but not started and not pursued in the current program**. Finalization adds no new scientific evidence and is governed by `docs/t_search_closure_decision.md` and `docs/t_search_final_synthesis_protocol.md`.
+
+Current finalization artifacts:
+
+- `docs/t_search_closure_decision.md`;
+- `docs/t_search_final_synthesis_protocol.md`;
+- `results/t_search_final_claim_ledger.md`;
+- `results/t_search_final_synthesis.md`;
+- `docs/t_search_methodological_limits.md`.
+
+README / roadmap current-state synchronization and the final closure audit are complete. PR #18 is merge-ready and remains unmerged pending human merge. Final full-repository regression on audited head `b96eeac1fa11043cad3582d1717d559e200db76b` passed in Actions run #2119: **`1342 passed in 743.32s (0:12:23)`**.
 
 Historical compatibility markers:
 
@@ -18,6 +28,7 @@ Historical compatibility markers:
 - Stage 13 merged via PR #14 at `468fe6667ec6484fbe9e402135cd75f5d69420cf` after its criterion-50 checkpoint.
 - Stage 14 merged via PR #15 at `041dce7af2a8990d6ca759dd668d9a53323bccff` after its criterion-50 checkpoint.
 - Stage 15 merged via PR #16 at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d` after its criterion-50 checkpoint.
+- Stage 16 merged via PR #17 at `477a8e940bfcfaab377d618f7512027bacb5b5dd` after its criterion-50 checkpoint.
 
 Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`; Stage 14G `structure_function_path_covariant_scalar_obstructed`; Stage 15G `spatial_local_path_covariant_local_abelianizable`; Stage 16G `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`.
 
@@ -25,7 +36,13 @@ Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `para
 
 `merge-ready != merged`.
 
-## Selected gates through Stage 17
+`project closure decision != new scientific evidence`.
+
+`Stage 17 not pursued != Stage 17 refuted`.
+
+## Historical selected gates through Stage 17
+
+The gates below record the evidence-selected historical trajectory. The Stage 17 gate remains historically valid as a Stage 16G selection, but Finalization records the later decision not to execute it within the current program.
 
 Selected Stage 10 gate:
 
@@ -66,6 +83,8 @@ Evidence-selected Stage 17 gate:
 > **Audit a broader admissible locality-preserving basis-transformation class on the validated four-site closed-cycle carrier beyond the frozen affine cyclic one-step L1 ansatz and depth<=4 elementary-shear compositions; seek either a constructive local strongly commuting witness or a bounded completeness/nonexistence certificate, while preserving invertibility, the four-class quotient, the Dirac pair, complete four-clock relational observables, and typed O/P/R/V/Xi content, without promoting search failure to a universal physical locality obstruction.**
 
 Stage 17 selector: `admissible_basis_transformation_completeness_audit`.
+
+Current Finalization status for this historical gate: **selected by Stage 16G, not started, and not pursued after the closure review**.
 
 ## Historical Stage 8–9 checkpoint markers
 
@@ -307,7 +326,7 @@ Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 
 Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-## Stage 16 — four-site closed-cycle locality pressure test — criteria 1–50 completed; merge-ready checkpoint
+## Stage 16 — four-site closed-cycle locality pressure test — completed and merged
 
 - Stage 16A validates the closed four-site local/smeared first-class carrier and support audits.
 - Stage 16B validates the declared compensated path family, including **2,592 / 2,592** presented local compensator probes.
@@ -318,13 +337,35 @@ Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged in
 - Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`; scientific PR run #2060 passed **`1338 passed in 738.18s (0:12:18)`**.
 - Criterion 50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. The external audit is recorded in `results/stage16_criterion50_merge_readiness.md`.
 
-Stage 16 criteria **1–50** are completed. PR #17 is **merge-ready, Draft, open, and unmerged**.
+Stage 16 criteria **1–50** are completed. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
-Evidence-selected Stage 17 selector: `admissible_basis_transformation_completeness_audit`.
+Historical evidence-selected Stage 17 selector: `admissible_basis_transformation_completeness_audit`. Stage 17 was not started, and Finalization records the later methodological decision not to pursue it within the current program.
 
 `nonlocal_only_in_declared_search != universal locality obstruction`.
 
 `no L1 witness in frozen search != no L1 Abelianization exists`.
+
+## Finalization — documentation/synthesis-only closure phase — audit complete / merge-ready
+
+Finalization begins from merged Stage 16 baseline `477a8e940bfcfaab377d618f7512027bacb5b5dd` and introduces no new numbered scientific Stage.
+
+Completed Finalization artifacts on PR #18:
+
+- closure decision: `docs/t_search_closure_decision.md`;
+- final synthesis protocol: `docs/t_search_final_synthesis_protocol.md`;
+- final claim ledger: `results/t_search_final_claim_ledger.md`;
+- final research synthesis: `results/t_search_final_synthesis.md`;
+- methodological-limits analysis: `docs/t_search_methodological_limits.md`.
+
+The current synthesis conclusion is that t-search reaches a methodological/underdetermination boundary rather than a proof of blockness or ontological becoming. The Stage 16 closed-cycle locality-pressure residual is retained as a bounded result whose cause remains underdetermined.
+
+Final closure audit status: `closure_merge_ready = true` on audited head `b96eeac1fa11043cad3582d1717d559e200db76b`, with Actions run #2119 passing **`1342 passed in 743.32s (0:12:23)`**. This audit is a repository/documentation validation, not new scientific evidence.
+
+`final synthesis != new scientific evidence`.
+
+`project closure decision != physical theorem`.
+
+`Stage 17 not pursued != Stage 17 refuted`.
 
 ## Interpretation guards
 
@@ -355,6 +396,9 @@ Evidence-selected Stage 17 selector: `admissible_basis_transformation_completene
 - `future-measurement covariance != future actuality`;
 - `typed operational descent != ontological equivalence`;
 - `Stage 17 completeness audit selection != predicted locality obstruction`;
+- `Stage 17 not pursued != Stage 17 refuted`;
+- `final synthesis != new scientific evidence`;
+- `project closure decision != physical theorem`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;

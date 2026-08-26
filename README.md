@@ -16,6 +16,8 @@ Current finalization artifacts:
 - `results/t_search_final_synthesis.md`;
 - `docs/t_search_methodological_limits.md`.
 
+README / roadmap current-state synchronization is complete. The remaining Finalization work is the final full-repository regression and closure merge-readiness review.
+
 Historical compatibility markers:
 
 - Stages 1–9 are completed and merged.

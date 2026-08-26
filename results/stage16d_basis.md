@@ -6,6 +6,8 @@ Corrected validation head: `85b8312a958e66b17d5d0e11837de2d8f938dc01`
 
 ## Deterministic evidence
 
+The explicit local table contains **3 L0** candidates and **16 one-step L1** candidates. The frozen affine cyclic L1 symbolic family has **12 parameters**.
+
 | Quantity | Result |
 | --- | ---: |
 | explicit equivalent candidates | 21 |
@@ -59,7 +61,7 @@ CI #2032 gave `2 failed, 1308 passed in 946.87s (0:15:46)`. The two failures wer
 
 ## Criteria state
 
-**1–39 satisfied / 40–50 pending**.
+**criteria 1–39 satisfied / criteria 40–50 pending**.
 
 Next after validation/docs sync:
 

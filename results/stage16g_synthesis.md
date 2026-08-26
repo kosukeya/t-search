@@ -26,6 +26,10 @@ Bounded result:
 
 > Stage 16 closed four-cycle first-class/path/quotient/typed structure is validated; a global strongly commuting basis exists, while no local strongly commuting witness was found in the declared Stage 16D local searches, and topology-opening controls recover finite-depth local witnesses. This supports only the bounded classification `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`.
 
+Executable bounded-result literal:
+
+Stage 16 closed four-cycle first-class/path/quotient/typed structure is validated; a global strongly commuting basis exists, while no local strongly commuting witness was found in the declared Stage 16D local searches, and topology-opening controls recover finite-depth local witnesses. This supports only the bounded classification closed_cycle_local_path_covariant_nonlocal_only_in_declared_search.
+
 ## Stage 17 ranking
 
 Frozen scoring axes are discriminating power, prerequisite readiness, locality/topology specificity, confound resistance, and tractability; each axis is 0–3.

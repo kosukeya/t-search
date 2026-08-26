@@ -18,7 +18,7 @@ Stage 14G selects `structure_function_path_covariant_scalar_obstructed`. Stage 1
 
 Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; Stage 15 criteria 1–50 are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-Stage 16.0–16G are scientifically validated on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criteria **1–49** are satisfied; criterion **50 remains pending** external final full-repository regression / merge-readiness review.
+Stage 16.0–16G and criterion 50 are completed at the merge-readiness checkpoint on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criterion 50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. PR #17 is merge-ready while remaining Draft, open, and unmerged.
 
 Validated criterion-50 checkpoints:
 
@@ -28,6 +28,7 @@ Validated criterion-50 checkpoints:
 - Stage 13 criterion-50 reviewed head `5b6b4641f082f6554cf14ce6f55eba1ce5905ad0`, run #1815, **`1098 passed in 695.62s (0:11:35)`**; branch **ahead 83 / behind 0**, PR #14 `mergeable = true`; PR #14 was subsequently merged.
 - Stage 14 criterion-50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`, run #1922, **`1166 passed in 709.02s (0:11:49)`**; PR #15 was subsequently merged.
 - Stage 15 criterion-50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 **`1261 passed in 486.79s (0:08:06)`**; PR run #2002 **`1261 passed in 906.83s (0:15:06)`**; PR #16 was subsequently merged.
+- Stage 16 criterion-50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 **`1342 passed in 944.90s (0:15:44)`**; audit `results/stage16_criterion50_merge_readiness.md`; PR #17 remains Draft/open/unmerged at the merge-ready checkpoint.
 
 `repository validation != new scientific evidence`.
 
@@ -200,7 +201,7 @@ The historical matrix retains **12** typed-resource/ablation cases, **6** contro
 - `lapse_semantics_missing_typed_claim_not_established`;
 - `wrong_lapse_jacobian_numerically_refuted`;
 - `reconstructible != universally redundant`;
-- `lost != metaphysically irreducible`;
+- `lost != metaphysically_irreducible`;
 - `wrong-gauge failure != ontological becoming`;
 - `finite-model ablation != fundamental ontology`.
 
@@ -370,7 +371,7 @@ Reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed 
 
 Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-## Stage 16 — four-site closed-cycle locality pressure test — criteria 1–49 completed; criterion 50 pending
+## Stage 16 — four-site closed-cycle locality pressure test — completed at merge-readiness checkpoint
 
 ### Stage 16A — closed-cycle local/smeared first-class carrier — completed
 
@@ -404,7 +405,11 @@ The executable selector chooses `closed_cycle_local_path_covariant_nonlocal_only
 
 The selected Stage 17 gate is `admissible_basis_transformation_completeness_audit`, targeting the principal uncertainty left by Stage 16D: whether the negative local-witness result reflects the frozen search class or survives a broader declared admissible class.
 
-Criteria **1–49** are satisfied. Criterion **50 remains pending** external final full-repository regression / merge-readiness review. PR #17 remains Draft, open, and unmerged.
+### Stage 16 criterion 50 — external final full-repository regression / merge-readiness review — completed
+
+Reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`** on merge checkout `b9b457a3baa4c52c124ce9ab9ea329185cdcfbdf`. The external review found no repository-level merge blocker. The audit is recorded in `results/stage16_criterion50_merge_readiness.md`.
+
+Stage 16 criteria **1–50** are completed. PR #17 is merge-ready while remaining Draft, open, and unmerged. Stage 17 is selected but not started by this closure.
 
 ## Persistent interpretation guards
 

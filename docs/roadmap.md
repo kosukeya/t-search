@@ -433,7 +433,7 @@ Completed artifacts on Draft PR #18:
 
 The current final synthesis classifies ontological becoming and blockness/eternalism as `not_established`, decisive discrimination between them as `underdetermined`, and the decision not to continue the same bounded-search trajectory as a `methodological_judgment` rather than a new physical result.
 
-The remaining Finalization work is current-state documentation synchronization, final full-repository regression, and closure merge-readiness review.
+README / roadmap current-state synchronization is now complete. The remaining Finalization work is the final full-repository regression and closure merge-readiness review.
 
 `final synthesis != new scientific evidence`.
 

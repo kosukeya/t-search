@@ -201,7 +201,7 @@ The historical matrix retains **12** typed-resource/ablation cases, **6** contro
 - `lapse_semantics_missing_typed_claim_not_established`;
 - `wrong_lapse_jacobian_numerically_refuted`;
 - `reconstructible != universally redundant`;
-- `lost != metaphysically_irreducible`;
+- `lost != metaphysically irreducible`;
 - `wrong-gauge failure != ontological becoming`;
 - `finite-model ablation != fundamental ontology`.
 

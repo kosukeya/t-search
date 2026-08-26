@@ -4,9 +4,9 @@
 
 ## Current status
 
-Stages 1–14 are completed and merged. Stage 14 completed criterion 50 at reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922 passed **`1166 passed in 709.02s (0:11:49)`**. PR #15 was merge-ready, Draft, open, and unmerged at that checkpoint and was subsequently merged into `main` at `041dce7af2a8990d6ca759dd668d9a53323bccff`.
+Stages 1–15 are completed and merged. Stage 15 completed criterion 50 at reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-Stage 15A–G and criterion 50 are completed on Draft PR #16. Stage 15G selects `spatial_local_path_covariant_local_abelianizable`. Criterion 50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. Stage 15 criteria **1–50** are completed and PR #16 is merge-ready while remaining Draft, open, and unmerged. Stage 16 is selected but not started.
+Stage 16.0–16G are scientifically validated on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criteria **1–49** are satisfied; criterion **50 remains pending** external final full-repository regression / merge-readiness review.
 
 Historical compatibility markers:
 
@@ -17,14 +17,15 @@ Historical compatibility markers:
 - Stage 12 merged via PR #13 at `ee4baec55fa994217b275f9f2451e25fc6736787`.
 - Stage 13 merged via PR #14 at `468fe6667ec6484fbe9e402135cd75f5d69420cf` after its criterion-50 checkpoint.
 - Stage 14 merged via PR #15 at `041dce7af2a8990d6ca759dd668d9a53323bccff` after its criterion-50 checkpoint.
+- Stage 15 merged via PR #16 at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d` after its criterion-50 checkpoint.
 
-Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`; Stage 14G `structure_function_path_covariant_scalar_obstructed`; Stage 15G `spatial_local_path_covariant_local_abelianizable`.
+Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `parametrized_covariant`; Stage 12G `multi_orbit_gauge_covariant`; Stage 13G `multi_constraint_path_covariant`; Stage 14G `structure_function_path_covariant_scalar_obstructed`; Stage 15G `spatial_local_path_covariant_local_abelianizable`; Stage 16G `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`.
 
 `repository validation != new scientific evidence`.
 
 `merge-ready != merged`.
 
-## Selected gates through Stage 16
+## Selected gates through Stage 17
 
 Selected Stage 10 gate:
 
@@ -59,6 +60,12 @@ Evidence-selected Stage 16 gate:
 > **Construct a minimal four-site closed-cycle spatially indexed first-class constraint-algebra precursor with no terminal seed generator, retain explicit local/smeared structure-function dependence, test whether one-step L1 or finite-depth locality-preserving Abelianization still exists, and retest compensated paths, the physical quotient, complete relational observables, and typed O/P/R/V/Xi descent without assuming general relativity or refoliation invariance.**
 
 Stage 16 selector: `four_site_closed_cycle_constraint_algebra_precursor`.
+
+Evidence-selected Stage 17 gate:
+
+> **Audit a broader admissible locality-preserving basis-transformation class on the validated four-site closed-cycle carrier beyond the frozen affine cyclic one-step L1 ansatz and depth<=4 elementary-shear compositions; seek either a constructive local strongly commuting witness or a bounded completeness/nonexistence certificate, while preserving invertibility, the four-class quotient, the Dirac pair, complete four-clock relational observables, and typed O/P/R/V/Xi content, without promoting search failure to a universal physical locality obstruction.**
+
+Stage 17 selector: `admissible_basis_transformation_completeness_audit`.
 
 ## Historical Stage 8–9 checkpoint markers
 
@@ -287,7 +294,7 @@ Criterion 50 reviewed head `ab500148975ecea6e03fe8678ba1e8dcc50cb666`; run #1922
 
 Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 
-## Stage 15 — spatially indexed constraint-algebra precursor — criteria 1–50 completed; merge-ready
+## Stage 15 — spatially indexed constraint-algebra precursor — completed and merged
 
 - Stage 15A establishes the three-site local/smeared first-class carrier and 108-representative family.
 - Stage 15B establishes exact compensated local/smeared path closure and off-surface Jacobi consistency.
@@ -298,7 +305,25 @@ Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 - Stage 15G is validated and selects `spatial_local_path_covariant_local_abelianizable`; push run #1995 passed **`1255 passed in 886.65s (0:14:46)`** and PR run #1996 passed **`1255 passed in 553.80s (0:09:13)`**. It ranks the four-site closed-cycle gate first.
 - Criterion 50 reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. The external merge-readiness review is recorded in `results/stage15_criterion50_merge_readiness.md`.
 
-Stage 15 criteria **1–50** are completed. PR #16 is **merge-ready** while remaining **Draft, open, and unmerged** for user review. Stage 16 remains selected, not started.
+Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
+
+## Stage 16 — four-site closed-cycle locality pressure test — criteria 1–49 completed; criterion 50 pending
+
+- Stage 16A validates the closed four-site local/smeared first-class carrier and support audits.
+- Stage 16B validates the declared compensated path family, including **2,592 / 2,592** presented local compensator probes.
+- Stage 16C validates the four-class quotient, strong Dirac pair, and complete four-clock relational descent.
+- Stage 16D establishes a global strongly commuting basis but finds no local strongly commuting witness in the declared L0 / explicit L1 / depth<=4 elementary-shear / frozen affine cyclic L1 searches.
+- Stage 16E validates typed O/P/R/V/Xi and future-measurement descent across quotient, path, and basis choices.
+- Stage 16F rejects/detects **20 / 20** frozen destructive controls and shows topology-sensitive exhibited local depths: open C3 depth 1, wrap-open C4 depth 2, closed C4 no local strong witness in the declared search.
+- Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`; scientific PR run #2060 passed **`1338 passed in 738.18s (0:12:18)`**.
+
+Criteria **1–49** are satisfied. Criterion **50 remains pending** external final full-repository regression / merge-readiness review. PR #17 remains **Draft, open, and unmerged**.
+
+Evidence-selected Stage 17 selector: `admissible_basis_transformation_completeness_audit`.
+
+`nonlocal_only_in_declared_search != universal locality obstruction`.
+
+`no L1 witness in frozen search != no L1 Abelianization exists`.
 
 ## Interpretation guards
 
@@ -319,9 +344,16 @@ Stage 15 criteria **1–50** are completed. PR #16 is **merge-ready** while rema
 - `local Abelianization != absence of meaningful local constraint structure`;
 - `finite graph locality != relativistic locality`;
 - `compensated local/smeared operational descent != refoliation invariance`;
+- `nonlocal_only_in_declared_search != universal locality obstruction`;
+- `no L1 witness in frozen search != no L1 Abelianization exists`;
+- `global Abelianization != physical triviality`;
+- `cycle opening changes graph topology != proof that topology is ontic`;
+- `failure to Abelianize != ontological becoming`;
 - `Dirac-invariant data + relational change != proof of eternalism`;
 - `complete relational observable != ontological becoming by definition`;
 - `future-measurement covariance != future actuality`;
+- `typed operational descent != ontological equivalence`;
+- `Stage 17 completeness audit selection != predicted locality obstruction`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
 - `merge-ready != merged`;

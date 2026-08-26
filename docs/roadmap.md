@@ -34,6 +34,8 @@ Validated criterion-50 checkpoints:
 
 `repository validation != new scientific evidence`.
 
+`merge-ready != merged`.
+
 `project closure decision != new scientific evidence`.
 
 `Stage 17 not pursued != Stage 17 refuted`.
@@ -444,6 +446,7 @@ README / roadmap current-state synchronization is now complete. The remaining Fi
 ## Persistent interpretation guards
 
 - `repository validation != new scientific evidence`;
+- `merge-ready != merged`;
 - `project closure decision != physical theorem`;
 - `final synthesis != new scientific evidence`;
 - `Stage 17 not pursued != Stage 17 refuted`;

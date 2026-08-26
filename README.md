@@ -6,7 +6,7 @@
 
 Stages 1–15 are completed and merged. Stage 15 completed criterion 50 at reviewed head `42d3efdeecb04c76b7b49774ceb9c7afafbb0d3a`; push run #2001 passed **`1261 passed in 486.79s (0:08:06)`** and PR run #2002 passed **`1261 passed in 906.83s (0:15:06)`**. PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-Stage 16.0–16G are scientifically validated on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criteria **1–49** are satisfied; criterion **50 remains pending** external final full-repository regression / merge-readiness review.
+Stage 16.0–16G and criterion 50 are completed at the merge-readiness checkpoint on Draft PR #17. Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search` and evidence-selects `admissible_basis_transformation_completeness_audit` for Stage 17. Criterion 50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. The external audit is recorded in `results/stage16_criterion50_merge_readiness.md`. PR #17 is merge-ready while remaining Draft, open, and unmerged.
 
 Historical compatibility markers:
 
@@ -307,7 +307,7 @@ Stage 14 criteria **1–50** are completed and Stage 14 is merged via PR #15.
 
 Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged into `main` at `cca49e37b3d4171ea74fd6c15fa119fcd4392e2d`.
 
-## Stage 16 — four-site closed-cycle locality pressure test — criteria 1–49 completed; criterion 50 pending
+## Stage 16 — four-site closed-cycle locality pressure test — criteria 1–50 completed; merge-ready checkpoint
 
 - Stage 16A validates the closed four-site local/smeared first-class carrier and support audits.
 - Stage 16B validates the declared compensated path family, including **2,592 / 2,592** presented local compensator probes.
@@ -316,8 +316,9 @@ Stage 15 criteria **1–50** are completed and PR #16 was subsequently merged in
 - Stage 16E validates typed O/P/R/V/Xi and future-measurement descent across quotient, path, and basis choices.
 - Stage 16F rejects/detects **20 / 20** frozen destructive controls and shows topology-sensitive exhibited local depths: open C3 depth 1, wrap-open C4 depth 2, closed C4 no local strong witness in the declared search.
 - Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`; scientific PR run #2060 passed **`1338 passed in 738.18s (0:12:18)`**.
+- Criterion 50 reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. The external audit is recorded in `results/stage16_criterion50_merge_readiness.md`.
 
-Criteria **1–49** are satisfied. Criterion **50 remains pending** external final full-repository regression / merge-readiness review. PR #17 remains **Draft, open, and unmerged**.
+Stage 16 criteria **1–50** are completed. PR #17 is **merge-ready, Draft, open, and unmerged**.
 
 Evidence-selected Stage 17 selector: `admissible_basis_transformation_completeness_audit`.
 

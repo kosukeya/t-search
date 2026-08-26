@@ -6,7 +6,7 @@
 
 Stages 1–16 are completed and merged. Stage 16 completed criteria 1–50 at the reviewed merge-readiness checkpoint; criterion-50 PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
-The project is now in a documentation/synthesis-only Finalization phase on Draft PR #18. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but a subsequent methodological review froze new bounded scientific search after Stage 16. Stage 17 therefore remains **historically selected but not started and not pursued in the current program**. Finalization adds no new scientific evidence and is governed by `docs/t_search_closure_decision.md` and `docs/t_search_final_synthesis_protocol.md`.
+The project is now in a documentation/synthesis-only Finalization closure state on PR #18. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but a subsequent methodological review froze new bounded scientific search after Stage 16. Stage 17 therefore remains **historically selected but not started and not pursued in the current program**. Finalization adds no new scientific evidence and is governed by `docs/t_search_closure_decision.md` and `docs/t_search_final_synthesis_protocol.md`.
 
 Current finalization artifacts:
 
@@ -16,7 +16,7 @@ Current finalization artifacts:
 - `results/t_search_final_synthesis.md`;
 - `docs/t_search_methodological_limits.md`.
 
-README / roadmap current-state synchronization is complete. The remaining Finalization work is the final full-repository regression and closure merge-readiness review.
+README / roadmap current-state synchronization and the final closure audit are complete. PR #18 is merge-ready and remains unmerged pending human merge. Final full-repository regression on audited head `b96eeac1fa11043cad3582d1717d559e200db76b` passed in Actions run #2119: **`1342 passed in 743.32s (0:12:23)`**.
 
 Historical compatibility markers:
 
@@ -345,11 +345,11 @@ Historical evidence-selected Stage 17 selector: `admissible_basis_transformation
 
 `no L1 witness in frozen search != no L1 Abelianization exists`.
 
-## Finalization — documentation/synthesis-only closure phase — in progress
+## Finalization — documentation/synthesis-only closure phase — audit complete / merge-ready
 
 Finalization begins from merged Stage 16 baseline `477a8e940bfcfaab377d618f7512027bacb5b5dd` and introduces no new numbered scientific Stage.
 
-Completed Finalization artifacts on Draft PR #18:
+Completed Finalization artifacts on PR #18:
 
 - closure decision: `docs/t_search_closure_decision.md`;
 - final synthesis protocol: `docs/t_search_final_synthesis_protocol.md`;
@@ -358,6 +358,8 @@ Completed Finalization artifacts on Draft PR #18:
 - methodological-limits analysis: `docs/t_search_methodological_limits.md`.
 
 The current synthesis conclusion is that t-search reaches a methodological/underdetermination boundary rather than a proof of blockness or ontological becoming. The Stage 16 closed-cycle locality-pressure residual is retained as a bounded result whose cause remains underdetermined.
+
+Final closure audit status: `closure_merge_ready = true` on audited head `b96eeac1fa11043cad3582d1717d559e200db76b`, with Actions run #2119 passing **`1342 passed in 743.32s (0:12:23)`**. This audit is a repository/documentation validation, not new scientific evidence.
 
 `final synthesis != new scientific evidence`.
 

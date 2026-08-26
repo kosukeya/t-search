@@ -34,6 +34,8 @@ Validated synthesis sequence: Stage 10G `measurement_covariant`; Stage 11G `para
 
 `repository validation != new scientific evidence`.
 
+`merge-ready != merged`.
+
 `project closure decision != new scientific evidence`.
 
 `Stage 17 not pursued != Stage 17 refuted`.
@@ -397,4 +399,5 @@ The current synthesis conclusion is that t-search reaches a methodological/under
 - `project closure decision != physical theorem`;
 - `finite-model success != empirical discovery`;
 - `repository validation != new scientific evidence`;
+- `merge-ready != merged`;
 - `not_established != false`.

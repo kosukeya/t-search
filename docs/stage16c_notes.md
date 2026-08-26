@@ -38,7 +38,7 @@ and
 
 Across 324 positive representatives plus 324 deterministic off-surface probes, both functions are checked against all four presented constraints. This gives
 
-`648 points x 2 Dirac functions x 4 constraints = 5184`
+`648 points x 2 Dirac functions x 4 constraints = 5,184`
 
 strong-commutation checks, with maximum residual `0.0`.
 
@@ -113,10 +113,10 @@ All four one-clock omissions are tested.
 
 - omitted-clock evaluations: `1,296`;
 - orbit/omission groups: `16`;
-- incomplete groups: `16/16`;
+- incomplete groups: `16 / 16`;
 - minimum residual representative spreads by omitted clock: approximately `(2.0, 1.0, 0.5, 1.5)`.
 
-Raw `Q` is also grouped by physical orbit and fails quotient descent in `4/4` groups, with spread `5.0`.
+Raw `Q` is also grouped by physical orbit and fails quotient descent in `4 / 4` groups, with spread `5.0`.
 
 The bounded negative result is therefore explicit:
 

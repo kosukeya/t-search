@@ -74,7 +74,7 @@ Stage 15 selector: `spatially_indexed_constraint_algebra_precursor`.
 
 Evidence-selected Stage 16 gate:
 
-> **Construct a minimal four-site closed-cycle spatially indexed first-class constraint-algebra precursor with no terminal seed generator, retain explicit local/smeared structure-function dependence, test whether one-step L1 or finite-depth locality-preserving Abelianization still exists, and retest compensated paths, the physical quotient, complete four-clock relational observables, and typed O/P/R/V/Xi descent without assuming general relativity or refoliation invariance.**
+> **Construct a minimal four-site closed-cycle spatially indexed first-class constraint-algebra precursor with no terminal seed generator, retain explicit local/smeared structure-function dependence, test whether one-step L1 or finite-depth locality-preserving Abelianization still exists, and retest compensated paths, the physical quotient, complete relational observables, and typed O/P/R/V/Xi descent without assuming general relativity or refoliation invariance.**
 
 Stage 16 selector: `four_site_closed_cycle_constraint_algebra_precursor`.
 

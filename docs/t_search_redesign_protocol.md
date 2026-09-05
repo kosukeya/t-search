@@ -6,6 +6,8 @@
 
 後続状態（2026-09-05）: [R1 事前監査](t_search_r1_preflight.md)は完了し、**`pilot_gate = blocked`**。本文 §6 の pending は R0 作成時点の記録。現在の阻害要因・有限装置予算・再開条件は R1 報告を参照する。介入 pilot は未着手。
 
+R1b も実施済み: [有限読み出し装置の設計監査](t_search_r1b_readout_design_audit.md)で、固定予算の候補を不採用とした。現在の候補は終了し、次段階は自動選定しない。
+
 ## 1. 再開の位置づけと研究質問
 
 ユーザーの再開指示に基づき、同じリポジトリで新しい問いの設計を再開する。[終了判断](t_search_closure_decision.md)が凍結した Stage 16 の探索拡大とは別の R 系列とし、歴史的 Stage 17 は選定済み・未着手のまま保持する。[最終主張台帳](../results/t_search_final_claim_ledger.md)の結果・未決着・存在論的限界は変更しない。

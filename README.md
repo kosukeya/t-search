@@ -2,13 +2,21 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
-## Current status
+## Current status — R0 research redesign (2026-09-05)
+
+Research has resumed at the user's request with the [clock / record / intervention redesign protocol](docs/t_search_redesign_protocol.md). R0 defines research questions, prior-work differences, admissible operations, success criteria, and stopping rules. The next step is R1 literature and physical-implementability preflight; `pilot_gate = pending`. No new scientific experiment or evidence is claimed.
+
+The new discriminator concerns whether physically specified, resource-constrained intervention classes are preserved under clock changes. Its novelty and physical adequacy remain to be audited. This is a new design track, not the historical Stage 17 basis-search expansion; that gate remains selected but unstarted.
+
+Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
+
+## Historical Stage 1–16 and Finalization status
 
 Stages 1–16 are completed and merged. Stage 16 completed criteria 1–50 at the reviewed merge-readiness checkpoint; criterion-50 PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
-The project is now in a documentation/synthesis-only Finalization closure state on PR #18. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but a subsequent methodological review froze new bounded scientific search after Stage 16. Stage 17 therefore remains **historically selected but not started and not pursued in the current program**. Finalization adds no new scientific evidence and is governed by `docs/t_search_closure_decision.md` and `docs/t_search_final_synthesis_protocol.md`.
+At the Finalization checkpoint, the project entered a documentation/synthesis-only closure state on PR #18. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but a subsequent methodological review froze new bounded scientific search after Stage 16. Stage 17 therefore remains **historically selected but not started and not pursued in the current program**. Finalization adds no new scientific evidence and is governed by `docs/t_search_closure_decision.md` and `docs/t_search_final_synthesis_protocol.md`.
 
-Current finalization artifacts:
+Finalization artifacts:
 
 - `docs/t_search_closure_decision.md`;
 - `docs/t_search_final_synthesis_protocol.md`;
@@ -16,7 +24,7 @@ Current finalization artifacts:
 - `results/t_search_final_synthesis.md`;
 - `docs/t_search_methodological_limits.md`.
 
-README / roadmap current-state synchronization and the final closure audit are complete. PR #18 is merge-ready and remains unmerged pending human merge. Final full-repository regression on audited head `b96eeac1fa11043cad3582d1717d559e200db76b` passed in Actions run #2119: **`1342 passed in 743.32s (0:12:23)`**.
+README / roadmap synchronization and the final closure audit were completed before PR #18 was merged. The pre-merge validation below is retained as historical evidence. Final full-repository regression on audited head `b96eeac1fa11043cad3582d1717d559e200db76b` passed in Actions run #2119: **`1342 passed in 743.32s (0:12:23)`**.
 
 Historical compatibility markers:
 
@@ -345,7 +353,7 @@ Historical evidence-selected Stage 17 selector: `admissible_basis_transformation
 
 `no L1 witness in frozen search != no L1 Abelianization exists`.
 
-## Finalization — documentation/synthesis-only closure phase — audit complete / merge-ready
+## Finalization — documentation/synthesis-only closure phase — completed and merged (historical)
 
 Finalization begins from merged Stage 16 baseline `477a8e940bfcfaab377d618f7512027bacb5b5dd` and introduces no new numbered scientific Stage.
 

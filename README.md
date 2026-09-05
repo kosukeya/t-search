@@ -2,11 +2,11 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
-## Current status — R0 research redesign (2026-09-05)
+## Current status — R1 preflight completed (2026-09-05)
 
-Research has resumed at the user's request with the [clock / record / intervention redesign protocol](docs/t_search_redesign_protocol.md). R0 defines research questions, prior-work differences, admissible operations, success criteria, and stopping rules. The next step is R1 literature and physical-implementability preflight; `pilot_gate = pending`. No new scientific experiment or evidence is claimed.
+Research has resumed at the user's request with the [clock / record / intervention redesign protocol](docs/t_search_redesign_protocol.md). The [R1 literature and implementability audit](docs/t_search_r1_preflight.md) is complete with blockers: `pilot_gate = blocked`. Bare memory readout leaks out of the fixed Stage 7 physical space; the valid lifted instrument is a covariance control, not a demonstrated timed device. The report records relevant prior work, a bounded reproducible audit, and the missing apparatus/constraint-family specification.
 
-The new discriminator concerns whether physically specified, resource-constrained intervention classes are preserved under clock changes. Its novelty and physical adequacy remain to be audited. This is a new design track, not the historical Stage 17 basis-search expansion; that gate remains selected but unstarted.
+The new discriminator concerns whether physically specified, resource-constrained intervention classes are preserved under clock changes. Its novelty and physical adequacy remain unestablished. The next proposed step is R1b, a finite readout-device/constraint-family design audit; no intervention pilot or RQ2 closure search has started. This is a new design track, not the historical Stage 17 basis-search expansion; that gate remains selected but unstarted.
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 

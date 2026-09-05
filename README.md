@@ -10,6 +10,10 @@ This is a completed understanding / reproduction task, not a new ontological or 
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 
+## Proposed next research — shared records and access (2026-09-05)
+
+PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`. The [next research plan](docs/t_search_next_research_plan.md) proposes R2a–R2d: define operational records, reproduce a minimal shared-record model, compare retention and recovery under explicit access, and synthesize the implications for blockness / becoming. This is a proposed understanding / reproduction track; no R2 experiment has been run. The original `pilot_gate = blocked` and the historical Stage 17 freeze remain in force.
+
 ## Historical Stage 1–16 and Finalization status
 
 Stages 1–16 are completed and merged. Stage 16 completed criteria 1–50 at the reviewed merge-readiness checkpoint; criterion-50 PR run #2074 passed **`1342 passed in 944.90s (0:15:44)`**. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.

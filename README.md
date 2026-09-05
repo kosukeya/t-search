@@ -2,7 +2,7 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
-## Current status — R0–R1b synthesis completed (2026-09-05)
+## Completed R0–R1b synthesis (2026-09-05)
 
 At the user's request, the current purpose is to deepen understanding of blockness / becoming. The [R0–R1b synthesis](docs/t_search_r_series_synthesis.md) and [boundary supplement](docs/t_search_boundary_supplement.md) are complete. Removing the cyclic return condition allows one-shot record formation from the original preparation while retaining a global constrained-history representation. The open model and the compensated cyclic control share the same history kernel, but not the same constraint operator.
 
@@ -10,9 +10,9 @@ This is a completed understanding / reproduction task, not a new ontological or 
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 
-## Proposed next research — shared records and access (2026-09-05)
+## Current research — R2a completed (2026-09-05)
 
-PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`. The [next research plan](docs/t_search_next_research_plan.md) proposes R2a–R2d: define operational records, reproduce a minimal shared-record model, compare retention and recovery under explicit access, and synthesize the implications for blockness / becoming. This is a proposed understanding / reproduction track; no R2 experiment has been run. The original `pilot_gate = blocked` and the historical Stage 17 freeze remain in force.
+PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`. Following the [next research plan](docs/t_search_next_research_plan.md), [R2a: definitions and evidence mapping](docs/t_search_r2_records_spec.md) is complete by user instruction. It fixes the four-qubit carrier, readout instruments, state scopes, metrics, and analytic reference values for R2b. Agreement, accuracy, and disturbance of the joint state are separate diagnostics. The literature and Stage 3/7 evidence identify this as a bounded understanding / reproduction task, with novelty unestablished. R2b is specification-ready but unstarted; R2c/R2d are also unstarted. No R2 numerical experiment has been run. The original `pilot_gate = blocked` and the historical Stage 17 freeze remain in force.
 
 ## Historical Stage 1–16 and Finalization status
 

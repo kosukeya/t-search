@@ -16,6 +16,17 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
 
+## Proposed successor — R2 shared records and access (2026-09-05)
+
+After PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`, the user requested a plan for further research. The [next research plan](t_search_next_research_plan.md) proposes the following bounded understanding / reproduction sequence; all steps are unstarted:
+
+- **R2a:** define shared records and map the claims to existing literature and repository evidence.
+- **R2b:** reproduce a four-qubit model that separates agreement, accuracy, and readout disturbance.
+- **R2c:** compare declared record noise and recovery with restricted versus full access.
+- **R2d:** connect the baseline to an open global history and synthesize the operational and ontological limits.
+
+These planning labels do not reopen the original blocked discriminator pilot. A novel research extension requires a separately specified unresolved question; a successful known-result reproduction may close this proposed track.
+
 ## Historical refined candidate and Stage 1–16 status
 
 `T_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)` remains the carried typed architecture.

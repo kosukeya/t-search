@@ -2,15 +2,16 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
-## Current track — R1b design audit completed (2026-09-05)
+## Current track — R0–R1b synthesis completed (2026-09-05)
 
-The user has authorized research redesign in this repository. The [redesign protocol](t_search_redesign_protocol.md) separates same-experiment covariance from the preservation of physically available intervention classes under clock changes, with explicit records and resource budgets.
+The user selected understanding blockness / becoming as the purpose of a bounded boundary comparison and synthesis. The [synthesis](t_search_r_series_synthesis.md) separates global history representation, internal record formation, cyclic return, and unresolved ontological claims.
 
 - **R0:** redesign protocol prepared; no new scientific evidence.
 - **R1 — completed with blockers:** [literature and implementability audit](t_search_r1_preflight.md). The distinction between a physical observable and a timed device remains essential.
 - **R1b — completed, strict candidate rejected:** [finite readout-device audit](t_search_r1b_readout_design_audit.md), [code](../experiments/r1b_readout_design_audit.py), and [results](../results/r1b_readout_design_audit.json). One copying interaction per closed three-event cycle excludes the canonical input. A boundary inverse interaction repairs the coherent model but exceeds the declared budget.
 - **Pilot:** `pilot_gate = blocked`; RQ2 closure and RQ3 control experiments have not started. Novelty remains unestablished.
-- **Next:** the current candidate ends at this audit. No R1c/R2 is automatically selected. Changing the boundary condition or pointer-interaction budget would require a new explicit specification and purpose.
+- **Boundary supplement — completed by explicit user instruction:** [proof and comparison](t_search_boundary_supplement.md), [code](../experiments/r_boundary_supplement.py), and [results](../results/r_boundary_supplement.json). Removing the closing edge restores arbitrary preparation and one-copy readout; global history representation remains possible.
+- **Synthesis — completed:** this understanding / reproduction task ends here. The original cyclic candidate remains rejected. Ontological becoming, equal actuality of events, and experienced passage remain unresolved. No R2 is automatically selected.
 - **Historical Stage 17:** selected but not started; the Stage 16 bounded basis-search expansion remains frozen.
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.

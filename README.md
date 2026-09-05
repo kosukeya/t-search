@@ -2,11 +2,11 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
-## Current status — R1b design audit completed (2026-09-05)
+## Current status — R0–R1b synthesis completed (2026-09-05)
 
-The [clock / record / intervention redesign protocol](docs/t_search_redesign_protocol.md) led to the [R1 preflight](docs/t_search_r1_preflight.md) and the completed [R1b finite readout-device design audit](docs/t_search_r1b_readout_design_audit.md). The strict candidate is rejected: a single copying interaction on the closed three-event cycle cannot retain the common pointer-ready preparation for arbitrary inputs. `pilot_gate = blocked`.
+At the user's request, the current purpose is to deepen understanding of blockness / becoming. The [R0–R1b synthesis](docs/t_search_r_series_synthesis.md) and [boundary supplement](docs/t_search_boundary_supplement.md) are complete. Removing the cyclic return condition allows one-shot record formation from the original preparation while retaining a global constrained-history representation. The open model and the compensated cyclic control share the same history kernel, but not the same constraint operator.
 
-An explicit constraint family and A/C clock reductions have been constructed. A boundary inverse-copy control restores the preparation and outcome covariance, but uses two pointer interactions per cycle and exceeds the fixed budget. This is a bounded design audit and reproduction result, with no new physical or ontological claim. The current candidate ends here; no R1c/R2 or RQ2 closure search is automatically selected. Historical Stage 17 remains selected but unstarted.
+This is a completed understanding / reproduction task, not a new ontological or physical-law result. The original strict cyclic candidate remains rejected and `pilot_gate = blocked`. RQ2 intervention-class closure and RQ3 control advantage remain untested. No Stage 17 or R2 experiment is automatically selected. Earlier [R0](docs/t_search_redesign_protocol.md), [R1](docs/t_search_r1_preflight.md), and [R1b](docs/t_search_r1b_readout_design_audit.md) retain their historical scope and decisions.
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 

@@ -8,6 +8,8 @@
 
 R1b も実施済み: [有限読み出し装置の設計監査](t_search_r1b_readout_design_audit.md)で、固定予算の候補を不採用とした。現在の候補は終了し、次段階は自動選定しない。
 
+最終状態: ユーザーが「blockness／becoming への理解」を目的に採用した[境界の補足](t_search_boundary_supplement.md)と[R0〜R1b 総括](t_search_r_series_synthesis.md)を完了。元の候補の不採用と `pilot_gate = blocked` は維持し、理解・再現の課題として終了する。
+
 ## 1. 再開の位置づけと研究質問
 
 ユーザーの再開指示に基づき、同じリポジトリで新しい問いの設計を再開する。[終了判断](t_search_closure_decision.md)が凍結した Stage 16 の探索拡大とは別の R 系列とし、歴史的 Stage 17 は選定済み・未着手のまま保持する。[最終主張台帳](../results/t_search_final_claim_ledger.md)の結果・未決着・存在論的限界は変更しない。

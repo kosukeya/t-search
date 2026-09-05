@@ -2,7 +2,21 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
-## Current refined candidate and status
+## Current track — R0–R1b synthesis completed (2026-09-05)
+
+The user selected understanding blockness / becoming as the purpose of a bounded boundary comparison and synthesis. The [synthesis](t_search_r_series_synthesis.md) separates global history representation, internal record formation, cyclic return, and unresolved ontological claims.
+
+- **R0:** redesign protocol prepared; no new scientific evidence.
+- **R1 — completed with blockers:** [literature and implementability audit](t_search_r1_preflight.md). The distinction between a physical observable and a timed device remains essential.
+- **R1b — completed, strict candidate rejected:** [finite readout-device audit](t_search_r1b_readout_design_audit.md), [code](../experiments/r1b_readout_design_audit.py), and [results](../results/r1b_readout_design_audit.json). One copying interaction per closed three-event cycle excludes the canonical input. A boundary inverse interaction repairs the coherent model but exceeds the declared budget.
+- **Pilot:** `pilot_gate = blocked`; RQ2 closure and RQ3 control experiments have not started. Novelty remains unestablished.
+- **Boundary supplement — completed by explicit user instruction:** [proof and comparison](t_search_boundary_supplement.md), [code](../experiments/r_boundary_supplement.py), and [results](../results/r_boundary_supplement.json). Removing the closing edge restores arbitrary preparation and one-copy readout; global history representation remains possible.
+- **Synthesis — completed:** this understanding / reproduction task ends here. The original cyclic candidate remains rejected. Ontological becoming, equal actuality of events, and experienced passage remain unresolved. No R2 is automatically selected.
+- **Historical Stage 17:** selected but not started; the Stage 16 bounded basis-search expansion remains frozen.
+
+PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
+
+## Historical refined candidate and Stage 1–16 status
 
 `T_candidate=(O,P,R,V;Xi)` with `R=(R_content,R_direction,R_access)` and `V=(V_extension,V_semantics,V_weights)` remains the carried typed architecture.
 
@@ -20,7 +34,7 @@ Stage 15G selects `spatial_local_path_covariant_local_abelianizable`; Stage 15 c
 
 Stage 16G selects `closed_cycle_local_path_covariant_nonlocal_only_in_declared_search`; Stage 16 criteria 1–50 are completed and PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`. Stage 16G historically evidence-selected `admissible_basis_transformation_completeness_audit` for Stage 17, but Finalization later froze new bounded scientific search after Stage 16. Stage 17 is therefore selected historically but not started and not pursued in the current program.
 
-The project is now in a documentation/synthesis-only Finalization closure state on PR #18. Finalization introduces no new scientific Stage or scientific evidence. Its current artifacts are `docs/t_search_closure_decision.md`, `docs/t_search_final_synthesis_protocol.md`, `results/t_search_final_claim_ledger.md`, `results/t_search_final_synthesis.md`, and `docs/t_search_methodological_limits.md`. README / roadmap synchronization and the final closure audit are complete; PR #18 is merge-ready and remains unmerged pending human merge.
+At the Finalization checkpoint, the project entered a documentation/synthesis-only closure state on PR #18. Finalization introduces no new scientific Stage or scientific evidence. Its current artifacts are `docs/t_search_closure_decision.md`, `docs/t_search_final_synthesis_protocol.md`, `results/t_search_final_claim_ledger.md`, `results/t_search_final_synthesis.md`, and `docs/t_search_methodological_limits.md`. README / roadmap synchronization and the final closure audit were completed before PR #18 was merged.
 
 Validated criterion-50 checkpoints:
 
@@ -421,7 +435,7 @@ Reviewed head `5fd4ee8e95d2773335e8ac01f7669cd87b688f41`; PR run #2074 passed **
 
 Stage 16 criteria **1–50** are completed. PR #17 was subsequently merged into `main` at `477a8e940bfcfaab377d618f7512027bacb5b5dd`.
 
-## Finalization — documentation/synthesis-only closure phase — audit complete / merge-ready
+## Finalization — documentation/synthesis-only closure phase — completed and merged (historical)
 
 Finalization starts from merged Stage 16 baseline `477a8e940bfcfaab377d618f7512027bacb5b5dd`. It is not Stage 17 and introduces no new scientific carrier, search family, or physical evidence.
 
@@ -435,7 +449,7 @@ Completed artifacts on PR #18:
 
 The current final synthesis classifies ontological becoming and blockness/eternalism as `not_established`, decisive discrimination between them as `underdetermined`, and the decision not to continue the same bounded-search trajectory as a `methodological_judgment` rather than a new physical result.
 
-README / roadmap current-state synchronization and the final closure audit are complete. PR #18 is merge-ready and remains unmerged pending human merge. The audit establishes repository/documentation readiness only; it adds no new scientific evidence.
+README / roadmap synchronization and the final closure audit were completed before PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The audit establishes repository/documentation readiness only; it adds no new scientific evidence.
 
 `final synthesis != new scientific evidence`.
 

@@ -1,0 +1,396 @@
+{
+  "baseline_commit": "4b46b54cf180c627c3a972a6b4a434afa0180ad1",
+  "numpy_version": "2.3.5",
+  "atol": 1e-10,
+  "status": "completed_strict_candidate_rejected",
+  "pilot_gate": "blocked",
+  "new_scientific_claim": false,
+  "strict_budget": {
+    "pointer_qubits": 1,
+    "pointer_ready_state": "0",
+    "CNOTs_per_cycle": 1,
+    "periodic_events": 3
+  },
+  "kinematic_dimension": 108,
+  "models": {
+    "off": {
+      "physical_dimension": 28,
+      "ready_input_dimension": 14,
+      "canonical_loop_defect": 1.705364989565865e-15,
+      "constraint_residual": 4.006514282657152e-15,
+      "pointer_effect_projectivity_errors": [
+        7.636447082675084e-15,
+        7.134039889900373e-15
+      ],
+      "canonical_probabilities": {
+        "pointer_at_A_e2": [
+          1.0000000000000024,
+          2.751977536848911e-20
+        ],
+        "final_B_by_N": [
+          [
+            0.5000000000000008,
+            0.0
+          ],
+          [
+            0.500000000000001,
+            0.0
+          ]
+        ],
+        "same_A_e2_event_in_charts": [
+          {
+            "clock": "A",
+            "reading": 0,
+            "p_N_at_A_e2": [
+              1.0000000000000024,
+              7.056438485260385e-20
+            ]
+          },
+          {
+            "clock": "A",
+            "reading": 1,
+            "p_N_at_A_e2": [
+              1.0000000000000024,
+              2.7266020106456215e-19
+            ]
+          },
+          {
+            "clock": "A",
+            "reading": 2,
+            "p_N_at_A_e2": [
+              1.0000000000000024,
+              8.435490830349597e-20
+            ]
+          },
+          {
+            "clock": "C",
+            "reading": 0,
+            "p_N_at_A_e2": [
+              1.0000000000000027,
+              8.184209461634683e-19
+            ]
+          },
+          {
+            "clock": "C",
+            "reading": 1,
+            "p_N_at_A_e2": [
+              1.0000000000000027,
+              9.692465516950059e-20
+            ]
+          },
+          {
+            "clock": "C",
+            "reading": 2,
+            "p_N_at_A_e2": [
+              1.0000000000000024,
+              6.173689480365948e-19
+            ]
+          }
+        ],
+        "different_question_bare_N_given_C_reading": [
+          4.088157657089116e-33,
+          4.088157657089113e-33,
+          7.154275899905952e-33
+        ]
+      },
+      "charts": [
+        {
+          "clock": "A",
+          "reading": 0,
+          "rank": 28,
+          "min_singular_value": 1.0,
+          "metric_error": 1.5079720013283496e-31,
+          "tp_error": 1.576956683703007e-14,
+          "all_state_probability_error": 8.04539365698701e-15,
+          "reconstruction_error": 1.2650942582248802e-15
+        },
+        {
+          "clock": "A",
+          "reading": 1,
+          "rank": 28,
+          "min_singular_value": 1.0000000000000002,
+          "metric_error": 1.950075492862759e-31,
+          "tp_error": 1.5735129631623102e-14,
+          "all_state_probability_error": 8.077470041001752e-15,
+          "reconstruction_error": 1.578175759872397e-15
+        },
+        {
+          "clock": "A",
+          "reading": 2,
+          "rank": 28,
+          "min_singular_value": 1.0000000000000004,
+          "metric_error": 1.6402156259724073e-31,
+          "tp_error": 1.567569976091758e-14,
+          "all_state_probability_error": 8.089395142283967e-15,
+          "reconstruction_error": 1.3924290161807047e-15
+        },
+        {
+          "clock": "C",
+          "reading": 0,
+          "rank": 28,
+          "min_singular_value": 0.4283729905961322,
+          "metric_error": 1.2217787313727207e-15,
+          "tp_error": 3.0079758642453044e-14,
+          "all_state_probability_error": 8.346989242830319e-15,
+          "reconstruction_error": 2.618329444191506e-15
+        },
+        {
+          "clock": "C",
+          "reading": 1,
+          "rank": 28,
+          "min_singular_value": 0.4283729905961323,
+          "metric_error": 9.245824177292364e-16,
+          "tp_error": 3.028008027897177e-14,
+          "all_state_probability_error": 8.068945572192083e-15,
+          "reconstruction_error": 2.7269088701106127e-15
+        },
+        {
+          "clock": "C",
+          "reading": 2,
+          "rank": 28,
+          "min_singular_value": 0.4283729905961324,
+          "metric_error": 1.1753198999193573e-15,
+          "tp_error": 2.9369075811102215e-14,
+          "all_state_probability_error": 8.354652928208377e-15,
+          "reconstruction_error": 2.6826840981613065e-15
+        }
+      ]
+    },
+    "single": {
+      "physical_dimension": 21,
+      "ready_input_dimension": 7,
+      "canonical_loop_defect": 1.0000000000000004,
+      "constraint_residual": 5.581371114602614e-15,
+      "pointer_effect_projectivity_errors": [
+        0.6614378277661477,
+        0.6614378277661477
+      ],
+      "canonical_probabilities": null,
+      "charts": [
+        {
+          "clock": "A",
+          "reading": 0,
+          "rank": 21,
+          "min_singular_value": 0.9999999999999998,
+          "metric_error": 1.8157207246905446e-31,
+          "tp_error": 1.0009581883398188e-14,
+          "all_state_probability_error": 4.6015761475702524e-15,
+          "reconstruction_error": 1.0136121685029865e-15
+        },
+        {
+          "clock": "A",
+          "reading": 1,
+          "rank": 21,
+          "min_singular_value": 1.0000000000000002,
+          "metric_error": 1.5223991879778446e-31,
+          "tp_error": 1.007437905433664e-14,
+          "all_state_probability_error": 4.529760502072505e-15,
+          "reconstruction_error": 1.324434972921937e-15
+        },
+        {
+          "clock": "A",
+          "reading": 2,
+          "rank": 21,
+          "min_singular_value": 1.0000000000000004,
+          "metric_error": 1.6976034350936516e-31,
+          "tp_error": 1.0014337171058918e-14,
+          "all_state_probability_error": 4.5888267107539584e-15,
+          "reconstruction_error": 1.4089212164984218e-15
+        },
+        {
+          "clock": "C",
+          "reading": 0,
+          "rank": 21,
+          "min_singular_value": 0.42837299059613226,
+          "metric_error": 1.0309337316977682e-15,
+          "tp_error": 1.8212823973309136e-14,
+          "all_state_probability_error": 4.704790393879066e-15,
+          "reconstruction_error": 1.9800826120768743e-15
+        },
+        {
+          "clock": "C",
+          "reading": 1,
+          "rank": 21,
+          "min_singular_value": 0.42837299059613254,
+          "metric_error": 1.1047605322047072e-15,
+          "tp_error": 1.8865536067976878e-14,
+          "all_state_probability_error": 4.6986733853943576e-15,
+          "reconstruction_error": 2.0958509802764604e-15
+        },
+        {
+          "clock": "C",
+          "reading": 2,
+          "rank": 21,
+          "min_singular_value": 0.42837299059613226,
+          "metric_error": 9.725180271673869e-16,
+          "tp_error": 1.920653627861212e-14,
+          "all_state_probability_error": 4.8893040993541044e-15,
+          "reconstruction_error": 2.6989423469869355e-15
+        }
+      ],
+      "allowed_ready_inputs_N1_effect_norm": 2.93434804223095e-31
+    },
+    "compensated": {
+      "physical_dimension": 28,
+      "ready_input_dimension": 14,
+      "canonical_loop_defect": 1.650709731913163e-15,
+      "constraint_residual": 3.79084536917948e-15,
+      "pointer_effect_projectivity_errors": [
+        7.109256356362407e-15,
+        7.060930481391332e-15
+      ],
+      "canonical_probabilities": {
+        "pointer_at_A_e2": [
+          0.5000000000000009,
+          0.5000000000000009
+        ],
+        "final_B_by_N": [
+          [
+            0.25000000000000033,
+            0.25000000000000044
+          ],
+          [
+            0.25000000000000056,
+            0.2500000000000004
+          ]
+        ],
+        "same_A_e2_event_in_charts": [
+          {
+            "clock": "A",
+            "reading": 0,
+            "p_N_at_A_e2": [
+              0.5000000000000008,
+              0.500000000000001
+            ]
+          },
+          {
+            "clock": "A",
+            "reading": 1,
+            "p_N_at_A_e2": [
+              0.5000000000000009,
+              0.500000000000001
+            ]
+          },
+          {
+            "clock": "A",
+            "reading": 2,
+            "p_N_at_A_e2": [
+              0.5000000000000008,
+              0.5000000000000009
+            ]
+          },
+          {
+            "clock": "C",
+            "reading": 0,
+            "p_N_at_A_e2": [
+              0.5000000000000009,
+              0.500000000000001
+            ]
+          },
+          {
+            "clock": "C",
+            "reading": 1,
+            "p_N_at_A_e2": [
+              0.500000000000001,
+              0.5000000000000009
+            ]
+          },
+          {
+            "clock": "C",
+            "reading": 2,
+            "p_N_at_A_e2": [
+              0.5000000000000008,
+              0.5000000000000009
+            ]
+          }
+        ],
+        "different_question_bare_N_given_C_reading": [
+          0.21428571428571455,
+          0.4285714285714285,
+          0.3750000000000005
+        ]
+      },
+      "charts": [
+        {
+          "clock": "A",
+          "reading": 0,
+          "rank": 28,
+          "min_singular_value": 0.9999999999999997,
+          "metric_error": 1.6156803453199108e-31,
+          "tp_error": 1.2227720229428974e-14,
+          "all_state_probability_error": 6.005996618044217e-15,
+          "reconstruction_error": 1.3778267669409883e-15
+        },
+        {
+          "clock": "A",
+          "reading": 1,
+          "rank": 28,
+          "min_singular_value": 1.0000000000000002,
+          "metric_error": 2.0033329982072817e-31,
+          "tp_error": 1.2155810721834599e-14,
+          "all_state_probability_error": 6.01797750064423e-15,
+          "reconstruction_error": 1.453439762201602e-15
+        },
+        {
+          "clock": "A",
+          "reading": 2,
+          "rank": 28,
+          "min_singular_value": 1.0000000000000007,
+          "metric_error": 2.59709942270158e-31,
+          "tp_error": 1.2137730400520103e-14,
+          "all_state_probability_error": 5.9633912653823355e-15,
+          "reconstruction_error": 1.4543493734147763e-15
+        },
+        {
+          "clock": "C",
+          "reading": 0,
+          "rank": 28,
+          "min_singular_value": 0.42837299059613243,
+          "metric_error": 1.0464978754614001e-15,
+          "tp_error": 2.1625385425919858e-14,
+          "all_state_probability_error": 6.255330784176127e-15,
+          "reconstruction_error": 3.3620845394744143e-15
+        },
+        {
+          "clock": "C",
+          "reading": 1,
+          "rank": 28,
+          "min_singular_value": 0.4283729905961323,
+          "metric_error": 1.2594000549279808e-15,
+          "tp_error": 1.9791962420363697e-14,
+          "all_state_probability_error": 5.914210648772918e-15,
+          "reconstruction_error": 2.918925497989829e-15
+        },
+        {
+          "clock": "C",
+          "reading": 2,
+          "rank": 28,
+          "min_singular_value": 0.4283729905961324,
+          "metric_error": 1.0780445719226576e-15,
+          "tp_error": 2.1246987526464624e-14,
+          "all_state_probability_error": 5.8402267419464106e-15,
+          "reconstruction_error": 2.7596296011491793e-15
+        }
+      ]
+    }
+  },
+  "kernel_comparison_errors": {
+    "off_vs_stage7": 6.652603305650479e-15,
+    "compensated_vs_dressing": 4.455096264538699e-15,
+    "dressed_constraint_on_compensated_basis": 9.356367555266951e-15
+  },
+  "off_compensated_common_preparation_error": 3.03511960822577e-15,
+  "compensated_final_instrument_tp_error": 6.851791950518838e-15,
+  "compensated_readout_dilation_error": 1.1102230246251565e-16,
+  "single_pointer_persistence_effect_error": 2.7987135574797044e-15,
+  "compensated_CNOTs_per_cycle": 2,
+  "compensated_within_budget": false,
+  "source_sha256": {
+    "src/t_search/stage7_history.py": "1a648781581f3ea145e62b9ea3a34eb459a18e07307f83b8747fde4ec9448c20",
+    "src/t_search/stage7_record.py": "d68083f54c84b223862bfdd996dd75c3bb24931e905bab704a62e38ef59b12c7",
+    "src/t_search/stage7_spectator.py": "4ab08aa520871a978bf68c10b9ec593dcb58ff4af675d94bcfaa17ba9295a221",
+    "src/t_search/stage5_clock_change.py": "389594e17cc98c6ebefd7f50e79fecde19f519b52b8fcd7195897ecf2bcccbc3",
+    "src/t_search/stage5_reductions.py": "ce257caf2db99dd37c055ae1cb86f91af70665ff4849de9b24cabec465e2f062",
+    "src/t_search/stage5_clock_transforms.py": "182c90dff8c46d9f0b1d3b6b1ee53d5a270541431f96c6ae1f21071e49f68543"
+  }
+}

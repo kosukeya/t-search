@@ -1,0 +1,119 @@
+{
+  "baseline_commit": "af0ff7adab6a2751849239e0fbd464c678406218",
+  "numpy_version": "2.3.5",
+  "atol": 1e-10,
+  "audit_kind": "fixed_constraint_feasibility",
+  "pilot_gate": "blocked",
+  "new_scientific_claim": false,
+  "dimensions": {
+    "kinematic": 54,
+    "physical": 14
+  },
+  "bare_memory_operator_leakage_spectral_norm": {
+    "forward": {
+      "I": 7.544697063222409e-16,
+      "X": 7.4979875567984605e-16,
+      "Y": 0.9428090415820636,
+      "Z": 0.9428090415820637,
+      "P0": 0.4714045207910319,
+      "P1": 0.4714045207910318
+    },
+    "no-record": {
+      "I": 7.619430720070912e-16,
+      "X": 7.619430720070912e-16,
+      "Y": 7.619430720070912e-16,
+      "Z": 7.619430720070912e-16,
+      "P0": 7.619430720070911e-16,
+      "P1": 7.619430720070911e-16
+    }
+  },
+  "compressed_readout": {
+    "canonical_survival_probability": 0.7777777777777796,
+    "max_failure_probability": 0.444444444444444
+  },
+  "lifted_readout": {
+    "tp_residual": 4.819990906233867e-16,
+    "nonselective_earlier_full_state_trace_distance": 0.5000000000000007,
+    "max_matrix_unit_covariance_residual": 2.945843088648879e-16
+  },
+  "charts": [
+    {
+      "clock": "A",
+      "reading": 0,
+      "metric_residual": 6.52228054448778e-32,
+      "metric_tp_residual": 7.267365154026945e-16,
+      "reduction_min_singular_value": 0.9999999999999999,
+      "branch_probabilities": [
+        0.5000000000000006,
+        0.5000000000000007
+      ]
+    },
+    {
+      "clock": "A",
+      "reading": 1,
+      "metric_residual": 5.326502891971845e-32,
+      "metric_tp_residual": 7.267365154026946e-16,
+      "reduction_min_singular_value": 0.9999999999999999,
+      "branch_probabilities": [
+        0.5000000000000006,
+        0.5000000000000007
+      ]
+    },
+    {
+      "clock": "A",
+      "reading": 2,
+      "metric_residual": 2.376037029557123e-31,
+      "metric_tp_residual": 7.267365154026946e-16,
+      "reduction_min_singular_value": 1.0,
+      "branch_probabilities": [
+        0.5000000000000006,
+        0.5000000000000007
+      ]
+    },
+    {
+      "clock": "C",
+      "reading": 0,
+      "metric_residual": 6.139284085815001e-16,
+      "metric_tp_residual": 1.2912645103622607e-15,
+      "reduction_min_singular_value": 0.42837299059613226,
+      "branch_probabilities": [
+        0.5000000000000006,
+        0.5000000000000006
+      ]
+    },
+    {
+      "clock": "C",
+      "reading": 1,
+      "metric_residual": 6.017895074847692e-16,
+      "metric_tp_residual": 1.3436748482325178e-15,
+      "reduction_min_singular_value": 0.4283729905961322,
+      "branch_probabilities": [
+        0.5000000000000004,
+        0.5000000000000007
+      ]
+    },
+    {
+      "clock": "C",
+      "reading": 2,
+      "metric_residual": 5.78454719014892e-16,
+      "metric_tp_residual": 1.2304536353935626e-15,
+      "reduction_min_singular_value": 0.4283729905961322,
+      "branch_probabilities": [
+        0.5000000000000004,
+        0.5000000000000007
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/t_search/stage3.py": "7d209de3a1f601f8c825001b9aa3ff07c28c81185889fbf138b8876326752c6b",
+    "src/t_search/stage3_asymmetry.py": "423532fe734710a03ef6dc5260ba75fbf7081bd25b94a736d30fb38aee195673",
+    "src/t_search/stage3_diagnostics.py": "cf214959f5d6ac7c03df217e68cdd6dc20b9beabf88477568b4c47b1c92e7f48",
+    "src/t_search/stage5_clock_change.py": "389594e17cc98c6ebefd7f50e79fecde19f519b52b8fcd7195897ecf2bcccbc3",
+    "src/t_search/stage5_clock_transforms.py": "182c90dff8c46d9f0b1d3b6b1ee53d5a270541431f96c6ae1f21071e49f68543",
+    "src/t_search/stage5_reductions.py": "ce257caf2db99dd37c055ae1cb86f91af70665ff4849de9b24cabec465e2f062",
+    "src/t_search/stage7_spectator.py": "4ab08aa520871a978bf68c10b9ec593dcb58ff4af675d94bcfaa17ba9295a221",
+    "src/t_search/stage7_record.py": "d68083f54c84b223862bfdd996dd75c3bb24931e905bab704a62e38ef59b12c7",
+    "src/t_search/stage7_history.py": "1a648781581f3ea145e62b9ea3a34eb459a18e07307f83b8747fde4ec9448c20",
+    "src/t_search/stage7_record_transport.py": "8d75fd773362061ae70edd96b0381ce8d90b6edefb1db43f7e842a95a40f1cb5"
+  }
+}

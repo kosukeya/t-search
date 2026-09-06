@@ -16,12 +16,12 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
 
-## Current successor — R2a completed (2026-09-05)
+## Current successor — R2b implemented and locally verified (2026-09-06)
 
 After PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`, the user requested a plan and then explicitly instructed R2a. The [next research plan](t_search_next_research_plan.md) governs this bounded understanding / reproduction sequence:
 
 - **R2a — completed:** [definitions, evidence mapping, and implementation specification](t_search_r2_records_spec.md). Seven sources and the Stage 3/7 evidence are mapped to explicit assumptions. Analytic reference values are derived; no numerical experiment has been run.
-- **R2b — specification ready, unstarted:** reproduce the four-qubit model separating agreement, accuracy, and readout disturbance on explicitly named state scopes.
+- **R2b — implemented and locally verified:** [report](t_search_r2b_shared_records.md), [code](../experiments/r2_shared_records.py), [data](../results/r2_shared_records.json), and [tests](../tests/test_r2_shared_records.py). 18 cases / 54 readout comparisons reproduce the analytic values; 14 new local tests pass. Full-repository CI is tracked in PR #20. Fixed-basis SBS and disturbance explicitly name their state scopes.
 - **R2c — unstarted:** compare declared record noise and recovery with restricted versus full access.
 - **R2d — unstarted:** connect the baseline to an open global history and synthesize the operational and ontological limits.
 

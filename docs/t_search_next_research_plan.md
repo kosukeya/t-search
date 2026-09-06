@@ -1,8 +1,8 @@
 # 次期研究計画 — 記録が共有・保持される条件から blockness／becoming を理解する
 
-2026-09-05。状態: **R2a 完了、R2b〜R2d 未実施**。基点: [PR #19](https://github.com/kosukeya/t-search/pull/19) のマージ `83dd67346501d6f714d49cf7e962a39388f6a49e`。
+2026-09-06 更新。状態: **R2a 完了、R2b 実装・局所検証完了、R2c〜R2d 未実施**。基点: [PR #19](https://github.com/kosukeya/t-search/pull/19) のマージ `83dd67346501d6f714d49cf7e962a39388f6a49e`。
 
-進捗更新: ユーザーの R2a 実施指示により、[定義・既存成果との対応付けと R2b 仕様](t_search_r2_records_spec.md)を確定した。以下は当初の研究計画であり、実装の詳細は同仕様を参照する。R2a では既知の構造から解析的な検算基準を導出したが、数値実験は実施していない。
+進捗更新: R2a の[実装仕様](t_search_r2_records_spec.md)に基づき、[R2b の再現実験](t_search_r2b_shared_records.md)を実装し、18ケース・54読出し比較と新規14テストを局所検証した。全体回帰は PR #20 の CI に記録する。以下は当初の研究計画であり、実施済みの結果は R2b 報告を参照する。
 
 目的は引き続き **blockness／becoming への理解を深めること**。次期系列を **R2：記録の共有・安定性とアクセス制約** と呼ぶ。本書の R2 は新しい理解・再現課題の提案であり、R0 の識別実験を自動再開する指定ではない。元の `pilot_gate = blocked`、R1b の周期候補不採用、Stage 17 未着手を維持する。研究結果や新規性の成立を本計画の作成によって宣言しない。
 
@@ -89,7 +89,7 @@
 | **R2c：保持と回復の切り分け** | 同じモデルに限定した雑音4点と、二つのアクセス集合の回復比較を追記する | 雑音耐性とアクセスに起因する回復不能を分け、回復の達成値と上限の根拠を示せる |
 | **R2d：blockness／becoming への総括** | 基準回路の全体履歴との対応と、説明できたこと／残ることを主張台帳へまとめる | 各結論を「既知の再現」「この有限例の結果」「追加仮定が必要」に分類できる。次の未解決問は最大1件 |
 
-R2a は文献・定義ノート、R2b は最小の実行可能な研究単位とする。予定ファイルは `docs/t_search_r2_records_spec.md`、`experiments/r2_shared_records.py`、`results/r2_shared_records.json`、`tests/test_r2_shared_records.py`、`docs/t_search_r2_synthesis.md`。これらのうち R2a の仕様書を作成済みであり、実験・結果・テスト・総括は未作成である。段階を増やして計画だけを延長せず、R2a の仕様で R2b を実施できる粒度まで絞る。
+R2a は文献・定義ノート、R2b は最小の実行可能な研究単位とする。予定ファイルは `docs/t_search_r2_records_spec.md`、`experiments/r2_shared_records.py`、`results/r2_shared_records.json`、`tests/test_r2_shared_records.py`、`docs/t_search_r2_synthesis.md`。これらのうち仕様書、R2b の実験・結果・テストを作成済みで、R2 全体の総括は未作成である。段階を増やして計画だけを延長せず、R2a の仕様で R2b を実施できる粒度まで絞る。
 
 R2b の検証はトレース保存・正値性と解析解との一致を中心にする。回復については R2c で参照系を用いた検証を追加する。既存回帰はリポジトリの通常 CI を用い、テスト件数の増加を科学的な前進の尺度にしない。
 

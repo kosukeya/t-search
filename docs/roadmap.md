@@ -16,16 +16,18 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
 
-## Current successor — R2 synthesis implemented and locally verified (2026-09-06)
+## Completed successor — R2 synthesis (2026-09-06)
 
-After PR #19, the user explicitly authorized each step of the [R2 plan](t_search_next_research_plan.md). This bounded understanding / reproduction sequence reaches its synthesis:
+The explicitly authorized [R2a–R2d sequence](t_search_next_research_plan.md) is complete and merged through [PR #20](https://github.com/kosukeya/t-search/pull/20), merge `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. Full PR/push CI at implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed 1382 tests and 18 subtests. [Synthesis](t_search_r2_synthesis.md) and [claim ledger](../results/t_search_r2_claim_ledger.md) retain the boundaries between shared records, one-shot retention, unknown-input recovery, global history and ontology.
 
-- **R2a — completed:** [definitions and specification](t_search_r2_records_spec.md). Seven sources and historical evidence mapped to explicit assumptions; analytic reference values fixed.
-- **R2b — completed:** [report](t_search_r2b_shared_records.md). 18 cases / 54 readout comparisons; full CI passed 1359 tests and 18 subtests at head `3580f00ebea83c06b8a66562e4a21224e7424eaf`.
-- **R2c — completed:** [report](t_search_r2c_retention_recovery.md). Twelve retention and six recovery conditions; full PR/push CI passed 1371 tests and 18 subtests at head `04eed933cdfff3b4bd88088e5ffddadef40acc52`. Detailed logs are linked in PR #20.
-- **R2d — implemented and locally verified:** [synthesis](t_search_r2_synthesis.md), [claim ledger](../results/t_search_r2_claim_ledger.md), [code](../experiments/r2d_global_history.py), [data](../results/r2d_global_history.json), [tests](../tests/test_r2d_global_history.py). Open four-event histories recover 72 conditional states and 216 readout comparisons across 18 cases. Propagation and preparation kernels have dimensions 16 and 2. All 37 R2 tests pass locally; final full CI is recorded in [PR #20](https://github.com/kosukeya/t-search/pull/20).
+## Current successor — R3a certification audit completed (2026-09-06)
 
-R2 is synthesized as an understanding / reproduction task. The single remaining candidate concerns certifying coherent-control access using independently justified resources and additional measurements; novelty and admissibility require a separate audit before a new experiment. This does not reopen the original blocked pilot, the rejected strict cyclic candidate or Stage 17. The historical final claim ledger remains unchanged.
+The user explicitly requested R3a after merging R2. The [short protocol](t_search_r3a_certification_protocol.md) and [audit](t_search_r3a_certification_audit.md) distinguish implemented-channel fidelity, optimal recoverability, and evidence about internal operations. Primary-source two-basis bounds provide a conditional certificate with trusted preparation/measurement. Analytic controls expose Z-only ambiguity, known-state repreparation and residual two-basis underdetermination.
+
+- **R3a — completed:** assumptions, resources, existing-theorem mapping, analytic bounds, and follow-up acceptance/stop conditions. Documentation and analytic audit only; no new numerical evidence.
+- **R3b — unstarted:** if requested, minimally reproduce the data-only certificate on three R2 conditions and four logical-channel controls, with independent reference fidelity. No recovery search or GST implementation is selected.
+
+There is no newly established open problem or novelty claim beyond this bounded reproduction proposal. The original blocked pilot, rejected strict cyclic candidate, Stage 17 freeze and historical final claim ledger remain unchanged.
 
 ## Historical refined candidate and Stage 1–16 status
 

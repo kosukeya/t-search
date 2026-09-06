@@ -10,11 +10,15 @@ This is a completed understanding / reproduction task, not a new ontological or 
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 
-## Current research — R2 synthesis implemented and locally verified (2026-09-06)
+## Completed R2 — shared records, recovery and global history (2026-09-06)
 
-After PR #19, the [R2a specification](docs/t_search_r2_records_spec.md), [R2b shared-record reproduction](docs/t_search_r2b_shared_records.md), and [R2c retention/recovery comparison](docs/t_search_r2c_retention_recovery.md) are complete. [R2d and the R2 synthesis](docs/t_search_r2_synthesis.md) connect the baseline circuit to an open four-event constraint history, with [code](experiments/r2d_global_history.py), [data](results/r2d_global_history.json), [tests](tests/test_r2d_global_history.py), and a separate [R2 claim ledger](results/t_search_r2_claim_ledger.md). Eighteen histories, 72 conditional states, 216 readout comparisons and 12 calibrations match the analytic expectations. Eleven new tests plus the 26 R2b/R2c tests pass locally; the final full-CI record is in [PR #20](https://github.com/kosukeya/t-search/pull/20).
+[R2a–R2d and the synthesis](docs/t_search_r2_synthesis.md) are complete and merged in [PR #20](https://github.com/kosukeya/t-search/pull/20) at `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. The implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed both full CI runs: 1382 tests and 18 subtests. The [R2 claim ledger](results/t_search_r2_claim_ledger.md) separates known reproductions, finite-model results and claims requiring additional assumptions. Global history representation, internal record formation and access-limited recovery coexist in the declared model; the result does not settle temporal ontology.
 
-This closes R2 as a bounded understanding / reproduction sequence: global history representation, internal record formation and access-limited recovery can coexist in this model. Event conditioning is not a physically certified clock device. Noise/readout dilations, ontological actuality and a thermodynamic arrow are not established. One candidate question about certifying coherent-control access remains for a separately specified audit; no new experiment is automatically selected. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
+## Current research — R3a certification audit completed (2026-09-06)
+
+At the user's instruction, [R3a protocol](docs/t_search_r3a_certification_protocol.md) and [literature/definition audit](docs/t_search_r3a_certification_audit.md) fix a trusted-preparation-and-measurement certificate for the implemented recovery channel. Existing two-basis fidelity bounds answer the conditional performance question. They do not certify a unique internal gate implementation or an upper bound on the best possible recovery. The audit includes analytic expectations and failure controls; no new numerical experiment was performed.
+
+R3b, if requested, is a single minimal reproduction of these known bounds using the existing R2 model. R3b is unstarted and novelty is unestablished. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
 
 ## Historical Stage 1–16 and Finalization status
 

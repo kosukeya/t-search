@@ -1,8 +1,8 @@
 # 次期研究計画 — 記録が共有・保持される条件から blockness／becoming を理解する
 
-2026-09-06 更新。状態: **R2a/R2b 完了、R2c 実装・局所検証完了、R2d 未実施**。基点: [PR #19](https://github.com/kosukeya/t-search/pull/19) のマージ `83dd67346501d6f714d49cf7e962a39388f6a49e`。
+2026-09-06 更新。状態: **R2a/R2b/R2c 完了、R2d 履歴構成・解析照合・局所回帰完了、R2を総括**。基点: [PR #19](https://github.com/kosukeya/t-search/pull/19) のマージ `83dd67346501d6f714d49cf7e962a39388f6a49e`。
 
-進捗更新: [R2b](t_search_r2b_shared_records.md)は全体CIまで完了した。続いて[R2c：保持と回復の比較](t_search_r2c_retention_recovery.md)を実装し、12保持条件・6回復条件と26テスト（R2c新規12＋R2b既存14）を局所検証した。全体回帰は PR #20 の検証欄へ記録する。以下は当初の研究計画であり、現在の結果は各報告を参照する。
+進捗更新: [R2b](t_search_r2b_shared_records.md)・[R2c](t_search_r2c_retention_recovery.md)は全体CIまで完了した。[R2dとR2総括](t_search_r2_synthesis.md)および[R2主張台帳](../results/t_search_r2_claim_ledger.md)を追加し、18履歴・72条件付き状態・216読出し比較・12校正と37テストを局所検証した。全体CIの確定結果は [PR #20](https://github.com/kosukeya/t-search/pull/20) の検証欄へ記録する。R2は理解・再現課題として総括し、次の実験を自動採用しない。以下は当初の研究計画であり、未作成・未実施・予想などの表記も当時の記録として保持する。現在の結果・後続判断は総括を参照する。
 
 目的は引き続き **blockness／becoming への理解を深めること**。次期系列を **R2：記録の共有・安定性とアクセス制約** と呼ぶ。本書の R2 は新しい理解・再現課題の提案であり、R0 の識別実験を自動再開する指定ではない。元の `pilot_gate = blocked`、R1b の周期候補不採用、Stage 17 未着手を維持する。研究結果や新規性の成立を本計画の作成によって宣言しない。
 

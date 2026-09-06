@@ -16,16 +16,16 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
 
-## Current successor — R2c implemented and locally verified (2026-09-06)
+## Current successor — R2 synthesis implemented and locally verified (2026-09-06)
 
-After PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`, the user requested a plan and then explicitly instructed R2a. The [next research plan](t_search_next_research_plan.md) governs this bounded understanding / reproduction sequence:
+After PR #19, the user explicitly authorized each step of the [R2 plan](t_search_next_research_plan.md). This bounded understanding / reproduction sequence reaches its synthesis:
 
-- **R2a — completed:** [definitions, evidence mapping, and implementation specification](t_search_r2_records_spec.md). Seven sources and the Stage 3/7 evidence are mapped to explicit assumptions. Analytic reference values are derived; no numerical experiment has been run.
-- **R2b — completed:** [report](t_search_r2b_shared_records.md), [code](../experiments/r2_shared_records.py), [data](../results/r2_shared_records.json), and [tests](../tests/test_r2_shared_records.py). 18 cases / 54 readout comparisons match the analytic values. PR and push CI at head `3580f00ebea83c06b8a66562e4a21224e7424eaf` passed 1359 tests and 18 subtests; details are recorded in PR #20.
-- **R2c — implemented and locally verified:** [report](t_search_r2c_retention_recovery.md), [code](../experiments/r2c_retention_recovery.py), [data](../results/r2c_retention_recovery.json), and [tests](../tests/test_r2c_retention_recovery.py). Twelve one-shot noise comparisons and six pre-readout recovery comparisons attain the analytic expectations. Restricted E-on recovery has entanglement fidelity at most 1/2; full access attains 1. Twelve new tests and fourteen R2b tests pass locally; full CI is tracked in PR #20.
-- **R2d — unstarted:** connect the baseline to an open global history and synthesize the operational and ontological limits.
+- **R2a — completed:** [definitions and specification](t_search_r2_records_spec.md). Seven sources and historical evidence mapped to explicit assumptions; analytic reference values fixed.
+- **R2b — completed:** [report](t_search_r2b_shared_records.md). 18 cases / 54 readout comparisons; full CI passed 1359 tests and 18 subtests at head `3580f00ebea83c06b8a66562e4a21224e7424eaf`.
+- **R2c — completed:** [report](t_search_r2c_retention_recovery.md). Twelve retention and six recovery conditions; full PR/push CI passed 1371 tests and 18 subtests at head `04eed933cdfff3b4bd88088e5ffddadef40acc52`. Detailed logs are linked in PR #20.
+- **R2d — implemented and locally verified:** [synthesis](t_search_r2_synthesis.md), [claim ledger](../results/t_search_r2_claim_ledger.md), [code](../experiments/r2d_global_history.py), [data](../results/r2d_global_history.json), [tests](../tests/test_r2d_global_history.py). Open four-event histories recover 72 conditional states and 216 readout comparisons across 18 cases. Propagation and preparation kernels have dimensions 16 and 2. All 37 R2 tests pass locally; final full CI is recorded in [PR #20](https://github.com/kosukeya/t-search/pull/20).
 
-These planning labels do not reopen the original blocked discriminator pilot. A novel research extension requires a separately specified unresolved question; a successful known-result reproduction may close this proposed track.
+R2 is synthesized as an understanding / reproduction task. The single remaining candidate concerns certifying coherent-control access using independently justified resources and additional measurements; novelty and admissibility require a separate audit before a new experiment. This does not reopen the original blocked pilot, the rejected strict cyclic candidate or Stage 17. The historical final claim ledger remains unchanged.
 
 ## Historical refined candidate and Stage 1–16 status
 

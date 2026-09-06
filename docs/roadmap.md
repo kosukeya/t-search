@@ -2,7 +2,7 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
-## Current track — R0–R1b synthesis completed (2026-09-05)
+## Completed track — R0–R1b synthesis (2026-09-05)
 
 The user selected understanding blockness / becoming as the purpose of a bounded boundary comparison and synthesis. The [synthesis](t_search_r_series_synthesis.md) separates global history representation, internal record formation, cyclic return, and unresolved ontological claims.
 
@@ -15,6 +15,17 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 - **Historical Stage 17:** selected but not started; the Stage 16 bounded basis-search expansion remains frozen.
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
+
+## Current successor — R2 synthesis implemented and locally verified (2026-09-06)
+
+After PR #19, the user explicitly authorized each step of the [R2 plan](t_search_next_research_plan.md). This bounded understanding / reproduction sequence reaches its synthesis:
+
+- **R2a — completed:** [definitions and specification](t_search_r2_records_spec.md). Seven sources and historical evidence mapped to explicit assumptions; analytic reference values fixed.
+- **R2b — completed:** [report](t_search_r2b_shared_records.md). 18 cases / 54 readout comparisons; full CI passed 1359 tests and 18 subtests at head `3580f00ebea83c06b8a66562e4a21224e7424eaf`.
+- **R2c — completed:** [report](t_search_r2c_retention_recovery.md). Twelve retention and six recovery conditions; full PR/push CI passed 1371 tests and 18 subtests at head `04eed933cdfff3b4bd88088e5ffddadef40acc52`. Detailed logs are linked in PR #20.
+- **R2d — implemented and locally verified:** [synthesis](t_search_r2_synthesis.md), [claim ledger](../results/t_search_r2_claim_ledger.md), [code](../experiments/r2d_global_history.py), [data](../results/r2d_global_history.json), [tests](../tests/test_r2d_global_history.py). Open four-event histories recover 72 conditional states and 216 readout comparisons across 18 cases. Propagation and preparation kernels have dimensions 16 and 2. All 37 R2 tests pass locally; final full CI is recorded in [PR #20](https://github.com/kosukeya/t-search/pull/20).
+
+R2 is synthesized as an understanding / reproduction task. The single remaining candidate concerns certifying coherent-control access using independently justified resources and additional measurements; novelty and admissibility require a separate audit before a new experiment. This does not reopen the original blocked pilot, the rejected strict cyclic candidate or Stage 17. The historical final claim ledger remains unchanged.
 
 ## Historical refined candidate and Stage 1–16 status
 

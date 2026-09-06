@@ -2,13 +2,19 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
-## Current status — R0–R1b synthesis completed (2026-09-05)
+## Completed R0–R1b synthesis (2026-09-05)
 
 At the user's request, the current purpose is to deepen understanding of blockness / becoming. The [R0–R1b synthesis](docs/t_search_r_series_synthesis.md) and [boundary supplement](docs/t_search_boundary_supplement.md) are complete. Removing the cyclic return condition allows one-shot record formation from the original preparation while retaining a global constrained-history representation. The open model and the compensated cyclic control share the same history kernel, but not the same constraint operator.
 
 This is a completed understanding / reproduction task, not a new ontological or physical-law result. The original strict cyclic candidate remains rejected and `pilot_gate = blocked`. RQ2 intervention-class closure and RQ3 control advantage remain untested. No Stage 17 or R2 experiment is automatically selected. Earlier [R0](docs/t_search_redesign_protocol.md), [R1](docs/t_search_r1_preflight.md), and [R1b](docs/t_search_r1b_readout_design_audit.md) retain their historical scope and decisions.
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
+
+## Current research — R2 synthesis implemented and locally verified (2026-09-06)
+
+After PR #19, the [R2a specification](docs/t_search_r2_records_spec.md), [R2b shared-record reproduction](docs/t_search_r2b_shared_records.md), and [R2c retention/recovery comparison](docs/t_search_r2c_retention_recovery.md) are complete. [R2d and the R2 synthesis](docs/t_search_r2_synthesis.md) connect the baseline circuit to an open four-event constraint history, with [code](experiments/r2d_global_history.py), [data](results/r2d_global_history.json), [tests](tests/test_r2d_global_history.py), and a separate [R2 claim ledger](results/t_search_r2_claim_ledger.md). Eighteen histories, 72 conditional states, 216 readout comparisons and 12 calibrations match the analytic expectations. Eleven new tests plus the 26 R2b/R2c tests pass locally; the final full-CI record is in [PR #20](https://github.com/kosukeya/t-search/pull/20).
+
+This closes R2 as a bounded understanding / reproduction sequence: global history representation, internal record formation and access-limited recovery can coexist in this model. Event conditioning is not a physically certified clock device. Noise/readout dilations, ontological actuality and a thermodynamic arrow are not established. One candidate question about certifying coherent-control access remains for a separately specified audit; no new experiment is automatically selected. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
 
 ## Historical Stage 1–16 and Finalization status
 

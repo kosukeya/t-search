@@ -16,13 +16,13 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
 
-## Current successor — R2b implemented and locally verified (2026-09-06)
+## Current successor — R2c implemented and locally verified (2026-09-06)
 
 After PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`, the user requested a plan and then explicitly instructed R2a. The [next research plan](t_search_next_research_plan.md) governs this bounded understanding / reproduction sequence:
 
 - **R2a — completed:** [definitions, evidence mapping, and implementation specification](t_search_r2_records_spec.md). Seven sources and the Stage 3/7 evidence are mapped to explicit assumptions. Analytic reference values are derived; no numerical experiment has been run.
-- **R2b — implemented and locally verified:** [report](t_search_r2b_shared_records.md), [code](../experiments/r2_shared_records.py), [data](../results/r2_shared_records.json), and [tests](../tests/test_r2_shared_records.py). 18 cases / 54 readout comparisons reproduce the analytic values; 14 new local tests pass. Full-repository CI is tracked in PR #20. Fixed-basis SBS and disturbance explicitly name their state scopes.
-- **R2c — unstarted:** compare declared record noise and recovery with restricted versus full access.
+- **R2b — completed:** [report](t_search_r2b_shared_records.md), [code](../experiments/r2_shared_records.py), [data](../results/r2_shared_records.json), and [tests](../tests/test_r2_shared_records.py). 18 cases / 54 readout comparisons match the analytic values. PR and push CI at head `3580f00ebea83c06b8a66562e4a21224e7424eaf` passed 1359 tests and 18 subtests; details are recorded in PR #20.
+- **R2c — implemented and locally verified:** [report](t_search_r2c_retention_recovery.md), [code](../experiments/r2c_retention_recovery.py), [data](../results/r2c_retention_recovery.json), and [tests](../tests/test_r2c_retention_recovery.py). Twelve one-shot noise comparisons and six pre-readout recovery comparisons attain the analytic expectations. Restricted E-on recovery has entanglement fidelity at most 1/2; full access attains 1. Twelve new tests and fourteen R2b tests pass locally; full CI is tracked in PR #20.
 - **R2d — unstarted:** connect the baseline to an open global history and synthesize the operational and ontological limits.
 
 These planning labels do not reopen the original blocked discriminator pilot. A novel research extension requires a separately specified unresolved question; a successful known-result reproduction may close this proposed track.

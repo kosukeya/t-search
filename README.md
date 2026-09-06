@@ -10,9 +10,9 @@ This is a completed understanding / reproduction task, not a new ontological or 
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 
-## Current research — R2b implemented and locally verified (2026-09-06)
+## Current research — R2c implemented and locally verified (2026-09-06)
 
-PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`. The [next research plan](docs/t_search_next_research_plan.md) and [R2a specification](docs/t_search_r2_records_spec.md) now have an executable [R2b shared-record reproduction](docs/t_search_r2b_shared_records.md), with [code](experiments/r2_shared_records.py), [data](results/r2_shared_records.json), and [tests](tests/test_r2_shared_records.py). All 18 cases and 54 readout comparisons match the analytic disturbance values; 14 new local tests pass. Agreement, accuracy, and disturbance on S / SF1F2 / SF1F2E are explicitly separated. Full-repository CI status is recorded in PR #20. This is a bounded understanding / reproduction result, with novelty unestablished. R2c/R2d remain unstarted. The original `pilot_gate = blocked` and the historical Stage 17 freeze remain in force.
+PR #19 merged at `83dd67346501d6f714d49cf7e962a39388f6a49e`. Following the [R2a specification](docs/t_search_r2_records_spec.md) and completed [R2b reproduction](docs/t_search_r2b_shared_records.md), [R2c retention and recovery](docs/t_search_r2c_retention_recovery.md) is implemented with [code](experiments/r2c_retention_recovery.py), [data](results/r2c_retention_recovery.json), and [tests](tests/test_r2c_retention_recovery.py). Twelve retention conditions and six recovery conditions match the analytic values. Twelve new tests plus the fourteen R2b tests pass locally; full-repository CI is recorded in PR #20. Classical record accuracy, one-shot noise tolerance, and unknown-input recovery under Q/G access are separate questions. This remains a bounded understanding / reproduction track, with novelty unestablished. R2d is unstarted. The original `pilot_gate = blocked` and historical Stage 17 freeze remain in force.
 
 ## Historical Stage 1–16 and Finalization status
 

@@ -1,0 +1,2372 @@
+{
+  "specification": "r3a-v1",
+  "interpretation": "known-bound reproduction",
+  "provenance": {
+    "baseline_commit": "2c6cd594f46dbb657bb2e2bd5c3aae3122d65782",
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "source_sha256": {
+      "src/t_search/r3_certificate.py": "adf1f39a78694c05026603f83d12f61afec71407e04e2797e80e81662419a9f0",
+      "experiments/r3b_recovery_certificate.py": "4739fe6063a04ef774217cc0557f21ed7cb30a1c3460a615b08afe2bb78ea08a",
+      "tests/test_r3b_recovery_certificate.py": "302e6ebff6ae7e29f31446b740200e4c440be4a84de282034622f09f70c4b99a",
+      "experiments/r2_shared_records.py": "ac254e09ee0b0a75432c40a21d5ecc3261bf690f0bd50e5216db7306390ef3c5",
+      "experiments/r2c_retention_recovery.py": "e1454a450c7efa8a449aa4f8b23c3a14791b0c61e338ce2dafb4975b921cf5fe"
+    }
+  },
+  "absolute_tolerance": 1e-10,
+  "relative_tolerance": 0,
+  "cp_basis": "Explicit Kraus channels; baseline reuses R2c encoding, Q restriction and decoder",
+  "cases": [
+    {
+      "case_id": "no_record",
+      "kind": "R2 Q-access recovery",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 1.0,
+          "z1": 1.0,
+          "x_plus": 0.9999999999999996,
+          "x_minus": 0.9999999999999996
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 1.0,
+        "F_X": 0.9999999999999996,
+        "lower_bound": 0.9999999999999996,
+        "upper_bound": 0.9999999999999996,
+        "non_measure_prepare_certified": true,
+        "decision": "certified_under_declared_assumptions",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            1.0,
+            0.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.0,
+            1.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                1,
+                1,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.9999999999999996,
+            5.004680467665246e-34
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.9999999999999996,
+              5.004680467665246e-34
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            5.004680467665246e-34,
+            0.9999999999999996
+          ],
+          "kraus_branch_probabilities": [
+            [
+              5.004680467665246e-34,
+              0.9999999999999996
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                -0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                -0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.9999999999999996,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              3,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "tp_residual_fro": 0.0,
+        "reference_marginal_residual_fro": 1.5700924586837752e-16
+      },
+      "analytic": {
+        "F_Z": 1,
+        "F_X": 1,
+        "lower_bound": 1,
+        "upper_bound": 1,
+        "entanglement_fidelity": 1
+      },
+      "analytic_max_error": 4.440892098500626e-16,
+      "interval_violation": 0.0
+    },
+    {
+      "case_id": "records_E_off",
+      "kind": "R2 Q-access recovery",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 1.0,
+          "z1": 1.0,
+          "x_plus": 0.9999999999999996,
+          "x_minus": 0.9999999999999996
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 1.0,
+        "F_X": 0.9999999999999996,
+        "lower_bound": 0.9999999999999996,
+        "upper_bound": 0.9999999999999996,
+        "non_measure_prepare_certified": true,
+        "decision": "certified_under_declared_assumptions",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            1.0,
+            0.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.0,
+            1.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                1,
+                1,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.9999999999999996,
+            5.004680467665246e-34
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.9999999999999996,
+              5.004680467665246e-34
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            5.004680467665246e-34,
+            0.9999999999999996
+          ],
+          "kraus_branch_probabilities": [
+            [
+              5.004680467665246e-34,
+              0.9999999999999996
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                -0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                -0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.9999999999999996,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              3,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "tp_residual_fro": 0.0,
+        "reference_marginal_residual_fro": 1.5700924586837752e-16
+      },
+      "analytic": {
+        "F_Z": 1,
+        "F_X": 1,
+        "lower_bound": 1,
+        "upper_bound": 1,
+        "entanglement_fidelity": 1
+      },
+      "analytic_max_error": 4.440892098500626e-16,
+      "interval_violation": 0.0
+    },
+    {
+      "case_id": "records_E_on",
+      "kind": "R2 Q-access recovery",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 1.0,
+          "z1": 1.0,
+          "x_plus": 0.4999999999999998,
+          "x_minus": 0.4999999999999998
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 1.0,
+        "F_X": 0.4999999999999998,
+        "lower_bound": 0.4999999999999998,
+        "upper_bound": 0.4999999999999998,
+        "non_measure_prepare_certified": false,
+        "decision": "inconclusive",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            1.0,
+            0.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.0,
+            1.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                1,
+                1,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.4999999999999998,
+            0.4999999999999998
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.2499999999999999,
+              0.2499999999999999
+            ],
+            [
+              0.2499999999999999,
+              0.2499999999999999
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.4999999999999999
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.4999999999999998,
+            0.4999999999999998
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.2499999999999999,
+              0.2499999999999999
+            ],
+            [
+              0.2499999999999999,
+              0.2499999999999999
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.4999999999999999
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.4999999999999998,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "tp_residual_fro": 0.0,
+        "reference_marginal_residual_fro": 1.5700924586837752e-16
+      },
+      "analytic": {
+        "F_Z": 1,
+        "F_X": 0.5,
+        "lower_bound": 0.5,
+        "upper_bound": 0.5,
+        "entanglement_fidelity": 0.5
+      },
+      "analytic_max_error": 2.220446049250313e-16,
+      "interval_violation": 0.0
+    },
+    {
+      "case_id": "phase_flip",
+      "kind": "logical-channel control",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 1.0,
+          "z1": 1.0,
+          "x_plus": 5.004680467665246e-34,
+          "x_minus": 5.004680467665246e-34
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 1.0,
+        "F_X": 5.004680467665246e-34,
+        "lower_bound": 0.0,
+        "upper_bound": 5.004680467665246e-34,
+        "non_measure_prepare_certified": false,
+        "decision": "inconclusive",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            1.0,
+            0.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.0,
+            1.0
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                1,
+                1,
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            5.004680467665246e-34,
+            0.9999999999999996
+          ],
+          "kraus_branch_probabilities": [
+            [
+              5.004680467665246e-34,
+              0.9999999999999996
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                -0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                -0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.9999999999999996,
+            5.004680467665246e-34
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.9999999999999996,
+              5.004680467665246e-34
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.0,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              3,
+              -0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              0,
+              -0.4999999999999999,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "tp_residual_fro": 0.0,
+        "reference_marginal_residual_fro": 1.5700924586837752e-16
+      },
+      "analytic": {
+        "F_Z": 1,
+        "F_X": 0,
+        "lower_bound": 0,
+        "upper_bound": 0,
+        "entanglement_fidelity": 0
+      },
+      "analytic_max_error": 5.004680467665246e-34,
+      "interval_violation": 0.0
+    },
+    {
+      "case_id": "replace_plus",
+      "kind": "logical-channel control",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 0.4999999999999999,
+          "z1": 0.4999999999999999,
+          "x_plus": 0.9999999999999996,
+          "x_minus": 1.0573994819069698e-33
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 0.4999999999999999,
+        "F_X": 0.4999999999999998,
+        "lower_bound": 0.0,
+        "upper_bound": 0.4999999999999998,
+        "non_measure_prepare_certified": false,
+        "decision": "inconclusive",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.4999999999999999,
+            0.4999999999999999
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.4999999999999999,
+              0.4999999999999999
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 2.220446049250313e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.4999999999999999,
+            0.4999999999999999
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.4999999999999999,
+              0.4999999999999999
+            ]
+          ],
+          "normalization_error": 2.220446049250313e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.4999999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 2.220446049250313e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.9999999999999996,
+            1.0573994819069698e-33
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.4999999999999998,
+              5.286997409534849e-34
+            ],
+            [
+              0.4999999999999998,
+              5.286997409534849e-34
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.49999999999999983,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.49999999999999983,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.49999999999999983,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.49999999999999983,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 3.3306690738754696e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.9999999999999996,
+            1.0573994819069698e-33
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.4999999999999998,
+              5.286997409534849e-34
+            ],
+            [
+              0.4999999999999998,
+              5.286997409534849e-34
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.49999999999999983,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.49999999999999983,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.49999999999999983,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.49999999999999983,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 3.3306690738754696e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.0
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.24999999999999986,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              0,
+              1,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              1,
+              0,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              1,
+              1,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              2,
+              2,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              2,
+              3,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              3,
+              2,
+              0.24999999999999992,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.24999999999999992,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 3.3306690738754696e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "tp_residual_fro": 3.1401849173675503e-16,
+        "reference_marginal_residual_fro": 2.3551386880256624e-16
+      },
+      "analytic": {
+        "F_Z": 0.5,
+        "F_X": 0.5,
+        "lower_bound": 0,
+        "upper_bound": 0.5,
+        "entanglement_fidelity": 0.25
+      },
+      "analytic_max_error": 2.220446049250313e-16,
+      "interval_violation": 0.0
+    },
+    {
+      "case_id": "pauli_A",
+      "kind": "logical-channel control",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 0.7500000000000001,
+          "z1": 0.7500000000000001,
+          "x_plus": 0.7499999999999998,
+          "x_minus": 0.7499999999999998
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 0.7500000000000001,
+        "F_X": 0.7499999999999998,
+        "lower_bound": 0.5,
+        "upper_bound": 0.7499999999999998,
+        "non_measure_prepare_certified": false,
+        "decision": "inconclusive",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.7500000000000001,
+            0.25
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.5000000000000001,
+              0.0
+            ],
+            [
+              0.0,
+              0.25
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.25,
+              0.0
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.7500000000000001,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.25,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.25
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.25,
+            0.7500000000000001
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              0.5000000000000001
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.25
+            ]
+          ],
+          "normalization_error": 0.0,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.25,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.7500000000000001,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.25
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.7499999999999998,
+            0.2499999999999999
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0.2499999999999999,
+              1.2511701169163115e-34
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.2511701169163115e-34,
+              0.2499999999999999
+            ]
+          ],
+          "normalization_error": 3.3306690738754696e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.5,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.25,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.25,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.5,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.25
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.2499999999999999,
+            0.7499999999999998
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              0.4999999999999999
+            ],
+            [
+              1.2511701169163115e-34,
+              0.2499999999999999
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.2499999999999999,
+              1.2511701169163115e-34
+            ]
+          ],
+          "normalization_error": 3.3306690738754696e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.5,
+                0.0
+              ],
+              [
+                0,
+                1,
+                -0.25,
+                0.0
+              ],
+              [
+                1,
+                0,
+                -0.25,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.5,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 0.0,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.25
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.4999999999999999,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.375,
+              0.0
+            ],
+            [
+              0,
+              3,
+              0.12500000000000003,
+              0.0
+            ],
+            [
+              1,
+              1,
+              0.12499999999999997,
+              0.0
+            ],
+            [
+              1,
+              2,
+              0.12499999999999997,
+              0.0
+            ],
+            [
+              2,
+              1,
+              0.12499999999999997,
+              0.0
+            ],
+            [
+              2,
+              2,
+              0.12499999999999997,
+              0.0
+            ],
+            [
+              3,
+              0,
+              0.12500000000000003,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.375,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 1.3877787807814455e-17
+        },
+        "tp_residual_fro": 0.0,
+        "reference_marginal_residual_fro": 0.0
+      },
+      "analytic": {
+        "F_Z": 0.75,
+        "F_X": 0.75,
+        "lower_bound": 0.5,
+        "upper_bound": 0.75,
+        "entanglement_fidelity": 0.5
+      },
+      "analytic_max_error": 2.220446049250313e-16,
+      "interval_violation": 1.1102230246251565e-16
+    },
+    {
+      "case_id": "pauli_B",
+      "kind": "logical-channel control",
+      "certificate_input": {
+        "probabilities": {
+          "z0": 0.7499999999999999,
+          "z1": 0.7499999999999999,
+          "x_plus": 0.7499999999999997,
+          "x_minus": 0.7499999999999997
+        },
+        "assumptions": {
+          "trusted_preparation": true,
+          "trusted_measurement": true,
+          "qubit_input_output": true,
+          "same_cptp_process": true,
+          "reset_between_trials": true,
+          "no_input_or_setting_leakage": true,
+          "no_postselection": true,
+          "exact_probabilities": true
+        }
+      },
+      "certificate": {
+        "F_Z": 0.7499999999999999,
+        "F_X": 0.7499999999999997,
+        "lower_bound": 0.49999999999999956,
+        "upper_bound": 0.7499999999999997,
+        "non_measure_prepare_certified": false,
+        "decision": "inconclusive",
+        "numerical_margin": 1e-10,
+        "target": "identity channel; normalized Bell overlap without square root",
+        "scope": "implemented channel only; not optimal recovery or gate identification",
+        "assumptions_status": "declared, not validated by this function"
+      },
+      "measurements": [
+        {
+          "input": "z0",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.7499999999999999,
+            0.25
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.7499999999999999,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.25
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 1.1102230246251565e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.7499999999999999,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.25,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 1.1102230246251565e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.25
+          }
+        },
+        {
+          "input": "z1",
+          "outcome_labels": [
+            "z0",
+            "z1"
+          ],
+          "outcome_probabilities": [
+            0.25,
+            0.7499999999999999
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.0,
+              0.7499999999999999
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 1.1102230246251565e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.25,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.7499999999999999,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 1.1102230246251565e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.25
+          }
+        },
+        {
+          "input": "x_plus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.7499999999999997,
+            0.2499999999999999
+          ],
+          "kraus_branch_probabilities": [
+            [
+              0.7499999999999997,
+              1.5021032129839544e-35
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.2511701169163115e-34,
+              0.2499999999999999
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999998,
+                0.0
+              ],
+              [
+                0,
+                1,
+                0.24999999999999986,
+                0.0
+              ],
+              [
+                1,
+                0,
+                0.24999999999999986,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999998,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 4.440892098500626e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.24999999999999986
+          }
+        },
+        {
+          "input": "x_minus",
+          "outcome_labels": [
+            "x_plus",
+            "x_minus"
+          ],
+          "outcome_probabilities": [
+            0.2499999999999999,
+            0.7499999999999997
+          ],
+          "kraus_branch_probabilities": [
+            [
+              1.5021032129839544e-35,
+              0.7499999999999997
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.2499999999999999,
+              1.2511701169163115e-34
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "normalization_error": 4.440892098500626e-16,
+          "output_state": {
+            "dimension": 2,
+            "entries": [
+              [
+                0,
+                0,
+                0.4999999999999998,
+                0.0
+              ],
+              [
+                0,
+                1,
+                -0.24999999999999986,
+                0.0
+              ],
+              [
+                1,
+                0,
+                -0.24999999999999986,
+                0.0
+              ],
+              [
+                1,
+                1,
+                0.4999999999999998,
+                0.0
+              ]
+            ]
+          },
+          "output_diagnostics": {
+            "trace_error": 4.440892098500626e-16,
+            "hermitian_residual_fro": 0.0,
+            "minimum_eigenvalue": 0.24999999999999986
+          }
+        }
+      ],
+      "reference_truth": {
+        "entanglement_fidelity": 0.7499999999999996,
+        "reference_output": {
+          "dimension": 4,
+          "entries": [
+            [
+              0,
+              0,
+              0.37499999999999983,
+              0.0
+            ],
+            [
+              0,
+              3,
+              0.37499999999999983,
+              0.0
+            ],
+            [
+              1,
+              1,
+              0.12499999999999997,
+              0.0
+            ],
+            [
+              1,
+              2,
+              -0.12499999999999997,
+              0.0
+            ],
+            [
+              2,
+              1,
+              -0.12499999999999997,
+              0.0
+            ],
+            [
+              2,
+              2,
+              0.12499999999999997,
+              0.0
+            ],
+            [
+              3,
+              0,
+              0.37499999999999983,
+              0.0
+            ],
+            [
+              3,
+              3,
+              0.37499999999999983,
+              0.0
+            ]
+          ]
+        },
+        "state_diagnostics": {
+          "trace_error": 4.440892098500626e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": -1.0504940320871938e-16
+        },
+        "tp_residual_fro": 1.5700924586837752e-16,
+        "reference_marginal_residual_fro": 3.1401849173675503e-16
+      },
+      "analytic": {
+        "F_Z": 0.75,
+        "F_X": 0.75,
+        "lower_bound": 0.5,
+        "upper_bound": 0.75,
+        "entanglement_fidelity": 0.75
+      },
+      "analytic_max_error": 4.440892098500626e-16,
+      "interval_violation": 0.0
+    }
+  ],
+  "summary": {
+    "case_count": 7,
+    "setting_count": 28,
+    "max_analytic_error": 4.440892098500626e-16,
+    "max_interval_violation": 1.1102230246251565e-16,
+    "certified_case_count": 2
+  },
+  "limits": [
+    "Declared trusted preparation/measurement, dimensions, common CPTP process and wiring",
+    "Born probabilities, not finite-sample confidence bounds or SPAM-corrected data",
+    "Numerical margin withholds borderline claims; it is not statistical confidence",
+    "Implemented-channel bound, not optimal recovery, a unique gate, or quantum capacity",
+    "No alternative decoder implementation, GST, noise sweep or clock-device construction",
+    "Original pilot_gate blocked; Stage 17 remains unstarted; no further experiment selected"
+  ]
+}

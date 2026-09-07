@@ -20,14 +20,12 @@ PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The h
 
 The explicitly authorized [R2a–R2d sequence](t_search_next_research_plan.md) is complete and merged through [PR #20](https://github.com/kosukeya/t-search/pull/20), merge `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. Full PR/push CI at implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed 1382 tests and 18 subtests. [Synthesis](t_search_r2_synthesis.md) and [claim ledger](../results/t_search_r2_claim_ledger.md) retain the boundaries between shared records, one-shot retention, unknown-input recovery, global history and ontology.
 
-## Current successor — R3a certification audit completed (2026-09-06)
+## Current successor — R3b implemented and locally verified (2026-09-07)
 
-The user explicitly requested R3a after merging R2. The [short protocol](t_search_r3a_certification_protocol.md) and [audit](t_search_r3a_certification_audit.md) distinguish implemented-channel fidelity, optimal recoverability, and evidence about internal operations. Primary-source two-basis bounds provide a conditional certificate with trusted preparation/measurement. Analytic controls expose Z-only ambiguity, known-state repreparation and residual two-basis underdetermination.
+- **R3a — completed:** [protocol](t_search_r3a_certification_protocol.md) and [audit](t_search_r3a_certification_audit.md). Trusted two-basis certification, analytic bounds and resource limits fixed. Both CI runs on R3a head `2c6cd594f46dbb657bb2e2bd5c3aae3122d65782` passed 1382 tests and 18 subtests; logs are recorded in PR #21.
+- **R3b — implemented and locally verified:** [report](t_search_r3b_recovery_certificate.md), [certifier](../src/t_search/r3_certificate.py), [experiment](../experiments/r3b_recovery_certificate.py), [data](../results/r3b_recovery_certificate.json), [tests](../tests/test_r3b_recovery_certificate.py). Seven cases / 28 settings match analytic predictions. The certifier never receives the channel, case ID or reference truth. Twelve new tests and 37 R2 tests pass locally; final full CI is recorded in [PR #21](https://github.com/kosukeya/t-search/pull/21).
 
-- **R3a — completed:** assumptions, resources, existing-theorem mapping, analytic bounds, and follow-up acceptance/stop conditions. Documentation and analytic audit only; no new numerical evidence.
-- **R3b — unstarted:** if requested, minimally reproduce the data-only certificate on three R2 conditions and four logical-channel controls, with independent reference fidelity. No recovery search or GST implementation is selected.
-
-There is no newly established open problem or novelty claim beyond this bounded reproduction proposal. The original blocked pilot, rejected strict cyclic candidate, Stage 17 freeze and historical final claim ledger remain unchanged.
+The specified one-time reproduction is synthesized here. No further experiment, GST implementation, noise sweep or recovery search is selected. The original blocked pilot, rejected strict cyclic candidate, Stage 17 freeze and historical final claim ledger remain unchanged.
 
 ## Historical refined candidate and Stage 1–16 status
 

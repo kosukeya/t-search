@@ -14,11 +14,11 @@ Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d672
 
 [R2a–R2d and the synthesis](docs/t_search_r2_synthesis.md) are complete and merged in [PR #20](https://github.com/kosukeya/t-search/pull/20) at `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. The implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed both full CI runs: 1382 tests and 18 subtests. The [R2 claim ledger](results/t_search_r2_claim_ledger.md) separates known reproductions, finite-model results and claims requiring additional assumptions. Global history representation, internal record formation and access-limited recovery coexist in the declared model; the result does not settle temporal ontology.
 
-## Current research — R3a certification audit completed (2026-09-06)
+## Current research — R3b implemented and locally verified (2026-09-07)
 
-At the user's instruction, [R3a protocol](docs/t_search_r3a_certification_protocol.md) and [literature/definition audit](docs/t_search_r3a_certification_audit.md) fix a trusted-preparation-and-measurement certificate for the implemented recovery channel. Existing two-basis fidelity bounds answer the conditional performance question. They do not certify a unique internal gate implementation or an upper bound on the best possible recovery. The audit includes analytic expectations and failure controls; no new numerical experiment was performed.
+Following the completed [R3a protocol](docs/t_search_r3a_certification_protocol.md) and [audit](docs/t_search_r3a_certification_audit.md), [R3b](docs/t_search_r3b_recovery_certificate.md) reproduces the two-basis bound with a [data-only certifier](src/t_search/r3_certificate.py), [experiment](experiments/r3b_recovery_certificate.py), [results](results/r3b_recovery_certificate.json), and [tests](tests/test_r3b_recovery_certificate.py). Seven fixed channels / 28 settings agree with the analytic values within 4.45e-16. Twelve new tests plus the 37 R2 tests pass locally; the final full-CI record is in [PR #21](https://github.com/kosukeya/t-search/pull/21).
 
-R3b, if requested, is a single minimal reproduction of these known bounds using the existing R2 model. R3b is unstarted and novelty is unestablished. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
+The certificate receives only four correctness probabilities and declared assumptions. Pauli controls with identical two-basis statistics have different reference fidelities, correctly leaving a nonzero interval. Certification of an implemented channel is distinct from optimal recovery or identification of internal gates. This completes the specified minimal reproduction as an understanding task; no further experiment is selected. Novelty is unestablished. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
 
 ## Historical Stage 1–16 and Finalization status
 

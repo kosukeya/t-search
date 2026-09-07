@@ -2,6 +2,8 @@
 
 2026-09-06。版 `r3a-v1`。基点は [PR #20](https://github.com/kosukeya/t-search/pull/20) のマージ `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`。**R3aの定義・既存研究監査を完了。R3bの数値再現は未実施。** [監査本文と解析](t_search_r3a_certification_audit.md)を伴う。
 
+2026-09-07進捗追記: 本文はR3a完了時点の固定仕様・解析であり、未実施表記も当時の状態を示す。その後のユーザー指示による[R3bの実装・結果・総括](t_search_r3b_recovery_certificate.md)を別文書に記録した。
+
 ## 目的・質問
 
 blockness／becomingへの理解を深めるため、「全体に情報がある」「許された操作で回復できる」「観測データから実行済みの回復性能を保証できる」を分ける。

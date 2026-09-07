@@ -10,11 +10,19 @@ This is a completed understanding / reproduction task, not a new ontological or 
 
 Finalization PR #18 was merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The Stage 1–16 evidence and closure limits remain the baseline. The closure decision describes the earlier program; the redesign protocol governs this newly authorized track.
 
-## Current research — R2 synthesis implemented and locally verified (2026-09-06)
+## Completed R2 — shared records, recovery and global history (2026-09-06)
 
-After PR #19, the [R2a specification](docs/t_search_r2_records_spec.md), [R2b shared-record reproduction](docs/t_search_r2b_shared_records.md), and [R2c retention/recovery comparison](docs/t_search_r2c_retention_recovery.md) are complete. [R2d and the R2 synthesis](docs/t_search_r2_synthesis.md) connect the baseline circuit to an open four-event constraint history, with [code](experiments/r2d_global_history.py), [data](results/r2d_global_history.json), [tests](tests/test_r2d_global_history.py), and a separate [R2 claim ledger](results/t_search_r2_claim_ledger.md). Eighteen histories, 72 conditional states, 216 readout comparisons and 12 calibrations match the analytic expectations. Eleven new tests plus the 26 R2b/R2c tests pass locally; the final full-CI record is in [PR #20](https://github.com/kosukeya/t-search/pull/20).
+[R2a–R2d and the synthesis](docs/t_search_r2_synthesis.md) are complete and merged in [PR #20](https://github.com/kosukeya/t-search/pull/20) at `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. The implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed both full CI runs: 1382 tests and 18 subtests. The [R2 claim ledger](results/t_search_r2_claim_ledger.md) separates known reproductions, finite-model results and claims requiring additional assumptions. Global history representation, internal record formation and access-limited recovery coexist in the declared model; the result does not settle temporal ontology.
 
-This closes R2 as a bounded understanding / reproduction sequence: global history representation, internal record formation and access-limited recovery can coexist in this model. Event conditioning is not a physically certified clock device. Noise/readout dilations, ontological actuality and a thermodynamic arrow are not established. One candidate question about certifying coherent-control access remains for a separately specified audit; no new experiment is automatically selected. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
+## Completed R3 — certification limits and blockness / becoming synthesis (2026-09-07)
+
+[R3a](docs/t_search_r3a_certification_audit.md), [R3b](docs/t_search_r3b_recovery_certificate.md), and [R3c](docs/t_search_r3_synthesis.md) are complete as a bounded understanding / reproduction study. The [R3 claim ledger](results/t_search_r3_claim_ledger.md) records 17 claims with evidence, assumptions, scope and missing information. R3c follows its [frozen protocol](docs/t_search_r3c_synthesis_protocol.md) and adds analytic auditing and synthesis, with no new numerical experiment.
+
+R3b's [certifier](src/t_search/r3_certificate.py) receives only four correctness probabilities and declared assumptions. Its seven channels / 28 settings reproduce the two-basis bound. R3c separates Pauli controls that additional Y measurements can distinguish from different recovery implementations with the same composite input/output channel. Trusted calibration and wiring, physical device resources, and ontological interpretation remain distinct requirements. The Y comparison and alternative recovery proofs are analytic results, not additional R3b measurement data.
+
+Both full CI runs on the R3c protocol baseline `db8452cb887b262ef937967c80a2a5db9a435dcf` passed 1394 tests and 18 subtests; the latest documentation-head status is recorded separately in [PR #21](https://github.com/kosukeya/t-search/pull/21). R3c changes Markdown only and preserves existing code, tests and numerical results.
+
+R3 closes here; no successor research is selected. Novelty is unestablished. Global description, internal record formation and conditional performance certification do not by themselves decide temporal ontology. The original `pilot_gate = blocked`, rejected strict cyclic candidate and Stage 17 freeze remain in force.
 
 ## Historical Stage 1–16 and Finalization status
 

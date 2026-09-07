@@ -16,16 +16,19 @@ The user selected understanding blockness / becoming as the purpose of a bounded
 
 PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The historical closure limits and Stage 1–16 evidence remain in force as interpretation boundaries; the new discriminator's novelty and physical adequacy are not yet established.
 
-## Current successor — R2 synthesis implemented and locally verified (2026-09-06)
+## Completed successor — R2 synthesis (2026-09-06)
 
-After PR #19, the user explicitly authorized each step of the [R2 plan](t_search_next_research_plan.md). This bounded understanding / reproduction sequence reaches its synthesis:
+The explicitly authorized [R2a–R2d sequence](t_search_next_research_plan.md) is complete and merged through [PR #20](https://github.com/kosukeya/t-search/pull/20), merge `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. Full PR/push CI at implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed 1382 tests and 18 subtests. [Synthesis](t_search_r2_synthesis.md) and [claim ledger](../results/t_search_r2_claim_ledger.md) retain the boundaries between shared records, one-shot retention, unknown-input recovery, global history and ontology.
 
-- **R2a — completed:** [definitions and specification](t_search_r2_records_spec.md). Seven sources and historical evidence mapped to explicit assumptions; analytic reference values fixed.
-- **R2b — completed:** [report](t_search_r2b_shared_records.md). 18 cases / 54 readout comparisons; full CI passed 1359 tests and 18 subtests at head `3580f00ebea83c06b8a66562e4a21224e7424eaf`.
-- **R2c — completed:** [report](t_search_r2c_retention_recovery.md). Twelve retention and six recovery conditions; full PR/push CI passed 1371 tests and 18 subtests at head `04eed933cdfff3b4bd88088e5ffddadef40acc52`. Detailed logs are linked in PR #20.
-- **R2d — implemented and locally verified:** [synthesis](t_search_r2_synthesis.md), [claim ledger](../results/t_search_r2_claim_ledger.md), [code](../experiments/r2d_global_history.py), [data](../results/r2d_global_history.json), [tests](../tests/test_r2d_global_history.py). Open four-event histories recover 72 conditional states and 216 readout comparisons across 18 cases. Propagation and preparation kernels have dimensions 16 and 2. All 37 R2 tests pass locally; final full CI is recorded in [PR #20](https://github.com/kosukeya/t-search/pull/20).
+## Completed R3 — certification, implementation limits and synthesis (2026-09-07)
 
-R2 is synthesized as an understanding / reproduction task. The single remaining candidate concerns certifying coherent-control access using independently justified resources and additional measurements; novelty and admissibility require a separate audit before a new experiment. This does not reopen the original blocked pilot, the rejected strict cyclic candidate or Stage 17. The historical final claim ledger remains unchanged.
+- **R3a — completed:** [protocol](t_search_r3a_certification_protocol.md) and [audit](t_search_r3a_certification_audit.md). The trusted two-basis bound and its limits were fixed.
+- **R3b — completed:** [report](t_search_r3b_recovery_certificate.md), [certifier](../src/t_search/r3_certificate.py), [experiment](../experiments/r3b_recovery_certificate.py), [data](../results/r3b_recovery_certificate.json), [tests](../tests/test_r3b_recovery_certificate.py). Seven cases / 28 settings reproduce the analytic predictions. The certifier receives no channel, case ID or reference truth.
+- **R3c — completed:** [synthesis](t_search_r3_synthesis.md) and [17-claim ledger](../results/t_search_r3_claim_ledger.md), under the [frozen protocol](t_search_r3c_synthesis_protocol.md). Analytically separate missing measurement information, identical composite channels with different implementations, trusted assumptions, and blockness / becoming interpretation. No new numerical experiments or recovery implementations were added.
+
+Both full CI runs on protocol baseline `db8452cb887b262ef937967c80a2a5db9a435dcf` passed 1394 tests and 18 subtests. This is distinct from CI on the latest documentation head, recorded in [PR #21](https://github.com/kosukeya/t-search/pull/21). The R3c work changes Markdown only.
+
+R3 is closed as an understanding / reproduction study. No R3d or successor research is selected. Novelty is unestablished. The original blocked pilot, rejected strict cyclic candidate, Stage 17 freeze and historical final claim ledger remain unchanged.
 
 ## Historical refined candidate and Stage 1–16 status
 

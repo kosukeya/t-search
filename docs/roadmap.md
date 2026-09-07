@@ -20,13 +20,15 @@ PR #18 merged on 2026-08-26 at `d1384a2071bc954c9fcfa2e1559d6721ce1f1ec3`. The h
 
 The explicitly authorized [R2a–R2d sequence](t_search_next_research_plan.md) is complete and merged through [PR #20](https://github.com/kosukeya/t-search/pull/20), merge `64bc53871d2e16129f06e85acf79ec7dc29d2e9b`. Full PR/push CI at implementation head `f1bc4ae7dc056679279e2272add94f9317dd754b` passed 1382 tests and 18 subtests. [Synthesis](t_search_r2_synthesis.md) and [claim ledger](../results/t_search_r2_claim_ledger.md) retain the boundaries between shared records, one-shot retention, unknown-input recovery, global history and ontology.
 
-## Current successor — R3b completed; R3c defined (2026-09-07)
+## Completed R3 — certification, implementation limits and synthesis (2026-09-07)
 
-- **R3a — completed:** [protocol](t_search_r3a_certification_protocol.md) and [audit](t_search_r3a_certification_audit.md). Trusted two-basis certification, analytic bounds and resource limits fixed. Both CI runs on R3a head `2c6cd594f46dbb657bb2e2bd5c3aae3122d65782` passed 1382 tests and 18 subtests; logs are recorded in PR #21.
-- **R3b — completed:** [report](t_search_r3b_recovery_certificate.md), [certifier](../src/t_search/r3_certificate.py), [experiment](../experiments/r3b_recovery_certificate.py), [data](../results/r3b_recovery_certificate.json), [tests](../tests/test_r3b_recovery_certificate.py). Seven cases / 28 settings match analytic predictions. The certifier never receives the channel, case ID or reference truth. Twelve new tests and 37 R2 tests pass locally. Both full CI runs on R3b head `e06fa27917bbc6e23f1ef6ccae940a045b920c60` passed 1394 tests and 18 subtests; logs are recorded in [PR #21](https://github.com/kosukeya/t-search/pull/21).
-- **R3c — defined, not executed:** [protocol](t_search_r3c_synthesis_protocol.md). Audit the distinct limits of measurement data, implementation identification and trusted assumptions; connect them to blockness / becoming in one R3 claim ledger and synthesis. Reuse existing results and analytic controls, with no new numerical experiments. Close R3 at completion and do not automatically create R3d.
+- **R3a — completed:** [protocol](t_search_r3a_certification_protocol.md) and [audit](t_search_r3a_certification_audit.md). The trusted two-basis bound and its limits were fixed.
+- **R3b — completed:** [report](t_search_r3b_recovery_certificate.md), [certifier](../src/t_search/r3_certificate.py), [experiment](../experiments/r3b_recovery_certificate.py), [data](../results/r3b_recovery_certificate.json), [tests](../tests/test_r3b_recovery_certificate.py). Seven cases / 28 settings reproduce the analytic predictions. The certifier receives no channel, case ID or reference truth.
+- **R3c — completed:** [synthesis](t_search_r3_synthesis.md) and [17-claim ledger](../results/t_search_r3_claim_ledger.md), under the [frozen protocol](t_search_r3c_synthesis_protocol.md). Analytically separate missing measurement information, identical composite channels with different implementations, trusted assumptions, and blockness / becoming interpretation. No new numerical experiments or recovery implementations were added.
 
-The specified one-time reproduction is synthesized here. No further experiment, GST implementation, noise sweep or recovery search is selected. The original blocked pilot, rejected strict cyclic candidate, Stage 17 freeze and historical final claim ledger remain unchanged.
+Both full CI runs on protocol baseline `db8452cb887b262ef937967c80a2a5db9a435dcf` passed 1394 tests and 18 subtests. This is distinct from CI on the latest documentation head, recorded in [PR #21](https://github.com/kosukeya/t-search/pull/21). The R3c work changes Markdown only.
+
+R3 is closed as an understanding / reproduction study. No R3d or successor research is selected. Novelty is unestablished. The original blocked pilot, rejected strict cyclic candidate, Stage 17 freeze and historical final claim ledger remain unchanged.
 
 ## Historical refined candidate and Stage 1–16 status
 

@@ -2,6 +2,17 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current authorized track — R4 (2026-09-08)
+
+R3 was merged through [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`. Subsequent user instructions authorize the [R4 protocol](t_search_r4_protocol.md): understand relational facts, comparison between observers, and global quantum histories while deferring ontological becoming.
+
+- **R4a — completed:** [comparative audit](t_search_r4a_comparative_audit.md), covering specified RQM formulations, stable facts, cross-perspective links, consistent histories and the scope of a future Local Friendliness comparison. Literature and analytic work only.
+- **R4b — specified, not executed:** three record operations × two environment conditions × four inputs. Compare readout calibration, interference and a fixed 16-history family; verify the corresponding five-event history representation. The exact specification and analytic predictions are in the audit.
+- **R4c — planned, not executed:** map assumptions to Bong et al.'s Local Friendliness theorem. Do not treat the single-laboratory R4b model as a test of the full theorem.
+- **R4d — planned, not executed:** explain states, facts, records, probabilities and global histories; classify overlap, differences and unresolved questions. Close as reconstruction/comparison if interpretive novelty is unestablished.
+
+The old Stage 17 search remains frozen because it is not needed for this question. The blocked pilot and strict cyclic rejection remain historical limits. Earlier closure and “no successor selected” statements below describe their original checkpoints; they do not cancel the later R4 authorization. No past protocol, code, numerical result or claim ledger is revised by R4a.
+
 ## Completed track — R0–R1b synthesis (2026-09-05)
 
 The user selected understanding blockness / becoming as the purpose of a bounded boundary comparison and synthesis. The [synthesis](t_search_r_series_synthesis.md) separates global history representation, internal record formation, cyclic return, and unresolved ontological claims.

@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current R4 — relational facts and comparison between observers (2026-09-08)
+
+After merging [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`, the user authorized R4 to understand global quantum descriptions together with internal record formation and comparison. The [R4 protocol](docs/t_search_r4_protocol.md) and [R4a comparative audit](docs/t_search_r4a_comparative_audit.md) are complete. R4a separates physical readout agreement, cross-perspective links as an additional interpretive postulate, and consistent-history inference conditions. R2's constrained history alone does not establish all three.
+
+**R4b is specified, not executed:** three record operations (read, undo, copy then undo), two environment conditions and four inputs; compare all terminal outcomes, calibration, and a fixed history family's interference terms. R4c will audit one Local Friendliness theorem; R4d will synthesize the interpretive comparison. Ontological becoming is deferred, and a new interpretation or novel prediction is not required for a useful outcome.
+
+R4 is a newly authorized track. The earlier “no successor selected” statements below retain their historical scope. Stage 17's old algebra search remains frozen; the original `pilot_gate = blocked` and strict cyclic rejection remain unchanged. R4a adds documentation and analytic specifications only, preserving previous code and numerical evidence.
+
 ## Completed R0–R1b synthesis (2026-09-05)
 
 At the user's request, the current purpose is to deepen understanding of blockness / becoming. The [R0–R1b synthesis](docs/t_search_r_series_synthesis.md) and [boundary supplement](docs/t_search_boundary_supplement.md) are complete. Removing the cyclic return condition allows one-shot record formation from the original preparation while retaining a global constrained-history representation. The open model and the compensated cyclic control share the same history kernel, but not the same constraint operator.

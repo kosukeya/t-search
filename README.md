@@ -6,9 +6,11 @@
 
 After merging [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`, the user authorized R4 to understand global quantum descriptions together with internal record formation and comparison. The [R4 protocol](docs/t_search_r4_protocol.md) and [R4a comparative audit](docs/t_search_r4a_comparative_audit.md) are complete. R4a separates physical readout agreement, cross-perspective links as an additional interpretive postulate, and consistent-history inference conditions. R2's constrained history alone does not establish all three.
 
-**R4b is specified, not executed:** three record operations (read, undo, copy then undo), two environment conditions and four inputs; compare all terminal outcomes, calibration, and a fixed history family's interference terms. R4c will audit one Local Friendliness theorem; R4d will synthesize the interpretive comparison. Ontological becoming is deferred, and a new interpretation or novel prediction is not required for a useful outcome.
+**R4b is complete:** the [minimal model and report](docs/t_search_r4b_record_comparison.md) reproduce three record operations (read, undo, copy then undo), two environment conditions and four inputs. The [24-case data](results/r4b_record_comparison.json) separate record agreement from calibration, S interference from Q coherence, and vanishing real interference terms from full decoherence of a fixed history family. Five-event history reconstruction succeeds for every case. Maximum analytic error is 1.11e-16; local R4b/R2/R3 regression passes 60 unittest tests. Full pytest CI is tracked separately in [PR #22](https://github.com/kosukeya/t-search/pull/22).
 
-R4 is a newly authorized track. The earlier “no successor selected” statements below retain their historical scope. Stage 17's old algebra search remains frozen; the original `pilot_gate = blocked` and strict cyclic rejection remain unchanged. R4a adds documentation and analytic specifications only, preserving previous code and numerical evidence.
+R4c will audit one Local Friendliness theorem; R4d will synthesize the interpretive comparison. Both remain unexecuted. Ontological becoming is deferred, and a new interpretation or novel prediction is not required for a useful outcome.
+
+R4 is a newly authorized track. The earlier “no successor selected” statements below retain their historical scope. Stage 17's old algebra search remains frozen; the original `pilot_gate = blocked` and strict cyclic rejection remain unchanged. R4a's fixed specifications and the R0–R3 code and numerical evidence are preserved; R4b adds its own implementation and results.
 
 ## Completed R0–R1b synthesis (2026-09-05)
 

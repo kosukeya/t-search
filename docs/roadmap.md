@@ -2,14 +2,16 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
-## Current authorized track — R4 (2026-09-08)
+## Current authorized track — R4 (2026-09-09)
 
 R3 was merged through [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`. Subsequent user instructions authorize the [R4 protocol](t_search_r4_protocol.md): understand relational facts, comparison between observers, and global quantum histories while deferring ontological becoming.
 
 - **R4a — completed:** [comparative audit](t_search_r4a_comparative_audit.md), covering specified RQM formulations, stable facts, cross-perspective links, consistent histories and the scope of a future Local Friendliness comparison. Literature and analytic work only.
 - **R4b — completed:** [report](t_search_r4b_record_comparison.md), [experiment](../experiments/r4b_record_comparison.py), [data](../results/r4b_record_comparison.json), [tests](../tests/test_r4b_record_comparison.py). The fixed 24 cases reproduce calibration, interference and a 16-history family, including a purely imaginary cross-term control. Five-event reconstruction succeeds throughout. Maximum analytic error 1.11e-16; 11 new and 49 existing local unittest tests pass. Full CI status is recorded separately in [PR #22](https://github.com/kosukeya/t-search/pull/22).
-- **R4c — planned, not executed:** map assumptions to Bong et al.'s Local Friendliness theorem. Do not treat the single-laboratory R4b model as a test of the full theorem.
+- **R4c — completed:** [observer-inference audit](t_search_r4c_observer_inference_audit.md). Map AOE, NSD, conditional Locality and observer-scale control to the actual R4b scope. Analytically construct a nonnegative extension of three terminal tables, separating joint-distribution existence from the consistency of the chosen quantum histories. CPL and all-at-once interpretations require explicit additional decisions; R4b has not tested the full LF theorem. Documentation and analysis only.
 - **R4d — planned, not executed:** explain states, facts, records, probabilities and global histories; classify overlap, differences and unresolved questions. Close as reconstruction/comparison if interpretive novelty is unestablished.
+
+Both full CI runs on R4b head `1a8f79b04bdb7a9b7f356858048e9089a9af0a91` succeeded; the PR log confirms 1405 tests and 18 subtests. New R4c documentation-head CI is tracked separately in PR #22. R4b's source-hashed protocols, code and data remain fixed; current status is recorded here and in the R4c report.
 
 The old Stage 17 search remains frozen because it is not needed for this question. The blocked pilot and strict cyclic rejection remain historical limits. Earlier closure and “no successor selected” statements below describe their original checkpoints; they do not cancel the later R4 authorization. R4a's fixed text is preserved with completion notes; R0–R3 code, numerical results and claim ledgers remain unchanged.
 

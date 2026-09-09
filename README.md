@@ -2,7 +2,7 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
-## Current R4 — relational facts and comparison between observers (2026-09-09)
+## Completed R4 — relational facts and comparison between observers (2026-09-09)
 
 After merging [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`, the user authorized R4 to understand global quantum descriptions together with internal record formation and comparison. The [R4 protocol](docs/t_search_r4_protocol.md) and [R4a comparative audit](docs/t_search_r4a_comparative_audit.md) are complete. R4a separates physical readout agreement, cross-perspective links as an additional interpretive postulate, and consistent-history inference conditions. R2's constrained history alone does not establish all three.
 
@@ -10,9 +10,11 @@ After merging [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2
 
 **R4c is complete:** the [observer-inference and no-go audit](docs/t_search_r4c_observer_inference_audit.md) maps R4b to Bong et al.'s Local Friendliness assumptions. A small analytic extension of three R4b terminal tables shows why failure of the chosen history consistency condition is not a proof that every joint distribution is impossible. Physical readout agreement, CPL, absolute events and conditional locality remain distinct. No new numerical experiment or LF inequality test was added.
 
-R4b head `1a8f79b04bdb7a9b7f356858048e9089a9af0a91` passed both full CI runs; the PR log confirms 1405 tests and 18 subtests. This is the R4c baseline, not the new documentation head. R4d remains planned and unexecuted. Ontological becoming is deferred, and a new interpretation or novel prediction is not required for a useful outcome.
+**R4d is complete:** the [R4 synthesis](docs/t_search_r4_synthesis.md) and [15-claim ledger](results/t_search_r4_claim_ledger.md) connect the results to RQM, stable facts, CPL and consistent histories. A global quantum representation and internal record changes coexist in the specified finite model. Actualization of a single fact and its identification between observers still require interpretive choices. R4 closes as a bounded understanding, reproduction and comparison study; an independent new interpretation is unestablished, and ontological becoming remains deferred.
 
-R4 is a newly authorized track. The earlier “no successor selected” statements below retain their historical scope. Stage 17's old algebra search remains frozen; the original `pilot_gate = blocked` and strict cyclic rejection remain unchanged. R4a's fixed specifications and the R0–R3 code and numerical evidence are preserved; R4b adds its own implementation and results.
+R4b head `1a8f79b04bdb7a9b7f356858048e9089a9af0a91` passed both full CI runs; the PR log confirms 1405 tests and 18 subtests. This is implementation-baseline evidence. CI for the R4c/R4d documentation heads is tracked separately in PR #22.
+
+R4a–R4d are complete; no R4e or R5 is selected. Earlier planning and “no successor selected” statements retain their checkpoint scope; this section and the synthesis give the latest R4 status. Stage 17's old algebra search remains frozen; the original `pilot_gate = blocked` and strict cyclic rejection remain unchanged. R4b's source-hashed specifications, implementation and results are preserved, as are the R0–R3 code and numerical evidence.
 
 ## Completed R0–R1b synthesis (2026-09-05)
 

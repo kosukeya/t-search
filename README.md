@@ -2,6 +2,16 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current R5 — predictive stability of records under declared operations (2026-09-11)
+
+The user authorized **R5a**, following the R4 synthesis. The [R5 protocol](docs/t_search_r5_protocol.md) and [definition, literature and distinguishability audit](docs/t_search_r5a_definition_audit.md) are complete. The task compares a quantum state with its fixed F1-pointer dephasing, and asks how much their predictions can differ under pointer-only, Q-wide and G-wide operations. This is predictive approximation, not certification of actualization or absolute facts.
+
+The analytic audit derives maximum differences of 0, |c|cos(theta), and |c| for the declared state family and operation classes. It identifies the environment-reset assumption in the related non-objectivity witness and distinguishes a blind fixed measurement from a bound over all permitted measurements.
+
+**R5b is complete:** the [report](docs/t_search_r5b_record_stability.md), [experiment](experiments/r5b_record_stability.py), [data](results/r5b_record_stability.json) and [tests](tests/test_r5b_record_stability.py) reproduce 25 state pairs, 24 R4b endpoint conditions and a two-input no-record control. Maximum analytic error is 2.22e-16; maximum verification residual is 4.78e-16. A blind X measurement can have zero difference while the Q distance is 1/2. Calibration and zero predictive difference are separate conditions. Ten new and 25 reused-component regression tests pass locally. R5c/R5d remain planned and unexecuted.
+
+PR #22 was merged at `baed792419537c08d9bdc0990ed8b345549f6d98`; [PR #23](https://github.com/kosukeya/t-search/pull/23) now targets main. Baseline R5a head `1d751d2f3309e9014b8d4904104d2bfa866024e0` passed both PR/push CI; new R5b-head CI is tracked separately. Earlier planning and “no successor selected” wording retains its checkpoint scope. The old Stage 17 freeze, blocked pilot and strict cyclic rejection remain. R5a's source-hashed specifications and R0–R4 documents, code and numerical evidence are preserved.
+
 ## Completed R4 — relational facts and comparison between observers (2026-09-09)
 
 After merging [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`, the user authorized R4 to understand global quantum descriptions together with internal record formation and comparison. The [R4 protocol](docs/t_search_r4_protocol.md) and [R4a comparative audit](docs/t_search_r4a_comparative_audit.md) are complete. R4a separates physical readout agreement, cross-perspective links as an additional interpretive postulate, and consistent-history inference conditions. R2's constrained history alone does not establish all three.

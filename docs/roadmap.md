@@ -2,6 +2,17 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current authorized track — R5 (2026-09-11)
+
+The user authorized [R5a](t_search_r5a_definition_audit.md) after R4d. The [R5 protocol](t_search_r5_protocol.md) fixes a state-pair comparison at R4b event 2: retain quantum coherence or apply a specified F1 dephasing, then compare all-result predictions under declared operation classes. Stability refers to predictive approximation; record calibration, retention, CPL and ontological actualization are distinct.
+
+- **R5a — completed:** audit stable facts, the non-objectivity witness and trace-distance discrimination. Fix a partial-record unitary with exact R4b gate endpoints, complete dephasing, pointer/Q/G classes and analytic maximum differences. The Q guarantee excludes subsequent environment recoupling; the G control explicitly grants different resources.
+- **R5b — completed:** [report](t_search_r5b_record_stability.md), [experiment](../experiments/r5b_record_stability.py), [data](../results/r5b_record_stability.json), [tests](../tests/test_r5b_record_stability.py). Reproduce 5 angles × 5 inputs, 24 R4b endpoint states/terminal tables and two no-record calibration inputs. Maximum analytic error 2.22e-16; maximum verification residual 4.78e-16. Complex phase, blind fixed-X measurement and calibration/distance controls are retained. Ten new and 25 reused-component regression tests pass locally. The continuous-class conclusion remains analytic.
+- **R5c — planned, not executed:** connect optimal measurements to allowed operations, check tightness, blind fixed measurements and loss of guarantees under changed access.
+- **R5d — planned, not executed:** explain the scope of classical record-based inference, Actuality/Potentiality and global histories, preserving the distinction between quantum evolution and the dephasing counterfactual. Close as understanding/reproduction if no further explanatory difference is established.
+
+PR #22 was merged at `baed792419537c08d9bdc0990ed8b345549f6d98`. [PR #23](https://github.com/kosukeya/t-search/pull/23) now targets main. Baseline R5a head `1d751d2f3309e9014b8d4904104d2bfa866024e0` has successful PR/push CI; R5b-head CI is separate. Source-hashed R5a specifications retain their original text and checkpoint labels. Previous completion and “no successor selected” statements retain their historical scope. No Stage 17 reopening, change to the blocked pilot or strict cyclic decision, or modification of R0–R4 evidence is implied.
+
 ## Completed authorized track — R4 (2026-09-09)
 
 R3 was merged through [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`. Subsequent user instructions authorize the [R4 protocol](t_search_r4_protocol.md): understand relational facts, comparison between observers, and global quantum histories while deferring ontological becoming.

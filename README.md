@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current R5 — predictive stability of records under declared operations (2026-09-11)
+
+The user authorized **R5a**, following the R4 synthesis. The [R5 protocol](docs/t_search_r5_protocol.md) and [definition, literature and distinguishability audit](docs/t_search_r5a_definition_audit.md) are complete. The task compares a quantum state with its fixed F1-pointer dephasing, and asks how much their predictions can differ under pointer-only, Q-wide and G-wide operations. This is predictive approximation, not certification of actualization or absolute facts.
+
+The analytic audit derives maximum differences of 0, |c|cos(theta), and |c| for the declared state family and operation classes. It identifies the environment-reset assumption in the related non-objectivity witness, preserves the phase of the partial-record interaction, and distinguishes a blind fixed measurement from a bound over all permitted measurements. **R5b remains unexecuted:** a 25-state-pair reproduction, R4b endpoint checks and a no-record control are specified. R5c/R5d are planned; no new numerical results were generated in R5a.
+
+R4d head `5f71678a922f1b8ade15523437e1b18888f2b5c0` passed both PR/push CI runs. PR #22 is still open at this checkpoint; R5a is based on that head in a separate branch. Earlier R4 “no successor selected” wording records its completion checkpoint and is superseded by this R5 authorization. The old Stage 17 freeze, blocked pilot and strict cyclic rejection remain. R0–R4 documents, code and numerical evidence are preserved.
+
 ## Completed R4 — relational facts and comparison between observers (2026-09-09)
 
 After merging [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`, the user authorized R4 to understand global quantum descriptions together with internal record formation and comparison. The [R4 protocol](docs/t_search_r4_protocol.md) and [R4a comparative audit](docs/t_search_r4a_comparative_audit.md) are complete. R4a separates physical readout agreement, cross-perspective links as an additional interpretive postulate, and consistent-history inference conditions. R2's constrained history alone does not establish all three.

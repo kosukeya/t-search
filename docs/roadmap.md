@@ -2,6 +2,17 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current authorized track — R5 (2026-09-11)
+
+The user authorized [R5a](t_search_r5a_definition_audit.md) after R4d. The [R5 protocol](t_search_r5_protocol.md) fixes a state-pair comparison at R4b event 2: retain quantum coherence or apply a specified F1 dephasing, then compare all-result predictions under declared operation classes. Stability refers to predictive approximation; record calibration, retention, CPL and ontological actualization are distinct.
+
+- **R5a — completed:** audit stable facts, the non-objectivity witness and trace-distance discrimination. Fix a partial-record unitary with exact R4b gate endpoints, complete dephasing, pointer/Q/G classes and analytic maximum differences. The Q guarantee excludes subsequent environment recoupling; the G control explicitly grants different resources.
+- **R5b — planned, not executed:** reproduce 5 angles × 5 inputs, validate R4b endpoint states and terminal tables, retain complex phases, and include a no-record control. No numerical sweep is a proof over a continuous class.
+- **R5c — planned, not executed:** connect optimal measurements to allowed operations, check tightness, blind fixed measurements and loss of guarantees under changed access.
+- **R5d — planned, not executed:** explain the scope of classical record-based inference, Actuality/Potentiality and global histories, preserving the distinction between quantum evolution and the dephasing counterfactual. Close as understanding/reproduction if no further explanatory difference is established.
+
+Baseline R4d head `5f71678a922f1b8ade15523437e1b18888f2b5c0` has successful PR/push CI. PR #22 is not yet merged at this checkpoint; R5 uses a separate branch based on its head. Previous completion and “no successor selected” statements retain their historical scope. No Stage 17 reopening, change to the blocked pilot or strict cyclic decision, or modification of R0–R4 evidence is implied.
+
 ## Completed authorized track — R4 (2026-09-09)
 
 R3 was merged through [PR #21](https://github.com/kosukeya/t-search/pull/21) at `17e23c2025131983f3cfd8d9acb21ccb370ce1ed`. Subsequent user instructions authorize the [R4 protocol](t_search_r4_protocol.md): understand relational facts, comparison between observers, and global quantum histories while deferring ontological becoming.

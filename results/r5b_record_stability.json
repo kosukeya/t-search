@@ -1,0 +1,7573 @@
+{
+  "specification": "r5b-v1",
+  "protocol": "r5-v1",
+  "absolute_tolerance": 1e-10,
+  "relative_tolerance": 0,
+  "provenance": {
+    "baseline_commit": "1d751d2f3309e9014b8d4904104d2bfa866024e0",
+    "r4_merge_commit": "baed792419537c08d9bdc0990ed8b345549f6d98",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "source_sha256": {
+      "experiments/r5b_record_stability.py": "1e5690d2f65b700d7cf7999570a2678f70802d8ebbcc6bd589c80e077769c3a3",
+      "tests/test_r5b_record_stability.py": "31bdaeac7a6ff7fa18b4da7bde287ce004e2b87df83673edfc1f7c20278900f6",
+      "experiments/r4b_record_comparison.py": "9b498b1cec6a815aa6ae6361b3f88768d7e56530b308077378bd9e203a285927",
+      "experiments/r2_shared_records.py": "ac254e09ee0b0a75432c40a21d5ecc3261bf690f0bd50e5216db7306390ef3c5",
+      "docs/t_search_r5_protocol.md": "8eac0efaef155dbaf48eff84bb9ba361f954ee549494cdbe870c17fe366eea98",
+      "docs/t_search_r5a_definition_audit.md": "993c9969e88d985ed8801fd95513904c216e90d1af66f231d48c36ba8610d7d5"
+    },
+    "reference_sha256": {
+      "results/r4b_record_comparison.json": "6e58d12cdb80244fb97f256d5280963912ea3c5fe73fbabfe017b8e75c92252a"
+    }
+  },
+  "qubit_order": [
+    "S",
+    "F1",
+    "F2",
+    "E"
+  ],
+  "checkpoint_event": 2,
+  "pointer_outcomes": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "undo_x_outcomes": [
+    1,
+    -1
+  ],
+  "endpoint_terminal_outcomes": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      -1,
+      0,
+      0
+    ],
+    [
+      -1,
+      0,
+      1
+    ],
+    [
+      -1,
+      1,
+      0
+    ],
+    [
+      -1,
+      1,
+      1
+    ]
+  ],
+  "access": {
+    "C_Z": "F1/F2 Z readout and classical postprocessing only",
+    "C_Q": "all POVMs on Q=SF1F2; no subsequent E interaction or reset",
+    "C_G": "all POVMs on G=QE; explicit environment-access resource control"
+  },
+  "probability_semantics": "Born probabilities; all outcomes; no clipping, shots, or postselection",
+  "distance_semantics": "single-copy TV supremum = trace distance for Q/G; analytic justification in R5a",
+  "cases": [
+    {
+      "angle": "0",
+      "theta": 0.0,
+      "input": "zero",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        1.0,
+        0.0
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dephased": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 0,
+        "F1_correct": 1.0,
+        "F2_correct": 1.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "0",
+      "theta": 0.0,
+      "input": "one",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            1,
+            1,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        1.0,
+        0.0
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dephased": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 1,
+        "F1_correct": 1.0,
+        "F2_correct": 0.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "0",
+      "theta": 0.0,
+      "input": "plus",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        1.0,
+        0.0
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.4999999999999999,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.9999999999999998,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.4999999999999999,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.4999999999999999,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.9999999999999999,
+          1.1102230246251565e-16
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.4999999999999999
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "0",
+      "theta": 0.0,
+      "input": "plus_i",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            1,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        1.0,
+        0.0
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              0.0,
+              -0.4999999999999999
+            ],
+            [
+              12,
+              0,
+              0.0,
+              0.4999999999999999
+            ],
+            [
+              12,
+              12,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              0.0,
+              -0.4999999999999999
+            ],
+            [
+              6,
+              0,
+              0.0,
+              0.4999999999999999
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.4999999999999999,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.4999999999999999,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.4999999999999999,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "0",
+      "theta": 0.0,
+      "input": "maximally_mixed",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.5,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.5,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        1.0,
+        0.0
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "dephased": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "pi/6",
+      "theta": 0.5235987755982988,
+      "input": "zero",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.7500000000000001,
+        0.4330127018922193
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dephased": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 0,
+        "F1_correct": 1.0,
+        "F2_correct": 1.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "pi/6",
+      "theta": 0.5235987755982988,
+      "input": "one",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            1,
+            1,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.7500000000000001,
+        0.4330127018922193
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              0.7500000000000002,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.4330127018922193
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.4330127018922193
+            ],
+            [
+              13,
+              13,
+              0.24999999999999994,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              0.7500000000000002,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.4330127018922193
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.4330127018922193
+            ],
+            [
+              13,
+              13,
+              0.24999999999999994,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0000000000000002,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0000000000000002,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 2.220446049250313e-16,
+        "dephased_G": 2.220446049250313e-16,
+        "rho_Q": 2.220446049250313e-16,
+        "dephased_Q": 2.220446049250313e-16
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.0,
+          0.0,
+          1.0000000000000002,
+          0.0
+        ],
+        "dephased": [
+          0.0,
+          0.0,
+          1.0000000000000002,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5000000000000001,
+          0.5000000000000001
+        ],
+        "dephased": [
+          0.5000000000000001,
+          0.5000000000000001
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.5000000000000001,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 1,
+        "F1_correct": 1.0000000000000002,
+        "F2_correct": 0.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 2.220446049250313e-16
+    },
+    {
+      "angle": "pi/6",
+      "theta": 0.5235987755982988,
+      "input": "plus",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.7500000000000001,
+        0.4330127018922193
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              0.37499999999999994,
+              -0.2165063509461096
+            ],
+            [
+              0,
+              13,
+              0.12499999999999994,
+              0.2165063509461096
+            ],
+            [
+              12,
+              0,
+              0.37499999999999994,
+              0.2165063509461096
+            ],
+            [
+              12,
+              12,
+              0.37499999999999994,
+              0.0
+            ],
+            [
+              12,
+              13,
+              1.3877787807814457e-17,
+              0.2165063509461096
+            ],
+            [
+              13,
+              0,
+              0.12499999999999994,
+              -0.2165063509461096
+            ],
+            [
+              13,
+              12,
+              1.3877787807814457e-17,
+              -0.21650635094610962
+            ],
+            [
+              13,
+              13,
+              0.12499999999999994,
+              6.938893903907228e-18
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.37499999999999994,
+              0.0
+            ],
+            [
+              12,
+              13,
+              1.3877787807814457e-17,
+              0.2165063509461096
+            ],
+            [
+              13,
+              12,
+              1.3877787807814457e-17,
+              -0.21650635094610962
+            ],
+            [
+              13,
+              13,
+              0.12499999999999994,
+              6.938893903907228e-18
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              0.37499999999999994,
+              -0.2165063509461096
+            ],
+            [
+              6,
+              0,
+              0.37499999999999994,
+              0.2165063509461096
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              6.938893903907228e-18
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              6.938893903907228e-18
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 4.163336342344337e-17,
+          "minimum_eigenvalue": -8.44955187125571e-17
+        },
+        "dephased_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 4.163336342344337e-17,
+          "minimum_eigenvalue": -1.3877787807814457e-17
+        },
+        "rho_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": -8.011868568650906e-32
+        },
+        "dephased_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.1102230246251565e-16,
+        "dephased_G": 1.1102230246251565e-16,
+        "rho_Q": 6.938893903907228e-18,
+        "dephased_Q": 6.938893903907228e-18
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.4330127018922192,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 6.938893903907228e-18
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.8749999999999998,
+          0.12499999999999994
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.3749999999999999,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.12499999999999994,
+        "max_imaginary_probability": 3.469446951953614e-18
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.43301270189221924,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.875,
+          0.12500000000000006
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.37499999999999994
+      },
+      "analytic_max_error": 2.220446049250313e-16
+    },
+    {
+      "angle": "pi/6",
+      "theta": 0.5235987755982988,
+      "input": "plus_i",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            1,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.7500000000000001,
+        0.4330127018922193
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              -0.2165063509461096,
+              -0.37499999999999994
+            ],
+            [
+              0,
+              13,
+              0.2165063509461096,
+              -0.12499999999999994
+            ],
+            [
+              12,
+              0,
+              -0.2165063509461096,
+              0.37499999999999994
+            ],
+            [
+              12,
+              12,
+              0.37499999999999994,
+              0.0
+            ],
+            [
+              12,
+              13,
+              1.3877787807814457e-17,
+              0.2165063509461096
+            ],
+            [
+              13,
+              0,
+              0.2165063509461096,
+              0.12499999999999994
+            ],
+            [
+              13,
+              12,
+              1.3877787807814457e-17,
+              -0.21650635094610962
+            ],
+            [
+              13,
+              13,
+              0.12499999999999994,
+              6.938893903907228e-18
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.37499999999999994,
+              0.0
+            ],
+            [
+              12,
+              13,
+              1.3877787807814457e-17,
+              0.2165063509461096
+            ],
+            [
+              13,
+              12,
+              1.3877787807814457e-17,
+              -0.21650635094610962
+            ],
+            [
+              13,
+              13,
+              0.12499999999999994,
+              6.938893903907228e-18
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              -0.2165063509461096,
+              -0.37499999999999994
+            ],
+            [
+              6,
+              0,
+              -0.2165063509461096,
+              0.37499999999999994
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              6.938893903907228e-18
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              6.938893903907228e-18
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 4.163336342344337e-17,
+          "minimum_eigenvalue": -8.570249210251963e-17
+        },
+        "dephased_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 4.163336342344337e-17,
+          "minimum_eigenvalue": -1.3877787807814457e-17
+        },
+        "rho_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": -1.232595164407831e-32
+        },
+        "dephased_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.1102230246251565e-16,
+        "dephased_G": 1.1102230246251565e-16,
+        "rho_Q": 6.938893903907228e-18,
+        "dephased_Q": 6.938893903907228e-18
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.43301270189221924,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 6.938893903907228e-18
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.2834936490538903,
+          0.7165063509461096
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.21650635094610965,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.2834936490538903,
+        "max_imaginary_probability": 3.469446951953614e-18
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.43301270189221924,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.2834936490538904,
+          0.7165063509461096
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": -0.2165063509461096
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/6",
+      "theta": 0.5235987755982988,
+      "input": "maximally_mixed",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.5,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.5,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.7500000000000001,
+        0.4330127018922193
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.3750000000000001,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.21650635094610965
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              13,
+              0.12499999999999997,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.3750000000000001,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.21650635094610965
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              13,
+              0.12499999999999997,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5000000000000001,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5000000000000001,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.1102230246251565e-16,
+        "dephased_G": 1.1102230246251565e-16,
+        "rho_Q": 1.1102230246251565e-16,
+        "dephased_Q": 1.1102230246251565e-16
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.5,
+          0.0,
+          0.5000000000000001,
+          0.0
+        ],
+        "dephased": [
+          0.5,
+          0.0,
+          0.5000000000000001,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/4",
+      "theta": 0.7853981633974483,
+      "input": "zero",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.5000000000000001,
+        0.5
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dephased": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 0,
+        "F1_correct": 1.0,
+        "F2_correct": 1.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "pi/4",
+      "theta": 0.7853981633974483,
+      "input": "one",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            1,
+            1,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.5000000000000001,
+        0.5
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              0.5000000000000001,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.5
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.5
+            ],
+            [
+              13,
+              13,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              0.5000000000000001,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.5
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.5
+            ],
+            [
+              13,
+              13,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.1102230246251565e-16,
+        "dephased_G": 1.1102230246251565e-16,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dephased": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 1,
+        "F1_correct": 1.0,
+        "F2_correct": 0.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/4",
+      "theta": 0.7853981633974483,
+      "input": "plus",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.5000000000000001,
+        0.5
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              0.25,
+              -0.24999999999999994
+            ],
+            [
+              0,
+              13,
+              0.2499999999999999,
+              0.24999999999999994
+            ],
+            [
+              12,
+              0,
+              0.25,
+              0.24999999999999994
+            ],
+            [
+              12,
+              12,
+              0.25,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.24999999999999994
+            ],
+            [
+              13,
+              0,
+              0.2499999999999999,
+              -0.24999999999999994
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.24999999999999994
+            ],
+            [
+              13,
+              13,
+              0.2499999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.25,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.24999999999999994
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.24999999999999994
+            ],
+            [
+              13,
+              13,
+              0.2499999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              0.25,
+              -0.24999999999999994
+            ],
+            [
+              6,
+              0,
+              0.25,
+              0.24999999999999994
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": -6.162975822039155e-33
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 5.551115123125783e-17,
+        "dephased_G": 5.551115123125783e-17,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.35355339059327373,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.75,
+          0.2499999999999999
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.25000000000000006,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.2499999999999999,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.35355339059327373,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.75,
+          0.25
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.25
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/4",
+      "theta": 0.7853981633974483,
+      "input": "plus_i",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            1,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.5000000000000001,
+        0.5
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              -0.24999999999999994,
+              -0.25
+            ],
+            [
+              0,
+              13,
+              0.24999999999999994,
+              -0.2499999999999999
+            ],
+            [
+              12,
+              0,
+              -0.24999999999999994,
+              0.25
+            ],
+            [
+              12,
+              12,
+              0.25,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.24999999999999994
+            ],
+            [
+              13,
+              0,
+              0.24999999999999994,
+              0.2499999999999999
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.24999999999999994
+            ],
+            [
+              13,
+              13,
+              0.2499999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.25,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.24999999999999994
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.24999999999999994
+            ],
+            [
+              13,
+              13,
+              0.2499999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              -0.24999999999999994,
+              -0.25
+            ],
+            [
+              6,
+              0,
+              -0.24999999999999994,
+              0.25
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 5.551115123125783e-17,
+        "dephased_G": 5.551115123125783e-17,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.35355339059327373,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.24999999999999994,
+          0.7499999999999998
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.24999999999999992,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.24999999999999994,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.35355339059327373,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.25000000000000006,
+          0.75
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": -0.24999999999999994
+      },
+      "analytic_max_error": 2.220446049250313e-16
+    },
+    {
+      "angle": "pi/4",
+      "theta": 0.7853981633974483,
+      "input": "maximally_mixed",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.5,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.5,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.5000000000000001,
+        0.5
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.25000000000000006,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.25
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.25
+            ],
+            [
+              13,
+              13,
+              0.24999999999999994,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.25000000000000006,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              0.25
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.25
+            ],
+            [
+              13,
+              13,
+              0.24999999999999994,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 5.551115123125783e-17,
+        "dephased_G": 5.551115123125783e-17,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "dephased": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 5.551115123125783e-17
+    },
+    {
+      "angle": "pi/3",
+      "theta": 1.0471975511965976,
+      "input": "zero",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.2500000000000001,
+        0.4330127018922194
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dephased": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 0,
+        "F1_correct": 1.0,
+        "F2_correct": 1.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "pi/3",
+      "theta": 1.0471975511965976,
+      "input": "one",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            1,
+            1,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.2500000000000001,
+        0.4330127018922194
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              0.2500000000000001,
+              0.0
+            ],
+            [
+              12,
+              13,
+              -2.7755575615628914e-17,
+              0.4330127018922194
+            ],
+            [
+              13,
+              12,
+              -2.7755575615628914e-17,
+              -0.4330127018922194
+            ],
+            [
+              13,
+              13,
+              0.75,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              0.2500000000000001,
+              0.0
+            ],
+            [
+              12,
+              13,
+              -2.7755575615628914e-17,
+              0.4330127018922194
+            ],
+            [
+              13,
+              12,
+              -2.7755575615628914e-17,
+              -0.4330127018922194
+            ],
+            [
+              13,
+              13,
+              0.75,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.2412670766236366e-16,
+        "dephased_G": 1.2412670766236366e-16,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dephased": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 1,
+        "F1_correct": 1.0,
+        "F2_correct": 0.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 1.2412670766236366e-16
+    },
+    {
+      "angle": "pi/3",
+      "theta": 1.0471975511965976,
+      "input": "plus",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.2500000000000001,
+        0.4330127018922194
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              0.12500000000000003,
+              -0.21650635094610965
+            ],
+            [
+              0,
+              13,
+              0.3749999999999999,
+              0.21650635094610965
+            ],
+            [
+              12,
+              0,
+              0.12500000000000003,
+              0.21650635094610965
+            ],
+            [
+              12,
+              12,
+              0.12500000000000003,
+              -6.938893903907228e-18
+            ],
+            [
+              12,
+              13,
+              -1.3877787807814457e-17,
+              0.21650635094610965
+            ],
+            [
+              13,
+              0,
+              0.3749999999999999,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              13,
+              0.3749999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.12500000000000003,
+              -6.938893903907228e-18
+            ],
+            [
+              12,
+              13,
+              -1.3877787807814457e-17,
+              0.21650635094610965
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              13,
+              0.3749999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              0.12500000000000003,
+              -0.21650635094610965
+            ],
+            [
+              6,
+              0,
+              0.12500000000000003,
+              0.21650635094610965
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              -6.938893903907228e-18
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              -6.938893903907228e-18
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 2.4037033579794548e-17,
+          "minimum_eigenvalue": -6.716091811715031e-17
+        },
+        "dephased_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 2.4037033579794548e-17,
+          "minimum_eigenvalue": -1.3877787807814457e-17
+        },
+        "rho_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 3.925231146709438e-17,
+        "dephased_G": 3.925231146709438e-17,
+        "rho_Q": 6.938893903907228e-18,
+        "dephased_Q": 6.938893903907228e-18
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.25,
+        "C_G": 0.5
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 6.938893903907228e-18
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.625,
+          0.3749999999999999
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.12500000000000006,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.3749999999999999,
+        "max_imaginary_probability": 3.469446951953614e-18
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.25,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.625,
+          0.375
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.12500000000000003
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/3",
+      "theta": 1.0471975511965976,
+      "input": "plus_i",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            1,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.2500000000000001,
+        0.4330127018922194
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              -0.21650635094610965,
+              -0.12500000000000003
+            ],
+            [
+              0,
+              13,
+              0.21650635094610965,
+              -0.3749999999999999
+            ],
+            [
+              12,
+              0,
+              -0.21650635094610965,
+              0.12500000000000003
+            ],
+            [
+              12,
+              12,
+              0.12500000000000003,
+              -6.938893903907228e-18
+            ],
+            [
+              12,
+              13,
+              -1.3877787807814457e-17,
+              0.21650635094610965
+            ],
+            [
+              13,
+              0,
+              0.21650635094610965,
+              0.3749999999999999
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              13,
+              0.3749999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.12500000000000003,
+              -6.938893903907228e-18
+            ],
+            [
+              12,
+              13,
+              -1.3877787807814457e-17,
+              0.21650635094610965
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -0.21650635094610965
+            ],
+            [
+              13,
+              13,
+              0.3749999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              -0.21650635094610965,
+              -0.12500000000000003
+            ],
+            [
+              6,
+              0,
+              -0.21650635094610965,
+              0.12500000000000003
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              -6.938893903907228e-18
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              -6.938893903907228e-18
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 2.4037033579794548e-17,
+          "minimum_eigenvalue": -6.59921910868394e-17
+        },
+        "dephased_G": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 2.4037033579794548e-17,
+          "minimum_eigenvalue": -1.3877787807814457e-17
+        },
+        "rho_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.2215299868541707e-16,
+          "hermitian_residual_fro": 1.3877787807814457e-17,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 3.925231146709438e-17,
+        "dephased_G": 3.925231146709438e-17,
+        "rho_Q": 6.938893903907228e-18,
+        "dephased_Q": 6.938893903907228e-18
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.25,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 6.938893903907228e-18
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.28349364905389024,
+          0.7165063509461096
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.21650635094610968,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.28349364905389024,
+        "max_imaginary_probability": 3.469446951953614e-18
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.25,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.28349364905389035,
+          0.7165063509461096
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": -0.21650635094610965
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/3",
+      "theta": 1.0471975511965976,
+      "input": "maximally_mixed",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.5,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.5,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        0.2500000000000001,
+        0.4330127018922194
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.12500000000000006,
+              0.0
+            ],
+            [
+              12,
+              13,
+              -1.3877787807814457e-17,
+              0.2165063509461097
+            ],
+            [
+              13,
+              12,
+              -1.3877787807814457e-17,
+              -0.2165063509461097
+            ],
+            [
+              13,
+              13,
+              0.375,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              0.12500000000000006,
+              0.0
+            ],
+            [
+              12,
+              13,
+              -1.3877787807814457e-17,
+              0.2165063509461097
+            ],
+            [
+              13,
+              12,
+              -1.3877787807814457e-17,
+              -0.2165063509461097
+            ],
+            [
+              13,
+              13,
+              0.375,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 6.206335383118183e-17,
+        "dephased_G": 6.206335383118183e-17,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "dephased": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 6.206335383118183e-17
+    },
+    {
+      "angle": "pi/2",
+      "theta": 1.5707963267948966,
+      "input": "zero",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        3.749399456654644e-33,
+        6.123233995736766e-17
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 0.0,
+        "dephased_G": 0.0,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dephased": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 0,
+        "F1_correct": 1.0,
+        "F2_correct": 1.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 0.0
+    },
+    {
+      "angle": "pi/2",
+      "theta": 1.5707963267948966,
+      "input": "one",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            1,
+            1,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        3.749399456654644e-33,
+        6.123233995736766e-17
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              3.749399456654644e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              6.123233995736766e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -6.123233995736766e-17
+            ],
+            [
+              13,
+              13,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              12,
+              12,
+              3.749399456654644e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              6.123233995736766e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -6.123233995736766e-17
+            ],
+            [
+              13,
+              13,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              6,
+              6,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 3.749399456654644e-33,
+        "dephased_G": 3.749399456654644e-33,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dephased": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": {
+        "prepared_z_value": 1,
+        "F1_correct": 1.0,
+        "F2_correct": 0.0
+      },
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 3.749399456654644e-33
+    },
+    {
+      "angle": "pi/2",
+      "theta": 1.5707963267948966,
+      "input": "plus",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        3.749399456654644e-33,
+        6.123233995736766e-17
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              1.8746997283273217e-33,
+              -3.0616169978683824e-17
+            ],
+            [
+              0,
+              13,
+              0.4999999999999999,
+              3.0616169978683824e-17
+            ],
+            [
+              12,
+              0,
+              1.8746997283273217e-33,
+              3.0616169978683824e-17
+            ],
+            [
+              12,
+              12,
+              1.8746997283273217e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              3.0616169978683824e-17
+            ],
+            [
+              13,
+              0,
+              0.4999999999999999,
+              -3.0616169978683824e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -3.0616169978683824e-17
+            ],
+            [
+              13,
+              13,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              1.8746997283273217e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              3.0616169978683824e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -3.0616169978683824e-17
+            ],
+            [
+              13,
+              13,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              1.8746997283273217e-33,
+              -3.0616169978683824e-17
+            ],
+            [
+              6,
+              0,
+              1.8746997283273217e-33,
+              3.0616169978683824e-17
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": -3.707653881885135e-50
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.8746997283273217e-33,
+        "dephased_G": 1.8746997283273217e-33,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 3.0616169978683824e-17,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.4999999999999999,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 3.0616169978683824e-17,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 1.8746997283273217e-33
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/2",
+      "theta": 1.5707963267948966,
+      "input": "plus_i",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            1,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            1,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            1,
+            1,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        3.749399456654644e-33,
+        6.123233995736766e-17
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              12,
+              -3.0616169978683824e-17,
+              -1.8746997283273217e-33
+            ],
+            [
+              0,
+              13,
+              3.0616169978683824e-17,
+              -0.4999999999999999
+            ],
+            [
+              12,
+              0,
+              -3.0616169978683824e-17,
+              1.8746997283273217e-33
+            ],
+            [
+              12,
+              12,
+              1.8746997283273217e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              3.0616169978683824e-17
+            ],
+            [
+              13,
+              0,
+              3.0616169978683824e-17,
+              0.4999999999999999
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -3.0616169978683824e-17
+            ],
+            [
+              13,
+              13,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              12,
+              12,
+              1.8746997283273217e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              3.0616169978683824e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -3.0616169978683824e-17
+            ],
+            [
+              13,
+              13,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              0,
+              6,
+              -3.0616169978683824e-17,
+              -1.8746997283273217e-33
+            ],
+            [
+              6,
+              0,
+              -3.0616169978683824e-17,
+              1.8746997283273217e-33
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.4999999999999999,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.4999999999999999,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": -3.9942399428957346e-50
+        },
+        "dephased_G": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 2.220446049250313e-16,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.8746997283273217e-33,
+        "dephased_G": 1.8746997283273217e-33,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 3.0616169978683824e-17,
+        "C_G": 0.4999999999999999
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.49999999999999983,
+          0.49999999999999994
+        ],
+        "dephased": [
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        "total_variation": 5.551115123125783e-17,
+        "normalization_error": 2.220446049250313e-16,
+        "minimum_probability": 0.49999999999999983,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 3.0616169978683824e-17,
+        "C_G": 0.4999999999999999,
+        "pointer_probabilities": [
+          0.4999999999999999,
+          0.0,
+          0.4999999999999999,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.49999999999999994,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": -3.0616169978683824e-17
+      },
+      "analytic_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/2",
+      "theta": 1.5707963267948966,
+      "input": "maximally_mixed",
+      "input_state": {
+        "shape": [
+          2,
+          2
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.5,
+            0.0
+          ],
+          [
+            1,
+            1,
+            0.5,
+            0.0
+          ]
+        ]
+      },
+      "gamma": [
+        3.749399456654644e-33,
+        6.123233995736766e-17
+      ],
+      "states": {
+        "rho_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              1.874699728327322e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              3.061616997868383e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -3.061616997868383e-17
+            ],
+            [
+              13,
+              13,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              12,
+              12,
+              1.874699728327322e-33,
+              0.0
+            ],
+            [
+              12,
+              13,
+              0.0,
+              3.061616997868383e-17
+            ],
+            [
+              13,
+              12,
+              0.0,
+              -3.061616997868383e-17
+            ],
+            [
+              13,
+              13,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "rho_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        },
+        "dephased_Q": {
+          "shape": [
+            8,
+            8
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              0.5,
+              0.0
+            ],
+            [
+              6,
+              6,
+              0.5,
+              0.0
+            ]
+          ]
+        }
+      },
+      "state_diagnostics": {
+        "rho_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_G": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "rho_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        },
+        "dephased_Q": {
+          "trace_error": 0.0,
+          "hermitian_residual_fro": 0.0,
+          "minimum_eigenvalue": 0.0
+        }
+      },
+      "state_oracle_max_errors": {
+        "rho_G": 1.874699728327322e-33,
+        "dephased_G": 1.874699728327322e-33,
+        "rho_Q": 0.0,
+        "dephased_Q": 0.0
+      },
+      "distances": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0
+      },
+      "pointer_readout": {
+        "quantum": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "dephased": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.0,
+        "max_imaginary_probability": 0.0
+      },
+      "undo_x_readout": {
+        "quantum": [
+          0.5,
+          0.5
+        ],
+        "dephased": [
+          0.5,
+          0.5
+        ],
+        "total_variation": 0.0,
+        "normalization_error": 0.0,
+        "minimum_probability": 0.5,
+        "max_imaginary_probability": 0.0
+      },
+      "calibration": null,
+      "analytic": {
+        "C_Z": 0.0,
+        "C_Q": 0.0,
+        "C_G": 0.0,
+        "pointer_probabilities": [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        "undo_x_quantum": [
+          0.5,
+          0.5
+        ],
+        "undo_x_dephased": [
+          0.5,
+          0.5
+        ],
+        "undo_x_signed_plus_difference": 0.0
+      },
+      "analytic_max_error": 1.874699728327322e-33
+    }
+  ],
+  "calibration_summary": [
+    {
+      "angle": "0",
+      "equal_z_input_weights": [
+        0.5,
+        0.5
+      ],
+      "F1_correct": 1.0,
+      "F2_correct": 0.5
+    },
+    {
+      "angle": "pi/6",
+      "equal_z_input_weights": [
+        0.5,
+        0.5
+      ],
+      "F1_correct": 1.0,
+      "F2_correct": 0.5
+    },
+    {
+      "angle": "pi/4",
+      "equal_z_input_weights": [
+        0.5,
+        0.5
+      ],
+      "F1_correct": 1.0,
+      "F2_correct": 0.5
+    },
+    {
+      "angle": "pi/3",
+      "equal_z_input_weights": [
+        0.5,
+        0.5
+      ],
+      "F1_correct": 1.0,
+      "F2_correct": 0.5
+    },
+    {
+      "angle": "pi/2",
+      "equal_z_input_weights": [
+        0.5,
+        0.5
+      ],
+      "F1_correct": 1.0,
+      "F2_correct": 0.5
+    }
+  ],
+  "gate_diagnostics": [
+    {
+      "angle": "0",
+      "unitarity_residual_fro": 0.0,
+      "isometry_residual_fro": 0.0,
+      "oracle_embedding_max_error": 0.0
+    },
+    {
+      "angle": "pi/6",
+      "unitarity_residual_fro": 4.509747244882934e-16,
+      "isometry_residual_fro": 2.4037033579794548e-17,
+      "oracle_embedding_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/4",
+      "unitarity_residual_fro": 0.0,
+      "isometry_residual_fro": 0.0,
+      "oracle_embedding_max_error": 1.1102230246251565e-16
+    },
+    {
+      "angle": "pi/3",
+      "unitarity_residual_fro": 4.775249788392736e-16,
+      "isometry_residual_fro": 7.43708407166872e-18,
+      "oracle_embedding_max_error": 5.551115123125783e-17
+    },
+    {
+      "angle": "pi/2",
+      "unitarity_residual_fro": 0.0,
+      "isometry_residual_fro": 0.0,
+      "oracle_embedding_max_error": 3.749399456654644e-33
+    }
+  ],
+  "dephasing_completeness_residual_fro": 0.0,
+  "endpoint_checks": [
+    {
+      "context": "read",
+      "environment": 0,
+      "input": "zero",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 0,
+      "input": "one",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            12,
+            12,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "reference_terminal_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 0,
+      "input": "plus",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            12,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            12,
+            12,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 0,
+      "input": "plus_i",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            12,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            12,
+            12,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 1,
+      "input": "zero",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 1,
+      "input": "one",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            12,
+            12,
+            3.749399456654644e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            6.123233995736766e-17
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -6.123233995736766e-17
+          ],
+          [
+            13,
+            13,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "reference_terminal_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 6.123233995736766e-17,
+        "terminal_state_max_error": 6.123233995736766e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 1,
+      "input": "plus",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            1.8746997283273217e-33,
+            -3.0616169978683824e-17
+          ],
+          [
+            0,
+            13,
+            0.4999999999999999,
+            3.0616169978683824e-17
+          ],
+          [
+            12,
+            0,
+            1.8746997283273217e-33,
+            3.0616169978683824e-17
+          ],
+          [
+            12,
+            12,
+            1.8746997283273217e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            3.0616169978683824e-17
+          ],
+          [
+            13,
+            0,
+            0.4999999999999999,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            13,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 3.0616169978683824e-17,
+        "terminal_state_max_error": 3.0616169978683824e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "read",
+      "environment": 1,
+      "input": "plus_i",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            -3.0616169978683824e-17,
+            -1.8746997283273217e-33
+          ],
+          [
+            0,
+            13,
+            3.0616169978683824e-17,
+            -0.4999999999999999
+          ],
+          [
+            12,
+            0,
+            -3.0616169978683824e-17,
+            1.8746997283273217e-33
+          ],
+          [
+            12,
+            12,
+            1.8746997283273217e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            3.0616169978683824e-17
+          ],
+          [
+            13,
+            0,
+            3.0616169978683824e-17,
+            0.4999999999999999
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            13,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 3.0616169978683824e-17,
+        "terminal_state_max_error": 3.0616169978683824e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 0,
+      "input": "zero",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 0,
+      "input": "one",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            12,
+            12,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 0,
+      "input": "plus",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            12,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            12,
+            12,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.9999999999999998,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.9999999999999998,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 0,
+      "input": "plus_i",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            12,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            12,
+            12,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 1,
+      "input": "zero",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 1,
+      "input": "one",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            12,
+            12,
+            3.749399456654644e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            6.123233995736766e-17
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -6.123233995736766e-17
+          ],
+          [
+            13,
+            13,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 6.123233995736766e-17,
+        "terminal_state_max_error": 6.123233995736766e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 1,
+      "input": "plus",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            1.8746997283273217e-33,
+            -3.0616169978683824e-17
+          ],
+          [
+            0,
+            13,
+            0.4999999999999999,
+            3.0616169978683824e-17
+          ],
+          [
+            12,
+            0,
+            1.8746997283273217e-33,
+            3.0616169978683824e-17
+          ],
+          [
+            12,
+            12,
+            1.8746997283273217e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            3.0616169978683824e-17
+          ],
+          [
+            13,
+            0,
+            0.4999999999999999,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            13,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 3.0616169978683824e-17,
+        "terminal_state_max_error": 3.0616169978683824e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "undo",
+      "environment": 1,
+      "input": "plus_i",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            -3.0616169978683824e-17,
+            -1.8746997283273217e-33
+          ],
+          [
+            0,
+            13,
+            3.0616169978683824e-17,
+            -0.4999999999999999
+          ],
+          [
+            12,
+            0,
+            -3.0616169978683824e-17,
+            1.8746997283273217e-33
+          ],
+          [
+            12,
+            12,
+            1.8746997283273217e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            3.0616169978683824e-17
+          ],
+          [
+            13,
+            0,
+            3.0616169978683824e-17,
+            0.4999999999999999
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            13,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.49999999999999983,
+        0.0,
+        0.0,
+        0.0,
+        0.49999999999999994,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 3.0616169978683824e-17,
+        "terminal_state_max_error": 3.0616169978683824e-17,
+        "terminal_probabilities_max_error": 5.551115123125783e-17
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 0,
+      "input": "zero",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 0,
+      "input": "one",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            12,
+            12,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 0,
+      "input": "plus",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            12,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            12,
+            12,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 0,
+      "input": "plus_i",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            0.0,
+            -0.4999999999999999
+          ],
+          [
+            12,
+            0,
+            0.0,
+            0.4999999999999999
+          ],
+          [
+            12,
+            12,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 0.0,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 1,
+      "input": "zero",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 0.0,
+        "terminal_state_max_error": 0.0,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 1,
+      "input": "one",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            12,
+            12,
+            3.749399456654644e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            6.123233995736766e-17
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -6.123233995736766e-17
+          ],
+          [
+            13,
+            13,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 6.123233995736766e-17,
+        "terminal_state_max_error": 6.123233995736766e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 1,
+      "input": "plus",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            1.8746997283273217e-33,
+            -3.0616169978683824e-17
+          ],
+          [
+            0,
+            13,
+            0.4999999999999999,
+            3.0616169978683824e-17
+          ],
+          [
+            12,
+            0,
+            1.8746997283273217e-33,
+            3.0616169978683824e-17
+          ],
+          [
+            12,
+            12,
+            1.8746997283273217e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            3.0616169978683824e-17
+          ],
+          [
+            13,
+            0,
+            0.4999999999999999,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            13,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 3.0616169978683824e-17,
+        "terminal_state_max_error": 3.0616169978683824e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    },
+    {
+      "context": "copy_undo",
+      "environment": 1,
+      "input": "plus_i",
+      "event2_state_G": {
+        "shape": [
+          16,
+          16
+        ],
+        "entries": [
+          [
+            0,
+            0,
+            0.4999999999999999,
+            0.0
+          ],
+          [
+            0,
+            12,
+            -3.0616169978683824e-17,
+            -1.8746997283273217e-33
+          ],
+          [
+            0,
+            13,
+            3.0616169978683824e-17,
+            -0.4999999999999999
+          ],
+          [
+            12,
+            0,
+            -3.0616169978683824e-17,
+            1.8746997283273217e-33
+          ],
+          [
+            12,
+            12,
+            1.8746997283273217e-33,
+            0.0
+          ],
+          [
+            12,
+            13,
+            0.0,
+            3.0616169978683824e-17
+          ],
+          [
+            13,
+            0,
+            3.0616169978683824e-17,
+            0.4999999999999999
+          ],
+          [
+            13,
+            12,
+            0.0,
+            -3.0616169978683824e-17
+          ],
+          [
+            13,
+            13,
+            0.4999999999999999,
+            0.0
+          ]
+        ]
+      },
+      "terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "reference_terminal_probabilities": [
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0,
+        0.24999999999999994,
+        0.24999999999999994,
+        0.0,
+        0.0
+      ],
+      "residuals": {
+        "environment_gate_max_error": 6.123233995736766e-17,
+        "event2_state_max_error": 3.0616169978683824e-17,
+        "terminal_state_max_error": 3.0616169978683824e-17,
+        "terminal_probabilities_max_error": 0.0
+      }
+    }
+  ],
+  "no_record_control": {
+    "definition": "rho_S tensor |000><000|; no record interaction",
+    "cases": [
+      {
+        "input": "zero",
+        "state_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              0,
+              0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "pointer_readout": {
+          "quantum": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dephased": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_variation": 0.0,
+          "normalization_error": 0.0,
+          "minimum_probability": 0.0,
+          "max_imaginary_probability": 0.0
+        },
+        "F1_correct": 1.0,
+        "distances": {
+          "C_Z": 0.0,
+          "C_Q": 0.0,
+          "C_G": 0.0
+        }
+      },
+      {
+        "input": "one",
+        "state_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              8,
+              8,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "dephased_G": {
+          "shape": [
+            16,
+            16
+          ],
+          "entries": [
+            [
+              8,
+              8,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "pointer_readout": {
+          "quantum": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dephased": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_variation": 0.0,
+          "normalization_error": 0.0,
+          "minimum_probability": 0.0,
+          "max_imaginary_probability": 0.0
+        },
+        "F1_correct": 0.0,
+        "distances": {
+          "C_Z": 0.0,
+          "C_Q": 0.0,
+          "C_G": 0.0
+        }
+      }
+    ],
+    "equal_z_input_weights": [
+      0.5,
+      0.5
+    ],
+    "F1_correct": 0.5
+  },
+  "summary": {
+    "case_count": 25,
+    "endpoint_count": 24,
+    "no_record_case_count": 2,
+    "maximum_analytic_error": 2.220446049250313e-16,
+    "maximum_endpoint_error": 6.123233995736766e-17,
+    "maximum_verification_residual": 4.775249788392736e-16,
+    "all_checks_within_tolerance": true
+  },
+  "limits": [
+    "fixed pointer basis and dephasing counterfactual; not all classical models",
+    "continuous-class conclusion is analytic, not inferred from five sample angles",
+    "no optimal measurement circuit implemented (R5c pending)",
+    "not a certificate of good records, absolute facts, CPL, or ontological becoming",
+    "no reference-assisted channel discrimination or finite-shot confidence guarantee"
+  ]
+}

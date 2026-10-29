@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — conditional predictions (2026-10-29)
+
+The [conditioning audit](docs/t_search_conditioning_audit.md) and [protocol](docs/t_search_conditioning_audit_protocol.md) complete a bounded follow-up to R5d. A small all-outcome error for one state pair does not guarantee the same error after conditioning on every event. The audit derives a branch-probability bound, a rare-filter counterexample and a separate sufficient bound using the R5 family’s relative coherence. The latter also extends R5’s uniform-over-input guarantee to conditional predictions under Q-only operations; the rare-input counterexample concerns pair-specific error.
+
+For p=10^-6 and no environmental record, the initial Q distance is about 0.001 while a success branch of probability 0.000002 has conditional distance 1/2; the entire outcome log has distance 0.000001. By contrast, actually applying the same F1 Z readout to both states gives identical conditioned states. Twelve declared matrix checks agree with the analytic expressions within 4.45e-16. The assumptions include known state pairs and ideal instruments; no actualization or ontological becoming is certified.
+
+R5a–R5c remain integrated in main. R5d and this follow-up are in the open [PR #24](https://github.com/kosukeya/t-search/pull/24). Prior R5d head `7a9c8d644cc06b618bf5c3990bd07d12259a4222` passed PR/push CI, both with 1424 tests and 18 subtests; the new documentation head’s CI is tracked separately. See the [research log](docs/t_search_research_log.md) for current integration and verification evidence.
+
 ## Completed R5 — predictive stability, histories and interpretation limits (2026-10-28)
 
 The user authorized **R5a**, following the R4 synthesis. The [R5 protocol](docs/t_search_r5_protocol.md) and [definition, literature and distinguishability audit](docs/t_search_r5a_definition_audit.md) are complete. The task compares a quantum state with its fixed F1-pointer dephasing, and asks how much their predictions can differ under pointer-only, Q-wide and G-wide operations. This is predictive approximation, not certification of actualization or absolute facts.

@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — conditional prediction audit (2026-10-29)
+
+The [bounded audit](t_search_conditioning_audit.md) follows R5d’s separation of selective and nonselective predictions. Its [protocol](t_search_conditioning_audit_protocol.md) fixes one question: what extra information turns all-outcome error into a conditional guarantee? The analysis is complete, with a branch-mass bound, a rare-filter counterexample, exact agreement after the original F1 Z readout, and a sufficient relative-coherence bound that also applies to R5’s uniform-over-input approximation. Pair-specific small error and uniform small error remain distinct.
+
+Twelve declared matrix checks and 23 positive unequal-probability branches support the formulas; an analytically zero branch is not normalized. No existing code, tests or numeric fixtures are changed. The closed R5 evidence and interpretation limits are retained. R5d and this follow-up remain in open PR #24; main contains R5a–R5c. R5d head `7a9c8d644cc06b618bf5c3990bd07d12259a4222` has successful PR/push CI with 1424 tests and 18 subtests each. The new head’s checks are recorded separately.
+
+The next judgment is whether an evidence-backed audit of the assumed instruments, phase and branch probabilities would add explanatory value. No certification experiment or new large-scale series is implemented here.
+
 ## Completed authorized track — R5 (2026-10-28)
 
 The user authorized [R5a](t_search_r5a_definition_audit.md) after R4d. The [R5 protocol](t_search_r5_protocol.md) fixes a state-pair comparison at R4b event 2: retain quantum coherence or apply a specified F1 dephasing, then compare all-result predictions under declared operation classes. Stability refers to predictive approximation; record calibration, retention, CPL and ontological actualization are distinct.

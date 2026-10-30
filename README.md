@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — instrument information audit (2026-10-30)
+
+The [instrument audit](docs/t_search_instrument_audit.md) and [protocol](docs/t_search_instrument_audit_protocol.md) complete one question left by the conditioning audit: does knowing the nonselective channel and branch probabilities determine conditional operations? In general it does not. A Q-only pair has the same dephasing channel and probability 1/2 for every branch and input, but conditional output distance 1/sqrt(2) for the + input. Joint flag/output measurements distinguish the pair. The report also proves the exact-unitary exception and a sufficient reconstruction from joint probabilities under trusted qubit assumptions.
+
+This does not weaken the previous bounds for the same unknown CP instrument. Instrument-specific predictions and bounds valid for every instrument require different evidence. The report preserves this distinction in a 12-claim ledger. All 36 joint settings, 144 raw probabilities and 24 reconstructed operator comparisons agree with the analysis; maximum residual is 4.45e-16. Reproduction code is included in the report. No existing implementation, tests or numeric fixtures are changed.
+
+Main still contains R5a–R5c; R5d and the subsequent audits remain in [Draft PR #24](https://github.com/kosukeya/t-search/pull/24). Baseline `622dda6fda2cdcc60cef0f8fe876328a2dfdc67a` passed PR/push CI, both with 1424 tests and 18 subtests. The new documentation head is tracked separately. The next judgment is review/integration and which concrete conditional prediction, if any, needs a calibration-error guarantee. Single actualization, observer-to-observer fact identity and ontological becoming remain unresolved. Earlier sections retain their dated checkpoint scope.
+
 ## Current follow-up — conditional predictions (2026-10-29)
 
 The [conditioning audit](docs/t_search_conditioning_audit.md) and [protocol](docs/t_search_conditioning_audit_protocol.md) complete a bounded follow-up to R5d. A small all-outcome error for one state pair does not guarantee the same error after conditioning on every event. The audit derives a branch-probability bound, a rare-filter counterexample and a separate sufficient bound using the R5 family’s relative coherence. The latter also extends R5’s uniform-over-input guarantee to conditional predictions under Q-only operations; the rare-input counterexample concerns pair-specific error.

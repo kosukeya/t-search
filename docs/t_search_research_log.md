@@ -1,5 +1,31 @@
 # t-search 研究作業ログ
 
+## 2026-10-30 — 分枝操作の同定とR3認定の窓口
+
+前回head `622dda6fda2cdcc60cef0f8fe876328a2dfdc67a` 以後、外部による追加コミットはない。mainも `4a0f32d8fdd87f7daa6a3f0a9cac4c81b6fac5c2` のまま。全リモートブランチをmainとの祖先関係で照合し、未統合tipは `research/r5d-synthesis` だけだった。[PR #24](https://github.com/kosukeya/t-search/pull/24)はDraft/open・未マージで、コメント・submitted reviews・inline threadsはいずれも0。PR本文と8ファイルのMarkdown差分、main/研究ブランチのREADME/roadmap、R5仕様・報告・主張台帳と前回監査、R3a/b/cの仕様・報告・17件の台帳・認定器を読んだ。上位とリポジトリtreeにAGENTS.mdはない。
+
+前回保留だったCIを実際のcheckoutとテストログまで確認した。
+
+| 実行 | 検証したコミット | 結果 |
+| --- | --- | --- |
+| [push #40797100627](https://github.com/kosukeya/t-search/actions/runs/40797100627) | `622dda6fda2cdcc60cef0f8fe876328a2dfdc67a` | success。1424テスト・18サブテスト、581.40秒 |
+| [PR #40797104488](https://github.com/kosukeya/t-search/actions/runs/40797104488) | head `622dda6...` とmainのmerge ref `8ee99dee3f3bb3d62494487a356e981c741589c0` | success。同数、750.60秒 |
+| [main push #40434142231](https://github.com/kosukeya/t-search/actions/runs/40434142231) | `4a0f32d8fdd87f7daa6a3f0a9cac4c81b6fac5c2` | successを再確認。前回記録の1424テスト・18サブテスト |
+
+**開始時の要約:** R5a〜cはmain、R5dと条件付き保証はPR内。全体履歴の表現・内部記録変化・条件付き予測を区別できたが、装置・位相・入力差の根拠は仮定を伴う。単一事実の現実化・存在論的becomingは未解決。次に判断するのは、R3の非選択チャネル認定へ分枝確率を足すことで、前回既知とした分枝操作まで決められるかである。
+
+一課題を[分枝操作の同定監査](t_search_instrument_audit_protocol.md)に固定し、[解析・再現コード・12件の主張台帳](t_search_instrument_audit.md)を完成した。同じQ内で、非選択チャネルが全入力でΔ_Z、各分枝確率が常に1/2の操作対を構成した。＋入力の条件付き状態距離は各1/√2だが、フラグを捨てた量子出力もフラグ周辺分布も一致する。フラグとX出力の同時確率を全て保持するとTV=1/2となり、識別に欠けていた情報を示せた。厳密なユニタリ非選択チャネルでは各分枝が同じユニタリに比例する例外も証明した。
+
+同じ未知CP操作全体に成り立つ前回の上限は保持される。特定の分枝状態や達成読出しの同定と、全操作に一様な保証を混同しない。一般の量子ビット分枝写像に十分な追加データも、四入力×X/Y/Zの未正規化同時確率として明示した。実機認定・有限標本推定器は実装していない。
+
+α={0,π/8,π/4}の固定照合で、12演算子恒等式、Q全空間の6効果行列、36設定の144生確率、24分枝演算子再構成、独立Choi/Bellと既存R3認定器を照合。最大残差4.440892098500626e-16。掲載コードの実行環境はPython 3.12.14 / NumPy 2.3.5。初回のパッケージimportはnetworkx未導入で失敗したが、独立した認定器をrunpyで読んで再実行し成功した。確率のクリップ、全体成功に見せる選別、既存JSONの再生成は行わない。
+
+今回の変更はMarkdownだけ。全体pytestのローカル再実行はせず、文書から掲載コードを抽出して再実行し、同じ結果を確認した。変更した5文書の相対リンク105件、主張ID12件、表の列数、R3b/R5b/R5cのソースhash19項目・参照JSON hash2項目、git diff --checkを照合した。基点695追跡ファイル中692を保持し、既存Markdown 3件と新規Markdown 2件だけを変更。新しい文書headのCIを上表の基点成功と分け、PRの最新検証欄へ記録する。旧R3/R5の報告・仕様・台帳・数値証拠、README/roadmapの以前の本文と過去ログは保持した。
+
+**次の判断:** 総括・条件付き保証・窓口監査のレビューと統合。さらに進む場合は、具体的な条件付き予測でどの校正誤差を保証する必要があるかを先に固定する。全体の表現、分枝操作の同定、主体間の事実同定、一事実の現実化を同一視しない。
+
+以下の2026-10-29以前の記録は当時の状態として保持する。
+
 ## 2026-10-29 — 条件付き予測の保証と反例の監査
 
 前回head `7a9c8d644cc06b618bf5c3990bd07d12259a4222` 以後、研究ブランチの追加コミットはない。mainも `4a0f32d8fdd87f7daa6a3f0a9cac4c81b6fac5c2` のまま。R5dは[PR #24](https://github.com/kosukeya/t-search/pull/24)にのみあり、Draft/open・未マージ。会話コメント、submitted reviews、inline threadsは全て0件だった。mainと研究ブランチのREADME/roadmap、PR本文・6ファイル差分、最新仕様・報告・台帳を読み、上位と各treeにAGENTS.mdがないことを確認した。

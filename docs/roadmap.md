@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — instrument information audit (2026-10-30)
+
+The [report and 12-claim ledger](t_search_instrument_audit.md), following its [protocol](t_search_instrument_audit_protocol.md), complete a comparison with R3's certification window. Even exact knowledge of a nonselective channel and every branch probability generally leaves different conditional operations possible. The constructed pair has branch probabilities 1/2 and identical dephasing channels, yet different conditional states. Joint flag/output measurements supply missing correlations; exact-unitary channels form an explicit exception.
+
+The previous same-instrument conditional bounds remain valid without identifying each Kraus matrix. The new report distinguishes that guarantee from predicting a particular filter/readout, and demonstrates a sufficient linear reconstruction under trusted qubit assumptions. All 36 settings/144 probabilities and 24 reconstructed operator comparisons pass within 4.45e-16; the report contains executable checks. This is an analytic follow-up, without a new certifier, physical-device certification or finite-shot statistics.
+
+Main remains at R5c. R5d and both audits continue in Draft PR #24 on the existing branch. The previous head `622dda6fda2cdcc60cef0f8fe876328a2dfdc67a` passed PR/push CI with 1424 tests and 18 subtests each; new-head CI is separate. Review/integration and the need for a specific calibration-error guarantee are the next judgments. Old specifications, code, fixtures and completion decisions are retained; the following dated sections keep their checkpoint scope.
+
 ## Current follow-up — conditional prediction audit (2026-10-29)
 
 The [bounded audit](t_search_conditioning_audit.md) follows R5d’s separation of selective and nonselective predictions. Its [protocol](t_search_conditioning_audit_protocol.md) fixes one question: what extra information turns all-outcome error into a conditional guarantee? The analysis is complete, with a branch-mass bound, a rare-filter counterexample, exact agreement after the original F1 Z readout, and a sufficient relative-coherence bound that also applies to R5’s uniform-over-input approximation. Pair-specific small error and uniform small error remain distinct.

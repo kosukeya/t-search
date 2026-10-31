@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — conditional error budget from R3 (2026-10-31)
+
+The [report and 12-claim ledger](t_search_branch_bound.md) complete the [branch-bound protocol](t_search_branch_bound_protocol.md). A nonselective qubit identity-target certificate with lower bound L, plus a separately justified branch probability p_b, yields the sufficient conditional distance bound min(1,sqrt(2(1-L)/p_b)). The proof separates branch identification from a bound valid for all compatible instruments. The exact-unitary exception from the previous audit is recovered at L=1.
+
+Rare flagged phase errors show why high nonselective fidelity alone does not control every conditional output, and coherent errors exhibit square-root scaling. All 17 declared instruments, six inputs, 68 operator identities and 152 positive branches pass the checks; 28 analytically zero branches are retained without normalization. Maximum residual is 5.56e-16. The new report preserves actual numerical inequality excess rather than replacing it by zero.
+
+Main remains at R5c; R5d and the follow-ups continue on the same Draft PR #24. Baseline `5689496279c4c2519bf459fc26a068e838006e7a` passed PR/push CI, both with 1424 tests and 18 subtests. Existing implementation, tests, numeric fixtures and closure decisions remain fixed. The next judgment is the required conditional error and the input domain of the probability floor; finite-shot, SPAM and wiring certification are not completed here. New-head CI is tracked separately. Earlier dated sections retain their checkpoint scope.
+
 ## Current follow-up — instrument information audit (2026-10-30)
 
 The [report and 12-claim ledger](t_search_instrument_audit.md), following its [protocol](t_search_instrument_audit_protocol.md), complete a comparison with R3's certification window. Even exact knowledge of a nonselective channel and every branch probability generally leaves different conditional operations possible. The constructed pair has branch probabilities 1/2 and identical dephasing channels, yet different conditional states. Joint flag/output measurements supply missing correlations; exact-unitary channels form an explicit exception.

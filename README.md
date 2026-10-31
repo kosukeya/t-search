@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — conditional error budget from R3 (2026-10-31)
+
+The [branch-bound report and 12-claim ledger](docs/t_search_branch_bound.md), following its [protocol](docs/t_search_branch_bound_protocol.md), complete one bounded question: how much does an R3 nonselective fidelity certificate guarantee after conditioning on a branch? For a qubit channel with identity as target, fidelity lower bound L and a separately justified probability p_b>0 give the sufficient state-distance bound min(1,sqrt(2(1-L)/p_b)). The report proves this without identifying the branch matrices; it is not claimed to be the optimal constant.
+
+A channel can have fidelity 0.999999 while a branch of probability 0.000001 has conditional error 1. Conversely, a justified probability floor makes a concrete conditional prediction budget possible. Seventeen fixed instruments, six inputs, 68 operator identities and 152 positive branches support the proof; 28 zero branches are not normalized. Maximum residual is 5.56e-16, with inequality excess below 2.23e-16. The report includes executable checks and a nonunital/coarse-graining control.
+
+Main still contains R5a–R5c. R5d and the follow-ups remain in [Draft PR #24](https://github.com/kosukeya/t-search/pull/24); baseline `5689496279c4c2519bf459fc26a068e838006e7a` passed PR/push CI with 1424 tests and 18 subtests each. New-head CI is separate. The next judgment is review/integration and the target conditional error and probability floor, before adding finite-shot or calibration uncertainty. Those statistical/device validations and ontological becoming remain unresolved. Older sections retain their dated checkpoint scope.
+
 ## Current follow-up — instrument information audit (2026-10-30)
 
 The [instrument audit](docs/t_search_instrument_audit.md) and [protocol](docs/t_search_instrument_audit_protocol.md) complete one question left by the conditioning audit: does knowing the nonselective channel and branch probabilities determine conditional operations? In general it does not. A Q-only pair has the same dephasing channel and probability 1/2 for every branch and input, but conditional output distance 1/sqrt(2) for the + input. Joint flag/output measurements distinguish the pair. The report also proves the exact-unitary exception and a sufficient reconstruction from joint probabilities under trusted qubit assumptions.

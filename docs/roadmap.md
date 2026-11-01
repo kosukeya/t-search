@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — finite-count conditional guarantees (2026-11-01)
+
+The [report and 12-claim ledger](t_search_finite_counts.md) complete the [finite-count protocol](t_search_finite_counts_protocol.md). Inverting a one-sided KL tail and allocating failure probability across four correctness rates and one branch mass produces simultaneous lower limits for the previous conditional-distance bound. This explicitly replaces the exact-probability assumption; empirical frequencies are not passed to the old R3 certifier as exact data.
+
+The audit proves fixed-plan coverage, retains a frequency-plug-in counterexample with false zero-error claim probability 4/27, and verifies 303 exact binomial coverage cases, 17,576 count decisions at five model probabilities and 145 high-precision roots. Constructed count examples include withholding at zero branch count and sufficient conditional bounds at declared large counts. Those counts are examples, not executed physical trials or minimum shot requirements.
+
+R5c remains integrated in main; R5d and all follow-ups continue in Draft PR #24 on the same branch. Previous head `d0b65de9a673f477e497153ba9529f138210c277` passed PR/push CI with 1424 tests and 18 subtests each. New-head CI is separate. Review/integration and actual evidence for IID/calibration are the next judgments; optional stopping, unknown SPAM, device resources and temporal ontology are not certified. Old evidence and dated completion decisions remain fixed.
+
 ## Current follow-up — conditional error budget from R3 (2026-10-31)
 
 The [report and 12-claim ledger](t_search_branch_bound.md) complete the [branch-bound protocol](t_search_branch_bound_protocol.md). A nonselective qubit identity-target certificate with lower bound L, plus a separately justified branch probability p_b, yields the sufficient conditional distance bound min(1,sqrt(2(1-L)/p_b)). The proof separates branch identification from a bound valid for all compatible instruments. The exact-unitary exception from the previous audit is recovered at L=1.

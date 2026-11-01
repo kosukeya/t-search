@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — finite-count conditional guarantees (2026-11-01)
+
+The [finite-count audit and 12-claim ledger](docs/t_search_finite_counts.md), following its [protocol](docs/t_search_finite_counts_protocol.md), complete the next bounded question: how can finite observations justify the fidelity and branch-probability lower bounds used in conditional predictions? One-sided KL/Chernoff limits and a five-way failure-budget allocation connect fixed-size Bernoulli counts to the previous quantum bound with simultaneous coverage at least 95%, under declared trusted-device/IID assumptions.
+
+Replacing probabilities directly by zero-error frequencies can falsely assert conditional error zero with probability 4/27 in the flagged-phase-error control. The corrected procedure distinguishes withholding from a nontrivial bound. Checks include 303 exact rational binomial coverage calculations, all 17,576 count decisions for a control and five model probabilities, and 145 independently computed high-precision roots. Six constructed count examples and two endpoints are recorded; they are not experimental shot data. Existing code, tests and numeric fixtures remain unchanged.
+
+Main remains at R5c. R5d and the follow-ups are in [Draft PR #24](https://github.com/kosukeya/t-search/pull/24). Previous head `d0b65de9a673f477e497153ba9529f138210c277` passed PR/push CI, both with 1424 tests and 18 subtests; new-head CI is separate. The next judgment is review/integration and which actual evidence can justify calibration/IID for a specified input, branch, error and failure budget. Optional stopping, unknown SPAM and ontological becoming remain unresolved. Earlier sections retain their checkpoint scope.
+
 ## Current follow-up — conditional error budget from R3 (2026-10-31)
 
 The [branch-bound report and 12-claim ledger](docs/t_search_branch_bound.md), following its [protocol](docs/t_search_branch_bound_protocol.md), complete one bounded question: how much does an R3 nonselective fidelity certificate guarantee after conditioning on a branch? For a qubit channel with identity as target, fidelity lower bound L and a separately justified probability p_b>0 give the sufficient state-distance bound min(1,sqrt(2(1-L)/p_b)). The report proves this without identifying the branch matrices; it is not claimed to be the optimal constant.

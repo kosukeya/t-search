@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — calibration budgets and conditional guarantees (2026-11-02)
+
+The [calibration-budget report and 12-claim ledger](docs/t_search_calibration_budget.md), following its [protocol](docs/t_search_calibration_budget_protocol.md), complete one question: how do externally justified preparation and measurement error limits change the finite-count conditional guarantee? Correctness lower limits lose the sum of preparation distance and measurement-effect error; the ideal-input branch mass also loses the target preparation budget. Predictions for an ideal input and an actually prepared input have different bounds and withholding conditions.
+
+The audit derives these bounds, evaluates 24 constructed count examples and three target preparation examples, and checks eight matrix cases against analytic expressions. Without calibration, identity and Z phase-flip channels can return the same five all-success records while ideal-input errors are 0 and 1. With a known budget, more counts still leave a floor in this sufficient certificate. This is a sensitivity analysis under assumed calibration limits; no actual calibration or physical shots were executed. IID and device-resource assumptions remain unverified.
+
+Main remains at R5c; R5d and all follow-ups remain in [Draft PR #24](https://github.com/kosukeya/t-search/pull/24). Baseline `50f27e6f0762966570910df6564cc4a6c26a3839` passed push CI at that exact head and PR CI at merge `df53e8284396cca3bcc2b564c9df0a3ce262d2fa`, both with 1424 tests and 18 subtests. New-head CI is separate. The next judgment is review/integration and which independent evidence can justify the required calibration budgets and IID for a specified input, branch and error/failure target. Record frequencies, calibrated records, observer agreement, predictive stability, actualization and ontological becoming remain distinct. Earlier sections retain their checkpoint scope.
+
 ## Current follow-up — finite-count conditional guarantees (2026-11-01)
 
 The [finite-count audit and 12-claim ledger](docs/t_search_finite_counts.md), following its [protocol](docs/t_search_finite_counts_protocol.md), complete the next bounded question: how can finite observations justify the fidelity and branch-probability lower bounds used in conditional predictions? One-sided KL/Chernoff limits and a five-way failure-budget allocation connect fixed-size Bernoulli counts to the previous quantum bound with simultaneous coverage at least 95%, under declared trusted-device/IID assumptions.

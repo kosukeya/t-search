@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — calibration budgets and conditional guarantees (2026-11-02)
+
+The [report and 12-claim ledger](t_search_calibration_budget.md) complete the [calibration-budget protocol](t_search_calibration_budget_protocol.md). Preparation trace-distance and measurement-effect norm budgets conservatively correct the previous finite-count fidelity lower bound. A target preparation budget also changes the ideal-input branch probability; an actually prepared input has a separate distance bound. The fixed-plan coverage is retained only under the stated external calibration limits and previous IID/device assumptions.
+
+All 24 constructed count cases, three target preparation cases, eight matrix controls and 35 high-precision comparisons were executed, alongside the previous exact-binomial audit. An uncalibrated loss of basis complementarity makes identity and Z channels indistinguishable in all five recorded rates despite ideal-input distances 0 and 1. A systematic budget leaves a floor in this particular sufficient certificate even at infinite counts. Neither that floor nor failure to issue a small bound is a measured lower limit on physical error.
+
+Main remains at R5c, with R5d and the supplements in the same Draft PR #24. Baseline `50f27e6f0762966570910df6564cc4a6c26a3839` passed push CI at the head and PR CI at merge `df53e8284396cca3bcc2b564c9df0a3ce262d2fa`, both with 1424 tests and 18 subtests; new-head CI is separate. Existing code, tests, numerical evidence and historical decisions remain fixed. Review/integration and actual evidence for calibration/IID are the next judgments. This analysis does not supply that independent evidence, a new interpretation, actualization or ontological becoming.
+
 ## Current follow-up — finite-count conditional guarantees (2026-11-01)
 
 The [report and 12-claim ledger](t_search_finite_counts.md) complete the [finite-count protocol](t_search_finite_counts_protocol.md). Inverting a one-sided KL tail and allocating failure probability across four correctness rates and one branch mass produces simultaneous lower limits for the previous conditional-distance bound. This explicitly replaces the exact-probability assumption; empirical frequencies are not passed to the old R3 certifier as exact data.

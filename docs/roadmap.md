@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — time averages under changing processing (2026-11-03)
+
+The [report and 12-claim ledger](t_search_temporal_average.md) complete the [temporal-average protocol](t_search_temporal_average_protocol.md). Identical distribution can be relaxed to independent variation over a fixed sequence, provided all five settings measure the same time mixture. The previous KL limits, calibration budgets and conditional bound then apply to the average instrument. The proof does not supply individual-time or future guarantees and does not certify the common-block/reset/independence assumptions.
+
+Forty-five Poisson-binomial distributions were checked by exact rational summation, all 17,576 decisions were evaluated at three fixed changing error profiles, and seven matrix process sequences were checked at three inputs. Controls retain temporal reweighting after conditioning, an average error of 0.001 with final error 1, a failure from different setting-time weights, indistinguishable past records with different next operations, and a dependent-stream counterexample. Generality comes from the analysis, not the finite controls.
+
+Main remains at R5c; R5d and the supplements continue in the same Draft PR #24. Baseline `9005f761ca592a5d4e6f74400688b135b28800f1` passed push CI at the head and PR CI at merge `c630a15934f2ddaac166ff9558f87b715a0b0bfd`, each with 1424 tests and 18 subtests. New-head CI is separate. Code, tests, numeric fixtures and historical decisions are preserved. Next decide which temporal target matters and which independent calibration, exposure, reset and independence evidence can justify it; ontological becoming remains unresolved.
+
 ## Current follow-up — calibration budgets and conditional guarantees (2026-11-02)
 
 The [report and 12-claim ledger](t_search_calibration_budget.md) complete the [calibration-budget protocol](t_search_calibration_budget_protocol.md). Preparation trace-distance and measurement-effect norm budgets conservatively correct the previous finite-count fidelity lower bound. A target preparation budget also changes the ideal-input branch probability; an actually prepared input has a separate distance bound. The fixed-plan coverage is retained only under the stated external calibration limits and previous IID/device assumptions.

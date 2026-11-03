@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — time averages under changing processing (2026-11-03)
+
+The [temporal-average report and 12-claim ledger](docs/t_search_temporal_average.md), following its [protocol](docs/t_search_temporal_average_protocol.md), complete one question: what does a finite-record guarantee mean when processing changes with time? Independent, non-identical score streams retain the previous KL lower limits for their mean probabilities. If all five settings have the same time weights, the limits and calibration budgets bound the common average instrument. They do not bound every time or the next trial.
+
+Checks include 45 exact rational Poisson-binomial distributions, all 17,576 count decisions for three changing error profiles, and seven process sequences with three inputs. The average distance can be 0.001 while the final distance is 1. Different setting-time weights can even make five all-success records give an invalid average bound. Time conditioning also changes branch weights. These are controlled calculations, with no physical shots or validation of independence, resets, calibration or common exposure.
+
+Main remains at R5c; R5d and all supplements are in [Draft PR #24](https://github.com/kosukeya/t-search/pull/24). Baseline `9005f761ca592a5d4e6f74400688b135b28800f1` passed push CI at that exact head and PR CI at merge `c630a15934f2ddaac166ff9558f87b715a0b0bfd`, both with 1424 tests and 18 subtests. New-head CI is separate. The next judgment is review/integration and whether the intended prediction concerns a period average, a specified time or a future trial, with independent evidence for the corresponding device assumptions. Global representation, record formation, observer agreement, predictive stability, actualization and ontological becoming remain separate. Earlier sections retain their checkpoint scope.
+
 ## Current follow-up — calibration budgets and conditional guarantees (2026-11-02)
 
 The [calibration-budget report and 12-claim ledger](docs/t_search_calibration_budget.md), following its [protocol](docs/t_search_calibration_budget_protocol.md), complete one question: how do externally justified preparation and measurement error limits change the finite-count conditional guarantee? Correctness lower limits lose the sum of preparation distance and measurement-effect error; the ideal-input branch mass also loses the target preparation budget. Predictions for an ideal input and an actually prepared input have different bounds and withholding conditions.

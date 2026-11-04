@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — averages under record feedback (2026-11-04)
+
+[PR #24](https://github.com/kosukeya/t-search/pull/24) was merged on 2026-11-03 at `96aea72c205b130e5f6fc83e3abbc415bd5268ab`. R5d and the six supplements through temporal averages are now integrated in main. The merge tree equals the previous research head `3141b15cf06742867e51300a3817506079aea29c`. No unmerged research tip remained, so this continuation starts from main on [research/record-feedback-average](https://github.com/kosukeya/t-search/tree/research/record-feedback-average).
+
+The [report, reproduction code and 12-claim ledger](docs/t_search_record_feedback.md), following its [protocol](docs/t_search_record_feedback_protocol.md), complete one question: can past classical records change later processing while finite observations still bound a meaningful average? A fixed-size martingale lower bound supports the predictable average along the realized history under the declared shared-block and device assumptions. This random target is separate from a fixed population channel, a state selected by the complete record, or the next operation. The bound is conservative.
+
+Checks include exact worst-policy dynamic programs with forward verification, nine complete feedback distributions, 768 histories and 4608 input/branch matrix cases, seven constructed count examples, and 161 high-precision lower limits. No violation of the old KL bound was found in the finite control class; its general validity under feedback remains unresolved. These are calculations, with no physical shots or device certification. Main's merge CI passed 1424 tests and 18 subtests at the exact merge head; the new documentation head's CI is separate. Next review this continuation and choose the intended prediction target and independent evidence for the remaining assumptions. Actualization and ontological becoming remain unresolved. Earlier sections retain their checkpoint scope.
+
 ## Current follow-up — time averages under changing processing (2026-11-03)
 
 The [temporal-average report and 12-claim ledger](docs/t_search_temporal_average.md), following its [protocol](docs/t_search_temporal_average_protocol.md), complete one question: what does a finite-record guarantee mean when processing changes with time? Independent, non-identical score streams retain the previous KL lower limits for their mean probabilities. If all five settings have the same time weights, the limits and calibration budgets bound the common average instrument. They do not bound every time or the next trial.

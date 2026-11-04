@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — averages under record feedback (2026-11-04)
+
+R5d and all six supplements through temporal averages were integrated by [PR #24](https://github.com/kosukeya/t-search/pull/24) at `96aea72c205b130e5f6fc83e3abbc415bd5268ab` on 2026-11-03. The merge tree matches the previous head `3141b15cf06742867e51300a3817506079aea29c`. With no unmerged research tip remaining, [research/record-feedback-average](https://github.com/kosukeya/t-search/tree/research/record-feedback-average) continues from this main baseline.
+
+The [record-feedback report and 12-claim ledger](t_search_record_feedback.md) complete the [protocol](t_search_record_feedback_protocol.md). Classical records may select the next block's instrument. Conditional martingale increments replace independence, while a common instrument within each block, quantum resets, calibration and wiring assumptions remain. The guarantee concerns the predictable average along the realized history, a random target that must not be substituted for a fixed channel, a state conditioned on all outcomes, or a future process.
+
+Exact worst-policy/forward checks, nine full feedback distributions, all 768 length-eight histories with 4608 input/branch cases, seven constructed count examples and 161 high-precision comparisons passed. The finite control search found no counterexample to the old KL bound and does not prove it generally. Small feedback samples issued only withholding or the trivial bound. The main merge CI passed 1424 tests and 18 subtests; new-head CI is separate. Review/integration, the intended target and independent physical evidence remain the next judgments. Existing specifications, code, results and historical decisions are preserved.
+
 ## Current follow-up — time averages under changing processing (2026-11-03)
 
 The [report and 12-claim ledger](t_search_temporal_average.md) complete the [temporal-average protocol](t_search_temporal_average_protocol.md). Identical distribution can be relaxed to independent variation over a fixed sequence, provided all five settings measure the same time mixture. The previous KL limits, calibration budgets and conditional bound then apply to the average instrument. The proof does not supply individual-time or future guarantees and does not certify the common-block/reset/independence assumptions.

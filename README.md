@@ -2,6 +2,14 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — KL coverage under rare-event feedback (2026-11-05)
+
+Main remains at [96aea72](https://github.com/kosukeya/t-search/commit/96aea72c205b130e5f6fc83e3abbc415bd5268ab), with R5d and the six supplements through temporal averages integrated. No external changes followed the previous [decbbc3](https://github.com/kosukeya/t-search/commit/decbbc3089ab8334df48b572f27e28903b7b31ac) checkpoint. The record-feedback continuation remains in [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) on the same research branch.
+
+The [new audit, reproduction code and 12-claim ledger](docs/t_search_kl_feedback_audit.md), following its [protocol](docs/t_search_kl_feedback_protocol.md), settle one remaining question negatively: the previous independent-stream KL lower bound cannot be transferred without restriction to the random predictable average under classical feedback. In a predeclared fixed-length control with N=1000 and active probability 0.01, a nominal one-sided 1% bound fails with probability 0.013552886802066457. All N trials are retained; only later probabilities switch to zero. This preserves the previous smaller-grid negative finding and the independent-stream theorem.
+
+Exact integer probability sums, rational logarithm intervals, independent high-precision roots/probabilities and a qubit realization support the counterexample. Three of six predeclared cases exceed 1%; three do not. The valid additive control never fails here but always returns zero. A single-score 1% failure does not establish failure of the full five-setting 5% quantum error guarantee. No physical shots or ontological conclusion follow. Baseline push CI checked decbbc3 and PR CI checked merge 6e35a06, both passing 1424 tests and 18 subtests; new-head CI is separate. Next review the applicability restriction and choose whether to retain the conservative bound or audit a sharper bound for a specified target/control class. Earlier sections retain their dated scope.
+
 ## Current follow-up — averages under record feedback (2026-11-04)
 
 [PR #24](https://github.com/kosukeya/t-search/pull/24) was merged on 2026-11-03 at `96aea72c205b130e5f6fc83e3abbc415bd5268ab`. R5d and the six supplements through temporal averages are now integrated in main. The merge tree equals the previous research head `3141b15cf06742867e51300a3817506079aea29c`. No unmerged research tip remained, so this continuation starts from main on [research/record-feedback-average](https://github.com/kosukeya/t-search/tree/research/record-feedback-average).

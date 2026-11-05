@@ -2,6 +2,14 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — KL coverage under rare-event feedback (2026-11-05)
+
+The [rare-event feedback audit and 12-claim ledger](t_search_kl_feedback_audit.md), following its [pre-execution protocol](t_search_kl_feedback_protocol.md), complete one bounded question from the record-feedback continuation. The old KL lower bound for independent scores is not valid without restriction for a random predictable average: a fixed-N, past-only control gives failure probability 0.013552886802066457 at nominal beta=0.01 for N=1000 and active p=0.01. Switching probabilities to zero retains all remaining trials. The prior finite-grid negative finding and independent-stream guarantee are preserved.
+
+All six predeclared conditions were evaluated with exact integer probabilities and certified rational-log boundaries. Three exceed beta; three do not. Independent Decimal calculations, two backward rational recursions, closed-form first-success controls and a minimal CP instrument provide checks. The previous additive bound has zero failures but only zero lower limits here. The full five-setting alpha=0.05 quantum error procedure has not been shown to fail; device assumptions and physical shots remain unvalidated.
+
+Main remains at 96aea72 with R5d and six supplements integrated. There are no external changes since decbbc3. Continue the same branch and Draft PR #25. Baseline push CI at decbbc3 and PR CI at merge 6e35a06 passed 1424 tests and 18 subtests each; the new head has separate CI. Next review the exclusion of unrestricted KL reuse under feedback, then decide whether a specified prediction target/control class needs a sharper valid bound. Global representation, internal records, observer agreement, predictive stability, actualization and ontological becoming remain distinct. Earlier dated sections retain their checkpoint scope.
+
 ## Current follow-up — averages under record feedback (2026-11-04)
 
 R5d and all six supplements through temporal averages were integrated by [PR #24](https://github.com/kosukeya/t-search/pull/24) at `96aea72c205b130e5f6fc83e3abbc415bd5268ab` on 2026-11-03. The merge tree matches the previous head `3141b15cf06742867e51300a3817506079aea29c`. With no unmerged research tip remaining, [research/record-feedback-average](https://github.com/kosukeya/t-search/tree/research/record-feedback-average) continues from this main baseline.

@@ -2,6 +2,12 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — positive branch limits under feedback (2026-11-06)
+
+The completed audit fixes an exponential multiplier of 4 before observing counts. The conditional martingale and pathwise arithmetic–geometric mean bound establish 99% coverage for a single predictable binary mean at fixed N. Exact probabilities in the six previous adaptive controls show when this yields a positive limit. A constructed count example favors the additive bound, and small-count controls separate unconditional coverage from failure among issued limits. [Protocol](t_search_feedback_count_bound_protocol.md) · [Report and claim ledger](t_search_feedback_count_bound.md)
+
+The research branch and Draft PR #25 carry this continuation, while main has integrated R5d and the six supplements through time averages. The previous head and PR merge each passed 1424 tests and 18 subtests. The new head has its own CI. Next specify the required conditional state error and whether a guarantee must control failures over all paths or among issued results. Observer agreement, actualization and ontological becoming remain open. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
 ## Current follow-up — KL coverage under rare-event feedback (2026-11-05)
 
 The [rare-event feedback audit and 12-claim ledger](t_search_kl_feedback_audit.md), following its [pre-execution protocol](t_search_kl_feedback_protocol.md), complete one bounded question from the record-feedback continuation. The old KL lower bound for independent scores is not valid without restriction for a random predictable average: a fixed-N, past-only control gives failure probability 0.013552886802066457 at nominal beta=0.01 for N=1000 and active p=0.01. Switching probabilities to zero retains all remaining trials. The prior finite-grid negative finding and independent-stream guarantee are preserved.

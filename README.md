@@ -2,6 +2,12 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — positive branch limits under feedback (2026-11-06)
+
+A fixed multiplier of 4 gives a count-only lower limit for the predictable mean, using conditional normalization and the arithmetic–geometric mean inequality. In the previous 1000-trial adaptive counterexample, the limit is positive on 98.63% of paths and exceeds the target on 0.382% of paths. The additive lower limit was zero on every path. Across all six original controls the new rule stays within the 1% unconditional budget. Two low-count controls exceed 3% failure among paths where the limit is positive. [Protocol](docs/t_search_feedback_count_bound_protocol.md) · [Report, reproduction and claim ledger](docs/t_search_feedback_count_bound.md)
+
+Main contains R5d and the six supplements through time averages. The record-feedback audits continue in Draft PR #25. Baseline push and PR CI each passed 1424 tests and 18 subtests. The checks for this update and the exact CI targets are tracked in the research log and PR. A positive branch-probability limit leaves conditional state error and physical trust conditions to be assessed separately. The next decision is which error and coverage target a future conditional prediction must satisfy. [Main integration](https://github.com/kosukeya/t-search/pull/24) · [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](docs/t_search_research_log.md)
+
 ## Current follow-up — KL coverage under rare-event feedback (2026-11-05)
 
 Main remains at [96aea72](https://github.com/kosukeya/t-search/commit/96aea72c205b130e5f6fc83e3abbc415bd5268ab), with R5d and the six supplements through temporal averages integrated. No external changes followed the previous [decbbc3](https://github.com/kosukeya/t-search/commit/decbbc3089ab8334df48b572f27e28903b7b31ac) checkpoint. The record-feedback continuation remains in [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) on the same research branch.

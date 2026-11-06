@@ -1,5 +1,20 @@
 # t-search 研究作業ログ
 
+## 2026-11-06 — 記録フィードバック下の正の分枝確率下限
+
+前回公開head 4e962b9b42918b841e26775737e95cd62e7b5088 以降の外部コミット差分は空。mainは96aea72c205b130e5f6fc83e3abbc415bd5268abで、R5dと時間平均までの六補足を統合済み。未統合の研究tipは research/record-feedback-average のみ。PR #25はDraft、開始時点で2コミット・7 Markdown差分、提出レビュー・コメントは0。PR本文と差分、mainと研究ブランチのREADME・roadmap、直近の報告・仕様・台帳、R3の信頼条件、CI定義を確認した。上位とリポジトリに適用されるAGENTS.mdはなかった。[前回公開head](https://github.com/kosukeya/t-search/commit/4e962b9b42918b841e26775737e95cd62e7b5088) · [Draft PR #25](https://github.com/kosukeya/t-search/pull/25)
+
+| 基点CI | 実際のcheckout | 結果 |
+| --- | --- | --- |
+| [push #41942447707](https://github.com/kosukeya/t-search/actions/runs/41942447707) | 4e962b9b42918b841e26775737e95cd62e7b5088 | 1424テスト・18サブテスト成功、945.90秒 |
+| [PR #41942453451](https://github.com/kosukeya/t-search/actions/runs/41942453451) | e1cd9375293d626c69e3e365ae933e3e6bb1cdef | 1424テスト・18サブテスト成功、942.83秒 |
+
+前回は三条件で旧KLの失敗確率が1%を超え、全六条件で加法下限がゼロだった。そこで同じ制御に対し、観測前に指数の底4を固定した下限の被覆と正値の頻度を一課題として調べた。条件付き正規化・算術幾何平均・Markovで一般の予測可能二値列への固定Nの下限を証明。主例の正値は98.6311%、失敗は0.3817%。六条件のうち一条件では常にゼロ。小標本二条件で正値だけに条件付けた失敗率は3%超だった。加法法が強い構成カウント例も保存した。[実行前仕様](t_search_feedback_count_bound_protocol.md) · [報告・再現コード・10件台帳](t_search_feedback_count_bound.md)
+
+六条件の整数DP、旧分子hash、198整数境界、80桁Decimal後向き再帰、非適応六対照の厳密二項和を照合。確率の最大絶対差は8e−80。掲載コードを抽出して原本と比較し、再実行JSONが完全一致。既存文書整合30ファイルの196 assertion関数を直接実行して成功（他モジュールに依存する3ファイルは対象外）。相対リンク・表・主張ID10件、ソースhash19項目・参照JSON hash2項目、基点709ファイル中706 blobと旧進捗本文を照合した。変更は既存進捗3文書への追記と新規2文書。 研究計算は実行済み、ローカル全体pytestは環境にpytestがないため未実行。新headの回帰CIはPR本文に分離して記録する。
+
+今回の保証対象は実現履歴に沿う予測可能平均。単一の分枝確率の下限と、その分枝での状態距離を区別した。五設定の同時被覆に接続するには各手法と予算の事前指定が必要。実機・五設定の距離保証の発行頻度・観測者間一致・単一事実の現実化・存在論的becomingは未評価。次に決めるのは要求距離と、全経路での失敗率か発行後の失敗率かという保証対象。
+
 ## 2026-11-05 — 希少事象の固定長制御による旧KL下限の被覆反例
 
 前回公開head [decbbc3089ab8334df48b572f27e28903b7b31ac](https://github.com/kosukeya/t-search/commit/decbbc3089ab8334df48b572f27e28903b7b31ac) からの外部コミット差分は空。mainは96aea72c205b130e5f6fc83e3abbc415bd5268abで、R5d・時間平均までの六補足を統合済み。未統合の研究tipは research/record-feedback-average だけ。[PR #25](https://github.com/kosukeya/t-search/pull/25)は開始時Draft/open、5 Markdown・1コミット、コメント・submitted reviews・inline threadsは全て0。本文・差分・レビュー、main/研究ブランチのREADME/roadmap、最新仕様・報告・12主張台帳、R3信頼条件とCI定義を読んだ。上位とtreeにAGENTS.mdはない。同じブランチ/PRを継承し、新しい研究系列を作っていない。

@@ -1,5 +1,20 @@
 # t-search 研究作業ログ
 
+## 2026-11-07 — フラグと出力の同時読出しによる分枝状態の保証
+
+基点76564dd30f41e712af29646bf4fc73be6dc77920からの外部コミット差分は空。mainの96aea72c205b130e5f6fc83e3abbc415bd5268abはR5dと時間平均までの六補足を統合済み。唯一の未統合研究tipはresearch/record-feedback-average。PR #25は開始時点でDraft、3コミット・9 Markdown差分、レビュー・コメントとも0。mainと研究ブランチのREADME・roadmap、前回の仕様・報告・台帳、PR本文と差分、CI定義を読んだ。適用されるAGENTS.mdは上位にもリポジトリ内にもなかった。[基点](https://github.com/kosukeya/t-search/commit/76564dd30f41e712af29646bf4fc73be6dc77920) · [Draft PR #25](https://github.com/kosukeya/t-search/pull/25)
+
+| 基点CI | 実際のcheckout | 結果 |
+| --- | --- | --- |
+| [push #42139825989](https://github.com/kosukeya/t-search/actions/runs/42139825989) | 76564dd30f41e712af29646bf4fc73be6dc77920 | 1424テスト・18サブテスト成功、748.06秒 |
+| [PR #42139833622](https://github.com/kosukeya/t-search/actions/runs/42139833622) | 9ab9bd51aadcbf57901c7dbde49ca35e19b60798 | 1424テスト・18サブテスト成功、947.88秒 |
+
+前回の分枝確率保証に続き、指定分枝の状態距離を一課題に選んだ。第五設定を固定入力のフラグと目標射影の同時読出しへ変更し、距離1/2、全経路の誤発行予算5%、三値倍率を事前固定。64試行の良好な対照で発行確率94.96%。真の忠実度を与えた既存上限式は1。混合とコヒーレントな装置は同じ読出し記録を与える一方、距離が1/2と1/√2に分かれる。後者で誤発行は約6.34e−6だが、発行した場合の誤り率は100%。[仕様](t_search_feedback_joint_readout_protocol.md) · [報告・再現コード・主張台帳](t_search_feedback_joint_readout.md)
+
+整数DPと独立の有理数計算が全八条件で厳密一致。136行列比較の最大残差4.45e−16未満。掲載コードの抽出再実行と出力一致、既存文書整合30ファイルの196 assertion（他モジュール依存の3ファイルは対象外）、リンク・表・台帳7件を照合した。基点711ファイル中708 blob、ソースhash19件・参照JSON hash2件と旧進捗本文を保持。 ローカル全体pytestは環境にpytestがなく未実行。新headのCIはPR本文で追跡する。
+
+全履歴の中で記録を用いる制御と分枝平均への予測保証を接続した。観測者間の一致、単一事実の現実化と存在論は別の論点。次は準備・射影・フラグ配線をどの独立証拠で制約できるかと、発行後の誤り率を別途要件にするかの判断。
+
 ## 2026-11-06 — 記録フィードバック下の正の分枝確率下限
 
 前回公開head 4e962b9b42918b841e26775737e95cd62e7b5088 以降の外部コミット差分は空。mainは96aea72c205b130e5f6fc83e3abbc415bd5268abで、R5dと時間平均までの六補足を統合済み。未統合の研究tipは research/record-feedback-average のみ。PR #25はDraft、開始時点で2コミット・7 Markdown差分、提出レビュー・コメントは0。PR本文と差分、mainと研究ブランチのREADME・roadmap、直近の報告・仕様・台帳、R3の信頼条件、CI定義を確認した。上位とリポジトリに適用されるAGENTS.mdはなかった。[前回公開head](https://github.com/kosukeya/t-search/commit/4e962b9b42918b841e26775737e95cd62e7b5088) · [Draft PR #25](https://github.com/kosukeya/t-search/pull/25)

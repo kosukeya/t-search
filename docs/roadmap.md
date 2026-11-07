@@ -2,6 +2,12 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — joint readout for a branch-state guarantee (2026-11-07)
+
+The fourth record-feedback audit measures the flag and target projector together for a fixed pure input. A conditional martingale and the arithmetic–geometric mean inequality bound the probability of falsely issuing a distance limit of 1/2 by 5% across paths. Eight exact probability controls and 136 matrix comparisons separate the readout law, the branch distance and error among issued results. The existing nonselective fidelity bound is vacuous in these controls even with exact probabilities. [Protocol](t_search_feedback_joint_readout_protocol.md) · [Report and claim ledger](t_search_feedback_joint_readout.md)
+
+The continuation is in Draft PR #25, with R5d and the six previous supplements integrated on main. Baseline push and PR CI both passed 1424 tests and 18 subtests. The next decision is how to constrain preparation, the target projector and flag wiring for a physical use, and whether the application needs a separate guarantee among issued results. Observer agreement, actualization and ontological becoming remain separate. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
 ## Current follow-up — positive branch limits under feedback (2026-11-06)
 
 The completed audit fixes an exponential multiplier of 4 before observing counts. The conditional martingale and pathwise arithmetic–geometric mean bound establish 99% coverage for a single predictable binary mean at fixed N. Exact probabilities in the six previous adaptive controls show when this yields a positive limit. A constructed count example favors the additive bound, and small-count controls separate unconditional coverage from failure among issued limits. [Protocol](t_search_feedback_count_bound_protocol.md) · [Report and claim ledger](t_search_feedback_count_bound.md)

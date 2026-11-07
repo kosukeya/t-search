@@ -2,6 +2,12 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — joint readout for a branch-state guarantee (2026-11-07)
+
+For a fixed pure input and flag, joint readout bounds the distance of the branch state of the predictable average. With a prespecified distance target of 1/2 and a 5% unconditional error budget, the rule issues on 94.96% of paths in a 64-trial favorable control. The earlier sufficient bound from nonselective fidelity is 1 even with exact probabilities in that control. Two instruments with the same complete readout law have distances 1/2 and 1/sqrt(2) in a separate control. Error conditional on issuance can reach 100% even when unconditional error is small. [Protocol](docs/t_search_feedback_joint_readout_protocol.md) · [Report, reproduction and claim ledger](docs/t_search_feedback_joint_readout.md)
+
+Main contains R5d and the six supplements through time averages. The joint readout continuation is in Draft PR #25. Baseline push and PR CI each passed 1424 tests and 18 subtests. Preparation, measurement and flag wiring require independent evidence for physical use. [Main integration](https://github.com/kosukeya/t-search/pull/24) · [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](docs/t_search_research_log.md)
+
 ## Current follow-up — positive branch limits under feedback (2026-11-06)
 
 A fixed multiplier of 4 gives a count-only lower limit for the predictable mean, using conditional normalization and the arithmetic–geometric mean inequality. In the previous 1000-trial adaptive counterexample, the limit is positive on 98.63% of paths and exceeds the target on 0.382% of paths. The additive lower limit was zero on every path. Across all six original controls the new rule stays within the 1% unconditional budget. Two low-count controls exceed 3% failure among paths where the limit is positive. [Protocol](docs/t_search_feedback_count_bound_protocol.md) · [Report, reproduction and claim ledger](docs/t_search_feedback_count_bound.md)

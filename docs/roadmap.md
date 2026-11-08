@@ -2,6 +2,12 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — missed failures in joint readout (2026-11-08)
+
+An independently justified lower bound on failure detection restores the 5% unconditional false-issuance guarantee for a fixed-input branch distance of 1/2. At 128 trials, a missed-failure control gives 52.72% false issuance without correction and 0.0862% with correction. The same lower bound reduces issuance to 15.64% in the zero-error control. Two instruments on opposite sides of the distance threshold have identical observed records under the common calibration bound. [Report, reproduction and claim ledger](t_search_feedback_readout_calibration.md) · [Protocol](t_search_feedback_readout_calibration_protocol.md)
+
+Main has integrated R5d and the six supplements through time averages. This work continues in Draft PR #25. Both baseline checkouts passed 1424 tests and 18 subtests. Physical calibration, flag misclassification and preparation errors remain to be assessed separately. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
 ## Current follow-up — joint readout for a branch-state guarantee (2026-11-07)
 
 The fourth record-feedback audit measures the flag and target projector together for a fixed pure input. A conditional martingale and the arithmetic–geometric mean inequality bound the probability of falsely issuing a distance limit of 1/2 by 5% across paths. Eight exact probability controls and 136 matrix comparisons separate the readout law, the branch distance and error among issued results. The existing nonselective fidelity bound is vacuous in these controls even with exact probabilities. [Protocol](t_search_feedback_joint_readout_protocol.md) · [Report and claim ledger](t_search_feedback_joint_readout.md)

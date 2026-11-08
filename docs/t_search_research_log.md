@@ -1,5 +1,15 @@
 # t-search 研究作業ログ
 
+## 2026-11-08 — 射影失敗の取り逃がしに対する保証
+
+前回公開head f2d7ef2c019b0f2d354739d78eadd837cb465beb からの外部差分は空。mainの96aea72c205b130e5f6fc83e3abbc415bd5268abはR5d・六補足を統合済み。唯一の未統合研究tipはresearch/record-feedback-average。Draft PR #25は開始時4コミット・11 Markdown、レビュー・コメント0。mainと研究ブランチのREADME・roadmap、PR本文・差分、前回仕様・報告・台帳、CI定義を確認。適用AGENTS.mdなし。[Draft PR #25](https://github.com/kosukeya/t-search/pull/25)
+
+基点push #42317263556 は f2d7ef2c019b0f2d354739d78eadd837cb465beb をcheckoutし、1424テスト・18サブテスト成功（590.02秒）。基点PR #42317268301 は合成merge 27d28826ed5e1cfa0d2223e7ebc31a7cc8dbff5f をcheckoutし同数成功（582.32秒）。両方の実ログを確認した。[push](https://github.com/kosukeya/t-search/actions/runs/42317263556) · [PR](https://github.com/kosukeya/t-search/actions/runs/42317268301)
+
+前回の理想読出しを、失敗検出効率に独立な下限を持つ古典的読出しに変更。固定長で誤発行5%以下を証明し、事前固定八条件を厳密計算した。128試行で未補正52.72%と補正0.0862%の誤発行を確認。零誤りの対照で補正後の発行率は15.64%。距離の閾値をまたぐ二装置は全記録で識別不能。対象は履歴に沿う分枝予測であり、観測者間一致や現実化は別の未解決点。[仕様](t_search_feedback_readout_calibration_protocol.md) · [報告・再現コード・台帳](t_search_feedback_readout_calibration.md)
+
+N=64の四条件で独立の三値DPと厳密一致。掲載コードの抽出再実行と出力一致、既存文書196 assertion、旧進捗本文、リンク・表・台帳を照合。全体pytestはローカル環境にpytestがなく未実行。新headのCIはPR本文で追跡。次は独立校正と対象外のフラグ誤分類・準備誤差の扱いを判断する。
+
 ## 2026-11-07 — フラグと出力の同時読出しによる分枝状態の保証
 
 基点76564dd30f41e712af29646bf4fc73be6dc77920からの外部コミット差分は空。mainの96aea72c205b130e5f6fc83e3abbc415bd5268abはR5dと時間平均までの六補足を統合済み。唯一の未統合研究tipはresearch/record-feedback-average。PR #25は開始時点でDraft、3コミット・9 Markdown差分、レビュー・コメントとも0。mainと研究ブランチのREADME・roadmap、前回の仕様・報告・台帳、PR本文と差分、CI定義を読んだ。適用されるAGENTS.mdは上位にもリポジトリ内にもなかった。[基点](https://github.com/kosukeya/t-search/commit/76564dd30f41e712af29646bf4fc73be6dc77920) · [Draft PR #25](https://github.com/kosukeya/t-search/pull/25)

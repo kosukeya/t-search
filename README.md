@@ -2,6 +2,12 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — missed failures in joint readout (2026-11-08)
+
+An independently justified lower bound on failure detection restores the 5% unconditional false-issuance guarantee for a fixed-input branch distance of 1/2. At 128 trials, a missed-failure control gives 52.72% false issuance without correction and 0.0862% with correction. The same lower bound reduces issuance to 15.64% in the zero-error control. Two instruments on opposite sides of the distance threshold have identical observed records under the common calibration bound. [Report, reproduction and claim ledger](docs/t_search_feedback_readout_calibration.md) · [Protocol](docs/t_search_feedback_readout_calibration_protocol.md)
+
+Main has integrated R5d and the six supplements through time averages. This work continues in Draft PR #25. Both baseline checkouts passed 1424 tests and 18 subtests. Physical calibration, flag misclassification and preparation errors remain to be assessed separately. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](docs/t_search_research_log.md)
+
 ## Current follow-up — joint readout for a branch-state guarantee (2026-11-07)
 
 For a fixed pure input and flag, joint readout bounds the distance of the branch state of the predictable average. With a prespecified distance target of 1/2 and a 5% unconditional error budget, the rule issues on 94.96% of paths in a 64-trial favorable control. The earlier sufficient bound from nonselective fidelity is 1 even with exact probabilities in that control. Two instruments with the same complete readout law have distances 1/2 and 1/sqrt(2) in a separate control. Error conditional on issuance can reach 100% even when unconditional error is small. [Protocol](docs/t_search_feedback_joint_readout_protocol.md) · [Report, reproduction and claim ledger](docs/t_search_feedback_joint_readout.md)

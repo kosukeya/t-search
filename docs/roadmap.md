@@ -2,6 +2,46 @@
 
 This roadmap is provisional and evidence-selected. Historical checkpoints and superseded planning labels are retained where documentation regressions depend on them; current scientific status is stated separately from those historical labels.
 
+## Current follow-up — transferring finite calibration to live readout (2026-11-13)
+
+A separate finite calibration batch can supply the lower bound on failure detection. The 1% calibration budget and 4% live budget give a 5% unconditional false-issuance bound when the calibration efficiency lower-bounds detection throughout live testing. In the control with efficiency falling from 1 to 1/4, more calibration trials raised false issuance from 17.74% to 32.13%. The calibration records alone cannot distinguish that change. [Protocol](t_search_feedback_finite_calibration_protocol.md) · [Report, reproduction and claim ledger](t_search_feedback_finite_calibration.md)
+
+Main has integrated R5d and the six supplements through time averages. This work continues in Draft PR #25. Both baseline checkouts passed 1424 tests and 18 subtests. Live calibration transfer and preparation of known failure states require physical evidence. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
+## Current follow-up — missed failures in joint readout (2026-11-08)
+
+An independently justified lower bound on failure detection restores the 5% unconditional false-issuance guarantee for a fixed-input branch distance of 1/2. At 128 trials, a missed-failure control gives 52.72% false issuance without correction and 0.0862% with correction. The same lower bound reduces issuance to 15.64% in the zero-error control. Two instruments on opposite sides of the distance threshold have identical observed records under the common calibration bound. [Report, reproduction and claim ledger](t_search_feedback_readout_calibration.md) · [Protocol](t_search_feedback_readout_calibration_protocol.md)
+
+Main has integrated R5d and the six supplements through time averages. This work continues in Draft PR #25. Both baseline checkouts passed 1424 tests and 18 subtests. Physical calibration, flag misclassification and preparation errors remain to be assessed separately. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
+## Current follow-up — joint readout for a branch-state guarantee (2026-11-07)
+
+The fourth record-feedback audit measures the flag and target projector together for a fixed pure input. A conditional martingale and the arithmetic–geometric mean inequality bound the probability of falsely issuing a distance limit of 1/2 by 5% across paths. Eight exact probability controls and 136 matrix comparisons separate the readout law, the branch distance and error among issued results. The existing nonselective fidelity bound is vacuous in these controls even with exact probabilities. [Protocol](t_search_feedback_joint_readout_protocol.md) · [Report and claim ledger](t_search_feedback_joint_readout.md)
+
+The continuation is in Draft PR #25, with R5d and the six previous supplements integrated on main. Baseline push and PR CI both passed 1424 tests and 18 subtests. The next decision is how to constrain preparation, the target projector and flag wiring for a physical use, and whether the application needs a separate guarantee among issued results. Observer agreement, actualization and ontological becoming remain separate. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
+## Current follow-up — positive branch limits under feedback (2026-11-06)
+
+The completed audit fixes an exponential multiplier of 4 before observing counts. The conditional martingale and pathwise arithmetic–geometric mean bound establish 99% coverage for a single predictable binary mean at fixed N. Exact probabilities in the six previous adaptive controls show when this yields a positive limit. A constructed count example favors the additive bound, and small-count controls separate unconditional coverage from failure among issued limits. [Protocol](t_search_feedback_count_bound_protocol.md) · [Report and claim ledger](t_search_feedback_count_bound.md)
+
+The research branch and Draft PR #25 carry this continuation, while main has integrated R5d and the six supplements through time averages. The previous head and PR merge each passed 1424 tests and 18 subtests. The new head has its own CI. Next specify the required conditional state error and whether a guarantee must control failures over all paths or among issued results. Observer agreement, actualization and ontological becoming remain open. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](t_search_research_log.md)
+
+## Current follow-up — KL coverage under rare-event feedback (2026-11-05)
+
+The [rare-event feedback audit and 12-claim ledger](t_search_kl_feedback_audit.md), following its [pre-execution protocol](t_search_kl_feedback_protocol.md), complete one bounded question from the record-feedback continuation. The old KL lower bound for independent scores is not valid without restriction for a random predictable average: a fixed-N, past-only control gives failure probability 0.013552886802066457 at nominal beta=0.01 for N=1000 and active p=0.01. Switching probabilities to zero retains all remaining trials. The prior finite-grid negative finding and independent-stream guarantee are preserved.
+
+All six predeclared conditions were evaluated with exact integer probabilities and certified rational-log boundaries. Three exceed beta; three do not. Independent Decimal calculations, two backward rational recursions, closed-form first-success controls and a minimal CP instrument provide checks. The previous additive bound has zero failures but only zero lower limits here. The full five-setting alpha=0.05 quantum error procedure has not been shown to fail; device assumptions and physical shots remain unvalidated.
+
+Main remains at 96aea72 with R5d and six supplements integrated. There are no external changes since decbbc3. Continue the same branch and Draft PR #25. Baseline push CI at decbbc3 and PR CI at merge 6e35a06 passed 1424 tests and 18 subtests each; the new head has separate CI. Next review the exclusion of unrestricted KL reuse under feedback, then decide whether a specified prediction target/control class needs a sharper valid bound. Global representation, internal records, observer agreement, predictive stability, actualization and ontological becoming remain distinct. Earlier dated sections retain their checkpoint scope.
+
+## Current follow-up — averages under record feedback (2026-11-04)
+
+R5d and all six supplements through temporal averages were integrated by [PR #24](https://github.com/kosukeya/t-search/pull/24) at `96aea72c205b130e5f6fc83e3abbc415bd5268ab` on 2026-11-03. The merge tree matches the previous head `3141b15cf06742867e51300a3817506079aea29c`. With no unmerged research tip remaining, [research/record-feedback-average](https://github.com/kosukeya/t-search/tree/research/record-feedback-average) continues from this main baseline.
+
+The [record-feedback report and 12-claim ledger](t_search_record_feedback.md) complete the [protocol](t_search_record_feedback_protocol.md). Classical records may select the next block's instrument. Conditional martingale increments replace independence, while a common instrument within each block, quantum resets, calibration and wiring assumptions remain. The guarantee concerns the predictable average along the realized history, a random target that must not be substituted for a fixed channel, a state conditioned on all outcomes, or a future process.
+
+Exact worst-policy/forward checks, nine full feedback distributions, all 768 length-eight histories with 4608 input/branch cases, seven constructed count examples and 161 high-precision comparisons passed. The finite control search found no counterexample to the old KL bound and does not prove it generally. Small feedback samples issued only withholding or the trivial bound. The main merge CI passed 1424 tests and 18 subtests; new-head CI is separate. Review/integration, the intended target and independent physical evidence remain the next judgments. Existing specifications, code, results and historical decisions are preserved.
+
 ## Current follow-up — time averages under changing processing (2026-11-03)
 
 The [report and 12-claim ledger](t_search_temporal_average.md) complete the [temporal-average protocol](t_search_temporal_average_protocol.md). Identical distribution can be relaxed to independent variation over a fixed sequence, provided all five settings measure the same time mixture. The previous KL limits, calibration budgets and conditional bound then apply to the average instrument. The proof does not supply individual-time or future guarantees and does not certify the common-block/reset/independence assumptions.

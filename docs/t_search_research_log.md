@@ -1,5 +1,15 @@
 # t-search 研究作業ログ
 
+## 2026-11-13 — 有限校正の効率を本試験へ移す条件
+
+基点 ac97ebaec5237c99b704de446af1a40d1a355900 以降の外部差分は空。mainの96aea72c205b130e5f6fc83e3abbc415bd5268abはR5dと時間平均までの六補足を統合済み。未統合の研究tipは research/record-feedback-average のみ。Draft PR #25は開始時5コミット・13文書、レビュー・コメント0。mainと研究ブランチのREADME・roadmap、PR本文と差分、最新仕様・報告・台帳、CI定義を確認し、適用されるAGENTS.mdは見つからなかった。[Draft PR #25](https://github.com/kosukeya/t-search/pull/25)
+
+基点push #42430902051 は ac97ebaec5237c99b704de446af1a40d1a355900、基点PR #42430906057 は 8783252a62a9ba2845d5af6d3b83a965c4a7d8e8 を実際にcheckout。各1424テスト・18サブテスト成功。実行時間はそれぞれ1011.34秒と578.43秒。[push](https://github.com/kosukeya/t-search/actions/runs/42430902051) · [PR](https://github.com/kosukeya/t-search/actions/runs/42430906057)
+
+有限の独立校正で選ぶ効率下限を本試験の条件付き保証へ合成した。全履歴への移送を仮定すれば無条件誤発行は1%＋4%以内。移送を破る対照では、校正32→64回で誤発行17.74%→32.13%。八条件の有理数集計、三値整数DP、閾値の隣接点、掲載コードの抽出再実行、既存文書196件を確認した。ローカル全体pytestは依存がなく未実行。新headのCIはPR本文で追跡する。[仕様](t_search_feedback_finite_calibration_protocol.md) · [報告・台帳](t_search_feedback_finite_calibration.md)
+
+対象は全履歴の中で内部記録を使う分枝予測。次に判断するのは、既知の失敗状態を準備する根拠と、履歴に依存する効率の変化を本試験内でどう制約するかである。観測者間一致、単一事実、存在論的becomingは未解決。
+
 ## 2026-11-08 — 射影失敗の取り逃がしに対する保証
 
 前回公開head f2d7ef2c019b0f2d354739d78eadd837cb465beb からの外部差分は空。mainの96aea72c205b130e5f6fc83e3abbc415bd5268abはR5d・六補足を統合済み。唯一の未統合研究tipはresearch/record-feedback-average。Draft PR #25は開始時4コミット・11 Markdown、レビュー・コメント0。mainと研究ブランチのREADME・roadmap、PR本文・差分、前回仕様・報告・台帳、CI定義を確認。適用AGENTS.mdなし。[Draft PR #25](https://github.com/kosukeya/t-search/pull/25)

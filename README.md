@@ -2,6 +2,12 @@
 
 `t-search` explores explicit transformations among global/block-like, local/becoming-like, and physical clock-perspective descriptions while keeping reconstruction, accessibility, records, modality, gauge/constraint structure, and interpretation separate.
 
+## Current follow-up — transferring finite calibration to live readout (2026-11-13)
+
+A separate finite calibration batch can supply the lower bound on failure detection. The 1% calibration budget and 4% live budget give a 5% unconditional false-issuance bound when the calibration efficiency lower-bounds detection throughout live testing. In the control with efficiency falling from 1 to 1/4, more calibration trials raised false issuance from 17.74% to 32.13%. The calibration records alone cannot distinguish that change. [Protocol](docs/t_search_feedback_finite_calibration_protocol.md) · [Report, reproduction and claim ledger](docs/t_search_feedback_finite_calibration.md)
+
+Main has integrated R5d and the six supplements through time averages. This work continues in Draft PR #25. Both baseline checkouts passed 1424 tests and 18 subtests. Live calibration transfer and preparation of known failure states require physical evidence. [Draft PR #25](https://github.com/kosukeya/t-search/pull/25) · [Research log](docs/t_search_research_log.md)
+
 ## Current follow-up — missed failures in joint readout (2026-11-08)
 
 An independently justified lower bound on failure detection restores the 5% unconditional false-issuance guarantee for a fixed-input branch distance of 1/2. At 128 trials, a missed-failure control gives 52.72% false issuance without correction and 0.0862% with correction. The same lower bound reduces issuance to 15.64% in the zero-error control. Two instruments on opposite sides of the distance threshold have identical observed records under the common calibration bound. [Report, reproduction and claim ledger](docs/t_search_feedback_readout_calibration.md) · [Protocol](docs/t_search_feedback_readout_calibration_protocol.md)
